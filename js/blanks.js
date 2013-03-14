@@ -3,6 +3,7 @@ window.H5P = window.H5P || {};
 H5P.Blanks = function (options, contentId) {
 	var panel;
 	var target;
+	var answer_panel;
 	var $ = H5P.jQuery;
 
 	if ( !(this instanceof H5P.Blanks) ){
@@ -16,10 +17,12 @@ H5P.Blanks = function (options, contentId) {
 			var index = parseInt(el.id.replace(/^.*-/,''));
 			var input = $('#'+panel.attr('id')+'-input-'+index);
 			var user_answer = input.val().trim();
-			if(user_answer.length()){
+			if(user_answer != ''){
 				answers++;
 			}
 		});
+		console.log('a='+answers);
+		console.log('t='+total);
 		return answers == total;
 	}
 
@@ -45,6 +48,17 @@ H5P.Blanks = function (options, contentId) {
 	};
 
 	var showScore = function(){
+		answer_panel.html('');
+		addElement(answer_panel, 'ok', 'button', { text: 'Lukk', bottom: '20px', right: '20px', click: hideAnswer });
+		answer_panel.animate({
+			top: '0px'
+		}, 'slow');
+
+		// TODO: Remove confirmations
+		console.log("Score " + getScore());
+		console.log("Total " + totalScore());
+		console.log("given " + (getAnswerGiven() ? "true" : "false"));
+
 		panel.find('.question').each(function (idx, el) {
 			var index = parseInt(el.id.replace(/^.*-/,''));
 			var input = $('#'+panel.attr('id')+'-input-'+index);
@@ -53,7 +67,7 @@ H5P.Blanks = function (options, contentId) {
 			var user_answer = input.val().trim();
 			var replace = user_answer == answer ? '<span class="correct-answer"><b>✓ '+answer+'</b></span>' : ' <span class="wrong-answer">'+user_answer+'</span> <b>'+answer+'</b>';
 			var text = options.questions[index].replace(/\*[\w]*\*/, replace);
-			question.html(text);
+			addElement(answer_panel, 'answer-panel', 'answer-question', {text: text});
 		});
 	}
 
@@ -92,12 +106,27 @@ H5P.Blanks = function (options, contentId) {
 		if(el.width) {
 			$el.css({ width: el.width });
 		}
+		if(el.click) {
+			$el.click(el.click);
+		}
 		return $el;
+	}
+
+	var hideAnswer = function () {
+		console.log("Hide");
+		answer_panel.animate({
+			top: -parseInt(panel.css('height'))
+		}, 'slow');
 	}
 
 	var attach = function (el) {
 		target = $(el);
 		panel = addElement(target, 'panel-'+target.attr('data-content-id'), 'panel', options);
+		answer_panel = addElement(panel, 'answerpanel-'+target.attr('data-content-id'), 'answer-panel', {
+			top: -parseInt(panel.css('height')),
+			height: panel.css('height'),
+			width: panel.css('width')
+		});
 
 		// Add buttons
 		for (var i = 0; i < buttons.length; i++) {

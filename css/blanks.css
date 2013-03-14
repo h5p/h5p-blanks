@@ -1,3 +1,11 @@
+.h5p-content {
+	padding: 20px;
+}
+.h5p-content .answer-panel {
+	position: absolute;
+	background-color: #CCCCCC;
+	z-index: 1;
+}
 .h5p-content .correct-answer {
 	text-decoration: bold;
 	color: green;
@@ -8,12 +16,12 @@
 }
 
 .h5p-content .panel {
+	overflow: hidden;
 	position: relative;
 	background-color: #F5F5F5;
-	padding: 20px;
 	font-size: 24px;
 }
-.h5p-content .question {
+.h5p-content .question,.answer-question {
 	padding-top: 20px;
 	font-size: 14px;
 }
