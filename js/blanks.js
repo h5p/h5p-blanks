@@ -113,7 +113,6 @@ H5P.Blanks = function (options, contentId) {
 	}
 
 	var hideAnswer = function () {
-		console.log("Hide");
 		answer_panel.animate({
 			top: -parseInt(panel.css('height'))
 		}, 'slow');
