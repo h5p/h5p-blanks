@@ -9,6 +9,41 @@ H5P.Blanks = function (options, contentId) {
 		return new H5P.Blanks(options, contentId);
 	}
 
+	var getAnswerGiven = function(){
+		var total = totalScore();
+		var answers = 0;
+		panel.find('.question').each(function (idx, el) {
+			var index = parseInt(el.id.replace(/^.*-/,''));
+			var input = $('#'+panel.attr('id')+'-input-'+index);
+			var user_answer = input.val().trim();
+			if(user_answer.length()){
+				answers++;
+			}
+		});
+		return answers == total;
+	}
+
+	var getScore = function(){
+		var score = 0;
+		panel.find('.question').each(function (idx, el) {
+			var index = parseInt(el.id.replace(/^.*-/,''));
+			var input = $('#'+panel.attr('id')+'-input-'+index);
+			var question = $('#'+panel.attr('id')+'-question-'+index);
+			var answer = options.questions[index].replace(/^.*?\*([\w]*)\*.*$/, '$1').trim();
+			var user_answer = input.val().trim();
+			score += user_answer == answer ? 1 : 0;
+		});
+		return score;
+	}
+
+	var totalScore = function(){
+		var score = 0;
+		panel.find('.question').each(function (idx, el) {
+			score++;
+		});
+		return score;
+	};
+
 	var showScore = function(){
 		panel.find('.question').each(function (idx, el) {
 			var index = parseInt(el.id.replace(/^.*-/,''));
@@ -87,12 +122,9 @@ H5P.Blanks = function (options, contentId) {
   var returnObject = {
 		attach: attach,
 		machineName: 'H5P.Blanks',
-		getScore: function() {
-		},
-		getAnswerGiven: function() {
-		},
-		totalScore: function() {
-		}
+		getScore: getScore,
+		getAnswerGiven: getAnswerGiven,
+		totalScore: totalScore
   };
 
   return returnObject;
