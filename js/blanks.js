@@ -21,8 +21,6 @@ H5P.Blanks = function (options, contentId) {
 				answers++;
 			}
 		});
-		console.log('a='+answers);
-		console.log('t='+total);
 		return answers == total;
 	}
 
