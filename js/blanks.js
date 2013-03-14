@@ -3,14 +3,11 @@ window.H5P = window.H5P || {};
 H5P.Blanks = function (options, contentId) {
 	var panel;
 	var target;
-	var position;
 	var $ = H5P.jQuery;
 
 	if ( !(this instanceof H5P.Blanks) ){
 		return new H5P.Blanks(options, contentId);
 	}
-
-	var cp = H5P.getContentPath(contentId);
 
 	var showScore = function(){
 		panel.find('.question').each(function (idx, el) {
