@@ -21,9 +21,7 @@ H5P.Blanks = function (options, contentId) {
 			var user_answer = input.val().trim();
 			var replace = user_answer == answer ? '<span class="correct-answer"><b>✓ '+answer+'</b></span>' : ' <span class="wrong-answer">'+user_answer+'</span> <b>'+answer+'</b>';
 			var text = options.questions[index].replace(/\*[\w]*\*/, replace);
-console.log(question.attr('id') + " ua='" + user_answer+"'");
 			question.html(text);
-			// var input = $('input-
 		});
 	}
 
@@ -69,8 +67,6 @@ console.log(question.attr('id') + " ua='" + user_answer+"'");
 		target = $(el);
 		panel = addElement(target, 'panel-'+target.attr('data-content-id'), 'panel', options);
 
-console.log('l ' + options.questions.length);
-
 		// Add buttons
 		for (var i = 0; i < buttons.length; i++) {
 			$button = addElement(panel, null, 'button', buttons[i]);
@@ -80,7 +76,6 @@ console.log('l ' + options.questions.length);
 		// Add questions
 		for(var i=0; i < options.questions.length; i++) {
 			var answer = options.questions[i].replace(/^.*?\*([\w]*)\*.*$/, '$1');
-console.log("a=" + answer);
 			var input = '<input id="'+panel.attr('id')+'-input-'+i+'" type="text"/>';
 			var text = options.questions[i].replace(/\*[\w]*\*/, input);
 			addElement(panel, panel.attr('id')+'-question-'+i, 'question', { text: text });
