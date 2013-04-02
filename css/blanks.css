@@ -1,29 +1,61 @@
 .h5p-content {
-	padding: 20px;
+  position: relative;
+  background-color: #F5F5F5;
+  overflow: hidden;
 }
 .h5p-content .answer-panel {
-	position: absolute;
-	background-color: #CCCCCC;
-	z-index: 1;
+  display: block;
+  position: absolute;
+  background-color: #EEEEEE;
+  z-index: 1;
+}
+.answer-panel .score {
+  padding-left: 20px;
+}
+.h5p-content .answer-question {
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+  background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+  background-color: #ededed;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  color: #777777;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 14px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #ffffff;
+  margin: 0px;
+  margin: 5px;
+  padding-right: 30px;
 }
 .h5p-content .correct-answer {
-	text-decoration: bold;
-	color: green;
+  color: green;
+}
+.h5p-content .answer-list {
+  color: green;
 }
 .h5p-content .wrong-answer {
-	text-decoration: line-through;
-	color: red;
+  text-decoration: line-through;
+  color: red;
 }
 
-.h5p-content .panel {
-	overflow: hidden;
-	position: relative;
-	background-color: #F5F5F5;
-	font-size: 24px;
+.h5p-content .blanks-panel {
+  overflow: hidden;
+  position: relative;
+  font-size: 24px;
+  padding: 20px;
+  padding-bottom: 60px;
 }
-.h5p-content .question,.answer-question {
-	padding-top: 20px;
-	font-size: 14px;
+.h5p-content .blanks-question,.answer-question {
+  padding-top: 20px;
+  font-size: 14px;
 }
 .h5p-content .button {
   position: absolute;
@@ -45,6 +77,8 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#e0e0e0 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+  bottom: 10px;
+  right: 10px;
 }
 .h5p-content .button:hover {
   background: #dddddd; /* Old browsers */
@@ -56,4 +90,3 @@
   background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
 }
-
