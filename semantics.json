@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Beskrivelse av oppgaven",
+    "name": "text",
+    "type": "text",
+    "description": ""
+  },
+  {
+    "name": "questions",
+    "type": "list",
+    "label": "Spørsmål",
+    "description": "Liste av spørsmål.",
+    "entity": "questions",
+    "max": 10,
+    "field": {
+      "name": "question",
+      "type": "text",
+      "label": "Linje",
+      "description": "Registreres med * foran og bak riktig svar og | mellom alternativer: *riktig svar|alternativt svar*."
+    }
+  },
+  {
+    "label": "Resultat",
+    "name": "score",
+    "type": "text",
+    "description": "Du hadde @score riktige av @total mulige."
+  }
+]
