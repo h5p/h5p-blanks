@@ -1,6 +1,6 @@
 [
   {
-    "label": "Beskrivelse av oppgaven",
+    "label": "Oppgavetekst",
     "name": "text",
     "type": "text",
     "description": ""
@@ -16,13 +16,15 @@
       "name": "question",
       "type": "text",
       "label": "Linje",
-      "description": "Registreres med * foran og bak riktig svar og | mellom alternativer: *riktig svar|alternativt svar*."
+      "description": "Registreres med * foran og bak riktig svar og / mellom alternativer: *riktig svar/alternativt svar*."
     }
   },
   {
-    "label": "Resultat",
+    "label": "Tilbakemelding på resultat",
     "name": "score",
     "type": "text",
-    "description": "Du hadde @score riktige av @total mulige."
+    "hint": "Du hadde @score riktige av @total mulige.",
+    "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'",
+    "common": true
   }
 ]
