@@ -47,7 +47,7 @@ H5P.Blanks = function (options, contentId) {
     return score;
   };
 
-  var showScore = function(){
+  var showSolutions = function(){
     answer_panel.html('');
     addElement(answer_panel, '', 'button', { text: 'Lukk', click: hideAnswer });
     answer_panel.animate({ top: '0px' }, 'slow');
@@ -82,7 +82,7 @@ H5P.Blanks = function (options, contentId) {
   var buttons = Array(
     {
       text: 'Vis fasit',
-      click: showScore
+      click: showSolutions
     }
   );
 
@@ -157,7 +157,8 @@ H5P.Blanks = function (options, contentId) {
     machineName: 'H5P.Blanks',
     getScore: getScore,
     getAnswerGiven: getAnswerGiven,
-    totalScore: totalScore
+    totalScore: totalScore,
+    showSolutions: showSolutions
   };
 
   return returnObject;
