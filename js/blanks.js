@@ -1,9 +1,9 @@
 var H5P = H5P || {};
 
 H5P.Blanks = function (options, contentId) {
-  var panel;
-  var target;
-  var answer_panel;
+  var $panel;
+  var $target;
+  var $answer_panel;
   var $ = H5P.jQuery;
 
   if ( !(this instanceof H5P.Blanks) ){
@@ -13,9 +13,9 @@ H5P.Blanks = function (options, contentId) {
   var getAnswerGiven = function(){
     var total = totalScore();
     var answers = 0;
-    panel.find('.question').each(function (idx, el) {
+    $panel.find('.question').each(function (idx, el) {
       var index = parseInt(el.id.replace(/^.*-/,''));
-      var input = $('#'+panel.attr('id')+'-input-'+index);
+      var input = $('#'+$panel.attr('id')+'-input-'+index);
       var user_answer = input.val().trim();
       if(user_answer != ''){
         answers++;
@@ -26,10 +26,10 @@ H5P.Blanks = function (options, contentId) {
 
   var getScore = function(){
     var score = 0;
-    panel.find('.blanks-question').each(function (idx, el) {
+    $panel.find('.blanks-question').each(function (idx, el) {
       var index = parseInt(el.id.replace(/^.*-/,''));
-      var input = $('#'+panel.attr('id')+'-input-'+index);
-      var question = $('#'+panel.attr('id')+'-question-'+index);
+      var input = $('#' + $panel.attr('id')+'-input-'+index);
+      var question = $('#' + $panel.attr('id')+'-question-'+index);
       var answer = options.questions[index].replace(/^.*?\*([^*]+)\*.*$/, '$1').trim().split('/');
       for(var i=0; i < answer.length; i++) {
         var user_answer = input.val().trim();
@@ -41,26 +41,26 @@ H5P.Blanks = function (options, contentId) {
 
   var totalScore = function(){
     var score = 0;
-    panel.find('.blanks-question').each(function (idx, el) {
+    $panel.find('.blanks-question').each(function (idx, el) {
       score++;
     });
     return score;
   };
 
   var showSolutions = function(){
-    answer_panel.html('');
-    addElement(answer_panel, '', 'button', { text: 'Lukk', click: hideAnswer });
-    answer_panel.animate({ top: '0px' }, 'slow');
+    $answer_panel.html('');
+    addElement($answer_panel, '', 'button', { text: 'Lukk', click: hideAnswer });
+    $answer_panel.animate({ top: '0%' }, 'slow');
 
     // TODO: Remove confirmations
     console.log("Score " + getScore());
     console.log("Total " + totalScore());
     console.log("given " + (getAnswerGiven() ? "true" : "false"));
 
-    panel.find('.blanks-question').each(function (idx, el) {
+    $panel.find('.blanks-question').each(function (idx, el) {
       var index = parseInt(el.id.replace(/^.*-/,''));
-      var input = $('#'+panel.attr('id')+'-input-'+index);
-      var question = $('#'+panel.attr('id')+'-question-'+index);
+      var input = $('#' + $panel.attr('id')+'-input-'+index);
+      var question = $('#' + $panel.attr('id')+'-question-'+index);
       var answer = options.questions[index].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim().split('/');
       var list = options.questions[index].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim();
       var user_answer = input.val().trim();
@@ -73,10 +73,10 @@ H5P.Blanks = function (options, contentId) {
       }
       var replace = correct ? '<span class="correct-answer"><b>✓ '+user_answer+'</b></span>' : ' <span class="wrong-answer">'+user_answer+'</span> <span class="answer-list">'+list+'</span>';
       var text = options.questions[index].replace(/\*[^\*]+\*/, replace);
-      addElement(answer_panel, 'answer-panel-'+index, 'answer-question', {text: text});
+      addElement($answer_panel, 'answer-panel-'+index, 'answer-question', {text: text});
     });
     var score = options.score.replace('@score', getScore()).replace('@total', totalScore());
-    addElement(answer_panel, '', 'score', { text: score });
+    addElement($answer_panel, '', 'score', { text: score });
   }
 
   var buttons = Array(
@@ -118,35 +118,36 @@ H5P.Blanks = function (options, contentId) {
   }
 
   var hideAnswer = function () {
-    answer_panel.animate({
-      top: -parseInt(target.outerHeight())
+    $answer_panel.animate({
+      top: '-100%'
     }, 'slow');
   }
 
   var attach = function (el) {
-    target = $(el);
-    panel = addElement(target, 'panel-'+target.attr('data-content-id'), 'blanks-panel', options);
+    var $target = $(el);
+    $panel = $('<div id="panel-' + $target.attr('data-content-id') + '" class="blanks-panel"></div>').appendTo($target);
+    $panel.append('<H2>' + options.text + '</H2>');
 
     // Add buttons
     for (var i = 0; i < buttons.length; i++) {
-      $button = addElement(panel, null, 'button', buttons[i]);
+      addElement($panel, null, 'button', buttons[i]);
     }
 
     // Add questions
     for(var i=0; i < options.questions.length; i++) {
       var answer = options.questions[i].replace(/^.*?\*([^\*]+)\*.*$/, '$1');
-      var input = '<input id="'+panel.attr('id')+'-input-'+i+'" type="text"/>';
+      var input = '<input id="'+$panel.attr('id')+'-input-'+i+'" type="text"/>';
       var text = options.questions[i].replace(/\*[^\*]+\*/, input);
-      addElement(panel, panel.attr('id')+'-question-'+i, 'blanks-question', { text: text });
+      addElement($panel, $panel.attr('id')+'-question-'+i, 'blanks-question', { text: text });
       if( ! i){
         $('#input-0').focus();
       }
     }
 
-    answer_panel = addElement(target, 'answerpanel-'+target.attr('data-content-id'), 'answer-panel', {
-      top: -parseInt(target.outerHeight()),
-      height: target.outerHeight(),
-      width: target.outerWidth()
+    $answer_panel = addElement($target, 'answerpanel-' + $target.attr('data-content-id'), 'answer-panel', {
+      top: '-100%',
+      height: '100%',
+      width: '100%'
     });
 
     return this;
