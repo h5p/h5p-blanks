@@ -52,11 +52,6 @@ H5P.Blanks = function (options, contentId) {
     addElement($answer_panel, '', 'button', { text: 'Lukk', click: hideAnswer });
     $answer_panel.animate({ top: '0%' }, 'slow');
 
-    // TODO: Remove confirmations
-    console.log("Score " + getScore());
-    console.log("Total " + totalScore());
-    console.log("given " + (getAnswerGiven() ? "true" : "false"));
-
     $panel.find('.blanks-question').each(function (idx, el) {
       var index = parseInt(el.id.replace(/^.*-/,''));
       var input = $('#' + $panel.attr('id')+'-input-'+index);
@@ -130,7 +125,9 @@ H5P.Blanks = function (options, contentId) {
 
     // Add buttons
     for (var i = 0; i < buttons.length; i++) {
-      addElement($panel, null, 'button', buttons[i]);
+      addElement($panel, null, 'button h5p-show-solutions h5p-hidden-solution-btn', buttons[i]);
+      // h5p-hidden-solution-btn gets hidden if parent activates the solutions
+      // h5p-show-solutions can't be used for this since styling might be applied to it
     }
 
     // Add questions
