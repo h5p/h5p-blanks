@@ -11,7 +11,7 @@ H5P.Blanks = function (options, contentId) {
   }
 
   var getAnswerGiven = function(){
-    var total = totalScore();
+    var total = getMaxScore();
     var answers = 0;
     $panel.find('.question').each(function (idx, el) {
       var index = parseInt(el.id.replace(/^.*-/,''));
@@ -39,7 +39,7 @@ H5P.Blanks = function (options, contentId) {
     return score;
   }
 
-  var totalScore = function(){
+  var getMaxScore = function(){
     var score = 0;
     $panel.find('.blanks-question').each(function (idx, el) {
       score++;
@@ -70,7 +70,7 @@ H5P.Blanks = function (options, contentId) {
       var text = options.questions[index].replace(/\*[^\*]+\*/, replace);
       addElement($answer_panel, 'answer-panel-'+index, 'answer-question', {text: text});
     });
-    var score = options.score.replace('@score', getScore()).replace('@total', totalScore());
+    var score = options.score.replace('@score', getScore()).replace('@total', getMaxScore());
     addElement($answer_panel, '', 'score', { text: score });
   }
 
@@ -155,7 +155,7 @@ H5P.Blanks = function (options, contentId) {
     machineName: 'H5P.Blanks',
     getScore: getScore,
     getAnswerGiven: getAnswerGiven,
-    totalScore: totalScore,
+    getMaxScore: getMaxScore,
     showSolutions: showSolutions
   };
 
