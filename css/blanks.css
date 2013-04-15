@@ -48,11 +48,12 @@
   overflow: hidden;
   position: relative;
   padding: 1.5em;
-  padding-bottom: 5em;
+  padding-bottom: 4.2em;
 }
 
 .h5p-blanks .blanks-question, .h5p-blanks .answer-question {
   font-size: 1em;
+  padding-top: 1em;
 }
 .h5p-blanks .blanks-question input {
   font-size: 1em;
@@ -62,7 +63,7 @@
   cursor: pointer;
   color: #2d2c28;
 
-  font-size: 1.3em;
+  font-size: 1em;
   padding: 0.5em 1em;
   text-align: center;
 
@@ -89,4 +90,7 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
+}
+.h5p-blanks h2 {
+  font-size: 1.4em;
 }
