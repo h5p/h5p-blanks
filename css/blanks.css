@@ -1,9 +1,9 @@
-.h5p-content {
+.h5p-blanks {
   position: relative;
   background-color: #F5F5F5;
   overflow: hidden;
 }
-.h5p-content .answer-panel {
+.h5p-blanks .answer-panel {
   display: block;
   position: absolute;
   background-color: #EEEEEE;
@@ -12,7 +12,7 @@
 .answer-panel .score {
   padding-left: 1.5em;
 }
-.h5p-content .answer-question {
+.h5p-blanks .answer-question {
   -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -33,28 +33,28 @@
   text-shadow: 1px 1px 0px #ffffff;
   margin: 0.4em;
 }
-.h5p-content .correct-answer {
+.h5p-blanks .correct-answer {
   color: green;
 }
-.h5p-content .answer-list {
+.h5p-blanks .answer-list {
   color: green;
 }
-.h5p-content .wrong-answer {
+.h5p-blanks .wrong-answer {
   text-decoration: line-through;
   color: red;
 }
 
-.h5p-content .blanks-panel {
+.h5p-blanks .blanks-panel {
   overflow: hidden;
   position: relative;
   padding: 1.5em;
   padding-bottom: 5em;
 }
-.h5p-content .blanks-question,.answer-question {
+.h5p-blanks .blanks-question,.answer-question {
   padding-top: 20px;
   font-size: 14px;
 }
-.h5p-content .button {
+.h5p-blanks .button {
   position: absolute;
   cursor: pointer;
   color: #2d2c28;
@@ -77,7 +77,7 @@
   bottom: 0.8em;
   right: 0.8em;
 }
-.h5p-content .button:hover {
+.h5p-blanks .button:hover {
   background: #dddddd; /* Old browsers */
   background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */

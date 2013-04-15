@@ -120,6 +120,7 @@ H5P.Blanks = function (options, contentId) {
 
   var attach = function (el) {
     var $target = $(el);
+    $target.addClass('h5p-blanks');
     $panel = $('<div id="panel-' + $target.attr('data-content-id') + '" class="blanks-panel"></div>').appendTo($target);
     $panel.append('<H2>' + options.text + '</H2>');
 
