@@ -167,7 +167,7 @@ H5P.Blanks = function (options, contentId) {
     machineName: 'H5P.Blanks',
     getScore: getScore,
     getAnswerGiven: getAnswerGiven,
-    getTotal: getMaxScore,
+    getMaxScore: getMaxScore,
     showSolutions: showSolutions
   };
 
