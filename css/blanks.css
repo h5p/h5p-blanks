@@ -57,6 +57,7 @@
 }
 .h5p-blanks .blanks-question input {
   font-size: 1em;
+  width: 7em;
 }
 .h5p-blanks .button {
   position: absolute;
