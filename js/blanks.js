@@ -13,10 +13,8 @@ H5P.Blanks = function (options, contentId) {
   var getAnswerGiven = function(){
     var total = getMaxScore();
     var answers = 0;
-    $panel.find('.question').each(function (idx, el) {
-      var index = parseInt(el.id.replace(/^.*-/,''));
-      var input = $('#'+$panel.attr('id')+'-input-'+index);
-      var user_answer = input.val().trim();
+    $panel.find('.blanks-input').each(function (idx, el) {
+      var user_answer = $(el).val().trim();
       if(user_answer != ''){
         answers++;
       }
@@ -40,11 +38,7 @@ H5P.Blanks = function (options, contentId) {
   }
 
   var getMaxScore = function(){
-    var score = 0;
-    $panel.find('.blanks-question').each(function (idx, el) {
-      score++;
-    });
-    return score;
+    return $panel.find('.blanks-input').length;
   };
 
   var showSolutions = function(){
@@ -74,12 +68,16 @@ H5P.Blanks = function (options, contentId) {
     addElement($answer_panel, '', 'score', { text: score });
   }
 
-  var buttons = Array(
-    {
-      text: 'Vis fasit',
-      click: showSolutions
-    }
-  );
+  var buttons = Array();
+
+  if($('.qs-footer').length) {
+    var buttons = Array(
+      {
+        text: 'Vis fasit',
+        click: showSolutions
+      }
+    );
+  }
 
   function addElement(container, id, className, el) {
     var text = el.text ? el.text : '';
@@ -119,7 +117,7 @@ H5P.Blanks = function (options, contentId) {
   }
 
   var attach = function (el) {
-    var $target = $(el);
+    var $target = typeof(el) === "string" ? $("#" + el) : $(el);
     $target.addClass('h5p-blanks');
     $panel = $('<div id="panel-' + $target.attr('data-content-id') + '" class="blanks-panel"></div>').appendTo($target);
     $panel.append('<H2>' + options.text + '</H2>');
@@ -134,12 +132,17 @@ H5P.Blanks = function (options, contentId) {
     // Add questions
     for(var i=0; i < options.questions.length; i++) {
       var answer = options.questions[i].replace(/^.*?\*([^\*]+)\*.*$/, '$1');
-      var input = '<input id="'+$panel.attr('id')+'-input-'+i+'" type="text"/>';
+      var input = '<input id="'+$panel.attr('id')+'-input-'+i+'" class="blanks-input" type="text"/>';
       var text = options.questions[i].replace(/\*[^\*]+\*/, input);
       addElement($panel, $panel.attr('id')+'-question-'+i, 'blanks-question', { text: text });
       if( ! i){
         $('#input-0').focus();
       }
+      $('#'+$panel.attr('id')+'-input-'+i).blur(function() {
+        if(getAnswerGiven()) {
+          $(returnObject).trigger('h5pQuestionAnswered');
+        }
+      });
     }
 
     $answer_panel = addElement($target, 'answerpanel-' + $target.attr('data-content-id'), 'answer-panel', {
@@ -156,7 +159,7 @@ H5P.Blanks = function (options, contentId) {
     machineName: 'H5P.Blanks',
     getScore: getScore,
     getAnswerGiven: getAnswerGiven,
-    getMaxScore: getMaxScore,
+    getTotal: getMaxScore,
     showSolutions: showSolutions
   };
 
