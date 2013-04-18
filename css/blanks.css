@@ -3,16 +3,16 @@
   background-color: #F5F5F5;
   overflow: hidden;
 }
-.h5p-blanks .answer-panel {
+.h5p-blanks .h5p-answer-panel {
   display: block;
   position: absolute;
   background-color: #EEEEEE;
   z-index: 1;
 }
-.answer-panel .score {
+.h5p-blanks .h5p-answer-panel .h5p-score {
   padding-left: 1.5em;
 }
-.h5p-blanks .answer-question {
+.h5p-blanks .h5p-answer-question {
   -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -33,38 +33,33 @@
   text-shadow: 1px 1px 0px #ffffff;
   margin: 0.4em;
 }
-.h5p-blanks .correct-answer {
+.h5p-blanks .h5p-correct-answer {
   color: green;
 }
-.h5p-blanks .answer-list {
+.h5p-blanks .h5p-answer-list {
   color: green;
 }
-.h5p-blanks .wrong-answer {
+.h5p-blanks .h5p-wrong-answer {
   text-decoration: line-through;
   color: red;
 }
 
-.h5p-blanks .blanks-panel {
+.h5p-blanks .h5p-blanks-panel {
   overflow: hidden;
   position: relative;
   padding: 1.5em;
-  padding-bottom: 4.2em;
+  padding-bottom: 5em;
 }
-
-.h5p-blanks .blanks-question, .h5p-blanks .answer-question {
-  font-size: 1em;
-  padding-top: 1em;
+.h5p-blanks .h5p-blanks-question, .h5p-blanks .h5p-answer-question {
+  padding-top: 20px;
+  font-size: 14px;
 }
-.h5p-blanks .blanks-question input {
-  font-size: 1em;
-  width: 7em;
-}
-.h5p-blanks .button {
+.h5p-blanks .h5p-button {
   position: absolute;
   cursor: pointer;
   color: #2d2c28;
 
-  font-size: 1em;
+  font-size: 1.3em;
   padding: 0.5em 1em;
   text-align: center;
 
@@ -82,7 +77,7 @@
   bottom: 0.8em;
   right: 0.8em;
 }
-.h5p-blanks .button:hover {
+.h5p-blanks .h5p-button:hover {
   background: #dddddd; /* Old browsers */
   background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */
@@ -91,7 +86,4 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
-}
-.h5p-blanks h2 {
-  font-size: 1.4em;
 }
