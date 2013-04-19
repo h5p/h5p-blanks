@@ -5,7 +5,7 @@ H5P.Blanks = function (options, contentId) {
   var $panel;
   var $answerPanel;
   var $ = H5P.jQuery;
-  
+
   this.options = H5P.jQuery.extend({}, {
     text: "Fill in",
     questions: [
@@ -72,15 +72,12 @@ H5P.Blanks = function (options, contentId) {
     addElement($answerPanel, 'h5p-score', { text: score });
   };
 
-  var buttons = Array();
-  if ($('.qs-footer').length) {
-    var buttons = Array(
-      {
-        text: 'Vis fasit',
-        click: showSolutions
-      }
-    );
-  }
+  var buttons = Array(
+    {
+      text: 'Vis fasit',
+      click: showSolutions
+    }
+  );
 
   function addElement(container, className, el) {
     var text = el.text ? el.text : '';
@@ -118,7 +115,7 @@ H5P.Blanks = function (options, contentId) {
 
   var attach = function ($wrapper) {
     $wrapper.html('').addClass('h5p-blanks');
-    
+
     $panel = $('<div class="blanks-panel"></div>').appendTo($wrapper);
     $panel.append('<h2>' + that.options.text + '</h2>');
 
