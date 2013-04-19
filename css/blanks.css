@@ -87,3 +87,7 @@
   background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
 }
+
+.h5p-blanks input.h5p-blanks-input {
+  width: 7em;
+}
