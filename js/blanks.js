@@ -11,7 +11,9 @@ H5P.Blanks = function (options, contentId) {
     questions: [
       "2 + 2 = *4*"
     ],
-    score: "You got @score of @total points."
+    score: "You got @score of @total points.",
+    showSolutions: "Show solutions",
+    close: "Close"
   }, options);
 
   if (!this instanceof H5P.Blanks){
@@ -50,7 +52,7 @@ H5P.Blanks = function (options, contentId) {
 
   var showSolutions = function () {
     $answerPanel.html('');
-    addElement($answerPanel, 'h5p-button', { text: 'Lukk', click: hideAnswer });
+    addElement($answerPanel, 'h5p-button', { text: that.options.close, click: hideAnswer });
     $answerPanel.animate({ top: '0%' }, 'slow');
 
     $panel.find('.h5p-blanks-question').each(function (idx, el) {
@@ -74,7 +76,7 @@ H5P.Blanks = function (options, contentId) {
 
   var buttons = Array(
     {
-      text: 'Vis fasit',
+      text: this.options.showSolutions,
       click: showSolutions
     }
   );
