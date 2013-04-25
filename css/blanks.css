@@ -4,6 +4,7 @@
   overflow: hidden;
 }
 .h5p-blanks .blanks-panel {
+  overflow: hidden;
   padding: 1em;
 }
 .h5p-blanks .h5p-answer-panel {
@@ -58,7 +59,7 @@
   font-size: 1em;
 }
 .h5p-blanks .h5p-button {
-  position: absolute;
+  float: right;
   cursor: pointer;
   color: #2d2c28;
 

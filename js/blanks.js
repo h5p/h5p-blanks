@@ -52,7 +52,6 @@ H5P.Blanks = function (options, contentId) {
 
   var showSolutions = function () {
     $answerPanel.html('');
-    addElement($answerPanel, 'h5p-button', { text: that.options.close, click: hideAnswer });
     $answerPanel.animate({ top: '0%' }, 'slow');
 
     $panel.find('.h5p-blanks-question').each(function (idx, el) {
@@ -72,6 +71,7 @@ H5P.Blanks = function (options, contentId) {
     });
     var score = that.options.score.replace('@score', getScore()).replace('@total', getMaxScore());
     addElement($answerPanel, 'h5p-score', { text: score });
+    addElement($answerPanel, 'h5p-button', { text: that.options.close, click: hideAnswer });
   };
 
   var buttons = Array(
@@ -121,13 +121,6 @@ H5P.Blanks = function (options, contentId) {
     $panel = $('<div class="blanks-panel"></div>').appendTo($wrapper);
     $panel.append('<h2>' + that.options.text + '</h2>');
 
-    // Add buttons
-    for (var i = 0; i < buttons.length; i++) {
-      addElement($panel, 'h5p-button h5p-show-solutions h5p-hidden-solution-btn', buttons[i]);
-      // h5p-hidden-solution-btn gets hidden if parent activates the solutions
-      // h5p-show-solutions can't be used for this since styling might be applied to it
-    }
-
     // Add questions
     for (var i = 0; i < that.options.questions.length; i++) {
       var input = '<input class="h5p-blanks-input" type="text"/>';
@@ -141,6 +134,13 @@ H5P.Blanks = function (options, contentId) {
           $(returnObject).trigger('h5pQuestionAnswered');
         }
       });
+    }
+
+    // Add buttons
+    for (var i = 0; i < buttons.length; i++) {
+      addElement($panel, 'h5p-button h5p-solutions-button h5p-hidden-solution-btn', buttons[i]);
+      // h5p-hidden-solution-btn gets hidden if parent activates the solutions
+      // h5p-show-solutions can't be used for this since styling might be applied to it
     }
 
     $answerPanel = addElement($wrapper, 'h5p-answer-panel', {
