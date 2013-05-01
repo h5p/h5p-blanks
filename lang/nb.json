@@ -1,26 +1,28 @@
-[
-  {
-    "label": "Oppgavetekst",
-    "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
-  },
-  {
-    "label": "Spørsmål",
-    "field": {
-      "label": "Tekstlinje",
-      "description": "Åpne felter legges til med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternative svar angis med en skråstrek / mellom. Eksempel: H5P innhold kan redigeres med en *nettleser/nett-leser*."
+{
+  "semantics": [
+    {
+      "label": "Oppgavetekst",
+      "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
+    },
+    {
+      "label": "Spørsmål",
+      "field": {
+        "label": "Tekstlinje",
+        "description": "Åpne felter legges til med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternative svar angis med en skråstrek / mellom. Eksempel: H5P innhold kan redigeres med en *nettleser/nett-leser*."
+      }
+    },
+    {
+      "label": "Tilbakemeldinger",
+      "default": "Du fikk @score av @total felter rett.",
+      "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total felter rett.'"
+    },
+    {
+      "label": "Tekst for \"Vis fasit\" knapp",
+      "default": "Vis fasit"
+    },
+    {
+      "label": "Tekst for \"Lukk\" knapp",
+      "default": "Lukk"
     }
-  },
-  {
-    "label": "Tilbakemeldinger",
-    "default": "Du fikk @score av @total felter rett.",
-    "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total felter rett.'"
-  },
-  {
-    "label": "Tekst for \"Vis fasit\" knapp",
-    "default": "Vis fasit"
-  },
-  {
-    "label": "Tekst for \"Lukk\" knapp",
-    "default": "Lukk"
-  }
-]
+  ]
+}
