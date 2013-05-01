@@ -37,6 +37,9 @@ H5P.Blanks = function (options, contentId) {
     var score = 0;
     $panel.find('.h5p-blanks-question').each(function (idx, el) {
       var $input = $(el).find('input');
+      if ($input.length === 0) {
+        return true;
+      }
       var answer = that.options.questions[idx].replace(/^.*?\*([^*]+)\*.*$/, '$1').trim().split('/');
       for (var i = 0; i < answer.length; i++) {
         var userAnswer = $input.val().trim();
@@ -55,9 +58,13 @@ H5P.Blanks = function (options, contentId) {
     $answerPanel.animate({ top: '0%' }, 'slow');
 
     $panel.find('.h5p-blanks-question').each(function (idx, el) {
+      var $input = $(el).find('input');
+      if ($input.length === 0) {
+        return true;
+      }
       var answer = that.options.questions[idx].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim().split('/');
       var list = that.options.questions[idx].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim();
-      var userAnswer = $(el).find('input').val().trim();
+      var userAnswer = $input.val().trim();
       var correct = 0;
       for (var i = 0; i < answer.length; i++) {
         if (userAnswer === answer[i]) {
