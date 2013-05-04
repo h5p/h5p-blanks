@@ -8,13 +8,14 @@
   {
     "name": "questions",
     "type": "list",
-    "label": "Questions",
-    "entity": "question",
+    "label": "Lines of text",
+    "entity": "line of text",
     "max": 100,
     "field": {
       "name": "question",
       "type": "text",
       "label": "Line of text",
+      "placeholder": "Oslo is the capital of *Norway*.",
       "description": "Blanks are added with an asterix * infront and behind the correct word/phrase. Alternative answers are separated with a slash /. Example: H5P content may be edited using a *browser/web-browser*."
     }
   },

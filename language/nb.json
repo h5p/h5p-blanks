@@ -5,10 +5,11 @@
       "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
     },
     {
-      "label": "Spørsmål",
-      "entity": "spørsmål",
+      "label": "Tekstlinjer",
+      "entity": "tekstlinje",
       "field": {
         "label": "Tekstlinje",
+        "placeholder": "Oslo er hovedstaden i *Norge*",
         "description": "Åpne felter legges til med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternative svar angis med en skråstrek / mellom. Eksempel: H5P innhold kan redigeres med en *nettleser/nett-leser*."
       }
     },
