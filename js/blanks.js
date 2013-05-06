@@ -5,6 +5,7 @@ H5P.Blanks = function (options, contentId) {
   var $panel;
   var $answerPanel;
   var $ = H5P.jQuery;
+  var userAnswers = [];
 
   this.options = H5P.jQuery.extend({}, {
     text: "Fill in",
@@ -21,31 +22,18 @@ H5P.Blanks = function (options, contentId) {
   }
 
   var getAnswerGiven = function () {
-    var $blanks = $panel.find('.h5p-blanks-input');
-    var total = $blanks.length;
-    var answers = 0;
-    $blanks.each(function (idx, el) {
-      var userAnswer = $(el).val().trim();
-      if (userAnswer !== '') {
-        answers++;
-      }
-    });
-    return answers === total;
+    return userAnswers.length === $panel.find('.h5p-blanks-input').length;
   };
 
   var getScore = function () {
     var score = 0;
-    $panel.find('.h5p-blanks-question').each(function (idx, el) {
-      var $input = $(el).find('input');
-      if ($input.length === 0) {
-        return true;
+    for (var i = 0; i < userAnswers.length; i++) {
+      var answer = that.options.questions[i].replace(/^.*?\*([^*]+)\*.*$/, '$1').trim().split('/');
+      for (var j = 0; j < answer.length; j++) {
+        var userAnswer = userAnswers[i];
+        score += userAnswer === answer[j].trim() ? 1 : 0;
       }
-      var answer = that.options.questions[idx].replace(/^.*?\*([^*]+)\*.*$/, '$1').trim().split('/');
-      for (var i = 0; i < answer.length; i++) {
-        var userAnswer = $input.val().trim();
-        score += userAnswer === answer[i].trim() ? 1 : 0;
-      }
-    });
+    }
     return score;
   };
 
@@ -130,13 +118,18 @@ H5P.Blanks = function (options, contentId) {
 
     // Add questions
     for (var i = 0; i < that.options.questions.length; i++) {
-      var input = '<input class="h5p-blanks-input" type="text"/>';
+      var input = '<input class="h5p-blanks-input" type="text" value="' + (userAnswers[i] === undefined ? '' : userAnswers[i]) + '"/>';
       var text = that.options.questions[i].replace(/\*[^\*]+\*/, input);
       var $element = addElement($panel, 'h5p-blanks-question', { text: text });
       if (!i) {
         $element.focus();
       }
-      $element.find('input').blur(function() {
+      $element.find('input').data('i', i).blur(function() {
+        var $this = $(this);
+        var ans = $this.val().trim();
+        if (ans) {
+          userAnswers[$this.data('i')] = ans;
+        }
         if (getAnswerGiven()) {
           $(returnObject).trigger('h5pQuestionAnswered');
         }
