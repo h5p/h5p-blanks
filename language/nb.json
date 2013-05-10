@@ -1,4 +1,4 @@
-{
+﻿{
   "semantics": [
     {
       "label": "Oppgavetekst",
@@ -10,8 +10,7 @@
       "field": {
         "label": "Tekstlinje",
         "placeholder": "Oslo er hovedstaden i *Norge*",
-        "description": "Åpne felter legges til med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternative svar angis med en skråstrek / mellom. Eksempel: H5P innhold kan redigeres med en *nettleser/nett-leser*."
-      }
+        "description": "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternativer angis med en skråstrek: *Norge/Noreg*.      }
     },
     {
       "label": "Tilbakemeldinger",
