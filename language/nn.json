@@ -1,4 +1,4 @@
-﻿{
+{
   "semantics": [
     {
       "label": "Oppgåvetekst",
@@ -10,7 +10,7 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "Åpne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*.
+        "description": "Åpne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*."
       }
     },
     {
