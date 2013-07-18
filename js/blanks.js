@@ -65,16 +65,15 @@ H5P.Blanks = function (options, contentId) {
       addElement($answerPanel, 'h5p-answer-question', {text: text});
     });
     var score = that.options.score.replace('@score', getScore()).replace('@total', getMaxScore());
-    addElement($answerPanel, 'h5p-score', { text: score });
-    addElement($answerPanel, 'h5p-button', { text: that.options.close, click: hideAnswer });
+    addElement($answerPanel, 'h5p-score', {
+      text: score
+    });
+    addElement($answerPanel, '', {
+      text: '<input type="button" class="h5p-button" value="' + that.options.close + '"/>',
+      click: hideAnswer
+    });
+    $('.h5p-button', $answerPanel).focus();
   };
-
-  var buttons = Array(
-    {
-      text: this.options.showSolutions,
-      click: showSolutions
-    }
-  );
 
   function addElement(container, className, el) {
     var text = el.text ? el.text : '';
@@ -116,12 +115,35 @@ H5P.Blanks = function (options, contentId) {
     $panel = $('<div class="blanks-panel"></div>').appendTo($wrapper);
     $panel.append('<h2>' + that.options.text + '</h2>');
 
+    var $form = $('<form action="#"/>')
+      .appendTo($panel)
+      .on('submit', function (event) {
+        var $form = $(this);
+        // If all fields answered show solutions.
+        var allFilled = true;
+        $('.h5p-blanks-missing-input', $form).removeClass('h5p-blanks-missing-input');
+        $('.h5p-blanks-input', $form).each(function(idx, el) {
+          if (! $(el).val()) {
+            allFilled = false;
+            $(el).addClass('h5p-blanks-missing-input');
+          }
+        });
+        if (allFilled) {
+          showSolutions();
+        }
+        else {
+          $('.h5p-blanks-missing-input', $form).first().focus();
+        }
+        // Don't actually submit, ever.
+        return false;
+      });
+
     // Add questions
     for (var i = 0; i < that.options.questions.length; i++) {
       var input = '<input class="h5p-blanks-input" type="text" value="' + (userAnswers[i] === undefined ? '' : userAnswers[i]) + '"/>';
       var text = that.options.questions[i].replace(/\*[^\*]+\*/, input);
-      var $element = addElement($panel, 'h5p-blanks-question', { text: text });
-      if (!i) {
+      var $element = addElement($form, 'h5p-blanks-question', { text: text });
+      if (i === 0) {
         $element.focus();
       }
       $element.find('input').data('i', i).blur(function() {
@@ -136,12 +158,10 @@ H5P.Blanks = function (options, contentId) {
       });
     }
 
-    // Add buttons
-    for (var i = 0; i < buttons.length; i++) {
-      addElement($panel, 'h5p-button h5p-solutions-button h5p-hidden-solution-btn', buttons[i]);
-      // h5p-hidden-solution-btn gets hidden if parent activates the solutions
-      // h5p-show-solutions can't be used for this since styling might be applied to it
-    }
+    // Add button
+    addElement($form, 'h5p-solutions-button h5p-hidden-solution-btn', {
+      text: '<input class="h5p-button" type="submit" value="' + that.options.showSolutions + '" />'
+    });
 
     $answerPanel = addElement($wrapper, 'h5p-answer-panel', {
       top: '-100%',
