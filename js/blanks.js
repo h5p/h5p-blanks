@@ -1,11 +1,12 @@
 var H5P = H5P || {};
 
 H5P.Blanks = function (options, contentId) {
-  var that = this;
-  var $panel;
-  var $answerPanel;
-  var $ = H5P.jQuery;
-  var userAnswers = [];
+  var that = this,
+    $ = H5P.jQuery,
+    $panel,
+    $answerPanel,
+    $submitbutton,
+    userAnswers = [];
 
   this.options = H5P.jQuery.extend({}, {
     text: "Fill in",
@@ -129,7 +130,9 @@ H5P.Blanks = function (options, contentId) {
           }
         });
         if (allFilled) {
-          showSolutions();
+          if ($('.h5p-button', $submitbutton).is(':visible')) {
+            showSolutions();
+          }
         }
         else {
           $('.h5p-blanks-missing-input', $form).first().focus();
@@ -159,7 +162,7 @@ H5P.Blanks = function (options, contentId) {
     }
 
     // Add button
-    addElement($form, 'h5p-solutions-button h5p-hidden-solution-btn', {
+    $submitbutton = addElement($form, 'h5p-solutions-button h5p-hidden-solution-btn', {
       text: '<input class="h5p-button" type="submit" value="' + that.options.showSolutions + '" />'
     });
 
