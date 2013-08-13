@@ -149,7 +149,7 @@ H5P.Blanks = function (options, contentId) {
       if (i === 0) {
         $element.focus();
       }
-      $element.find('input').data('i', i).blur(function() {
+      $element.find('input').data('i', i).on('change keyup', function() {
         var $this = $(this);
         var ans = $this.val().trim();
         if (ans) {
