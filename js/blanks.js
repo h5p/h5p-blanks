@@ -74,8 +74,18 @@ H5P.Blanks = (function ($) {
         if (first !== -1) {
           var second = question.indexOf('*', first + 1);
           if (second !== -1) {
-            answers.push(question.substring(first + 1, second));
-            question = question.slice(0, first) + '<input type="text" class="h5p-text-input" style="width:' + (answers[answers.length - 1].length * 0.8) + 'em">' + question.slice(second + 1);
+            var answer = question.substring(first + 1, second);
+            var correctAnswers = answer.split('/');
+            var width = 0;
+
+            for (var j = 0; j < correctAnswers.length; j++) {
+              correctAnswers[j] = H5P.trim(correctAnswers[j]);
+              if (correctAnswers[j].length > width) {
+                width = correctAnswers[j].length;
+              }
+            }
+            answers.push(correctAnswers);
+            question = question.slice(0, first) + '<input type="text" class="h5p-text-input" style="width:' + (width * 0.8) + 'em">' + question.slice(second + 1);
           }
         }
       } while (first !== -1 && second !== -1);
@@ -112,7 +122,7 @@ H5P.Blanks = (function ($) {
           $('<span class="h5p-correct-answer">&#x2713; </span>').insertBefore($input.addClass('h5p-correct'));
         }
         else {
-          $('<span class="h5p-correct-answer"> ' + this.answers[i][j] + '</span>').insertAfter($input.addClass('h5p-wrong'));
+          $('<span class="h5p-correct-answer"> ' + this.answers[i][j].join('/') + '</span>').insertAfter($input.addClass('h5p-wrong'));
         }
       }
     }
@@ -181,7 +191,15 @@ H5P.Blanks = (function ($) {
     if (answer === '') {
       return null;
     }
-    return answer === H5P.trim(this.answers[block][question]);
+
+    var correctAnswers = this.answers[block][question];
+    for (var i = 0; i < correctAnswers.length; i++) {
+      if (answer === correctAnswers[i]) {
+        return true;
+      }
+    }
+
+    return false;
   };
 
   /**
