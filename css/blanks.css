@@ -3,59 +3,37 @@
   background-color: #F5F5F5;
   overflow: hidden;
 }
-.h5p-blanks .blanks-panel {
+.h5p-blanks .h5p-inner {
   overflow: hidden;
   padding: 1em;
 }
-.h5p-blanks .h5p-answer-panel {
-  display: block;
-  position: absolute;
-  background-color: #EEEEEE;
-  z-index: 1;
+.h5p-blanks .h5p-text-input {
+  font-size: 1em;
+  border-radius: 0.25em;
+  border: 0.0625em solid #a0a0a0;
+  padding: 0.25em 0.5em;
+  width: 8em;
 }
-.h5p-blanks .h5p-answer-panel .h5p-score {
-  padding-left: 1.5em;
+.h5p-blanks .h5p-text-input:focus {
+  outline: none;
+  box-shadow: 0 0 0.5em 0 #7fb8ff;
+  border-color: #7fb8ff;
 }
-.h5p-blanks .h5p-answer-question {
-  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-  background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-  background-color: #ededed;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #dcdcdc;
-  color: #777777;
-  font-family: arial;
-  font-size: 0.875em;
-  font-weight: bold;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px #ffffff;
-  margin: 0.4em;
+.h5p-blanks .h5p-text-input.h5p-not-filled-out {
+  background: #fff0f0;
+}
+.h5p-blanks .h5p-text-input.h5p-correct, .h5p-blanks .h5p-correct-answer {
+  color: green;
 }
 .h5p-blanks .h5p-correct-answer {
-  color: green;
+  font-weight: bold;
 }
-.h5p-blanks .h5p-answer-list {
-  color: green;
-}
-.h5p-blanks .h5p-wrong-answer {
-  text-decoration: line-through;
+.h5p-blanks .h5p-text-input.h5p-wrong {
   color: red;
+  text-decoration: line-through;
 }
-
-.h5p-blanks .h5p-blanks-panel {
-  overflow: hidden;
-  position: relative;
-  padding: 1.5em;
-  padding-bottom: 5em;
-}
-.h5p-blanks .h5p-blanks-question {
-  padding-top: 1em;
+.h5p-blanks .h5p-inner > p {
+  margin: 1em 0 0 0;
   font-size: 1em;
 }
 .h5p-blanks .h5p-button {
@@ -70,7 +48,7 @@
   border: 1px solid #808080;
   border-radius: 4px;
 
-  background: #ffffff; /* Old browsers */
+  background: #ffffff;
   background: -moz-linear-gradient(top,  #ffffff 0%, #e0e0e0 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
@@ -78,12 +56,9 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#e0e0e0 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-  bottom: 0.8em;
-  right: 0.8em;
-  margin-top: 0.8em;
 }
 .h5p-blanks .h5p-button:hover {
-  background: #dddddd; /* Old browsers */
+  background: #dddddd;
   background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Chrome10+,Safari5.1+ */
@@ -91,18 +66,4 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
-}
-.h5p-blanks .h5p-answer-panel .h5p-button {
-  margin: 0.8em;
-}
-
-.h5p-blanks input.h5p-blanks-input {
-  width: 7em;
-  font-size: 1em;
-}
-
-.h5p-blanks-missing-input {
-  -webkit-box-shadow: inset 0 0 2px 0 red;
-  -moz-box-shadow: inset 0 0 2px 0 red;
-  box-shadow: inset 0 0 2px 0 red;
 }

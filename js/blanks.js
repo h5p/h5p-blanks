@@ -1,188 +1,197 @@
 var H5P = H5P || {};
 
-H5P.Blanks = function (options, contentId) {
-  var that = this,
-    $ = H5P.jQuery,
-    $panel,
-    $answerPanel,
-    $submitbutton,
-    userAnswers = [];
+/**
+ * Blanks(cloze text) module
+ *
+ * @param {jQuery} $
+ */
+H5P.Blanks = (function ($) {
 
-  this.options = H5P.jQuery.extend({}, {
-    text: "Fill in",
-    questions: [
-      "2 + 2 = *4*"
-    ],
-    score: "You got @score of @total points.",
-    showSolutions: "Show solutions",
-    close: "Close"
-  }, options);
+  /**
+   * Initialize module.
+   *
+   * @param {Object} options Run parameters
+   * @param {Number} id Content identification
+   */
+  function C(options, id) {
+    this.tryAgain = true;
 
-  if (!this instanceof H5P.Blanks){
-    return new H5P.Blanks(options, contentId);
-  }
+    this.answers = [];
+    this.$inputs = [];
 
-  var getAnswerGiven = function () {
-    return userAnswers.length === $panel.find('.h5p-blanks-input').length;
+    // Set options with defaults.
+    this.options = H5P.jQuery.extend({}, {
+      text: "Fill in",
+      questions: [
+        "2 + 2 = *4*"
+      ],
+      score: "You got @score of @total points.",
+      showSolutions: "Show solutions",
+      tryAgain: "Try again"
+    }, options);
   };
 
-  var getScore = function () {
-    var score = 0;
-    for (var i = 0; i < userAnswers.length; i++) {
-      var answer = that.options.questions[i].replace(/^.*?\*([^*]+)\*.*$/, '$1').trim().split('/');
-      for (var j = 0; j < answer.length; j++) {
-        var userAnswer = userAnswers[i];
-        score += userAnswer === answer[j].trim() ? 1 : 0;
+  /**
+   * Append field to wrapper.
+   *
+   * @param {jQuery} $container
+   */
+  C.prototype.attach = function ($container) {
+    var that = this;
+
+    var $inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><h2>' + this.options.text + '</h2></div>').children();
+    this.appendQuestionsTo($inner);
+
+    // Add "show solutions" button.
+    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.showSolutions + '"/>').appendTo($inner).click(function () {
+      if ($button.hasClass('h5p-try-again')) {
+        $button.val(that.options.showSolutions).removeClass('h5p-try-again');
+        that.hideSolutions();
       }
-    }
-    return score;
-  };
-
-  var getMaxScore = function () {
-    return $panel.find('.h5p-blanks-input').length;
-  };
-
-  var showSolutions = function () {
-    $answerPanel.html('');
-    $answerPanel.animate({ top: '0%' }, 'slow');
-
-    $panel.find('.h5p-blanks-question').each(function (idx, el) {
-      var $input = $(el).find('input');
-      if ($input.length === 0) {
-        return true;
-      }
-      var answer = that.options.questions[idx].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim().split('/');
-      var list = that.options.questions[idx].replace(/^.*?\*([^\*]+)\*.*$/, '$1').trim();
-      var userAnswer = $input.val().trim();
-      var correct = 0;
-      for (var i = 0; i < answer.length; i++) {
-        if (userAnswer === answer[i]) {
-          correct = 1;
-          break;
-        }
-      }
-      var replace = correct ? '<span class="h5p-correct-answer"><b>✓ ' + userAnswer + '</b></span>' : ' <span class="h5p-wrong-answer">' + userAnswer + '</span> <span class="h5p-answer-list">' + list + '</span>';
-      var text = that.options.questions[idx].replace(/\*[^\*]+\*/, replace);
-      addElement($answerPanel, 'h5p-answer-question', {text: text});
-    });
-    var score = that.options.score.replace('@score', getScore()).replace('@total', getMaxScore());
-    addElement($answerPanel, 'h5p-score', {
-      text: score
-    });
-    addElement($answerPanel, '', {
-      text: '<input type="button" class="h5p-button" value="' + that.options.close + '"/>',
-      click: hideAnswer
-    });
-    $('.h5p-button', $answerPanel).focus();
-  };
-
-  function addElement(container, className, el) {
-    var text = el.text ? el.text : '';
-    var $el = $('<div class="' + className + '">' + text + '</div>');
-    container.append($el);
-    if (el.top) {
-      $el.css({ top: el.top});
-    }
-    if (el.left) {
-      $el.css({ left: el.left});
-    }
-    if (el.right) {
-      $el.css({ right: el.right});
-    }
-    if (el.bottom) {
-      $el.css({ bottom: el.bottom});
-    }
-    if (el.height) {
-      $el.css({ height: el.height });
-    }
-    if (el.width) {
-      $el.css({ width: el.width });
-    }
-    if (el.click) {
-      $el.click(el.click);
-    }
-    return $el;
-  }
-
-  var hideAnswer = function () {
-    $answerPanel.animate({
-      top: '-100%'
-    }, 'slow');
-  };
-
-  var attach = function ($wrapper) {
-    $wrapper.html('').addClass('h5p-blanks');
-
-    $panel = $('<div class="blanks-panel"></div>').appendTo($wrapper);
-    $panel.append('<h2>' + that.options.text + '</h2>');
-
-    var $form = $('<form action="#"/>')
-      .appendTo($panel)
-      .on('submit', function (event) {
-        var $form = $(this);
-        // If all fields answered show solutions.
-        var allFilled = true;
-        $('.h5p-blanks-missing-input', $form).removeClass('h5p-blanks-missing-input');
-        $('.h5p-blanks-input', $form).each(function(idx, el) {
-          if (! $(el).val()) {
-            allFilled = false;
-            $(el).addClass('h5p-blanks-missing-input');
-          }
-        });
-        if (allFilled) {
-          if ($('.h5p-button', $submitbutton).is(':visible')) {
-            showSolutions();
-          }
+      else if (that.showSolutions()) {
+        if (that.tryAgain) {
+          $button.val(that.options.tryAgain).addClass('h5p-try-again');
         }
         else {
-          $('.h5p-blanks-missing-input', $form).first().focus();
+          $button.remove();
         }
-        // Don't actually submit, ever.
-        return false;
-      });
-
-    // Add questions
-    for (var i = 0; i < that.options.questions.length; i++) {
-      var input = '<input class="h5p-blanks-input" type="text" value="' + (userAnswers[i] === undefined ? '' : userAnswers[i]) + '"/>';
-      var text = that.options.questions[i].replace(/\*[^\*]+\*/, input);
-      var $element = addElement($form, 'h5p-blanks-question', { text: text });
-      if (i === 0) {
-        $element.focus();
       }
-      $element.find('input').data('i', i).on('change keyup', function() {
-        var $this = $(this);
-        var ans = $this.val().trim();
-        if (ans) {
-          userAnswers[$this.data('i')] = ans;
+    });
+  };
+
+  /**
+   * Append questitons to the given container.
+   *
+   * @param {jQuery} $container
+   */
+  C.prototype.appendQuestionsTo = function ($container) {
+    for (var i = 0; i < this.options.questions.length; i++) {
+      var question = this.options.questions[i];
+      var answers = this.answers[i] = [];
+
+      do {
+        var first = question.indexOf('*');
+        if (first !== -1) {
+          var second = question.indexOf('*', first + 1);
+          if (second !== -1) {
+            answers.push(question.substring(first + 1, second));
+            question = question.slice(0, first) + '<input type="text" class="h5p-text-input" style="width:' + (answers[answers.length - 1].length * 0.8) + 'em">' + question.slice(second + 1);
+          }
         }
-        if (getAnswerGiven()) {
-          $(returnObject).trigger('h5pQuestionAnswered');
+      } while (first !== -1 && second !== -1);
+
+      var $inputs = this.$inputs[i] = [];
+      $(question).appendTo($container).find('input').keydown(function (event) {
+        if (event.keyCode === 13) {
+          return false; // Prevent form submission on enter key
         }
+        $(this).removeClass('h5p-not-filled-out');
+      }).each(function () {
+        $inputs.push($(this));
       });
     }
-
-    // Add button
-    $submitbutton = addElement($form, 'h5p-solutions-button h5p-hidden-solution-btn', {
-      text: '<input class="h5p-button" type="submit" value="' + that.options.showSolutions + '" />'
-    });
-
-    $answerPanel = addElement($wrapper, 'h5p-answer-panel', {
-      top: '-100%',
-      height: '100%',
-      width: '100%'
-    });
-
-    return this;
   };
 
-  var returnObject = {
-    attach: attach,
-    machineName: 'H5P.Blanks',
-    getScore: getScore,
-    getAnswerGiven: getAnswerGiven,
-    getMaxScore: getMaxScore,
-    showSolutions: showSolutions
+  /**
+   * Display the correct solution for the input boxes.
+   */
+  C.prototype.showSolutions = function () {
+    var missingFields = false;
+    for (var i = 0; i < this.$inputs.length; i++) {
+      for (var j = 0; j < this.$inputs[i].length; j++) {
+        var $input = this.$inputs[i][j].attr('disabled', true);
+        var correct = this.correctAnswer(i, j);
+        if (correct === null) {
+          if (!missingFields) {
+            missingFields = true;
+            C.setFocus($input);
+          }
+          $input.addClass('h5p-not-filled-out');
+        }
+        else if (correct) {
+          $('<span class="h5p-correct-answer">&#x2713; </span>').insertBefore($input.addClass('h5p-correct'));
+        }
+        else {
+          $('<span class="h5p-correct-answer"> ' + this.answers[i][j] + '</span>').insertAfter($input.addClass('h5p-wrong'));
+        }
+      }
+    }
+    if (missingFields) {
+      this.hideSolutions();
+    }
+    return !missingFields;
   };
 
-  return returnObject;
-};
+  /**
+   * Hide solutions. (/try again)
+   */
+  C.prototype.hideSolutions = function () {
+    for (var i = 0; i < this.$inputs.length; i++) {
+      for (var j = 0; j < this.$inputs[i].length; j++) {
+        var $input = this.$inputs[i][j].attr('disabled', false);
+        if ($input.hasClass('h5p-correct')) {
+          $input.removeClass('h5p-correct').prev('.h5p-correct-answer').remove();
+        }
+        else {
+          $input.removeClass('h5p-wrong').next('.h5p-correct-answer').remove();
+        }
+      }
+    }
+  };
+
+  /**
+   * Get maximum number of correct answers.
+   *
+   * @returns {Number} Max points
+   */
+  C.prototype.getMaxScore = function () {
+    var max = 0;
+    for (var i = 0; i < this.$inputs.length; i++) {
+      max += this.$inputs[i].length;
+    }
+
+    return max;
+  };
+
+  /**
+   * Count the number of correct answers.
+   *
+   * @returns {Number} Points
+   */
+  C.prototype.getScore = function () {
+    var correct = 0;
+    for (var i = 0; i < this.$inputs.length; i++) {
+      for (var j = 0; j < this.$inputs[i].length; j++) {
+        if (this.correctAnswer(i, j)) {
+          correct++;
+        }
+      }
+    }
+
+    return correct;
+  };
+
+  /**
+   * Check if the answer is correct.
+   *
+   * @returns {Boolean} Null means no answer.
+   */
+  C.prototype.correctAnswer = function (block, question) {
+    var answer = H5P.trim(this.$inputs[block][question].val());
+    if (answer === '') {
+      return null;
+    }
+    return answer === H5P.trim(this.answers[block][question]);
+  };
+
+  /**
+   * Helps set focus the given input field.
+   */
+  C.setFocus = function ($input) {
+    setTimeout(function () {
+      $input.focus();
+    }, 1);
+  };
+
+  return C;
+})(H5P.jQuery);
