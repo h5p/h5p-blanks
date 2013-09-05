@@ -91,7 +91,7 @@ H5P.Blanks = (function ($) {
       } while (first !== -1 && second !== -1);
 
       var $inputs = this.$inputs[i] = [];
-      $(question).appendTo($container).find('input').keydown(function (event) {
+      $('<div>' + question + '</div>').appendTo($container).find('input').keydown(function (event) {
         if (event.keyCode === 13) {
           return false; // Prevent form submission on enter key
         }
