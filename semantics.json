@@ -48,5 +48,13 @@
     "type": "text",
     "default": "Close",
     "common": true
+  },
+  {
+    "name": "tryAgain",
+    "type": "text",
+    "label": "Try again button",
+    "default": "Try again",
+    "common": true,
+    "optional": true
   }
 ]

@@ -29,6 +29,8 @@ H5P.Blanks = (function ($) {
       showSolutions: "Show solutions",
       tryAgain: "Try again"
     }, options);
+
+    this.displayingSolution = false;
   };
 
   /**
@@ -43,17 +45,30 @@ H5P.Blanks = (function ($) {
     this.appendQuestionsTo($inner);
 
     // Add "show solutions" button.
-    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.showSolutions + '"/>').appendTo($inner).click(function () {
-      if ($button.hasClass('h5p-try-again')) {
-        $button.val(that.options.showSolutions).removeClass('h5p-try-again');
+    this.$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.showSolutions + '"/>').appendTo($inner).click(function () {
+      if (that.$solutionButton.hasClass('h5p-try-again')) {
         that.hideSolutions();
       }
-      else if (that.showSolutions()) {
-        if (that.tryAgain) {
-          $button.val(that.options.tryAgain).addClass('h5p-try-again');
+      else {
+        var missingFields = false;
+        for (var i = 0; i < that.$inputs.length; i++) {
+          for (var j = 0; j < that.$inputs[i].length; j++) {
+            var $input = that.$inputs[i][j];
+
+            if (H5P.trim($input.val()) === '') {
+              if (!missingFields) {
+                missingFields = true;
+                C.setFocus($input);
+              }
+              $input.addClass('h5p-not-filled-out');
+            }
+          }
+        }
+        if (missingFields) {
+          that.hideSolutions();
         }
         else {
-          $button.remove();
+          that.showSolutions();
         }
       }
     });
@@ -106,19 +121,21 @@ H5P.Blanks = (function ($) {
    * Display the correct solution for the input boxes.
    */
   C.prototype.showSolutions = function () {
-    var missingFields = false;
+    if (this.displayingSolution) {
+      return;
+    }
+
+    if (this.tryAgain) {
+      this.$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
+    }
+    else {
+      this.$solutionButton.remove();
+    }
+
     for (var i = 0; i < this.$inputs.length; i++) {
       for (var j = 0; j < this.$inputs[i].length; j++) {
         var $input = this.$inputs[i][j].attr('disabled', true);
-        var correct = this.correctAnswer(i, j);
-        if (correct === null) {
-          if (!missingFields) {
-            missingFields = true;
-            C.setFocus($input);
-          }
-          $input.addClass('h5p-not-filled-out');
-        }
-        else if (correct) {
+        if (this.correctAnswer(i, j)) {
           $('<span class="h5p-correct-answer">&#x2713; </span>').insertBefore($input.addClass('h5p-correct'));
         }
         else {
@@ -126,16 +143,14 @@ H5P.Blanks = (function ($) {
         }
       }
     }
-    if (missingFields) {
-      this.hideSolutions();
-    }
-    return !missingFields;
+    this.displayingSolution = true;
   };
 
   /**
    * Hide solutions. (/try again)
    */
   C.prototype.hideSolutions = function () {
+    this.$solutionButton.val(this.options.showSolutions).removeClass('h5p-try-again');
     for (var i = 0; i < this.$inputs.length; i++) {
       for (var j = 0; j < this.$inputs[i].length; j++) {
         var $input = this.$inputs[i][j].attr('disabled', false);
@@ -147,6 +162,7 @@ H5P.Blanks = (function ($) {
         }
       }
     }
+    this.displayingSolution = false;
   };
 
   /**
@@ -184,14 +200,12 @@ H5P.Blanks = (function ($) {
   /**
    * Check if the answer is correct.
    *
-   * @returns {Boolean} Null means no answer.
+   * @param {Number} block
+   * @param {Number} question
+   * @returns {Boolean}
    */
   C.prototype.correctAnswer = function (block, question) {
     var answer = H5P.trim(this.$inputs[block][question].val());
-    if (answer === '') {
-      return null;
-    }
-
     var correctAnswers = this.answers[block][question];
     for (var i = 0; i < correctAnswers.length; i++) {
       if (answer === correctAnswers[i]) {
@@ -204,6 +218,7 @@ H5P.Blanks = (function ($) {
 
   /**
    * Helps set focus the given input field.
+   * @param {jQuery} $input
    */
   C.setFocus = function ($input) {
     setTimeout(function () {
