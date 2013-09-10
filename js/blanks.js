@@ -14,8 +14,6 @@ H5P.Blanks = (function ($) {
    * @param {Number} id Content identification
    */
   function C(options, id) {
-    this.tryAgain = true;
-
     this.answers = [];
     this.$inputs = [];
 
@@ -27,9 +25,11 @@ H5P.Blanks = (function ($) {
       ],
       score: "You got @score of @total points.",
       showSolutions: "Show solutions",
-      tryAgain: "Try again"
+      tryAgain: "Try again",
+      enableTryAgain: true
     }, options);
 
+    this.tryAgain = this.options.enableTryAgain;
     this.displayingSolution = false;
   };
 

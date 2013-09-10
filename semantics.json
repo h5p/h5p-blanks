@@ -56,5 +56,12 @@
     "default": "Try again",
     "common": true,
     "optional": true
+  },
+  {
+    "name": "enableTryAgain",
+    "type": "boolean",
+    "label": "Enable try again button",
+    "default": true,
+    "optional": true
   }
 ]
