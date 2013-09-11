@@ -32,9 +32,26 @@
   color: red;
   text-decoration: line-through;
 }
-.h5p-blanks .h5p-inner > p {
-  margin: 1em 0 0 0;
+.h5p-blanks .h5p-inner p {
   font-size: 1em;
+  font-weight: normal;
+  line-height: 1.25em;
+  padding: 0;
+  margin: 0 0 1em;
+}
+.h5p-blanks .h5p-inner h2 {
+  font-size: 1.667em;
+  font-weight: bold;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0 0 0.5em;
+}
+.h5p-blanks .h5p-inner h3 {
+  font-size: 1.333em;
+  font-weight: bold;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0 0 0.5em;
 }
 .h5p-blanks .h5p-button {
   float: right;
