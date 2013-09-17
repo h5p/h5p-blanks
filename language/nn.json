@@ -25,6 +25,13 @@
     {
       "label": "Tekst for \"Lukk\" knapp",
       "default": "Lukk"
+    },
+    {
+      "label": "«Prøv igjen»-knapp",
+      "default": "Prøv igjen"
+    },
+    {
+      "label": "Aktiver «Prøv igjen»-knapp"
     }
   ]
 }
