@@ -100,7 +100,7 @@ H5P.Blanks = (function ($) {
               }
             }
             answers.push(correctAnswers);
-            question = question.slice(0, first) + '<input type="text" class="h5p-text-input" style="width:' + (width * 0.8) + 'em">' + question.slice(second + 1);
+            question = question.slice(0, first) + '<input type="text" class="h5p-text-input">' + question.slice(second + 1);
           }
         }
       } while (first !== -1 && second !== -1);
