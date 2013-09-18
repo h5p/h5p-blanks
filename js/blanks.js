@@ -217,6 +217,24 @@ H5P.Blanks = (function ($) {
   };
 
   /**
+   * Checks if all has been answered.
+   *
+   * @returns {Boolean}
+   */
+  C.prototype.getAnswerGiven = function () {
+    for (var i = 0; i < this.$inputs.length; i++) {
+      for (var j = 0; j < this.$inputs[i].length; j++) {
+        var $input = this.$inputs[i][j];
+
+        if (H5P.trim($input.val()) === '') {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  /**
    * Helps set focus the given input field.
    * @param {jQuery} $input
    */
