@@ -80,6 +80,8 @@ H5P.Blanks = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.appendQuestionsTo = function ($container) {
+    var that = this;
+
     for (var i = 0; i < this.options.questions.length; i++) {
       var question = this.options.questions[i];
       var answers = this.answers[i] = [];
@@ -113,6 +115,8 @@ H5P.Blanks = (function ($) {
         $(this).removeClass('h5p-not-filled-out');
       }).each(function () {
         $inputs.push($(this));
+      }).change(function () {
+        $(that).trigger('h5pQuestionAnswered');
       });
     }
   };
@@ -225,7 +229,6 @@ H5P.Blanks = (function ($) {
     for (var i = 0; i < this.$inputs.length; i++) {
       for (var j = 0; j < this.$inputs[i].length; j++) {
         var $input = this.$inputs[i][j];
-
         if (H5P.trim($input.val()) === '') {
           return false;
         }
