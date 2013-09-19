@@ -10,15 +10,15 @@ H5P.Blanks = (function ($) {
   /**
    * Initialize module.
    *
-   * @param {Object} options Run parameters
+   * @param {Object} params Behavior settings
    * @param {Number} id Content identification
+   * @returns {_L8.C}
    */
-  function C(options, id) {
-    this.answers = [];
-    this.$inputs = [];
+  function C(params, id) {
+    this.id = id;
 
-    // Set options with defaults.
-    this.options = H5P.jQuery.extend({}, {
+    // Set default behavior.
+    this.params = $.extend({}, {
       text: "Fill in",
       questions: [
         "2 + 2 = *4*"
@@ -26,10 +26,13 @@ H5P.Blanks = (function ($) {
       score: "You got @score of @total points.",
       showSolutions: "Show solutions",
       tryAgain: "Try again",
-      enableTryAgain: true
-    }, options);
+      enableTryAgain: true,
+      displaySolutionsButton: true,
+      postUserStatistics: (H5P.postUserStatistics === true)
+    }, params);
 
-    this.tryAgain = this.options.enableTryAgain;
+    this.answers = [];
+    this.$inputs = [];
     this.displayingSolution = false;
   };
 
@@ -39,14 +42,27 @@ H5P.Blanks = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
-    var that = this;
-
-    var $inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><h2>' + this.options.text + '</h2></div>').children();
-    this.appendQuestionsTo($inner);
+    this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><h2>' + this.params.text + '</h2></div>').children();
+    this.appendQuestionsTo(this._$inner);
 
     // Add "show solutions" button.
-    this.$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.showSolutions + '"/>').appendTo($inner).click(function () {
-      if (that.$solutionButton.hasClass('h5p-try-again')) {
+    if (this.params.displaySolutionsButton === true) {
+      this.addSolutionButton();
+    }
+  };
+
+  /**
+   * Add show solution button.
+   */
+  C.prototype.addSolutionButton = function () {
+    var that = this;
+
+    if (this._$solutionButton !== undefined) {
+      return;
+    }
+
+    this._$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.params.showSolutions + '"/>').appendTo(this._$inner).click(function () {
+      if (that._$solutionButton.hasClass('h5p-try-again')) {
         that.hideSolutions();
       }
       else {
@@ -69,6 +85,9 @@ H5P.Blanks = (function ($) {
         }
         else {
           that.showSolutions();
+          if (that.params.postUserStatistics) {
+            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+          }
         }
       }
     });
@@ -82,8 +101,8 @@ H5P.Blanks = (function ($) {
   C.prototype.appendQuestionsTo = function ($container) {
     var that = this;
 
-    for (var i = 0; i < this.options.questions.length; i++) {
-      var question = this.options.questions[i];
+    for (var i = 0; i < this.params.questions.length; i++) {
+      var question = this.params.questions[i];
       var answers = this.answers[i] = [];
 
       do {
@@ -129,11 +148,13 @@ H5P.Blanks = (function ($) {
       return;
     }
 
-    if (this.tryAgain) {
-      this.$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
-    }
-    else {
-      this.$solutionButton.remove();
+    if (this._$solutionButton !== undefined) {
+      if (this.params.enableTryAgain) {
+        this._$solutionButton.val(this.params.tryAgain).addClass('h5p-try-again');
+      }
+      else {
+        this._$solutionButton.remove();
+      }
     }
 
     for (var i = 0; i < this.$inputs.length; i++) {
@@ -154,7 +175,9 @@ H5P.Blanks = (function ($) {
    * Hide solutions. (/try again)
    */
   C.prototype.hideSolutions = function () {
-    this.$solutionButton.val(this.options.showSolutions).removeClass('h5p-try-again');
+    if (this._$solutionButton !== undefined) {
+      this._$solutionButton.val(this.params.showSolutions).removeClass('h5p-try-again');
+    }
     for (var i = 0; i < this.$inputs.length; i++) {
       for (var j = 0; j < this.$inputs[i].length; j++) {
         var $input = this.$inputs[i][j].attr('disabled', false);
