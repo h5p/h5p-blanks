@@ -23,15 +23,8 @@
       "default": "Vis svar"
     },
     {
-      "label": "Tekst for \"Lukk\" knapp",
-      "default": "Lukk"
-    },
-    {
-      "label": "«Prøv igjen»-knapp",
-      "default": "Prøv igjen"
-    },
-    {
-      "label": "Aktiver «Prøv igjen»-knapp"
+      "label": "Tekst for \"Skjul svar\" knapp",
+      "default": "Skjul svar"
     }
   ]
 }

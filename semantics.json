@@ -3,28 +3,20 @@
     "label": "Task description",
     "name": "text",
     "type": "text",
-    "description": "A guide telling the user how to answer this task."
+    "description": "A guide telling the user how to answer this task"
   },
   {
     "name": "questions",
     "type": "list",
-    "label": "Text blocks",
-    "entity": "text block",
-    "min": 1,
-    "max": 31,
+    "label": "Lines of text",
+    "entity": "line of text",
+    "max": 100,
     "field": {
       "name": "question",
       "type": "text",
-      "widget": "html",
-      "label": "Text",
+      "label": "Line of text",
       "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterix * infront and behind the correct word/phrase. Alternative answers are separated with a slash /. Example: H5P content may be edited using a *browser/web-browser*.",
-      "enterMode": "p",
-      "tags": [
-        "strong",
-        "em",
-        "del"
-      ]
+      "description": "Blanks are added with an asterix * infront and behind the correct word/phrase. Alternative answers are separated with a slash /. Example: H5P content may be edited using a *browser/web-browser*."
     }
   },
   {
@@ -43,25 +35,10 @@
     "common": true
   },
   {
-    "label": "Text for \"Close\" button",
-    "name": "close",
+    "label": "Text for \"Hide solutions\" button",
+    "name": "hideSolutions",
     "type": "text",
-    "default": "Close",
+    "default": "Hide solutions",
     "common": true
-  },
-  {
-    "name": "tryAgain",
-    "type": "text",
-    "label": "Try again button",
-    "default": "Try again",
-    "common": true,
-    "optional": true
-  },
-  {
-    "name": "enableTryAgain",
-    "type": "boolean",
-    "label": "Enable try again button",
-    "default": true,
-    "optional": true
   }
 ]

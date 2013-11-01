@@ -1,86 +1,234 @@
+/* IcoMoon font licensed under the GNU General Public License: http://www.gnu.org/licenses/gpl.html */
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .h5p-blanks {
   position: relative;
-  background-color: #F5F5F5;
+  background: rgba(255, 255, 255, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
   overflow: hidden;
+  font-family: Verdana, Arial, sans-serif;
 }
-.h5p-blanks .h5p-inner {
+
+.h5p-blanks .blanks-panel {
   overflow: hidden;
   padding: 1em;
 }
-.h5p-blanks .h5p-text-input {
+
+.h5p-blanks .blanks-intro {
+  border-bottom: 0.1em solid #ddd;
+  padding: 0 0 0.4em;
+}
+
+.h5p-blanks .h5p-answer-panel {
+  display: block;
+  position: absolute;
+  z-index: 1;  
+  border-radius: 0.5em;
+  border: 0.1em solid #ddd;
+  
+  background: #fff;  
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.h5p-blanks-evaluation-container {
+  float: left;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-max {
+  float: left;
+  margin-left: 5em;
+  display: block;
+  background: #eee;
+  padding: 1em;
+  border-radius: 0.6em;
+  position: relative;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score {
+  float: left;
+  margin-left: 5em;
+  display: block;
+  background: #eee;
+  padding: 1em;
+  border-radius: 0.6em;
+  position: relative;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #eee;
+  display: inline-block;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-max:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #eee;
+  display: inline-block;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-max-emoticon:before {
+  display: block;
+  font-family: IcoMoon;
+  content: "\e606";
+  font-size: 3em;
+  position: relative;
+  left: 0.3em;
+  top: 0.7em;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-emoticon:before {
+  display: block;
+  font-family: IcoMoon;
+  content: "\e605";  
+  font-size: 3em;
+  position: relative;
+  left: 0.3em;
+  top: 0.7em;
+}
+
+.h5p-blanks .h5p-answer-question-correct-answer {
+  background-color: #ededed;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  border: 0.1em solid #afcdaa;
+  color: #494949;
   font-size: 1em;
-  border-radius: 0.25em;
-  border: 1px solid #a0a0a0;
-  padding: 0.25em 0.5em;
-  width: 6em;
+  padding: 0.375em 0.875em;
+  text-decoration: none;
+  margin: 0.5em;  
+  margin-bottom: 0.3125em;
+
+  background: #d1e2ce;
 }
-.h5p-blanks .h5p-text-input:focus {
-  outline: none;
-  box-shadow: 0 0 0.5em 0 #7fb8ff;
-  border-color: #7fb8ff;
+
+.h5p-blanks .h5p-answer-question-correct-answer:after {
+  text-decoration: none;
+  content: "\f00c";
+  font-family: FontAwesome;
+  color: #39692e;
+  float: right;
 }
-.h5p-blanks .h5p-text-input.h5p-not-filled-out {
-  background: #fff0f0;
+
+.h5p-blanks .h5p-answer-question-wrong-answer {
+  background-color: #ededed;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  border: 0.1em solid #ce9b9b;  
+  color: #494949;
+  font-size: 1em;
+  padding: 0.375em 0.875em;
+  text-decoration: none;
+  margin: 0.5em;  
+  margin-bottom: 0.3125em;
+
+  background: #e6ced1;
 }
-.h5p-blanks .h5p-text-input.h5p-correct, .h5p-blanks .h5p-correct-answer {
-  color: green;
+
+.h5p-blanks .h5p-answer-question-wrong-answer:after {
+  text-decoration: none;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #c33f62;
+  float: right;
 }
+
 .h5p-blanks .h5p-correct-answer {
-  font-weight: bold;
+  color: #39692e;
 }
-.h5p-blanks .h5p-text-input.h5p-wrong {
-  color: red;
+
+.h5p-blanks .h5p-answer-list {
+  color: #39692e;
+}
+.h5p-blanks .h5p-answer-panel .h5p-answer-question-wrong-answer .h5p-wrong-answer {
   text-decoration: line-through;
+  color: #c33f62;
+  font-weight: bold;
 }
-.h5p-blanks .h5p-inner p {
+
+.h5p-blanks .h5p-blanks-panel {
+  overflow: hidden;
+  position: relative;
+  padding: 1.5em;
+  padding-bottom: 5em;
+}
+.h5p-blanks .h5p-blanks-question {
+  padding-top: 1em;
   font-size: 1em;
-  font-weight: normal;
-  line-height: 2.25em;
-  padding: 0;
-  margin: 0 0 1em;
-}
-.h5p-blanks .h5p-inner h2 {
-  font-size: 1.667em;
-  font-weight: bold;
-  line-height: 1.5em;
-  padding: 0;
-  margin: 0 0 0.5em;
-}
-.h5p-blanks .h5p-inner h3 {
-  font-size: 1.333em;
-  font-weight: bold;
-  line-height: 1.5em;
-  padding: 0;
-  margin: 0 0 0.5em;
 }
 .h5p-blanks .h5p-button {
   float: right;
+  display: inline-block;
+  padding: 0.2em 1em;
+  border: 0.2em solid #fff;
+  border-radius: 0.4em;
+  margin: 0;
   cursor: pointer;
-  color: #2d2c28;
+  color: #fff;
+  box-shadow: 0 0 0.5em #999;
 
-  font-size: 1.1em;
-  padding: 0.4em 0.7em;
-  text-align: center;
-
-  border: 1px solid #808080;
-  border-radius: 4px;
-
-  background: #ffffff;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e0e0e0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e0e0e0 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e0e0e0 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+  background: rgb(100,152,254); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(100,152,254,1) 0%, rgba(4,104,206,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,152,254,1)), color-stop(100%,rgba(4,104,206,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6498fe', endColorstr='#0468ce',GradientType=0 );
+  bottom: 0.8em;
+  right: 0.8em;
 }
+
 .h5p-blanks .h5p-button:hover {
-  background: #dddddd;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #e3f5ab 47%, #c2ef6e 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#e3f5ab), color-stop(100%,#c2ef6e)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#e3f5ab 47%,#c2ef6e 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c2ef6e',GradientType=0 ); /* IE6-9 */
+  background: rgb(4,104,206); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(4,104,206,1) 0%, rgba(100,152,254,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4,104,206,1)), color-stop(100%,rgba(100,152,254,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0468ce', endColorstr='#6498fe',GradientType=0 ); /* IE6-9 */
+}
+.h5p-blanks .h5p-answer-panel .h5p-button {
+  margin: 2.5em 0.9em;
+}
+
+.h5p-blanks .h5p-answer-panel .h5p-button:before {
+  font-family: FontAwesome;
+  content: "\f070  ";
+}
+
+
+
+.h5p-blanks div.h5p-button.h5p-solutions-button.h5p-hidden-solution-btn:before {
+  font-family: FontAwesome;
+  content: "\f06e  ";
+}
+
+.h5p-blanks input.h5p-blanks-input {
+  width: 7em;
+  font-size: 1em;
 }
