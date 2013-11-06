@@ -57,7 +57,7 @@
 
   text-decoration: none;
   content: "\f00c";
-  font-family: FontAwesome;
+  font-family: H5PFontAwesome;
   color: #39692e;
 }
 
@@ -72,7 +72,7 @@
   right: 0.25em;
   top: 0.15em;
 
-  font-family: FontAwesome;
+  font-family: H5PFontAwesome;
   text-decoration: none;
   content: "\f00d";
   color: #c33f62;
@@ -130,11 +130,11 @@
 }
 
 .h5p-blanks .h5p-button:before {
-  font-family: FontAwesome;
+  font-family: H5PFontAwesome;
   content: "\f06e  ";
 }
 .h5p-blanks .h5p-button.h5p-hide-solution:before {
-  font-family: FontAwesome;
+  font-family: H5PFontAwesome;
   content: "\f070  ";
 }
 

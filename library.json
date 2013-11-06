@@ -14,6 +14,13 @@
   "preloadedJs": [
     {"path": "js/blanks.js"}
   ],
+  "preloadedDependencies": [
+    {
+      "machineName": "FontAwesome",
+      "majorVersion": 3,
+      "minorVersion": 1
+    }
+  ],
   "w": 635,
   "h": 500
 }
