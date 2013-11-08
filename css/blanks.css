@@ -53,7 +53,6 @@
 .h5p-blanks .h5p-correct:after {
   position: absolute;
   right: 0.25em;
-  top: 0.15em;
 
   text-decoration: none;
   content: "\f00c";
@@ -70,7 +69,6 @@
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
   right: 0.25em;
-  top: 0.15em;
 
   font-family: H5PFontAwesome;
   text-decoration: none;
