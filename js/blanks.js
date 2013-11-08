@@ -47,6 +47,10 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
+
+    // If reattaching, we no longer show solution. So forget that we
+    // might have done so before.
+    this.displayingSolution = false;
   };
 
   /**
