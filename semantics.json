@@ -3,7 +3,14 @@
     "label": "Task description",
     "name": "text",
     "type": "text",
-    "description": "A guide telling the user how to answer this task."
+    "widget": "html",
+    "description": "A guide telling the user how to answer this task.",
+    "enterMode": "p",
+    "tags": [
+      "strong",
+      "em",
+      "del"
+    ]
   },
   {
     "name": "questions",
