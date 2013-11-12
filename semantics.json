@@ -9,7 +9,8 @@
     "tags": [
       "strong",
       "em",
-      "del"
+      "del",
+      "u"
     ]
   },
   {
@@ -30,7 +31,8 @@
       "tags": [
         "strong",
         "em",
-        "del"
+        "del",
+        "u"
       ]
     }
   },
