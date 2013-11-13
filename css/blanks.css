@@ -129,48 +129,69 @@
 
 .h5p-blanks .h5p-button:before {
   font-family: H5PFontAwesome;
-  content: "\f06e  ";
+  content: "\f06e";
+  padding-right: 0.5em;
+}
+.h5p-blanks .h5p-button.h5p-try-again:before {
+  font-family: H5PFontAwesome;
+  content: "\f01e";
 }
 .h5p-blanks .h5p-button.h5p-hide-solution:before {
   font-family: H5PFontAwesome;
-  content: "\f070  ";
+  content: "\f070";
 }
 
 .h5p-blanks .h5p-blanks-evaluation-container {
   float: left;
-}
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score {
-  float: left;
-  margin-left: 5em;
-  display: block;
-  background: #eee;
   padding: 1em;
-  border-radius: 0.6em;
-  position: relative;
-}
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 15px;
-  height: 0;
-  width: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #eee;
-  display: inline-block;
 }
 .h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-emoticon:before {
-  position: relative;
-  left: 0.3em;
-  top: 0.7em;
-
   display: block;
+  float: left;
 
   font-family: icomoon-blanks;
-  font-size: 3em;
+  font-size: 4em;
+  line-height: 1em; /* inherits 4em */
   content: "\e605";
 }
 .h5p-blanks .h5p-blanks-evaluation-container.max-score .h5p-blanks-evaluation-score-emoticon:before {
   content: "\e606";
+}
+.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score {
+  position: relative;
+  display: block;
+  background: #ffffff;
+  padding: 1em;
+  border-radius: 1em;
+  margin-left: 5.5em;
+  z-index: 1;
+  border: 1px solid #ccc;
+  -webkit-filter: drop-shadow(0 0 0.2em #999999);
+  filter: drop-shadow(0 0 0.2em #999999);
+}
+
+.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before,
+.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before {
+  margin-top: -11px;
+  top: 50%;
+  border-width: 11px;
+  border-color: transparent;
+  border-right-color: #ccc;
+}
+.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:after {
+  margin-top: -10px;
+  top: 50%;
+  border-width: 10px;
+  border-color: transparent;
+  border-right-color: #ffffff;
 }

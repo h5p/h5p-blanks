@@ -25,7 +25,7 @@ H5P.Blanks = (function ($) {
       ],
       score: "You got @score of @total points.",
       showSolutions: "Show solutions",
-      hideSolutions: "Hide solutions",
+      tryAgain: "Try again",
       enableTryAgain: true,
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true)
@@ -74,36 +74,39 @@ H5P.Blanks = (function ($) {
       return;
     }
 
-    this._$solutionButton = $('<button class="h5p-button" type="submit">' + this.params.showSolutions + '</button>').appendTo(this._$footer).click(function () {
-      if (that._$solutionButton.hasClass('h5p-hide-solution')) {
-        that.hideSolutions();
-      }
-      else {
-        var missingFields = false;
-        for (var i = 0; i < that.$inputs.length; i++) {
-          for (var j = 0; j < that.$inputs[i].length; j++) {
-            var $input = that.$inputs[i][j];
-
-            if (H5P.trim($input.val()) === '') {
-              if (!missingFields) {
-                missingFields = true;
-                C.setFocus($input);
-              }
-              $input.addClass('h5p-not-filled-out');
-            }
-          }
-        }
-        if (missingFields) {
+    this._$solutionButton = $('<button class="h5p-button" type="button">' + this.params.showSolutions + '</button>')
+      .appendTo(this._$footer)
+      .click(function () {
+        if (that._$solutionButton.hasClass('h5p-try-again')) {
           that.hideSolutions();
         }
         else {
-          that.showSolutions();
-          if (that.params.postUserStatistics) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+          var missingFields = false;
+          for (var i = 0; i < that.$inputs.length; i++) {
+            for (var j = 0; j < that.$inputs[i].length; j++) {
+              var $input = that.$inputs[i][j];
+
+              if (H5P.trim($input.val()) === '') {
+                if (!missingFields) {
+                  missingFields = true;
+                  C.setFocus($input);
+                }
+                $input.addClass('h5p-not-filled-out');
+              }
+            }
+          }
+          if (missingFields) {
+            that.hideSolutions();
+          }
+          else {
+            that.showSolutions();
+            if (that.params.postUserStatistics) {
+              H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+            }
           }
         }
       }
-    });
+    );
   };
 
   /**
@@ -163,7 +166,7 @@ H5P.Blanks = (function ($) {
 
     if (this._$solutionButton !== undefined) {
       if (this.params.enableTryAgain) {
-        this._$solutionButton.text(this.params.hideSolutions).addClass('h5p-hide-solution');
+        this._$solutionButton.text(this.params.tryAgain).addClass('h5p-try-again');
       }
       else {
         this._$solutionButton.remove();
@@ -176,7 +179,6 @@ H5P.Blanks = (function ($) {
         var $wrapper = $input.parent();
         if (this.correctAnswer(i, j)) {
           $wrapper.addClass('h5p-correct');
-          // $('<span class="h5p-correct-answer">&#x2713; </span>').insertBefore($input.addClass('h5p-correct'));
         }
         else {
           $('<span class="h5p-correct-answer"> ' + this.answers[i][j].join('/') + '</span>').insertAfter($wrapper.addClass('h5p-wrong'));
@@ -204,7 +206,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.hideSolutions = function () {
     if (this._$solutionButton !== undefined) {
-      this._$solutionButton.text(this.params.showSolutions).removeClass('h5p-hide-solution');
+      this._$solutionButton.text(this.params.showSolutions).removeClass('h5p-try-again');
     }
 
     // Clean solution from quiz

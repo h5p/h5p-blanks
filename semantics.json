@@ -52,10 +52,18 @@
     "common": true
   },
   {
-    "label": "Text for \"Hide solutions\" button",
-    "name": "hideSolutions",
+    "label": "Text for \"Try again\" button",
+    "name": "tryAgain",
     "type": "text",
-    "default": "Hide solutions",
-    "common": true
+    "default": "Try again",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Enable \"Try again\" button",
+    "name": "enableTryAgain",
+    "type": "boolean",
+    "default": true,
+    "optional": true
   }
 ]
