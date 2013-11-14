@@ -25,6 +25,9 @@
     {
       "label": "Tekst for \"Skjul svar\" knapp",
       "default": "Skjul svar"
+    },
+    {
+      "label": "Vis \"Skjul svar\" knapp"
     }
   ]
 }

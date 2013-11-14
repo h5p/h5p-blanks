@@ -10,7 +10,7 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "Åpne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*."
+        "description": "Opne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*."
       }
     },
     {
@@ -25,6 +25,9 @@
     {
       "label": "Tekst for \"Skjul svar\" knapp",
       "default": "Skjul svar"
+    },
+    {
+      "label": "Vis \"Skjul svar\" knapp"
     }
   ]
 }
