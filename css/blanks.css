@@ -92,16 +92,18 @@
 }
 .h5p-blanks .h5p-blanks-footer {
   margin-top: 0.4em;
+  margin-bottom: 1.5em;
   border-top: 0.1em solid #ddd;
 }
 
 .h5p-blanks .h5p-button {
+  font-size: 0.867em;
   float: right;
   display: block;
   padding: 0.5em 1em;
   border: 0.2em solid #fff;
   border-radius: 0.4em;
-  margin: 2.5em 0.9em;
+  margin: 0 0.9em;
   cursor: pointer;
   color: #fff;
   box-shadow: 0 0 0.5em #999;
