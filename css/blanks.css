@@ -97,9 +97,9 @@
 }
 
 .h5p-blanks .h5p-button {
-  font-size: 0.867em;
   float: right;
   display: block;
+  font-size: 0.8125em;
   padding: 0.5em 1em;
   border: 0.2em solid #fff;
   border-radius: 0.4em;
