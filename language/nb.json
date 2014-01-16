@@ -23,11 +23,11 @@
       "default": "Vis svar"
     },
     {
-      "label": "Tekst for \"Skjul svar\" knapp",
-      "default": "Skjul svar"
+      "label": "Tekst for \"Prøv igjen\" knapp",
+      "default": "Prøv igjen"
     },
     {
-      "label": "Vis \"Skjul svar\" knapp"
+      "label": "Vis \"Prøv igjen\" knapp"
     }
   ]
 }
