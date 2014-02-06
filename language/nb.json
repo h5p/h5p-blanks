@@ -28,6 +28,10 @@
     },
     {
       "label": "Vis \"Prøv igjen\" knapp"
+    },
+    {
+      "label": "Skill mellom store og små bokstaver",
+      "description": "Sørger for at svaret til brukeren må være nøyaktig det samme som i oppgaven."
     }
   ]
 }

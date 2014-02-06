@@ -27,6 +27,7 @@ H5P.Blanks = (function ($) {
       showSolutions: "Show solutions",
       tryAgain: "Try again",
       enableTryAgain: true,
+      caseSensitive: true,
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true)
     }, params);
@@ -262,8 +263,18 @@ H5P.Blanks = (function ($) {
   C.prototype.correctAnswer = function (block, question) {
     var answer = H5P.trim(this.$inputs[block][question].val());
     var correctAnswers = this.answers[block][question];
+    
+    if (this.params.caseSensitive !== true) {
+      answer = answer.toLowerCase();
+    }
+    
     for (var i = 0; i < correctAnswers.length; i++) {
-      if (answer === correctAnswers[i]) {
+      var correctAnswer = correctAnswers[i];
+      if (this.params.caseSensitive !== true) {
+        correctAnswer = correctAnswer.toLowerCase();
+      }
+    
+      if (answer === correctAnswer) {
         return true;
       }
     }
