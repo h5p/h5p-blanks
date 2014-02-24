@@ -3,9 +3,13 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 50,
+  "patchVersion": 51,
   "runnable": 1,
   "author": "Amendor AS",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 1
+  },
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
   "preloadedCss": [
@@ -13,13 +17,6 @@
   ],
   "preloadedJs": [
     {"path": "js/blanks.js"}
-  ],
-  "preloadedDependencies": [
-    {
-      "machineName": "FontAwesome",
-      "majorVersion": 3,
-      "minorVersion": 1
-    }
   ],
   "w": 635,
   "h": 500
