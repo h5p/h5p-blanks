@@ -137,6 +137,10 @@ H5P.Blanks = (function ($) {
    * Using CSS-rules to conditionally show/hide using the data-attribute [data-state]
    */
   C.prototype.toggleButtonVisibility = function (state) {
+    // The show solutions button is hidden if all answers are correct
+    if (this._$solutionButton !== undefined) {
+      this._$solutionButton.toggle(state === STATE_CHECKING && this.getScore() !== this.getMaxScore());
+    }
     this._$footer.attr("data-state", state);
   };
   
