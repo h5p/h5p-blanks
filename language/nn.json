@@ -32,6 +32,18 @@
     {
       "label": "Skil mellom store og små bokstavar",
       "description": "Syrgjer for at svaret til brukaren må være nøyaktig det same som i oppgåva."
+    },
+    {
+      "label": "Tekst for \"Sjekk svar\"-knapp",
+      "default": "Sjekk svar"
+    },
+    {
+      "label": "Tekst for \"Tilbakestill\"-knapp",
+      "default": "Tilbakestill"
+    },
+    {
+      "label": "Tekst for \"Ikje utfyllt\"-melding",
+      "default": "Du må fylle inn alle felt"
     }
   ]
 }

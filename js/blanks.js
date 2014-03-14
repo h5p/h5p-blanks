@@ -37,8 +37,11 @@ H5P.Blanks = (function ($) {
 
     this.answers = [];
     this.$inputs = [];
-    this.displayingSolution = false;
   }
+  
+  var STATE_ONGOING = 'ongoing';
+  var STATE_CHECKING = 'checking';
+  var STATE_SHOWING_SOLUTION = 'showing-solution';
 
   /**
    * Append field to wrapper.
@@ -51,10 +54,6 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
-
-    // If reattaching, we no longer show solution. So forget that we
-    // might have done so before.
-    this.displayingSolution = false;
   };
 
   /**
@@ -75,21 +74,15 @@ H5P.Blanks = (function ($) {
       return;
     }
     
-    var STATE_ONGOING = 'ongoing';
-    var STATE_CHECKING = 'checking';
-    var STATE_SHOWING_SOLUTION = 'showing-solution';
+    this.toggleButtonVisibility(STATE_ONGOING);
     
-    function toggleButtons(state) {
-      that._$footer.attr("data-state", state);
-    }
-    
-    toggleButtons(STATE_ONGOING);
+    var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
     
     // Check answer button
     this._$checkAnswerButton = $('<button/>', {'class': 'h5p-button h5p-check-answer', type: 'button', text: this.params.checkAnswer})
-      .appendTo(that._$footer)
+      .appendTo($buttonBar)
       .click(function () {
-        toggleButtons(STATE_CHECKING);
+        that.toggleButtonVisibility(STATE_CHECKING);
         that.markResults();
         that.showEvaluation();
       }
@@ -98,11 +91,11 @@ H5P.Blanks = (function ($) {
     // Display solution button
     if (this.params.displaySolutionsButton === true) {
       this._$solutionButton = $('<button class="h5p-button h5p-show-solution" type="button">' + this.params.showSolutions + '</button>')
-        .appendTo(this._$footer)
+        .appendTo($buttonBar)
         .click(function () {
           if (that.allBlanksFilledOut()) {
-            toggleButtons(STATE_SHOWING_SOLUTION);
-            that.showSolutions();
+            that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
+            that.showCorrectAnswers();
             if (that.params.postUserStatistics === true) {
               H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
             }
@@ -114,9 +107,9 @@ H5P.Blanks = (function ($) {
     // Try again button 
     if(this.params.enableTryAgain === true) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
-        .appendTo(this._$footer)
+        .appendTo($buttonBar)
         .click(function () {
-          toggleButtons(STATE_ONGOING);
+          that.toggleButtonVisibility(STATE_ONGOING);
           that.removeMarkedResults();
           that.hideEvaluation();
         }
@@ -125,17 +118,28 @@ H5P.Blanks = (function ($) {
     
     // Reset button
     this._$resetButton = $('<button/>', {'class': 'h5p-button h5p-reset', type: 'button', text: this.params.reset})
-      .appendTo(this._$footer)
+      .appendTo($buttonBar)
       .click(function () {
-        toggleButtons(STATE_ONGOING);
+        that.toggleButtonVisibility(STATE_ONGOING);
         that.removeMarkedResults();
         that.hideSolutions();
         that.hideEvaluation();
         that.clearAnswers();
       }
     );
+    
+    $buttonBar.appendTo(this._$footer);
   };
 
+  /**
+   * Toggle buttons dependent of state.
+   * 
+   * Using CSS-rules to conditionally show/hide using the data-attribute [data-state]
+   */
+  C.prototype.toggleButtonVisibility = function (state) {
+    this._$footer.attr("data-state", state);
+  };
+  
   /**
    * Check if all blanks are filled out. Warn user if not
    */
@@ -226,14 +230,13 @@ H5P.Blanks = (function ($) {
     this._$inner.find('.h5p-input-wrapper input').attr('disabled', false);
   };
   
+  
   /**
-   * Display the correct solution for the input boxes.
+   * Displays the correct answers
    */
-  C.prototype.showSolutions = function () {
-    if (this.displayingSolution) {
-      return;
-    }
-
+  C.prototype.showCorrectAnswers = function () {
+    this.hideSolutions();
+    
     for (var i = 0; i < this.$inputs.length; i++) {
       for (var j = 0; j < this.$inputs[i].length; j++) {
         var $wrapper = this.$inputs[i][j].parent();
@@ -242,14 +245,26 @@ H5P.Blanks = (function ($) {
         }
       }
     }
-
-    this.displayingSolution = true;
+  }
+  
+  /**
+   * Display the correct solution for the input boxes.
+   * 
+   * This is invoked from CP - be carefull!
+   */
+  C.prototype.showSolutions = function () {
+    this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
+    this.markResults();
+    this.showCorrectAnswers();
+    this.showEvaluation();
   };
   
   /**
    * Show evaluation widget, i.e: 'You got x of y blanks correct'
    */
   C.prototype.showEvaluation = function () {
+    this.hideEvaluation();
+    
     this._$evaluation = this._$footer.find('.h5p-blanks-evaluation-container');
     var maxScore = this.getMaxScore();
     var score = this.getScore();
@@ -279,7 +294,6 @@ H5P.Blanks = (function ($) {
   C.prototype.hideSolutions = function () {
     // Clean solution from quiz
     this._$inner.find('.h5p-correct-answer').remove();
-    this.displayingSolution = false;
   };
 
   /**

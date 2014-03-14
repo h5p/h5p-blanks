@@ -92,19 +92,21 @@
 }
 .h5p-blanks .h5p-blanks-footer {
   margin-top: 0.4em;
-  margin-bottom: 1.5em;
   border-top: 0.1em solid #ddd;
 }
-
+.h5p-blanks .h5p-button-bar {
+  margin-top: .8em;
+}
 .h5p-blanks button.h5p-button {
   float: right;
   display: none;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.2em;
   padding: 0.2em 1em;
   border: 0.2em solid #fff;
   border-radius: 0.4em;
-  margin: 1.4em 0 0 0.9em;
+  margin-left: 0.8em;
+  margin-bottom: 0.1em;
   cursor: pointer;
   color: #fff;
   box-shadow: 0 0 0.5em #999;
@@ -116,8 +118,6 @@
   background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* IE10+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6498fe', endColorstr='#0468ce',GradientType=0 );
-  bottom: 0.8em;
-  right: 0.8em;
 }
 
 .h5p-blanks button.h5p-button:hover {
@@ -158,7 +158,8 @@
 
 .h5p-blanks .h5p-blanks-evaluation-container {
   float: left;
-  padding: 1em;
+  padding: 1em 0 0 0;
+  max-width: 50%;
 }
 .h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-emoticon:before {
   display: block;
@@ -174,17 +175,30 @@
 }
 
 @-webkit-keyframes shake-it {
-  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); transform: translate(2px, 1px) rotate(0deg); }
-  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); transform: translate(-1px, -2px) rotate(-1deg);}
-  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); transform: translate(-3px, 0px) rotate(1deg); }
-  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); transform: translate(0px, 2px) rotate(0deg); }
-  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); transform: translate(1px, -1px) rotate(1deg);}
-  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); transform: translate(-1px, 2px) rotate(-1deg);}
-  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); transform: translate(-3px, 1px) rotate(0deg);}
-  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); transform: translate(2px, 1px) rotate(-1deg);}
-  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); transform: translate(-1px, -1px) rotate(1deg);}
-  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); transform: translate(2px, 2px) rotate(0deg);}
-  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); transform: translate(1px, -2px) rotate(-1deg);}
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg);}
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg);}
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg);}
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg);}
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg);}
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg);}
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg);}
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg);}
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg);}
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg);}
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg);}
+}
+@keyframes shake-it {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg);}
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg);}
+  50% { transform: translate(-1px, 2px) rotate(-1deg);}
+  60% { transform: translate(-3px, 1px) rotate(0deg);}
+  70% { transform: translate(2px, 1px) rotate(-1deg);}
+  80% { transform: translate(-1px, -1px) rotate(1deg);}
+  90% { transform: translate(2px, 2px) rotate(0deg);}
+  100% {transform: translate(1px, -2px) rotate(-1deg);}
 }
 .h5p-blanks .h5p-blanks-evaluation-container.not-filled-out .h5p-blanks-evaluation-score-emoticon {
   animation-name: shake-it;
@@ -204,13 +218,14 @@
   position: relative;
   display: block;
   background: #ffffff;
-  padding: 1em;
-  border-radius: 1em;
+  padding: 0.7em 0.5em;
+  border-radius: 0.6em;
   margin-left: 5.5em;
   z-index: 1;
   border: 1px solid #ccc;
   -webkit-filter: drop-shadow(0 0 0.2em #999999);
   filter: drop-shadow(0 0 0.2em #999999);
+  line-height: 1.3em;
 }
 
 .h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before,
