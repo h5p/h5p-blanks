@@ -105,28 +105,28 @@ H5P.Blanks = (function ($) {
     }
     
     // Try again button 
-    if(this.params.enableTryAgain === true) {
-      this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
-        .appendTo($buttonBar)
-        .click(function () {
-          that.toggleButtonVisibility(STATE_ONGOING);
-          that.removeMarkedResults();
-          that.hideEvaluation();
-        }
-      );
-    }
-    
-    // Reset button
-    this._$resetButton = $('<button/>', {'class': 'h5p-button h5p-reset', type: 'button', text: this.params.reset})
+    this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
       .appendTo($buttonBar)
       .click(function () {
         that.toggleButtonVisibility(STATE_ONGOING);
         that.removeMarkedResults();
-        that.hideSolutions();
         that.hideEvaluation();
-        that.clearAnswers();
       }
     );
+    
+    // Reset button
+    if(this.params.enableTryAgain === true) {
+      this._$resetButton = $('<button/>', {'class': 'h5p-button h5p-reset', type: 'button', text: this.params.reset})
+        .appendTo($buttonBar)
+        .click(function () {
+          that.toggleButtonVisibility(STATE_ONGOING);
+          that.removeMarkedResults();
+          that.hideSolutions();
+          that.hideEvaluation();
+          that.clearAnswers();
+        }
+      );
+    }
     
     $buttonBar.appendTo(this._$footer);
   };
