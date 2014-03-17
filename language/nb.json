@@ -38,8 +38,8 @@
       "default": "Sjekk svar"
     },
     {
-      "label": "Tekst for \"Tilbakestill\"-knapp",
-      "default": "Tilbakestill"
+      "label": "Tekst for \"Endre svar\"-knapp",
+      "default": "Endre svar"
     },
     {
       "label": "Tekst for \"Ikke utfyllt\"-melding",

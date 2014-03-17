@@ -87,10 +87,10 @@
     "optional": true
   },
   {
-    "label": "Text for \"Reset\" button",
-    "name": "reset",
+    "label": "Text for \"Change answer\" button",
+    "name": "changeAnswer",
     "type": "text",
-    "default": "Reset",
+    "default": "Change answer",
     "common": true,
     "optional": true
   },

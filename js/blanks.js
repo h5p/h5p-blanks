@@ -27,7 +27,7 @@ H5P.Blanks = (function ($) {
       showSolutions: "Show solutions",
       tryAgain: "Try again",
       checkAnswer: "Check",
-      reset: "Reset",
+      changeAnswer: "Change answer",
       notFilledOut: "Please fill in all blanks",
       enableTryAgain: true,
       caseSensitive: true,
@@ -74,7 +74,7 @@ H5P.Blanks = (function ($) {
       return;
     }
     
-    this.toggleButtonVisibility(STATE_ONGOING);
+    
     
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
     
@@ -89,23 +89,25 @@ H5P.Blanks = (function ($) {
     );
     
     // Display solution button
-    if (this.params.displaySolutionsButton === true) {
-      this._$solutionButton = $('<button class="h5p-button h5p-show-solution" type="button">' + this.params.showSolutions + '</button>')
-        .appendTo($buttonBar)
-        .click(function () {
-          if (that.allBlanksFilledOut()) {
-            that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
-            that.showCorrectAnswers();
-            if (that.params.postUserStatistics === true) {
-              H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-            }
+    this._$solutionButton = $('<button>', {
+      'class': 'h5p-button h5p-show-solution',
+      style: 'display:' + (this.params.displaySolutionsButton === true ? 'block;' : 'none;'),
+      type: 'button',
+      text: this.params.showSolutions
+    }).appendTo($buttonBar)
+      .click(function () {
+        if (that.allBlanksFilledOut()) {
+          that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
+          that.showCorrectAnswers();
+          if (that.params.postUserStatistics === true) {
+            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
           }
         }
-      );
-    }
+      }
+    );
     
-    // Try again button 
-    this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
+    // Change answer button
+    this._$changeAnswerButton = $('<button/>', {'class': 'h5p-button h5p-change-answer', type: 'button', text: this.params.changeAnswer})
       .appendTo($buttonBar)
       .click(function () {
         that.toggleButtonVisibility(STATE_ONGOING);
@@ -114,9 +116,9 @@ H5P.Blanks = (function ($) {
       }
     );
     
-    // Reset button
+    // Try again button 
     if(this.params.enableTryAgain === true) {
-      this._$resetButton = $('<button/>', {'class': 'h5p-button h5p-reset', type: 'button', text: this.params.reset})
+      this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
         .click(function () {
           that.toggleButtonVisibility(STATE_ONGOING);
@@ -129,6 +131,8 @@ H5P.Blanks = (function ($) {
     }
     
     $buttonBar.appendTo(this._$footer);
+    
+    this.toggleButtonVisibility(STATE_ONGOING);
   };
 
   /**
@@ -138,7 +142,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.toggleButtonVisibility = function (state) {
     // The show solutions button is hidden if all answers are correct
-    if (this._$solutionButton !== undefined) {
+    if (this.params.displaySolutionsButton === true) {
       this._$solutionButton.toggle(state === STATE_CHECKING && this.getScore() !== this.getMaxScore());
     }
     this._$footer.attr("data-state", state);
@@ -249,7 +253,7 @@ H5P.Blanks = (function ($) {
         }
       }
     }
-  }
+  };
   
   /**
    * Display the correct solution for the input boxes.
@@ -257,6 +261,7 @@ H5P.Blanks = (function ($) {
    * This is invoked from CP - be carefull!
    */
   C.prototype.showSolutions = function () {
+    this.params.displaySolutionsButton = true;
     this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
     this.markResults();
     this.showCorrectAnswers();
