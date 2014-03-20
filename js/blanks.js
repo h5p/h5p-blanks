@@ -146,6 +146,9 @@ H5P.Blanks = (function ($) {
       this._$solutionButton.toggle(state === STATE_CHECKING && this.getScore() !== this.getMaxScore());
     }
     this._$footer.attr("data-state", state);
+    
+    // Setting focus on first visible button!
+    this._$footer.find("button:visible").eq(0).focus();
   };
   
   /**
