@@ -16,6 +16,7 @@ H5P.Blanks = (function ($) {
    */
   function C(params, id) {
     this.id = id;
+    this.$ = $(this);
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -54,6 +55,8 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
+    
+    this.$.trigger('resize');
   };
 
   /**
@@ -73,8 +76,6 @@ H5P.Blanks = (function ($) {
     if (this._$checkAnswerButton !== undefined) {
       return;
     }
-    
-    
     
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
     
