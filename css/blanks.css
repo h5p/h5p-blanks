@@ -130,7 +130,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0468ce', endColorstr='#6498fe',GradientType=0 ); /* IE6-9 */
 }
 .h5p-blanks button.h5p-button:before {
-  font-family: H5PFontAwesome;
+  font-family: H5PFontAwesome4;
   content: "\f06e";
   padding-right: 0.5em;
 }
