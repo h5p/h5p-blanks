@@ -44,6 +44,9 @@
     {
       "label": "Tekst for \"Ikje utfyllt\"-melding",
       "default": "Du må fylle inn alle felt"
+    },
+    {
+      "label": "Krev at alle felt er besvart før fasit gis"
     }
   ]
 }
