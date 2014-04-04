@@ -6,7 +6,10 @@ var H5P = H5P || {};
  * @param {jQuery} $
  */
 H5P.Blanks = (function ($) {
-
+  var STATE_ONGOING = 'ongoing';
+  var STATE_CHECKING = 'checking';
+  var STATE_SHOWING_SOLUTION = 'showing-solution';
+  
   /**
    * Initialize module.
    *
@@ -35,13 +38,8 @@ H5P.Blanks = (function ($) {
       postUserStatistics: (H5P.postUserStatistics === true)
     }, params);
 
-    this.answers = [];
-    this.$inputs = [];
-  }
-  
-  var STATE_ONGOING = 'ongoing';
-  var STATE_CHECKING = 'checking';
-  var STATE_SHOWING_SOLUTION = 'showing-solution';
+    this.clozes = [];
+  };
 
   /**
    * Append field to wrapper.
@@ -54,6 +52,48 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
+  };
+  
+  /**
+   * Append questitons to the given container.
+   *
+   * @param {jQuery} $container
+   */
+  C.prototype.appendQuestionsTo = function ($container) {
+    var self = this;
+
+    for (var i = 0; i < self.params.questions.length; i++) {
+      var question = self.params.questions[i];
+
+      // Go through the text and replace all the asterisks with input fields
+      var clozeEnd, clozeStart = question.indexOf('*');
+      while (clozeStart !== -1 && clozeEnd !== -1) {
+        clozeStart++;
+        clozeEnd = question.indexOf('*', clozeStart);
+        if (clozeEnd === -1) {
+          continue; // No end
+        }
+        
+        // Create new cloze
+        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.caseSensitive);
+        clozeEnd++;
+        question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
+        self.clozes.push(cloze);
+
+        // Find the next cloze
+        clozeStart = question.indexOf('*', clozeEnd);
+      }
+      
+      $container[0].innerHTML += '<div>' + question + '</div>';
+    }
+    
+    $container.find('input').each(function (i) {
+      self.clozes[i].setInput($(this));
+    }).keydown(function (event) {
+      if (event.keyCode === 13) {
+        return false; // Prevent form submission on enter key
+      }
+    });
   };
 
   /**
@@ -74,8 +114,6 @@ H5P.Blanks = (function ($) {
       return;
     }
     
-    
-    
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
     
     // Check answer button
@@ -87,9 +125,9 @@ H5P.Blanks = (function ($) {
         that.showEvaluation();
       }
     );
-    
+
     // Display solution button
-    this._$solutionButton = $('<button>', {
+    this._$solutionButton = $('<button/>', {
       'class': 'h5p-button h5p-show-solution',
       style: 'display:' + (this.params.displaySolutionsButton === true ? 'block;' : 'none;'),
       type: 'button',
@@ -155,81 +193,28 @@ H5P.Blanks = (function ($) {
    * Check if all blanks are filled out. Warn user if not
    */
   C.prototype.allBlanksFilledOut = function () {
-    var that = this;
+    var self = this;
     
-    for (var i = 0; i < that.$inputs.length; i++) {
-      for (var j = 0; j < that.$inputs[i].length; j++) {
-        if (H5P.trim(that.$inputs[i][j].val()) === '') {
-          this._$evaluationScore.text(that.params.notFilledOut);
-          this._$evaluation.addClass('not-filled-out');
-          setTimeout(function(){
-            that._$evaluation.removeClass('not-filled-out');
-          }, 1000);
-          return false;
-        }
-      }
-    }
-    return true;
-  };
-  
-  /**
-   * Append questitons to the given container.
-   *
-   * @param {jQuery} $container
-   */
-  C.prototype.appendQuestionsTo = function ($container) {
-    var that = this;
-
-    for (var i = 0; i < this.params.questions.length; i++) {
-      var question = this.params.questions[i];
-      var answers = this.answers[i] = [];
-      var first = 1;
-      var second = 1;
+    if (!self.getAnswerGiven()) {
+      self._$evaluationScore.text(self.params.notFilledOut);
+      self._$evaluation.addClass('not-filled-out');
+      setTimeout(function(){
+        self._$evaluation.removeClass('not-filled-out');
+      }, 1000);
       
-      do {
-        first = question.indexOf('*');
-        if (first !== -1) {
-          second = question.indexOf('*', first + 1);
-          if (second !== -1) {
-            var answer = question.substring(first + 1, second);
-            var correctAnswers = answer.split('/');
-            var width = 0;
-
-            for (var j = 0; j < correctAnswers.length; j++) {
-              correctAnswers[j] = H5P.trim(correctAnswers[j]);
-              if (correctAnswers[j].length > width) {
-                width = correctAnswers[j].length;
-              }
-            }
-            answers.push(correctAnswers);
-            question = question.slice(0, first) + '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input"></span>' + question.slice(second + 1);
-          }
-        }
-      } while (first !== -1 && second !== -1);
-
-      var $inputs = this.$inputs[i] = [];
-      $('<div>' + question + '</div>').appendTo($container).find('input').keydown(function (event) {
-        if (event.keyCode === 13) {
-          return false; // Prevent form submission on enter key
-        }
-      }).each(function () {
-        $inputs.push($(this));
-      }).change(function () {
-        $(that).trigger('h5pQuestionAnswered');
-      });
+      return false;
     }
+    
+    return true;
   };
 
   /**
    * Mark which answers are correct and which are wrong
    */
   C.prototype.markResults = function () {
-    for (var i = 0; i < this.$inputs.length; i++) {
-      for (var j = 0; j < this.$inputs[i].length; j++) {
-        var $input = this.$inputs[i][j].attr('disabled', true);
-        var $wrapper = $input.parent();
-        $wrapper.addClass(this.correctAnswer(i, j) ? 'h5p-correct' : 'h5p-wrong');
-      }
+    var self = this;
+    for (var i = 0; i < self.clozes.length; i++) {
+      self.clozes[i].checkAnswer();
     }
   };
   
@@ -238,7 +223,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.removeMarkedResults = function () {
     this._$inner.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
-    this._$inner.find('.h5p-input-wrapper input').attr('disabled', false);
+    this._$inner.find('.h5p-input-wrapper > input').attr('disabled', false);
   };
   
   
@@ -246,15 +231,11 @@ H5P.Blanks = (function ($) {
    * Displays the correct answers
    */
   C.prototype.showCorrectAnswers = function () {
+    var self = this;
     this.hideSolutions();
     
-    for (var i = 0; i < this.$inputs.length; i++) {
-      for (var j = 0; j < this.$inputs[i].length; j++) {
-        var $wrapper = this.$inputs[i][j].parent();
-        if (!this.correctAnswer(i, j)) {
-          $('<span class="h5p-correct-answer"> ' + this.answers[i][j].join('/') + '</span>').insertAfter($wrapper);
-        }
-      }
+    for (var i = 0; i < self.clozes.length; i++) {
+      self.clozes[i].showSolution();
     }
   };
   
@@ -314,12 +295,8 @@ H5P.Blanks = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.getMaxScore = function () {
-    var max = 0;
-    for (var i = 0; i < this.$inputs.length; i++) {
-      max += this.$inputs[i].length;
-    }
-
-    return max;
+    var self = this;
+    return self.clozes.length;
   };
 
   /**
@@ -328,47 +305,18 @@ H5P.Blanks = (function ($) {
    * @returns {Number} Points
    */
   C.prototype.getScore = function () {
+    var self = this;
     var correct = 0;
-    for (var i = 0; i < this.$inputs.length; i++) {
-      for (var j = 0; j < this.$inputs[i].length; j++) {
-        if (this.correctAnswer(i, j)) {
-          correct++;
-        }
+    
+    for (var i = 0; i < self.clozes.length; i++) {
+      if (self.clozes[i].correct()) {
+        correct++;
       }
     }
 
     return correct;
   };
 
-  /**
-   * Check if the answer is correct.
-   *
-   * @param {Number} block
-   * @param {Number} question
-   * @returns {Boolean}
-   */
-  C.prototype.correctAnswer = function (block, question) {
-    var answer = H5P.trim(this.$inputs[block][question].val());
-    var correctAnswers = this.answers[block][question];
-    
-    if (this.params.caseSensitive !== true) {
-      answer = answer.toLowerCase();
-    }
-    
-    for (var i = 0; i < correctAnswers.length; i++) {
-      var correctAnswer = correctAnswers[i];
-      if (this.params.caseSensitive !== true) {
-        correctAnswer = correctAnswer.toLowerCase();
-      }
-    
-      if (answer === correctAnswer) {
-        return true;
-      }
-    }
-
-    return false;
-  };
-  
   /**
    * Clear the user's answers
    */
@@ -382,14 +330,14 @@ H5P.Blanks = (function ($) {
    * @returns {Boolean}
    */
   C.prototype.getAnswerGiven = function () {
-    for (var i = 0; i < this.$inputs.length; i++) {
-      for (var j = 0; j < this.$inputs[i].length; j++) {
-        var $input = this.$inputs[i][j];
-        if (H5P.trim($input.val()) === '') {
-          return false;
-        }
+    var self = this;
+    
+    for (var i = 0; i < self.clozes.length; i++) {
+      if (!self.clozes[i].filledOut()) {
+        return false;
       }
     }
+    
     return true;
   };
 
@@ -402,6 +350,103 @@ H5P.Blanks = (function ($) {
       $input.focus();
     }, 1);
   };
+  
+  /**
+   * Simple private class for keeping track of clozes.
+   */
+  function Cloze(answer, caseSensitive) {
+    var $input, $wrapper;
+    var answers = answer.split('/');
+    
+    // Trim answers
+    for (var i = 0; i < answers.length; i++) {
+      answers[i] = H5P.trim(answers[i]);
+      if (caseSensitive !== true) {
+        answers[i] = answers[i].toLowerCase();
+      }
+    }
+    
+    /**
+     * Private.
+     *
+     * @returns {String} Trimmed answer
+     */
+    var getUserAnswer = function () {
+      return H5P.trim($input.val());
+    }
+    
+    /**
+     * Private. Check if the answer is correct.
+     *
+     * @param {String} answered
+     */
+    var correct = function (answered) {
+      for (var i = 0; i < answers.length; i++) {
+        if (answered === answers[i]) {
+          return true;
+        }
+      }
+      return false;
+    };
+    
+    /**
+     * Public. Check if filled out.
+     *
+     * @param {Boolean}
+     */
+    this.filledOut = function () {
+      var answered = getUserAnswer();
+      // Blank can be correct and is interpreted as filled out.
+      return (answered !== '' || correct(answered));
+    }
+    
+    /** 
+     * Public. Check the cloze and mark it as wrong or correct.
+     */
+    this.checkAnswer = function () {
+      $input.attr('disabled', true);
+      $wrapper.addClass(correct(getUserAnswer()) ? 'h5p-correct' : 'h5p-wrong');
+    };
+    
+    /** 
+     * Public. Show the correct solution.
+     */
+    this.showSolution = function () {
+      if (correct(getUserAnswer())) {
+        return; // Only for the wrong ones
+      }
+
+      $('<span class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+    };
+    
+    /**
+     * Public.
+     *
+     * @returns {Boolean}
+     */
+    this.correct = function () {
+      return correct(getUserAnswer());
+    };
+    
+    /**
+     * Public. Set input element.
+     *
+     * @param {jQuery} $element
+     */
+    this.setInput = function ($element) {
+      $input = $element;
+      $wrapper = $element.parent();
+    };
+    
+    /**
+     * Public. 
+     *
+     * @returns {String} Cloze html
+     */
+    this.toString = function () {
+      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input"></span>';
+    };
+  }
 
   return C;
 })(H5P.jQuery);
