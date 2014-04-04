@@ -35,7 +35,8 @@ H5P.Blanks = (function ($) {
       enableTryAgain: true,
       caseSensitive: true,
       displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true)
+      postUserStatistics: (H5P.postUserStatistics === true),
+      showSolutionsRequiresInput: true
     }, params);
 
     this.clozes = [];
@@ -134,7 +135,7 @@ H5P.Blanks = (function ($) {
       text: this.params.showSolutions
     }).appendTo($buttonBar)
       .click(function () {
-        if (that.allBlanksFilledOut()) {
+        if (that.params.showSolutionsRequiresInput !== true || that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
           if (that.params.postUserStatistics === true) {
