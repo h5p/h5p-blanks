@@ -101,5 +101,12 @@
     "default": "Please fill in all blanks",
     "common": true,
     "optional": true
+  },
+  {
+    "label": "Require all fields to be answered before the solution can be viewed",
+    "name": "showSolutionsRequiresInput",
+    "type": "boolean",
+    "default": true,
+    "optional": true
   }
 ]
