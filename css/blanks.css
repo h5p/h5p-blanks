@@ -253,3 +253,18 @@
   border-color: transparent;
   border-right-color: #ffffff;
 }
+.h5p-blanks .joubel-tip-container {
+  position: relative; 
+  right: 2.1em;
+  top: 0.3em;
+}
+.h5p-blanks .h5p-input-wrapper.has-tip {
+  margin-right: -2em;
+}
+.h5p-blanks .h5p-input-wrapper.has-tip:after {
+  right: 4em;
+  top: .4em;
+}
+.h5p-blanks .h5p-input-wrapper.has-tip .h5p-text-input {
+  padding-right: 2em;
+}
