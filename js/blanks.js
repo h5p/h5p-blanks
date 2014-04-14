@@ -360,7 +360,7 @@ H5P.Blanks = (function ($) {
     var answers = [];
     var tip = undefined;
     
-    var answersAndTip = answer.split('?');
+    var answersAndTip = answer.split(':');
     
     if(answersAndTip.length > 0) {
       answer = answersAndTip[0];
