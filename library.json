@@ -3,7 +3,7 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 55,
+  "patchVersion": 57,
   "runnable": 1,
   "author": "Amendor AS",
   "coreApi": {
@@ -13,10 +13,21 @@
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
   "preloadedCss": [
-    {"path": "css/blanks.css"}
+    {
+      "path": "css/blanks.css"
+    }
   ],
   "preloadedJs": [
-    {"path": "js/blanks.js"}
+    {
+      "path": "js/blanks.js"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
   ],
   "w": 635,
   "h": 500

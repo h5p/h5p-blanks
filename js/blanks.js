@@ -360,13 +360,25 @@ H5P.Blanks = (function ($) {
    */
   function Cloze(answer, caseSensitive) {
     var $input, $wrapper;
-    var answers = answer.split('/');
+    var answers = [];
+    var tip = undefined;
     
-    // Trim answers
-    for (var i = 0; i < answers.length; i++) {
-      answers[i] = H5P.trim(answers[i]);
-      if (caseSensitive !== true) {
-        answers[i] = answers[i].toLowerCase();
+    var answersAndTip = answer.split(':');
+    
+    if(answersAndTip.length > 0) {
+      answer = answersAndTip[0];
+      answers = answer.split('/');
+      
+      // Trim answers
+      for (var i = 0; i < answers.length; i++) {
+        answers[i] = H5P.trim(answers[i]);
+        if (caseSensitive !== true) {
+          answers[i] = answers[i].toLowerCase();
+        }
+      }
+      
+      if(answersAndTip.length === 2) {
+        tip = answersAndTip[1];
       }
     }
     
@@ -377,7 +389,7 @@ H5P.Blanks = (function ($) {
      */
     var getUserAnswer = function () {
       return H5P.trim($input.val());
-    }
+    };
     
     /**
      * Private. Check if the answer is correct.
@@ -402,7 +414,7 @@ H5P.Blanks = (function ($) {
       var answered = getUserAnswer();
       // Blank can be correct and is interpreted as filled out.
       return (answered !== '' || correct(answered));
-    }
+    };
     
     /** 
      * Public. Check the cloze and mark it as wrong or correct.
@@ -440,6 +452,11 @@ H5P.Blanks = (function ($) {
     this.setInput = function ($element) {
       $input = $element;
       $wrapper = $element.parent();
+      
+      // Add tip if tip is set 
+      if(tip !== undefined && tip.trim().length > 0) {
+        $wrapper.addClass('has-tip').append(H5P.JoubelUI.createTip(tip, $wrapper.parent()));
+      }
     };
     
     /**

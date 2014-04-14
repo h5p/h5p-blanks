@@ -31,7 +31,7 @@
       "widget": "html",
       "label": "Line of text",
       "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterix (*) in front and behind the correct word/phrase. Alternative answers are separated with a slash /. Example: H5P content may be edited using a *browser/web-browser*.",
+      "description": "Blanks are added with an asterix (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
       "enterMode": "p",
       "tags": [
         "strong",
@@ -57,15 +57,15 @@
     "common": true
   },
   {
-    "label": "Text for \"Try again\" button",
+    "label": "Text for \"Retry\" button",
     "name": "tryAgain",
     "type": "text",
-    "default": "Try again",
+    "default": "Retry",
     "common": true,
     "optional": true
   },
   {
-    "label": "Enable \"Try again\" button",
+    "label": "Enable \"Retry\" button",
     "name": "enableTryAgain",
     "type": "boolean",
     "default": true,
@@ -79,7 +79,7 @@
     "description": "Makes sure the user input has to be exactly the same as the answer."
   },
   {
-    "label": "Text for \"Check answer\" button",
+    "label": "Text for \"Check\" button",
     "name": "checkAnswer",
     "type": "text",
     "default": "Check",
@@ -87,10 +87,10 @@
     "optional": true
   },
   {
-    "label": "Text for \"Change answer\" button",
+    "label": "Text for \"Change\" button",
     "name": "changeAnswer",
     "type": "text",
-    "default": "Change answer",
+    "default": "Change",
     "common": true,
     "optional": true
   },
