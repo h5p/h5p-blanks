@@ -10,7 +10,7 @@
       "field": {
         "label": "Tekstlinje",
         "placeholder": "Oslo er hovedstaden i *Norge*",
-        "description": "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternativer angis med en skråstrek: *Norge/Noreg*."
+        "description": "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternativer angis med en skråstrek: *Norge/Noreg*. Tips angis med et kolon (:) før tipset: *Norge/Noreg:Verdens beste land*"
       }
     },
     {
@@ -35,11 +35,11 @@
     },
     {
       "label": "Tekst for \"Sjekk svar\"-knapp",
-      "default": "Sjekk svar"
+      "default": "Sjekk"
     },
     {
       "label": "Tekst for \"Endre svar\"-knapp",
-      "default": "Endre svar"
+      "default": "Endre"
     },
     {
       "label": "Tekst for \"Ikke utfyllt\"-melding",

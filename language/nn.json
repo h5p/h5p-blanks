@@ -10,7 +10,7 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "Opne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*."
+        "description": "Opne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*. Tips får et kolon (:) foran seg: *Norge/Noreg:Verdas beste land*"
       }
     },
     {
@@ -35,14 +35,14 @@
     },
     {
       "label": "Tekst for \"Sjekk svar\"-knapp",
-      "default": "Sjekk svar"
+      "default": "Sjekk"
     },
     {
       "label": "Tekst for \"Endre svar\"-knapp",
-      "default": "Endre svar"
+      "default": "Endre"
     },
     {
-      "label": "Tekst for \"Ikje utfyllt\"-melding",
+      "label": "Tekst for \"Ikkje utfyllt\"-melding",
       "default": "Du må fylle inn alle felt"
     },
     {
