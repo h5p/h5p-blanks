@@ -18,6 +18,7 @@ H5P.Blanks = (function ($) {
    * @returns {_L8.C}
    */
   function C(params, id) {
+    this.$ = $(this);
     this.id = id;
     this.$ = $(this);
 
@@ -97,6 +98,8 @@ H5P.Blanks = (function ($) {
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
+    }).change(function () {
+      self.$.trigger('h5pQuestionAnswered');
     });
   };
 
@@ -138,7 +141,7 @@ H5P.Blanks = (function ($) {
       text: this.params.showSolutions
     }).appendTo($buttonBar)
       .click(function () {
-        if (that.params.showSolutionsRequiresInput !== true || that.allBlanksFilledOut()) {
+        if (that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
           if (that.params.postUserStatistics === true) {
@@ -336,9 +339,11 @@ H5P.Blanks = (function ($) {
   C.prototype.getAnswerGiven = function () {
     var self = this;
     
-    for (var i = 0; i < self.clozes.length; i++) {
-      if (!self.clozes[i].filledOut()) {
-        return false;
+    if (this.params.showSolutionsRequiresInput === true) {
+      for (var i = 0; i < self.clozes.length; i++) {
+        if (!self.clozes[i].filledOut()) {
+          return false;
+        }
       }
     }
     
