@@ -3,7 +3,7 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 58,
+  "patchVersion": 59,
   "runnable": 1,
   "author": "Amendor AS",
   "license": "cc-by-sa",
@@ -21,7 +21,7 @@
   "preloadedDependencies": [
     {
       "machineName": "FontAwesome",
-      "majorVersion": 3,
+      "majorVersion": 4,
       "minorVersion": 1
     },
     {
