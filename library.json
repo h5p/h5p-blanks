@@ -8,7 +8,7 @@
   "author": "Amendor AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 1
+    "minorVersion": 2
   },
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
