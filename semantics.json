@@ -108,5 +108,12 @@
     "type": "boolean",
     "default": true,
     "optional": true
+  },
+  {
+    "label": "Automatically check answers after input",
+    "name": "autoCheck",
+    "type": "boolean",
+    "default": false,
+    "optional": true
   }
 ]

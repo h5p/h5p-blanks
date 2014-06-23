@@ -38,7 +38,8 @@ H5P.Blanks = (function ($) {
       caseSensitive: true,
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true),
-      showSolutionsRequiresInput: true
+      showSolutionsRequiresInput: true,
+      autoCheck: false
     }, params);
 
     this.clozes = [];
@@ -92,13 +93,29 @@ H5P.Blanks = (function ($) {
       $container[0].innerHTML += '<div>' + question + '</div>';
     }
     
-    $container.find('input').each(function (i) {
-      self.clozes[i].setInput($(this));
+    // Set input fields.
+    self.done;
+    var $inputs = $container.find('input').each(function (i) {
+      var afterCheck;
+      if (self.params.autoCheck) {
+        afterCheck = function () {
+          if (self.done || self.getAnswerGiven()) {
+            // All answers has been given. Show solutions button.
+            self.toggleButtonVisibility(STATE_CHECKING);
+            self.showEvaluation();
+            self.done = true;
+          }
+        };
+      }
+      self.clozes[i].setInput($(this), afterCheck, function () {
+        self.toggleButtonVisibility(STATE_ONGOING);
+        self.hideEvaluation();
+      });
     }).keydown(function (event) {
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
-    }).change(function () {
+    }).one('change', function () {
       self.$.trigger('h5pQuestionAnswered');
     });
   };
@@ -115,23 +132,26 @@ H5P.Blanks = (function ($) {
    * Add show solution button.
    */
   C.prototype.addButtons = function () {
-    var that = this;
-
-    if (this._$checkAnswerButton !== undefined) {
-      return;
+    if (this._$solutionButton !== undefined) {
+      return; // Buttons already added.
     }
     
+    var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
     
-    // Check answer button
-    this._$checkAnswerButton = $('<button/>', {'class': 'h5p-button h5p-check-answer', type: 'button', text: this.params.checkAnswer})
-      .appendTo($buttonBar)
-      .click(function () {
-        that.toggleButtonVisibility(STATE_CHECKING);
-        that.markResults();
-        that.showEvaluation();
-      }
-    );
+    if (!that.params.autoCheck) {
+      // Check answer button
+      this._$checkAnswerButton = $('<button/>', {
+        'class': 'h5p-button h5p-check-answer',
+        type: 'button', 
+        text: this.params.checkAnswer
+      }).appendTo($buttonBar)
+        .click(function () {
+          that.toggleButtonVisibility(STATE_CHECKING);
+          that.markResults();
+          that.showEvaluation();
+        });
+    }
 
     // Display solution button
     this._$solutionButton = $('<button/>', {
@@ -148,16 +168,13 @@ H5P.Blanks = (function ($) {
             H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
           }
         }
-      }
-    );
+      });
     
     // Change answer button
     this._$changeAnswerButton = $('<button/>', {'class': 'h5p-button h5p-change-answer', type: 'button', text: this.params.changeAnswer})
       .appendTo($buttonBar)
       .click(function () {
-        that.toggleButtonVisibility(STATE_ONGOING);
-        that.removeMarkedResults();
-        that.hideEvaluation();
+        that._$inner.find('.h5p-wrong:first > input').focus();
       }
     );
     
@@ -166,11 +183,13 @@ H5P.Blanks = (function ($) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
         .click(function () {
-          that.toggleButtonVisibility(STATE_ONGOING);
           that.removeMarkedResults();
           that.hideSolutions();
           that.hideEvaluation();
           that.clearAnswers();
+          that.done = false;
+          that.toggleButtonVisibility(STATE_ONGOING);
+          that._$inner.find('input:first').focus();
         }
       );
     }
@@ -187,13 +206,27 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.toggleButtonVisibility = function (state) {
     // The show solutions button is hidden if all answers are correct
-    if (this.params.displaySolutionsButton === true) {
-      this._$solutionButton.toggle(state === STATE_CHECKING && this.getScore() !== this.getMaxScore());
+    var allCorrect = (this.getScore() === this.getMaxScore());
+    if (this.params.autoCheck && allCorrect) {
+      // We are viewing the solutions
+      state = STATE_SHOWING_SOLUTION;
     }
+    
+    var toggle = (state === STATE_CHECKING && !allCorrect);
+    if (this.params.displaySolutionsButton === true) {
+      this._$solutionButton.toggle(toggle);
+    }
+    this._$changeAnswerButton.toggle(toggle);
     this._$footer.attr("data-state", state);
     
-    // Setting focus on first visible button!
-    this._$footer.find("button:visible").eq(0).focus();
+    if (!this.params.autoCheck && state !== this.lastState ) {
+      this.lastState = state;
+      
+      if (state !== STATE_ONGOING) {
+        // Setting focus on first visible button!
+        this._$footer.find("button:visible").eq(0).focus();
+      }
+    }
   };
   
   /**
@@ -362,8 +395,13 @@ H5P.Blanks = (function ($) {
   
   /**
    * Simple private class for keeping track of clozes.
+   * 
+   * @param {String} answer
+   * @param {Boolean} caseSensitive
+   * @returns {_L8.Cloze}
    */
   function Cloze(answer, caseSensitive) {
+    var self = this;
     var $input, $wrapper;
     var answers = [];
     var tip = undefined;
@@ -425,8 +463,14 @@ H5P.Blanks = (function ($) {
      * Public. Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
-      $input.attr('disabled', true);
-      $wrapper.addClass(correct(getUserAnswer()) ? 'h5p-correct' : 'h5p-wrong');
+      var isCorrect = correct(getUserAnswer());
+      if (isCorrect) {
+        $input.attr('disabled', true);
+        $wrapper.addClass('h5p-correct');
+      }
+      else {
+        $wrapper.addClass('h5p-wrong');
+      }
     };
     
     /** 
@@ -438,6 +482,7 @@ H5P.Blanks = (function ($) {
       }
 
       $('<span class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+      $input.attr('disabled', true);
     };
     
     /**
@@ -454,7 +499,7 @@ H5P.Blanks = (function ($) {
      *
      * @param {jQuery} $element
      */
-    this.setInput = function ($element) {
+    this.setInput = function ($element, afterCheck, afterFocus) {
       $input = $element;
       $wrapper = $element.parent();
       
@@ -462,6 +507,22 @@ H5P.Blanks = (function ($) {
       if(tip !== undefined && tip.trim().length > 0) {
         $wrapper.addClass('has-tip').append(H5P.JoubelUI.createTip(tip, $wrapper.parent()));
       }
+      
+      if (afterCheck !== undefined) {
+        $input.blur(function () {
+          if (self.filledOut()) {
+            // Check answers
+            self.checkAnswer();
+            afterCheck();
+          }
+        });
+      }
+      $input.focus(function () {
+        $wrapper.removeClass('h5p-wrong');
+        if (afterFocus !== undefined) {
+          afterFocus();
+        }
+      });
     };
     
     /**
