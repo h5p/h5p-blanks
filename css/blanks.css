@@ -96,6 +96,7 @@
 }
 .h5p-blanks .h5p-button-bar {
   margin-top: .8em;
+  min-height: 2.134em;
 }
 .h5p-blanks button.h5p-button {
   float: right;
