@@ -20,7 +20,6 @@ H5P.Blanks = (function ($) {
   function C(params, id) {
     this.$ = $(this);
     this.id = id;
-    this.$ = $(this);
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -39,7 +38,8 @@ H5P.Blanks = (function ($) {
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true),
       showSolutionsRequiresInput: true,
-      autoCheck: false
+      autoCheck: false,
+      separateLines: false
     }, params);
 
     this.clozes = [];
@@ -53,6 +53,10 @@ H5P.Blanks = (function ($) {
   C.prototype.attach = function ($container) {
     this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><div class="h5p-blanks-title">' + this.params.text + '</div></div>').children();
     this.appendQuestionsTo(this._$inner);
+
+    if (this.params.separateLines) {
+      this._$inner.addClass('h5p-separate-lines');
+    }
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
@@ -83,6 +87,7 @@ H5P.Blanks = (function ($) {
         // Create new cloze
         var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.caseSensitive);
         clozeEnd++;
+        
         question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
         self.clozes.push(cloze);
 
@@ -94,8 +99,7 @@ H5P.Blanks = (function ($) {
     }
     
     // Set input fields.
-    self.done;
-    var $inputs = $container.find('input').each(function (i) {
+    $container.find('input').each(function (i) {
       var afterCheck;
       if (self.params.autoCheck) {
         afterCheck = function () {

@@ -40,6 +40,14 @@
 .h5p-blanks .h5p-text-input.h5p-not-filled-out {
   background: #fff0f0;
 }
+.h5p-blanks .h5p-separate-lines .h5p-input-wrapper {
+  display: block;
+}
+.h5p-blanks .h5p-separate-lines .h5p-text-input {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
