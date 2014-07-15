@@ -49,6 +49,9 @@
       "label": "Krev at alle felt er besvart før fasit gis"
     },
     {
+      "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
+    },
+    {
       "label": "Sett inntastingsfelt på egne linjer"
     }
   ]
