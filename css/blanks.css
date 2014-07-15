@@ -46,7 +46,7 @@
 .h5p-blanks .h5p-separate-lines .h5p-text-input {
   width: 100%;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 /* Correctly answered input */
