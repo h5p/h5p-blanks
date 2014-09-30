@@ -15,6 +15,7 @@
 }
 .h5p-blanks .h5p-inner {
   padding: 1em;
+  overflow: hidden;
 }
 .h5p-blanks .h5p-input-wrapper {
   display: inline-block;
@@ -96,7 +97,6 @@
 .h5p-blanks .h5p-blanks-footer {
   margin-top: 0.4em;
   border-top: 0.1em solid #ddd;
-  overflow: hidden;
 }
 .h5p-blanks .h5p-button-bar {
   margin-top: .8em;
