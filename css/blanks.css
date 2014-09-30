@@ -214,7 +214,7 @@
   transform-origin: 50% 50%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  
+
   -webkit-animation-name: shake-it;
   -webkit-animation-duration: 0.8s;
   -webkit-transform-origin: 50% 50%;
@@ -262,17 +262,18 @@
   border-right-color: #ffffff;
 }
 .h5p-blanks .joubel-tip-container {
-  position: relative; 
-  right: 2.1em;
-  top: 0.3em;
+  position: absolute;
+  top: -0.25em;
+  right: 0;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip {
-  margin-right: -2em;
+.h5p-blanks .has-tip .h5p-text-input {
+  padding-right: 2.25em;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip:after {
-  right: 4em;
-  top: .4em;
+.h5p-blanks .has-tip.h5p-correct:after,
+.h5p-blanks .has-tip.h5p-wrong:after {
+  right: 2.25em;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip .h5p-text-input {
-  padding-right: 2em;
+.h5p-blanks .has-tip.h5p-correct .h5p-text-input,
+.h5p-blanks .has-tip.h5p-wrong .h5p-text-input {
+  padding-right: 3.5em;
 }
