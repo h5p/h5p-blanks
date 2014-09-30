@@ -12,13 +12,8 @@
 
 .h5p-blanks {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
-  overflow: hidden;
-  font-family: Verdana, Arial, sans-serif;
 }
 .h5p-blanks .h5p-inner {
-  overflow: hidden;
   padding: 1em;
 }
 .h5p-blanks .h5p-input-wrapper {
@@ -101,6 +96,7 @@
 .h5p-blanks .h5p-blanks-footer {
   margin-top: 0.4em;
   border-top: 0.1em solid #ddd;
+  overflow: hidden;
 }
 .h5p-blanks .h5p-button-bar {
   margin-top: .8em;
