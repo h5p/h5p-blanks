@@ -263,7 +263,7 @@
 }
 .h5p-blanks .joubel-tip-container {
   position: absolute;
-  top: -0.25em;
+  top: 0;
   right: 0;
 }
 .h5p-blanks .has-tip .h5p-text-input {
