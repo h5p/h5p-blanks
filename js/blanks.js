@@ -108,6 +108,9 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
+            if (self.params.postUserStatistics === true) {
+              H5P.setFinished(self.id, self.getScore(), self.getMaxScore());
+            }
           }
         };
       }
@@ -154,6 +157,9 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
+          if (that.params.postUserStatistics === true) {
+            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+          }
         });
     }
 
