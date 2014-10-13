@@ -18,7 +18,6 @@ H5P.Blanks = (function ($) {
    * @returns {_L8.C}
    */
   function C(params, id) {
-    this.$ = $(this);
     this.id = id;
 
     // Set default behavior.
@@ -36,7 +35,6 @@ H5P.Blanks = (function ($) {
       enableTryAgain: true,
       caseSensitive: true,
       displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true),
       showSolutionsRequiresInput: true,
       autoCheck: false,
       separateLines: false
@@ -61,7 +59,7 @@ H5P.Blanks = (function ($) {
     // Add "show solutions" button and evaluation area
     this.addFooter();
     
-    this.$.trigger('resize');
+    this.triggerH5PEvent('resize');
   };
   
   /**
@@ -123,7 +121,7 @@ H5P.Blanks = (function ($) {
         return false; // Prevent form submission on enter key
       }
     }).one('change', function () {
-      self.$.trigger('h5pQuestionAnswered');
+      self.triggerH5PxAPIEvent('attempted');
     });
   };
 
@@ -174,9 +172,7 @@ H5P.Blanks = (function ($) {
         if (that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
-          if (that.params.postUserStatistics === true) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-          }
+          that.triggerH5PxAPIEvent('completed', H5P.getxAPIScoredResult(that.getScore(), that.getMaxScore()));
         }
       });
     
