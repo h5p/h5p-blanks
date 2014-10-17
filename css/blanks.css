@@ -56,8 +56,8 @@
 }
 .h5p-blanks .h5p-correct:after {
   position: absolute;
-  right: 0.25em;
-
+  right: 0.5em;
+  top: 0.25em;
   text-decoration: none;
   content: "\f00c";
   font-family: 'H5PFontAwesome4';
@@ -72,8 +72,8 @@
 }
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
-  right: 0.25em;
-
+  right: 0.5em;
+  top: 0.125em;
   font-family: 'H5PFontAwesome4';
   text-decoration: none;
   content: "\f00d";
