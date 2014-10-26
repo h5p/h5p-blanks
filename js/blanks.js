@@ -18,7 +18,7 @@ H5P.Blanks = (function ($) {
    * @returns {_L8.C}
    */
   function C(params, id) {
-    this.id = id;
+    this.id = this.contentId = id;
 
     // Set default behavior.
     this.params = $.extend({}, {
