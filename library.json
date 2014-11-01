@@ -3,9 +3,13 @@
   "description": "void",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 60,
+  "patchVersion": 69,
   "runnable": 1,
   "author": "Amendor AS",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 2
+  },
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
   "preloadedCss": [

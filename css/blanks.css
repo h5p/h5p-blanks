@@ -12,14 +12,10 @@
 
 .h5p-blanks {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6FFFFFF,endColorstr=#e6FFFFFF);
-  overflow: hidden;
-  font-family: Verdana, Arial, sans-serif;
 }
 .h5p-blanks .h5p-inner {
-  overflow: hidden;
   padding: 1em;
+  overflow: hidden;
 }
 .h5p-blanks .h5p-input-wrapper {
   display: inline-block;
@@ -40,6 +36,14 @@
 .h5p-blanks .h5p-text-input.h5p-not-filled-out {
   background: #fff0f0;
 }
+.h5p-blanks .h5p-separate-lines .h5p-input-wrapper {
+  display: block;
+}
+.h5p-blanks .h5p-separate-lines .h5p-text-input {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
@@ -52,8 +56,8 @@
 }
 .h5p-blanks .h5p-correct:after {
   position: absolute;
-  right: 0.25em;
-
+  right: 0.5em;
+  top: 0.25em;
   text-decoration: none;
   content: "\f00c";
   font-family: 'H5PFontAwesome4';
@@ -68,8 +72,8 @@
 }
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
-  right: 0.25em;
-
+  right: 0.5em;
+  top: 0.125em;
   font-family: 'H5PFontAwesome4';
   text-decoration: none;
   content: "\f00d";
@@ -130,7 +134,6 @@
   background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0468ce', endColorstr='#6498fe',GradientType=0 ); /* IE6-9 */
 }
-
 .h5p-blanks button.h5p-button:before {
   font-family: 'H5PFontAwesome4';
   content: "\f06e";
@@ -207,7 +210,7 @@
   transform-origin: 50% 50%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  
+
   -webkit-animation-name: shake-it;
   -webkit-animation-duration: 0.8s;
   -webkit-transform-origin: 50% 50%;
@@ -255,17 +258,18 @@
   border-right-color: #ffffff;
 }
 .h5p-blanks .joubel-tip-container {
-  position: relative; 
-  right: 2.1em;
-  top: 0.3em;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip {
-  margin-right: -2em;
+.h5p-blanks .has-tip .h5p-text-input {
+  padding-right: 2.25em;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip:after {
-  right: 4em;
-  top: .4em;
+.h5p-blanks .has-tip.h5p-correct:after,
+.h5p-blanks .has-tip.h5p-wrong:after {
+  right: 2.25em;
 }
-.h5p-blanks .h5p-input-wrapper.has-tip .h5p-text-input {
-  padding-right: 2em;
+.h5p-blanks .has-tip.h5p-correct .h5p-text-input,
+.h5p-blanks .has-tip.h5p-wrong .h5p-text-input {
+  padding-right: 3.5em;
 }

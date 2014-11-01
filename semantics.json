@@ -115,5 +115,12 @@
     "type": "boolean",
     "default": false,
     "optional": true
+  },
+  {
+    "label": "Put input fields on separate lines",
+    "name": "separateLines",
+    "type": "boolean",
+    "default": false,
+    "optional": true
   }
 ]
