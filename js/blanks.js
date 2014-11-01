@@ -19,6 +19,7 @@ H5P.Blanks = (function ($) {
    */
   function C(params, id) {
     this.id = this.contentId = id;
+    H5P.EventEnabled.call(this);
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -42,6 +43,9 @@ H5P.Blanks = (function ($) {
 
     this.clozes = [];
   };
+
+  C.prototype = Object.create(H5P.EventEnabled.prototype);
+  C.prototype.constructor = C;
 
   /**
    * Append field to wrapper.
@@ -172,7 +176,9 @@ H5P.Blanks = (function ($) {
         if (that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
-          that.triggerXAPI('completed', {result: H5P.getxAPIScoredResult(that.getScore(), that.getMaxScore())});
+          var event = that.createXAPIEventTemplate('completed');
+          event.setScoredResult(that.getScore(), that.getMaxScore());
+          that.trigger('xAPI', event);
         }
       });
     
