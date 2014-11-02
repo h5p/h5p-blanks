@@ -159,9 +159,9 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
-          if (that.params.postUserStatistics === true) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-          }
+          var event = that.createXAPIEventTemplate('completed');
+          event.setScoredResult(that.getScore(), that.getMaxScore());
+          that.trigger('xAPI', event);
         });
     }
 
