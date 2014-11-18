@@ -441,7 +441,12 @@ H5P.Blanks = (function ($) {
      * @returns {String} Trimmed answer
      */
     var getUserAnswer = function () {
-      return H5P.trim($input.val());
+      if ($input) {
+        return H5P.trim($input.val());
+      }
+      else {
+        return '';
+      }
     };
     
     /**
