@@ -27,6 +27,7 @@ H5P.Blanks = (function ($) {
       questions: [
         "2 + 2 = *4*"
       ],
+      userAnswers: [],
       score: "You got @score of @total points.",
       showSolutions: "Show solutions",
       tryAgain: "Try again",
@@ -85,7 +86,10 @@ H5P.Blanks = (function ($) {
         }
         
         // Create new cloze
-        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.caseSensitive);
+        var defaultUserAnswer = self.params.userAnswers.length > self.clozes.length
+          ? self.params.userAnswers[self.clozes.length]
+          : null;
+        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.caseSensitive, defaultUserAnswer);
         clozeEnd++;
         
         question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
@@ -357,11 +361,11 @@ H5P.Blanks = (function ($) {
   C.prototype.getScore = function () {
     var self = this;
     var correct = 0;
-    
     for (var i = 0; i < self.clozes.length; i++) {
       if (self.clozes[i].correct()) {
         correct++;
       }
+      self.params.userAnswers[i] = self.clozes[i].getUserAnswer();
     }
 
     return correct;
@@ -410,7 +414,7 @@ H5P.Blanks = (function ($) {
    * @param {Boolean} caseSensitive
    * @returns {_L8.Cloze}
    */
-  function Cloze(answer, caseSensitive) {
+  function Cloze(answer, caseSensitive, defaultUserAnswer) {
     var self = this;
     var $input, $wrapper;
     var answers = [];
@@ -436,17 +440,12 @@ H5P.Blanks = (function ($) {
     }
     
     /**
-     * Private.
+     * Public
      *
      * @returns {String} Trimmed answer
      */
-    var getUserAnswer = function () {
-      if ($input) {
-        return H5P.trim($input.val());
-      }
-      else {
-        return '';
-      }
+    this.getUserAnswer = function () {
+      return H5P.trim($input.val());
     };
     
     /**
@@ -469,7 +468,7 @@ H5P.Blanks = (function ($) {
      * @param {Boolean}
      */
     this.filledOut = function () {
-      var answered = getUserAnswer();
+      var answered = this.getUserAnswer();
       // Blank can be correct and is interpreted as filled out.
       return (answered !== '' || correct(answered));
     };
@@ -478,7 +477,7 @@ H5P.Blanks = (function ($) {
      * Public. Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
-      var isCorrect = correct(getUserAnswer());
+      var isCorrect = correct(this.getUserAnswer());
       if (isCorrect) {
         $input.attr('disabled', true);
         $wrapper.addClass('h5p-correct');
@@ -492,7 +491,7 @@ H5P.Blanks = (function ($) {
      * Public. Show the correct solution.
      */
     this.showSolution = function () {
-      if (correct(getUserAnswer())) {
+      if (correct(this.getUserAnswer())) {
         return; // Only for the wrong ones
       }
 
@@ -506,7 +505,7 @@ H5P.Blanks = (function ($) {
      * @returns {Boolean}
      */
     this.correct = function () {
-      return correct(getUserAnswer());
+      return correct(this.getUserAnswer());
     };
     
     /**
@@ -546,7 +545,8 @@ H5P.Blanks = (function ($) {
      * @returns {String} Cloze html
      */
     this.toString = function () {
-      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input"></span>';
+      var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
+      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input"' + extra + '></span>';
     };
   }
 
