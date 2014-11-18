@@ -52,6 +52,9 @@ H5P.Blanks = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
+    // Reset clozes in case we are re-attaching
+    this.clozes = [];
+    
     this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><div class="h5p-blanks-title">' + this.params.text + '</div></div>').children();
     this.appendQuestionsTo(this._$inner);
 
