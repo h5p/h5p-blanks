@@ -66,7 +66,14 @@
   },
   {
     "label": "Enable \"Retry\" button",
-    "name": "enableTryAgain",
+    "name": "enableRetryButton",
+    "type": "boolean",
+    "default": true,
+    "optional": true
+  },
+  {
+    "label": "Enable \"Show solutions\" button",
+    "name": "enableSolutionsButton",
     "type": "boolean",
     "default": true,
     "optional": true
