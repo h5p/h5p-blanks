@@ -35,7 +35,7 @@ H5P.Blanks = (function ($) {
       checkAnswer: "Check",
       changeAnswer: "Change answer",
       notFilledOut: "Please fill in all blanks",
-      enableRetryButton: true,
+      enableRetry: true,
       caseSensitive: true,
       enableSolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true),
@@ -189,7 +189,7 @@ H5P.Blanks = (function ($) {
       });
     
     // Try again button 
-    if(this.params.enableRetryButton === true) {
+    if(this.params.enableRetry === true) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
         .click(function () {
@@ -219,15 +219,15 @@ H5P.Blanks = (function ($) {
     var allCorrect = (this.getScore() === this.getMaxScore());
     if (this.params.autoCheck && allCorrect) {
       // We are viewing the solutions
-      state = STATE_SHOWING_SOLUTION;
+      state = STATE_FINISHED;
     }
     
     var toggle = (state === STATE_CHECKING && !allCorrect);
     if (this.params.enableSolutionsButton) {
       this._$solutionButton.toggle(toggle);
     }
-    var toggleRetry = ((state === STATE_CHECKING && !allCorrect) || (state === STATE_SHOWING_SOLUTION));
-    if (this.params.enableRetryButton) {
+    var toggleRetry = (((state === STATE_CHECKING) && !allCorrect) || (state === STATE_SHOWING_SOLUTION));
+    if (this.params.enableRetry) {
       this._$tryAgainButton.toggle(toggleRetry);
     }
 
@@ -263,12 +263,13 @@ H5P.Blanks = (function ($) {
   };
 
   /**
-   * Mark which answers are correct and which are wrong
+   * Mark which answers are correct and which are wrong and disable fields if retry is off.
    */
   C.prototype.markResults = function () {
     var self = this;
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].checkAnswer();
+      self.clozes[i].disableInput();
     }
   };
   
@@ -300,7 +301,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.showSolutions = function () {
     this.params.enableSolutionsButton = true;
-    this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
+    this.toggleButtonVisibility(STATE_FINISHED);
     this.markResults();
     this.showCorrectAnswers();
     this.showEvaluation();
@@ -503,12 +504,20 @@ H5P.Blanks = (function ($) {
     this.checkAnswer = function () {
       var isCorrect = correct(this.getUserAnswer());
       if (isCorrect) {
-        $input.attr('disabled', true);
         $wrapper.addClass('h5p-correct');
+        $input.attr('disabled', true);
       }
       else {
         $wrapper.addClass('h5p-wrong');
       }
+    };
+
+    /**
+     * @public
+     * Disables further input from this button.
+     */
+    this.disableInput = function () {
+      $input.attr('disabled', true);
     };
     
     /** 
