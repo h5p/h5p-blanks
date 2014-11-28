@@ -81,9 +81,9 @@
     "optional": true
   },
   {
-    "name": "Behavioural settings",
+    "name": "behaviour",
     "type": "group",
-    "label": "Settings for task behaviour.",
+    "label": "Behavioural settings.",
     "description": "These options will let you control how the task behaves.",
     "optional": true,
     "fields": [
