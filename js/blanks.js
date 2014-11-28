@@ -450,13 +450,17 @@ H5P.Blanks = (function ($) {
     this.getUserAnswer = function () {
       return H5P.trim($input.val());
     };
-    
+
     /**
      * Private. Check if the answer is correct.
      *
      * @param {String} answered
      */
     var correct = function (answered) {
+      if (caseSensitive !== true) {
+        answered = answered.toLowerCase();
+      }
+
       for (var i = 0; i < answers.length; i++) {
         if (answered === answers[i]) {
           return true;
