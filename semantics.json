@@ -88,7 +88,7 @@
     "optional": true,
     "fields": [
       {
-        "label": "Enable \"Retry\" button",
+        "label": "Enable \"Retry\"",
         "name": "enableRetry",
         "type": "boolean",
         "default": true,
