@@ -65,39 +65,10 @@
     "optional": true
   },
   {
-    "label": "Enable \"Retry\" button",
-    "name": "enableRetry",
-    "type": "boolean",
-    "default": true,
-    "optional": true
-  },
-  {
-    "label": "Enable \"Show solutions\" button",
-    "name": "enableSolutionsButton",
-    "type": "boolean",
-    "default": true,
-    "optional": true
-  },
-  {
-    "name": "caseSensitive",
-    "type": "boolean",
-    "default": true,
-    "label": "Case sensitive",
-    "description": "Makes sure the user input has to be exactly the same as the answer."
-  },
-  {
     "label": "Text for \"Check\" button",
     "name": "checkAnswer",
     "type": "text",
     "default": "Check",
-    "common": true,
-    "optional": true
-  },
-  {
-    "label": "Text for \"Change\" button",
-    "name": "changeAnswer",
-    "type": "text",
-    "default": "Change",
     "common": true,
     "optional": true
   },
@@ -110,24 +81,54 @@
     "optional": true
   },
   {
-    "label": "Require all fields to be answered before the solution can be viewed",
-    "name": "showSolutionsRequiresInput",
-    "type": "boolean",
-    "default": true,
-    "optional": true
-  },
-  {
-    "label": "Automatically check answers after input",
-    "name": "autoCheck",
-    "type": "boolean",
-    "default": false,
-    "optional": true
-  },
-  {
-    "label": "Put input fields on separate lines",
-    "name": "separateLines",
-    "type": "boolean",
-    "default": false,
-    "optional": true
+    "name": "behaviour",
+    "type": "group",
+    "label": "Behavioural settings.",
+    "description": "These options will let you control how the task behaves.",
+    "optional": true,
+    "fields": [
+      {
+        "label": "Enable \"Retry\"",
+        "name": "enableRetry",
+        "type": "boolean",
+        "default": true,
+        "optional": true
+      },
+      {
+        "label": "Enable \"Show solutions\" button",
+        "name": "enableSolutionsButton",
+        "type": "boolean",
+        "default": true,
+        "optional": true
+      },
+      {
+        "label": "Automatically check answers after input",
+        "name": "autoCheck",
+        "type": "boolean",
+        "default": false,
+        "optional": true
+      },
+      {
+        "name": "caseSensitive",
+        "type": "boolean",
+        "default": true,
+        "label": "Case sensitive",
+        "description": "Makes sure the user input has to be exactly the same as the answer."
+      },
+      {
+        "label": "Require all fields to be answered before the solution can be viewed",
+        "name": "showSolutionsRequiresInput",
+        "type": "boolean",
+        "default": true,
+        "optional": true
+      },
+      {
+        "label": "Put input fields on separate lines",
+        "name": "separateLines",
+        "type": "boolean",
+        "default": false,
+        "optional": true
+      }
+    ]
   }
 ]
