@@ -20,6 +20,7 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
           delete parameters.caseSensitive;
           delete parameters.showSolutionsRequiresInput;
           delete parameters.separateLines;
+          delete parameters.changeAnswer;
 
           finished(null, parameters);
         }
