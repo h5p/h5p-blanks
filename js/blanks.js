@@ -271,7 +271,9 @@ H5P.Blanks = (function ($) {
     var self = this;
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].checkAnswer();
-      self.clozes[i].disableInput();
+      if (!self.params.behaviour.enableRetry) {
+        self.clozes[i].disableInput();
+      }
     }
   };
   
