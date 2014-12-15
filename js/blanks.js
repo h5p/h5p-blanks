@@ -95,7 +95,7 @@ H5P.Blanks = (function ($) {
         var defaultUserAnswer = self.params.userAnswers.length > self.clozes.length
           ? self.params.userAnswers[self.clozes.length]
           : null;
-        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.behaviour.caseSensitive, defaultUserAnswer);
+        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.behaviour, defaultUserAnswer);
         clozeEnd++;
         
         question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
@@ -271,7 +271,9 @@ H5P.Blanks = (function ($) {
     var self = this;
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].checkAnswer();
-      self.clozes[i].disableInput();
+      if (!self.params.behaviour.enableRetry) {
+        self.clozes[i].disableInput();
+      }
     }
   };
   
@@ -438,10 +440,10 @@ H5P.Blanks = (function ($) {
    * Simple private class for keeping track of clozes.
    * 
    * @param {String} answer
-   * @param {Boolean} caseSensitive
+   * @param {Object} behaviour Behaviour for the task
    * @returns {_L8.Cloze}
    */
-  function Cloze(answer, caseSensitive, defaultUserAnswer) {
+  function Cloze(answer, behaviour, defaultUserAnswer) {
     var self = this;
     var $input, $wrapper;
     var answers = [];
@@ -456,7 +458,7 @@ H5P.Blanks = (function ($) {
       // Trim answers
       for (var i = 0; i < answers.length; i++) {
         answers[i] = H5P.trim(answers[i]);
-        if (caseSensitive !== true) {
+        if (behaviour.caseSensitive !== true) {
           answers[i] = answers[i].toLowerCase();
         }
       }
@@ -561,6 +563,9 @@ H5P.Blanks = (function ($) {
         $input.blur(function () {
           if (self.filledOut()) {
             // Check answers
+            if (!behaviour.enableRetry) {
+              self.disableInput();
+            }
             self.checkAnswer();
             afterCheck();
           }
