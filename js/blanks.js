@@ -483,7 +483,7 @@ H5P.Blanks = (function ($) {
      * @param {String} answered
      */
     var correct = function (answered) {
-      if (caseSensitive !== true) {
+      if (behaviour.caseSensitive !== true) {
         answered = answered.toLowerCase();
       }
 
