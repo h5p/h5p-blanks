@@ -8,7 +8,7 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
           // Moved all behavioural settings into "behaviour" group.
           parameters.behaviour = {
             enableRetry: parameters.enableTryAgain,
-            enableSolutionsButton: parameters.enableShowSolution,
+            enableSolutionsButton: true,
             autoCheck: parameters.autoCheck,
             caseSensitive: parameters.caseSensitive,
             showSolutionsRequiresInput: parameters.showSolutionsRequiresInput,
