@@ -7,12 +7,12 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
         contentUpgrade: function (parameters, finished) {
           // Moved all behavioural settings into "behaviour" group.
           parameters.behaviour = {
-            enableRetry: parameters.enableTryAgain,
+            enableRetry: parameters.enableTryAgain === undefined ? true : parameters.enableRetry,
             enableSolutionsButton: true,
-            autoCheck: parameters.autoCheck,
-            caseSensitive: parameters.caseSensitive,
-            showSolutionsRequiresInput: parameters.showSolutionsRequiresInput,
-            separateLines: parameters.separateLines
+            autoCheck: parameters.autoCheck === undefined ? false : parameters.autoCheck,
+            caseSensitive: parameters.caseSensitive === undefined ? true : parameters.caseSensitive,
+            showSolutionsRequiresInput: parameters.showSolutionsRequiresInput === undefined ? true : parameters.showSolutionsRequiresInput,
+            separateLines: parameters.separateLines === undefined ? false : parameters.separateLines
           };
           delete parameters.enableTryAgain;
           delete parameters.enableShowSolution;
