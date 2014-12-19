@@ -27,32 +27,37 @@
       "default": "Prøv igjen"
     },
     {
-      "label": "Vis \"Prøv igjen\" knapp"
-    },
-    {
-      "label": "Skil mellom store og små bokstavar",
-      "description": "Syrgjer for at svaret til brukaren må være nøyaktig det same som i oppgåva."
-    },
-    {
       "label": "Tekst for \"Sjekk svar\"-knapp",
       "default": "Sjekk"
-    },
-    {
-      "label": "Tekst for \"Endre svar\"-knapp",
-      "default": "Endre"
     },
     {
       "label": "Tekst for \"Ikkje utfyllt\"-melding",
       "default": "Du må fylle inn alle felt"
     },
     {
-      "label": "Krev at alle felt er besvart før fasit gis"
-    },
-    {
-      "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
-    },
-    {
-      "label": "Sett inntastingsfelt på egne linjer"
+      "label": "Innstillinger for oppgave-åtferd",
+      "description": "Desse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
+      "fields": [
+        {
+          "label": "Aktiver \"Prøv igjen\""
+        },
+        {
+          "label": "Aktiver \"Vis svar\" knapp"
+        },
+        {
+          "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
+        },
+        {
+          "label": "Skil mellom store og små bokstavar",
+          "description": "Syrgjer for at svaret til brukaren må være nøyaktig det same som i oppgåva."
+        },
+        {
+          "label": "Krev at alle felt er besvart før fasit gis"
+        },
+        {
+          "label": "Sett inntastingsfelt på egne linjer"
+        }
+      ]
     }
   ]
 }

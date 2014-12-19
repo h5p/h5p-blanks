@@ -9,7 +9,8 @@ H5P.Blanks = (function ($) {
   var STATE_ONGOING = 'ongoing';
   var STATE_CHECKING = 'checking';
   var STATE_SHOWING_SOLUTION = 'showing-solution';
-
+  var STATE_FINISHED = 'finished';
+  
   /**
    * Initialize module.
    *
@@ -34,13 +35,15 @@ H5P.Blanks = (function ($) {
       checkAnswer: "Check",
       changeAnswer: "Change answer",
       notFilledOut: "Please fill in all blanks",
-      enableTryAgain: true,
-      caseSensitive: true,
-      displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true),
-      showSolutionsRequiresInput: true,
-      autoCheck: false,
-      separateLines: false
+      behaviour: {
+        enableRetry: true,
+        enableSolutionsButton: true,
+        caseSensitive: true,
+        showSolutionsRequiresInput: true,
+        autoCheck: false,
+        separateLines: false
+      },
+      postUserStatistics: (H5P.postUserStatistics === true)
     }, params);
 
     this.clozes = [];
@@ -58,7 +61,7 @@ H5P.Blanks = (function ($) {
     this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><div class="h5p-blanks-title">' + this.params.text + '</div></div>').children();
     this.appendQuestionsTo(this._$inner);
 
-    if (this.params.separateLines) {
+    if (this.params.behaviour.separateLines) {
       this._$inner.addClass('h5p-separate-lines');
     }
 
@@ -92,7 +95,7 @@ H5P.Blanks = (function ($) {
         var defaultUserAnswer = self.params.userAnswers.length > self.clozes.length
           ? self.params.userAnswers[self.clozes.length]
           : null;
-        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.caseSensitive, defaultUserAnswer);
+        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.behaviour, defaultUserAnswer);
         clozeEnd++;
 
         question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
@@ -108,7 +111,7 @@ H5P.Blanks = (function ($) {
     // Set input fields.
     $container.find('input').each(function (i) {
       var afterCheck;
-      if (self.params.autoCheck) {
+      if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
           if (self.done || self.getAnswerGiven()) {
             // All answers has been given. Show solutions button.
@@ -152,8 +155,8 @@ H5P.Blanks = (function ($) {
 
     var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
-
-    if (!that.params.autoCheck) {
+    
+    if (!that.params.behaviour.autoCheck) {
       // Check answer button
       this._$checkAnswerButton = $('<button/>', {
         'class': 'h5p-button h5p-check-answer',
@@ -173,7 +176,7 @@ H5P.Blanks = (function ($) {
     // Display solution button
     this._$solutionButton = $('<button/>', {
       'class': 'h5p-button h5p-show-solution',
-      style: 'display:' + (this.params.displaySolutionsButton === true ? 'block;' : 'none;'),
+      style: 'display:' + (this.params.behaviour.enableSolutionsButton === true ? 'block;' : 'none;'),
       type: 'button',
       text: this.params.showSolutions
     }).appendTo($buttonBar)
@@ -186,17 +189,9 @@ H5P.Blanks = (function ($) {
           }
         }
       });
-
-    // Change answer button
-    this._$changeAnswerButton = $('<button/>', {'class': 'h5p-button h5p-change-answer', type: 'button', text: this.params.changeAnswer})
-      .appendTo($buttonBar)
-      .click(function () {
-        that._$inner.find('.h5p-wrong:first > input').focus();
-      }
-    );
-
-    // Try again button
-    if(this.params.enableTryAgain === true) {
+    
+    // Try again button 
+    if(this.params.behaviour.enableRetry === true) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
         .click(function () {
@@ -224,19 +219,23 @@ H5P.Blanks = (function ($) {
   C.prototype.toggleButtonVisibility = function (state) {
     // The show solutions button is hidden if all answers are correct
     var allCorrect = (this.getScore() === this.getMaxScore());
-    if (this.params.autoCheck && allCorrect) {
+    if (this.params.behaviour.autoCheck && allCorrect) {
       // We are viewing the solutions
-      state = STATE_SHOWING_SOLUTION;
+      state = STATE_FINISHED;
     }
 
     var toggle = (state === STATE_CHECKING && !allCorrect);
-    if (this.params.displaySolutionsButton === true) {
+    if (this.params.behaviour.enableSolutionsButton) {
       this._$solutionButton.toggle(toggle);
     }
-    this._$changeAnswerButton.toggle(toggle);
-    this._$footer.attr("data-state", state);
+    var toggleRetry = (((state === STATE_CHECKING) && !allCorrect) || (state === STATE_SHOWING_SOLUTION));
+    if (this.params.behaviour.enableRetry) {
+      this._$tryAgainButton.toggle(toggleRetry);
+    }
 
-    if (!this.params.autoCheck && state !== this.lastState ) {
+    this._$footer.attr("data-state", state);
+    
+    if (!this.params.behaviour.autoCheck && state !== this.lastState ) {
       this.lastState = state;
 
       if (state !== STATE_ONGOING) {
@@ -266,12 +265,15 @@ H5P.Blanks = (function ($) {
   };
 
   /**
-   * Mark which answers are correct and which are wrong
+   * Mark which answers are correct and which are wrong and disable fields if retry is off.
    */
   C.prototype.markResults = function () {
     var self = this;
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].checkAnswer();
+      if (!self.params.behaviour.enableRetry) {
+        self.clozes[i].disableInput();
+      }
     }
   };
 
@@ -302,11 +304,34 @@ H5P.Blanks = (function ($) {
    * This is invoked from CP - be carefull!
    */
   C.prototype.showSolutions = function () {
-    this.params.displaySolutionsButton = true;
-    this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
+    this.params.behaviour.enableSolutionsButton = true;
+    this.toggleButtonVisibility(STATE_FINISHED);
     this.markResults();
     this.showCorrectAnswers();
     this.showEvaluation();
+    //Hides all buttons in "show solution" mode.
+    this.hideButtons();
+  };
+
+  /**
+   * Resets the complete task.
+   * Used in contracts.
+   * @public
+   */
+  C.prototype.resetTask = function () {
+    this.hideEvaluation();
+    this.hideSolutions();
+    this.clearAnswers();
+    this.removeMarkedResults();
+    this.toggleButtonVisibility(STATE_ONGOING);
+  };
+
+  /**
+   * Hides all buttons.
+   * @public
+   */
+  C.prototype.hideButtons = function () {
+    this.toggleButtonVisibility(STATE_FINISHED);
   };
 
   /**
@@ -324,6 +349,7 @@ H5P.Blanks = (function ($) {
 
     if (score === maxScore) {
       this._$evaluation.addClass('max-score');
+      this.toggleButtonVisibility(STATE_FINISHED);
     }
     else {
       this._$evaluation.removeClass('max-score');
@@ -388,8 +414,8 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.getAnswerGiven = function () {
     var self = this;
-
-    if (this.params.showSolutionsRequiresInput === true) {
+    
+    if (this.params.behaviour.showSolutionsRequiresInput === true) {
       for (var i = 0; i < self.clozes.length; i++) {
         if (!self.clozes[i].filledOut()) {
           return false;
@@ -414,10 +440,10 @@ H5P.Blanks = (function ($) {
    * Simple private class for keeping track of clozes.
    *
    * @param {String} answer
-   * @param {Boolean} caseSensitive
+   * @param {Object} behaviour Behaviour for the task
    * @returns {_L8.Cloze}
    */
-  function Cloze(answer, caseSensitive, defaultUserAnswer) {
+  function Cloze(answer, behaviour, defaultUserAnswer) {
     var self = this;
     var $input, $wrapper;
     var answers = [];
@@ -432,7 +458,7 @@ H5P.Blanks = (function ($) {
       // Trim answers
       for (var i = 0; i < answers.length; i++) {
         answers[i] = H5P.trim(answers[i]);
-        if (caseSensitive !== true) {
+        if (behaviour.caseSensitive !== true) {
           answers[i] = answers[i].toLowerCase();
         }
       }
@@ -450,13 +476,17 @@ H5P.Blanks = (function ($) {
     this.getUserAnswer = function () {
       return H5P.trim($input.val());
     };
-    
+
     /**
      * Private. Check if the answer is correct.
      *
      * @param {String} answered
      */
     var correct = function (answered) {
+      if (behaviour.caseSensitive !== true) {
+        answered = answered.toLowerCase();
+      }
+
       for (var i = 0; i < answers.length; i++) {
         if (answered === answers[i]) {
           return true;
@@ -482,8 +512,8 @@ H5P.Blanks = (function ($) {
     this.checkAnswer = function () {
       var isCorrect = correct(this.getUserAnswer());
       if (isCorrect) {
-        $input.attr('disabled', true);
         $wrapper.addClass('h5p-correct');
+        $input.attr('disabled', true);
       }
       else {
         $wrapper.addClass('h5p-wrong');
@@ -491,6 +521,14 @@ H5P.Blanks = (function ($) {
     };
 
     /**
+     * @public
+     * Disables further input from this button.
+     */
+    this.disableInput = function () {
+      $input.attr('disabled', true);
+    };
+    
+    /** 
      * Public. Show the correct solution.
      */
     this.showSolution = function () {
@@ -529,6 +567,9 @@ H5P.Blanks = (function ($) {
         $input.blur(function () {
           if (self.filledOut()) {
             // Check answers
+            if (!behaviour.enableRetry) {
+              self.disableInput();
+            }
             self.checkAnswer();
             afterCheck();
           }
