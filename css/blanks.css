@@ -148,14 +148,11 @@
 .h5p-blanks button.h5p-button.h5p-check-answer:before {
   content: "\f058";
 }
-.h5p-blanks button.h5p-button.h5p-change-answer:before {
-  content: "\f01e";
-}
 
 /* Buttons are shown dependent of state */
 .h5p-blanks [data-state="ongoing"] button.h5p-button.h5p-check-answer,
-.h5p-blanks [data-state="checking"] button.h5p-button.h5p-change-answer,
 .h5p-blanks [data-state="checking"] button.h5p-button.h5p-show-solution,
+.h5p-blanks [data-state="checking"] button.h5p-button.h5p-try-again,
 .h5p-blanks [data-state="showing-solution"] button.h5p-button.h5p-try-again {
   display: inline-block;
 }
