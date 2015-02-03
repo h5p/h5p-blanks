@@ -42,8 +42,7 @@ H5P.Blanks = (function ($) {
         showSolutionsRequiresInput: true,
         autoCheck: false,
         separateLines: false
-      },
-      postUserStatistics: (H5P.postUserStatistics === true)
+      }
     }, params);
 
     this.clozes = [];
@@ -121,9 +120,7 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            if (self.params.postUserStatistics === true) {
-              H5P.setFinished(self.id, self.getScore(), self.getMaxScore());
-            }
+            that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
           }
         };
       }
@@ -170,9 +167,7 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
-          var event = that.createXAPIEventTemplate('completed');
-          event.setScoredResult(that.getScore(), that.getMaxScore());
-          that.trigger('xAPI', event);
+          that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
         });
     }
 
@@ -187,9 +182,6 @@ H5P.Blanks = (function ($) {
         if (that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
-          var event = that.createXAPIEventTemplate('completed');
-          event.setScoredResult(that.getScore(), that.getMaxScore());
-          that.trigger('xAPI', event);
         }
       });
     
