@@ -238,6 +238,7 @@ H5P.Blanks = (function ($) {
         this._$footer.find("button:visible").eq(0).focus();
       }
     }
+    this.trigger('resize');
   };
 
   /**
@@ -270,6 +271,7 @@ H5P.Blanks = (function ($) {
         self.clozes[i].disableInput();
       }
     }
+    this.trigger('resize');
   };
 
   /**
@@ -278,6 +280,7 @@ H5P.Blanks = (function ($) {
   C.prototype.removeMarkedResults = function () {
     this._$inner.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
     this._$inner.find('.h5p-input-wrapper > input').attr('disabled', false);
+    this.trigger('resize');
   };
 
 
@@ -291,6 +294,7 @@ H5P.Blanks = (function ($) {
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].showSolution();
     }
+    this.trigger('resize');
   };
 
   /**
