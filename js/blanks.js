@@ -132,7 +132,7 @@ H5P.Blanks = (function ($) {
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
-    }).one('change', function () {
+    }).on('change', function () {
       self.triggerXAPI('attempted');
     });
   };
