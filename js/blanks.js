@@ -19,8 +19,8 @@ H5P.Blanks = (function ($) {
    * @returns {_L8.C}
    */
   function C(params, id) {
-    this.$ = $(this);
-    this.id = id;
+    this.id = this.contentId = id;
+    H5P.EventDispatcher.call(this);
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -42,12 +42,14 @@ H5P.Blanks = (function ($) {
         showSolutionsRequiresInput: true,
         autoCheck: false,
         separateLines: false
-      },
-      postUserStatistics: (H5P.postUserStatistics === true)
+      }
     }, params);
 
     this.clozes = [];
   };
+
+  C.prototype = Object.create(H5P.EventDispatcher.prototype);
+  C.prototype.constructor = C;
 
   /**
    * Append field to wrapper.
@@ -67,8 +69,8 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
-
-    this.$.trigger('resize');
+    
+    this.trigger('resize');
   };
 
   /**
@@ -118,9 +120,7 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            if (self.params.postUserStatistics === true) {
-              H5P.setFinished(self.id, self.getScore(), self.getMaxScore());
-            }
+            self.triggerXAPICompleted(self.getScore(), self.getMaxScore());
           }
         };
       }
@@ -132,8 +132,8 @@ H5P.Blanks = (function ($) {
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
-    }).one('change', function () {
-      self.$.trigger('h5pQuestionAnswered');
+    }).on('change', function () {
+      self.triggerXAPI('attempted');
     });
   };
 
@@ -167,9 +167,7 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
-          if (that.params.postUserStatistics === true) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-          }
+          that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
         });
     }
 
@@ -184,9 +182,6 @@ H5P.Blanks = (function ($) {
         if (that.allBlanksFilledOut()) {
           that.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
           that.showCorrectAnswers();
-          if (that.params.postUserStatistics === true) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-          }
         }
       });
     
@@ -243,6 +238,7 @@ H5P.Blanks = (function ($) {
         this._$footer.find("button:visible").eq(0).focus();
       }
     }
+    this.trigger('resize');
   };
 
   /**
@@ -275,6 +271,7 @@ H5P.Blanks = (function ($) {
         self.clozes[i].disableInput();
       }
     }
+    this.trigger('resize');
   };
 
   /**
@@ -283,6 +280,7 @@ H5P.Blanks = (function ($) {
   C.prototype.removeMarkedResults = function () {
     this._$inner.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
     this._$inner.find('.h5p-input-wrapper > input').attr('disabled', false);
+    this.trigger('resize');
   };
 
 
@@ -296,6 +294,7 @@ H5P.Blanks = (function ($) {
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].showSolution();
     }
+    this.trigger('resize');
   };
 
   /**
@@ -590,7 +589,7 @@ H5P.Blanks = (function ($) {
      */
     this.toString = function () {
       var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
-      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input"' + extra + '></span>';
+      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
     };
   }
 
