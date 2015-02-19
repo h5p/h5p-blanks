@@ -120,7 +120,7 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+            self.triggerXAPICompleted(self.getScore(), self.getMaxScore());
           }
         };
       }
