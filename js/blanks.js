@@ -398,6 +398,10 @@ H5P.Blanks = (function ($) {
 
     return correct;
   };
+  
+  C.prototype.getH5PTitle = function() {
+    return H5P.createH5PTitle(this.params.text);
+  };
 
   /**
    * Clear the user's answers
