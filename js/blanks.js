@@ -16,10 +16,10 @@ H5P.Blanks = (function ($) {
    *
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
-   * @param {Object} additionalData Object containing extra data
+   * @param {Object} contentData Object containing task specific content data
    * @returns {_L8.C}
    */
-  function C(params, id, additionalData) {
+  function C(params, id, contentData) {
     this.id = this.contentId = id;
     H5P.EventDispatcher.call(this);
 
@@ -46,13 +46,13 @@ H5P.Blanks = (function ($) {
       }
     }, params);
 
-    this.additionalData = additionalData;
-    if (this.additionalData !== undefined && this.additionalData.userState !== undefined) {
-      this.userState = this.additionalData.userState;
+    this.contentData = contentData;
+    if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
+      this.previousState = JSON.parse(this.contentData.previousState);
     }
 
     this.clozes = [];
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -448,7 +448,7 @@ H5P.Blanks = (function ($) {
    * Returns a json object containing content of each cloze
    * @returns {JSON} JSON string containing content for each cloze
    */
-  C.prototype.getH5PUserState = function () {
+  C.prototype.getCurrentState = function () {
     var clozesContent = [];
 
     // Get user input for every cloze
@@ -467,16 +467,16 @@ H5P.Blanks = (function ($) {
     var self = this;
 
     // Do nothing if user state is undefined
-    if (this.userState === undefined || this.userState.answers === undefined) {
+    if (this.previousState === undefined) {
       return;
     }
 
     // Check that stored user state is valid
-    if (!this.userState.answers.length || !(this.userState.answers.length === this.clozes.length)) {
+    if (!this.previousState.length || !(this.previousState.length === this.clozes.length)) {
       throw new Error('Stored user state is invalid');
     }
     // Select words from user state
-    this.userState.answers.forEach(function (clozeContent, ccIndex) {
+    this.previousState.forEach(function (clozeContent, ccIndex) {
       self.clozes[ccIndex].setUserInput(clozeContent);
     });
   };
