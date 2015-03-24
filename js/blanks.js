@@ -16,9 +16,10 @@ H5P.Blanks = (function ($) {
    *
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
+   * @param {Object} contentData Object containing task specific content data
    * @returns {_L8.C}
    */
-  function C(params, id) {
+  function C(params, id, contentData) {
     this.id = this.contentId = id;
     H5P.EventDispatcher.call(this);
 
@@ -45,8 +46,13 @@ H5P.Blanks = (function ($) {
       }
     }, params);
 
+    this.contentData = contentData;
+    if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
+      this.previousState = JSON.parse(this.contentData.previousState);
+    }
+
     this.clozes = [];
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -66,6 +72,9 @@ H5P.Blanks = (function ($) {
     if (this.params.behaviour.separateLines) {
       this._$inner.addClass('h5p-separate-lines');
     }
+
+    // Set stored user state
+    this.setH5PUserState();
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
@@ -440,6 +449,43 @@ H5P.Blanks = (function ($) {
   };
 
   /**
+   * Returns a json object containing content of each cloze
+   * @returns {JSON} JSON string containing content for each cloze
+   */
+  C.prototype.getCurrentState = function () {
+    var clozesContent = [];
+
+    // Get user input for every cloze
+    this.clozes.forEach(function (cloze) {
+      clozesContent.push(cloze.getUserInput());
+    });
+    var jsonSelectedWordsIndexes = JSON.stringify(clozesContent);
+
+    return jsonSelectedWordsIndexes;
+  };
+
+  /**
+   * Sets answers to current user state
+   */
+  C.prototype.setH5PUserState = function () {
+    var self = this;
+
+    // Do nothing if user state is undefined
+    if (this.previousState === undefined) {
+      return;
+    }
+
+    // Check that stored user state is valid
+    if (!this.previousState.length || !(this.previousState.length === this.clozes.length)) {
+      throw new Error('Stored user state is invalid');
+    }
+    // Select words from user state
+    this.previousState.forEach(function (clozeContent, ccIndex) {
+      self.clozes[ccIndex].setUserInput(clozeContent);
+    });
+  };
+
+  /**
    * Simple private class for keeping track of clozes.
    *
    * @param {String} answer
@@ -478,6 +524,23 @@ H5P.Blanks = (function ($) {
      */
     this.getUserAnswer = function () {
       return H5P.trim($input.val());
+    };
+
+    /**
+     * Public. Get input text.
+     *
+     * @returns {String} Answer
+     */
+    this.getUserInput = function () {
+      return $input.val();
+    };
+
+    /**
+     * Public. Set input text
+     * @param text New input text
+     */
+    this.setUserInput = function (text) {
+      $input.val(text);
     };
 
     /**
