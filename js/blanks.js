@@ -73,11 +73,11 @@ H5P.Blanks = (function ($) {
       this._$inner.addClass('h5p-separate-lines');
     }
 
-    // Set stored user state
-    this.setH5PUserState();
-
     // Add "show solutions" button and evaluation area
     this.addFooter();
+
+    // Set stored user state
+    this.setH5PUserState();
     
     this.trigger('resize');
   };
@@ -469,20 +469,31 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.setH5PUserState = function () {
     var self = this;
+    var isValidState = this.previousState !== undefined
+        && this.previousState.length
+        && this.previousState.length === this.clozes.length;
 
-    // Do nothing if user state is undefined
-    if (this.previousState === undefined) {
+    // Check that stored user state is valid
+    if (!isValidState) {
       return;
     }
 
-    // Check that stored user state is valid
-    if (!this.previousState.length || !(this.previousState.length === this.clozes.length)) {
-      throw new Error('Stored user state is invalid');
-    }
-    // Select words from user state
+    // Set input from user state
+    var hasAllClozesFilled = true;
     this.previousState.forEach(function (clozeContent, ccIndex) {
-      self.clozes[ccIndex].setUserInput(clozeContent);
+      var cloze = self.clozes[ccIndex];
+      cloze.setUserInput(clozeContent);
+
+      // Handle instant feedback
+      if (self.params.behaviour.autoCheck && cloze.filledOut()) {
+        cloze.checkAnswer();
+      }
     });
+
+    if (self.params.behaviour.autoCheck) {
+      self.showEvaluation();
+      self.toggleButtonVisibility(STATE_CHECKING);
+    }
   };
 
   /**
