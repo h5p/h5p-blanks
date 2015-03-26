@@ -481,12 +481,16 @@ H5P.Blanks = (function ($) {
       cloze.setUserInput(clozeContent);
 
       // Handle instant feedback
-      if (self.params.behaviour.autoCheck && cloze.filledOut()) {
-        cloze.checkAnswer();
+      if (self.params.behaviour.autoCheck) {
+        if (cloze.filledOut()) {
+          cloze.checkAnswer();
+        } else {
+          hasAllClozesFilled = false;
+        }
       }
     });
 
-    if (self.params.behaviour.autoCheck) {
+    if (self.params.behaviour.autoCheck && hasAllClozesFilled) {
       self.showEvaluation();
       self.toggleButtonVisibility(STATE_CHECKING);
     }
