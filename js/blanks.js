@@ -48,7 +48,7 @@ H5P.Blanks = (function ($) {
 
     this.contentData = contentData;
     if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
-      this.previousState = JSON.parse(this.contentData.previousState);
+      this.previousState = this.contentData.previousState;
     }
 
     this.clozes = [];
@@ -449,8 +449,9 @@ H5P.Blanks = (function ($) {
   };
 
   /**
-   * Returns a json object containing content of each cloze
-   * @returns {JSON} JSON string containing content for each cloze
+   * Returns an object containing content of each cloze
+   * 
+   * @returns {object} object containing content for each cloze
    */
   C.prototype.getCurrentState = function () {
     var clozesContent = [];
@@ -459,9 +460,7 @@ H5P.Blanks = (function ($) {
     this.clozes.forEach(function (cloze) {
       clozesContent.push(cloze.getUserInput());
     });
-    var jsonSelectedWordsIndexes = JSON.stringify(clozesContent);
-
-    return jsonSelectedWordsIndexes;
+    return clozesContent;
   };
 
   /**
