@@ -1,5 +1,12 @@
 [
   {
+    "name": "image",
+    "type": "image",
+    "label": "Task image",
+    "optional": true,
+    "description": "An optional image to display above the task."
+  },
+  {
     "label": "Task description",
     "name": "text",
     "type": "text",

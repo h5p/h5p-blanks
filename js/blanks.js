@@ -10,7 +10,7 @@ H5P.Blanks = (function ($) {
   var STATE_CHECKING = 'checking';
   var STATE_SHOWING_SOLUTION = 'showing-solution';
   var STATE_FINISHED = 'finished';
-  
+
   /**
    * Initialize module.
    *
@@ -46,7 +46,7 @@ H5P.Blanks = (function ($) {
     }, params);
 
     this.clozes = [];
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -61,6 +61,17 @@ H5P.Blanks = (function ($) {
     this.clozes = [];
 
     this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><div class="h5p-blanks-title">' + this.params.text + '</div></div>').children();
+
+    // Add image to inner wrapper
+    if (this.params.image) {
+      $('<img/>', {
+        src: H5P.getPath(this.params.image.path, this.id),
+        alt: '',
+        class: 'h5p-blanks-image',
+        prependTo: this._$inner
+      });
+    }
+
     this.appendQuestionsTo(this._$inner);
 
     if (this.params.behaviour.separateLines) {
@@ -69,7 +80,7 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
-    
+
     this.trigger('resize');
   };
 
@@ -155,7 +166,7 @@ H5P.Blanks = (function ($) {
 
     var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
-    
+
     if (!that.params.behaviour.autoCheck) {
       // Check answer button
       this._$checkAnswerButton = $('<button/>', {
@@ -184,8 +195,8 @@ H5P.Blanks = (function ($) {
           that.showCorrectAnswers();
         }
       });
-    
-    // Try again button 
+
+    // Try again button
     if(this.params.behaviour.enableRetry === true) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
@@ -229,7 +240,7 @@ H5P.Blanks = (function ($) {
     }
 
     this._$footer.attr("data-state", state);
-    
+
     if (!this.params.behaviour.autoCheck && state !== this.lastState ) {
       this.lastState = state;
 
@@ -413,7 +424,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.getAnswerGiven = function () {
     var self = this;
-    
+
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
       for (var i = 0; i < self.clozes.length; i++) {
         if (!self.clozes[i].filledOut()) {
@@ -526,8 +537,8 @@ H5P.Blanks = (function ($) {
     this.disableInput = function () {
       $input.attr('disabled', true);
     };
-    
-    /** 
+
+    /**
      * Public. Show the correct solution.
      */
     this.showSolution = function () {
