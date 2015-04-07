@@ -408,8 +408,8 @@ H5P.Blanks = (function ($) {
     return correct;
   };
   
-  C.prototype.getH5PTitle = function() {
-    return H5P.createH5PTitle(this.params.text);
+  C.prototype.getTitle = function() {
+    return H5P.createTitle(this.params.text);
   };
 
   /**

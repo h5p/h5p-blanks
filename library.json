@@ -2,13 +2,13 @@
   "title": "Fill in the blanks",
   "description": "void",
   "majorVersion": 1,
-  "minorVersion": 2,
-  "patchVersion": 2,
+  "minorVersion": 3,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 4
+    "minorVersion": 5
   },
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
