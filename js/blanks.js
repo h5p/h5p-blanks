@@ -89,7 +89,7 @@ H5P.Blanks = (function ($) {
 
     // Set stored user state
     this.setH5PUserState();
-    
+
     this.trigger('resize');
   };
 
@@ -149,11 +149,65 @@ H5P.Blanks = (function ($) {
         self.hideEvaluation();
       });
     }).keydown(function (event) {
+      self.autoGrowTextField($(this));
+
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
       self.triggerXAPI('attempted');
+    });
+  };
+
+  C.prototype.autoGrowTextField = function ($input) {
+    var self = this;
+/*    var minEm = 90px;
+    var minPx = parseInt($input.css('font-size'), 10) * minEm;*/
+    var minPx = 90;
+    var static_min_pad = 2;
+    var pad_right = 30;
+    var input = $input[0];
+
+    setTimeout(function(){
+      var tmp = document.createElement('div');
+
+      if(getComputedStyle){
+        tmp.style.cssText = getComputedStyle(input, null).cssText;
+      }
+
+      if(input.currentStyle) {
+        tmp.style = input.currentStyle;
+      }
+
+      tmp.style.padding = '0';
+      tmp.style.width = '';
+      tmp.style.position = 'absolute';
+      tmp.innerHTML = input.value.replace(/[^a-zA-Z0-9]/g,'_');
+      input.parentNode.appendChild(tmp);
+      var width = tmp.clientWidth;
+      var parentWidth = self._$inner.width();
+      tmp.parentNode.removeChild(tmp);
+      if (width <= minPx) {
+        // Apply min width
+        input.style.width = minPx + static_min_pad + 'px';
+      } else if (width + pad_right >= parentWidth) {
+
+        // Apply max width of parent
+        input.style.width = (self._$inner.clientWidth - pad_right) + 'px';
+      } else {
+
+        // Apply width that wraps input
+        input.style.width = width + static_min_pad + 'px';
+      }
+
+    }, 1);
+  };
+
+  C.prototype.resetGrowTextField = function () {
+    var self = this;
+
+    this._$inner.find('input').each(function (i) {
+      self.autoGrowTextField($(this));
     });
   };
 
@@ -214,6 +268,7 @@ H5P.Blanks = (function ($) {
           that.hideSolutions();
           that.hideEvaluation();
           that.clearAnswers();
+          that.resetGrowTextField();
           that.done = false;
           that.toggleButtonVisibility(STATE_ONGOING);
           that._$inner.find('input:first').focus();
@@ -343,6 +398,7 @@ H5P.Blanks = (function ($) {
     this.clearAnswers();
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
+    this.resetGrowTextField();
   };
 
   /**
@@ -418,7 +474,7 @@ H5P.Blanks = (function ($) {
 
     return correct;
   };
-  
+
   C.prototype.getTitle = function() {
     return H5P.createTitle(this.params.text);
   };
@@ -461,7 +517,7 @@ H5P.Blanks = (function ($) {
 
   /**
    * Returns an object containing content of each cloze
-   * 
+   *
    * @returns {object} object containing content for each cloze
    */
   C.prototype.getCurrentState = function () {
