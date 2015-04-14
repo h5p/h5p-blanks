@@ -63,6 +63,8 @@ H5P.Blanks = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
+    var self = this;
+
     // Reset clozes in case we are re-attaching
     this.clozes = [];
 
@@ -90,7 +92,12 @@ H5P.Blanks = (function ($) {
     // Set stored user state
     this.setH5PUserState();
 
+    // Register resize listener with H5P
+    H5P.on(this, 'resize', function () {
+      self.resize();
+    });
     this.trigger('resize');
+
   };
 
   /**
@@ -161,52 +168,52 @@ H5P.Blanks = (function ($) {
 
   C.prototype.autoGrowTextField = function ($input) {
     var self = this;
-/*    var minEm = 90px;
-    var minPx = parseInt($input.css('font-size'), 10) * minEm;*/
-    var minPx = 90;
-    var static_min_pad = 2;
-    var pad_right = 30;
-    var input = $input[0];
+    var fontSize = parseInt($input.css('font-size'), 10);
+    var minEm = 3;
+    var minPx = fontSize * minEm;
+    var rightPadEm = 3.25;
+    var rightPadPx = fontSize * rightPadEm;
+    var static_min_pad = 0.5 * fontSize;
 
     setTimeout(function(){
-      var tmp = document.createElement('div');
-
-      if(getComputedStyle){
-        tmp.style.cssText = getComputedStyle(input, null).cssText;
-      }
-
-      if(input.currentStyle) {
-        tmp.style = input.currentStyle;
-      }
-
-      tmp.style.padding = '0';
-      tmp.style.width = '';
-      tmp.style.position = 'absolute';
-      tmp.innerHTML = input.value.replace(/[^a-zA-Z0-9]/g,'_');
-      input.parentNode.appendChild(tmp);
-      var width = tmp.clientWidth;
+      var tmp = $('<div>', {
+        'html': $input.val()
+      });
+      tmp.css({
+        'position': 'absolute',
+        'white-space': 'nowrap',
+        'font-size': $input.css('font-size'),
+        'font-family': $input.css('font-family'),
+        'padding': $input.css('padding'),
+        'width': 'initial'
+      });
+      $input.parent().append(tmp);
+      var width = tmp.width();
       var parentWidth = self._$inner.width();
-      tmp.parentNode.removeChild(tmp);
+      tmp.remove();
       if (width <= minPx) {
         // Apply min width
-        input.style.width = minPx + static_min_pad + 'px';
-      } else if (width + pad_right >= parentWidth) {
+        $input.width(minPx + static_min_pad);
+      } else if (width + rightPadPx >= parentWidth) {
 
         // Apply max width of parent
-        input.style.width = (self._$inner.clientWidth - pad_right) + 'px';
+        $input.width(parentWidth - rightPadPx);
       } else {
 
         // Apply width that wraps input
-        input.style.width = width + static_min_pad + 'px';
+        $input.width(width + static_min_pad);
       }
 
     }, 1);
   };
 
+  /**
+   * Resize all text field growth to current size.
+   */
   C.prototype.resetGrowTextField = function () {
     var self = this;
 
-    this._$inner.find('input').each(function (i) {
+    this._$inner.find('input').each(function () {
       self.autoGrowTextField($(this));
     });
   };
@@ -279,6 +286,10 @@ H5P.Blanks = (function ($) {
     $buttonBar.appendTo(this._$footer);
 
     this.toggleButtonVisibility(STATE_ONGOING);
+  };
+
+  C.prototype.resize = function () {
+    this.resetGrowTextField();
   };
 
   /**
