@@ -63,6 +63,8 @@ H5P.Blanks = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
+    var self = this;
+
     // Reset clozes in case we are re-attaching
     this.clozes = [];
 
@@ -89,8 +91,13 @@ H5P.Blanks = (function ($) {
 
     // Set stored user state
     this.setH5PUserState();
-    
+
+    // Register resize listener with H5P
+    H5P.on(this, 'resize', function () {
+      self.resize();
+    });
     this.trigger('resize');
+
   };
 
   /**
@@ -149,11 +156,65 @@ H5P.Blanks = (function ($) {
         self.hideEvaluation();
       });
     }).keydown(function (event) {
+      self.autoGrowTextField($(this));
+
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
       self.triggerXAPI('attempted');
+    });
+  };
+
+  C.prototype.autoGrowTextField = function ($input) {
+    var self = this;
+    var fontSize = parseInt($input.css('font-size'), 10);
+    var minEm = 3;
+    var minPx = fontSize * minEm;
+    var rightPadEm = 3.25;
+    var rightPadPx = fontSize * rightPadEm;
+    var static_min_pad = 0.5 * fontSize;
+
+    setTimeout(function(){
+      var tmp = $('<div>', {
+        'html': $input.val()
+      });
+      tmp.css({
+        'position': 'absolute',
+        'white-space': 'nowrap',
+        'font-size': $input.css('font-size'),
+        'font-family': $input.css('font-family'),
+        'padding': $input.css('padding'),
+        'width': 'initial'
+      });
+      $input.parent().append(tmp);
+      var width = tmp.width();
+      var parentWidth = self._$inner.width();
+      tmp.remove();
+      if (width <= minPx) {
+        // Apply min width
+        $input.width(minPx + static_min_pad);
+      } else if (width + rightPadPx >= parentWidth) {
+
+        // Apply max width of parent
+        $input.width(parentWidth - rightPadPx);
+      } else {
+
+        // Apply width that wraps input
+        $input.width(width + static_min_pad);
+      }
+
+    }, 1);
+  };
+
+  /**
+   * Resize all text field growth to current size.
+   */
+  C.prototype.resetGrowTextField = function () {
+    var self = this;
+
+    this._$inner.find('input').each(function () {
+      self.autoGrowTextField($(this));
     });
   };
 
@@ -214,6 +275,7 @@ H5P.Blanks = (function ($) {
           that.hideSolutions();
           that.hideEvaluation();
           that.clearAnswers();
+          that.resetGrowTextField();
           that.done = false;
           that.toggleButtonVisibility(STATE_ONGOING);
           that._$inner.find('input:first').focus();
@@ -224,6 +286,10 @@ H5P.Blanks = (function ($) {
     $buttonBar.appendTo(this._$footer);
 
     this.toggleButtonVisibility(STATE_ONGOING);
+  };
+
+  C.prototype.resize = function () {
+    this.resetGrowTextField();
   };
 
   /**
@@ -343,6 +409,7 @@ H5P.Blanks = (function ($) {
     this.clearAnswers();
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
+    this.resetGrowTextField();
   };
 
   /**
@@ -418,7 +485,7 @@ H5P.Blanks = (function ($) {
 
     return correct;
   };
-  
+
   C.prototype.getTitle = function() {
     return H5P.createTitle(this.params.text);
   };
@@ -461,7 +528,7 @@ H5P.Blanks = (function ($) {
 
   /**
    * Returns an object containing content of each cloze
-   * 
+   *
    * @returns {object} object containing content for each cloze
    */
   C.prototype.getCurrentState = function () {
