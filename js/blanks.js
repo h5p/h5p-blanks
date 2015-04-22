@@ -10,15 +10,16 @@ H5P.Blanks = (function ($) {
   var STATE_CHECKING = 'checking';
   var STATE_SHOWING_SOLUTION = 'showing-solution';
   var STATE_FINISHED = 'finished';
-  
+
   /**
    * Initialize module.
    *
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
+   * @param {Object} contentData Object containing task specific content data
    * @returns {_L8.C}
    */
-  function C(params, id) {
+  function C(params, id, contentData) {
     this.id = this.contentId = id;
     H5P.EventDispatcher.call(this);
 
@@ -45,8 +46,13 @@ H5P.Blanks = (function ($) {
       }
     }, params);
 
+    this.contentData = contentData;
+    if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
+      this.previousState = this.contentData.previousState;
+    }
+
     this.clozes = [];
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -61,6 +67,17 @@ H5P.Blanks = (function ($) {
     this.clozes = [];
 
     this._$inner = $container.addClass('h5p-blanks').html('<div class="h5p-inner"><div class="h5p-blanks-title">' + this.params.text + '</div></div>').children();
+
+    // Add image to inner wrapper
+    if (this.params.image) {
+      $('<img/>', {
+        src: H5P.getPath(this.params.image.path, this.id),
+        alt: '',
+        class: 'h5p-blanks-image',
+        prependTo: this._$inner
+      });
+    }
+
     this.appendQuestionsTo(this._$inner);
 
     if (this.params.behaviour.separateLines) {
@@ -69,6 +86,9 @@ H5P.Blanks = (function ($) {
 
     // Add "show solutions" button and evaluation area
     this.addFooter();
+
+    // Set stored user state
+    this.setH5PUserState();
     
     this.trigger('resize');
   };
@@ -155,7 +175,7 @@ H5P.Blanks = (function ($) {
 
     var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
-    
+
     if (!that.params.behaviour.autoCheck) {
       // Check answer button
       this._$checkAnswerButton = $('<button/>', {
@@ -184,8 +204,8 @@ H5P.Blanks = (function ($) {
           that.showCorrectAnswers();
         }
       });
-    
-    // Try again button 
+
+    // Try again button
     if(this.params.behaviour.enableRetry === true) {
       this._$tryAgainButton = $('<button/>', {'class': 'h5p-button h5p-try-again', type: 'button', text: this.params.tryAgain})
         .appendTo($buttonBar)
@@ -229,7 +249,7 @@ H5P.Blanks = (function ($) {
     }
 
     this._$footer.attr("data-state", state);
-    
+
     if (!this.params.behaviour.autoCheck && state !== this.lastState ) {
       this.lastState = state;
 
@@ -398,6 +418,10 @@ H5P.Blanks = (function ($) {
 
     return correct;
   };
+  
+  C.prototype.getTitle = function() {
+    return H5P.createTitle(this.params.text);
+  };
 
   /**
    * Clear the user's answers
@@ -413,7 +437,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.getAnswerGiven = function () {
     var self = this;
-    
+
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
       for (var i = 0; i < self.clozes.length; i++) {
         if (!self.clozes[i].filledOut()) {
@@ -433,6 +457,57 @@ H5P.Blanks = (function ($) {
     setTimeout(function () {
       $input.focus();
     }, 1);
+  };
+
+  /**
+   * Returns an object containing content of each cloze
+   * 
+   * @returns {object} object containing content for each cloze
+   */
+  C.prototype.getCurrentState = function () {
+    var clozesContent = [];
+
+    // Get user input for every cloze
+    this.clozes.forEach(function (cloze) {
+      clozesContent.push(cloze.getUserInput());
+    });
+    return clozesContent;
+  };
+
+  /**
+   * Sets answers to current user state
+   */
+  C.prototype.setH5PUserState = function () {
+    var self = this;
+    var isValidState = this.previousState !== undefined
+        && this.previousState.length
+        && this.previousState.length === this.clozes.length;
+
+    // Check that stored user state is valid
+    if (!isValidState) {
+      return;
+    }
+
+    // Set input from user state
+    var hasAllClozesFilled = true;
+    this.previousState.forEach(function (clozeContent, ccIndex) {
+      var cloze = self.clozes[ccIndex];
+      cloze.setUserInput(clozeContent);
+
+      // Handle instant feedback
+      if (self.params.behaviour.autoCheck) {
+        if (cloze.filledOut()) {
+          cloze.checkAnswer();
+        } else {
+          hasAllClozesFilled = false;
+        }
+      }
+    });
+
+    if (self.params.behaviour.autoCheck && hasAllClozesFilled) {
+      self.showEvaluation();
+      self.toggleButtonVisibility(STATE_CHECKING);
+    }
   };
 
   /**
@@ -474,6 +549,23 @@ H5P.Blanks = (function ($) {
      */
     this.getUserAnswer = function () {
       return H5P.trim($input.val());
+    };
+
+    /**
+     * Public. Get input text.
+     *
+     * @returns {String} Answer
+     */
+    this.getUserInput = function () {
+      return $input.val();
+    };
+
+    /**
+     * Public. Set input text
+     * @param text New input text
+     */
+    this.setUserInput = function (text) {
+      $input.val(text);
     };
 
     /**
@@ -526,8 +618,8 @@ H5P.Blanks = (function ($) {
     this.disableInput = function () {
       $input.attr('disabled', true);
     };
-    
-    /** 
+
+    /**
      * Public. Show the correct solution.
      */
     this.showSolution = function () {
