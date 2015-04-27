@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Oppgavebilete",
+      "description": "Eit valfritt bilete som sjåast over oppgåven."
+    },
+    {
       "label": "Oppgåvetekst",
       "description": "Ein tekst som fortel brukaren korleis oppgåva skal løysast"
     },
