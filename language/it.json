@@ -1,6 +1,8 @@
 {
   "semantics": [
     {
+    },
+    {
       "label": "Descrizione attivit�",
       "description": "Una guida deve indicare all'utente come rispondere a questo compito."
     },

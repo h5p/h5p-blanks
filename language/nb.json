@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Oppgavebilde",
+      "description": "Et valgfritt bilde som vises over oppgaven."
+    },
+    {
       "label": "Oppgavetekst",
       "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
     },
