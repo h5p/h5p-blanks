@@ -458,7 +458,6 @@ H5P.Blanks = (function ($) {
     };
     definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
     definition.interactionType = 'fill-in';
-    console.log(this.params);
     definition.correctResponsesPattern = ['{case_matters=' + this.params.behaviour.caseSensitive + '}'];
     var firstCorrectResponse = true;
     for (var i = 0; i < this.params.questions.length; i++) {
