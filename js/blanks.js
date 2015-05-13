@@ -248,10 +248,6 @@ H5P.Blanks = (function ($) {
    * Add show solution button.
    */
   C.prototype.addButtons = function () {
-    if (this._$solutionButton !== undefined) {
-      return; // Buttons already added.
-    }
-
     var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
 
