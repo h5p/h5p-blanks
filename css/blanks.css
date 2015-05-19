@@ -12,6 +12,8 @@
 
 .h5p-blanks {
   position: relative;
+  padding: 1em;
+  overflow: hidden;
 }
 .h5p-blanks .h5p-inner {
   padding: 1em;
@@ -176,7 +178,7 @@
   line-height: 1em; /* inherits 4em */
   content: "\e605";
 }
-.h5p-blanks .h5p-blanks-evaluation-container.max-score .h5p-blanks-evaluation-score-emoticon:before {
+.h5p-blanks .h5p-blanks-evaluation-score-emoticon.max-score:before {
   content: "\e606";
 }
 
