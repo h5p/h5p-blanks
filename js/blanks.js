@@ -111,22 +111,24 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterix
-    var clozeEnd, clozeStart = question.indexOf('*');
+    var clozeEnd, clozeStart = question.indexOf('*'), oldEnd = 0;
+    var toReturn = '';
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
       clozeEnd = question.indexOf('*', clozeStart);
       if (clozeEnd === -1) {
+        toReturn += question.slice(oldEnd);
         continue; // No end
       }
-
+      
       var replacer = handler(question.substring(clozeStart, clozeEnd));
       clozeEnd++;
-      question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
-
+      toReturn += question.slice(oldEnd, clozeStart - 1) + replacer;
+      oldEnd = clozeEnd;
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
     }
-    return question;
+    return toReturn;
   };
 
   /**
