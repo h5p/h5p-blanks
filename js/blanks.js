@@ -1,4 +1,4 @@
-H5P.Blanks = (function ($, Task) {
+H5P.Blanks = (function ($, Question) {
   /**
    * @constant
    * @default
@@ -12,7 +12,7 @@ H5P.Blanks = (function ($, Task) {
    * Initialize module.
    *
    * @class H5P.Blanks
-   * @extends H5P.Task
+   * @extends H5P.Question
    * @param {Object} params Behavior settings
    * @param {number} id Content identification
    * @param {Object} contentData Task specific content data
@@ -21,7 +21,7 @@ H5P.Blanks = (function ($, Task) {
     var self = this;
 
     // Inheritance
-    Task.call(self, 'blanks');
+    Question.call(self, 'blanks');
 
     // IDs
     this.contentId = id;
@@ -57,28 +57,38 @@ H5P.Blanks = (function ($, Task) {
 
     // Clozes
     this.clozes = [];
-
-    if (this.params.image) {
-      // Register task image
-      this.setImage(this.params.image.path);
-    }
-
-    // Register task introduction text
-    this.setIntroduction(this.params.text);
-
-    // Register task content area
-    this.setContent(this.createQuestions(), this.params.behaviour.separateLines ? 'h5p-separate-lines' : '');
-
-    // ... and buttons
-    this.registerButtons();
   }
 
   // Inheritance
-  Blanks.prototype = Object.create(Task.prototype);
+  Blanks.prototype = Object.create(Question.prototype);
   Blanks.prototype.constructor = Blanks;
 
   /**
-   *
+   * Registers this question type's DOM elements before they are attached.
+   * Called from H5P.Question.
+   */
+  Blanks.prototype.registerDomElements = function () {
+    var self = this;
+
+    if (self.params.image) {
+      // Register task image
+      self.setImage(self.params.image.path);
+    }
+
+    // Register task introduction text
+    self.setIntroduction(self.params.text);
+
+    // Register task content area
+    self.setContent(self.createQuestions(), {
+      'class': self.params.behaviour.separateLines ? 'h5p-separate-lines' : ''
+    });
+
+    // ... and buttons
+    self.registerButtons();
+  };
+
+  /**
+   * Create all the buttons for the task
    */
   Blanks.prototype.registerButtons = function () {
     var self = this;
@@ -275,6 +285,13 @@ H5P.Blanks = (function ($, Task) {
       }
     }
 
+    if (state === STATE_ONGOING) {
+      this.showButton('check-answer');
+    }
+    else {
+      this.hideButton('check-answer');
+    }
+
     this.trigger('resize');
   };
 
@@ -285,13 +302,13 @@ H5P.Blanks = (function ($, Task) {
     var self = this;
 
     if (!self.getAnswerGiven()) {
-      self.setFeedback(self.params.notFilledOut);
+      var $eva = $(this.createEvaluation(self.params.notFilledOut, 'not-filled-out'));
+      this.setFeedback($eva);
 
-      // TODO: Add animation?
-      // self._$evaluation.addClass('not-filled-out');
-      // setTimeout(function(){
-      //   self._$evaluation.removeClass('not-filled-out');
-      // }, 1000);
+      // Stop animation
+      setTimeout(function () {
+        $eva.filter('.not-filled-out').removeClass('not-filled-out');
+      }, 1000);
 
       return false;
     }
@@ -382,11 +399,21 @@ H5P.Blanks = (function ($, Task) {
     var maxScore = this.getMaxScore();
     var score = this.getScore();
     var scoreText = this.params.score.replace('@score', score).replace('@total', maxScore);
-    this.setFeedback('<div class="h5p-blanks-evaluation-score-emoticon' + (score === maxScore ? ' max-score' : '') + '"></div><div class="h5p-blanks-evaluation-score">' + scoreText + '</div>');
+    this.setFeedback(this.createEvaluation(scoreText, (score === maxScore ? 'max-score' : '')));
 
     if (score === maxScore) {
       this.toggleButtonVisibility(STATE_FINISHED);
     }
+  };
+
+  /**
+   * Create HTML for the feedback container.
+   *
+   * @param {string} htmlText The feedback to the user
+   * @param {string} extraClass Added to emoticon
+   */
+  Blanks.prototype.createEvaluation = function (htmlText, extraClass) {
+    return '<div class="h5p-blanks-evaluation-score-emoticon' + (extraClass ? ' ' + extraClass : '') + '"></div><div class="h5p-blanks-evaluation-score">' + htmlText + '</div>';
   };
 
   /**
@@ -525,4 +552,4 @@ H5P.Blanks = (function ($, Task) {
   };
 
   return Blanks;
-})(H5P.jQuery, H5P.Task);
+})(H5P.jQuery, H5P.Question);

@@ -15,10 +15,6 @@
   padding: 1em;
   overflow: hidden;
 }
-.h5p-blanks .h5p-inner {
-  padding: 1em;
-  overflow: hidden;
-}
 .h5p-blanks .h5p-input-wrapper {
   display: inline-block;
   position: relative;
@@ -34,7 +30,6 @@
   white-space: nowrap;
   width: 6em;
 }
-
 .h5p-blanks .h5p-text-input:focus {
   outline: none;
   box-shadow: 0 0 0.5em 0 #7fb8ff;
@@ -88,7 +83,7 @@
 }
 
 /* Actual text paragraphs */
-.h5p-blanks .h5p-inner p {
+.h5p-blanks p {
   font-size: 1em;
   font-weight: normal;
   line-height: 1.75em;
@@ -97,92 +92,53 @@
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
-.h5p-blanks .h5p-blanks-title {
+.h5p-blanks .h5p-question-introduction {
   margin: 0 0 0.4em;
   border-bottom: 0.1em solid #ddd;
 }
-.h5p-blanks .h5p-blanks-footer {
+.h5p-blanks .h5p-question-buttons {
   margin-top: 0.4em;
   border-top: 0.1em solid #ddd;
-}
-.h5p-blanks .h5p-button-bar {
-  margin-top: .8em;
+  padding-top: .8em;
   min-height: 2.134em;
 }
-.h5p-blanks button.h5p-button {
+.h5p-blanks .h5p-joubelui-button {
   float: right;
-  display: none;
-  font-size: 1em;
-  line-height: 1.2em;
-  padding: 0.2em 1em;
-  border: 0.2em solid #fff;
-  border-radius: 0.4em;
-  margin-left: 0.8em;
-  margin-bottom: 0.1em;
-  cursor: pointer;
-  color: #fff;
-  box-shadow: 0 0 0.5em #999;
-
-  background: rgb(100,152,254); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(100,152,254,1) 0%, rgba(4,104,206,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,152,254,1)), color-stop(100%,rgba(4,104,206,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6498fe', endColorstr='#0468ce',GradientType=0 );
+  display: block;
 }
-
-.h5p-blanks button.h5p-button:hover {
-  background: rgb(4,104,206); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(4,104,206,1) 0%, rgba(100,152,254,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4,104,206,1)), color-stop(100%,rgba(100,152,254,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0468ce', endColorstr='#6498fe',GradientType=0 ); /* IE6-9 */
-}
-.h5p-blanks button.h5p-button:before {
+.h5p-blanks .h5p-joubelui-button:before {
   font-family: 'H5PFontAwesome4';
   content: "\f06e";
   padding-right: 0.5em;
 }
-.h5p-blanks button.h5p-button.h5p-try-again:before {
+.h5p-blanks .h5p-question-try-again:before {
   content: "\f021";
 }
-.h5p-blanks button.h5p-button.h5p-hide-solution:before {
+.h5p-blanks .h5p-question-show-solution:before {
   content: "\f070";
 }
-.h5p-blanks button.h5p-button.h5p-check-answer:before {
+.h5p-blanks .h5p-question-check-answer:before {
   content: "\f058";
 }
 
-/* Buttons are shown dependent of state */
-.h5p-blanks [data-state="ongoing"] button.h5p-button.h5p-check-answer,
-.h5p-blanks [data-state="checking"] button.h5p-button.h5p-show-solution,
-.h5p-blanks [data-state="checking"] button.h5p-button.h5p-try-again,
-.h5p-blanks [data-state="showing-solution"] button.h5p-button.h5p-try-again {
-  display: inline-block;
-}
-
-.h5p-blanks .h5p-blanks-evaluation-container {
+.h5p-blanks .h5p-question-feedback {
   float: left;
   padding: 1em 0 0 0;
   max-width: 30em;
 }
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score-emoticon:before {
+.h5p-blanks .h5p-blanks-evaluation-score-emoticon:before {
   display: block;
   float: left;
 
   font-family: icomoon-blanks;
   font-size: 4em;
-  line-height: 1em; /* inherits 4em */
+  line-height: 1em;
   content: "\e605";
 }
 .h5p-blanks .h5p-blanks-evaluation-score-emoticon.max-score:before {
   content: "\e606";
 }
-
-@-webkit-keyframes shake-it {
+@-webkit-keyframes h5p-blanks-shake-it {
   0% { -webkit-transform: translate(2px, 1px) rotate(0deg);}
   10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg);}
   20% { -webkit-transform: translate(-3px, 0px) rotate(1deg);}
@@ -195,7 +151,7 @@
   90% { -webkit-transform: translate(2px, 2px) rotate(0deg);}
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg);}
 }
-@keyframes shake-it {
+@keyframes h5p-blanks-shake-it {
   0% { transform: translate(2px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg);}
   20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -208,21 +164,21 @@
   90% { transform: translate(2px, 2px) rotate(0deg);}
   100% {transform: translate(1px, -2px) rotate(-1deg);}
 }
-.h5p-blanks .h5p-blanks-evaluation-container.not-filled-out .h5p-blanks-evaluation-score-emoticon {
-  animation-name: shake-it;
+.h5p-blanks .h5p-blanks-evaluation-score-emoticon.not-filled-out {
+  animation-name: h5p-blanks-shake-it;
   animation-duration: 0.8s;
   transform-origin: 50% 50%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
-  -webkit-animation-name: shake-it;
+  -webkit-animation-name: h5p-blanks-shake-it;
   -webkit-animation-duration: 0.8s;
   -webkit-transform-origin: 50% 50%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
 }
 
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score {
+.h5p-blanks .h5p-blanks-evaluation-score {
   position: relative;
   display: block;
   background: #ffffff;
@@ -236,8 +192,8 @@
   line-height: 1.3em;
 }
 
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before,
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:after {
+.h5p-blanks .h5p-blanks-evaluation-score:before,
+.h5p-blanks .h5p-blanks-evaluation-score:after {
   right: 100%;
   border: solid transparent;
   content: " ";
@@ -247,14 +203,14 @@
   pointer-events: none;
 }
 
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:before {
+.h5p-blanks .h5p-blanks-evaluation-score:before {
   margin-top: -11px;
   top: 50%;
   border-width: 11px;
   border-color: transparent;
   border-right-color: #ccc;
 }
-.h5p-blanks .h5p-blanks-evaluation-container .h5p-blanks-evaluation-score:after {
+.h5p-blanks .h5p-blanks-evaluation-score:after {
   margin-top: -10px;
   top: 50%;
   border-width: 10px;
@@ -276,9 +232,4 @@
 .h5p-blanks .has-tip.h5p-correct .h5p-text-input,
 .h5p-blanks .has-tip.h5p-wrong .h5p-text-input {
   padding-right: 3.5em;
-}
-.h5p-blanks-image {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
 }
