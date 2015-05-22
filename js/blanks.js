@@ -127,26 +127,34 @@ H5P.Blanks = (function ($, Question) {
     self.toggleButtonVisibility(STATE_ONGOING);
   };
 
-  C.prototype.handleBlanks = function (question, handler) {
+  /**
+   * Find blanks in a string and run a handler on those blanks
+   *
+   * @param {string} question
+   *   Question text containing blanks enclosed in asterisks.
+   * @param {function} handler
+   *   Replaces the blanks text with an input field.
+   * @returns {string}
+   *   The question with blanks replaced by the given handler.
+   */
+  Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterix
-    var clozeEnd, clozeStart = question.indexOf('*'), oldEnd = 0;
-    var toReturn = '';
+    var clozeEnd, clozeStart = question.indexOf('*');
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
       clozeEnd = question.indexOf('*', clozeStart);
       if (clozeEnd === -1) {
-        toReturn += question.slice(oldEnd);
         continue; // No end
       }
 
       var replacer = handler(question.substring(clozeStart, clozeEnd));
       clozeEnd++;
-      toReturn += question.slice(oldEnd, clozeStart - 1) + replacer;
-      oldEnd = clozeEnd;
+      question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
+
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
     }
-    return toReturn;
+    return question;
   };
 
   /**
@@ -159,26 +167,15 @@ H5P.Blanks = (function ($, Question) {
     for (var i = 0; i < self.params.questions.length; i++) {
       var question = self.params.questions[i];
 
-      // Go through the text and replace all the asterisks with input fields
-      var clozeEnd, clozeStart = question.indexOf('*');
-      while (clozeStart !== -1 && clozeEnd !== -1) {
-        clozeStart++;
-        clozeEnd = question.indexOf('*', clozeStart);
-        if (clozeEnd === -1) {
-          continue; // No end
-        }
-
+      // Go through the question text and replace all the asterisks with input fields
+      question = self.handleBlanks(question, function(toBeReplaced) {
         // Create new cloze
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
-        var cloze = new Blanks.Cloze(question.substring(clozeStart, clozeEnd), self.params.behaviour, defaultUserAnswer);
-        clozeEnd++;
+        var cloze = new Blanks.Cloze(toBeReplaced, self.params.behaviour, defaultUserAnswer);
 
-        question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
         self.clozes.push(cloze);
-
-        // Find the next cloze
-        clozeStart = question.indexOf('*', clozeEnd);
-      }
+        return cloze;
+      });
 
       html += '<div>' + question + '</div>';
     }
