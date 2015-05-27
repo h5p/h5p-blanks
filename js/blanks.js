@@ -99,10 +99,10 @@ H5P.Blanks = (function ($) {
     this.trigger('resize');
 
   };
-  
+
   /**
    * Find blanks in a string and run a handler on those blanks
-   * 
+   *
    * @param {string} question - a sting with blanks enclosed in asterix
    * @param {type} handler
    *  a function taking in a blank and returning something the blanks should be
@@ -120,7 +120,7 @@ H5P.Blanks = (function ($) {
         toReturn += question.slice(oldEnd);
         continue; // No end
       }
-      
+
       var replacer = handler(question.substring(clozeStart, clozeEnd));
       clozeEnd++;
       toReturn += question.slice(oldEnd, clozeStart - 1) + replacer;
@@ -138,10 +138,10 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.appendQuestionsTo = function ($container) {
     var self = this;
-    
+
     for (var i = 0; i < self.params.questions.length; i++) {
       var question = self.params.questions[i];
-      
+
       question = self.handleBlanks(question, function(toBeReplaced) {
         // Create new cloze
         var defaultUserAnswer = self.params.userAnswers.length > self.clozes.length
@@ -166,7 +166,7 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            
+
             self.triggerCompleted();
           }
         };
@@ -187,6 +187,11 @@ H5P.Blanks = (function ($) {
   };
 
   C.prototype.autoGrowTextField = function ($input) {
+    // Do not set text field size when separate lines is enabled
+    if (this.params.behaviour.separateLines) {
+      return;
+    }
+
     var self = this;
     var fontSize = parseInt($input.css('font-size'), 10);
     var minEm = 3;
@@ -435,7 +440,7 @@ H5P.Blanks = (function ($) {
   C.prototype.hideButtons = function () {
     this.toggleButtonVisibility(STATE_FINISHED);
   };
-  
+
   /**
    * Trigger xAPI completed event
    */
@@ -470,19 +475,19 @@ H5P.Blanks = (function ($) {
       definition.description['en-US'] += question;
     }
   };
-  
+
   /**
    * Add the response part to an xAPI event
-   * 
+   *
    * @param {H5P.XAPIEvent} xAPIEvent
    *  The xAPI event we will add a response to
    */
   C.prototype.addResponseToXAPI = function(xAPIEvent) {
     xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore());
-    
+
     var usersAnswers = this.getCurrentState();
-    
-    xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');    
+
+    xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');
   };
 
   /**
