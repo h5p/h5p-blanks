@@ -117,7 +117,6 @@ H5P.Blanks = (function ($) {
       clozeStart++;
       clozeEnd = question.indexOf('*', clozeStart);
       if (clozeEnd === -1) {
-        toReturn += question.slice(oldEnd);
         continue; // No end
       }
 
@@ -128,6 +127,7 @@ H5P.Blanks = (function ($) {
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
     }
+    toReturn += question.slice(oldEnd);
     return toReturn;
   };
 
