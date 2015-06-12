@@ -101,6 +101,37 @@ H5P.Blanks = (function ($) {
   };
 
   /**
+   * Find blanks in a string and run a handler on those blanks
+   *
+   * @param {string} question - a sting with blanks enclosed in asterix
+   * @param {type} handler
+   *  a function taking in a blank and returning something the blanks should be
+   *  replaced with
+   * @returns the question with blanks replaced by the handler function
+   */
+  C.prototype.handleBlanks = function (question, handler) {
+    // Go through the text and run handler on all asterix
+    var clozeEnd, clozeStart = question.indexOf('*'), oldEnd = 0;
+    var toReturn = '';
+    while (clozeStart !== -1 && clozeEnd !== -1) {
+      clozeStart++;
+      clozeEnd = question.indexOf('*', clozeStart);
+      if (clozeEnd === -1) {
+        continue; // No end
+      }
+
+      var replacer = handler(question.substring(clozeStart, clozeEnd));
+      clozeEnd++;
+      toReturn += question.slice(oldEnd, clozeStart - 1) + replacer;
+      oldEnd = clozeEnd;
+      // Find the next cloze
+      clozeStart = question.indexOf('*', clozeEnd);
+    }
+    toReturn += question.slice(oldEnd);
+    return toReturn;
+  };
+
+  /**
    * Append questitons to the given container.
    *
    * @param {jQuery} $container
@@ -111,28 +142,16 @@ H5P.Blanks = (function ($) {
     for (var i = 0; i < self.params.questions.length; i++) {
       var question = self.params.questions[i];
 
-      // Go through the text and replace all the asterisks with input fields
-      var clozeEnd, clozeStart = question.indexOf('*');
-      while (clozeStart !== -1 && clozeEnd !== -1) {
-        clozeStart++;
-        clozeEnd = question.indexOf('*', clozeStart);
-        if (clozeEnd === -1) {
-          continue; // No end
-        }
-
+      question = self.handleBlanks(question, function(toBeReplaced) {
         // Create new cloze
         var defaultUserAnswer = self.params.userAnswers.length > self.clozes.length
           ? self.params.userAnswers[self.clozes.length]
           : null;
-        var cloze = new Cloze(question.substring(clozeStart, clozeEnd), self.params.behaviour, defaultUserAnswer);
-        clozeEnd++;
+        var cloze = new Cloze(toBeReplaced, self.params.behaviour, defaultUserAnswer);
 
-        question = question.slice(0, clozeStart - 1) + cloze + question.slice(clozeEnd);
         self.clozes.push(cloze);
-
-        // Find the next cloze
-        clozeStart = question.indexOf('*', clozeEnd);
-      }
+        return cloze;
+      });
 
       $container[0].innerHTML += '<div>' + question + '</div>';
     }
@@ -147,7 +166,8 @@ H5P.Blanks = (function ($) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            self.triggerXAPICompleted(self.getScore(), self.getMaxScore());
+
+            self.triggerCompleted();
           }
         };
       }
@@ -167,6 +187,11 @@ H5P.Blanks = (function ($) {
   };
 
   C.prototype.autoGrowTextField = function ($input) {
+    // Do not set text field size when separate lines is enabled
+    if (this.params.behaviour.separateLines) {
+      return;
+    }
+
     var self = this;
     var fontSize = parseInt($input.css('font-size'), 10);
     var minEm = 3;
@@ -230,10 +255,6 @@ H5P.Blanks = (function ($) {
    * Add show solution button.
    */
   C.prototype.addButtons = function () {
-    if (this._$solutionButton !== undefined) {
-      return; // Buttons already added.
-    }
-
     var that = this;
     var $buttonBar = $('<div/>', {'class': 'h5p-button-bar'});
 
@@ -248,7 +269,7 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
-          that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+          that.triggerCompleted();
         });
     }
 
@@ -418,6 +439,55 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.hideButtons = function () {
     this.toggleButtonVisibility(STATE_FINISHED);
+  };
+
+  /**
+   * Trigger xAPI completed event
+   */
+  C.prototype.triggerCompleted = function() {
+    var xAPIEvent = this.createXAPIEventTemplate('completed');
+    this.addQuestionToXAPI(xAPIEvent);
+    this.addResponseToXAPI(xAPIEvent);
+    this.trigger(xAPIEvent);
+  };
+
+  /**
+   * Add the question itselt to the definition part of an xAPIEvent
+   */
+  C.prototype.addQuestionToXAPI = function(xAPIEvent) {
+    var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    definition.description = {
+      'en-US': this.params.text
+    };
+    definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
+    definition.interactionType = 'fill-in';
+    definition.correctResponsesPattern = ['{case_matters=' + this.params.behaviour.caseSensitive + '}'];
+    var firstCorrectResponse = true;
+    for (var i = 0; i < this.params.questions.length; i++) {
+      var question = this.handleBlanks(this.params.questions[i], function(correct) {
+        if (!firstCorrectResponse) {
+          definition.correctResponsesPattern[0] += '[,]';
+        }
+        definition.correctResponsesPattern[0] += correct;
+        firstCorrectResponse = false;
+        return '__________';
+      });
+      definition.description['en-US'] += question;
+    }
+  };
+
+  /**
+   * Add the response part to an xAPI event
+   *
+   * @param {H5P.XAPIEvent} xAPIEvent
+   *  The xAPI event we will add a response to
+   */
+  C.prototype.addResponseToXAPI = function(xAPIEvent) {
+    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore());
+
+    var usersAnswers = this.getCurrentState();
+
+    xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');
   };
 
   /**
