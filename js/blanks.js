@@ -192,7 +192,7 @@ H5P.Blanks = (function ($, Question) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            self.triggerXAPICompleted(self.getScore(), self.getMaxScore());
+            self.triggerCompleted();
           }
         };
       }
@@ -223,6 +223,11 @@ H5P.Blanks = (function ($, Question) {
    *
    */
   Blanks.prototype.autoGrowTextField = function ($input) {
+    // Do not set text field size when separate lines is enabled
+    if (this.params.behaviour.separateLines) {
+      return;
+    }
+
     var self = this;
     var fontSize = parseInt($input.css('font-size'), 10);
     var minEm = 3;
@@ -407,6 +412,55 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.hideButtons = function () {
     this.toggleButtonVisibility(STATE_FINISHED);
+  };
+
+  /**
+   * Trigger xAPI completed event
+   */
+  Blanks.prototype.triggerCompleted = function() {
+    var xAPIEvent = this.createXAPIEventTemplate('completed');
+    this.addQuestionToXAPI(xAPIEvent);
+    this.addResponseToXAPI(xAPIEvent);
+    this.trigger(xAPIEvent);
+  };
+
+  /**
+   * Add the question itselt to the definition part of an xAPIEvent
+   */
+  Blanks.prototype.addQuestionToXAPI = function(xAPIEvent) {
+    var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    definition.description = {
+      'en-US': this.params.text
+    };
+    definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
+    definition.interactionType = 'fill-in';
+    definition.correctResponsesPattern = ['{case_matters=' + this.params.behaviour.caseSensitive + '}'];
+    var firstCorrectResponse = true;
+    for (var i = 0; i < this.params.questions.length; i++) {
+      var question = this.handleBlanks(this.params.questions[i], function(correct) {
+        if (!firstCorrectResponse) {
+          definition.correctResponsesPattern[0] += '[,]';
+        }
+        definition.correctResponsesPattern[0] += correct;
+        firstCorrectResponse = false;
+        return '__________';
+      });
+      definition.description['en-US'] += question;
+    }
+  };
+
+  /**
+   * Add the response part to an xAPI event
+   *
+   * @param {H5P.XAPIEvent} xAPIEvent
+   *  The xAPI event we will add a response to
+   */
+  Blanks.prototype.addResponseToXAPI = function(xAPIEvent) {
+    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore());
+
+    var usersAnswers = this.getCurrentState();
+
+    xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');
   };
 
   /**
