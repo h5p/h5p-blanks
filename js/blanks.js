@@ -327,8 +327,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     if (!self.getAnswerGiven()) {
-      var $eva = $(this.createEvaluation(self.params.notFilledOut, 'not-filled-out'));
-      this.setFeedback($eva);
+      this.setFeedback(self.params.notFilledOut, self.getScore(), self.getMaxScore());
 
       // Stop animation
       setTimeout(function () {
@@ -473,21 +472,11 @@ H5P.Blanks = (function ($, Question) {
     var maxScore = this.getMaxScore();
     var score = this.getScore();
     var scoreText = this.params.score.replace('@score', score).replace('@total', maxScore);
-    this.setFeedback(this.createEvaluation(scoreText, (score === maxScore ? 'max-score' : '')));
+    this.setFeedback(scoreText, score, maxScore);
 
     if (score === maxScore) {
       this.toggleButtonVisibility(STATE_FINISHED);
     }
-  };
-
-  /**
-   * Create HTML for the feedback container.
-   *
-   * @param {string} htmlText The feedback to the user
-   * @param {string} extraClass Added to emoticon
-   */
-  Blanks.prototype.createEvaluation = function (htmlText, extraClass) {
-    return '<div class="h5p-blanks-evaluation-score-emoticon' + (extraClass ? ' ' + extraClass : '') + '"></div><div class="h5p-blanks-evaluation-score">' + htmlText + '</div>';
   };
 
   /**
