@@ -12,7 +12,6 @@
 
 .h5p-blanks {
   position: relative;
-  padding: 1em;
   overflow: hidden;
 }
 .h5p-blanks .h5p-input-wrapper {
@@ -83,28 +82,14 @@
 }
 
 /* Actual text paragraphs */
-.h5p-blanks p {
-  font-size: 1em;
-  font-weight: normal;
+.h5p-blanks .h5p-question-content p {
   line-height: 1.75em;
-  padding: 0;
   margin: 0 0 1em;
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
-.h5p-blanks .h5p-question-introduction {
-  margin: 0 0 0.4em;
-  border-bottom: 0.1em solid #ddd;
-}
-.h5p-blanks .h5p-question-buttons {
-  margin-top: 0.4em;
-  border-top: 0.1em solid #ddd;
-  padding-top: .8em;
-  min-height: 2.134em;
-}
 .h5p-blanks .h5p-joubelui-button {
   float: right;
-  display: block;
 }
 .h5p-blanks .h5p-joubelui-button:before {
   font-family: 'H5PFontAwesome4';
@@ -122,9 +107,8 @@
 }
 
 .h5p-blanks .h5p-question-feedback {
-  float: left;
-  padding: 1em 0 0 0;
-  max-width: 30em;
+  min-height: 3.75em;
+  padding: 0.25em;
 }
 .h5p-blanks .h5p-blanks-evaluation-score-emoticon:before {
   display: block;

@@ -300,6 +300,7 @@ H5P.Blanks = (function ($, Question) {
         this.hideButton('show-solution');
       }
     }
+
     if (this.params.behaviour.enableRetry) {
       if ((state === STATE_CHECKING && !allCorrect) || state === STATE_SHOWING_SOLUTION) {
         this.showButton('try-again');
