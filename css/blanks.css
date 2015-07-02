@@ -95,7 +95,7 @@
 }
 
 .h5p-blanks .h5p-question-feedback {
-  min-height: 3.75em;
+  overflow: hidden;
   padding: 0.25em;
 }
 .h5p-blanks .joubel-tip-container {
