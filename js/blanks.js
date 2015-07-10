@@ -182,7 +182,7 @@ H5P.Blanks = (function ($) {
         return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
-      self.triggerXAPI('attempted');
+      self.triggerXAPI('interacted');
     });
   };
 
