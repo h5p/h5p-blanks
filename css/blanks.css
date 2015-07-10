@@ -37,10 +37,11 @@
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
   background: #d1e2ce;
-  color: #39692e;
+  border: 1px solid #d1e2ce;
+  color: #255c41;
 }
 .h5p-blanks .h5p-correct-answer {
-  color: #6aa81b;
+  color: #9dd8bb;
   font-weight: bold;
 }
 .h5p-blanks .h5p-correct:after {
@@ -50,13 +51,14 @@
   text-decoration: none;
   content: "\f00c";
   font-family: 'H5PFontAwesome4';
-  color: #39692e;
+  color: #255c41;
 }
 
 /* Wrongly answered input */
 .h5p-blanks .h5p-wrong .h5p-text-input {
-  background-color: #e6ced1;
-  color: #c33f62;
+  background-color: #f7d0d0;
+  border: 1px solid #f7d0d0;
+  color: #b71c1c;
   text-decoration: line-through;
 }
 .h5p-blanks .h5p-wrong:after {
@@ -66,7 +68,7 @@
   font-family: 'H5PFontAwesome4';
   text-decoration: none;
   content: "\f00d";
-  color: #c33f62;
+  color: #b71c1c;
 }
 
 /* Actual text paragraphs */
