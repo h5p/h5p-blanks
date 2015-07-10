@@ -167,7 +167,7 @@ H5P.Blanks = (function ($) {
             self.showEvaluation();
             self.done = true;
 
-            self.triggerCompleted();
+            self.triggerAnswered();
           }
         };
       }
@@ -269,7 +269,7 @@ H5P.Blanks = (function ($) {
           that.toggleButtonVisibility(STATE_CHECKING);
           that.markResults();
           that.showEvaluation();
-          that.triggerCompleted();
+          that.triggerAnswered();
         });
     }
 
@@ -442,10 +442,10 @@ H5P.Blanks = (function ($) {
   };
 
   /**
-   * Trigger xAPI completed event
+   * Trigger xAPI answered event
    */
-  C.prototype.triggerCompleted = function() {
-    var xAPIEvent = this.createXAPIEventTemplate('completed');
+  C.prototype.triggerAnswered = function() {
+    var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
     this.addResponseToXAPI(xAPIEvent);
     this.trigger(xAPIEvent);
