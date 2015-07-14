@@ -328,12 +328,6 @@ H5P.Blanks = (function ($, Question) {
 
     if (!self.getAnswerGiven()) {
       this.setFeedback(self.params.notFilledOut, self.getScore(), self.getMaxScore());
-
-      // Stop animation
-      setTimeout(function () {
-        $eva.filter('.not-filled-out').removeClass('not-filled-out');
-      }, 1000);
-
       return false;
     }
 
