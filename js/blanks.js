@@ -64,7 +64,7 @@ H5P.Blanks = (function ($) {
    */
   C.prototype.attach = function ($container) {
     var self = this;
-
+    this.setActivityStarted();
     // Reset clozes in case we are re-attaching
     this.clozes = [];
 
@@ -483,8 +483,7 @@ H5P.Blanks = (function ($) {
    *  The xAPI event we will add a response to
    */
   C.prototype.addResponseToXAPI = function(xAPIEvent) {
-    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore());
-
+    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore(), this);
     var usersAnswers = this.getCurrentState();
 
     xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');

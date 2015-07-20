@@ -8,7 +8,7 @@
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 5
+    "minorVersion": 6
   },
   "license": "cc-by-sa",
   "machineName": "H5P.Blanks",
