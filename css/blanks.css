@@ -36,12 +36,12 @@
 
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
-  background: #d1e2ce;
-  border: 1px solid #d1e2ce;
+  background: #9dd8bb;
+  border: 1px solid #9dd8bb;
   color: #255c41;
 }
 .h5p-blanks .h5p-correct-answer {
-  color: #9dd8bb;
+  color: #255c41;
   font-weight: bold;
 }
 .h5p-blanks .h5p-correct:after {
