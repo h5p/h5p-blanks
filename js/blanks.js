@@ -198,7 +198,9 @@ H5P.Blanks = (function ($, Question) {
       }
       self.clozes[i].setInput($(this), afterCheck, function () {
         self.toggleButtonVisibility(STATE_ONGOING);
-        self.hideEvaluation();
+        if (!self.params.behaviour.autoCheck) {
+          self.hideEvaluation();
+        }
       });
     }).keydown(function (event) {
       self.autoGrowTextField($(this));
@@ -327,7 +329,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     if (!self.getAnswerGiven()) {
-      this.setFeedback(self.params.notFilledOut, self.getScore(), self.getMaxScore());
+      this.updateFeedbackContent(self.params.notFilledOut);
       return false;
     }
 
@@ -461,8 +463,6 @@ H5P.Blanks = (function ($, Question) {
    * Show evaluation widget, i.e: 'You got x of y blanks correct'
    */
   Blanks.prototype.showEvaluation = function () {
-    this.hideEvaluation();
-
     var maxScore = this.getMaxScore();
     var score = this.getScore();
     var scoreText = this.params.score.replace('@score', score).replace('@total', maxScore);
