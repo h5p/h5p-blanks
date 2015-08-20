@@ -287,6 +287,7 @@ H5P.Blanks = (function ($, Question) {
    * Using CSS-rules to conditionally show/hide using the data-attribute [data-state]
    */
   Blanks.prototype.toggleButtonVisibility = function (state) {
+    var self = this;
     // The show solutions button is hidden if all answers are correct
     var allCorrect = (this.getScore() === this.getMaxScore());
     if (this.params.behaviour.autoCheck && allCorrect) {
@@ -319,6 +320,13 @@ H5P.Blanks = (function ($, Question) {
       this.hideButton('check-answer');
     }
 
+    if (this.params.behaviour.autoCheck) {
+      // Wait for toggle buttons then set focus to button.
+      setTimeout(function () {
+        self.focusButton();
+      }, 0);
+    }
+
     this.trigger('resize');
   };
 
@@ -347,6 +355,7 @@ H5P.Blanks = (function ($, Question) {
         self.clozes[i].disableInput();
       }
     }
+    console.log("mark results resize");
     this.trigger('resize');
   };
 
@@ -356,6 +365,7 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.removeMarkedResults = function () {
     this.$questions.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
     this.$questions.find('.h5p-input-wrapper > input').attr('disabled', false);
+    console.log("remove marked results resize");
     this.trigger('resize');
   };
 
@@ -370,6 +380,7 @@ H5P.Blanks = (function ($, Question) {
     for (var i = 0; i < self.clozes.length; i++) {
       self.clozes[i].showSolution();
     }
+    console.log("show correct answers resize");
     this.trigger('resize');
   };
 
@@ -398,6 +409,7 @@ H5P.Blanks = (function ($, Question) {
     this.hideSolutions();
     this.clearAnswers();
     this.removeMarkedResults();
+    console.log("resetTask()");
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
   };

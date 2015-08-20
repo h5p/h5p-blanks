@@ -78,11 +78,6 @@
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
-
-.h5p-blanks .h5p-question-feedback {
-  overflow: hidden;
-  padding: 0.25em;
-}
 .h5p-blanks .joubel-tip-container {
   position: absolute;
   top: 0;
