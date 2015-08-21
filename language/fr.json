@@ -11,52 +11,47 @@
       "entity": "Texte block",
       "field": {
         "label": "Line of Texte",
-        "description": "Des trous sont insérés avec une astérisque (*) devant et derrière le mot/la phrase correct. Les réponses possibles sont séparées par un slash (/). Vous pouvez ajouter une aide en utilisant les deux points (:) avant cette aide. Exemple: Les exercices H5P peuvent être créés en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*."
+        "description": "Des trous sont inseres avec une asterisque (*) devant et derriere le mot/la phrase correct. Les reponses possibles sont separees par un slash (/). Vous pouvez ajouter une aide en utilisant les deux points (:) avant cette aide. Exemple: Les exercices H5P peuvent etre crees en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*."
       }
     },
     {
       "label": "Texte de Feedback",
-      "default": "Vous avez @score sur @total réponses correctes.",
-      "description": "Texte de Feedback, variables possibles: @score et @total. Exemple: 'Vous avez @score sur un total possible de @total points'"
+      "description": "Texte de Feedback, variables possibles: @score et @total. Exemple: 'Vous avez @score sur un total possible de @total points.'"
     },
     {
-      "label": "Texte pour le bouton \"Montrer la solution\"",
-      "default": "Montrer la solution"
+      "label": "Texte pour le bouton \"Montrer la solution\""
     },
     {
-      "label": "Texte pour le bouton \"Réessayer\"",
-      "default": "Réessayer"
+      "label": "Texte pour le bouton \"Reessayer\""
     },
     {
-      "label": "Texte pour le bouton \"Vérifier\"",
-      "default": "Vérifier"
+      "label": "Texte pour le bouton \"Verifier\""
     },
     {
-      "label": "Texte pour le message \"Tout n'est pas fini\"",
-      "default": "Merci de remplir tous les trous"
+      "label": "Texte pour le message \"Tout n'est pas fini\""
     },
     {
       "label": "Options des exercices.",
-      "description": "Ces options permettent de paramétrer les variables des exercices.",
+      "description": "Ces options permettent de parametrer les variables des exercices.",
       "fields": [
         {
-          "label": "Activer le bouton \"Réessayer\""
+          "label": "Activer le bouton \"Reessayer\""
         },
         {
           "label": "Activer le bouton \"Montrer la solution\""
         },
         {
-          "label": "Vérifier les réponses automatiquement."
+          "label": "Verifier les reponses automatiquement."
         },
         {
-          "label": "Sensible à la casse",
-          "description": "Afin que la réponse soit exactement celle attendue."
+          "label": "Sensible a la casse",
+          "description": "Afin que la reponse soit exactement celle attendue."
         },
         {
-          "label": "Tous les champs doivent être remplis pour demander à voir la solution."
+          "label": "Tous les champs doivent etre remplis pour demander a voir la solution."
         },
         {
-          "label": "Les champs de réponse sont sur des lignes séparées"
+          "label": "Les champs de reponse sont sur des lignes separees."
         }
       ]
     }
