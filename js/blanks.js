@@ -192,7 +192,7 @@ H5P.Blanks = (function ($, Question) {
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            self.triggerCompleted();
+            self.triggerAnswered();
           }
         };
       }
@@ -209,7 +209,7 @@ H5P.Blanks = (function ($, Question) {
         return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
-      self.triggerXAPI('attempted');
+      self.triggerXAPI('interacted');
     });
 
     self.on('resize', function () {
@@ -419,10 +419,10 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Trigger xAPI completed event
+   * Trigger xAPI answered event
    */
-  Blanks.prototype.triggerCompleted = function() {
-    var xAPIEvent = this.createXAPIEventTemplate('completed');
+  C.prototype.triggerAnswered = function() {
+    var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
     this.addResponseToXAPI(xAPIEvent);
     this.trigger(xAPIEvent);
@@ -459,9 +459,8 @@ H5P.Blanks = (function ($, Question) {
    * @param {H5P.XAPIEvent} xAPIEvent
    *  The xAPI event we will add a response to
    */
-  Blanks.prototype.addResponseToXAPI = function(xAPIEvent) {
-    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore());
-
+  Blanks.prototype.addResponseToXAPI = function (xAPIEvent) {
+    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore(), this);
     var usersAnswers = this.getCurrentState();
 
     xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');
