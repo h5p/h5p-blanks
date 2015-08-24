@@ -421,7 +421,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Trigger xAPI answered event
    */
-  C.prototype.triggerAnswered = function() {
+  Blanks.prototype.triggerAnswered = function() {
     var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
     this.addResponseToXAPI(xAPIEvent);
