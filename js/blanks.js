@@ -615,5 +615,13 @@ H5P.Blanks = (function ($, Question) {
     }
   };
 
+  /**
+   * Disables any active input. Useful for freezing the task and dis-allowing
+   * modification of wrong answers.
+   */
+  Blanks.prototype.disableInput = function () {
+    this.$questions.find('input').attr('disabled', true);
+  };
+
   return Blanks;
 })(H5P.jQuery, H5P.Question);
