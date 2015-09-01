@@ -1,5 +1,6 @@
 {
-  "title": "Fill in the blanks",
+  "title": "Fill in the Blanks",
+  "description": "Test your users with fill in the blanks tasks(Cloze tests).",
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
   "minorVersion": 3,
