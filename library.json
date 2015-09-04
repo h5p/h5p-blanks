@@ -1,17 +1,17 @@
 {
-  "title": "Fill in the blanks",
-  "description": "void",
+  "title": "Fill in the Blanks",
+  "description": "Test your users with fill in the blanks tasks(Cloze tests).",
+  "machineName": "H5P.Blanks",
   "majorVersion": 1,
   "minorVersion": 3,
   "patchVersion": 2,
   "runnable": 1,
+  "license": "MIT",
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 5
+    "minorVersion": 6
   },
-  "license": "cc-by-sa",
-  "machineName": "H5P.Blanks",
   "preloadedCss": [
     {
       "path": "css/blanks.css"
@@ -20,6 +20,9 @@
   "preloadedJs": [
     {
       "path": "js/blanks.js"
+    },
+    {
+      "path": "js/cloze.js"
     }
   ],
   "preloadedDependencies": [
@@ -27,6 +30,11 @@
       "machineName": "FontAwesome",
       "majorVersion": 4,
       "minorVersion": 1
+    },
+    {
+      "machineName": "H5P.Question",
+      "majorVersion": 1,
+      "minorVersion": 0
     },
     {
       "machineName": "H5P.JoubelUI",
