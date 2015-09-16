@@ -1,3 +1,4 @@
+/*global H5P*/
 H5P.Blanks = (function ($, Question) {
   /**
    * @constant
@@ -57,6 +58,19 @@ H5P.Blanks = (function ($, Question) {
 
     // Clozes
     this.clozes = [];
+
+    // Keep track tabbing forward or backwards
+    this.shiftPressed = false;
+
+    H5P.$body.keydown(function () {
+      if (event.keyCode === 16) {
+        self.shiftPressed = true;
+      }
+    }).keyup(function () {
+      if (event.keyCode === 16) {
+        self.shiftPressed = false;
+      }
+    });
   }
 
   // Inheritance
@@ -208,6 +222,17 @@ H5P.Blanks = (function ($, Question) {
       if (event.keyCode === 13) {
         return false; // Prevent form submission on enter key
       }
+
+      // Refocus buttons after they have been toggled if last input
+      if (event.keyCode === 9 && self.params.behaviour.autoCheck) {
+        var $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
+        var $lastInput = $inputs[$inputs.length - 1];
+        if ($(this).is($lastInput) && !self.shiftPressed) {
+          setTimeout(function () {
+            self.focusButton();
+          }, 10);
+        }
+      }
     }).on('change', function () {
       self.triggerXAPI('interacted');
     });
@@ -287,7 +312,6 @@ H5P.Blanks = (function ($, Question) {
    * Using CSS-rules to conditionally show/hide using the data-attribute [data-state]
    */
   Blanks.prototype.toggleButtonVisibility = function (state) {
-    var self = this;
     // The show solutions button is hidden if all answers are correct
     var allCorrect = (this.getScore() === this.getMaxScore());
     if (this.params.behaviour.autoCheck && allCorrect) {
@@ -318,13 +342,6 @@ H5P.Blanks = (function ($, Question) {
     }
     else {
       this.hideButton('check-answer');
-    }
-
-    if (this.params.behaviour.autoCheck) {
-      // Wait for toggle buttons then set focus to button.
-      setTimeout(function () {
-        self.focusButton();
-      }, 0);
     }
 
     this.trigger('resize');
