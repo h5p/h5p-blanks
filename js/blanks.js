@@ -62,11 +62,11 @@ H5P.Blanks = (function ($, Question) {
     // Keep track tabbing forward or backwards
     this.shiftPressed = false;
 
-    H5P.$body.keydown(function () {
+    H5P.$body.keydown(function (event) {
       if (event.keyCode === 16) {
         self.shiftPressed = true;
       }
-    }).keyup(function () {
+    }).keyup(function (event) {
       if (event.keyCode === 16) {
         self.shiftPressed = false;
       }
