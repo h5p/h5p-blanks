@@ -6,7 +6,8 @@
     },
     {
       "label": "Oppgåvetekst",
-      "description": "Ein tekst som fortel brukaren korleis oppgåva skal løysast"
+      "description": "Ein tekst som fortel brukaren korleis oppgåva skal løysast",
+      "default": "Fyll inn teksten som manglar"
     },
     {
       "label": "Tekstliner",

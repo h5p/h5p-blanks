@@ -11,6 +11,7 @@
     "name": "text",
     "type": "text",
     "widget": "html",
+    "default": "Fill in the missing words",
     "description": "A guide telling the user how to answer this task.",
     "enterMode": "p",
     "tags": [
