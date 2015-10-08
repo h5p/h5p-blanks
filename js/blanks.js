@@ -128,13 +128,7 @@ H5P.Blanks = (function ($, Question) {
     // Try again button
     if (self.params.behaviour.enableRetry === true) {
       self.addButton('try-again', self.params.tryAgain, function () {
-        self.removeMarkedResults();
-        self.hideSolutions();
-        self.hideEvaluation();
-        self.clearAnswers();
-        self.resetGrowTextField();
-        self.done = false;
-        self.toggleButtonVisibility(STATE_ONGOING);
+        self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
       });
     }
@@ -425,6 +419,7 @@ H5P.Blanks = (function ($, Question) {
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
+    this.done = false;
   };
 
   /**
