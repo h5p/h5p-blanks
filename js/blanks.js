@@ -46,7 +46,8 @@ H5P.Blanks = (function ($, Question) {
         caseSensitive: true,
         showSolutionsRequiresInput: true,
         autoCheck: false,
-        separateLines: false
+        separateLines: false,
+        disableImageZooming: false
       }
     }, params);
 
@@ -86,7 +87,7 @@ H5P.Blanks = (function ($, Question) {
 
     if (self.params.image) {
       // Register task image
-      self.setImage(self.params.image.path);
+      self.setImage(self.params.image.path, {disableImageZooming: self.params.behaviour.disableImageZooming});
     }
 
     // Register task introduction text
