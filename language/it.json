@@ -52,6 +52,9 @@
         },
         {
           "label": "Immettere i campi su righe separate"
+        },
+        {
+          "label": "Disable image zooming for question image."
         }
       ]
     }

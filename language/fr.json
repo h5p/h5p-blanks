@@ -52,6 +52,9 @@
         },
         {
           "label": "Les champs de reponse sont sur des lignes separees."
+        },
+        {
+          "label": "Disable image zooming for question image."
         }
       ]
     }
