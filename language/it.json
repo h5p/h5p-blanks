@@ -1,9 +1,11 @@
 {
   "semantics": [
     {
+      "label": "Task image",
+      "description": "An optional image to display above the task."
     },
     {
-      "label": "Descrizione attivit�",
+      "label": "Descrizione attività",
       "description": "Una guida deve indicare all'utente come rispondere a questo compito."
     },
     {
@@ -11,7 +13,7 @@
       "entity": "Blocco di testo",
       "field": {
         "label": "Linea di testo",
-        "description": "Gli spazi vuoti sono aggiunti con un asterisco (*) davanti e dietro la parola/frase corretta. Risposte alternative sono separate con una barra (/). Si pu� aggiungere un suggerimento testuale, usando i due punti (:) prima del suggerimento. Esempio: Il contentuto H5P pu� essere editato utilizzando un *browser/web-browser:Qualcosa che usi tutti i giorni*."
+        "description": "Gli spazi vuoti sono aggiunti con un asterisco (*) davanti e dietro la parola/frase corretta. Risposte alternative sono separate con una barra (/). Si può aggiungere un suggerimento testuale, usando i due punti (:) prima del suggerimento. Esempio: Il contentuto H5P può essere editato utilizzando un *browser/web-browser:Qualcosa che usi tutti i giorni*."
       }
     },
     {
