@@ -31,7 +31,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend({}, {
       text: "Fill in",
       questions: [
-        "2 + 2 = *4*"
+        "Oslo is the capital of *Norway*."
       ],
       userAnswers: [],
       score: "You got @score of @total points.",
