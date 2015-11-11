@@ -114,7 +114,7 @@ H5P.Blanks = (function ($, Question) {
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
-        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'answered');
+        self.triggerAnswered();
       });
     }
 
