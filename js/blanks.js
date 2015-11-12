@@ -51,6 +51,13 @@ H5P.Blanks = (function ($, Question) {
       }
     }, params);
 
+    // Delete empty questions
+    for (var i = this.params.questions.length - 1; i >= 0; i--) {
+      if (this.params.questions[i] === undefined) {
+        this.params.questions.splice(i, 1);
+      }
+    }
+
     // Previous state
     this.contentData = contentData;
     if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
