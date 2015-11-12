@@ -53,7 +53,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Delete empty questions
     for (var i = this.params.questions.length - 1; i >= 0; i--) {
-      if (this.params.questions[i] === undefined) {
+      if (!this.params.questions[i]) {
         this.params.questions.splice(i, 1);
       }
     }
