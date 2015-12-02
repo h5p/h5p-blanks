@@ -31,7 +31,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend({}, {
       text: "Fill in",
       questions: [
-        "2 + 2 = *4*"
+        "Oslo is the capital of *Norway*."
       ],
       userAnswers: [],
       score: "You got @score of @total points.",
@@ -46,9 +46,17 @@ H5P.Blanks = (function ($, Question) {
         caseSensitive: true,
         showSolutionsRequiresInput: true,
         autoCheck: false,
-        separateLines: false
+        separateLines: false,
+        disableImageZooming: false
       }
     }, params);
+
+    // Delete empty questions
+    for (var i = this.params.questions.length - 1; i >= 0; i--) {
+      if (!this.params.questions[i]) {
+        this.params.questions.splice(i, 1);
+      }
+    }
 
     // Previous state
     this.contentData = contentData;
@@ -86,7 +94,7 @@ H5P.Blanks = (function ($, Question) {
 
     if (self.params.image) {
       // Register task image
-      self.setImage(self.params.image.path);
+      self.setImage(self.params.image.path, {disableImageZooming: self.params.behaviour.disableImageZooming});
     }
 
     // Register task introduction text
@@ -113,7 +121,7 @@ H5P.Blanks = (function ($, Question) {
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
-        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'answered');
+        self.triggerAnswered();
       });
     }
 
@@ -128,13 +136,7 @@ H5P.Blanks = (function ($, Question) {
     // Try again button
     if (self.params.behaviour.enableRetry === true) {
       self.addButton('try-again', self.params.tryAgain, function () {
-        self.removeMarkedResults();
-        self.hideSolutions();
-        self.hideEvaluation();
-        self.clearAnswers();
-        self.resetGrowTextField();
-        self.done = false;
-        self.toggleButtonVisibility(STATE_ONGOING);
+        self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
       });
     }
@@ -425,6 +427,7 @@ H5P.Blanks = (function ($, Question) {
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
+    this.done = false;
   };
 
   /**
