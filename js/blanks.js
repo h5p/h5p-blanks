@@ -28,7 +28,7 @@ H5P.Blanks = (function ($, Question) {
     this.contentId = id;
 
     // Set default behavior.
-    this.params = $.extend({}, {
+    this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
         "Oslo is the capital of *Norway*."
