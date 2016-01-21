@@ -52,6 +52,9 @@
         },
         {
           "label": "وضع فراغات الكلمات على خطوط منفصلة"
+        },
+        {
+          "label": "Disable image zooming for question image."
         }
       ]
     }
