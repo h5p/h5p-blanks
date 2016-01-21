@@ -28,7 +28,7 @@ H5P.Blanks = (function ($, Question) {
     this.contentId = id;
 
     // Set default behavior.
-    this.params = $.extend({}, {
+    this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
         "Oslo is the capital of *Norway*."
@@ -107,6 +107,9 @@ H5P.Blanks = (function ($, Question) {
 
     // ... and buttons
     self.registerButtons();
+
+    // Restore previous state
+    self.setH5PUserState();
   };
 
   /**
@@ -242,8 +245,6 @@ H5P.Blanks = (function ($, Question) {
     self.on('resize', function () {
       self.resetGrowTextField();
     });
-
-    self.setH5PUserState();
 
     return this.$questions;
   };
