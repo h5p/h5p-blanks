@@ -8,30 +8,12 @@
    * @param {Object} behaviour Behaviour for the task
    * @param {string} defaultUserAnswer
    */
-  Blanks.Cloze = function (answer, behaviour, defaultUserAnswer) {
+  Blanks.Cloze = function (solution, behaviour, defaultUserAnswer) {
     var self = this;
     var $input, $wrapper;
-    var answers = [];
-    var tip;
-
-    var answersAndTip = answer.split(':');
-
-    if (answersAndTip.length > 0) {
-      answer = answersAndTip[0];
-      answers = answer.split('/');
-
-      // Trim answers
-      for (var i = 0; i < answers.length; i++) {
-        answers[i] = H5P.trim(answers[i]);
-        if (behaviour.caseSensitive !== true) {
-          answers[i] = answers[i].toLowerCase();
-        }
-      }
-
-      if (answersAndTip.length === 2) {
-        tip = answersAndTip[1];
-      }
-    }
+    var answers = solution.solutions;
+    var answer = answers.join('/');
+    var tip = solution.tip;
 
     /**
      * Check if the answer is correct.
