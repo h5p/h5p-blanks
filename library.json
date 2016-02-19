@@ -4,7 +4,7 @@
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
   "minorVersion": 4,
-  "patchVersion": 2,
+  "patchVersion": 3,
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel AS",
@@ -29,7 +29,7 @@
     {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 3
+      "minorVersion": 5
     },
     {
       "machineName": "H5P.Question",
