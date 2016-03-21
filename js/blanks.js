@@ -159,16 +159,17 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterix
     var clozeEnd, clozeStart = question.indexOf('*');
+    var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
       clozeEnd = question.indexOf('*', clozeStart);
       if (clozeEnd === -1) {
         continue; // No end
       }
-
-      var replacer = handler(question.substring(clozeStart, clozeEnd));
+      var replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
       clozeEnd++;
       question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
+      clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
@@ -187,10 +188,10 @@ H5P.Blanks = (function ($, Question) {
       var question = self.params.questions[i];
 
       // Go through the question text and replace all the asterisks with input fields
-      question = self.handleBlanks(question, function(toBeReplaced) {
+      question = self.handleBlanks(question, function(solution) {
         // Create new cloze
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
-        var cloze = new Blanks.Cloze(toBeReplaced, self.params.behaviour, defaultUserAnswer);
+        var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer);
 
         self.clozes.push(cloze);
         return cloze;
@@ -461,18 +462,74 @@ H5P.Blanks = (function ($, Question) {
     definition.interactionType = 'fill-in';
     definition.correctResponsesPattern = ['{case_matters=' + this.params.behaviour.caseSensitive + '}'];
     var firstCorrectResponse = true;
+    // xAPI forces us to create solution patterns for all possible solution combinations
     for (var i = 0; i < this.params.questions.length; i++) {
-      var question = this.handleBlanks(this.params.questions[i], function(correct) {
-        if (!firstCorrectResponse) {
-          definition.correctResponsesPattern[0] += '[,]';
+      var question = this.handleBlanks(this.params.questions[i], function(solution) {
+        // Store new patterns for each extra alternative answer
+        var newPatterns = [];
+        for (var j = 0; j < definition.correctResponsesPattern.length; j++) {
+          if (!firstCorrectResponse) {
+            definition.correctResponsesPattern[j] += '[,]';
+          }
+          var prefix = definition.correctResponsesPattern[j];
+          for (var k = 0; k < solution.solutions.length; k++) {
+            if (k === 0) {
+              // This is the first possible answr, just add it to the pattern
+              definition.correctResponsesPattern[j] += solution.solutions[k];
+            }
+            else {
+              // This is an alternative possible answer, we need to create a new permutation
+              newPatterns.push(prefix + solution.solutions[k])
+            }
+          }
         }
-        definition.correctResponsesPattern[0] += correct;
+        // Add any new permutations to the list of response patterns
+        definition.correctResponsesPattern = definition.correctResponsesPattern.concat(newPatterns);
+        
         firstCorrectResponse = false;
+        
+        // We replace the solutions in the question with a "blank"
         return '__________';
       });
       definition.description['en-US'] += question;
     }
   };
+  
+  /**
+   * Parse the solution text (text between the asterix)
+   * 
+   * @param {string} solutionText
+   * @returns {object} with the following properties
+   *  - tip: the tip text for this solution, undefined if no tip
+   *  - solutions: array of solution words
+   */
+  Blanks.prototype.parseSolution = function (solutionText) {
+    var solutions = [];
+    var tip;
+
+    var solutionsAndTip = solutionText.split(':');
+    
+    if (solutionsAndTip.length > 0) {
+      solutions = solutionsAndTip[0].split('/');
+    }
+    
+    if (solutionsAndTip.length === 2) {
+      tip = solutionsAndTip[1];
+    }
+
+    // Trim solutions
+    for (var i = 0; i < solutions.length; i++) {
+      solutions[i] = H5P.trim(solutions[i]);
+      if (this.params.behaviour.caseSensitive !== true) {
+        solutions[i] = solutions[i].toLowerCase();
+      }
+    }
+    
+    return {
+      tip: tip,
+      solutions: solutions
+    };
+  }
 
   /**
    * Add the response part to an xAPI event
