@@ -139,7 +139,6 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerButtons = function () {
     var self = this;
 
-    console.log("got l10n", self.params.confirmCheck);
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
