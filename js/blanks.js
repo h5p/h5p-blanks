@@ -92,9 +92,25 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerDomElements = function () {
     var self = this;
 
-    if (self.params.image) {
-      // Register task image
-      self.setImage(self.params.image.path, {disableImageZooming: self.params.behaviour.disableImageZooming});
+    // Check for task media
+    var media = self.params.media;
+    if (media && media.library) {
+      var type = media.library.split(' ')[0];
+      if (type === 'H5P.Image') {
+        if (media.params.file) {
+          // Register task image
+          self.setImage(media.params.file.path, {
+            disableImageZooming: self.params.behaviour.disableImageZooming,
+            alt: media.alt
+          });
+        }
+      }
+      else if (type === 'H5P.Video') {
+        if (media.params.sources) {
+          // Register task video
+          self.setVideo(media);
+        }
+      }
     }
 
     // Register task introduction text
@@ -485,19 +501,19 @@ H5P.Blanks = (function ($, Question) {
         }
         // Add any new permutations to the list of response patterns
         definition.correctResponsesPattern = definition.correctResponsesPattern.concat(newPatterns);
-        
+
         firstCorrectResponse = false;
-        
+
         // We replace the solutions in the question with a "blank"
         return '__________';
       });
       definition.description['en-US'] += question;
     }
   };
-  
+
   /**
    * Parse the solution text (text between the asterix)
-   * 
+   *
    * @param {string} solutionText
    * @returns {object} with the following properties
    *  - tip: the tip text for this solution, undefined if no tip
@@ -508,11 +524,11 @@ H5P.Blanks = (function ($, Question) {
     var tip;
 
     var solutionsAndTip = solutionText.split(':');
-    
+
     if (solutionsAndTip.length > 0) {
       solutions = solutionsAndTip[0].split('/');
     }
-    
+
     if (solutionsAndTip.length === 2) {
       tip = solutionsAndTip[1];
     }
@@ -524,7 +540,7 @@ H5P.Blanks = (function ($, Question) {
         solutions[i] = solutions[i].toLowerCase();
       }
     }
-    
+
     return {
       tip: tip,
       solutions: solutions

@@ -24,6 +24,34 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
 
           finished(null, parameters);
         }
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Blanks 1.5.
+       *
+       * Converts task image into media object, adding support for video.
+       *
+       * @params {Object} parameters
+       * @params {function} finished
+       */
+      5: function (parameters, finished) {
+
+        if (parameters.image) {
+          // Convert image field to media field
+          parameters.media = {
+            library: 'H5P.Image 1.0',
+            params: {
+              file: parameters.image
+            }
+          };
+
+          // Remove old image field
+          delete parameters.image;
+        }
+
+        // Done
+        finished(null, parameters);
       }
     }
   };
