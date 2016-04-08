@@ -101,7 +101,7 @@ H5P.Blanks = (function ($, Question) {
           // Register task image
           self.setImage(media.params.file.path, {
             disableImageZooming: self.params.behaviour.disableImageZooming,
-            alt: media.alt
+            alt: media.params.alt
           });
         }
       }
