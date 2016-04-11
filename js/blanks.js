@@ -495,7 +495,7 @@ H5P.Blanks = (function ($, Question) {
             }
             else {
               // This is an alternative possible answer, we need to create a new permutation
-              newPatterns.push(prefix + solution.solutions[k])
+              newPatterns.push(prefix + solution.solutions[k]);
             }
           }
         }
@@ -548,7 +548,7 @@ H5P.Blanks = (function ($, Question) {
       tip: tip,
       solutions: solutions
     };
-  }
+  };
 
   /**
    * Add the response part to an xAPI event
