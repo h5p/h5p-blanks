@@ -521,17 +521,20 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.parseSolution = function (solutionText) {
     var solutions = [];
-    var tip;
+    var tip, solution;
 
-    var solutionsAndTip = solutionText.split(':');
-
-    if (solutionsAndTip.length > 0) {
-      solutions = solutionsAndTip[0].split('/');
+    var tipStart = solutionText.indexOf(':');
+    if (tipStart !== -1) {
+      // Found tip, now extract
+      tip = solutionText.slice(tipStart + 1);
+      solution = solutionText.slice(0, tipStart);
+    }
+    else {
+      solution = solutionText;
     }
 
-    if (solutionsAndTip.length === 2) {
-      tip = solutionsAndTip[1];
-    }
+    // Split up alternatives
+    solutions = solution.split('/');
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
