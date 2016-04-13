@@ -520,7 +520,6 @@ H5P.Blanks = (function ($, Question) {
    *  - solutions: array of solution words
    */
   Blanks.prototype.parseSolution = function (solutionText) {
-    var solutions = [];
     var tip, solution;
 
     var tipStart = solutionText.indexOf(':');
@@ -534,7 +533,7 @@ H5P.Blanks = (function ($, Question) {
     }
 
     // Split up alternatives
-    solutions = solution.split('/');
+    var solutions = solution.split('/');
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
