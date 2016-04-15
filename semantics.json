@@ -102,7 +102,6 @@
         "default": true,
         "optional": true
       },
-
       {
         "label": "Enable \"Show solutions\" button",
         "name": "enableSolutionsButton",
