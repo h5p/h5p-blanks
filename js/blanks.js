@@ -34,8 +34,8 @@ H5P.Blanks = (function ($, Question) {
         "Oslo is the capital of *Norway*."
       ],
       userAnswers: [],
-      score: "You got @score of @total points.",
-      showSolutions: "Show solutions",
+      score: "@score of @total points",
+      showSolutions: "Solutions",
       tryAgain: "Try again",
       checkAnswer: "Check",
       changeAnswer: "Change answer",
