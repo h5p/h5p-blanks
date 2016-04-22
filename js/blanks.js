@@ -35,7 +35,7 @@ H5P.Blanks = (function ($, Question) {
       ],
       userAnswers: [],
       score: "@score of @total points",
-      showSolutions: "Solutions",
+      showSolutions: "Solution",
       tryAgain: "Try again",
       checkAnswer: "Check",
       changeAnswer: "Change answer",

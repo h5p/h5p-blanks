@@ -72,7 +72,7 @@
     "label": "Text for \"Show solutions\" button",
     "name": "showSolutions",
     "type": "text",
-    "default": "Solutions",
+    "default": "Solution",
     "common": true
   },
   {
