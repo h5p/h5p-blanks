@@ -151,6 +151,7 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
+          instance: self.params.overrideSettings.instance,
           $parentElement: self.params.overrideSettings.$confirmationDialogParent
         }
       });
@@ -173,6 +174,7 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
+          instance: self.params.overrideSettings.instance,
           $parentElement: self.params.overrideSettings.$confirmationDialogParent
         }
       });
