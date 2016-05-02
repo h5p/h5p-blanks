@@ -126,7 +126,9 @@
      */
     this.toString = function () {
       var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
-      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
+      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
+      self.length = result.length;
+      return result;
     };
 
     /**

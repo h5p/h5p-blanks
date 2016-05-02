@@ -34,8 +34,8 @@ H5P.Blanks = (function ($, Question) {
         "Oslo is the capital of *Norway*."
       ],
       userAnswers: [],
-      score: "You got @score of @total points.",
-      showSolutions: "Show solutions",
+      score: "@score of @total points",
+      showSolutions: "Solution",
       tryAgain: "Try again",
       checkAnswer: "Check",
       changeAnswer: "Change answer",
@@ -92,9 +92,25 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerDomElements = function () {
     var self = this;
 
-    if (self.params.image) {
-      // Register task image
-      self.setImage(self.params.image.path, {disableImageZooming: self.params.behaviour.disableImageZooming});
+    // Check for task media
+    var media = self.params.media;
+    if (media && media.library) {
+      var type = media.library.split(' ')[0];
+      if (type === 'H5P.Image') {
+        if (media.params.file) {
+          // Register task image
+          self.setImage(media.params.file.path, {
+            disableImageZooming: self.params.behaviour.disableImageZooming,
+            alt: media.params.alt
+          });
+        }
+      }
+      else if (type === 'H5P.Video') {
+        if (media.params.sources) {
+          // Register task video
+          self.setVideo(media);
+        }
+      }
     }
 
     // Register task introduction text
@@ -479,43 +495,45 @@ H5P.Blanks = (function ($, Question) {
             }
             else {
               // This is an alternative possible answer, we need to create a new permutation
-              newPatterns.push(prefix + solution.solutions[k])
+              newPatterns.push(prefix + solution.solutions[k]);
             }
           }
         }
         // Add any new permutations to the list of response patterns
         definition.correctResponsesPattern = definition.correctResponsesPattern.concat(newPatterns);
-        
+
         firstCorrectResponse = false;
-        
+
         // We replace the solutions in the question with a "blank"
         return '__________';
       });
       definition.description['en-US'] += question;
     }
   };
-  
+
   /**
    * Parse the solution text (text between the asterix)
-   * 
+   *
    * @param {string} solutionText
    * @returns {object} with the following properties
    *  - tip: the tip text for this solution, undefined if no tip
    *  - solutions: array of solution words
    */
   Blanks.prototype.parseSolution = function (solutionText) {
-    var solutions = [];
-    var tip;
+    var tip, solution;
 
-    var solutionsAndTip = solutionText.split(':');
-    
-    if (solutionsAndTip.length > 0) {
-      solutions = solutionsAndTip[0].split('/');
+    var tipStart = solutionText.indexOf(':');
+    if (tipStart !== -1) {
+      // Found tip, now extract
+      tip = solutionText.slice(tipStart + 1);
+      solution = solutionText.slice(0, tipStart);
     }
-    
-    if (solutionsAndTip.length === 2) {
-      tip = solutionsAndTip[1];
+    else {
+      solution = solutionText;
     }
+
+    // Split up alternatives
+    var solutions = solution.split('/');
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
@@ -524,12 +542,12 @@ H5P.Blanks = (function ($, Question) {
         solutions[i] = solutions[i].toLowerCase();
       }
     }
-    
+
     return {
       tip: tip,
       solutions: solutions
     };
-  }
+  };
 
   /**
    * Add the response part to an xAPI event
