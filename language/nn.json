@@ -64,6 +64,54 @@
         },
         {
           "label": "Slå av bilete zooming."
+        },
+        {
+          "label": "Slå på bruker-bekreftelse for \"Vis svar\""
+        },
+        {
+          "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        }
+      ]
+    },
+    {
+      "label": "Vis svar bruker-bekreftelse",
+      "fields": [
+        {
+          "label": "Tittel",
+          "default": "Feridg ?"
+        },
+        {
+          "label": "Tekst",
+          "default": "Er du sikker på at du er ferdig?"
+        },
+        {
+          "label": "Avbryt etikett",
+          "default": "Avbryt"
+        },
+        {
+          "label": "Bekreftelse etikett",
+          "default": "Bekreft"
+        }
+      ]
+    },
+    {
+      "label": "Prøv igjen bruker-bekreftelse",
+      "fields": [
+        {
+          "label": "Tittel",
+          "default": "Prøv igjen ?"
+        },
+        {
+          "label": "Tekst",
+          "default": "Er du sikker på at du vil prøve igjen?"
+        },
+        {
+          "label": "Avbryt etikett",
+          "default": "Avbryt"
+        },
+        {
+          "label": "Bekreft etikett",
+          "default": "Bekreft"
         }
       ]
     }
