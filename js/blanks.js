@@ -10,11 +10,32 @@ H5P.Blanks = (function ($, Question) {
   var STATE_FINISHED = 'finished';
 
   /**
+   * @typedef {Object} Params
+   *  Parameters/configuration object for Blanks
+   *
+   * @property {Object} Params.behaviour
+   * @property {string} Params.behaviour.confirmRetryDialog
+   * @property {string} Params.behaviour.confirmCheckDialog
+   *
+   * @property {Object} Params.confirmRetry
+   * @property {string} Params.confirmRetry.header
+   * @property {string} Params.confirmRetry.body
+   * @property {string} Params.confirmRetry.cancelLabel
+   * @property {string} Params.confirmRetry.confirmLabel
+   *
+   * @property {Object} Params.confirmCheck
+   * @property {string} Params.confirmCheck.header
+   * @property {string} Params.confirmCheck.body
+   * @property {string} Params.confirmCheck.cancelLabel
+   * @property {string} Params.confirmCheck.confirmLabel
+   */
+
+  /**
    * Initialize module.
    *
    * @class H5P.Blanks
    * @extends H5P.Question
-   * @param {Object} params Behavior settings
+   * @param {Params} params
    * @param {number} id Content identification
    * @param {Object} contentData Task specific content data
    */
@@ -27,7 +48,7 @@ H5P.Blanks = (function ($, Question) {
     // IDs
     this.contentId = id;
 
-    // Set default behavior.
+
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
@@ -48,7 +69,8 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false,
         disableImageZooming: false
-      }
+      },
+      overrideSettings: {}
     }, params);
 
     // Delete empty questions
@@ -141,10 +163,17 @@ H5P.Blanks = (function ($, Question) {
         self.markResults();
         self.showEvaluation();
         self.triggerAnswered();
+      }, true, {}, {
+        confirmationDialog: {
+          enable: self.params.behaviour.confirmCheckDialog,
+          l10n: self.params.confirmCheck,
+          instance: self.params.overrideSettings.instance,
+          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+        }
       });
     }
 
-    // Check answer button
+    // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
       if (self.allBlanksFilledOut()) {
         self.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
@@ -157,6 +186,13 @@ H5P.Blanks = (function ($, Question) {
       self.addButton('try-again', self.params.tryAgain, function () {
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
+      }, true, {}, {
+        confirmationDialog: {
+          enable: self.params.behaviour.confirmRetryDialog,
+          l10n: self.params.confirmRetry,
+          instance: self.params.overrideSettings.instance,
+          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+        }
       });
     }
     self.toggleButtonVisibility(STATE_ONGOING);
