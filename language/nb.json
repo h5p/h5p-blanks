@@ -66,7 +66,7 @@
           "label": "Slå av bilde zooming."
         },
         {
-          "label": "Slå på bruker-bekreftelse for \"Vis svar\""
+          "label": "Slå på bruker-bekreftelse for \"Fasit\""
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "label": "Vis svar bruker-bekreftelse",
+      "label": "Bruker-bekreftelse før fasit-visning",
       "fields": [
         {
           "label": "Tittel",
