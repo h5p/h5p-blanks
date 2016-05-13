@@ -95,7 +95,7 @@
     "label": "Text for \"Not filled out\" message",
     "name": "notFilledOut",
     "type": "text",
-    "default": "Please fill in all blanks",
+    "default": "Please fill in all blanks to view solution",
     "common": true,
     "optional": true
   },

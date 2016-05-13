@@ -37,7 +37,7 @@
     },
     {
       "label": "Tekst for \"Ikke utfyllt\"-melding",
-      "default": "Du må fylle ut alle felt."
+      "default": "Fyll ut alle felt for å se fasit"
     },
     {
       "label": "Innstillinger for oppgave-oppførsel",

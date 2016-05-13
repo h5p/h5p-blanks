@@ -60,7 +60,7 @@ H5P.Blanks = (function ($, Question) {
       tryAgain: "Try again",
       checkAnswer: "Check",
       changeAnswer: "Change answer",
-      notFilledOut: "Please fill in all blanks",
+      notFilledOut: "Please fill in all blanks to view solution",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -159,6 +159,7 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
+        self.answered = true;
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
@@ -175,10 +176,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
-      if (self.allBlanksFilledOut()) {
-        self.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
-        self.showCorrectAnswers();
-      }
+      self.showCorrectAnswers(false);
     }, self.params.behaviour.enableSolutionsButton);
 
     // Try again button
@@ -338,16 +336,15 @@ H5P.Blanks = (function ($, Question) {
       if (width <= minPx) {
         // Apply min width
         $input.width(minPx + static_min_pad);
-      } else if (width + rightPadPx >= parentWidth) {
-
+      }
+      else if (width + rightPadPx >= parentWidth) {
         // Apply max width of parent
         $input.width(parentWidth - rightPadPx);
-      } else {
-
+      }
+      else {
         // Apply width that wraps input
         $input.width(width + static_min_pad);
       }
-
     }, 1);
   };
 
@@ -406,14 +403,21 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Check if all blanks are filled out. Warn user if not
    */
-  Blanks.prototype.allBlanksFilledOut = function () {
-    var self = this;
+  Blanks.prototype.allowSolution = function (keepScoreDisplayed) {
+    if (this.params.behaviour.showSolutionsRequiresInput === true) {
+      for (var i = 0; i < this.clozes.length; i++) {
+        if (!this.clozes[i].filledOut()) {
+          if (keepScoreDisplayed) {
+            this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
+          }
+          else {
+            this.updateFeedbackContent(this.params.notFilledOut);
+          }
 
-    if (!self.getAnswerGiven()) {
-      this.updateFeedbackContent(self.params.notFilledOut);
-      return false;
+          return false;
+        }
+      }
     }
-
     return true;
   };
 
@@ -444,27 +448,44 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Displays the correct answers
    */
-  Blanks.prototype.showCorrectAnswers = function () {
-    var self = this;
+  Blanks.prototype.showCorrectAnswers = function (keepScoreDisplayed) {
+    if (!this.allowSolution(keepScoreDisplayed)) {
+      return;
+    }
+
+    this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
     this.hideSolutions();
 
-    for (var i = 0; i < self.clozes.length; i++) {
-      self.clozes[i].showSolution();
+    for (var i = 0; i < this.clozes.length; i++) {
+      this.clozes[i].showSolution();
     }
     this.trigger('resize');
   };
 
   /**
+   * Toggle input allowed for all input fields
+   *
+   * @method function
+   * @param  {boolean} enabled True if fields should allow input, otherwise false
+   */
+  Blanks.prototype.toggleAllInputs = function (enabled) {
+    for (var i = 0; i < this.clozes.length; i++) {
+      this.clozes[i].toggleInput(enabled);
+    }
+  };
+
+  /**
    * Display the correct solution for the input boxes.
    *
-   * This is invoked from CP - be carefull!
+   * This is invoked from CP and QS - be carefull!
    */
   Blanks.prototype.showSolutions = function () {
     this.params.behaviour.enableSolutionsButton = true;
     this.toggleButtonVisibility(STATE_FINISHED);
     this.markResults();
-    this.showCorrectAnswers();
     this.showEvaluation();
+    this.showCorrectAnswers(true);
+    this.toggleAllInputs(false);
     //Hides all buttons in "show solution" mode.
     this.hideButtons();
   };
@@ -475,12 +496,14 @@ H5P.Blanks = (function ($, Question) {
    * @public
    */
   Blanks.prototype.resetTask = function () {
+    this.answered = false;
     this.hideEvaluation();
     this.hideSolutions();
     this.clearAnswers();
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
+    this.toggleAllInputs(true);
     this.done = false;
   };
 
@@ -673,17 +696,7 @@ H5P.Blanks = (function ($, Question) {
    * @returns {Boolean}
    */
   Blanks.prototype.getAnswerGiven = function () {
-    var self = this;
-
-    if (this.params.behaviour.showSolutionsRequiresInput === true) {
-      for (var i = 0; i < self.clozes.length; i++) {
-        if (!self.clozes[i].filledOut()) {
-          return false;
-        }
-      }
-    }
-
-    return true;
+    return this.answered;
   };
 
   /**

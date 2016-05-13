@@ -60,10 +60,28 @@
     };
 
     /**
-     * Disables further input.
+     * Disables input.
+     * @method disableInput
      */
     this.disableInput = function () {
-      $input.attr('disabled', true);
+      this.toggleInput(false);
+    };
+
+    /**
+     * Enables input.
+     * @method enableInput
+     */
+    this.enableInput = function () {
+      this.toggleInput(true);
+    };
+
+    /**
+     * Toggles input enable/disable
+     * @method toggleInput
+     * @param  {boolean}   enabled True if input should be enabled, otherwise false
+     */
+    this.toggleInput = function (enabled) {
+      $input.attr('disabled', !enabled);
     };
 
     /**
