@@ -48,7 +48,6 @@ H5P.Blanks = (function ($, Question) {
     // IDs
     this.contentId = id;
 
-
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
@@ -159,7 +158,6 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
-        self.answered = true;
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
@@ -257,12 +255,11 @@ H5P.Blanks = (function ($, Question) {
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
-          if (self.done || self.getAnswerGiven()) {
+          if (self.done || self.allBlanksFilledOut()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            self.triggerAnswered();
           }
         };
       }
@@ -291,6 +288,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }).on('change', function () {
       self.triggerXAPI('interacted');
+      self.triggerAnswered();
     });
 
     self.on('resize', function () {
@@ -401,24 +399,33 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Check if all blanks are filled out. Warn user if not
+   * Check if solution is allowed. Warn user if not
    */
   Blanks.prototype.allowSolution = function (keepScoreDisplayed) {
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
-      for (var i = 0; i < this.clozes.length; i++) {
-        if (!this.clozes[i].filledOut()) {
-          if (keepScoreDisplayed) {
-            this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
-          }
-          else {
-            this.updateFeedbackContent(this.params.notFilledOut);
-          }
-
-          return false;
+      if (this.allBlanksFilledOut()) {
+        if (keepScoreDisplayed) {
+          this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
         }
+        else {
+          this.updateFeedbackContent(this.params.notFilledOut);
+        }
+        return false;
       }
     }
     return true;
+  };
+
+  /**
+   * Check if all blanks are filled out
+   *
+   * @method allBlanksFilledOut
+   * @return {boolean}
+   */
+  Blanks.prototype.allBlanksFilledOut = function () {
+    return this.clozes.some(function (cloze) {
+      return !cloze.filledOut();
+    });
   };
 
   /**
