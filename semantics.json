@@ -50,7 +50,7 @@
       "widget": "html",
       "label": "Line of text",
       "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterix (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
+      "description": "Blanks are added with an asterisk (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
       "enterMode": "p",
       "tags": [
         "strong",

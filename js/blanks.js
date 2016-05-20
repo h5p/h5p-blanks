@@ -48,7 +48,6 @@ H5P.Blanks = (function ($, Question) {
     // IDs
     this.contentId = id;
 
-
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
@@ -163,7 +162,6 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
-        self.answered = true;
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
@@ -211,7 +209,7 @@ H5P.Blanks = (function ($, Question) {
    *   The question with blanks replaced by the given handler.
    */
   Blanks.prototype.handleBlanks = function (question, handler) {
-    // Go through the text and run handler on all asterix
+    // Go through the text and run handler on all asterisk
     var clozeEnd, clozeStart = question.indexOf('*');
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
@@ -265,12 +263,11 @@ H5P.Blanks = (function ($, Question) {
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
           self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', this.getUserAnswer()));
-          if (self.done || self.getAnswerGiven()) {
+          if (self.done || self.allBlanksFilledOut()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
             self.done = true;
-            self.triggerAnswered();
           }
         };
       }
@@ -299,6 +296,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }).on('change', function () {
       self.triggerXAPI('interacted');
+      self.triggerAnswered();
     });
 
     self.on('resize', function () {
@@ -409,24 +407,33 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Check if all blanks are filled out. Warn user if not
+   * Check if solution is allowed. Warn user if not
    */
   Blanks.prototype.allowSolution = function (keepScoreDisplayed) {
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
-      for (var i = 0; i < this.clozes.length; i++) {
-        if (!this.clozes[i].filledOut()) {
-          if (keepScoreDisplayed) {
-            this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
-          }
-          else {
-            this.updateFeedbackContent(this.params.notFilledOut);
-          }
-
-          return false;
+      if (this.allBlanksFilledOut()) {
+        if (keepScoreDisplayed) {
+          this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
         }
+        else {
+          this.updateFeedbackContent(this.params.notFilledOut);
+        }
+        return false;
       }
     }
     return true;
+  };
+
+  /**
+   * Check if all blanks are filled out
+   *
+   * @method allBlanksFilledOut
+   * @return {boolean}
+   */
+  Blanks.prototype.allBlanksFilledOut = function () {
+    return this.clozes.some(function (cloze) {
+      return !cloze.filledOut();
+    });
   };
 
   /**
@@ -580,7 +587,7 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Parse the solution text (text between the asterix)
+   * Parse the solution text (text between the asterisks)
    *
    * @param {string} solutionText
    * @returns {object} with the following properties
