@@ -240,7 +240,7 @@ H5P.Blanks = (function ($, Question) {
       var question = self.params.questions[i];
 
       // Go through the question text and replace all the asterisks with input fields
-      question = self.handleBlanks(question, function(solution) {
+      question = self.handleBlanks(question, function (solution) {
         // Create new cloze
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
         var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer, {
