@@ -205,7 +205,7 @@ H5P.Blanks = (function ($, Question) {
    *   The question with blanks replaced by the given handler.
    */
   Blanks.prototype.handleBlanks = function (question, handler) {
-    // Go through the text and run handler on all asterix
+    // Go through the text and run handler on all asterisk
     var clozeEnd, clozeStart = question.indexOf('*');
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
@@ -579,7 +579,7 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Parse the solution text (text between the asterix)
+   * Parse the solution text (text between the asterisks)
    *
    * @param {string} solutionText
    * @returns {object} with the following properties
