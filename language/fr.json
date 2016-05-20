@@ -31,6 +31,22 @@
       "label": "Texte pour le message \"Tout n'est pas fini\""
     },
     {
+      "label": "Text for \"':ans' is correct\" message",
+      "default": "':ans' is correct"
+    },
+    {
+      "label": "Text for \"':ans' is wrong\" message",
+      "default": "':ans' is wrong"
+    },
+    {
+      "label": "Text for \"Answered correctly\" message",
+      "default": "Answered correctly"
+    },
+    {
+      "label": "Text for \"Answered incorrectly\" message",
+      "default": "Answered incorrectly"
+    },
+    {
       "label": "Options des exercices.",
       "description": "Ces options permettent de parametrer les variables des exercices.",
       "fields": [

@@ -40,6 +40,22 @@
       "default": "Fyll ut alle felt for å se fasit"
     },
     {
+      "label": "Tekst for \"':ans' er korrekt\"-melding",
+      "default": "':ans' er korrekt"
+    },
+    {
+      "label": "Tekst for \"':ans' er feil\"-melding",
+      "default": "':ans' er feil"
+    },
+    {
+      "label": "Tekst for \"Svar rett\"-melding",
+      "default": "Svar rett"
+    },
+    {
+      "label": "Tekst for \"Svar feil\"-melding",
+      "default": "Svar feil"
+    },
+    {
       "label": "Innstillinger for oppgave-oppførsel",
       "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [

@@ -7,8 +7,9 @@
    * @param {string} answer
    * @param {Object} behaviour Behaviour for the task
    * @param {string} defaultUserAnswer
+   * @param {Object} l10n Localized texts
    */
-  Blanks.Cloze = function (solution, behaviour, defaultUserAnswer) {
+  Blanks.Cloze = function (solution, behaviour, defaultUserAnswer, l10n) {
     var self = this;
     var $input, $wrapper;
     var answers = solution.solutions;
@@ -52,10 +53,11 @@
       var isCorrect = correct(this.getUserAnswer());
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true);
+        $input.attr('disabled', true).attr('aria-label', l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
+        $input.attr('aria-label', l10n.answeredIncorrectly);
       }
     };
 
@@ -127,12 +129,13 @@
               self.disableInput();
             }
             self.checkAnswer();
-            afterCheck();
+            afterCheck.apply(self);
           }
         });
       }
       $input.focus(function () {
         $wrapper.removeClass('h5p-wrong');
+        $input.attr('aria-label', '');
         if (afterFocus !== undefined) {
           afterFocus();
         }

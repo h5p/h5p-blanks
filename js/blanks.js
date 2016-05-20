@@ -61,6 +61,10 @@ H5P.Blanks = (function ($, Question) {
       checkAnswer: "Check",
       changeAnswer: "Change answer",
       notFilledOut: "Please fill in all blanks to view solution",
+      answerIsCorrect: "':ans' is correct",
+      answerIsWrong: "':ans' is wrong",
+      answeredCorrectly: "Answered correctly",
+      answeredIncorrectly: "Answered incorrectly",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -241,7 +245,10 @@ H5P.Blanks = (function ($, Question) {
       question = self.handleBlanks(question, function(solution) {
         // Create new cloze
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
-        var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer);
+        var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer, {
+          answeredCorrectly: self.params.answeredCorrectly,
+          answeredIncorrectly: self.params.answeredIncorrectly
+        });
 
         self.clozes.push(cloze);
         return cloze;
@@ -257,6 +264,7 @@ H5P.Blanks = (function ($, Question) {
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
+          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', this.getUserAnswer()));
           if (self.done || self.getAnswerGiven()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);

@@ -33,6 +33,22 @@
       "label": "Testo per il messaggio \"Non compilato\""
     },
     {
+      "label": "Text for \"':ans' is correct\" message",
+      "default": "':ans' is correct"
+    },
+    {
+      "label": "Text for \"':ans' is wrong\" message",
+      "default": "':ans' is wrong"
+    },
+    {
+      "label": "Text for \"Answered correctly\" message",
+      "default": "Answered correctly"
+    },
+    {
+      "label": "Text for \"Answered incorrectly\" message",
+      "default": "Answered incorrectly"
+    },
+    {
       "label": "Impostazioni esecuzione",
       "description": "Queste opzioni consentono di controllare l'andamento del compito.",
       "fields": [

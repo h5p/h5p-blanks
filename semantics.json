@@ -100,6 +100,38 @@
     "optional": true
   },
   {
+    "label": "Text for \"':ans' is correct\" message",
+    "name": "answerIsCorrect",
+    "type": "text",
+    "default": "':ans' is correct",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"':ans' is wrong\" message",
+    "name": "answerIsWrong",
+    "type": "text",
+    "default": "':ans' is wrong",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"Answered correctly\" message",
+    "name": "answeredCorrectly",
+    "type": "text",
+    "default": "Answered correctly",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"Answered incorrectly\" message",
+    "name": "answeredIncorrectly",
+    "type": "text",
+    "default": "Answered incorrectly",
+    "common": true,
+    "optional": true
+  },
+  {
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",
