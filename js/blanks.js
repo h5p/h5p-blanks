@@ -418,6 +418,7 @@ H5P.Blanks = (function ($, Question) {
         else {
           this.updateFeedbackContent(this.params.notFilledOut);
         }
+        this.read(this.params.notFilledOut);
         return false;
       }
     }
