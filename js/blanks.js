@@ -614,9 +614,6 @@ H5P.Blanks = (function ($, Question) {
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
       solutions[i] = H5P.trim(solutions[i]);
-      if (this.params.behaviour.caseSensitive !== true) {
-        solutions[i] = solutions[i].toLowerCase();
-      }
     }
 
     return {

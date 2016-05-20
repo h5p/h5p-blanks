@@ -16,6 +16,13 @@
     var answer = answers.join('/');
     var tip = solution.tip;
 
+    if (behaviour.caseSensitive !== true) {
+      // Convert possible solutions into lowercase
+      for (var i = 0; i < answers.length; i++) {
+        answers[i] = answers[i].toLowerCase();
+      }
+    }
+
     /**
      * Check if the answer is correct.
      *
