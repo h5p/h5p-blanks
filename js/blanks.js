@@ -411,7 +411,7 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.allowSolution = function (keepScoreDisplayed) {
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
-      if (this.allBlanksFilledOut()) {
+      if (!this.allBlanksFilledOut()) {
         if (keepScoreDisplayed) {
           this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
         }
@@ -429,10 +429,10 @@ H5P.Blanks = (function ($, Question) {
    * Check if all blanks are filled out
    *
    * @method allBlanksFilledOut
-   * @return {boolean}
+   * @return {boolean} Returns true if all blanks are filled out.
    */
   Blanks.prototype.allBlanksFilledOut = function () {
-    return this.clozes.some(function (cloze) {
+    return !this.clozes.some(function (cloze) {
       return !cloze.filledOut();
     });
   };
