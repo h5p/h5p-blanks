@@ -73,7 +73,8 @@
           "label": "Disable image zooming for question image."
         },
         {
-          "label": "Show confirmation dialog on \"Check\""
+          "label": "Show confirmation dialog on \"Check\"",
+          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
           "label": "Show confirmation dialog on \"Retry\""

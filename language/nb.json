@@ -82,7 +82,8 @@
           "label": "Slå av bilde zooming."
         },
         {
-          "label": "Slå på bruker-bekreftelse for \"Fasit\""
+          "label": "Slå på bruker-bekreftelse for \"Fasit\"",
+          "description": "Denne innstillingen er ikke forenbar med \"Gi tilbakemelding med en gang brukeren har avgitt svar\" alternativet."
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""

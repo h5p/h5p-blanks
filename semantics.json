@@ -191,6 +191,7 @@
         "label": "Show confirmation dialog on \"Check\"",
         "name": "confirmCheckDialog",
         "type": "boolean",
+        "description": "This options is not compatible with the \"Automatically check answers after input\" option",
         "default": false
       },
       {
