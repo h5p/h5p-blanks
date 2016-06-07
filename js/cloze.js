@@ -15,6 +15,7 @@
     var answers = solution.solutions;
     var answer = answers.join('/');
     var tip = solution.tip;
+    var checkedAnswer = null;
 
     if (behaviour.caseSensitive !== true) {
       // Convert possible solutions into lowercase
@@ -57,7 +58,8 @@
      * Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
-      var isCorrect = correct(this.getUserAnswer());
+      checkedAnswer = this.getUserAnswer();
+      var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
         $input.attr('disabled', true).attr('aria-label', l10n.answeredCorrectly);
@@ -140,11 +142,15 @@
           }
         });
       }
-      $input.focus(function () {
-        $wrapper.removeClass('h5p-wrong');
-        $input.attr('aria-label', '');
-        if (afterFocus !== undefined) {
-          afterFocus();
+      $input.keyup(function () {
+        if (checkedAnswer !== null && checkedAnswer !== self.getUserAnswer()) {
+          // The Answer has changed since last check
+          checkedAnswer = null;
+          $wrapper.removeClass('h5p-wrong');
+          $input.attr('aria-label', '');
+          if (afterFocus !== undefined) {
+            afterFocus();
+          }
         }
       });
     };
