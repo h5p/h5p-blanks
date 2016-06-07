@@ -409,15 +409,10 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Check if solution is allowed. Warn user if not
    */
-  Blanks.prototype.allowSolution = function (keepScoreDisplayed) {
+  Blanks.prototype.allowSolution = function () {
     if (this.params.behaviour.showSolutionsRequiresInput === true) {
       if (!this.allBlanksFilledOut()) {
-        if (keepScoreDisplayed) {
-          this.updateFeedbackContent('(' + this.params.notFilledOut + ')', true);
-        }
-        else {
-          this.updateFeedbackContent(this.params.notFilledOut);
-        }
+        this.updateFeedbackContent(this.params.notFilledOut);
         this.read(this.params.notFilledOut);
         return false;
       }
@@ -463,9 +458,11 @@ H5P.Blanks = (function ($, Question) {
 
   /**
    * Displays the correct answers
+   * @param {boolean} [alwaysShowSolution]
+   *  Will always show solution if true
    */
-  Blanks.prototype.showCorrectAnswers = function (keepScoreDisplayed) {
-    if (!this.allowSolution(keepScoreDisplayed)) {
+  Blanks.prototype.showCorrectAnswers = function (alwaysShowSolution) {
+    if (!alwaysShowSolution && !this.allowSolution()) {
       return;
     }
 
