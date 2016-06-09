@@ -47,6 +47,10 @@
       "default": "Answered incorrectly"
     },
     {
+      "label": "Assistive technology label for solution",
+      "default": "The solution is"
+    },
+    {
       "label": "إعدادت النشاط",
       "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
       "fields": [

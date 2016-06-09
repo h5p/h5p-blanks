@@ -132,6 +132,14 @@
     "optional": true
   },
   {
+    "label": "Assistive technology label for solution",
+    "name": "solutionLabel",
+    "type": "text",
+    "default": "The solution is",
+    "common": true,
+    "optional": true
+  },
+  {
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",

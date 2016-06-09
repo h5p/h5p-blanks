@@ -64,6 +64,7 @@ H5P.Blanks = (function ($, Question) {
       answerIsWrong: "':ans' is wrong",
       answeredCorrectly: "Answered correctly",
       answeredIncorrectly: "Answered incorrectly",
+      solutionLabel: "The solution is",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -245,7 +246,8 @@ H5P.Blanks = (function ($, Question) {
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
         var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer, {
           answeredCorrectly: self.params.answeredCorrectly,
-          answeredIncorrectly: self.params.answeredIncorrectly
+          answeredIncorrectly: self.params.answeredIncorrectly,
+          solutionLabel: self.params.solutionLabel
         });
 
         self.clozes.push(cloze);
@@ -698,7 +700,9 @@ H5P.Blanks = (function ($, Question) {
    * Clear the user's answers
    */
   Blanks.prototype.clearAnswers = function () {
-    this.$questions.find('.h5p-text-input').val('');
+    this.$questions.find('.h5p-text-input')
+      .val('')
+      .attr('aria-label', '');
   };
 
   /**

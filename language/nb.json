@@ -56,6 +56,10 @@
       "default": "Svar feil"
     },
     {
+      "label": "Merkelapp for løsning brukt av tekniske hjelpemidler",
+      "default": "Svaret er"
+    },
+    {
       "label": "Innstillinger for oppgave-oppførsel",
       "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [

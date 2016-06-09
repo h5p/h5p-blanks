@@ -47,6 +47,10 @@
       "default": "Answered incorrectly"
     },
     {
+      "label": "Assistive technology label for solution",
+      "default": "The solution is"
+    },
+    {
       "label": "Options des exercices.",
       "description": "Ces options permettent de parametrer les variables des exercices.",
       "fields": [

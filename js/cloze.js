@@ -8,6 +8,7 @@
    * @param {Object} behaviour Behaviour for the task
    * @param {string} defaultUserAnswer
    * @param {Object} l10n Localized texts
+   * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
    */
   Blanks.Cloze = function (solution, behaviour, defaultUserAnswer, l10n) {
     var self = this;
@@ -103,8 +104,10 @@
         return; // Only for the wrong ones
       }
 
-      $('<span class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+      $('<div aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</div>').insertAfter($wrapper);
       $input.attr('disabled', true);
+      var inputLabel = $input.attr('aria-label');
+      $input.attr('aria-label', l10n.solutionLabel + ' ' + answer + '. ' + inputLabel);
     };
 
     /**

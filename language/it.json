@@ -49,6 +49,10 @@
       "default": "Answered incorrectly"
     },
     {
+      "label": "Assistive technology label for solution",
+      "default": "The solution is"
+    },
+    {
       "label": "Impostazioni esecuzione",
       "description": "Queste opzioni consentono di controllare l'andamento del compito.",
       "fields": [
