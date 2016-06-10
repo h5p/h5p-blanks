@@ -140,6 +140,15 @@
     "optional": true
   },
   {
+    "label": "Assistive technology label for input field",
+    "name": "inputLabel",
+    "type": "text",
+    "description": "Use @num and @total to replace current cloze number and total cloze number",
+    "default": "Blanks @num of @total",
+    "common": true,
+    "optional": true
+  },
+  {
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",

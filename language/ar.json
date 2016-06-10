@@ -51,6 +51,11 @@
       "default": "The solution is"
     },
     {
+      "label": "Assistive technology label for input field",
+      "description": "Use @num and @total to replace current cloze number and total cloze number",
+      "default": "Blanks @num of @total"
+    },
+    {
       "label": "إعدادت النشاط",
       "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
       "fields": [

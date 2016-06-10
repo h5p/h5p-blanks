@@ -65,6 +65,7 @@ H5P.Blanks = (function ($, Question) {
       answeredCorrectly: "Answered correctly",
       answeredIncorrectly: "Answered incorrectly",
       solutionLabel: "The solution is",
+      inputLabel: "Blanks @num of @total",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -237,17 +238,20 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     var html = '';
+    var clozeNumber = 0;
     for (var i = 0; i < self.params.questions.length; i++) {
       var question = self.params.questions[i];
 
       // Go through the question text and replace all the asterisks with input fields
       question = self.handleBlanks(question, function (solution) {
         // Create new cloze
+        clozeNumber += 1;
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
         var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer, {
           answeredCorrectly: self.params.answeredCorrectly,
           answeredIncorrectly: self.params.answeredIncorrectly,
-          solutionLabel: self.params.solutionLabel
+          solutionLabel: self.params.solutionLabel,
+          inputLabel: self.params.inputLabel
         });
 
         self.clozes.push(cloze);
@@ -278,7 +282,7 @@ H5P.Blanks = (function ($, Question) {
         if (!self.params.behaviour.autoCheck) {
           self.hideEvaluation();
         }
-      });
+      }, i, self.clozes.length);
     }).keydown(function (event) {
       self.autoGrowTextField($(this));
 
@@ -700,9 +704,10 @@ H5P.Blanks = (function ($, Question) {
    * Clear the user's answers
    */
   Blanks.prototype.clearAnswers = function () {
-    this.$questions.find('.h5p-text-input')
-      .val('')
-      .attr('aria-label', '');
+    this.clozes.forEach(function (cloze) {
+      cloze.setUserInput('');
+      cloze.resetAriaLabel();
+    });
   };
 
   /**

@@ -9,6 +9,7 @@
    * @param {string} defaultUserAnswer
    * @param {Object} l10n Localized texts
    * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
+   * @param {string} l10n.inputLabel Assistive technology label for cloze input
    */
   Blanks.Cloze = function (solution, behaviour, defaultUserAnswer, l10n) {
     var self = this;
@@ -17,6 +18,7 @@
     var answer = answers.join('/');
     var tip = solution.tip;
     var checkedAnswer = null;
+    var inputLabel = l10n.inputLabel;
 
     if (behaviour.caseSensitive !== true) {
       // Convert possible solutions into lowercase
@@ -63,11 +65,11 @@
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true).attr('aria-label', l10n.answeredCorrectly);
+        $input.attr('disabled', true).attr('aria-label', inputLabel + l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
-        $input.attr('aria-label', l10n.answeredIncorrectly);
+        $input.attr('aria-label', inputLabel + l10n.answeredIncorrectly);
       }
     };
 
@@ -106,8 +108,11 @@
 
       $('<div aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</div>').insertAfter($wrapper);
       $input.attr('disabled', true);
-      var inputLabel = $input.attr('aria-label');
-      $input.attr('aria-label', l10n.solutionLabel + ' ' + answer + '. ' + inputLabel);
+      var ariaLabel = inputLabel + '. ' +
+        l10n.solutionLabel + ' ' + answer + '. ' +
+        l10n.answeredIncorrectly;
+
+      $input.attr('aria-label', ariaLabel);
     };
 
     /**
@@ -124,9 +129,12 @@
      * @param {function} afterCheck
      * @param {function} afterFocus
      */
-    this.setInput = function ($element, afterCheck, afterFocus) {
+    this.setInput = function ($element, afterCheck, afterFocus, clozeIndex, totalCloze) {
       $input = $element;
       $wrapper = $element.parent();
+      inputLabel = inputLabel.replace('@num', (clozeIndex + 1))
+        .replace('@total', totalCloze);
+      $input.attr('aria-label', inputLabel);
 
       // Add tip if tip is set
       if(tip !== undefined && tip.trim().length > 0) {
@@ -150,7 +158,7 @@
           // The Answer has changed since last check
           checkedAnswer = null;
           $wrapper.removeClass('h5p-wrong');
-          $input.attr('aria-label', '');
+          $input.attr('aria-label', inputLabel);
           if (afterFocus !== undefined) {
             afterFocus();
           }
@@ -188,6 +196,13 @@
     this.setUserInput = function (text) {
       $input.val(text);
     };
+
+    /**
+     * Resets aria label of input field
+     */
+    this.resetAriaLabel = function () {
+      $input.attr('aria-label', inputLabel);
+    }
   };
 
 })(H5P.jQuery, H5P.Blanks);

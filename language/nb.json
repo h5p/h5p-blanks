@@ -60,6 +60,11 @@
       "default": "Svaret er"
     },
     {
+      "label": "Merkelapp for inntastingsfelt brukt av tekniske hjelpemidler",
+      "description": "Bruk @num og @total for å bytte ut feltnummer og totalt antall felter",
+      "default": "Felt @num av @total"
+    },
+    {
       "label": "Innstillinger for oppgave-oppførsel",
       "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [
