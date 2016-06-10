@@ -135,7 +135,7 @@
     "label": "Assistive technology label for solution",
     "name": "solutionLabel",
     "type": "text",
-    "default": "The solution is",
+    "default": "Correct answer:",
     "common": true,
     "optional": true
   },
@@ -144,7 +144,7 @@
     "name": "inputLabel",
     "type": "text",
     "description": "Use @num and @total to replace current cloze number and total cloze number",
-    "default": "Blanks @num of @total",
+    "default": "Blank input @num of @total",
     "common": true,
     "optional": true
   },

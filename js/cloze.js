@@ -65,11 +65,12 @@
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true).attr('aria-label', inputLabel + l10n.answeredCorrectly);
+        $input.attr('disabled', true)
+          .attr('aria-label', inputLabel + '. ' + l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
-        $input.attr('aria-label', inputLabel + l10n.answeredIncorrectly);
+        $input.attr('aria-label', inputLabel + '. ' + l10n.answeredIncorrectly);
       }
     };
 
@@ -106,7 +107,7 @@
         return; // Only for the wrong ones
       }
 
-      $('<div aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</div>').insertAfter($wrapper);
+      $('<span aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
       $input.attr('disabled', true);
       var ariaLabel = inputLabel + '. ' +
         l10n.solutionLabel + ' ' + answer + '. ' +

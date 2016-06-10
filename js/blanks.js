@@ -64,8 +64,8 @@ H5P.Blanks = (function ($, Question) {
       answerIsWrong: "':ans' is wrong",
       answeredCorrectly: "Answered correctly",
       answeredIncorrectly: "Answered incorrectly",
-      solutionLabel: "The solution is",
-      inputLabel: "Blanks @num of @total",
+      solutionLabel: "Correct answer:",
+      inputLabel: "Blank input @num of @total",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,

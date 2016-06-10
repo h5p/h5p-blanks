@@ -50,12 +50,12 @@
     },
     {
       "label": "Assistive technology label for solution",
-      "default": "The solution is"
+      "default": "Correct answer:"
     },
     {
       "label": "Assistive technology label for input field",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blanks @num of @total"
+      "default": "Blank input @num of @total"
     },
     {
       "label": "Impostazioni esecuzione",
