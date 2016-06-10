@@ -128,6 +128,8 @@
      * @param {H5P.jQuery} $element
      * @param {function} afterCheck
      * @param {function} afterFocus
+     * @param {number} clozeIndex Index of cloze
+     * @param {number} totalCloze Total amount of clozes in blanks
      */
     this.setInput = function ($element, afterCheck, afterFocus, clozeIndex, totalCloze) {
       $input = $element;
