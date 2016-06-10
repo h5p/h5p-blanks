@@ -10,6 +10,8 @@
    * @param {Object} l10n Localized texts
    * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
    * @param {string} l10n.inputLabel Assistive technology label for cloze input
+   * @param {string} l10n.inputHasTipLabel Assistive technology label for input with tip
+   * @param {string} l10n.tipLabel Label for tip icon
    */
   Blanks.Cloze = function (solution, behaviour, defaultUserAnswer, l10n) {
     var self = this;
@@ -137,12 +139,17 @@
       $wrapper = $element.parent();
       inputLabel = inputLabel.replace('@num', (clozeIndex + 1))
         .replace('@total', totalCloze);
-      $input.attr('aria-label', inputLabel);
 
       // Add tip if tip is set
       if(tip !== undefined && tip.trim().length > 0) {
-        $wrapper.addClass('has-tip').append(H5P.JoubelUI.createTip(tip, $wrapper.parent()));
+        $wrapper.addClass('has-tip')
+          .append(H5P.JoubelUI.createTip(tip, {
+            tipLabel: l10n.tipLabel
+          }));
+        inputLabel += '. ' + l10n.inputHasTipLabel;
       }
+
+      $input.attr('aria-label', inputLabel);
 
       if (afterCheck !== undefined) {
         $input.blur(function () {

@@ -149,6 +149,22 @@
     "optional": true
   },
   {
+    "label": "Assistive technology label for saying an input has a tip tied to it",
+    "name": "inputHasTipLabel",
+    "type": "text",
+    "default": "Tip available",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Tip icon label",
+    "name": "tipLabel",
+    "type": "text",
+    "default": "Tip",
+    "common": true,
+    "optional": true
+  },
+  {
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",

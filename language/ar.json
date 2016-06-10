@@ -56,6 +56,14 @@
       "default": "Blank input @num of @total"
     },
     {
+      "label": "Assistive technology label for saying an input has a tip tied to it",
+      "default": "Tip available"
+    },
+    {
+      "label": "Tip icon label",
+      "default": "Tip"
+    },
+    {
       "label": "إعدادت النشاط",
       "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
       "fields": [

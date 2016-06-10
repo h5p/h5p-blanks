@@ -65,6 +65,14 @@
       "default": "Felt @num av @total"
     },
     {
+      "label": "Merkelapp for å fortelle at et inntastingsfelt har et tips knyttet til seg",
+      "default": "Tips tilgjengelig"
+    },
+    {
+      "label": "Merkelapp for tips ikon",
+      "default": "Tips"
+    },
+    {
       "label": "Innstillinger for oppgave-åtferd",
       "description": "Desse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [

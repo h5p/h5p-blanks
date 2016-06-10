@@ -66,6 +66,8 @@ H5P.Blanks = (function ($, Question) {
       answeredIncorrectly: "Answered incorrectly",
       solutionLabel: "Correct answer:",
       inputLabel: "Blank input @num of @total",
+      inputHasTipLabel: "Tip available",
+      tipLabel: "Tip",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -251,7 +253,9 @@ H5P.Blanks = (function ($, Question) {
           answeredCorrectly: self.params.answeredCorrectly,
           answeredIncorrectly: self.params.answeredIncorrectly,
           solutionLabel: self.params.solutionLabel,
-          inputLabel: self.params.inputLabel
+          inputLabel: self.params.inputLabel,
+          inputHasTipLabel: self.params.inputHasTipLabel,
+          tipLabel: self.params.tipLabel
         });
 
         self.clozes.push(cloze);
