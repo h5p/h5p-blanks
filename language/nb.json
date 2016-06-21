@@ -20,34 +20,67 @@
     },
     {
       "label": "Tilbakemeldinger",
-      "default": "Du fikk @score av @total felt rett.",
+      "default": "@score av @total poeng",
       "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total felt rett.'"
     },
     {
-      "label": "Tekst for \"Vis svar\" knapp",
-      "default": "Vis svar"
+      "label": "Tekst for \"Fasit\" knapp",
+      "default": "Fasit"
     },
     {
       "label": "Tekst for \"Prøv igjen\" knapp",
       "default": "Prøv igjen"
     },
     {
-      "label": "Tekst for \"Sjekk svar\" knapp",
+      "label": "Tekst for \"Sjekk\" knapp",
       "default": "Sjekk"
     },
     {
       "label": "Tekst for \"Ikke utfyllt\"-melding",
-      "default": "Du må fylle inn alle felter"
+      "default": "Fyll ut alle felt for å se fasit"
+    },
+    {
+      "label": "Tekst for \"':ans' er korrekt\"-melding",
+      "default": "':ans' er korrekt"
+    },
+    {
+      "label": "Tekst for \"':ans' er feil\"-melding",
+      "default": "':ans' er feil"
+    },
+    {
+      "label": "Tekst for \"Svar rett\"-melding",
+      "default": "Svar rett"
+    },
+    {
+      "label": "Tekst for \"Svar feil\"-melding",
+      "default": "Svar feil"
+    },
+    {
+      "label": "Merkelapp for løsning brukt av tekniske hjelpemidler",
+      "default": "Svar:"
+    },
+    {
+      "label": "Merkelapp for inntastingsfelt brukt av tekniske hjelpemidler",
+      "description": "Bruk @num og @total for å bytte ut feltnummer og totalt antall felter",
+      "default": "Felt @num av @total"
+    },
+    {
+      "label": "Merkelapp for å fortelle at et inntastingsfelt har et tips knyttet til seg",
+      "default": "Tips tilgjengelig"
+    },
+    {
+      "label": "Merkelapp for tips ikon",
+      "default": "Tips"
     },
     {
       "label": "Innstillinger for oppgave-oppførsel",
       "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [
         {
-          "label": "Aktiver \"Prøv igjen\""
+          "label": "Aktiver \"Prøv igjen\"-knapp"
         },
         {
-          "label": "Aktiver \"Vis svar\" knapp"
+          "label": "Aktiver \"Fasit\"-knapp"
         },
         {
           "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
@@ -64,6 +97,55 @@
         },
         {
           "label": "Slå av bilde zooming."
+        },
+        {
+          "label": "Slå på bruker-bekreftelse for \"Fasit\"",
+          "description": "Denne innstillingen er ikke forenbar med \"Gi tilbakemelding med en gang brukeren har avgitt svar\" alternativet."
+        },
+        {
+          "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        }
+      ]
+    },
+    {
+      "label": "Bruker-bekreftelse før fasit-visning",
+      "fields": [
+        {
+          "label": "Tittel",
+          "default": "Feridg ?"
+        },
+        {
+          "label": "Tekst",
+          "default": "Er du sikker på at du er ferdig?"
+        },
+        {
+          "label": "Avbryt etikett",
+          "default": "Avbryt"
+        },
+        {
+          "label": "Bekreftelse etikett",
+          "default": "Bekreft"
+        }
+      ]
+    },
+    {
+      "label": "Prøv igjen bruker-bekreftelse",
+      "fields": [
+        {
+          "label": "Tittel",
+          "default": "Prøv igjen ?"
+        },
+        {
+          "label": "Tekst",
+          "default": "Er du sikker på at du vil prøve igjen?"
+        },
+        {
+          "label": "Avbryt etikett",
+          "default": "Avbryt"
+        },
+        {
+          "label": "Bekreft etikett",
+          "default": "Bekreft"
         }
       ]
     }

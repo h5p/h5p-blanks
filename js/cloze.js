@@ -7,13 +7,27 @@
    * @param {string} answer
    * @param {Object} behaviour Behaviour for the task
    * @param {string} defaultUserAnswer
+   * @param {Object} l10n Localized texts
+   * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
+   * @param {string} l10n.inputLabel Assistive technology label for cloze input
+   * @param {string} l10n.inputHasTipLabel Assistive technology label for input with tip
+   * @param {string} l10n.tipLabel Label for tip icon
    */
-  Blanks.Cloze = function (solution, behaviour, defaultUserAnswer) {
+  Blanks.Cloze = function (solution, behaviour, defaultUserAnswer, l10n) {
     var self = this;
     var $input, $wrapper;
     var answers = solution.solutions;
     var answer = answers.join('/');
     var tip = solution.tip;
+    var checkedAnswer = null;
+    var inputLabel = l10n.inputLabel;
+
+    if (behaviour.caseSensitive !== true) {
+      // Convert possible solutions into lowercase
+      for (var i = 0; i < answers.length; i++) {
+        answers[i] = answers[i].toLowerCase();
+      }
+    }
 
     /**
      * Check if the answer is correct.
@@ -49,21 +63,42 @@
      * Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
-      var isCorrect = correct(this.getUserAnswer());
+      checkedAnswer = this.getUserAnswer();
+      var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true);
+        $input.attr('disabled', true)
+          .attr('aria-label', inputLabel + '. ' + l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
+        $input.attr('aria-label', inputLabel + '. ' + l10n.answeredIncorrectly);
       }
     };
 
     /**
-     * Disables further input.
+     * Disables input.
+     * @method disableInput
      */
     this.disableInput = function () {
-      $input.attr('disabled', true);
+      this.toggleInput(false);
+    };
+
+    /**
+     * Enables input.
+     * @method enableInput
+     */
+    this.enableInput = function () {
+      this.toggleInput(true);
+    };
+
+    /**
+     * Toggles input enable/disable
+     * @method toggleInput
+     * @param  {boolean}   enabled True if input should be enabled, otherwise false
+     */
+    this.toggleInput = function (enabled) {
+      $input.attr('disabled', !enabled);
     };
 
     /**
@@ -74,8 +109,13 @@
         return; // Only for the wrong ones
       }
 
-      $('<span class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+      $('<span aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
       $input.attr('disabled', true);
+      var ariaLabel = inputLabel + '. ' +
+        l10n.solutionLabel + ' ' + answer + '. ' +
+        l10n.answeredIncorrectly;
+
+      $input.attr('aria-label', ariaLabel);
     };
 
     /**
@@ -91,15 +131,25 @@
      * @param {H5P.jQuery} $element
      * @param {function} afterCheck
      * @param {function} afterFocus
+     * @param {number} clozeIndex Index of cloze
+     * @param {number} totalCloze Total amount of clozes in blanks
      */
-    this.setInput = function ($element, afterCheck, afterFocus) {
+    this.setInput = function ($element, afterCheck, afterFocus, clozeIndex, totalCloze) {
       $input = $element;
       $wrapper = $element.parent();
+      inputLabel = inputLabel.replace('@num', (clozeIndex + 1))
+        .replace('@total', totalCloze);
 
       // Add tip if tip is set
       if(tip !== undefined && tip.trim().length > 0) {
-        $wrapper.addClass('has-tip').append(H5P.JoubelUI.createTip(tip, $wrapper.parent()));
+        $wrapper.addClass('has-tip')
+          .append(H5P.JoubelUI.createTip(tip, {
+            tipLabel: l10n.tipLabel
+          }));
+        inputLabel += '. ' + l10n.inputHasTipLabel;
       }
+
+      $input.attr('aria-label', inputLabel);
 
       if (afterCheck !== undefined) {
         $input.blur(function () {
@@ -109,14 +159,19 @@
               self.disableInput();
             }
             self.checkAnswer();
-            afterCheck();
+            afterCheck.apply(self);
           }
         });
       }
-      $input.focus(function () {
-        $wrapper.removeClass('h5p-wrong');
-        if (afterFocus !== undefined) {
-          afterFocus();
+      $input.keyup(function () {
+        if (checkedAnswer !== null && checkedAnswer !== self.getUserAnswer()) {
+          // The Answer has changed since last check
+          checkedAnswer = null;
+          $wrapper.removeClass('h5p-wrong');
+          $input.attr('aria-label', inputLabel);
+          if (afterFocus !== undefined) {
+            afterFocus();
+          }
         }
       });
     };
@@ -126,7 +181,9 @@
      */
     this.toString = function () {
       var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
-      return '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
+      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
+      self.length = result.length;
+      return result;
     };
 
     /**
@@ -149,6 +206,13 @@
     this.setUserInput = function (text) {
       $input.val(text);
     };
+
+    /**
+     * Resets aria label of input field
+     */
+    this.resetAriaLabel = function () {
+      $input.attr('aria-label', inputLabel);
+    }
   };
 
 })(H5P.jQuery, H5P.Blanks);

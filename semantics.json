@@ -1,10 +1,21 @@
 [
   {
-    "name": "image",
-    "type": "image",
-    "label": "Task image",
-    "optional": true,
-    "description": "An optional image to display above the task."
+    "name": "media",
+    "type": "group",
+    "label": "Media",
+    "fields": [
+      {
+        "name": "type",
+        "type": "library",
+        "label": "Type",
+        "options": [
+          "H5P.Image 1.0",
+          "H5P.Video 1.2"
+        ],
+        "optional": true,
+        "description": "Optional media to display above the question."
+      }
+    ]
   },
   {
     "label": "Task description",
@@ -39,7 +50,7 @@
       "widget": "html",
       "label": "Line of text",
       "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterix (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
+      "description": "Blanks are added with an asterisk (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
       "enterMode": "p",
       "tags": [
         "strong",
@@ -53,7 +64,7 @@
     "label": "Feedback text",
     "name": "score",
     "type": "text",
-    "default": "You got @score of @total blanks correct.",
+    "default": "You got @score of @total points",
     "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'",
     "common": true
   },
@@ -61,7 +72,7 @@
     "label": "Text for \"Show solutions\" button",
     "name": "showSolutions",
     "type": "text",
-    "default": "Show solutions",
+    "default": "Show solution",
     "common": true
   },
   {
@@ -84,7 +95,72 @@
     "label": "Text for \"Not filled out\" message",
     "name": "notFilledOut",
     "type": "text",
-    "default": "Please fill in all blanks",
+    "default": "Please fill in all blanks to view solution",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"':ans' is correct\" message",
+    "name": "answerIsCorrect",
+    "type": "text",
+    "default": "':ans' is correct",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"':ans' is wrong\" message",
+    "name": "answerIsWrong",
+    "type": "text",
+    "default": "':ans' is wrong",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"Answered correctly\" message",
+    "name": "answeredCorrectly",
+    "type": "text",
+    "default": "Answered correctly",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"Answered incorrectly\" message",
+    "name": "answeredIncorrectly",
+    "type": "text",
+    "default": "Answered incorrectly",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Assistive technology label for solution",
+    "name": "solutionLabel",
+    "type": "text",
+    "default": "Correct answer:",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Assistive technology label for input field",
+    "name": "inputLabel",
+    "type": "text",
+    "description": "Use @num and @total to replace current cloze number and total cloze number",
+    "default": "Blank input @num of @total",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Assistive technology label for saying an input has a tip tied to it",
+    "name": "inputHasTipLabel",
+    "type": "text",
+    "default": "Tip available",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Tip icon label",
+    "name": "tipLabel",
+    "type": "text",
+    "default": "Tip",
     "common": true,
     "optional": true
   },
@@ -143,6 +219,99 @@
         "type": "boolean",
         "default": false,
         "optional": true
+      },
+      {
+        "label": "Show confirmation dialog on \"Check\"",
+        "name": "confirmCheckDialog",
+        "type": "boolean",
+        "description": "This options is not compatible with the \"Automatically check answers after input\" option",
+        "default": false
+      },
+      {
+        "label": "Show confirmation dialog on \"Retry\"",
+        "name": "confirmRetryDialog",
+        "type": "boolean",
+        "default": false
+      }
+    ]
+  },
+  {
+    "label": "Check confirmation dialog",
+    "name": "confirmCheck",
+    "type": "group",
+    "common": true,
+    "fields": [
+      {
+        "label": "Header text",
+        "name": "header",
+        "type": "text",
+        "default": "Finish ?"
+      },
+      {
+        "label": "Body text",
+        "name": "body",
+        "type": "text",
+        "default": "Are you sure you wish to finish ?",
+        "widget": "html",
+        "enterMode": "p",
+        "tags": [
+          "strong",
+          "em",
+          "del",
+          "u"
+        ]
+      },
+      {
+        "label": "Cancel button label",
+        "name": "cancelLabel",
+        "type": "text",
+        "default": "Cancel"
+      },
+      {
+        "label": "Confirm button label",
+        "name": "confirmLabel",
+        "type": "text",
+        "default": "Finish"
+      }
+    ]
+  },
+  {
+    "label": "Retry confirmation dialog",
+    "name": "confirmRetry",
+    "type": "group",
+    "common": true,
+    "fields": [
+      {
+        "label": "Header text",
+        "name": "header",
+        "type": "text",
+        "default": "Retry ?"
+      },
+      {
+        "label": "Body text",
+        "name": "body",
+        "type": "text",
+        "default": "Are you sure you wish to retry ?",
+        "widget": "html",
+        "enterMode": "p",
+        "tags": [
+          "strong",
+          "em",
+          "del",
+          "u"
+        ]
+      },
+      {
+        "label": "Cancel button label",
+        "name": "cancelLabel",
+        "type": "text",
+        "default": "Cancel"
+      },
+      {
+        "label": "Confirm button label",
+        "name": "confirmLabel",
+        "type": "text",
+        "default": "Confirm"
       }
     ]
   }
