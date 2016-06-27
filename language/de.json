@@ -1,251 +1,131 @@
 {
   "semantics": [
     {
-      "name": "media",
-      "type": "group",
-      "label": "Bild",
+      "label": "Medien",
       "fields": [
         {
-          "name": "type",
-          "type": "library",
-          "label": "Art",
+          "label": "Typ",
           "options": [
-            "H5P.Image 1.0",
-            "H5P.Video 1.2"
           ],
-          "optional": true,
-          "description": "Ein optionales Bild, welches über der Aufgabe gezeigt wird."
+          "description": "Optionales Medium, das über der Frage platziert werden kann"
         }
       ]
     },
     {
-      "label": "Beschreibung der Aufgabe",
-      "name": "text",
-      "type": "text",
-      "widget": "html",
-      "default": "Bitte die fehlenden Wörter eintragen",
-      "description": "Hier soll der User Informationen bekommen, wie er in der Aufgabe antworten soll.",
-      "enterMode": "p",
+      "label": "Aufgabenbeschreibung",
+      "default": "Einfügen der fehlenden Worte",
+      "description": "Eine Anleitung, die dem Benutzer erklärt, wie diese Aufgabe zu beantworten ist.",
       "tags": [
-        "strong",
-        "em",
-        "u",
-        "a",
-        "ul",
-        "ol",
-        "h2",
-        "h3",
-        "hr"
       ]
     },
     {
-      "name": "questions",
-      "type": "list",
-      "label": "Text Blöcke",
-      "entity": "text block",
-      "min": 1,
-      "max": 31,
+      "label": "Textblöcke",
       "field": {
-        "name": "question",
-        "type": "text",
-        "widget": "html",
         "label": "Textzeile",
-        "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
-        "description": "Die Lücken sind mit einem Stern (*) vor und hinter dem Wort oder Satz markiert. Die möglichen Antworten sind durch einen Schrägstrich (/) getrennt. Ein Tipp wird mit dem Doppelpunkt (:) gefolgt von der Hilfe hinzugefügt. Beispiel: H5P Übungen können einfach mit einem *Browser/Web-Browser:Ein tool um im Internet zu surfen* benutzt werden.",
-        "enterMode": "p",
+        "placeholder": "Oslo ist die Hauptstadt von *Norwegen*.",
+        "description": "Leerzeichen werden mit einem Asterisk (*) vor und hinter dem korrekten Wort angegeben. Alternative Antworten werden mit einem Vorwärtsschrägstrich (/) getrennt. Ein Text-Tipp kann mit einem Doppelpunkt (:) vor dem Tipp hinzugefügt werden . Beispiel: H5P Inhalt kann durch die Verwendung von einem *Browser/Web-Browser:Etwas was jeden Tag verwendet wird* bearbeitet werden.",
         "tags": [
-          "strong",
-          "em",
-          "del",
-          "u"
         ]
       }
     },
     {
-      "label": "Wertung",
-      "name": "score",
-      "type": "text",
-      "default": "@score von @total Felder",
-      "description": "Mögliche Variablen: @score und @total. Beispiel: '@score von @total möglichen Punkten.'",
-      "common": true
+      "label": "Feedback Text",
+      "default": "@score der @total Punktzahl",
+      "description": "Verfügbare Feedback Text Variablen: @score und @total. Beispiel: 'Es wurden @score von @total verfügbaren Punkten erreicht'"
     },
     {
-      "label": "Text für \"Hilfe\"",
-      "name": "showSolutions",
-      "type": "text",
-      "default": "Hilfe",
-      "common": true
+      "label": "Text für den \"Lösungen anzeigen\" Button",
+      "default": "Lösung"
     },
     {
-      "label": "Text für \"Wiederholen\"",
-      "name": "tryAgain",
-      "type": "text",
-      "default": "Wiederholen",
-      "common": true,
-      "optional": true
+      "label": "Text für den \"Wiederholen\" Button",
+      "default": "Wiederholen"
     },
     {
-      "label": "Text für \"Überprüfen\"",
-      "name": "checkAnswer",
-      "type": "text",
-      "default": "Überprüfen",
-      "common": true,
-      "optional": true
+      "label": "Text für den \"Überprüfen\" Button",
+      "default": "Überprüfen"
     },
     {
-      "label": "Text bei nicht ausgefüllten Feldern",
-      "name": "notFilledOut",
-      "type": "text",
-      "default": "Bitte das Feld ausfüllen",
-      "common": true,
-      "optional": true
+      "label": "Text für eine \"Nicht ausgefüllte\" Nachricht",
+      "default": "Bitte alle Leerzeichen ausfüllen."
     },
     {
-      "name": "behaviour",
-      "type": "group",
-      "label": "Einstellungen.",
-      "description": "Mit diesen Einstellungen kann das Aufgabenverhalten angepasst werden.",
-      "optional": true,
+      "label": "Verhaltenseinstellungen.",
+      "description": "Diese Optionen lassen die Kontrolle davon zu, wie sich die Aufgabe verhält.",
       "fields": [
         {
-          "label": "\"Wiederholen\" aktivieren",
-          "name": "enableRetry",
-          "type": "boolean",
-          "default": true,
-          "optional": true
+          "label": "\"Wiederholen\" aktivieren"
         },
         {
-          "label": "\"Lösung anzeigen\" aktivieren",
-          "name": "enableSolutionsButton",
-          "type": "boolean",
-          "default": true,
-          "optional": true
+          "label": "\"Lösungen anzeigen\" Button aktivieren"
         },
         {
-          "label": "Automatisch die Antworten nach der Eingabe überprüfen",
-          "name": "autoCheck",
-          "type": "boolean",
-          "default": false,
-          "optional": true
+          "label": "Antworten nach der Eingabe automatisch überprüfen"
         },
         {
-          "name": "caseSensitive",
-          "type": "boolean",
-          "default": true,
-          "label": "Groß-/Kleinschreibung",
-          "description": "Stellt sicher, daß der User Groß- und Kleinschreibung beachten muß."
+          "label": "Schreibungsabhängig",
+          "description": "Stellt sicher, dass die Benutzereingabe exakt mit der Antwort übereinstimmen muss."
         },
         {
-          "label": "Alle Felder müssen ausgefüllt sein, bevor die Lösung angeschaut werden kann",
-          "name": "showSolutionsRequiresInput",
-          "type": "boolean",
-          "default": true,
-          "optional": true
+          "label": "Alle Felder müssen beantwortet werden, bevor die Lösung eingesehen werden kann."
         },
         {
-          "label": "Eingabefelder in eigener Zeile anzeigen",
-          "name": "separateLines",
-          "type": "boolean",
-          "default": false,
-          "optional": true
+          "label": "Eingabefelder auf separate Zeilen setzen"
         },
         {
-          "label": "Bild-Vergrößerung bei Frage-Bildern deaktivieren",
-          "name": "disableImageZooming",
-          "type": "boolean",
-          "default": false,
-          "optional": true
+          "label": "Deaktivieren des Bildzooms bei Fragebildern"
         },
         {
-          "label": "Bestätigungs-Text bei \"Überprüfen\"",
-          "name": "confirmCheckDialog",
-          "type": "boolean",
-          "default": false
+          "label": "Bestätigungsdialog beim \"Überprüfen\" zeigen"
         },
         {
-          "label": "Bestätigungs-Text bei \"Wiederholen\"",
-          "name": "confirmRetryDialog",
-          "type": "boolean",
-          "default": false
+          "label": "Bestätigungsdialog beim \"Wiederholen\" zeigen"
         }
       ]
     },
     {
-      "label": "Text für Bestätigung",
-      "name": "confirmCheck",
-      "type": "group",
-      "common": true,
+      "label": "Bestätigungsdialog überprüfen",
       "fields": [
         {
-          "label": "Header-Text",
-          "name": "header",
-          "type": "text",
-          "default": "Fertig ?"
+          "label": "Headertext",
+          "default": "Beenden?"
         },
         {
-          "label": "Body-Text",
-          "name": "body",
-          "type": "text",
-          "default": "Sicher beenden?",
+          "label": "Bodytext",
+          "default": "Soll wirklich beendet werden?",
           "widget": "html",
-          "enterMode": "p",
           "tags": [
-            "strong",
-            "em",
-            "del",
-            "u"
           ]
         },
         {
-          "label": "Text Abbruch-Button",
-          "name": "cancelLabel",
-          "type": "text",
-          "default": "Abbrechen ?"
-        },
-        {
-          "label": "Text Bestätigungs-Button",
-          "name": "confirmLabel",
-          "type": "text",
-          "default": "Sicher Abbrechen?"
-        }
-      ]
-    },
-    {
-      "label": "Wiederholen Dialog",
-      "name": "confirmRetry",
-      "type": "group",
-      "common": true,
-      "fields": [
-        {
-          "label": "Header text",
-          "name": "header",
-          "type": "text",
-          "default": "Wiederholen ?"
-        },
-        {
-          "label": "Body text",
-          "name": "body",
-          "type": "text",
-          "default": "Wirklich wiederholen ?",
-          "widget": "html",
-          "enterMode": "p",
-          "tags": [
-            "strong",
-            "em",
-            "del",
-            "u"
-          ]
-        },
-        {
-          "label": "Abbruch-Button",
-          "name": "cancelLabel",
-          "type": "text",
+          "label": "Label des Abbrechen-Buttons",
           "default": "Abbrechen"
         },
         {
-          "label": "Bestätigungs-Button",
-          "name": "confirmLabel",
-          "type": "text",
+          "label": "Label des Beenden-Buttons",
+          "default": "Beenden"
+        }
+      ]
+    },
+    {
+      "label": "Bestätigungsdialog zum Wiederholen",
+      "fields": [
+        {
+          "label": "Headertext",
+          "default": "Wiederholen?"
+        },
+        {
+          "label": "Bodytext",
+          "default": "Wirklich nochmal versuchen?",
+          "tags": [
+          ]
+        },
+        {
+          "label": "Label des Abbrechen-Buttons",
+          "default": "Abbrechen"
+        },
+        {
+          "label": "Label des Bestätigungs-Buttons",
           "default": "Bestätigen"
         }
       ]
