@@ -3,11 +3,11 @@
     {
       "label": "Fichier média",
       "fields": [
-      {
-        "label": "Type de média",
-        "description": "Fichier média à afficher en option au-dessus de la question."
-      }
-    ]
+        {
+          "label": "Type de média",
+          "description": "Fichier média à afficher en option au-dessus de la question."
+        }
+      ]
     },
     {
       "label": "Consigne",
