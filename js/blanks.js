@@ -277,6 +277,7 @@ H5P.Blanks = (function ($, Question) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
+            self.triggerAnswered();
             self.done = true;
           }
         };
@@ -306,7 +307,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }).on('change', function () {
       self.triggerXAPI('interacted');
-      self.triggerAnswered();
+      self.answered = true;
     });
 
     self.on('resize', function () {
