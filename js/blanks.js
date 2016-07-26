@@ -265,6 +265,7 @@ H5P.Blanks = (function ($, Question) {
       html += '<div>' + question + '</div>';
     }
 
+    self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
 
     // Set input fields.
@@ -721,7 +722,7 @@ H5P.Blanks = (function ($, Question) {
    * @returns {Boolean}
    */
   Blanks.prototype.getAnswerGiven = function () {
-    return this.answered;
+    return this.answered || !this.hasClozes;
   };
 
   /**
