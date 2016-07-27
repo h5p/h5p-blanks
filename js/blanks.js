@@ -265,6 +265,7 @@ H5P.Blanks = (function ($, Question) {
       html += '<div>' + question + '</div>';
     }
 
+    self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
 
     // Set input fields.
@@ -277,6 +278,7 @@ H5P.Blanks = (function ($, Question) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
+            self.triggerAnswered();
             self.done = true;
           }
         };
@@ -306,7 +308,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }).on('change', function () {
       self.triggerXAPI('interacted');
-      self.triggerAnswered();
+      self.answered = true;
     });
 
     self.on('resize', function () {
@@ -720,7 +722,7 @@ H5P.Blanks = (function ($, Question) {
    * @returns {Boolean}
    */
   Blanks.prototype.getAnswerGiven = function () {
-    return this.answered;
+    return this.answered || !this.hasClozes;
   };
 
   /**

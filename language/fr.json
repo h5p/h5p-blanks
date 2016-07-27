@@ -1,142 +1,156 @@
 {
   "semantics": [
     {
+      "label": "Fichier média",
+      "fields": [
+        {
+          "label": "Type de média",
+          "description": "Fichier média à afficher en option au-dessus de la question."
+        }
+      ]
     },
     {
       "label": "Consigne",
-      "description": "La consigne indique ce que l'utilisateur doit faire."
+      "default": "Complétez les blancs.",
+      "description": "La consigne indique à l'utilisateur comment faire l'exercice."
     },
     {
-      "label": "Blocs de Texte",
-      "entity": "Texte block",
+      "label": "Blocs de texte",
+      "entity": "bloc de texte",
       "field": {
-        "label": "Line of Texte",
-        "description": "Des trous sont inseres avec une asterisque (*) devant et derriere le mot/la phrase correct. Les reponses possibles sont separees par un slash (/). Vous pouvez ajouter une aide en utilisant les deux points (:) avant cette aide. Exemple: Les exercices H5P peuvent etre crees en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*."
+        "label": "Ligne de texte",
+        "placeholder": "Paris est la capitale de la *France*.",
+        "description": "Des trous sont insérés au moyen d'un astérisque (*) placé avant et après le mot / le groupe de mots. Les différentes réponses acceptées sont séparées par un slash (/). Vous pouvez ajouter un indice en utilisant les deux points (:) avant cet indice. (Exemple: Les exercices H5P peuvent être créés en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*)."
       }
     },
     {
-      "label": "Texte de Feedback",
-      "description": "Texte de Feedback, variables possibles: @score et @total. Exemple: 'Vous avez @score sur un total possible de @total points.'"
+      "label": "Commentaire final",
+      "default": "Vous avez obtenu @score point(s) sur @total",
+      "description": "Texte du commentaire de fin, variables possibles: @score et @total. (Exemple: 'Vous avez @score sur un total possible de @total points.')"
     },
     {
-      "label": "Texte pour le bouton \"Montrer la solution\""
+      "label": "Texte du bouton \"Voir la correction\"",
+      "default": "Voir la correction"
     },
     {
-      "label": "Texte pour le bouton \"Reessayer\""
+      "label": "Texte du bouton \"Recommencer\"",
+      "default": "Recommencer"
     },
     {
-      "label": "Texte pour le bouton \"Verifier\""
+      "label": "Texte du bouton \"Vérifier\"",
+      "default": "Vérifier"
     },
     {
-      "label": "Texte pour le message \"Tout n'est pas fini\""
+      "label": "Texte pour le message \"Tout n'est pas complété\"",
+      "default": "Vous devez avoir rempli tous les blancs avant de voir la correction"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Texte du message \"':ans' est une réponse exacte\"",
+      "default": "':ans' est une réponse exacte"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Texte du message \"':ans' est une réponse incorrecte\"",
+      "default": "':ans' est une réponse incorrecte"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Texte du message \"Réponse exacte\"",
+      "default": "Réponse exacte"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Texte du message \"Mauvaise réponse\"",
+      "default": "Mauvaise réponse"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Texte de la correction (technologie d'assistance)",
+      "default": "Réponse correcte :"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Texte du blanc (technologie d'assistance)",
+      "description": "Utilisez @num et @total pour désigner respectivement le blanc courant et le nombre total de blancs",
+      "default": "Blanc @num sur @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Texte qui indique qu'un blanc dispose d'un indice (technologie d'assistance)",
+      "default": "Indice disponible"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Intitulé de l'icône de l'indice",
+      "default": "Indice"
     },
     {
-      "label": "Options des exercices.",
-      "description": "Ces options permettent de parametrer les variables des exercices.",
+      "label": "Options générales.",
+      "description": "Ces options vous permettent de paramétrer le déroulement de l'exercice.",
       "fields": [
         {
-          "label": "Activer le bouton \"Reessayer\""
+          "label": "Activer le bouton \"Recommencer\""
         },
         {
-          "label": "Activer le bouton \"Montrer la solution\""
+          "label": "Activer le bouton \"Voir la correction\""
         },
         {
-          "label": "Verifier les reponses automatiquement."
+          "label": "Vérifier les réponses instantanément dès la saisie."
         },
         {
-          "label": "Sensible a la casse",
-          "description": "Afin que la reponse soit exactement celle attendue."
+          "label": "Sensible à la casse",
+          "description": "La saisie de l'utilisateur devra être exactement identique à la réponse attendue."
         },
         {
-          "label": "Tous les champs doivent etre remplis pour demander a voir la solution."
+          "label": "Obliger l'utilisateur à remplir tous les blancs avant de voir la correction."
         },
         {
-          "label": "Les champs de reponse sont sur des lignes separees."
+          "label": "Afficher les blancs sur des lignes séparées."
         },
         {
-          "label": "Disable image zooming for question image."
+          "label": "Désactiver l'agrandissement de l'image de la question."
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Afficher la fenêtre de confirmation pour \"Vérifier\"",
+          "description": "Cette option n'est pas compatible avec l'option \"Vérifier les réponses instantanément dès la saisie.\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Afficher la fenêtre de confirmation pour \"Recommencer\""
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Fenêtre de confirmation pour \"Vérifier\"",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Titre",
+          "default": "Terminer ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Contenu",
+          "default": "Êtes-vous sûr de vouloir terminer ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Intitulé du bouton d'annulation",
+          "default": "Annuler"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Intitulé du bouton de confirmation",
+          "default": "Terminer"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Fenêtre de confirmation pour \"Recommencer\"",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Titre",
+          "default": "Recommencer ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Contenu",
+          "default": "Êtes-vous sûr de vouloir recommencer ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Intitulé du bouton d'annulation",
+          "default": "Annuler"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Intitulé du bouton de confirmation",
+          "default": "Confirmer"
         }
       ]
     }
