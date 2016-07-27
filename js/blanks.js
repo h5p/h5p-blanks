@@ -222,8 +222,15 @@ H5P.Blanks = (function ($, Question) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
-      clozeEnd++;
+      var clozeContent = question.substring(clozeStart, clozeEnd);
+      var replacer = '';
+      if (clozeContent.length) {
+        replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
+        clozeEnd++;
+      }
+      else {
+        clozeStart += 1;
+      }
       question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
       clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
