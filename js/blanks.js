@@ -225,7 +225,7 @@ H5P.Blanks = (function ($, Question) {
       var clozeContent = question.substring(clozeStart, clozeEnd);
       var replacer = '';
       if (clozeContent.length) {
-        replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
+        replacer = handler(self.parseSolution(clozeContent));
         clozeEnd++;
       }
       else {
