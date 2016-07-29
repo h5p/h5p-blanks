@@ -314,8 +314,8 @@ H5P.Blanks = (function ($, Question) {
         }
       }
     }).on('change', function () {
-      self.triggerXAPI('interacted');
       self.answered = true;
+      self.triggerXAPI('interacted');
     });
 
     self.on('resize', function () {
