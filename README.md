@@ -3,6 +3,8 @@ H5P Blanks
 
 Test your users with fill in the blanks tasks(Cloze tests).
 
+[See it in action on the H5P.org project page](https://h5p.org/fill-in-the-blanks)
+
 ## License
 
 (The MIT License)

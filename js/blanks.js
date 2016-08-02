@@ -222,8 +222,15 @@ H5P.Blanks = (function ($, Question) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
-      clozeEnd++;
+      var clozeContent = question.substring(clozeStart, clozeEnd);
+      var replacer = '';
+      if (clozeContent.length) {
+        replacer = handler(self.parseSolution(clozeContent));
+        clozeEnd++;
+      }
+      else {
+        clozeStart += 1;
+      }
       question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
       clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
@@ -265,6 +272,7 @@ H5P.Blanks = (function ($, Question) {
       html += '<div>' + question + '</div>';
     }
 
+    self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
 
     // Set input fields.
@@ -306,8 +314,8 @@ H5P.Blanks = (function ($, Question) {
         }
       }
     }).on('change', function () {
-      self.triggerXAPI('interacted');
       self.answered = true;
+      self.triggerXAPI('interacted');
     });
 
     self.on('resize', function () {
@@ -721,7 +729,7 @@ H5P.Blanks = (function ($, Question) {
    * @returns {Boolean}
    */
   Blanks.prototype.getAnswerGiven = function () {
-    return this.answered;
+    return this.answered || !this.hasClozes;
   };
 
   /**
