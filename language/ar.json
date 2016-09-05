@@ -31,6 +31,39 @@
       "label": "النص ل \"لا جواب \" رسالة"
     },
     {
+      "label": "Text for \"':ans' is correct\" message",
+      "default": "':ans' is correct"
+    },
+    {
+      "label": "Text for \"':ans' is wrong\" message",
+      "default": "':ans' is wrong"
+    },
+    {
+      "label": "Text for \"Answered correctly\" message",
+      "default": "Answered correctly"
+    },
+    {
+      "label": "Text for \"Answered incorrectly\" message",
+      "default": "Answered incorrectly"
+    },
+    {
+      "label": "Assistive technology label for solution",
+      "default": "Correct answer:"
+    },
+    {
+      "label": "Assistive technology label for input field",
+      "description": "Use @num and @total to replace current cloze number and total cloze number",
+      "default": "Blank input @num of @total"
+    },
+    {
+      "label": "Assistive technology label for saying an input has a tip tied to it",
+      "default": "Tip available"
+    },
+    {
+      "label": "Tip icon label",
+      "default": "Tip"
+    },
+    {
       "label": "إعدادت النشاط",
       "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
       "fields": [
@@ -57,7 +90,8 @@
           "label": "Disable image zooming for question image."
         },
         {
-          "label": "Show confirmation dialog on \"Check\""
+          "label": "Show confirmation dialog on \"Check\"",
+          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
           "label": "Show confirmation dialog on \"Retry\""

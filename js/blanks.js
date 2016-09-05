@@ -48,19 +48,26 @@ H5P.Blanks = (function ($, Question) {
     // IDs
     this.contentId = id;
 
-
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
         "Oslo is the capital of *Norway*."
       ],
       userAnswers: [],
-      score: "@score of @total points",
-      showSolutions: "Solution",
+      score: "You got @score of @total points",
+      showSolutions: "Show solution",
       tryAgain: "Try again",
       checkAnswer: "Check",
       changeAnswer: "Change answer",
-      notFilledOut: "Please fill in all blanks",
+      notFilledOut: "Please fill in all blanks to view solution",
+      answerIsCorrect: "':ans' is correct",
+      answerIsWrong: "':ans' is wrong",
+      answeredCorrectly: "Answered correctly",
+      answeredIncorrectly: "Answered incorrectly",
+      solutionLabel: "Correct answer:",
+      inputLabel: "Blank input @num of @total",
+      inputHasTipLabel: "Tip available",
+      tipLabel: "Tip",
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -175,10 +182,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
-      if (self.allBlanksFilledOut()) {
-        self.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
-        self.showCorrectAnswers();
-      }
+      self.showCorrectAnswers(false);
     }, self.params.behaviour.enableSolutionsButton);
 
     // Try again button
@@ -209,7 +213,7 @@ H5P.Blanks = (function ($, Question) {
    *   The question with blanks replaced by the given handler.
    */
   Blanks.prototype.handleBlanks = function (question, handler) {
-    // Go through the text and run handler on all asterix
+    // Go through the text and run handler on all asterisk
     var clozeEnd, clozeStart = question.indexOf('*');
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
@@ -218,8 +222,15 @@ H5P.Blanks = (function ($, Question) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var replacer = handler(self.parseSolution(question.substring(clozeStart, clozeEnd)));
-      clozeEnd++;
+      var clozeContent = question.substring(clozeStart, clozeEnd);
+      var replacer = '';
+      if (clozeContent.length) {
+        replacer = handler(self.parseSolution(clozeContent));
+        clozeEnd++;
+      }
+      else {
+        clozeStart += 1;
+      }
       question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
       clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
@@ -236,14 +247,23 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     var html = '';
+    var clozeNumber = 0;
     for (var i = 0; i < self.params.questions.length; i++) {
       var question = self.params.questions[i];
 
       // Go through the question text and replace all the asterisks with input fields
-      question = self.handleBlanks(question, function(solution) {
+      question = self.handleBlanks(question, function (solution) {
         // Create new cloze
+        clozeNumber += 1;
         var defaultUserAnswer = (self.params.userAnswers.length > self.clozes.length ? self.params.userAnswers[self.clozes.length] : null);
-        var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer);
+        var cloze = new Blanks.Cloze(solution, self.params.behaviour, defaultUserAnswer, {
+          answeredCorrectly: self.params.answeredCorrectly,
+          answeredIncorrectly: self.params.answeredIncorrectly,
+          solutionLabel: self.params.solutionLabel,
+          inputLabel: self.params.inputLabel,
+          inputHasTipLabel: self.params.inputHasTipLabel,
+          tipLabel: self.params.tipLabel
+        });
 
         self.clozes.push(cloze);
         return cloze;
@@ -252,6 +272,7 @@ H5P.Blanks = (function ($, Question) {
       html += '<div>' + question + '</div>';
     }
 
+    self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
 
     // Set input fields.
@@ -259,12 +280,13 @@ H5P.Blanks = (function ($, Question) {
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
-          if (self.done || self.getAnswerGiven()) {
+          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', this.getUserAnswer()));
+          if (self.done || self.allBlanksFilledOut()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
             self.showEvaluation();
-            self.done = true;
             self.triggerAnswered();
+            self.done = true;
           }
         };
       }
@@ -273,7 +295,7 @@ H5P.Blanks = (function ($, Question) {
         if (!self.params.behaviour.autoCheck) {
           self.hideEvaluation();
         }
-      });
+      }, i, self.clozes.length);
     }).keydown(function (event) {
       self.autoGrowTextField($(this));
 
@@ -292,6 +314,7 @@ H5P.Blanks = (function ($, Question) {
         }
       }
     }).on('change', function () {
+      self.answered = true;
       self.triggerXAPI('interacted');
     });
 
@@ -338,16 +361,15 @@ H5P.Blanks = (function ($, Question) {
       if (width <= minPx) {
         // Apply min width
         $input.width(minPx + static_min_pad);
-      } else if (width + rightPadPx >= parentWidth) {
-
+      }
+      else if (width + rightPadPx >= parentWidth) {
         // Apply max width of parent
         $input.width(parentWidth - rightPadPx);
-      } else {
-
+      }
+      else {
         // Apply width that wraps input
         $input.width(width + static_min_pad);
       }
-
     }, 1);
   };
 
@@ -404,17 +426,29 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Check if all blanks are filled out. Warn user if not
+   * Check if solution is allowed. Warn user if not
+   */
+  Blanks.prototype.allowSolution = function () {
+    if (this.params.behaviour.showSolutionsRequiresInput === true) {
+      if (!this.allBlanksFilledOut()) {
+        this.updateFeedbackContent(this.params.notFilledOut);
+        this.read(this.params.notFilledOut);
+        return false;
+      }
+    }
+    return true;
+  };
+
+  /**
+   * Check if all blanks are filled out
+   *
+   * @method allBlanksFilledOut
+   * @return {boolean} Returns true if all blanks are filled out.
    */
   Blanks.prototype.allBlanksFilledOut = function () {
-    var self = this;
-
-    if (!self.getAnswerGiven()) {
-      this.updateFeedbackContent(self.params.notFilledOut);
-      return false;
-    }
-
-    return true;
+    return !this.clozes.some(function (cloze) {
+      return !cloze.filledOut();
+    });
   };
 
   /**
@@ -443,28 +477,47 @@ H5P.Blanks = (function ($, Question) {
 
   /**
    * Displays the correct answers
+   * @param {boolean} [alwaysShowSolution]
+   *  Will always show solution if true
    */
-  Blanks.prototype.showCorrectAnswers = function () {
-    var self = this;
+  Blanks.prototype.showCorrectAnswers = function (alwaysShowSolution) {
+    if (!alwaysShowSolution && !this.allowSolution()) {
+      return;
+    }
+
+    this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
     this.hideSolutions();
 
-    for (var i = 0; i < self.clozes.length; i++) {
-      self.clozes[i].showSolution();
+    for (var i = 0; i < this.clozes.length; i++) {
+      this.clozes[i].showSolution();
     }
     this.trigger('resize');
   };
 
   /**
+   * Toggle input allowed for all input fields
+   *
+   * @method function
+   * @param  {boolean} enabled True if fields should allow input, otherwise false
+   */
+  Blanks.prototype.toggleAllInputs = function (enabled) {
+    for (var i = 0; i < this.clozes.length; i++) {
+      this.clozes[i].toggleInput(enabled);
+    }
+  };
+
+  /**
    * Display the correct solution for the input boxes.
    *
-   * This is invoked from CP - be carefull!
+   * This is invoked from CP and QS - be carefull!
    */
   Blanks.prototype.showSolutions = function () {
     this.params.behaviour.enableSolutionsButton = true;
     this.toggleButtonVisibility(STATE_FINISHED);
     this.markResults();
-    this.showCorrectAnswers();
     this.showEvaluation();
+    this.showCorrectAnswers(true);
+    this.toggleAllInputs(false);
     //Hides all buttons in "show solution" mode.
     this.hideButtons();
   };
@@ -475,12 +528,14 @@ H5P.Blanks = (function ($, Question) {
    * @public
    */
   Blanks.prototype.resetTask = function () {
+    this.answered = false;
     this.hideEvaluation();
     this.hideSolutions();
     this.clearAnswers();
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
+    this.toggleAllInputs(true);
     this.done = false;
   };
 
@@ -496,6 +551,7 @@ H5P.Blanks = (function ($, Question) {
    * Trigger xAPI answered event
    */
   Blanks.prototype.triggerAnswered = function() {
+    this.answered = true;
     var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
     this.addResponseToXAPI(xAPIEvent);
@@ -548,7 +604,7 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Parse the solution text (text between the asterix)
+   * Parse the solution text (text between the asterisks)
    *
    * @param {string} solutionText
    * @returns {object} with the following properties
@@ -574,9 +630,6 @@ H5P.Blanks = (function ($, Question) {
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
       solutions[i] = H5P.trim(solutions[i]);
-      if (this.params.behaviour.caseSensitive !== true) {
-        solutions[i] = solutions[i].toLowerCase();
-      }
     }
 
     return {
@@ -664,7 +717,10 @@ H5P.Blanks = (function ($, Question) {
    * Clear the user's answers
    */
   Blanks.prototype.clearAnswers = function () {
-    this.$questions.find('.h5p-text-input').val('');
+    this.clozes.forEach(function (cloze) {
+      cloze.setUserInput('');
+      cloze.resetAriaLabel();
+    });
   };
 
   /**
@@ -673,17 +729,7 @@ H5P.Blanks = (function ($, Question) {
    * @returns {Boolean}
    */
   Blanks.prototype.getAnswerGiven = function () {
-    var self = this;
-
-    if (this.params.behaviour.showSolutionsRequiresInput === true) {
-      for (var i = 0; i < self.clozes.length; i++) {
-        if (!self.clozes[i].filledOut()) {
-          return false;
-        }
-      }
-    }
-
-    return true;
+    return this.answered || !this.hasClozes;
   };
 
   /**
