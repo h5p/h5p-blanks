@@ -774,6 +774,12 @@ H5P.Blanks = (function ($, Question) {
     // Set input from user state
     var hasAllClozesFilled = true;
     this.previousState.forEach(function (clozeContent, ccIndex) {
+
+      // Register that an answer has been given
+      if (clozeContent.length) {
+        self.answered = true;
+      }
+
       var cloze = self.clozes[ccIndex];
       cloze.setUserInput(clozeContent);
 
