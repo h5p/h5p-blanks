@@ -1,0 +1,134 @@
+{
+  "semantics": [
+    {
+      "label": "Medien",
+      "fields": [
+        {
+          "label": "Typ",
+          "options": [
+          ],
+          "description": "Optionales Medium, das über der Frage platziert werden kann"
+        }
+      ]
+    },
+    {
+      "label": "Aufgabenbeschreibung",
+      "default": "Einfügen der fehlenden Worte",
+      "description": "Eine Anleitung, die dem Benutzer erklärt, wie diese Aufgabe zu beantworten ist.",
+      "tags": [
+      ]
+    },
+    {
+      "label": "Textblöcke",
+      "field": {
+        "label": "Textzeile",
+        "placeholder": "Oslo ist die Hauptstadt von *Norwegen*.",
+        "description": "Leerzeichen werden mit einem Asterisk (*) vor und hinter dem korrekten Wort angegeben. Alternative Antworten werden mit einem Vorwärtsschrägstrich (/) getrennt. Ein Text-Tipp kann mit einem Doppelpunkt (:) vor dem Tipp hinzugefügt werden . Beispiel: H5P Inhalt kann durch die Verwendung von einem *Browser/Web-Browser:Etwas was jeden Tag verwendet wird* bearbeitet werden.",
+        "tags": [
+        ]
+      }
+    },
+    {
+      "label": "Feedback Text",
+      "default": "@score der @total Punktzahl",
+      "description": "Verfügbare Feedback Text Variablen: @score und @total. Beispiel: 'Es wurden @score von @total verfügbaren Punkten erreicht'"
+    },
+    {
+      "label": "Text für den \"Lösungen anzeigen\" Button",
+      "default": "Lösung"
+    },
+    {
+      "label": "Text für den \"Wiederholen\" Button",
+      "default": "Wiederholen"
+    },
+    {
+      "label": "Text für den \"Überprüfen\" Button",
+      "default": "Überprüfen"
+    },
+    {
+      "label": "Text für eine \"Nicht ausgefüllte\" Nachricht",
+      "default": "Bitte alle Leerzeichen ausfüllen."
+    },
+    {
+      "label": "Verhaltenseinstellungen.",
+      "description": "Diese Optionen lassen die Kontrolle davon zu, wie sich die Aufgabe verhält.",
+      "fields": [
+        {
+          "label": "\"Wiederholen\" aktivieren"
+        },
+        {
+          "label": "\"Lösungen anzeigen\" Button aktivieren"
+        },
+        {
+          "label": "Antworten nach der Eingabe automatisch überprüfen"
+        },
+        {
+          "label": "Schreibungsabhängig",
+          "description": "Stellt sicher, dass die Benutzereingabe exakt mit der Antwort übereinstimmen muss."
+        },
+        {
+          "label": "Alle Felder müssen beantwortet werden, bevor die Lösung eingesehen werden kann."
+        },
+        {
+          "label": "Eingabefelder auf separate Zeilen setzen"
+        },
+        {
+          "label": "Deaktivieren des Bildzooms bei Fragebildern"
+        },
+        {
+          "label": "Bestätigungsdialog beim \"Überprüfen\" zeigen"
+        },
+        {
+          "label": "Bestätigungsdialog beim \"Wiederholen\" zeigen"
+        }
+      ]
+    },
+    {
+      "label": "Bestätigungsdialog überprüfen",
+      "fields": [
+        {
+          "label": "Headertext",
+          "default": "Beenden?"
+        },
+        {
+          "label": "Bodytext",
+          "default": "Soll wirklich beendet werden?",
+          "widget": "html",
+          "tags": [
+          ]
+        },
+        {
+          "label": "Label des Abbrechen-Buttons",
+          "default": "Abbrechen"
+        },
+        {
+          "label": "Label des Beenden-Buttons",
+          "default": "Beenden"
+        }
+      ]
+    },
+    {
+      "label": "Bestätigungsdialog zum Wiederholen",
+      "fields": [
+        {
+          "label": "Headertext",
+          "default": "Wiederholen?"
+        },
+        {
+          "label": "Bodytext",
+          "default": "Wirklich nochmal versuchen?",
+          "tags": [
+          ]
+        },
+        {
+          "label": "Label des Abbrechen-Buttons",
+          "default": "Abbrechen"
+        },
+        {
+          "label": "Label des Bestätigungs-Buttons",
+          "default": "Bestätigen"
+        }
+      ]
+    }
+  ]
+}
