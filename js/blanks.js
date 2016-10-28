@@ -630,6 +630,11 @@ H5P.Blanks = (function ($, Question) {
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
       solutions[i] = H5P.trim(solutions[i]);
+
+      //decodes html entities
+      var elem = document.createElement('textarea');
+      elem.innerHTML = solutions[i];
+      solutions[i] = elem.value;
     }
 
     return {
@@ -774,6 +779,12 @@ H5P.Blanks = (function ($, Question) {
     // Set input from user state
     var hasAllClozesFilled = true;
     this.previousState.forEach(function (clozeContent, ccIndex) {
+
+      // Register that an answer has been given
+      if (clozeContent.length) {
+        self.answered = true;
+      }
+
       var cloze = self.clozes[ccIndex];
       cloze.setUserInput(clozeContent);
 
