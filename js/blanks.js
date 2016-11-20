@@ -559,10 +559,21 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
-   * Add the question itselt to the definition part of an xAPIEvent
+   * Get xAPI data.
+   * Used by report rendering engine.
    */
-  Blanks.prototype.addQuestionToXAPI = function(xAPIEvent) {
-    var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+  Blanks.prototype.getxAPIData = function () {
+    var xAPIData = this.getxAPIDefinition();
+    xAPIData.response = this.getxAPIResponse();
+    return xAPIData;
+  };
+
+  /**
+   * Generate xAPI object definition used in xAPI statements.
+   * @return {Object}
+   */
+  Blanks.prototype.getxAPIDefinition = function () {
+    var definition = {};
     definition.description = {
       'en-US': this.params.text
     };
@@ -601,6 +612,15 @@ H5P.Blanks = (function ($, Question) {
       });
       definition.description['en-US'] += question;
     }
+    return definition;
+  };
+
+  /**
+   * Add the question itselt to the definition part of an xAPIEvent
+   */
+  Blanks.prototype.addQuestionToXAPI = function(xAPIEvent) {
+    var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    $.extend(definition, this.getxAPIDefinition());
   };
 
   /**
@@ -651,9 +671,16 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.addResponseToXAPI = function (xAPIEvent) {
     xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore(), this);
-    var usersAnswers = this.getCurrentState();
+    xAPIEvent.data.statement.result.response = this.getxAPIResponse();
+  };
 
-    xAPIEvent.data.statement.result.response = usersAnswers.join('[,]');
+  /**
+   * Generate xAPI user response, used in xAPI statements.
+   * @return {string} User answers separated by the "[,]" pattern
+   */
+  Blanks.prototype.getxAPIResponse = function () {
+    var usersAnswers = this.getCurrentState();
+    return usersAnswers.join('[,]');
   };
 
   /**
