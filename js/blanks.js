@@ -560,9 +560,11 @@ H5P.Blanks = (function ($, Question) {
 
   /**
    * Get xAPI data.
-   * Used by report rendering engine.
+   * Contract used by report rendering engine.
+   *
+   * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
    */
-  Blanks.prototype.getxAPIData = function () {
+  Blanks.prototype.getXAPIData = function () {
     var xAPIData = this.getxAPIDefinition();
     xAPIData.response = this.getxAPIResponse();
     return xAPIData;
