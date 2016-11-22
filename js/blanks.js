@@ -565,9 +565,12 @@ H5P.Blanks = (function ($, Question) {
    * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
    */
   Blanks.prototype.getXAPIData = function () {
-    var xAPIData = this.getxAPIDefinition();
-    xAPIData.response = this.getxAPIResponse();
-    return xAPIData;
+    var xAPIEvent = this.createXAPIEventTemplate('answered');
+    this.addQuestionToXAPI(xAPIEvent);
+    this.addResponseToXAPI(xAPIEvent);
+    return {
+      statement: xAPIEvent.data.statement
+    }
   };
 
   /**
