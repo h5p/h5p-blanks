@@ -42,8 +42,8 @@
 
       for (var i = 0; i < answers.length; i++) {
         // TODO: don't use hardcoded string
-        var REGEXP_IDENTIFIER_START = '__';
-        var REGEXP_IDENTIFIER_END = '__';
+        var REGEXP_IDENTIFIER_START = '[[[';
+        var REGEXP_IDENTIFIER_END = ']]]';
 
         if (answers[i].startsWith(REGEXP_IDENTIFIER_START) && answers[i].endsWith(REGEXP_IDENTIFIER_END)) {
           var expression = new RegExp(answers[i].slice(REGEXP_IDENTIFIER_START.length, answers[i].indexOf(REGEXP_IDENTIFIER_END)));

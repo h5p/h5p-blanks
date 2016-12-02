@@ -686,8 +686,8 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.findDelimiterStart = function (text, delimiter) {
     // TODO: think about good identifiers
-    var REGEXP_IDENTIFIER_START = '__';
-    var REGEXP_IDENTIFIER_END = '__';
+    var REGEXP_IDENTIFIER_START = '[[[';
+    var REGEXP_IDENTIFIER_END = ']]]';
 
     var delimiterStart = -1;
     var searchStart = 0;
