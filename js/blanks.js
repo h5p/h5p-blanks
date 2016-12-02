@@ -635,8 +635,8 @@ H5P.Blanks = (function ($, Question) {
     }
 
     // Split up alternatives
-    var solutions = solution.split('/');
-      console.log('solutions: ', solutions);
+    var solutions = self.splitSolutions(solution);
+    console.log('solutions: ', solutions);
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
@@ -656,6 +656,33 @@ H5P.Blanks = (function ($, Question) {
   };
 
   /**
+   * Split solutions.
+   *
+   * @param {string} solutionText
+   * @returns {object} array of solutions
+   */
+  Blanks.prototype.splitSolutions = function (solution) {
+    var self = this;
+    var output = [];
+
+    var candidate = solution;
+    do {
+      // TODO: turn identifiers/delimiters *, / and : into constants of class
+      var delimiterPosition = self.findDelimiterStart(candidate, '/');
+      if (delimiterPosition === -1) {
+        output.push(candidate);
+      }
+      else {
+        output.push(candidate.substring(0, delimiterPosition));
+        candidate = candidate.substring(delimiterPosition+1);
+      }
+    }
+    while (delimiterPosition !== -1);
+
+    return output;
+  }
+
+  /**
    * Find the start of the tip.
    *
    * @param {string} solutionText
@@ -670,8 +697,7 @@ H5P.Blanks = (function ($, Question) {
     var searchStart = 0;
 
     do {
-      // TODO: turn all the identifiers *, : and / into CONSTANTS of the class Blanks
-      delimiterCandidate = text.indexOf(delimiter, searchStart);
+      var delimiterCandidate = text.indexOf(delimiter, searchStart);
       if (delimiterCandidate !== -1) {
         var regexpStart = text.indexOf(REGEXP_IDENTIFIER_START, searchStart);
         var regexpEnd = text.indexOf(REGEXP_IDENTIFIER_END, delimiterCandidate);
