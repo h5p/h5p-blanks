@@ -621,22 +621,17 @@ H5P.Blanks = (function ($, Question) {
     var tip, solution;
 
     var tipStart = self.findDelimiterStart(solutionText, ':');
-    console.log('tipStart: ', tipStart);
     if (tipStart !== -1) {
       // Found tip, now extract
       tip = solutionText.slice(tipStart + 1);
       solution = solutionText.slice(0, tipStart);
-      console.log('tip: ', tip);
-      console.log('solution: ', solution);
     }
     else {
       solution = solutionText;
-      console.log('solution: ', solution);
     }
 
     // Split up alternatives
     var solutions = self.splitSolutions(solution);
-    console.log('solutions: ', solutions);
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
@@ -646,7 +641,6 @@ H5P.Blanks = (function ($, Question) {
       var elem = document.createElement('textarea');
       elem.innerHTML = solutions[i];
       solutions[i] = elem.value;
-      console.log('solutions[', i, ']: ', solutions[i]);
     }
 
     return {
