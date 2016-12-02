@@ -41,8 +41,20 @@
       }
 
       for (var i = 0; i < answers.length; i++) {
-        if (answered === answers[i]) {
-          return true;
+        // TODO: don't use hardcoded string
+        var REGEXP_IDENTIFIER_START = '__';
+        var REGEXP_IDENTIFIER_END = '__';
+
+        if (answers[i].startsWith(REGEXP_IDENTIFIER_START) && answers[i].endsWith(REGEXP_IDENTIFIER_END)) {
+          var expression = new RegExp(answers[i].slice(REGEXP_IDENTIFIER_START.length, answers[i].indexOf(REGEXP_IDENTIFIER_END)));
+          if (expression.test(answered) === true) {
+            return true;
+          }
+        }
+        else {
+          if (answered === answers[i]) {
+            return true;
+          }
         }
       }
       return false;

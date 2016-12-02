@@ -214,6 +214,8 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterisk
+
+    // TODO: modify so we can use * in regular expressions
     var clozeEnd, clozeStart = question.indexOf('*');
     console.log('question: ', question);
     console.log('clozeStart: ', clozeStart);
@@ -684,8 +686,8 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.findDelimiterStart = function (text, delimiter) {
     // TODO: think about good identifiers
-    var REGEXP_IDENTIFIER_START = '[[';
-    var REGEXP_IDENTIFIER_END = ']]';
+    var REGEXP_IDENTIFIER_START = '__';
+    var REGEXP_IDENTIFIER_END = '__';
 
     var delimiterStart = -1;
     var searchStart = 0;
