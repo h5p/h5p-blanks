@@ -215,14 +215,18 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterisk
     var clozeEnd, clozeStart = question.indexOf('*');
+    console.log('question: ', question);
+    console.log('clozeStart: ', clozeStart);
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
       clozeEnd = question.indexOf('*', clozeStart);
+      console.log('clozeEnd: ', clozeEnd);
       if (clozeEnd === -1) {
         continue; // No end
       }
       var clozeContent = question.substring(clozeStart, clozeEnd);
+      console.log('clozeContent: ', clozeContent);
       var replacer = '';
       if (clozeContent.length) {
         replacer = handler(self.parseSolution(clozeContent));
@@ -237,6 +241,7 @@ H5P.Blanks = (function ($, Question) {
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
     }
+    console.log('question: ', question);
     return question;
   };
 
@@ -615,17 +620,22 @@ H5P.Blanks = (function ($, Question) {
     var tip, solution;
 
     var tipStart = solutionText.indexOf(':');
+    console.log('tipStart: ', tipStart);
     if (tipStart !== -1) {
       // Found tip, now extract
       tip = solutionText.slice(tipStart + 1);
       solution = solutionText.slice(0, tipStart);
+      console.log('tip: ', tip);
+      console.log('solution: ', solution);
     }
     else {
       solution = solutionText;
+      console.log('solution: ', solution);
     }
 
     // Split up alternatives
     var solutions = solution.split('/');
+      console.log('solutions: ', solutions);
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
@@ -635,6 +645,7 @@ H5P.Blanks = (function ($, Question) {
       var elem = document.createElement('textarea');
       elem.innerHTML = solutions[i];
       solutions[i] = elem.value;
+      console.log('solutions[', i, ']: ', solutions[i]);
     }
 
     return {
