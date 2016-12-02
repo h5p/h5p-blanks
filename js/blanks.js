@@ -685,7 +685,9 @@ H5P.Blanks = (function ($, Question) {
    * @returns {integer} start position of tip or -1
    */
   Blanks.prototype.findDelimiterStart = function (text, delimiter) {
+    // TODO: think about generalizing for identifiers
     // TODO: think about good identifiers
+    // TODO: Don't put CONSTANTS here
     var REGEXP_IDENTIFIER_START = '[[[';
     var REGEXP_IDENTIFIER_END = ']]]';
 

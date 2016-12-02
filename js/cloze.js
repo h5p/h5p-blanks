@@ -38,6 +38,7 @@
     var correct = function (answered) {
       if (behaviour.caseSensitive !== true) {
         answered = answered.toLowerCase();
+        // TODO: also add RegExp modifier 'i'
       }
 
       for (var i = 0; i < answers.length; i++) {
