@@ -620,7 +620,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
     var tip, solution;
 
-    var tipStart = self.findTipStart(solutionText);
+    var tipStart = self.findDelimiterStart(solutionText, ':');
     console.log('tipStart: ', tipStart);
     if (tipStart !== -1) {
       // Found tip, now extract
@@ -659,35 +659,35 @@ H5P.Blanks = (function ($, Question) {
    * Find the start of the tip.
    *
    * @param {string} solutionText
-   * @returns {integer} start position of tips or -1
+   * @returns {integer} start position of tip or -1
    */
-  Blanks.prototype.findTipStart = function (solutionText) {
+  Blanks.prototype.findDelimiterStart = function (text, delimiter) {
     // TODO: think about good identifiers
     var REGEXP_IDENTIFIER_START = '[[';
     var REGEXP_IDENTIFIER_END = ']]';
 
-    var tipStart = -1;
+    var delimiterStart = -1;
     var searchStart = 0;
 
     do {
       // TODO: turn all the identifiers *, : and / into CONSTANTS of the class Blanks
-      tipCandidate = solutionText.indexOf(':', searchStart);
-      if (tipCandidate !== -1) {
-        var regexpStart = solutionText.indexOf(REGEXP_IDENTIFIER_START, searchStart);
-        var regexpEnd = solutionText.indexOf(REGEXP_IDENTIFIER_END, tipCandidate);
-        if (regexpStart !== -1 && regexpStart < tipCandidate && regexpEnd !== -1 && regexpEnd > tipCandidate) {
+      delimiterCandidate = text.indexOf(delimiter, searchStart);
+      if (delimiterCandidate !== -1) {
+        var regexpStart = text.indexOf(REGEXP_IDENTIFIER_START, searchStart);
+        var regexpEnd = text.indexOf(REGEXP_IDENTIFIER_END, delimiterCandidate);
+        if (regexpStart !== -1 && regexpStart < delimiterCandidate && regexpEnd !== -1 && regexpEnd > delimiterCandidate) {
           // We're within a regular expression
           searchStart = regexpEnd;
         }
         else {
           // We found a tip delimiter
-          tipStart = tipCandidate;
+          delimiterStart = delimiterCandidate;
         }
       }
     }
-    while(tipCandidate !== -1 && tipStart === -1);
+    while(delimiterCandidate !== -1 && delimiterStart === -1);
 
-    return tipStart;
+    return delimiterStart;
   };
 
   /**
