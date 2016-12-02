@@ -617,9 +617,10 @@ H5P.Blanks = (function ($, Question) {
    *  - solutions: array of solution words
    */
   Blanks.prototype.parseSolution = function (solutionText) {
+    var self = this;
     var tip, solution;
 
-    var tipStart = solutionText.indexOf(':');
+    var tipStart = self.findTipStart(solutionText);
     console.log('tipStart: ', tipStart);
     if (tipStart !== -1) {
       // Found tip, now extract
@@ -652,6 +653,41 @@ H5P.Blanks = (function ($, Question) {
       tip: tip,
       solutions: solutions
     };
+  };
+
+  /**
+   * Find the start of the tip.
+   *
+   * @param {string} solutionText
+   * @returns {integer} start position of tips or -1
+   */
+  Blanks.prototype.findTipStart = function (solutionText) {
+    // TODO: think about good identifiers
+    var REGEXP_IDENTIFIER_START = '[[';
+    var REGEXP_IDENTIFIER_END = ']]';
+
+    var tipStart = -1;
+    var searchStart = 0;
+
+    do {
+      // TODO: turn all the identifiers *, : and / into CONSTANTS of the class Blanks
+      tipCandidate = solutionText.indexOf(':', searchStart);
+      if (tipCandidate !== -1) {
+        var regexpStart = solutionText.indexOf(REGEXP_IDENTIFIER_START, searchStart);
+        var regexpEnd = solutionText.indexOf(REGEXP_IDENTIFIER_END, tipCandidate);
+        if (regexpStart !== -1 && regexpStart < tipCandidate && regexpEnd !== -1 && regexpEnd > tipCandidate) {
+          // We're within a regular expression
+          searchStart = regexpEnd;
+        }
+        else {
+          // We found a tip delimiter
+          tipStart = tipCandidate;
+        }
+      }
+    }
+    while(tipCandidate !== -1 && tipStart === -1);
+
+    return tipStart;
   };
 
   /**
