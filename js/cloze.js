@@ -48,7 +48,7 @@
             var expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)), regexpFlag);
           }
           catch(error) {
-            return false;
+            continue;
           }
           if (expression.test(answered) === true) {
             return true;
@@ -60,10 +60,10 @@
           var boundaries = expression.split(Blanks.RANGE_DELIMITER);
           // validity checks
           if (boundaries.length !== 2) {
-            return false;
+            continue;
           }
           if (!$.isNumeric(boundaries[0]) || !$.isNumeric(boundaries[1]) || !$.isNumeric(answered)) {
-            return false;
+            continue;
           }
           if (answered >= boundaries[0] && answered <= boundaries[1]) {
             return true;
