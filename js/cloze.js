@@ -54,6 +54,21 @@
             return true;
           }
         }
+        // Range
+        else if (answers[i].startsWith(Blanks.RANGE_IDENTIFIER_START) && answers[i].endsWith(Blanks.RANGE_IDENTIFIER_END)) {
+          var expression = answers[i].slice(Blanks.RANGE_IDENTIFIER_START.length, answers[i].indexOf(Blanks.RANGE_IDENTIFIER_END));
+          var boundaries = expression.split(Blanks.RANGE_DELIMITER);
+          // validity checks
+          if (boundaries.length !== 2) {
+            return false;
+          }
+          if (!$.isNumeric(boundaries[0]) || !$.isNumeric(boundaries[1]) || !$.isNumeric(answered)) {
+            return false;
+          }
+          if (answered >= boundaries[0] && answered <= boundaries[1]) {
+            return true;
+          }
+        }
         // Normal answer
         else {
           if (answered === answers[i]) {

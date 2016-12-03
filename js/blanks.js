@@ -903,6 +903,12 @@ H5P.Blanks = (function ($, Question) {
   Blanks.REGEXP_IDENTIFIER_START = '[[[';
   /** @constant {String} */
   Blanks.REGEXP_IDENTIFIER_END = ']]]';
+  /** @constant {String} */
+  Blanks.RANGE_IDENTIFIER_START = '((';
+  /** @constant {String} */
+  Blanks.RANGE_IDENTIFIER_END = '))';
+  /** @constant {String} */
+  Blanks.RANGE_DELIMITER = ',';
 
   return Blanks;
 })(H5P.jQuery, H5P.Question);
