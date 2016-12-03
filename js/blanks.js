@@ -216,8 +216,6 @@ H5P.Blanks = (function ($, Question) {
     // Go through the text and run handler on all asterisk
 
     var clozeEnd, clozeStart = question.indexOf(Blanks.CLOZE_IDENTIFIER);
-    console.log('question: ', question);
-    console.log('clozeStart: ', clozeStart);
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
@@ -249,7 +247,6 @@ H5P.Blanks = (function ($, Question) {
       }
 
       var clozeContent = question.substring(clozeStart, clozeEnd);
-      console.log('clozeContent: ', clozeContent);
       var replacer = '';
       if (clozeContent.length) {
         replacer = handler(self.parseSolution(clozeContent));
@@ -264,7 +261,6 @@ H5P.Blanks = (function ($, Question) {
       // Find the next cloze
       clozeStart = question.indexOf(Blanks.CLOZE_IDENTIFIER, clozeEnd);
     }
-    console.log('question: ', question);
     return question;
   };
 
