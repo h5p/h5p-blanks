@@ -221,7 +221,6 @@ H5P.Blanks = (function ($, Question) {
       clozeStart++;
 
       var searchStart = clozeStart;
-
       do {
         clozeEnd = question.indexOf(Blanks.CLOZE_IDENTIFIER, searchStart);
         /*
@@ -639,7 +638,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
     var tip, solution;
 
-    var tipStart = self.findDelimiterStart(solutionText, ':');
+    var tipStart = self.findDelimiterStart(solutionText, Blanks.TIP_IDENTIFIER);
     if (tipStart !== -1) {
       // Found tip, now extract
       tip = solutionText.slice(tipStart + 1);
