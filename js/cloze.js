@@ -38,17 +38,23 @@
     var correct = function (answered) {
       if (behaviour.caseSensitive !== true) {
         answered = answered.toLowerCase();
-        // TODO: also add RegExp modifier 'i'
+        var regexpFlag = 'i';
       }
 
       for (var i = 0; i < answers.length; i++) {
+        // Regular Expression
         if (answers[i].startsWith(Blanks.REGEXP_IDENTIFIER_START) && answers[i].endsWith(Blanks.REGEXP_IDENTIFIER_END)) {
-          var expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)));
-          // TODO: catch invalid expressions
+          try {
+            var expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)), regexpFlag);
+          }
+          catch(error) {
+            return false;
+          }
           if (expression.test(answered) === true) {
             return true;
           }
         }
+        // Normal answer
         else {
           if (answered === answers[i]) {
             return true;
