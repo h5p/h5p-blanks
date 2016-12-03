@@ -215,18 +215,39 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterisk
 
-    // TODO: modify so we can use * in regular expressions
-    var clozeEnd, clozeStart = question.indexOf('*');
+    var clozeEnd, clozeStart = question.indexOf(Blanks.CLOZE_IDENTIFIER);
     console.log('question: ', question);
     console.log('clozeStart: ', clozeStart);
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
-      clozeEnd = question.indexOf('*', clozeStart);
-      console.log('clozeEnd: ', clozeEnd);
+
+      var searchStart = clozeStart;
+
+      do {
+        clozeEnd = question.indexOf(Blanks.CLOZE_IDENTIFIER, searchStart);
+        /*
+         * We must check if the identifier for the start/end of a cloze
+         * is embedded within a regular expression, because it might
+         * be an expression itself, e.g. *
+         */
+        var candidateStartBefore = question.indexOf(Blanks.REGEXP_IDENTIFIER_START, clozeStart);
+        var candidateStartAfter = question.indexOf(Blanks.REGEXP_IDENTIFIER_START, clozeEnd);
+        var candidateEnd = question.indexOf(Blanks.REGEXP_IDENTIFIER_END, clozeEnd);
+        if ((candidateStartBefore < clozeEnd) && (clozeEnd < candidateEnd) && ((candidateEnd < candidateStartAfter) || candidateStartAfter === -1)) {
+          searchStart = clozeEnd + 1;
+        }
+        else {
+          // was not embedded in a regular expression
+          break;
+        }
+      }
+      while (clozeEnd !== -1);
+
       if (clozeEnd === -1) {
         continue; // No end
       }
+
       var clozeContent = question.substring(clozeStart, clozeEnd);
       console.log('clozeContent: ', clozeContent);
       var replacer = '';
@@ -241,7 +262,7 @@ H5P.Blanks = (function ($, Question) {
       clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
       // Find the next cloze
-      clozeStart = question.indexOf('*', clozeEnd);
+      clozeStart = question.indexOf(Blanks.CLOZE_IDENTIFIER, clozeEnd);
     }
     console.log('question: ', question);
     return question;
@@ -663,8 +684,7 @@ H5P.Blanks = (function ($, Question) {
 
     var candidate = solution;
     do {
-      // TODO: turn identifiers/delimiters *, / and : into constants of class
-      var delimiterPosition = self.findDelimiterStart(candidate, '/');
+      var delimiterPosition = self.findDelimiterStart(candidate, Blanks.ALTERNATIVE_IDENTIFIER);
       if (delimiterPosition === -1) {
         output.push(candidate);
       }
@@ -685,20 +705,14 @@ H5P.Blanks = (function ($, Question) {
    * @returns {integer} start position of tip or -1
    */
   Blanks.prototype.findDelimiterStart = function (text, delimiter) {
-    // TODO: think about generalizing for identifiers
-    // TODO: think about good identifiers
-    // TODO: Don't put CONSTANTS here
-    var REGEXP_IDENTIFIER_START = '[[[';
-    var REGEXP_IDENTIFIER_END = ']]]';
-
     var delimiterStart = -1;
     var searchStart = 0;
 
     do {
       var delimiterCandidate = text.indexOf(delimiter, searchStart);
       if (delimiterCandidate !== -1) {
-        var regexpStart = text.indexOf(REGEXP_IDENTIFIER_START, searchStart);
-        var regexpEnd = text.indexOf(REGEXP_IDENTIFIER_END, delimiterCandidate);
+        var regexpStart = text.indexOf(Blanks.REGEXP_IDENTIFIER_START, searchStart);
+        var regexpEnd = text.indexOf(Blanks.REGEXP_IDENTIFIER_END, delimiterCandidate);
         if (regexpStart !== -1 && regexpStart < delimiterCandidate && regexpEnd !== -1 && regexpEnd > delimiterCandidate) {
           // We're within a regular expression
           searchStart = regexpEnd;
@@ -882,6 +896,17 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.disableInput = function () {
     this.$questions.find('input').attr('disabled', true);
   };
+
+  /** @constant {String} */
+  Blanks.CLOZE_IDENTIFIER = '*';
+  /** @constant {String} */
+  Blanks.TIP_IDENTIFIER = ':';
+  /** @constant {String} */
+  Blanks.ALTERNATIVE_IDENTIFIER = '/';
+  /** @constant {String} */
+  Blanks.REGEXP_IDENTIFIER_START = '[[[';
+  /** @constant {String} */
+  Blanks.REGEXP_IDENTIFIER_END = ']]]';
 
   return Blanks;
 })(H5P.jQuery, H5P.Question);

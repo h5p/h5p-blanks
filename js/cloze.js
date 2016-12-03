@@ -17,7 +17,7 @@
     var self = this;
     var $input, $wrapper;
     var answers = solution.solutions;
-    var answer = answers.join('/');
+    var answer = answers.join(Blanks.ALTERNATIVE_IDENTIFIER);
     var tip = solution.tip;
     var checkedAnswer = null;
     var inputLabel = l10n.inputLabel;
@@ -42,12 +42,9 @@
       }
 
       for (var i = 0; i < answers.length; i++) {
-        // TODO: don't use hardcoded string
-        var REGEXP_IDENTIFIER_START = '[[[';
-        var REGEXP_IDENTIFIER_END = ']]]';
-
-        if (answers[i].startsWith(REGEXP_IDENTIFIER_START) && answers[i].endsWith(REGEXP_IDENTIFIER_END)) {
-          var expression = new RegExp(answers[i].slice(REGEXP_IDENTIFIER_START.length, answers[i].indexOf(REGEXP_IDENTIFIER_END)));
+        if (answers[i].startsWith(Blanks.REGEXP_IDENTIFIER_START) && answers[i].endsWith(Blanks.REGEXP_IDENTIFIER_END)) {
+          var expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)));
+          // TODO: catch invalid expressions
           if (expression.test(answered) === true) {
             return true;
           }
