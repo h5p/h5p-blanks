@@ -15,7 +15,20 @@
       "field": {
         "label": "Tekstlinje",
         "placeholder": "Oslo er hovedstaden i *Norge*",
-        "description": "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternativer angis med en skråstrek: *Norge/Noreg*. Tips angis med et kolon (:) før tipset: *Norge/Noreg:Verdens beste land*"
+        "description": "",
+        "importantDescription": {
+          "title": "Viktige instruksjoner",
+          "listItems": [
+            "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket.",
+            "Alternativer angis med en skråstrek (/)",
+            "Tips angis med et kolon (:) før tipset"
+          ],
+          "button": "Skjul",
+          "example": {
+            "title": "Eksempel",
+            "text": "H5P innhold kan lages i en *nettleser:Noe du bruker til å navigere internett med*."
+          }
+        }
       }
     },
     {
