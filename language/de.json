@@ -82,42 +82,33 @@
       "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields": [
         {
-          "label": "\"Wiederholen\" zulassen",
-          "default": true
+          "label": "\"Wiederholen\" zulassen"
         },
         {
-          "label": "\"Lösung anzeigen\"-Button anzeigen",
-          "default": true
+          "label": "\"Lösung anzeigen\"-Button anzeigen"
         },
         {
-          "label": "Antworten nach Eingabe automatisch prüfen",
-          "default": false
+          "label": "Antworten nach Eingabe automatisch prüfen"
         },
         {
-          "default": true,
           "label": "Auf Groß-/Kleinschreibung achten",
           "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entsprechen muss."
         },
         {
-          "label": "Alle Lücken müssen ausgefüllt sein, bevor die Lösung angesehen werden kann.",
-          "default": true
+          "label": "Alle Lücken müssen ausgefüllt sein, bevor die Lösung angesehen werden kann."
         },
         {
-          "label": "Setze die Lücken jeweils in eine eigene Zeile",
-          "default": false
+          "label": "Setze die Lücken jeweils in eine eigene Zeile"
         },
         {
-          "label": "Bilderzoom für Bilder zu Fragen deaktivieren.",
-          "default": false
+          "label": "Bilderzoom für Bilder zu Fragen deaktivieren."
         },
         {
           "label": "Bestätigungsdialog beim Klicken auf \"Überprüfen\" anzeigen",
-          "description": "Diese Option funktioniert nicht zusammen mit \"Antworten nach Eingabe automatisch prüfen\"",
-          "default": false
+          "description": "Diese Option funktioniert nicht zusammen mit \"Antworten nach Eingabe automatisch prüfen\""
         },
         {
-          "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen",
-          "default": false
+          "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen"
         }
       ]
     },
