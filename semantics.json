@@ -258,6 +258,56 @@
         "name": "confirmRetryDialog",
         "type": "boolean",
         "default": false
+      },
+      {
+        "name": "fuzzyness",
+        "type": "group",
+        "label": "Fuzzyness",
+        "importance": "low",
+        "description": "These options will let you control the fuzzyness of correct answers.",
+        "optional": true,
+        "fields": [
+          {
+            "label": "Use Damerau-Levenshtein",
+            "importance": "low",
+            "name": "levenshtein",
+            "type": "boolean",
+            "description": "Will also accept answers based on the number of typos.",
+            "default": false,
+            "optional": true
+          },
+          {
+            "label": "Number of operations for Damerau-Levenshtein",
+            "importance": "low",
+            "name": "levenshteinOperations",
+            "type": "number",
+            "description": "Maximum number of deletions, insertions, exchanges or swappings of characters to be considered correct",
+            "default": 1,
+            "min": 0,
+            "step": 1,
+            "optional": false
+          },
+          {
+            "label": "Use Jaro-Winkler",
+            "importance": "low",
+            "name": "jaro",
+            "type": "boolean",
+            "description": "Will also accept answers that are similar.",
+            "default": false,
+            "optional": true
+          },
+          {
+            "label": "Threshold in percent for similarity using Jaro-Winkler",
+            "importance": "low",
+            "name": "jaroThreshold",
+            "type": "number",
+            "description": "Percentage of similarity to be considered correct",
+            "default": 85,
+            "min": 0,
+            "max": 100,
+            "optional": false
+          }
+        ]
       }
     ]
   },

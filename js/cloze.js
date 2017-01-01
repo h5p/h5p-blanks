@@ -39,8 +39,22 @@
       if (behaviour.caseSensitive !== true) {
         answered = answered.toLowerCase();
       }
-
       for (var i = 0; i < answers.length; i++) {
+        // Damerau-Levenshtein comparison
+        if (behaviour.fuzzyness.levenshtein === true) {
+          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true, true);
+          if (levenshtein <= behaviour.fuzzyness.levenshteinOperations) {
+            //return true;
+          }
+        }
+        // Jaro-Winkler comparison
+        if (behaviour.fuzzyness.jaro === true) {
+          var jaro = H5P.TextUtilities.computeJaroDistance(answered, answers[i], true);
+          if (jaro >= behaviour.fuzzyness.jaroThreshold/100) {
+            return true;
+          }
+        }
+        // regular comparison
         if (answered === answers[i]) {
           return true;
         }
