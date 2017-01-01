@@ -260,7 +260,7 @@
         "default": false
       },
       {
-        "name": "fuzzyness",
+        "name": "fuzziness",
         "type": "group",
         "label": "Fuzziness",
         "importance": "low",
