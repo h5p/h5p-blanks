@@ -262,9 +262,9 @@
       {
         "name": "fuzzyness",
         "type": "group",
-        "label": "Fuzzyness",
+        "label": "Fuzziness",
         "importance": "low",
-        "description": "These options will let you control the fuzzyness of correct answers.",
+        "description": "These options will let you control the fuzziness of correct answers.",
         "optional": true,
         "fields": [
           {

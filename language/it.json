@@ -99,8 +99,8 @@
           "label": "Show confirmation dialog on \"Retry\""
         },
         {
-          "label": "Fuzzyness",
-          "description": "These options will let you control the fuzzyness of correct answers.",
+          "label": "Fuzziness",
+          "description": "These options will let you control the fuzziness of correct answers.",
           "fields" : [
             {
               "label": "Use Damerau-Levenshtein",
