@@ -109,6 +109,28 @@
         },
         {
           "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen"
+        },
+        {
+          "label": "Unscharfe Antworten",
+          "description": "Mit diesen Optionen kannst du auch unscharfe Antworten zulassen.",
+          "fields" : [
+            {
+              "label": "Benutze Damerau-Levenshtein",
+              "description": "Damit kannst du auch ungenaue Antworten mit Vertippern zulassen."
+            },
+            {
+              "label": "Anzahl der Operationen für Damerau-Levenshtein",
+              "description": "Maximale Zahl von Löschungen, Einfügungen, Ersetzen oder Tauschen von Zeichen, um noch als richtig zu gelten"
+            },
+            {
+              "label": "Benutze Jaro-Winkler",
+              "description": "Damit kannst du auch ähnliche Antworten zulassen."
+            },
+            {
+              "label": "Schwellwert in Prozent für Jaro-Winkler",
+              "description": "Minimaler Prozentsatz von Ähnlichkeit, um noch als richtig zu gelten"
+            }
+          ]
         }
       ]
     },

@@ -104,6 +104,28 @@
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        },
+        {
+          "label": "Fuzzyness",
+          "description": "These options will let you control the fuzzyness of correct answers.",
+          "fields" : [
+            {
+              "label": "Use Damerau-Levenshtein",
+              "description": "Will also accept answers based on the number of typos."
+            },
+            {
+              "label": "Number of operations for Damerau-Levenshtein",
+              "description": "Maximum number of deletions, insertions, exchanges or swappings of characters to be considered correct"
+            },
+            {
+              "label": "Use Jaro-Winkler",
+              "description": "Will also accept answers that are similar."
+            },
+            {
+              "label": "Threshold in percent for similarity using Jaro-Winkler",
+              "description": "Percentage of similarity to be considered correct"
+            }
+          ]
         }
       ]
     },

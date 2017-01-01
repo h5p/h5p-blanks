@@ -301,7 +301,7 @@
             "importance": "low",
             "name": "jaroThreshold",
             "type": "number",
-            "description": "Percentage of similarity to be considered correct",
+            "description": "Minimum percentage of similarity to be considered correct",
             "default": 85,
             "min": 0,
             "max": 100,
