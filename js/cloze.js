@@ -44,7 +44,7 @@
         if (behaviour.fuzziness.levenshtein === true) {
           var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true, true);
           if (levenshtein <= behaviour.fuzziness.levenshteinOperations) {
-            //return true;
+            return true;
           }
         }
         // Jaro-Winkler comparison

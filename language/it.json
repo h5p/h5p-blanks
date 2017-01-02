@@ -100,23 +100,23 @@
         },
         {
           "label": "Fuzziness",
-          "description": "These options will let you control the fuzziness of correct answers.",
+          "description": "These options will allow you to accept answers that are not 100 % correct.",
           "fields" : [
             {
-              "label": "Use Damerau-Levenshtein",
-              "description": "Will also accept answers based on the number of typos."
+              "label": "Enable fuzziness based on number of mismatched characters",
+              "description": "Will also accept answers based on the number of mismatched characters, e.g. typos."
             },
             {
-              "label": "Number of operations for Damerau-Levenshtein",
-              "description": "Maximum number of deletions, insertions, exchanges or swappings of characters to be considered correct"
+              "label": "Maximum number of mismatched characters",
+              "description": "Maximum number of deletions, insertions, exchanges or swappings of characters that is acceptable for counting as correct"
             },
             {
-              "label": "Use Jaro-Winkler",
-              "description": "Will also accept answers that are similar."
+              "label": "Enable fuzziness based on percentage of similarity",
+              "description": "Will also accept given answers that share many parts with the correct answer"
             },
             {
-              "label": "Threshold in percent for similarity using Jaro-Winkler",
-              "description": "Percentage of similarity to be considered correct"
+              "label": "Threshold (in percent) for similarity",
+              "description": "Minimum percentage of similarity to be considered correct"
             }
           ]
         }

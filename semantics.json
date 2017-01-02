@@ -264,40 +264,40 @@
         "type": "group",
         "label": "Fuzziness",
         "importance": "low",
-        "description": "These options will let you control the fuzziness of correct answers.",
+        "description": "These options will allow you to accept answers that are not 100 % correct.",
         "optional": true,
         "fields": [
           {
-            "label": "Use Damerau-Levenshtein",
+            "label": "Enable fuzziness based on number of mismatched characters",
             "importance": "low",
             "name": "levenshtein",
             "type": "boolean",
-            "description": "Will also accept answers based on the number of typos.",
+            "description": "Will also accept answers based on the number of mismatched characters, e.g. typos.",
             "default": false,
             "optional": true
           },
           {
-            "label": "Number of operations for Damerau-Levenshtein",
+            "label": "Maximum number of mismatched characters",
             "importance": "low",
             "name": "levenshteinOperations",
             "type": "number",
-            "description": "Maximum number of deletions, insertions, exchanges or swappings of characters to be considered correct",
+            "description": "Maximum number of deletions, insertions, exchanges or swappings of characters that is acceptable for counting as correct",
             "default": 1,
             "min": 0,
             "step": 1,
             "optional": false
           },
           {
-            "label": "Use Jaro-Winkler",
+            "label": "Enable fuzziness based on percentage of similarity",
             "importance": "low",
             "name": "jaro",
             "type": "boolean",
-            "description": "Will also accept answers that are similar.",
+            "description": "Will also accept given answers that share many parts with the correct answer",
             "default": false,
             "optional": true
           },
           {
-            "label": "Threshold in percent for similarity using Jaro-Winkler",
+            "label": "Threshold (in percent) for similarity",
             "importance": "low",
             "name": "jaroThreshold",
             "type": "number",
