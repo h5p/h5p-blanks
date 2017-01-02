@@ -1,8 +1,13 @@
 {
   "semantics": [
     {
-      "label": "Oppgavebilete",
-      "description": "Eit valfritt bilete som sjåast over oppgåven."
+      "label": "Media",
+      "fields": [
+        {
+          "label": "Type",
+          "description": "Optional media to display above the question."
+        }
+      ]
     },
     {
       "label": "Oppgåvetekst",
