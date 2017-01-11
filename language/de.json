@@ -1,223 +1,155 @@
 {
   "semantics": [
     {
-      "englishLabel": "Media",
       "label": "Medien",
       "fields": [
         {
-          "englishLabel": "Type",
           "label": "Typ",
-          "englishDescription": "Optional media to display above the question.",
-          "description": "Optionales Medium, das über der Frage platziert werden kann"
+          "description": "Optionale Medien, die über der Frage angezeigt werden können."
         }
       ]
     },
     {
-      "englishLabel": "Task description",
       "label": "Aufgabenbeschreibung",
-      "englishDefault": "Fill in the missing words",
-      "default": "Einfügen der fehlenden Worte",
-      "englishDescription": "A guide telling the user how to answer this task.",
-      "description": "Eine Anleitung, die dem Benutzer erklärt, wie diese Aufgabe zu beantworten ist."
+      "default": "Trage die fehlenden Wörter ein.",
+      "description": "Eine Anleitung, die dem Nutzer sagt, wie die Aufgabe beantwortet werden kann."
     },
     {
-      "englishLabel": "Text blocks",
       "label": "Textblöcke",
-      "englishEntity": "text block",
-      "entity": "text block",
+      "entity": "textblock",
       "field": {
-        "englishLabel": "Line of text",
         "label": "Textzeile",
-        "englishDescription": "Blanks are added with an asterisk (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
-        "description": "Leerzeichen werden mit einem Asterisk (*) vor und hinter dem korrekten Wort angegeben. Alternative Antworten werden mit einem Vorwärtsschrägstrich (/) getrennt. Ein Text-Tipp kann mit einem Doppelpunkt (:) vor dem Tipp hinzugefügt werden . Beispiel: H5P Inhalt kann durch die Verwendung von einem *Browser/Web-Browser:Etwas was jeden Tag verwendet wird* bearbeitet werden."
+        "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
+        "description": "Lücken werden mit einem Sternchen (*) vor und hinter dem korrekten Wort/der korrekten Phrase eingefügt. Antwortalternativen werden mit einem Schrägstrich (/) getrennt. Du kannst zusätzlich Tipps mit einem Doppelpunkt (:) davor einfügen. Beispiel: H5P-Inhalte können mit einem *browser/web-browser:Etwas, das du jeden Tag nutzt* bearbeitet werden."
       }
     },
     {
-      "englishLabel": "Feedback text",
-      "label": "Feedback Text",
-      "englishDefault": "You got @score of @total points",
-      "default": "@score der @total Punktzahl",
-      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'",
-      "description": "Verfügbare Feedback Text Variablen: @score und @total. Beispiel: 'Es wurden @score von @total verfügbaren Punkten erreicht'"
+      "label": "Rückmeldungstext",
+      "default": "Du hast @score von @total Punkten",
+      "description": "Rückmeldungstext mit den Variablen: @score und @total. Beispiel: 'Du hast @score von @total möglichen Punkten'"
     },
     {
-      "englishLabel": "Text for \"Show solutions\" button",
-      "label": "Text für den \"Lösungen anzeigen\" Button",
-      "englishDefault": "Show solution",
-      "default": "Lösung"
+      "label": "Beschriftung für den \"Lösung anzeigen\"-Button",
+      "default": "Lösung anzeigen"
     },
     {
-      "englishLabel": "Text for \"Retry\" button",
-      "label": "Text für den \"Wiederholen\" Button",
-      "englishDefault": "Retry",
+      "label": "Beschriftung für den \"Wiederholen\"-Button",
       "default": "Wiederholen"
     },
     {
-      "englishLabel": "Text for \"Check\" button",
-      "label": "Text für den \"Überprüfen\" Button",
-      "englishDefault": "Check",
+      "label": "Beschriftung für den \"Überprüfen\"-Button",
       "default": "Überprüfen"
     },
     {
-      "englishLabel": "Text for \"Not filled out\" message",
-      "label": "Text für eine \"Nicht ausgefüllte\" Nachricht",
-      "englishDefault": "Please fill in all blanks to view solution",
-      "default": "Bitte alle Leerzeichen ausfüllen."
+      "label": "Text für die \"Nicht ausgefüllt\"-Nachricht",
+      "default": "Bitte fülle alle Lücken aus, um die Lösung zu sehen"
     },
     {
-      "englishLabel": "Text for \"':ans' is correct\" message",
-      "label": "Text for \"':ans' is correct\" message.",
-      "englishDefault": "':ans' is correct",
-      "default": "':ans' is correct"
+      "label": "Text für die \"':ans' ist korrekt\"-Nachricht",
+      "default": "':ans' ist korrekt"
     },
     {
-      "englishLabel": "Text for \"':ans' is wrong\" message",
-      "label": "Text for \"':ans' is wrong\" message",
-      "englishDefault": "':ans' is wrong",
-      "default": "':ans' is wrong"
+      "label": "Text für die \"':ans' ist falsch\"-Nachricht",
+      "default": "':ans' ist falsch"
     },
     {
-      "englishLabel": "Text for \"Answered correctly\" message",
-      "label": "Text for \"Answered correctly\" message",
-      "englishDefault": "Answered correctly",
-      "default": "Answered correctly"
+      "label": "Text für die \"Korrekt beantwortet\"-Nachricht",
+      "default": "Korrekt beantwortet"
     },
     {
-      "englishLabel": "Text for \"Answered incorrectly\" message",
-      "label": "Text for \"Answered incorrectly\" message",
-      "englishDefault": "Answered incorrectly",
-      "default": "Answered incorrectly"
+      "label": "Text für \"Falsch beantwortet\"-Nachricht",
+      "default": "Falsch beantwortet"
     },
     {
-      "englishLabel": "Assistive technology label for solution",
-      "label": "Assistive technology label for solution",
-      "englishDefault": "Correct answer:",
-      "default": "Correct answer:"
+      "label": "Text für technische Hilfsmittel für die Lösung",
+      "default": "Korrekte Antwort:"
     },
     {
-      "englishLabel": "Assistive technology label for input field",
-      "label": "Assistive technology label for input field",
-      "englishDescription": "Use @num and @total to replace current cloze number and total cloze number",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "englishDefault": "Blank input @num of @total",
-      "default": "Blank input @num of @total"
+      "label": "Text für technische Hilfsmittel für das Eingabefeld",
+      "description": "Benutze @num und @total um die aktuelle Nummer der Lücke und die Gesamtzahl der Lücken einzufügen",
+      "default": "Lücke @num von @total"
     },
     {
-      "englishLabel": "Assistive technology label for saying an input has a tip tied to it",
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "englishDefault": "Tip available",
-      "default": "Tip available"
+      "label": "Text für technische Hilfsmittel, der darauf hinweis, dass ein Tipp verfügbar ist",
+      "default": "Tipp verfügbar"
     },
     {
-      "englishLabel": "Tip icon label",
-      "label": "Tip icon label",
-      "englishDefault": "Tip",
-      "default": "Tip"
+      "label": "Beschriftung für das Tipp-Icon",
+      "default": "Tipp"
     },
     {
-      "englishLabel": "Behavioural settings.",
       "label": "Verhaltenseinstellungen.",
-      "englishDescription": "These options will let you control how the task behaves.",
-      "description": "Diese Optionen lassen die Kontrolle davon zu, wie sich die Aufgabe verhält.",
+      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields": [
         {
-          "englishLabel": "Enable \"Retry\"",
-          "label": "\"Wiederholen\" aktivieren"
+          "label": "\"Wiederholen\" zulassen"
         },
         {
-          "englishLabel": "Enable \"Show solutions\" button",
-          "label": "\"Lösungen anzeigen\" Button aktivieren"
+          "label": "\"Lösung anzeigen\"-Button anzeigen"
         },
         {
-          "englishLabel": "Automatically check answers after input",
-          "label": "Antworten nach der Eingabe automatisch überprüfen"
+          "label": "Antworten nach Eingabe automatisch prüfen"
         },
         {
-          "englishLabel": "Case sensitive",
-          "label": "Schreibungsabhängig",
-          "englishDescription": "Makes sure the user input has to be exactly the same as the answer.",
-          "description": "Stellt sicher, dass die Benutzereingabe exakt mit der Antwort übereinstimmen muss."
+          "label": "Auf Groß-/Kleinschreibung achten",
+          "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entsprechen muss."
         },
         {
-          "englishLabel": "Require all fields to be answered before the solution can be viewed",
-          "label": "Alle Felder müssen beantwortet werden, bevor die Lösung eingesehen werden kann."
+          "label": "Alle Lücken müssen ausgefüllt sein, bevor die Lösung angesehen werden kann."
         },
         {
-          "englishLabel": "Put input fields on separate lines",
-          "label": "Eingabefelder auf separate Zeilen setzen"
+          "label": "Setze die Lücken jeweils in eine eigene Zeile"
         },
         {
-          "englishLabel": "Disable image zooming for question image",
-          "label": "Deaktivieren des Bildzooms bei Fragebildern"
+          "label": "Bilderzoom für Bilder zu Fragen deaktivieren."
         },
         {
-          "englishLabel": "Show confirmation dialog on \"Check\"",
-          "label": "Bestätigungsdialog beim \"Überprüfen\" zeigen",
-          "englishDescription": "This options is not compatible with the \"Automatically check answers after input\" option",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Bestätigungsdialog beim Klicken auf \"Überprüfen\" anzeigen",
+          "description": "Diese Option funktioniert nicht zusammen mit \"Antworten nach Eingabe automatisch prüfen\""
         },
         {
-          "englishLabel": "Show confirmation dialog on \"Retry\"",
-          "label": "Bestätigungsdialog beim \"Wiederholen\" zeigen"
+          "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen"
         }
       ]
     },
     {
-      "englishLabel": "Check confirmation dialog",
-      "label": "Bestätigungsdialog überprüfen",
+      "label": "Bestätigungsdialog beim Prüfen",
       "fields": [
         {
-          "englishLabel": "Header text",
           "label": "Headertext",
-          "englishDefault": "Finish ?",
           "default": "Beenden?"
         },
         {
-          "englishLabel": "Body text",
           "label": "Bodytext",
-          "englishDefault": "Are you sure you wish to finish ?",
-          "default": "Soll wirklich beendet werden?"
+          "default": "Ganz sicher beenden?"
         },
         {
-          "englishLabel": "Cancel button label",
-          "label": "Label des Abbrechen-Buttons",
-          "englishDefault": "Cancel",
+          "label": "Beschriftung des \"Abbrechen\"-Buttons",
           "default": "Abbrechen"
         },
         {
-          "englishLabel": "Confirm button label",
-          "label": "Label des Beenden-Buttons",
-          "englishDefault": "Finish",
+          "label": "Beschriftung des \"Beenden\"-Buttons",
           "default": "Beenden"
         }
       ]
     },
     {
-      "englishLabel": "Retry confirmation dialog",
-      "label": "Bestätigungsdialog zum Wiederholen",
+      "label": "Bestätigungsdialog beim Wiederholen",
       "fields": [
         {
-          "englishLabel": "Header text",
-          "label": "Headertext",
-          "englishDefault": "Retry ?",
+          "label": "Header-Text",
           "default": "Wiederholen?"
         },
         {
-          "englishLabel": "Body text",
-          "label": "Bodytext",
-          "englishDefault": "Are you sure you wish to retry ?",
-          "default": "Wirklich nochmal versuchen?"
+          "label": "Body-Text",
+          "default": "Ganz sicher wiederholen?"
         },
         {
-          "englishLabel": "Cancel button label",
-          "label": "Label des Abbrechen-Buttons",
-          "englishDefault": "Cancel",
+          "label": "Beschriftung des \"Abbrechen\"-Buttons",
           "default": "Abbrechen"
         },
         {
-          "englishLabel": "Confirm button label",
-          "label": "Label des Bestätigungs-Buttons",
-          "englishDefault": "Confirm",
+          "label": "Beschriftung des \"Bestätigen\"-Buttons",
           "default": "Bestätigen"
         }
       ]
