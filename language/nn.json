@@ -1,11 +1,11 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Multimedia",
       "fields": [
         {
           "label": "Type",
-          "description": "Optional media to display above the question."
+          "description": "Eit valfritt multimediaelement som sjåast over spørsmålet."
         }
       ]
     },
