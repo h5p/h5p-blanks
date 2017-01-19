@@ -1,8 +1,13 @@
 {
   "semantics": [
     {
-      "label": "Task image",
-      "description": "An optional image to display above the task."
+      "label": "Media",
+      "fields": [
+        {
+          "label": "Type",
+          "description": "Optional media to display above the question."
+        }
+      ]
     },
     {
       "label": "Descrizione attività",
