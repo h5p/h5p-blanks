@@ -21,18 +21,9 @@
         "label": "Tekstlinje",
         "placeholder": "Oslo er hovedstaden i *Norge*",
         "description": "",
-        "importantDescription": {
-          "title": "Viktige instruksjoner",
-          "listItems": [
-            "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket.",
-            "Alternativer angis med en skråstrek (/)",
-            "Tips angis med et kolon (:) før tipset"
-          ],
-          "button": "Skjul",
-          "example": {
-            "title": "Eksempel",
-            "text": "H5P innhold kan lages i en *nettleser:Noe du bruker til å navigere internett med*."
-          }
+        "important": {
+          "description": "<ul><li>Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativer angis med en skråstrek (/)</li><li>Tips angis med et kolon (:) før tipset</li></ul>",
+          "example": "H5P innhold kan lages i en *nettleser:Noe du bruker til å navigere internett med*."
         }
       }
     },
