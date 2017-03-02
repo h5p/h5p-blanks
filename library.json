@@ -7,7 +7,7 @@
   "patchVersion": 3,
   "runnable": 1,
   "license": "MIT",
-  "author": "Joubel AS",
+  "author": "Joubel",
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 6
@@ -41,7 +41,5 @@
       "majorVersion": 1,
       "minorVersion": 2
     }
-  ],
-  "w": 635,
-  "h": 500
+  ]
 }
