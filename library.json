@@ -4,10 +4,10 @@
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
   "minorVersion": 7,
-  "patchVersion": 3,
+  "patchVersion": 4,
   "runnable": 1,
   "license": "MIT",
-  "author": "Joubel AS",
+  "author": "Joubel",
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 6
