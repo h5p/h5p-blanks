@@ -20,7 +20,11 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "Opne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*. Tips får et kolon (:) foran seg: *Norge/Noreg:Verdas beste land*"
+        "description": "",
+        "important": {
+          "description":"<ul><li>Opne felt merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativ angis med ein skråstrek (/)</li><li>Tips angis med eit kolon (:) før tipset</li></ul>",
+          "example": "H5P innhold kan lages i ein *nettleser:Noe du bruker til å navigere internett med*."
+        }
       }
     },
     {
