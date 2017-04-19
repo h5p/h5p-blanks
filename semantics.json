@@ -260,54 +260,13 @@
         "default": false
       },
       {
-        "name": "fuzziness",
-        "type": "group",
-        "label": "Fuzziness",
+        "name": "acceptSpellingErrors",
+        "type": "boolean",
+        "label": "Accept minor spelling errors",
         "importance": "low",
-        "description": "These options will allow you to accept answers that are not 100 % correct.",
-        "optional": true,
-        "fields": [
-          {
-            "label": "Enable fuzziness based on number of mismatched characters",
-            "importance": "low",
-            "name": "levenshtein",
-            "type": "boolean",
-            "description": "Will also accept answers based on the number of mismatched characters, e.g. typos.",
-            "default": false,
-            "optional": true
-          },
-          {
-            "label": "Maximum number of mismatched characters",
-            "importance": "low",
-            "name": "levenshteinOperations",
-            "type": "number",
-            "description": "Maximum number of deletions, insertions, exchanges or swappings of characters that is acceptable for counting as correct",
-            "default": 1,
-            "min": 0,
-            "step": 1,
-            "optional": false
-          },
-          {
-            "label": "Enable fuzziness based on percentage of similarity",
-            "importance": "low",
-            "name": "jaro",
-            "type": "boolean",
-            "description": "Will also accept given answers that share many parts with the correct answer",
-            "default": false,
-            "optional": true
-          },
-          {
-            "label": "Threshold (in percent) for similarity",
-            "importance": "low",
-            "name": "jaroThreshold",
-            "type": "number",
-            "description": "Minimum percentage of similarity to be considered correct",
-            "default": 85,
-            "min": 0,
-            "max": 100,
-            "optional": false
-          }
-        ]
+        "description": "If activated, an answer will also count as correct with minor spelling errors",
+        "default": false,
+        "optional": true
       }
     ]
   },

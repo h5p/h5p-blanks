@@ -41,16 +41,11 @@
       }
       for (var i = 0; i < answers.length; i++) {
         // Damerau-Levenshtein comparison
-        if (behaviour.fuzziness.levenshtein === true) {
+        if (behaviour.acceptSpellingErrors === true) {
           var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true, true);
-          if (levenshtein <= behaviour.fuzziness.levenshteinOperations) {
+          if ((answers[i].length > 9) && (levenshtein <= 2)) {
             return true;
-          }
-        }
-        // Jaro-Winkler comparison
-        if (behaviour.fuzziness.jaro === true) {
-          var jaro = H5P.TextUtilities.computeJaroDistance(answered, answers[i], true);
-          if (jaro >= behaviour.fuzziness.jaroThreshold/100) {
+          } else if ((answers[i].length > 3) && (levenshtein <= 1)) {
             return true;
           }
         }

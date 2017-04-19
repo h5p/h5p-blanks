@@ -111,26 +111,8 @@
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
         },
         {
-          "label": "Fuzziness",
-          "description": "These options will allow you to accept answers that are not 100 % correct.",
-          "fields" : [
-            {
-              "label": "Enable fuzziness based on number of mismatched characters",
-              "description": "Will also accept answers based on the number of mismatched characters, e.g. typos."
-            },
-            {
-              "label": "Maximum number of mismatched characters",
-              "description": "Maximum number of deletions, insertions, exchanges or swappings of characters that is acceptable for counting as correct"
-            },
-            {
-              "label": "Enable fuzziness based on percentage of similarity",
-              "description": "Will also accept given answers that share many parts with the correct answer"
-            },
-            {
-              "label": "Threshold (in percent) for similarity",
-              "description": "Minimum percentage of similarity to be considered correct"
-            }
-          ]
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },

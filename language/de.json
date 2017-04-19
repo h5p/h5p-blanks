@@ -111,26 +111,8 @@
           "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen"
         },
         {
-          "label": "Unscharfe Antworten",
-          "description": "Mit diesen Optionen kannst du auch Antworten zulassen, die nicht 100 % korrekt sind.",
-          "fields" : [
-            {
-              "label": "Aktiviere Unschärfe anhand der Fehlstellungen",
-              "description": "Damit werden auch Antworten zugelassen, bei denen etwa zwei Buchstaben vertauscht sind."
-            },
-            {
-              "label": "Maximale Anzahl der Fehlstellungen",
-              "description": "Maximale Zahl von Löschungen, Einfügungen, Ersetzen oder Tauschen von Zeichen, um noch als richtig zu gelten"
-            },
-            {
-              "label": "Aktiviere Unschärfe anhand der prozentualen Übereinstimmung",
-              "description": "Damit werden auch Antworten zulassen, die in vielen Stellen mit der Lösung übereinstimmen"
-            },
-            {
-              "label": "Schwellwert (in Prozent) für die Ähnlichkeit",
-              "description": "Minimaler Prozentsatz von Ähnlichkeit, um noch als richtig zu gelten"
-            }
-          ]
+          "label": "Kleine Rechtschreibfehler akzeptieren",
+          "description": "Wenn gewählt, wird eine Antwort bei kleinen Rechtschreibfehlern noch als richtig gewertet."
         }
       ]
     },
