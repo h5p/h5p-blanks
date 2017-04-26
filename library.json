@@ -40,13 +40,6 @@
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
       "minorVersion": 2
-    },
-    {
-      "machineName": "H5P.FontIcons",
-      "majorVersion": 1,
-      "minorVersion": 0
     }
-  ],
-  "w": 635,
-  "h": 500
+  ]
 }
