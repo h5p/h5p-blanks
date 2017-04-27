@@ -5,7 +5,7 @@
    *
    * @class H5P.Blanks.Cloze
    * @param {string} answer
-   * @param {Object} behaviour Behaviour for the task
+   * @param {Object} behaviour Behavioral settings for the task from semantics
    * @param {string} defaultUserAnswer
    * @param {Object} l10n Localized texts
    * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
@@ -42,7 +42,7 @@
       for (var i = 0; i < answers.length; i++) {
         // Damerau-Levenshtein comparison
         if (behaviour.acceptSpellingErrors === true) {
-          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true, true);
+          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true);
           if ((answers[i].length > 9) && (levenshtein <= 2)) {
             return true;
           } else if ((answers[i].length > 3) && (levenshtein <= 1)) {
