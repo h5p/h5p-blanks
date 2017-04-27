@@ -42,16 +42,9 @@
       "minorVersion": 2
     },
     {
-      "machineName": "H5P.FontIcons",
-      "majorVersion": 1,
-      "minorVersion": 0
-    },
-    {
       "machineName": "H5P.TextUtilities",
       "majorVersion": 0,
-      "minorVersion": 1      
+      "minorVersion": 1
     }
-  ],
-  "w": 635,
-  "h": 500
+  ]
 }
