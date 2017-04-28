@@ -43,8 +43,8 @@
     },
     {
       "machineName": "H5P.TextUtilities",
-      "majorVersion": 0,
-      "minorVersion": 1
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }
