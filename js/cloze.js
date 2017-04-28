@@ -6,6 +6,7 @@
    * @class H5P.Blanks.Cloze
    * @param {string} answer
    * @param {Object} behaviour Behavioral settings for the task from semantics
+   * @param {boolean} behaviour.acceptSpellingErrors - If true, answers will also count correct if they contain small spelling errors.
    * @param {string} defaultUserAnswer
    * @param {Object} l10n Localized texts
    * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
@@ -43,6 +44,11 @@
         // Damerau-Levenshtein comparison
         if (behaviour.acceptSpellingErrors === true) {
           var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true);
+          /*
+           * The correctness is temporarily computed by word length and number of number of operations
+           * required to change one word into the other (Damerau-Levenshtein). It's subject to
+           * change, cmp. https://github.com/otacke/udacity-machine-learning-engineer/blob/master/submissions/capstone_proposals/h5p_fuzzy_blanks.md
+           */
           if ((answers[i].length > 9) && (levenshtein <= 2)) {
             return true;
           } else if ((answers[i].length > 3) && (levenshtein <= 1)) {
