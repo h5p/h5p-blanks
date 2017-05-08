@@ -113,6 +113,10 @@
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },

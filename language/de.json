@@ -109,6 +109,10 @@
         },
         {
           "label": "Bestätigungsdialog beim Klicken auf \"Wiederholen\" anzeigen"
+        },
+        {
+          "label": "Kleine Rechtschreibfehler akzeptieren",
+          "description": "Wenn gewählt, wird eine Antwort bei kleinen Rechtschreibfehlern noch als richtig gewertet."
         }
       ]
     },
