@@ -20,7 +20,7 @@
       "field": {
         "label": "Textzeile",
         "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
-        "description": "Lücken werden mit einem Sternchen (*) vor und hinter dem korrekten Wort/der korrekten Phrase eingefügt. Antwortalternativen werden mit einem Schrägstrich (/) getrennt. Du kannst zusätzlich Tipps mit einem Doppelpunkt (:) davor einfügen. Beispiel: H5P-Inhalte können mit einem *browser/web-browser:Etwas, das du jeden Tag nutzt* bearbeitet werden."
+        "description": "Lücken werden mit einem Sternchen (*) vor und hinter dem korrekten Wort der korrekten Phrase eingefügt. Antwortalternativen werden mit einem Schrägstrich (/) getrennt. Du kannst zusätzlich Tipps mit einem Doppelpunkt (:) davor einfügen. Beispiel: H5P-Inhalte können mit einem *browser/web-browser:Etwas, das du jeden Tag nutzt* bearbeitet werden."
       }
     },
     {
