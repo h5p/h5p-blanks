@@ -5,7 +5,8 @@
    *
    * @class H5P.Blanks.Cloze
    * @param {string} answer
-   * @param {Object} behaviour Behaviour for the task
+   * @param {Object} behaviour Behavioral settings for the task from semantics
+   * @param {boolean} behaviour.acceptSpellingErrors - If true, answers will also count correct if they contain small spelling errors.
    * @param {string} defaultUserAnswer
    * @param {Object} l10n Localized texts
    * @param {string} l10n.solutionLabel Assistive technology label for cloze solution
@@ -35,17 +36,18 @@
      * @private
      * @param {string} answered
      */
+    var regexpFlag;
     var correct = function (answered) {
       if (behaviour.caseSensitive !== true) {
         answered = answered.toLowerCase();
-        var regexpFlag = 'i';
+        regexpFlag = 'i';
       }
-
+      var expression;
       for (var i = 0; i < answers.length; i++) {
         // Regular Expression
         if (answers[i].startsWith(Blanks.REGEXP_IDENTIFIER_START) && answers[i].endsWith(Blanks.REGEXP_IDENTIFIER_END)) {
           try {
-            var expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)), regexpFlag);
+            expression = new RegExp(answers[i].slice(Blanks.REGEXP_IDENTIFIER_START.length, answers[i].indexOf(Blanks.REGEXP_IDENTIFIER_END)), regexpFlag);
           }
           catch(error) {
             continue;
@@ -56,7 +58,7 @@
         }
         // Range
         else if (answers[i].startsWith(Blanks.RANGE_IDENTIFIER_START) && answers[i].endsWith(Blanks.RANGE_IDENTIFIER_END)) {
-          var expression = answers[i].slice(Blanks.RANGE_IDENTIFIER_START.length, answers[i].indexOf(Blanks.RANGE_IDENTIFIER_END));
+          expression = answers[i].slice(Blanks.RANGE_IDENTIFIER_START.length, answers[i].indexOf(Blanks.RANGE_IDENTIFIER_END));
           var boundaries = expression.split(Blanks.RANGE_DELIMITER);
           // validity checks
           if (boundaries.length !== 2) {
@@ -71,6 +73,22 @@
         }
         // Normal answer
         else {
+          // Damerau-Levenshtein comparison
+          if (behaviour.acceptSpellingErrors === true) {
+            var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true);
+            /*
+             * The correctness is temporarily computed by word length and number of number of operations
+             * required to change one word into the other (Damerau-Levenshtein). It's subject to
+             * change, cmp. https://github.com/otacke/udacity-machine-learning-engineer/blob/master/submissions/capstone_proposals/h5p_fuzzy_blanks.md
+             */
+            if ((answers[i].length > 9) && (levenshtein <= 2)) {
+              return true;
+            } else if ((answers[i].length > 3) && (levenshtein <= 1)) {
+              return true;
+            }
+          }
+
+        // regular comparison
           if (answered === answers[i]) {
             return true;
           }
@@ -243,7 +261,7 @@
      */
     this.resetAriaLabel = function () {
       $input.attr('aria-label', inputLabel);
-    }
+    };
   };
 
 })(H5P.jQuery, H5P.Blanks);

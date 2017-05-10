@@ -1,8 +1,13 @@
 {
   "semantics": [
     {
-      "label": "Oppgavebilete",
-      "description": "Eit valfritt bilete som sjåast over oppgåven."
+      "label": "Multimedia",
+      "fields": [
+        {
+          "label": "Type",
+          "description": "Eit valfritt multimediaelement som sjåast over spørsmålet."
+        }
+      ]
     },
     {
       "label": "Oppgåvetekst",
@@ -15,7 +20,11 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "Opne felt må merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket. Alternativ får ein skråstrek mellom seg *Noreg/Norge*. Tips får et kolon (:) foran seg: *Norge/Noreg:Verdas beste land*"
+        "description": "",
+        "important": {
+          "description":"<ul><li>Opne felt merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativ angis med ein skråstrek (/)</li><li>Tips angis med eit kolon (:) før tipset</li></ul>",
+          "example": "H5P innhold kan lages i ein *nettleser:Noe du bruker til å navigere internett med*."
+        }
       }
     },
     {
@@ -104,6 +113,10 @@
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },

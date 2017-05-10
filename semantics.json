@@ -3,6 +3,7 @@
     "name": "media",
     "type": "group",
     "label": "Media",
+    "importance": "medium",
     "fields": [
       {
         "name": "type",
@@ -19,6 +20,7 @@
   },
   {
     "label": "Task description",
+    "importance": "high",
     "name": "text",
     "type": "text",
     "widget": "html",
@@ -41,6 +43,7 @@
     "name": "questions",
     "type": "list",
     "label": "Text blocks",
+    "importance": "high",
     "entity": "text block",
     "min": 1,
     "max": 31,
@@ -49,8 +52,13 @@
       "type": "text",
       "widget": "html",
       "label": "Line of text",
-      "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterisk (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
+      "importance": "high",
+      "placeholder": "Oslo is the capital of *Norway* and home of about *((650000,670000))* people.",
+      "description": "",
+      "important": {
+        "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Ranges start with (( and end with )) and separate numbers with (,) within a blank</li><li>Regular expressions are enclosed with [[[ and ]]] within a blank.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+        "example": "About *((30,35)):Try to estimate.* H5P content types may be edited using a *browser/web-browser:Something you use every day*."
+      },
       "enterMode": "p",
       "tags": [
         "strong",
@@ -62,6 +70,7 @@
   },
   {
     "label": "Feedback text",
+    "importance": "low",
     "name": "score",
     "type": "text",
     "default": "You got @score of @total points",
@@ -77,6 +86,7 @@
   },
   {
     "label": "Text for \"Retry\" button",
+    "importance": "low",
     "name": "tryAgain",
     "type": "text",
     "default": "Retry",
@@ -85,6 +95,7 @@
   },
   {
     "label": "Text for \"Check\" button",
+    "importance": "low",
     "name": "checkAnswer",
     "type": "text",
     "default": "Check",
@@ -93,6 +104,7 @@
   },
   {
     "label": "Text for \"Not filled out\" message",
+    "importance": "low",
     "name": "notFilledOut",
     "type": "text",
     "default": "Please fill in all blanks to view solution",
@@ -101,6 +113,7 @@
   },
   {
     "label": "Text for \"':ans' is correct\" message",
+    "importance": "low",
     "name": "answerIsCorrect",
     "type": "text",
     "default": "':ans' is correct",
@@ -109,6 +122,7 @@
   },
   {
     "label": "Text for \"':ans' is wrong\" message",
+    "importance": "low",
     "name": "answerIsWrong",
     "type": "text",
     "default": "':ans' is wrong",
@@ -117,6 +131,7 @@
   },
   {
     "label": "Text for \"Answered correctly\" message",
+    "importance": "low",
     "name": "answeredCorrectly",
     "type": "text",
     "default": "Answered correctly",
@@ -125,6 +140,7 @@
   },
   {
     "label": "Text for \"Answered incorrectly\" message",
+    "importance": "low",
     "name": "answeredIncorrectly",
     "type": "text",
     "default": "Answered incorrectly",
@@ -133,6 +149,7 @@
   },
   {
     "label": "Assistive technology label for solution",
+    "importance": "low",
     "name": "solutionLabel",
     "type": "text",
     "default": "Correct answer:",
@@ -141,6 +158,7 @@
   },
   {
     "label": "Assistive technology label for input field",
+    "importance": "low",
     "name": "inputLabel",
     "type": "text",
     "description": "Use @num and @total to replace current cloze number and total cloze number",
@@ -150,6 +168,7 @@
   },
   {
     "label": "Assistive technology label for saying an input has a tip tied to it",
+    "importance": "low",
     "name": "inputHasTipLabel",
     "type": "text",
     "default": "Tip available",
@@ -158,6 +177,7 @@
   },
   {
     "label": "Tip icon label",
+    "importance": "low",
     "name": "tipLabel",
     "type": "text",
     "default": "Tip",
@@ -168,11 +188,13 @@
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",
+    "importance": "low",
     "description": "These options will let you control how the task behaves.",
     "optional": true,
     "fields": [
       {
         "label": "Enable \"Retry\"",
+        "importance": "low",
         "name": "enableRetry",
         "type": "boolean",
         "default": true,
@@ -180,6 +202,7 @@
       },
       {
         "label": "Enable \"Show solutions\" button",
+        "importance": "low",
         "name": "enableSolutionsButton",
         "type": "boolean",
         "default": true,
@@ -187,6 +210,7 @@
       },
       {
         "label": "Automatically check answers after input",
+        "importance": "low",
         "name": "autoCheck",
         "type": "boolean",
         "default": false,
@@ -194,6 +218,7 @@
       },
       {
         "name": "caseSensitive",
+        "importance": "low",
         "type": "boolean",
         "default": true,
         "label": "Case sensitive",
@@ -201,6 +226,7 @@
       },
       {
         "label": "Require all fields to be answered before the solution can be viewed",
+        "importance": "low",
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true,
@@ -208,6 +234,7 @@
       },
       {
         "label": "Put input fields on separate lines",
+        "importance": "low",
         "name": "separateLines",
         "type": "boolean",
         "default": false,
@@ -215,6 +242,7 @@
       },
       {
         "label": "Disable image zooming for question image",
+        "importance": "low",
         "name": "disableImageZooming",
         "type": "boolean",
         "default": false,
@@ -222,6 +250,7 @@
       },
       {
         "label": "Show confirmation dialog on \"Check\"",
+        "importance": "low",
         "name": "confirmCheckDialog",
         "type": "boolean",
         "description": "This options is not compatible with the \"Automatically check answers after input\" option",
@@ -229,26 +258,39 @@
       },
       {
         "label": "Show confirmation dialog on \"Retry\"",
+        "importance": "low",
         "name": "confirmRetryDialog",
         "type": "boolean",
         "default": false
+      },
+      {
+        "name": "acceptSpellingErrors",
+        "type": "boolean",
+        "label": "Accept minor spelling errors",
+        "importance": "low",
+        "description": "If activated, an answer will also count as correct with minor spelling errors",
+        "default": false,
+        "optional": true
       }
     ]
   },
   {
     "label": "Check confirmation dialog",
+    "importance": "low",
     "name": "confirmCheck",
     "type": "group",
     "common": true,
     "fields": [
       {
         "label": "Header text",
+        "importance": "low",
         "name": "header",
         "type": "text",
         "default": "Finish ?"
       },
       {
         "label": "Body text",
+        "importance": "low",
         "name": "body",
         "type": "text",
         "default": "Are you sure you wish to finish ?",
@@ -263,12 +305,14 @@
       },
       {
         "label": "Cancel button label",
+        "importance": "low",
         "name": "cancelLabel",
         "type": "text",
         "default": "Cancel"
       },
       {
         "label": "Confirm button label",
+        "importance": "low",
         "name": "confirmLabel",
         "type": "text",
         "default": "Finish"
@@ -277,18 +321,21 @@
   },
   {
     "label": "Retry confirmation dialog",
+    "importance": "low",
     "name": "confirmRetry",
     "type": "group",
     "common": true,
     "fields": [
       {
         "label": "Header text",
+        "importance": "low",
         "name": "header",
         "type": "text",
         "default": "Retry ?"
       },
       {
         "label": "Body text",
+        "importance": "low",
         "name": "body",
         "type": "text",
         "default": "Are you sure you wish to retry ?",
@@ -303,12 +350,14 @@
       },
       {
         "label": "Cancel button label",
+        "importance": "low",
         "name": "cancelLabel",
         "type": "text",
         "default": "Cancel"
       },
       {
         "label": "Confirm button label",
+        "importance": "low",
         "name": "confirmLabel",
         "type": "text",
         "default": "Confirm"

@@ -1,11 +1,17 @@
 {
   "semantics": [
     {
-      "label": "Task image",
-      "description": "An optional image to display above the task."
+      "label": "Media",
+      "fields": [
+        {
+          "label": "Type",
+          "description": "Optional media to display above the question."
+        }
+      ]
     },
     {
       "label": "Descrizione attività",
+      "default": "Fill in the missing words",
       "description": "Una guida deve indicare all'utente come rispondere a questo compito."
     },
     {
@@ -13,24 +19,30 @@
       "entity": "Blocco di testo",
       "field": {
         "label": "Linea di testo",
+        "placeholder": "Roma is the capital of *Italia*.",
         "description": "Gli spazi vuoti sono aggiunti con un asterisco (*) davanti e dietro la parola/frase corretta. Risposte alternative sono separate con una barra (/). Si può aggiungere un suggerimento testuale, usando i due punti (:) prima del suggerimento. Esempio: Il contentuto H5P può essere editato utilizzando un *browser/web-browser:Qualcosa che usi tutti i giorni*."
       }
     },
     {
       "label": "Testo del Feedback",
+      "default": "You got @score of @total points",
       "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
     },
     {
-      "label": "Testo per il pulsante \"Mostra soluzioni\""
+      "label": "Testo per il pulsante \"Mostra soluzioni\"",
+      "default": "Mostra soluzioni"
     },
     {
-      "label": "Testo per il pulsante \"Indietro\""
+      "label": "Testo per il pulsante \"Indietro\"",
+      "default": "Indietro"
     },
     {
-      "label": "Testo per il pulsante \"Verifica\""
+      "label": "Testo per il pulsante \"Verifica\"",
+      "default": "Verifica"
     },
     {
-      "label": "Testo per il messaggio \"Non compilato\""
+      "label": "Testo per il messaggio \"Non compilato\"",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "Text for \"':ans' is correct\" message",
@@ -97,6 +109,10 @@
         },
         {
           "label": "Show confirmation dialog on \"Retry\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },

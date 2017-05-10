@@ -109,6 +109,10 @@
         },
         {
           "label": "Afficher la fenêtre de confirmation pour \"Recommencer\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },
