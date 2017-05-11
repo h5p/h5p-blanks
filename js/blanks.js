@@ -161,6 +161,8 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.registerButtons = function () {
     var self = this;
+    // Parent element of confirmation dialog
+    var $container = $('.h5p-container') || $(document.body);
 
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
@@ -174,7 +176,7 @@ H5P.Blanks = (function ($, Question) {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
           instance: self,
-          $parentElement: self.$questions
+          $parentElement: $container
         }
       });
     }
@@ -194,7 +196,7 @@ H5P.Blanks = (function ($, Question) {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
           instance: self,
-          $parentElement: self.$questions
+          $parentElement: $container
         }
       });
     }
