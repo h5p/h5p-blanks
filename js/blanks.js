@@ -69,6 +69,7 @@ H5P.Blanks = (function ($, Question) {
       inputHasTipLabel: "Tip available",
       tipLabel: "Tip",
       behaviour: {
+        enableCheck: true,
         enableRetry: true,
         enableSolutionsButton: true,
         caseSensitive: true,
@@ -163,7 +164,7 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerButtons = function () {
     var self = this;
 
-    if (!self.params.behaviour.autoCheck) {
+    if (self.params.behaviour.enableCheck && !self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
         self.toggleButtonVisibility(STATE_CHECKING);
