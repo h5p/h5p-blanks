@@ -193,6 +193,14 @@
     "optional": true,
     "fields": [
       {
+        "name": "enableCheck",
+        "type": "boolean",
+        "label": "Enable \"Check\" button",
+        "importance": "low",
+        "default": true,
+        "optional": true
+      },
+      {
         "label": "Enable \"Retry\"",
         "importance": "low",
         "name": "enableRetry",
