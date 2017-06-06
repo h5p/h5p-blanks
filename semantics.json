@@ -54,7 +54,11 @@
       "label": "Line of text",
       "importance": "high",
       "placeholder": "Oslo is the capital of *Norway*.",
-      "description": "Blanks are added with an asterisk (*) in front and behind the correct word/phrase. Alternative answers are separated with a forward slash (/). You may add a textual tip, using a colon (:) in front of the tip. Example: H5P content may be edited using a *browser/web-browser:Something you use every day*.",
+      "description": "",
+      "important": {
+        "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+        "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+      },
       "enterMode": "p",
       "tags": [
         "strong",
@@ -258,6 +262,15 @@
         "name": "confirmRetryDialog",
         "type": "boolean",
         "default": false
+      },
+      {
+        "name": "acceptSpellingErrors",
+        "type": "boolean",
+        "label": "Accept minor spelling errors",
+        "importance": "low",
+        "description": "If activated, an answer will also count as correct with minor spelling errors",
+        "default": false,
+        "optional": true
       }
     ]
   },
