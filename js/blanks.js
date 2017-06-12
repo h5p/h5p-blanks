@@ -161,8 +161,22 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.registerButtons = function () {
     var self = this;
-    // Parent element of confirmation dialog
-    var $container = $('.h5p-container') || $(document.body);
+
+    var $content = $('[data-content-id="' + self.contentId + '"].h5p-content');
+    var $containerParents = $content.parents('.h5p-container');
+
+    // select find container to attach dialogs to
+    var $container;
+    if($containerParents.length !== 0) {
+      // use parent highest up if any
+      $container = $containerParents.last();
+    }
+    else if($content.length !== 0){
+      $container = $content;
+    }
+    else  {
+      $container = $(document.body);
+    }
 
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
