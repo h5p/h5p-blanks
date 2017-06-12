@@ -76,8 +76,7 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false,
         disableImageZooming: false
-      },
-      overrideSettings: {}
+      }
     }, params);
 
     // Delete empty questions
@@ -162,6 +161,8 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.registerButtons = function () {
     var self = this;
+    // Parent element of confirmation dialog
+    var $container = $('.h5p-container') || $(document.body);
 
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
@@ -174,8 +175,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
@@ -194,8 +195,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
