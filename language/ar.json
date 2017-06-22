@@ -1,160 +1,163 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Media",
-      "fields": [
+      "label":"Media",
+      "fields":[
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label":"Type",
+          "description":"Optional media to display above the question."
         }
       ]
     },
     {
-      "label": "وصف النشاط",
-      "default": "Fill in the missing words",
-      "description": "دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "label":"وصف النشاط",
+      "default":"Fill in the missing words",
+      "description":"دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
     },
     {
-      "label": "النشاط",
-      "entity": "النشاط",
-      "field": {
-        "label": "سطر من النص",
-        "placeholder": "Oslo is the capital of *Norway*.",
-        "description": " يتم اضافت الفراغات بإدخال النجمة (*) قبل وبعد الكلمة او الجملة الصحيحة ويمكنك إضافة إجابات بديلة بفصلهم بالخط المائل كما يلي (/). يمكنك إضافة تلميح نصي، وذلك باستخدام بنقطتين (:) أمام الكلمة. مثلايمكنك انشاء نشاطات وتحريرها باستخدام H5P *المتصفح/متصفح الإنترنت: مثال شيء كنت تستخدم كل يوم*"
+      "label":"النشاط",
+      "entity":"النشاط",
+      "field":{
+        "label":"سطر من النص",
+        "placeholder":"Oslo is the capital of *Norway*.",
+        "description":"",
+        "important":{
+          "description":"<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+        }
       }
     },
     {
-      "label": "ملاحظات النص",
-      "default": "You got @score of @total points",
-      "description": "ملاحظات النص، والمتغيرات المتاحة: النتيجة والمجموع. مثال: هل حصلت على درجة من مجموع النقاط الممكنة"
+      "label":"ملاحظات النص",
+      "default":"You got @score of @total points",
+      "description":"ملاحظات النص، والمتغيرات المتاحة: النتيجة والمجموع. مثال: هل حصلت على درجة من مجموع النقاط الممكنة"
     },
     {
-      "label": "النص ل \"مشاهدة الحل \" الزر",
-      "default": "Show solution"
+      "label":"النص ل \"مشاهدة الحل \" الزر",
+      "default":"Show solution"
     },
     {
-      "label": "النص ل \"إعادة المحاولة \" الزر",
-      "default": "Retry"
+      "label":"النص ل \"إعادة المحاولة \" الزر",
+      "default":"Retry"
     },
     {
-      "label": "النص ل \"تحقق \" الزر",
-      "default": "Check"
+      "label":"النص ل \"تحقق \" الزر",
+      "default":"Check"
     },
     {
-      "label": "النص ل \"لا جواب \" رسالة",
-      "default": "Please fill in all blanks to view solution"
+      "label":"النص ل \"لا جواب \" رسالة",
+      "default":"Please fill in all blanks to view solution"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label":"Text for \"':ans' is correct\" message",
+      "default":"':ans' is correct"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label":"Text for \"':ans' is wrong\" message",
+      "default":"':ans' is wrong"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label":"Text for \"Answered correctly\" message",
+      "default":"Answered correctly"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label":"Text for \"Answered incorrectly\" message",
+      "default":"Answered incorrectly"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label":"Assistive technology label for solution",
+      "default":"Correct answer:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label":"Assistive technology label for input field",
+      "description":"Use @num and @total to replace current cloze number and total cloze number",
+      "default":"Blank input @num of @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label":"Assistive technology label for saying an input has a tip tied to it",
+      "default":"Tip available"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label":"Tip icon label",
+      "default":"Tip"
     },
     {
-      "label": "إعدادت النشاط",
-      "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
-      "fields": [
+      "label":"إعدادت النشاط",
+      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "fields":[
         {
-          "label": "تمكين \"إعادة المحاولة \""
+          "label":"تمكين \"إعادة المحاولة \""
         },
         {
-          "label": "تمكين \"مشاهدة الحل \" الزر"
+          "label":"تمكين \"مشاهدة الحل \" الزر"
         },
         {
-          "label": "تحقق تلقائيا بعد إدخال الإجابات"
+          "label":"تحقق تلقائيا بعد إدخال الإجابات"
         },
         {
-          "label": "حساسية الاجابة",
-          "description": "يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label":"حساسية الاجابة",
+          "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
         },
         {
-          "label": "يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label":"يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
         },
         {
-          "label": "وضع فراغات الكلمات على خطوط منفصلة"
+          "label":"وضع فراغات الكلمات على خطوط منفصلة"
         },
         {
-          "label": "Disable image zooming for question image."
+          "label":"Disable image zooming for question image."
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label":"Show confirmation dialog on \"Check\"",
+          "description":"This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label":"Show confirmation dialog on \"Retry\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label":"Accept minor spelling errors",
+          "description":"If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
-      "fields": [
+      "label":"Check confirmation dialog",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label":"Header text",
+          "default":"Finish ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label":"Body text",
+          "default":"Are you sure you wish to finish ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Cancel button label",
+          "default":"Cancel"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label":"Confirm button label",
+          "default":"Finish"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
-      "fields": [
+      "label":"Retry confirmation dialog",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label":"Header text",
+          "default":"Retry ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label":"Body text",
+          "default":"Are you sure you wish to retry ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Cancel button label",
+          "default":"Cancel"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label":"Confirm button label",
+          "default":"Confirm"
         }
       ]
     }
