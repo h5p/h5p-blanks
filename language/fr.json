@@ -1,160 +1,163 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Fichier média",
-      "fields": [
+      "label":"Fichier média",
+      "fields":[
         {
-          "label": "Type de média",
-          "description": "Fichier média à afficher en option au-dessus de la question."
+          "label":"Type de média",
+          "description":"Fichier média à afficher en option au-dessus de la question."
         }
       ]
     },
     {
-      "label": "Consigne",
-      "default": "Complétez les blancs.",
-      "description": "La consigne indique à l'utilisateur comment faire l'exercice."
+      "label":"Consigne",
+      "default":"Complétez les blancs.",
+      "description":"La consigne indique à l'utilisateur comment faire l'exercice."
     },
     {
-      "label": "Blocs de texte",
-      "entity": "bloc de texte",
-      "field": {
-        "label": "Ligne de texte",
-        "placeholder": "Paris est la capitale de la *France*.",
-        "description": "Des trous sont insérés au moyen d'un astérisque (*) placé avant et après le mot / le groupe de mots. Les différentes réponses acceptées sont séparées par un slash (/). Vous pouvez ajouter un indice en utilisant les deux points (:) avant cet indice. (Exemple: Les exercices H5P peuvent être créés en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*)."
+      "label":"Blocs de texte",
+      "entity":"bloc de texte",
+      "field":{
+        "label":"Ligne de texte",
+        "placeholder":"Paris est la capitale de la *France*.",
+        "description":"",
+        "important":{
+          "description":"<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+        }
       }
     },
     {
-      "label": "Commentaire final",
-      "default": "Vous avez obtenu @score point(s) sur @total",
-      "description": "Texte du commentaire de fin, variables possibles: @score et @total. (Exemple: 'Vous avez @score sur un total possible de @total points.')"
+      "label":"Commentaire final",
+      "default":"Vous avez obtenu @score point(s) sur @total",
+      "description":"Texte du commentaire de fin, variables possibles: @score et @total. (Exemple: 'Vous avez @score sur un total possible de @total points.')"
     },
     {
-      "label": "Texte du bouton \"Voir la correction\"",
-      "default": "Voir la correction"
+      "label":"Texte du bouton \"Voir la correction\"",
+      "default":"Voir la correction"
     },
     {
-      "label": "Texte du bouton \"Recommencer\"",
-      "default": "Recommencer"
+      "label":"Texte du bouton \"Recommencer\"",
+      "default":"Recommencer"
     },
     {
-      "label": "Texte du bouton \"Vérifier\"",
-      "default": "Vérifier"
+      "label":"Texte du bouton \"Vérifier\"",
+      "default":"Vérifier"
     },
     {
-      "label": "Texte pour le message \"Tout n'est pas complété\"",
-      "default": "Vous devez avoir rempli tous les blancs avant de voir la correction"
+      "label":"Texte pour le message \"Tout n'est pas complété\"",
+      "default":"Vous devez avoir rempli tous les blancs avant de voir la correction"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse exacte\"",
-      "default": "':ans' est une réponse exacte"
+      "label":"Texte du message \"':ans' est une réponse exacte\"",
+      "default":"':ans' est une réponse exacte"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse incorrecte\"",
-      "default": "':ans' est une réponse incorrecte"
+      "label":"Texte du message \"':ans' est une réponse incorrecte\"",
+      "default":"':ans' est une réponse incorrecte"
     },
     {
-      "label": "Texte du message \"Réponse exacte\"",
-      "default": "Réponse exacte"
+      "label":"Texte du message \"Réponse exacte\"",
+      "default":"Réponse exacte"
     },
     {
-      "label": "Texte du message \"Mauvaise réponse\"",
-      "default": "Mauvaise réponse"
+      "label":"Texte du message \"Mauvaise réponse\"",
+      "default":"Mauvaise réponse"
     },
     {
-      "label": "Texte de la correction (technologie d'assistance)",
-      "default": "Réponse correcte :"
+      "label":"Texte de la correction (technologie d'assistance)",
+      "default":"Réponse correcte :"
     },
     {
-      "label": "Texte du blanc (technologie d'assistance)",
-      "description": "Utilisez @num et @total pour désigner respectivement le blanc courant et le nombre total de blancs",
-      "default": "Blanc @num sur @total"
+      "label":"Texte du blanc (technologie d'assistance)",
+      "description":"Utilisez @num et @total pour désigner respectivement le blanc courant et le nombre total de blancs",
+      "default":"Blanc @num sur @total"
     },
     {
-      "label": "Texte qui indique qu'un blanc dispose d'un indice (technologie d'assistance)",
-      "default": "Indice disponible"
+      "label":"Texte qui indique qu'un blanc dispose d'un indice (technologie d'assistance)",
+      "default":"Indice disponible"
     },
     {
-      "label": "Intitulé de l'icône de l'indice",
-      "default": "Indice"
+      "label":"Intitulé de l'icône de l'indice",
+      "default":"Indice"
     },
     {
-      "label": "Options générales.",
-      "description": "Ces options vous permettent de paramétrer le déroulement de l'exercice.",
-      "fields": [
+      "label":"Options générales.",
+      "description":"Ces options vous permettent de paramétrer le déroulement de l'exercice.",
+      "fields":[
         {
-          "label": "Activer le bouton \"Recommencer\""
+          "label":"Activer le bouton \"Recommencer\""
         },
         {
-          "label": "Activer le bouton \"Voir la correction\""
+          "label":"Activer le bouton \"Voir la correction\""
         },
         {
-          "label": "Vérifier les réponses instantanément dès la saisie."
+          "label":"Vérifier les réponses instantanément dès la saisie."
         },
         {
-          "label": "Sensible à la casse",
-          "description": "La saisie de l'utilisateur devra être exactement identique à la réponse attendue."
+          "label":"Sensible à la casse",
+          "description":"La saisie de l'utilisateur devra être exactement identique à la réponse attendue."
         },
         {
-          "label": "Obliger l'utilisateur à remplir tous les blancs avant de voir la correction."
+          "label":"Obliger l'utilisateur à remplir tous les blancs avant de voir la correction."
         },
         {
-          "label": "Afficher les blancs sur des lignes séparées."
+          "label":"Afficher les blancs sur des lignes séparées."
         },
         {
-          "label": "Désactiver l'agrandissement de l'image de la question."
+          "label":"Désactiver l'agrandissement de l'image de la question."
         },
         {
-          "label": "Afficher la fenêtre de confirmation pour \"Vérifier\"",
-          "description": "Cette option n'est pas compatible avec l'option \"Vérifier les réponses instantanément dès la saisie.\""
+          "label":"Afficher la fenêtre de confirmation pour \"Vérifier\"",
+          "description":"Cette option n'est pas compatible avec l'option \"Vérifier les réponses instantanément dès la saisie.\""
         },
         {
-          "label": "Afficher la fenêtre de confirmation pour \"Recommencer\""
+          "label":"Afficher la fenêtre de confirmation pour \"Recommencer\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label":"Accept minor spelling errors",
+          "description":"If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },
     {
-      "label": "Fenêtre de confirmation pour \"Vérifier\"",
-      "fields": [
+      "label":"Fenêtre de confirmation pour \"Vérifier\"",
+      "fields":[
         {
-          "label": "Titre",
-          "default": "Terminer ?"
+          "label":"Titre",
+          "default":"Terminer ?"
         },
         {
-          "label": "Contenu",
-          "default": "Êtes-vous sûr de vouloir terminer ?"
+          "label":"Contenu",
+          "default":"Êtes-vous sûr de vouloir terminer ?"
         },
         {
-          "label": "Intitulé du bouton d'annulation",
-          "default": "Annuler"
+          "label":"Intitulé du bouton d'annulation",
+          "default":"Annuler"
         },
         {
-          "label": "Intitulé du bouton de confirmation",
-          "default": "Terminer"
+          "label":"Intitulé du bouton de confirmation",
+          "default":"Terminer"
         }
       ]
     },
     {
-      "label": "Fenêtre de confirmation pour \"Recommencer\"",
-      "fields": [
+      "label":"Fenêtre de confirmation pour \"Recommencer\"",
+      "fields":[
         {
-          "label": "Titre",
-          "default": "Recommencer ?"
+          "label":"Titre",
+          "default":"Recommencer ?"
         },
         {
-          "label": "Contenu",
-          "default": "Êtes-vous sûr de vouloir recommencer ?"
+          "label":"Contenu",
+          "default":"Êtes-vous sûr de vouloir recommencer ?"
         },
         {
-          "label": "Intitulé du bouton d'annulation",
-          "default": "Annuler"
+          "label":"Intitulé du bouton d'annulation",
+          "default":"Annuler"
         },
         {
-          "label": "Intitulé du bouton de confirmation",
-          "default": "Confirmer"
+          "label":"Intitulé du bouton de confirmation",
+          "default":"Confirmer"
         }
       ]
     }
