@@ -1,160 +1,163 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Media",
-      "fields": [
+      "label":"Media",
+      "fields":[
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label":"Type",
+          "description":"Optional media to display above the question."
         }
       ]
     },
     {
-      "label": "Descrizione attività",
-      "default": "Fill in the missing words",
-      "description": "Una guida deve indicare all'utente come rispondere a questo compito."
+      "label":"Descrizione attività",
+      "default":"Fill in the missing words",
+      "description":"Una guida deve indicare all'utente come rispondere a questo compito."
     },
     {
-      "label": "Blocchi di testo",
-      "entity": "Blocco di testo",
-      "field": {
-        "label": "Linea di testo",
-        "placeholder": "Roma is the capital of *Italia*.",
-        "description": "Gli spazi vuoti sono aggiunti con un asterisco (*) davanti e dietro la parola/frase corretta. Risposte alternative sono separate con una barra (/). Si può aggiungere un suggerimento testuale, usando i due punti (:) prima del suggerimento. Esempio: Il contentuto H5P può essere editato utilizzando un *browser/web-browser:Qualcosa che usi tutti i giorni*."
+      "label":"Blocchi di testo",
+      "entity":"Blocco di testo",
+      "field":{
+        "label":"Linea di testo",
+        "placeholder":"Roma is the capital of *Italia*.",
+        "description":"",
+        "important":{
+          "description":"<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+        }
       }
     },
     {
-      "label": "Testo del Feedback",
-      "default": "You got @score of @total points",
-      "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
+      "label":"Testo del Feedback",
+      "default":"You got @score of @total points",
+      "description":"Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
     },
     {
-      "label": "Testo per il pulsante \"Mostra soluzioni\"",
-      "default": "Mostra soluzioni"
+      "label":"Testo per il pulsante \"Mostra soluzioni\"",
+      "default":"Mostra soluzioni"
     },
     {
-      "label": "Testo per il pulsante \"Indietro\"",
-      "default": "Indietro"
+      "label":"Testo per il pulsante \"Indietro\"",
+      "default":"Indietro"
     },
     {
-      "label": "Testo per il pulsante \"Verifica\"",
-      "default": "Verifica"
+      "label":"Testo per il pulsante \"Verifica\"",
+      "default":"Verifica"
     },
     {
-      "label": "Testo per il messaggio \"Non compilato\"",
-      "default": "Please fill in all blanks to view solution"
+      "label":"Testo per il messaggio \"Non compilato\"",
+      "default":"Please fill in all blanks to view solution"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label":"Text for \"':ans' is correct\" message",
+      "default":"':ans' is correct"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label":"Text for \"':ans' is wrong\" message",
+      "default":"':ans' is wrong"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label":"Text for \"Answered correctly\" message",
+      "default":"Answered correctly"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label":"Text for \"Answered incorrectly\" message",
+      "default":"Answered incorrectly"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label":"Assistive technology label for solution",
+      "default":"Correct answer:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label":"Assistive technology label for input field",
+      "description":"Use @num and @total to replace current cloze number and total cloze number",
+      "default":"Blank input @num of @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label":"Assistive technology label for saying an input has a tip tied to it",
+      "default":"Tip available"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label":"Tip icon label",
+      "default":"Tip"
     },
     {
-      "label": "Impostazioni esecuzione",
-      "description": "Queste opzioni consentono di controllare l'andamento del compito.",
-      "fields": [
+      "label":"Impostazioni esecuzione",
+      "description":"Queste opzioni consentono di controllare l'andamento del compito.",
+      "fields":[
         {
-          "label": "Abilita \"Riprova\""
+          "label":"Abilita \"Riprova\""
         },
         {
-          "label": "Abilita il pulsante \"Mostra soluzioni\""
+          "label":"Abilita il pulsante \"Mostra soluzioni\""
         },
         {
-          "label": "Controlla automaticamente le risposte dopo l'immissione"
+          "label":"Controlla automaticamente le risposte dopo l'immissione"
         },
         {
-          "label": "Maiuscole e minuscole",
-          "description": "Assicurare che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
+          "label":"Maiuscole e minuscole",
+          "description":"Assicurare che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
         },
         {
-          "label": "Richiedere che tutti i campi siano completati prima di visualizzare la soluzione"
+          "label":"Richiedere che tutti i campi siano completati prima di visualizzare la soluzione"
         },
         {
-          "label": "Immettere i campi su righe separate"
+          "label":"Immettere i campi su righe separate"
         },
         {
-          "label": "Disable image zooming for question image."
+          "label":"Disable image zooming for question image."
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label":"Show confirmation dialog on \"Check\"",
+          "description":"This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label":"Show confirmation dialog on \"Retry\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label":"Accept minor spelling errors",
+          "description":"If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
-      "fields": [
+      "label":"Check confirmation dialog",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label":"Header text",
+          "default":"Finish ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label":"Body text",
+          "default":"Are you sure you wish to finish ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Cancel button label",
+          "default":"Cancel"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label":"Confirm button label",
+          "default":"Finish"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
-      "fields": [
+      "label":"Retry confirmation dialog",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label":"Header text",
+          "default":"Retry ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label":"Body text",
+          "default":"Are you sure you wish to retry ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Cancel button label",
+          "default":"Cancel"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label":"Confirm button label",
+          "default":"Confirm"
         }
       ]
     }
