@@ -28,9 +28,37 @@
       }
     },
     {
-      "label": "Tilbakemeldingar",
-      "default": "@score av @total poeng",
-      "description": "Tekstleg tilbakemelding, tilgjengelege variablar: @score og @total. Eksempel: 'Du fikk @score av @total felt rett.'"
+      "englishLabel": "Overall Feedback",
+      "label": "Samlet tilbakemelding",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default",
+              "label": "Standard"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "label": "Definer tilpasset tilbakemelding for et poengområde",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description": "For eksempel: 0-20% Dårlig poengsum, 21-91% Gjennomsnittlig poengsum, 91-100% Stor poengsum!\nTilgjengelige variabler: @score og @total. For eksempel: 'Du fikk @score av @total mulige poeng'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range",
+                "label": "Poengområde"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "label": "Tilbakemelding for definert poengområde",
+                "englishPlaceholder": "Fill in the feedback",
+                "placeholder": "Fyll inn tilbakemeldingen"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label": "Tekst for \"Fasit\"-knapp",

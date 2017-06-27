@@ -24,9 +24,30 @@
       }
     },
     {
-      "label": "ملاحظات النص",
-      "default": "You got @score of @total points",
-      "description": "ملاحظات النص، والمتغيرات المتاحة: النتيجة والمجموع. مثال: هل حصلت على درجة من مجموع النقاط الممكنة"
+      "englishLabel": "Overall Feedback",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "englishPlaceholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label": "النص ل \"مشاهدة الحل \" الزر",
