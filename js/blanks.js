@@ -53,13 +53,7 @@ H5P.Blanks = (function ($, Question) {
       questions: [
         "Oslo is the capital of *Norway*."
       ],
-      overallFeedback: [
-        {
-          'from': 0,
-          'to': 100,
-          'feedback': 'You got @score of @total points'
-        }
-      ],
+      overallFeedback: [],
       userAnswers: [], // TODO This isn't in semantics?
       showSolutions: "Show solution",
       tryAgain: "Try again",
@@ -716,6 +710,7 @@ H5P.Blanks = (function ($, Question) {
     var maxScore = this.getMaxScore();
     var score = this.getScore();
     var scoreText = H5P.Question.determineOverallFeedback(this.params.overallFeedback, score / maxScore).replace('@score', score).replace('@total', maxScore);
+
     this.setFeedback(scoreText, score, maxScore);
 
     if (score === maxScore) {
