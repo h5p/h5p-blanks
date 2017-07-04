@@ -85,7 +85,7 @@
         ],
         "importance": "high",
         "label": "Define custom feedback for any score range",
-        "description": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+        "description": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
         "entity": "range",
         "min": 1,
         "defaultNum": 1,
