@@ -227,7 +227,7 @@
      */
     this.resetAriaLabel = function () {
       $input.attr('aria-label', inputLabel);
-    }
+    };
   };
 
 })(H5P.jQuery, H5P.Blanks);

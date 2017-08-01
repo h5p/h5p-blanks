@@ -585,7 +585,7 @@ H5P.Blanks = (function ($, Question) {
     this.addResponseToXAPI(xAPIEvent);
     return {
       statement: xAPIEvent.data.statement
-    }
+    };
   };
 
   /**
@@ -723,7 +723,7 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.hideEvaluation = function () {
     // Clear evaluation section.
-    this.setFeedback();
+    this.removeFeedback();
   };
 
   /**
