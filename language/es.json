@@ -4,39 +4,39 @@
       "label":"Media",
       "fields":[
         {
-          "label":"Type",
+          "label":"Tipo",
           "description":"Optional media to display above the question."
         }
       ]
     },
     {
-      "label":"Task description",
-      "default":"Fill in the missing words",
-      "description":"A guide telling the user how to answer this task."
+      "label":"Descripción de la tarea",
+      "default":"Rellenar las palabras que faltan",
+      "description":"Una guía que dice al usuario cómo responder a esta tarea."
     },
     {
-      "label":"Text blocks",
-      "entity":"text block",
+      "label":"Bloques de texto",
+      "entity":"bloque de texto",
       "field":{
-        "label":"Line of text",
-        "placeholder":"Oslo is the capital of *Norway*.",
+        "label":"Línea de texto",
+        "placeholder":"Oslo es la capital de *Noruega*.",
         "description":"",
         "important":{
-          "description":"<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+          "description":"<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>"
         }
       }
     },
     {
-      "label":"Feedback text",
-      "default":"You got @score of @total points",
-      "description":"Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'"
+      "label":"Texto de comentarios",
+      "default":"Has conseguido @score puntos de @total",
+      "description":"Texto de respuesta, las variables disponibles: @score y @total. Ejemplo: 'tienes @score de @total puntos posibles'"
     },
     {
-      "label":"Text for \"Show solutions\" button",
-      "default":"Show solution"
+      "label":"Texto para el botón de \"Mostrar soluciones\"",
+      "default":"Mostrar solución"
     },
     {
-      "label":"Text for \"Retry\" button",
+      "label":"Texto para el botón de \"Reintentar\"",
       "default":"Retry"
     },
     {
