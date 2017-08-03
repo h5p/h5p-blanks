@@ -20,13 +20,45 @@
       "field": {
         "label": "Tekstlinje",
         "placeholder": "Oslo er hovedstaden i *Norge*",
-        "description": "Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket. Alternativer angis med en skråstrek: *Norge/Noreg*. Tips angis med et kolon (:) før tipset: *Norge/Noreg:Verdens beste land*"
+        "description": "",
+        "important": {
+          "description": "<ul><li>Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativer angis med en skråstrek (/)</li><li>Tips angis med et kolon (:) før tipset</li></ul>",
+          "example": "H5P innhold kan lages i en *nettleser:Noe du bruker til å navigere internett med*."
+        }
       }
     },
     {
-      "label": "Tilbakemeldinger",
-      "default": "@score av @total poeng",
-      "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total felt rett.'"
+      "englishLabel": "Overall Feedback",
+      "label": "Samlet tilbakemelding",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default",
+              "label": "Standard"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "label": "Definer tilpasset tilbakemelding for et poengområde",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description": "For eksempel: 0-20% Dårlig poengsum, 21-91% Gjennomsnittlig poengsum, 91-100% Stor poengsum!\nTilgjengelige variabler: @score og @total. For eksempel: 'Du fikk @score av @total mulige poeng'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range",
+                "label": "Poengområde"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "label": "Tilbakemelding for definert poengområde",
+                "englishPlaceholder": "Fill in the feedback",
+                "placeholder": "Fyll inn tilbakemeldingen"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label": "Tekst for \"Fasit\" knapp",
@@ -109,6 +141,10 @@
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
         }
       ]
     },
