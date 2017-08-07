@@ -8,6 +8,7 @@
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel",
+  "embedTypes": ["iframe"],
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 6
