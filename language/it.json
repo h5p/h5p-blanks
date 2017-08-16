@@ -4,14 +4,14 @@
       "label":"Media",
       "fields":[
         {
-          "label":"Type",
-          "description":"Optional media to display above the question."
+          "label":"Tipo",
+          "description":"Media opzionale da mostrare sopra la domanda."
         }
       ]
     },
     {
       "label":"Descrizione attività",
-      "default":"Fill in the missing words",
+      "default":"Riempire con le parole mancanti",
       "description":"Una guida deve indicare all'utente come rispondere a questo compito."
     },
     {
@@ -94,17 +94,17 @@
           "label":"Controlla automaticamente le risposte dopo l'immissione"
         },
         {
-          "label":"Maiuscole e minuscole",
-          "description":"Assicurare che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
+          "label":"Riconosce maiuscole e minuscole",
+          "description":"Assicurati che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
         },
         {
-          "label":"Richiedere che tutti i campi siano completati prima di visualizzare la soluzione"
+          "label":"Richiedi che tutti i campi siano completati prima di mostrare la soluzione"
         },
         {
-          "label":"Immettere i campi su righe separate"
+          "label":"Inserire campi di input in righe separate"
         },
         {
-          "label":"Disable image zooming for question image."
+          "label":"Disabilita lo zoom dell'immagine su immagini-domanda"
         },
         {
           "label":"Show confirmation dialog on \"Check\"",
