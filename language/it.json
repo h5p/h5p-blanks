@@ -12,7 +12,7 @@
     {
       "label":"Descrizione attività",
       "default":"Riempire con le parole mancanti",
-      "description":"Una guida deve indicare all'utente come rispondere a questo compito."
+      "description":"Una guida che dice all'utente come rispondere a questo compito."
     },
     {
       "label":"Blocchi di testo",
@@ -73,12 +73,12 @@
       "default":"Immissioni mancanti: @num su @total"
     },
     {
-      "label":"Assistive technology label for saying an input has a tip tied to it",
-      "default":"Tip available"
+      "label":"Etichetta di tecnologie assistive per segnalare la presenza di un suggerimento sull'immissione",
+      "default":"Suggerimento disponibile"
     },
     {
-      "label":"Tip icon label",
-      "default":"Tip"
+      "label":"Etichetta dell'icona di suggerimento",
+      "default":"Suggerimento"
     },
     {
       "label":"Impostazioni di esecuzione.",
@@ -107,57 +107,57 @@
           "label":"Disabilita lo zoom dell'immagine su immagini-domanda"
         },
         {
-          "label":"Show confirmation dialog on \"Check\"",
-          "description":"This options is not compatible with the \"Automatically check answers after input\" option"
+          "label":"Mostra la finestra di dialogo di conferma su \"Verifica\"",
+          "description":"Questa scelta non è compatibile con l'opzione \"Controlla automaticamente le risposte dopo l'immissione\""
         },
         {
-          "label":"Show confirmation dialog on \"Retry\""
+          "label":"Mostra la finestra di dialogo di conferma su \"Riprova\""
         },
         {
-          "label":"Accept minor spelling errors",
-          "description":"If activated, an answer will also count as correct with minor spelling errors"
+          "label":"Accetta errori minori di ortografia",
+          "description":"Se attivo, una risposta sarà conteggiata come corretta nonostante errori minori di ortografia"
         }
       ]
     },
     {
-      "label":"Check confirmation dialog",
+      "label":"Finestra di conferma per la verifica",
       "fields":[
         {
-          "label":"Header text",
-          "default":"Finish ?"
+          "label":"Testo dell'intestazione",
+          "default":"Finito?"
         },
         {
-          "label":"Body text",
-          "default":"Are you sure you wish to finish ?"
+          "label":"Testo del corpo",
+          "default":"Sei sicuro di voler finire?"
         },
         {
-          "label":"Cancel button label",
-          "default":"Cancel"
+          "label":"Etichetta del pulsante Annulla",
+          "default":"Annulla"
         },
         {
-          "label":"Confirm button label",
-          "default":"Finish"
+          "label":"Etichetta del pulsante di conferma",
+          "default":"Finito"
         }
       ]
     },
     {
-      "label":"Retry confirmation dialog",
+      "label":"Finestra di conferma per \"Riprova\"",
       "fields":[
         {
-          "label":"Header text",
-          "default":"Retry ?"
+          "label":"Testo dell'intestazione",
+          "default":"Vuoi riprovare?"
         },
         {
-          "label":"Body text",
-          "default":"Are you sure you wish to retry ?"
+          "label":"Testo del corpo",
+          "default":"Sei sicuro di voler riprovare?"
         },
         {
-          "label":"Cancel button label",
-          "default":"Cancel"
+          "label":"Etichetta del pulsante Annulla",
+          "default":"Annulla"
         },
         {
-          "label":"Confirm button label",
-          "default":"Confirm"
+          "label":"Etichetta del pulsante di conferma",
+          "default":"Conferma"
         }
       ]
     }
