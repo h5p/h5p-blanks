@@ -4,47 +4,47 @@
       "label":"Media",
       "fields":[
         {
-          "label":"Type",
+          "label":"Tipo",
           "description":"Optional media to display above the question."
         }
       ]
     },
     {
-      "label":"وصف النشاط",
-      "default":"Fill in the missing words",
-      "description":"دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "label":"Descripción de la tarea",
+      "default":"Rellenar las palabras que faltan",
+      "description":"Una guía que dice al usuario cómo responder a esta tarea."
     },
     {
-      "label":"النشاط",
-      "entity":"النشاط",
+      "label":"Bloques de texto",
+      "entity":"bloque de texto",
       "field":{
-        "label":"سطر من النص",
-        "placeholder":"Oslo is the capital of *Norway*.",
+        "label":"Línea de texto",
+        "placeholder":"Oslo es la capital de *Noruega*.",
         "description":"",
         "important":{
-          "description":"<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+          "description":"<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>"
         }
       }
     },
     {
-      "label":"ملاحظات النص",
-      "default":"You got @score of @total points",
-      "description":"ملاحظات النص، والمتغيرات المتاحة: النتيجة والمجموع. مثال: هل حصلت على درجة من مجموع النقاط الممكنة"
+      "label":"Texto de comentarios",
+      "default":"Has conseguido @score puntos de @total",
+      "description":"Texto de respuesta, las variables disponibles: @score y @total. Ejemplo: 'tienes @score de @total puntos posibles'"
     },
     {
-      "label":"النص ل \"مشاهدة الحل \" الزر",
-      "default":"Show solution"
+      "label":"Texto para el botón de \"Mostrar soluciones\"",
+      "default":"Mostrar solución"
     },
     {
-      "label":"النص ل \"إعادة المحاولة \" الزر",
+      "label":"Texto para el botón de \"Reintentar\"",
       "default":"Retry"
     },
     {
-      "label":"النص ل \"تحقق \" الزر",
+      "label":"Text for \"Check\" button",
       "default":"Check"
     },
     {
-      "label":"النص ل \"لا جواب \" رسالة",
+      "label":"Text for \"Not filled out\" message",
       "default":"Please fill in all blanks to view solution"
     },
     {
@@ -81,30 +81,30 @@
       "default":"Tip"
     },
     {
-      "label":"إعدادت النشاط",
-      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label":"Behavioural settings.",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
-          "label":"تمكين \"إعادة المحاولة \""
+          "label":"Enable \"Retry\""
         },
         {
-          "label":"تمكين \"مشاهدة الحل \" الزر"
+          "label":"Enable \"Show solutions\" button"
         },
         {
-          "label":"تحقق تلقائيا بعد إدخال الإجابات"
+          "label":"Automatically check answers after input"
         },
         {
-          "label":"حساسية الاجابة",
-          "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label":"Case sensitive",
+          "description":"Makes sure the user input has to be exactly the same as the answer."
         },
         {
-          "label":"يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label":"Require all fields to be answered before the solution can be viewed"
         },
         {
-          "label":"وضع فراغات الكلمات على خطوط منفصلة"
+          "label":"Put input fields on separate lines"
         },
         {
-          "label":"Disable image zooming for question image."
+          "label":"Disable image zooming for question image"
         },
         {
           "label":"Show confirmation dialog on \"Check\"",
