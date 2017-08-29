@@ -56,8 +56,8 @@
       ]
     },
     {
-      "label":"Tekst for \"Fasit\" knapp",
-      "default":"Fasit"
+      "label":"Tekst for \"Vis svar\" knapp",
+      "default":"Vis svar"
     },
     {
       "label":"Tekst for \"Prøv igjen\" knapp",
