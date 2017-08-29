@@ -1,11 +1,11 @@
 {
   "semantics":[
     {
-      "label":"Media",
+      "label":"Recurs",
       "fields":[
         {
-          "label":"Type",
-          "description":"Optional media to display above the question."
+          "label":"Tipus",
+          "description":"Recursos opcionals per mostrar al damunt de la pregunta."
         }
       ]
     },
