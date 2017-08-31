@@ -27,9 +27,33 @@
       }
     },
     {
-      "label":"Testo del feedback",
-      "default":"Hai @score di @total punti totali",
-      "description":"Variabili consentite nel feedback: @score e @total. Esempio: 'Hai ottenuto @score su @total punti possibili.'"
+      "label":"Feedback generale",
+      "fields":[
+        {
+          "widgets":[
+            {
+              "label":"Predefinito"
+            }
+          ],
+          "label":"Definisci un feedback personalizzato per ogni intervallo di punteggio",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"Intervallo",
+          "field":{
+            "fields":[
+              {
+                "label":"Intervallo di punteggio"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback per un intervallo di punteggio definito",
+                "placeholder":"Compila il feedback"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label":"Testo per il pulsante \"Mostra soluzioni\"",

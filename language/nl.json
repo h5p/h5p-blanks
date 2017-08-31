@@ -5,12 +5,12 @@
       "fields":[
         {
           "label":"Type",
-          "description":"Optional media to display above the question."
+          "description":"Optionele media, die boven de vragen worden getoond"
         }
       ]
     },
     {
-      "label":"Task description",
+      "label":"Beschrijving taak",
       "default":"Fill in the missing words",
       "description":"A guide telling the user how to answer this task."
     },
@@ -27,13 +27,37 @@
       }
     },
     {
-      "label":"Feedback text",
-      "default":"You got @score of @total points",
-      "description":"Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'"
+      "label":"Overall Feedback",
+      "fields":[
+        {
+          "widgets":[
+            {
+              "label":"Default"
+            }
+          ],
+          "label":"Define custom feedback for any score range",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"range",
+          "field":{
+            "fields":[
+              {
+                "label":"Score Range"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label":"Text for \"Show solutions\" button",
-      "default":"Show solution"
+      "default":"Toon oplossing"
     },
     {
       "label":"Text for \"Retry\" button",
@@ -81,11 +105,11 @@
       "default":"Tip"
     },
     {
-      "label":"Behavioural settings.",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Gedragsinstellingen",
+      "description":"Met deze opties kun je instellen hoe de taak zich gedraagt.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"Schakel de knop \"Opnieuw\" in"
         },
         {
           "label":"Enable \"Show solutions\" button"
