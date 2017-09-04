@@ -1,24 +1,24 @@
 {
   "semantics":[
     {
-      "label":"اعلام",
+      "label":"Media",
       "fields":[
         {
           "label":"Type",
-          "description":"Optional media to display above the question."
+          "description":"Optionele media, die boven de vragen worden getoond"
         }
       ]
     },
     {
-      "label":"وصف النشاط",
+      "label":"Beschrijving taak",
       "default":"Fill in the missing words",
-      "description":"دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "description":"A guide telling the user how to answer this task."
     },
     {
-      "label":"النشاط",
-      "entity":"النشاط",
+      "label":"Text blocks",
+      "entity":"text block",
       "field":{
-        "label":"سطر من النص",
+        "label":"Line of text",
         "placeholder":"Oslo is the capital of *Norway*.",
         "description":"",
         "important":{
@@ -56,19 +56,19 @@
       ]
     },
     {
-      "label":"النص ل \"مشاهدة الحل \" الزر",
-      "default":"Show solution"
+      "label":"Text for \"Show solutions\" button",
+      "default":"Toon oplossing"
     },
     {
-      "label":"النص ل \"إعادة المحاولة \" الزر",
+      "label":"Text for \"Retry\" button",
       "default":"Retry"
     },
     {
-      "label":"النص ل \"تحقق \" الزر",
+      "label":"Text for \"Check\" button",
       "default":"Check"
     },
     {
-      "label":"النص ل \"لا جواب \" رسالة",
+      "label":"Text for \"Not filled out\" message",
       "default":"Please fill in all blanks to view solution"
     },
     {
@@ -105,30 +105,30 @@
       "default":"Tip"
     },
     {
-      "label":"إعدادت النشاط",
-      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label":"Gedragsinstellingen",
+      "description":"Met deze opties kun je instellen hoe de taak zich gedraagt.",
       "fields":[
         {
-          "label":"تمكين \"إعادة المحاولة \""
+          "label":"Schakel de knop \"Opnieuw\" in"
         },
         {
-          "label":"تمكين \"مشاهدة الحل \" الزر"
+          "label":"Enable \"Show solutions\" button"
         },
         {
-          "label":"تحقق تلقائيا بعد إدخال الإجابات"
+          "label":"Automatically check answers after input"
         },
         {
-          "label":"حساسية الاجابة",
-          "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label":"Case sensitive",
+          "description":"Makes sure the user input has to be exactly the same as the answer."
         },
         {
-          "label":"يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label":"Require all fields to be answered before the solution can be viewed"
         },
         {
-          "label":"وضع فراغات الكلمات على خطوط منفصلة"
+          "label":"Put input fields on separate lines"
         },
         {
-          "label":"Disable image zooming for question image."
+          "label":"Disable image zooming for question image"
         },
         {
           "label":"Show confirmation dialog on \"Check\"",

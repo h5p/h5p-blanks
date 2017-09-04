@@ -1,7 +1,7 @@
 {
   "semantics":[
     {
-      "label":"اعلام",
+      "label":"Media",
       "fields":[
         {
           "label":"Type",
@@ -10,15 +10,15 @@
       ]
     },
     {
-      "label":"وصف النشاط",
+      "label":"Task description",
       "default":"Fill in the missing words",
-      "description":"دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "description":"A guide telling the user how to answer this task."
     },
     {
-      "label":"النشاط",
-      "entity":"النشاط",
+      "label":"Text blocks",
+      "entity":"text block",
       "field":{
-        "label":"سطر من النص",
+        "label":"Line of text",
         "placeholder":"Oslo is the capital of *Norway*.",
         "description":"",
         "important":{
@@ -56,19 +56,19 @@
       ]
     },
     {
-      "label":"النص ل \"مشاهدة الحل \" الزر",
+      "label":"Text for \"Show solutions\" button",
       "default":"Show solution"
     },
     {
-      "label":"النص ل \"إعادة المحاولة \" الزر",
+      "label":"Text for \"Retry\" button",
       "default":"Retry"
     },
     {
-      "label":"النص ل \"تحقق \" الزر",
+      "label":"Text for \"Check\" button",
       "default":"Check"
     },
     {
-      "label":"النص ل \"لا جواب \" رسالة",
+      "label":"Text for \"Not filled out\" message",
       "default":"Please fill in all blanks to view solution"
     },
     {
@@ -105,30 +105,30 @@
       "default":"Tip"
     },
     {
-      "label":"إعدادت النشاط",
-      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label":"Behavioural settings.",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
-          "label":"تمكين \"إعادة المحاولة \""
+          "label":"Enable \"Retry\""
         },
         {
-          "label":"تمكين \"مشاهدة الحل \" الزر"
+          "label":"Enable \"Show solutions\" button"
         },
         {
-          "label":"تحقق تلقائيا بعد إدخال الإجابات"
+          "label":"Automatically check answers after input"
         },
         {
-          "label":"حساسية الاجابة",
-          "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label":"Case sensitive",
+          "description":"Makes sure the user input has to be exactly the same as the answer."
         },
         {
-          "label":"يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label":"Require all fields to be answered before the solution can be viewed"
         },
         {
-          "label":"وضع فراغات الكلمات على خطوط منفصلة"
+          "label":"Put input fields on separate lines"
         },
         {
-          "label":"Disable image zooming for question image."
+          "label":"Disable image zooming for question image"
         },
         {
           "label":"Show confirmation dialog on \"Check\"",

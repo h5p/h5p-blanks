@@ -1,149 +1,187 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Media",
-      "fields": [
+      "label":"Media",
+      "fields":[
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label":"Tipo",
+          "description":"Media opzionale da mostrare sopra la domanda."
         }
       ]
     },
     {
-      "label": "Descrizione attività",
-      "description": "Una guida deve indicare all'utente come rispondere a questo compito."
+      "label":"Descrizione attività",
+      "default":"Riempire con le parole mancanti",
+      "description":"Una guida che dice all'utente come rispondere a questo compito."
     },
     {
-      "label": "Blocchi di testo",
-      "entity": "Blocco di testo",
-      "field": {
-        "label": "Linea di testo",
-        "description": "Gli spazi vuoti sono aggiunti con un asterisco (*) davanti e dietro la parola/frase corretta. Risposte alternative sono separate con una barra (/). Si può aggiungere un suggerimento testuale, usando i due punti (:) prima del suggerimento. Esempio: Il contentuto H5P può essere editato utilizzando un *browser/web-browser:Qualcosa che usi tutti i giorni*."
+      "label":"Blocchi di testo",
+      "entity":"Blocco di testo",
+      "field":{
+        "label":"Linea di testo",
+        "placeholder":"Oslo è la capitale della * Norvegia *.",
+        "description":"",
+        "important":{
+          "description":"<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della parola/frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>"
+        }
       }
     },
     {
-      "label": "Testo del Feedback",
-      "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
-    },
-    {
-      "label": "Testo per il pulsante \"Mostra soluzioni\""
-    },
-    {
-      "label": "Testo per il pulsante \"Indietro\""
-    },
-    {
-      "label": "Testo per il pulsante \"Verifica\""
-    },
-    {
-      "label": "Testo per il messaggio \"Non compilato\""
-    },
-    {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
-    },
-    {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
-    },
-    {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
-    },
-    {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
-    },
-    {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
-    },
-    {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
-    },
-    {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
-    },
-    {
-      "label": "Tip icon label",
-      "default": "Tip"
-    },
-    {
-      "label": "Impostazioni esecuzione",
-      "description": "Queste opzioni consentono di controllare l'andamento del compito.",
-      "fields": [
+      "label":"Feedback generale",
+      "fields":[
         {
-          "label": "Abilita \"Riprova\""
-        },
-        {
-          "label": "Abilita il pulsante \"Mostra soluzioni\""
-        },
-        {
-          "label": "Controlla automaticamente le risposte dopo l'immissione"
-        },
-        {
-          "label": "Maiuscole e minuscole",
-          "description": "Assicurare che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
-        },
-        {
-          "label": "Richiedere che tutti i campi siano completati prima di visualizzare la soluzione"
-        },
-        {
-          "label": "Immettere i campi su righe separate"
-        },
-        {
-          "label": "Disable image zooming for question image."
-        },
-        {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
-        },
-        {
-          "label": "Show confirmation dialog on \"Retry\""
+          "widgets":[
+            {
+              "label":"Predefinito"
+            }
+          ],
+          "label":"Definisci un feedback personalizzato per ogni intervallo di punteggio",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"Intervallo",
+          "field":{
+            "fields":[
+              {
+                "label":"Intervallo di punteggio"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback per un intervallo di punteggio definito",
+                "placeholder":"Compila il feedback"
+              }
+            ]
+          }
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
-      "fields": [
+      "label":"Testo per il pulsante \"Mostra soluzioni\"",
+      "default":"Mostra soluzione"
+    },
+    {
+      "label":"Testo per il pulsante \"Riprova\"",
+      "default":"Riprova"
+    },
+    {
+      "label":"Testo per il pulsante \"Verifica\"",
+      "default":"Verifica"
+    },
+    {
+      "label":"Testo per il messaggio \"Non compilato\"",
+      "default":"Per favore, riempi tutti gli spazi vuoti per vedere la soluzione"
+    },
+    {
+      "label":"Testo del messaggio \"': ans' è corretto\"",
+      "default":"': ans' è corretto"
+    },
+    {
+      "label":"Testo del messaggio \"': ans' è sbagliato\"",
+      "default":"': ans' è sbagliato"
+    },
+    {
+      "label":"Testo del messaggio \"Hai risposto correttamente\"",
+      "default":"Ha risposto correttamente"
+    },
+    {
+      "label":"Testo del messaggio \"Hai risposto in modo non corretto\"",
+      "default":"Hai risposto in modo non corretto"
+    },
+    {
+      "label":"Etichetta di tecnologie assistive per la soluzione",
+      "default":"Risposta corretta:"
+    },
+    {
+      "label":"Etichetta di tecnologie assistive per il campo di immissione",
+      "description":"Utilizza @num e @total per sostituire il numero dello spazio vuoto corrente (cloze) e il numero totale di spazi da riempire (cloze)",
+      "default":"Immissioni mancanti: @num su @total"
+    },
+    {
+      "label":"Etichetta di tecnologie assistive per segnalare la presenza di un suggerimento sull'immissione",
+      "default":"Suggerimento disponibile"
+    },
+    {
+      "label":"Etichetta dell'icona di suggerimento",
+      "default":"Suggerimento"
+    },
+    {
+      "label":"Impostazioni di esecuzione.",
+      "description":"Queste opzioni ti consentono di controllare l'andamento del compito.",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label":"Attiva \"Riprova\""
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label":"Attiva il pulsante \"Mostra soluzioni\""
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Controlla automaticamente le risposte dopo l'immissione"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label":"Riconosce maiuscole e minuscole",
+          "description":"Assicurati che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
+        },
+        {
+          "label":"Richiedi che tutti i campi siano completati prima di mostrare la soluzione"
+        },
+        {
+          "label":"Inserire campi di input in righe separate"
+        },
+        {
+          "label":"Disabilita lo zoom dell'immagine su immagini-domanda"
+        },
+        {
+          "label":"Mostra la finestra di dialogo di conferma su \"Verifica\"",
+          "description":"Questa scelta non è compatibile con l'opzione \"Controlla automaticamente le risposte dopo l'immissione\""
+        },
+        {
+          "label":"Mostra la finestra di dialogo di conferma su \"Riprova\""
+        },
+        {
+          "label":"Accetta errori minori di ortografia",
+          "description":"Se attivo, una risposta sarà conteggiata come corretta nonostante errori minori di ortografia"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
-      "fields": [
+      "label":"Finestra di conferma per la verifica",
+      "fields":[
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label":"Testo dell'intestazione",
+          "default":"Finito?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label":"Testo del corpo",
+          "default":"Sei sicuro di voler finire?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label":"Etichetta del pulsante Annulla",
+          "default":"Annulla"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label":"Etichetta del pulsante di conferma",
+          "default":"Finito"
+        }
+      ]
+    },
+    {
+      "label":"Finestra di conferma per \"Riprova\"",
+      "fields":[
+        {
+          "label":"Testo dell'intestazione",
+          "default":"Vuoi riprovare?"
+        },
+        {
+          "label":"Testo del corpo",
+          "default":"Sei sicuro di voler riprovare?"
+        },
+        {
+          "label":"Etichetta del pulsante Annulla",
+          "default":"Annulla"
+        },
+        {
+          "label":"Etichetta del pulsante di conferma",
+          "default":"Conferma"
         }
       ]
     }

@@ -53,8 +53,8 @@ H5P.Blanks = (function ($, Question) {
       questions: [
         "Oslo is the capital of *Norway*."
       ],
-      userAnswers: [],
-      score: "You got @score of @total points",
+      overallFeedback: [],
+      userAnswers: [], // TODO This isn't in semantics?
       showSolutions: "Show solution",
       tryAgain: "Try again",
       checkAnswer: "Check",
@@ -76,8 +76,7 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false,
         disableImageZooming: false
-      },
-      overrideSettings: {}
+      }
     }, params);
 
     // Delete empty questions
@@ -163,6 +162,22 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerButtons = function () {
     var self = this;
 
+    var $content = $('[data-content-id="' + self.contentId + '"].h5p-content');
+    var $containerParents = $content.parents('.h5p-container');
+
+    // select find container to attach dialogs to
+    var $container;
+    if($containerParents.length !== 0) {
+      // use parent highest up if any
+      $container = $containerParents.last();
+    }
+    else if($content.length !== 0){
+      $container = $content;
+    }
+    else  {
+      $container = $(document.body);
+    }
+
     if (!self.params.behaviour.autoCheck) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
@@ -174,8 +189,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
@@ -194,8 +209,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
@@ -570,7 +585,7 @@ H5P.Blanks = (function ($, Question) {
     this.addResponseToXAPI(xAPIEvent);
     return {
       statement: xAPIEvent.data.statement
-    }
+    };
   };
 
   /**
@@ -694,7 +709,8 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.showEvaluation = function () {
     var maxScore = this.getMaxScore();
     var score = this.getScore();
-    var scoreText = this.params.score.replace('@score', score).replace('@total', maxScore);
+    var scoreText = H5P.Question.determineOverallFeedback(this.params.overallFeedback, score / maxScore).replace('@score', score).replace('@total', maxScore);
+
     this.setFeedback(scoreText, score, maxScore);
 
     if (score === maxScore) {
@@ -707,7 +723,7 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.hideEvaluation = function () {
     // Clear evaluation section.
-    this.setFeedback();
+    this.removeFeedback();
   };
 
   /**

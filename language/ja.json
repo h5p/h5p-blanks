@@ -1,24 +1,24 @@
 {
   "semantics":[
     {
-      "label":"اعلام",
+      "label":"メディア",
       "fields":[
         {
-          "label":"Type",
-          "description":"Optional media to display above the question."
+          "label":"タイプ",
+          "description":"設問の上に表示するオプションのメディア。"
         }
       ]
     },
     {
-      "label":"وصف النشاط",
+      "label":"Task description",
       "default":"Fill in the missing words",
-      "description":"دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "description":"A guide telling the user how to answer this task."
     },
     {
-      "label":"النشاط",
-      "entity":"النشاط",
+      "label":"Text blocks",
+      "entity":"text block",
       "field":{
-        "label":"سطر من النص",
+        "label":"Line of text",
         "placeholder":"Oslo is the capital of *Norway*.",
         "description":"",
         "important":{
@@ -27,28 +27,28 @@
       }
     },
     {
-      "label":"Overall Feedback",
+      "label":"全体のフィードバック",
       "fields":[
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"デフォルト"
             }
           ],
-          "label":"Define custom feedback for any score range",
+          "label":"ある得点範囲に対して、カスタムフィードバックを定義します。",
           "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity":"range",
+          "entity":"範囲",
           "field":{
             "fields":[
               {
-                "label":"Score Range"
+                "label":"得点範囲"
               },
               {
                 
               },
               {
-                "label":"Feedback for defined score range",
-                "placeholder":"Fill in the feedback"
+                "label":"定義した得点範囲に対するフィードバック",
+                "placeholder":"フィードバックを記入"
               }
             ]
           }
@@ -56,19 +56,19 @@
       ]
     },
     {
-      "label":"النص ل \"مشاهدة الحل \" الزر",
-      "default":"Show solution"
+      "label":"Text for \"Show solutions\" button",
+      "default":"解を表示"
     },
     {
-      "label":"النص ل \"إعادة المحاولة \" الزر",
+      "label":"Text for \"Retry\" button",
       "default":"Retry"
     },
     {
-      "label":"النص ل \"تحقق \" الزر",
+      "label":"Text for \"Check\" button",
       "default":"Check"
     },
     {
-      "label":"النص ل \"لا جواب \" رسالة",
+      "label":"Text for \"Not filled out\" message",
       "default":"Please fill in all blanks to view solution"
     },
     {
@@ -98,37 +98,37 @@
     },
     {
       "label":"Assistive technology label for saying an input has a tip tied to it",
-      "default":"Tip available"
+      "default":"ヒント利用可能"
     },
     {
       "label":"Tip icon label",
       "default":"Tip"
     },
     {
-      "label":"إعدادت النشاط",
-      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label":"動作設定",
+      "description":"これらのオプションでタスクがどのように動作するかを制御できます。",
       "fields":[
         {
-          "label":"تمكين \"إعادة المحاولة \""
+          "label":"「リトライ」を有効化"
         },
         {
-          "label":"تمكين \"مشاهدة الحل \" الزر"
+          "label":"Enable \"Show solutions\" button"
         },
         {
-          "label":"تحقق تلقائيا بعد إدخال الإجابات"
+          "label":"Automatically check answers after input"
         },
         {
-          "label":"حساسية الاجابة",
-          "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label":"Case sensitive",
+          "description":"Makes sure the user input has to be exactly the same as the answer."
         },
         {
-          "label":"يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label":"Require all fields to be answered before the solution can be viewed"
         },
         {
-          "label":"وضع فراغات الكلمات على خطوط منفصلة"
+          "label":"Put input fields on separate lines"
         },
         {
-          "label":"Disable image zooming for question image."
+          "label":"Disable image zooming for question image"
         },
         {
           "label":"Show confirmation dialog on \"Check\"",

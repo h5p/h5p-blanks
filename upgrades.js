@@ -52,6 +52,31 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
 
         // Done
         finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Blanks 1.8
+       *
+       * Move old feedback message to the new overall feedback system.
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      8: function (parameters, finished) {
+        if (parameters && parameters.score) {
+          parameters.overallFeedback = [
+            {
+              'from': 0,
+              'to': 100,
+              'feedback': parameters.score
+            }
+          ];
+
+          delete parameters.score;
+        }
+
+        finished(null, parameters);
       }
     }
   };
