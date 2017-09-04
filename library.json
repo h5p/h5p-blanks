@@ -4,11 +4,13 @@
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
   "minorVersion": 8,
-  "patchVersion": 1,
+  "patchVersion": 2,
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel",
-  "embedTypes": ["iframe"],
+  "embedTypes": [
+    "iframe"
+  ],
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 6
