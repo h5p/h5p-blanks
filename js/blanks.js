@@ -68,6 +68,7 @@ H5P.Blanks = (function ($, Question) {
       inputLabel: "Blank input @num of @total",
       inputHasTipLabel: "Tip available",
       tipLabel: "Tip",
+      scoreBarLabel: 'You got :num out of :total points',
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
@@ -711,7 +712,7 @@ H5P.Blanks = (function ($, Question) {
     var score = this.getScore();
     var scoreText = H5P.Question.determineOverallFeedback(this.params.overallFeedback, score / maxScore).replace('@score', score).replace('@total', maxScore);
 
-    this.setFeedback(scoreText, score, maxScore);
+    this.setFeedback(scoreText, score, maxScore, this.params.scoreBarLabel);
 
     if (score === maxScore) {
       this.toggleButtonVisibility(STATE_FINISHED);

@@ -182,6 +182,10 @@
           "default": "Confirm"
         }
       ]
+    },
+    {
+      "label": "Textual representation of the score bar for those using a readspeaker",
+      "default": "You got :num out of :total points"
     }
   ]
 }
