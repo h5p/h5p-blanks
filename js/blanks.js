@@ -313,21 +313,51 @@ H5P.Blanks = (function ($, Question) {
         }
       }, i, self.clozes.length);
     }).keydown(function (event) {
-      self.autoGrowTextField($(this));
+      var $this = $(this);
 
-      if (event.keyCode === 13) {
-        return false; // Prevent form submission on enter key
+      // Adjust width of text input field to match value
+      self.autoGrowTextField($this);
+
+      var $inputs, isLastInput;
+      var enterPressed = (event.keyCode === 13);
+      var tabPressed = (event.keyCode === 9 && self.params.behaviour.autoCheck);
+
+      if (enterPressed || tabPressed) {
+        // Figure out which inputs are left to answer
+        $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
+
+        // Figure out if this is the last input
+        isLastInput = $this.is($inputs[$inputs.length - 1]);
       }
 
-      // Refocus buttons after they have been toggled if last input
-      if (event.keyCode === 9 && self.params.behaviour.autoCheck) {
-        var $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
-        var $lastInput = $inputs[$inputs.length - 1];
-        if ($(this).is($lastInput) && !self.shiftPressed) {
-          setTimeout(function () {
-            self.focusButton();
-          }, 10);
+      if ((tabPressed && isLastInput && !self.shiftPressed) ||
+          (enterPressed && isLastInput)) {
+        // Focus first button on next tick
+        setTimeout(function () {
+          self.focusButton();
+        }, 10);
+      }
+
+      if (enterPressed) {
+        if (isLastInput) {
+          // Check answers
+          $this.trigger('blur');
         }
+        else {
+          // Find next input to focus
+          var setFocus = false;
+          $inputs.each(function () {
+            if (setFocus) {
+              $(this).focus();
+              return false;
+            }
+            else if ($this.is(this)) {
+              setFocus = true;
+            }
+          });
+        }
+
+        return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
       self.answered = true;
