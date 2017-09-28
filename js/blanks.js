@@ -320,9 +320,9 @@ H5P.Blanks = (function ($, Question) {
 
       var $inputs, isLastInput;
       var enterPressed = (event.keyCode === 13);
-      var tabPressed = (event.keyCode === 9 && self.params.behaviour.autoCheck);
+      var tabPressedAutoCheck = (event.keyCode === 9 && self.params.behaviour.autoCheck);
 
-      if (enterPressed || tabPressed) {
+      if (enterPressed || tabPressedAutoCheck) {
         // Figure out which inputs are left to answer
         $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
 
@@ -330,7 +330,7 @@ H5P.Blanks = (function ($, Question) {
         isLastInput = $this.is($inputs[$inputs.length - 1]);
       }
 
-      if ((tabPressed && isLastInput && !self.shiftPressed) ||
+      if ((tabPressedAutoCheck && isLastInput && !self.shiftPressed) ||
           (enterPressed && isLastInput)) {
         // Focus first button on next tick
         setTimeout(function () {
@@ -345,16 +345,7 @@ H5P.Blanks = (function ($, Question) {
         }
         else {
           // Find next input to focus
-          var setFocus = false;
-          $inputs.each(function () {
-            if (setFocus) {
-              $(this).focus();
-              return false;
-            }
-            else if ($this.is(this)) {
-              setFocus = true;
-            }
-          });
+          $inputs.eq($inputs.index($this) + 1).focus();
         }
 
         return false; // Prevent form submission on enter key
