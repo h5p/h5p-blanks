@@ -72,6 +72,7 @@ H5P.Blanks = (function ($, Question) {
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
+        enableCheckButton: true,
         caseSensitive: true,
         showSolutionsRequiresInput: true,
         autoCheck: false,
@@ -452,7 +453,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }
 
-    if (state === STATE_ONGOING) {
+    if (state === STATE_ONGOING && this.params.behaviour.enableCheckButton) {
       this.showButton('check-answer');
     }
     else {
