@@ -113,6 +113,9 @@
           "label": "Aktiver \"Fasit\"-knapp"
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
         },
         {
