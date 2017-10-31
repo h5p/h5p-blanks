@@ -180,7 +180,7 @@ H5P.Blanks = (function ($, Question) {
       $container = $(document.body);
     }
 
-    if (!self.params.behaviour.autoCheck) {
+    if (!self.params.behaviour.autoCheck && this.params.behaviour.enableCheckButton) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
         self.toggleButtonVisibility(STATE_CHECKING);
@@ -453,7 +453,7 @@ H5P.Blanks = (function ($, Question) {
       }
     }
 
-    if (state === STATE_ONGOING && this.params.behaviour.enableCheckButton) {
+    if (state === STATE_ONGOING) {
       this.showButton('check-answer');
     }
     else {
