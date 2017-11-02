@@ -79,9 +79,11 @@
 /* Header and footer blocks (title + evaluation, buttons) */
 .h5p-blanks .joubel-tip-container {
   position: absolute;
-  top: -0.1em;
   right: 0.4em;
   font-size: 1em;
+}
+.h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
+  line-height: 1em;
 }
 .h5p-blanks .has-tip .h5p-text-input {
   padding-right: 2.25em;
