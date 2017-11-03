@@ -113,6 +113,9 @@
           "label": "Enable \"Show solutions\" button"
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Automatically check answers after input"
         },
         {

@@ -113,6 +113,9 @@
           "label": "Salli painike \"Katso vastaus\""
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Tarkista vastaukset automaattisesti"
         },
         {

@@ -113,6 +113,9 @@
           "label": "Omogući \"Prikaži rješenje\" dugme"
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Odgovore nakon unošenja automatski provjeri"
         },
         {
