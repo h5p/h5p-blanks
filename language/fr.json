@@ -113,6 +113,9 @@
           "label": "Activer le bouton \"Voir la correction\""
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Vérifier les réponses instantanément dès la saisie."
         },
         {
