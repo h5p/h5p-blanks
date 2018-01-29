@@ -258,6 +258,15 @@
         "optional": true
       },
       {
+        "name": "enableCheckButton",
+        "type": "boolean",
+        "label": "Enable \"Check\" button",
+        "widget": "none",
+        "importance": "low",
+        "default": true,
+        "optional": true
+      },
+      {
         "label": "Automatically check answers after input",
         "importance": "low",
         "name": "autoCheck",

@@ -113,6 +113,9 @@
           "label": "Attiva il pulsante \"Mostra soluzioni\""
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Controlla automaticamente le risposte dopo l'immissione"
         },
         {

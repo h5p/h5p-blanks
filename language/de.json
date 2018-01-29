@@ -113,6 +113,9 @@
           "label": "\"Lösung anzeigen\"-Button anzeigen"
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Antworten nach Eingabe automatisch prüfen"
         },
         {
