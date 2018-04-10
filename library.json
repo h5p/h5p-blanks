@@ -3,8 +3,8 @@
   "description": "Test your users with fill in the blanks tasks(Cloze tests).",
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
-  "minorVersion": 8,
-  "patchVersion": 6,
+  "minorVersion": 9,
+  "patchVersion": 0,
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel",
@@ -13,7 +13,7 @@
   ],
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 6
+    "minorVersion": 15
   },
   "preloadedCss": [
     {

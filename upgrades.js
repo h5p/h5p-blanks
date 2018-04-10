@@ -77,6 +77,18 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
         }
 
         finished(null, parameters);
+      },
+      9: function (parameters, finished, extras) {
+        // Move value from getTitle() to metadata title
+        if (parameters && parameters.text) {
+          var title = parameters.text || 'Fill In';
+          title = title = title.replace(/<[^>]*>?/g, '');
+
+          extras = extras || {};
+          extras.metadata = extras.metadata || {};
+          extras.metadata.title = title;
+        }
+        finished(null, parameters, extras);
       }
     }
   };
