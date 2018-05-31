@@ -10,43 +10,43 @@
       ]
     },
     {
-      "label": "Beschrijving taak",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Beschrijving opgave",
+      "default": "Vul de ontbrekende woorden in",
+      "description": "Een gids die de gebruiker vertelt hoe deze opgave moet worden beantwoord."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Tekst blokken",
+      "entity": "tekst blok",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Tekstregels",
+        "placeholder": "Amsterdam is de hoofdstad van *Nederland*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+          "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>"
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Algehele feedback",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Standaard"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definieer aangepaste feedback voor elke score reeks",
+          "description": "Druk op de \"Voeg scorereeks\" knop om zoveel reeksen toe te voegen als nodig. Voorbeeld: 0-20% Onvoldoende, 21-91% Gemiddelde score, 91-100% Uitstekende score!",
+          "entity": "reeks",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Score reeks"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback voor de gedefinieerde scorereeks",
+                "placeholder": "Vul de aangepaste feedback in"
               }
             ]
           }
@@ -54,141 +54,141 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
+      "label": "Tekst voor de \"Toon oplossing\"-knop",
       "default": "Toon oplossing"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Tekst voor de \"Opnieuw proberen\"-knop",
+      "default": "Opnieuw proberen"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Tekst voor de \"Controleer\"-knop",
+      "default": "Controleer"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Tekst voor bericht \"Niet ingevuld\"",
+      "default": "Om de oplossing te zien, dien je alle lege velden in te vullen"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Tekst voor bericht \"':antwoord' is juist\"",
+      "default": "':antwoord' is juist"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Tekst voor bericht \"':antwoord' is onjuist\"",
+      "default": "':antwoord' is onjuist"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Tekst voor bericht \"Juist geantwoord\"",
+      "default": "Juist geantwoord"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Tekst voor bericht \"Onjuist geantwoord\"",
+      "default": "Onjuist geantwoord"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Technologisch hulplabel voor de oplossing",
+      "default": "Juist antwoord:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Technologisch hulplabel voor het invoerveld",
+      "description": "Gebruik @num en @total om het huidige cloze-aantal en het totale cloze-aantal te vervangen",
+      "default": "Lege invoer @num van @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Technologisch hulplabel om aan te geven dat er voor de invoer een tip beschikbaar is",
+      "default": "Tip beschikbaar"
     },
     {
-      "label": "Tip icon label",
+      "label": "Label van het tip pictogram",
       "default": "Tip"
     },
     {
       "label": "Gedragsinstellingen",
-      "description": "Met deze opties kun je instellen hoe de taak zich gedraagt.",
+      "description": "Met deze opties kun je instellen hoe de opgave zich gedraagt.",
       "fields": [
         {
-          "label": "Schakel de knop \"Opnieuw\" in"
+          "label": "Activeer de knop \"Opnieuw\""
         },
         {
-          "label": "Enable \"Show solutions\" button"
+          "label": "Activeer de knop \"Toon oplossingen\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activeer de knop \"Controleer\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Controleer automatisch de antwoorden na invoer"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Hoofdlettergevoelig",
+          "description": "Zorg ervoor dat de invoer van de gebruiker exact gelijk is aan het antwoord."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Alle velden moeten worden ingevuld voordat de oplossing kan worden getoond"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Zet de invoervelden op afzonderlijke regels"
         },
         {
-          "label": "Disable image zooming for question image"
+          "label": "Deactiveer het zoomen van de afbeelding tijdens het tonen van de opgave"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Toon bevestigingsvenster bij \"Controleer\"",
+          "description": "Deze optie is niet verenigbaar met de \"Controleer automatisch de antwoorden na invoer\" optie"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Toon bevestigingsvenster bij \"Opnieuw\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label": "Accepteer kleine spellingsfouten",
+          "description": "Indien geactiveerd, zal een antwoord met kleine spellingsfouten ook als juist worden meegeteld"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Controleer bevestigingsvenster",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Koptekst",
+          "default": "Stoppen?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Hoofdtekst",
+          "default": "Ben je er zeker van dat je wilt stoppen?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Label annuleer knop",
+          "default": "Annuleer"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Label bevestigingsknop",
+          "default": "Stoppen"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Bevestigingsvenster opnieuw",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Koptekst",
+          "default": "Opnieuw?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Hoofdtekst",
+          "default": "Ben je er zeker van dat je het opnieuw wil proberen?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Label annuleer knop",
+          "default": "Annuleer"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Label bevestigings knop",
+          "default": "Bevestig"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstuele weergave van de scorebalk voor diegenen die gebruik maken van een readspeaker",
+      "default": "Je hebt :num van de :total punten"
     }
   ]
 }
