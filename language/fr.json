@@ -22,31 +22,32 @@
         "placeholder": "Paris est la capitale de la *France*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>"
+          "description": "<ul><li>Ajoutez les blancs dans le texte entre deux astérisques (*).</li><li>Séparez des réponses alternatives correctes avec un slash (/).</li><li>Vous pouvez ajouter un indice en utilisant 2 points (:) avant cet élément.</li></ul>",
+          "example": "Un contenu H5P peut être édité en utilisant un *navigateur/navigateur web:Quelque chose que vous êtes en train d'utiliser*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Feedback général",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Par défaut"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Définissez des feedbacks pour différents intervalles de scores",
+          "description": "Cliquez sur le bouton \"Ajouter Intervalle\" pour ajouter autant d'intervalles de score que vous souhaitez. Exemple: 0-20% Mauvais score, 21-91% Score moyen, 91-100% Score excellent !",
+          "entity": "intervalle",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Intervalle de scores"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback pour cet intervalle de scores",
+                "placeholder": "Remplissez le feedback"
               }
             ]
           }
@@ -74,8 +75,8 @@
       "default": "':ans' est une réponse exacte"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse incorrecte\"",
-      "default": "':ans' est une réponse incorrecte"
+      "label": "Texte du message \"':ans' est une réponse inexacte\"",
+      "default": "':ans' est une réponse inexacte"
     },
     {
       "label": "Texte du message \"Réponse exacte\"",
@@ -113,7 +114,7 @@
           "label": "Activer le bouton \"Voir la correction\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activer le bouton \"Vérifier\""
         },
         {
           "label": "Vérifier les réponses instantanément dès la saisie."
@@ -139,8 +140,8 @@
           "label": "Afficher la fenêtre de confirmation pour \"Recommencer\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label": "Accepter de petites fautes d'orthopraphe",
+          "description": "Si cette option est activée, la réponse avec des fautes d'orthographe va également être considérée comme correcte."
         }
       ]
     },
@@ -187,8 +188,8 @@
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Représentation textuelle du panneau du score pour les utilisateurs d'outils de synthèse vocale (comme ReadSpeaker)",
+      "default": "Vous avez obtenu :num points sur un total de :points"
     }
   ]
 }
