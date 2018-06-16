@@ -45,8 +45,8 @@
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback für festgelegten Punktebereich",
+                "placeholder": "Trage das Feedback ein."
               }
             ]
           }
