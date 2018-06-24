@@ -1,0 +1,194 @@
+{
+  "semantics": [
+    {
+      "label": "وسائط",
+      "fields": [
+        {
+          "label": "النوع",
+          "description": "وسائط اختيارية لعرضها فوق السؤال."
+        }
+      ]
+    },
+    {
+      "label": "وصف النشاط",
+      "default": "Fill in the missing words",
+      "description": "دليل يخبر المستخدم عن كيفية الاجابة على هذا النشاط."
+    },
+    {
+      "label": "كتل النص",
+      "entity": "text block",
+      "field": {
+        "label": "سطر من النص",
+        "placeholder": "Oslo is the capital of *Norway*.",
+        "description": "",
+        "important": {
+          "description": "<ul><li>تتم إضافة الفراغات بالعلامة النجمية (*) امام وخلف الكلمة / العبارة الصحيحة.</li><li>يتم فصل الإجابات البديلة مع شرطة مائلة للأمام (/).</li><li>يمكنك إضافة تلميح نصي ، باستخدام نقطتين (:) أمام التلميح.</li></ul>"
+        }
+      }
+    },
+    {
+      "label": "الملاحظات الشاملة",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "label": "افتراضي"
+            }
+          ],
+          "label": "تحديد الملاحظات المخصصة لأي مجال نتيجة",
+          "description": "انقر فوق الزر 'إضافة نطاق' لإضافة أكبر عدد ممكن من النطاقات. مثال: 0-20٪ نتيجة سيئة ، 21-91٪ نتيجة متوسطة ، 91-100٪ نتيجة رائعة!",
+          "entity": "range",
+          "field": {
+            "fields": [
+              {
+                "label": "مجال النتيجة"
+              },
+              {},
+              {
+                "label": "الملاحظات لمجال نتيجة محددة",
+                "placeholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "نص زر \" اظهار الحلول \"",
+      "default": "Show solution"
+    },
+    {
+      "label": "نص زر \" اعادة المحاولة \"",
+      "default": "Retry"
+    },
+    {
+      "label": "نص زر \" تحقق \"",
+      "default": "Check"
+    },
+    {
+      "label": "نص رسالة \" لم يتم ملؤها \"ئئئئ ",
+      "default": "Please fill in all blanks to view solution"
+    },
+    {
+      "label": "نص رسالة \" الاجابة صحيحة \"",
+      "default": "':ans' is correct"
+    },
+    {
+      "label": "نص رسالة \"ة الاجابة خاطئة \"",
+      "default": "':ans' is wrong"
+    },
+    {
+      "label": "نص رسالة \" اجاب بشكل صحيح \"",
+      "default": "Answered correctly"
+    },
+    {
+      "label": "نص رسالة \" اجاب بشكل خاطئ\"",
+      "default": "Answered incorrectly"
+    },
+    {
+      "label": "لافتة التقنيات المساعدة للحل",
+      "default": "Correct answer:"
+    },
+    {
+      "label": "لافتة التقنيات المساعدة لحقل الادخال",
+      "description": "Use @num and @total to replace current cloze number and total cloze number",
+      "default": "Blank input @num of @total"
+    },
+    {
+      "label": "لافتة التقنيات المساعدة للقول بأن ادخالا ما لديه تلميح مرتبط به ",
+      "default": "Tip available"
+    },
+    {
+      "label": "لافتة ايقونة التلميح",
+      "default": "Tip"
+    },
+    {
+      "label": "الاعدادات السلوكية.",
+      "description": "ستتيح لك هذه الخيارات التحكم في كيفية تصرف المهمة.",
+      "fields": [
+        {
+          "label": "تمكين \" اعادة المحاولة\""
+        },
+        {
+          "label": "زر تمكين \" اظهر الحلول \""
+        },
+        {
+          "label": "زر تمكين \" تحقق \""
+        },
+        {
+          "label": "تحقق من الاجابات بعد الادخال بشكل اتوماتيكي"
+        },
+        {
+          "label": "حساسية الحالة",
+          "description": "تأكد من أن إدخال المستخدم يجب أن يكون بالضبط نفس الإجابة."
+        },
+        {
+          "label": "اطلب من جميع الحقول أن يتم الرد عليها قبل أن يتم عرض الحل"
+        },
+        {
+          "label": "ضع حقول الإدخال على أسطر منفصلة"
+        },
+        {
+          "label": "Disable image zooming for question image"
+        },
+        {
+          "label": "Show confirmation dialog on \"Check\"",
+          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+        },
+        {
+          "label": "Show confirmation dialog on \"Retry\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors"
+        }
+      ]
+    },
+    {
+      "label": "Check confirmation dialog",
+      "fields": [
+        {
+          "label": "Header text",
+          "default": "Finish ?"
+        },
+        {
+          "label": "Body text",
+          "default": "Are you sure you wish to finish ?"
+        },
+        {
+          "label": "Cancel button label",
+          "default": "Cancel"
+        },
+        {
+          "label": "Confirm button label",
+          "default": "Finish"
+        }
+      ]
+    },
+    {
+      "label": "Retry confirmation dialog",
+      "fields": [
+        {
+          "label": "Header text",
+          "default": "Retry ?"
+        },
+        {
+          "label": "Body text",
+          "default": "Are you sure you wish to retry ?"
+        },
+        {
+          "label": "Cancel button label",
+          "default": "Cancel"
+        },
+        {
+          "label": "Confirm button label",
+          "default": "Confirm"
+        }
+      ]
+    },
+    {
+      "label": "Textual representation of the score bar for those using a readspeaker",
+      "default": "You got :num out of :total points"
+    }
+  ]
+}
