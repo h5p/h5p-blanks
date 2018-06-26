@@ -20,7 +20,8 @@ H5PPresave['H5P.Blanks'] = function (content, finished) {
   var score = content.questions
     .map(function (question) {
       var pattern = /\*[^\*]+\*/g;
-      return question.match(pattern || []).length
+      var matches = question.match(pattern);
+      return Array.isArray(matches) ? matches.length : 0;
     })
     .reduce(function (previous, current) {
       return previous + current
