@@ -22,7 +22,8 @@
         "placeholder": "Oslo es la capital de *Noruega*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>"
+          "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>",
+          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
