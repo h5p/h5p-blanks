@@ -22,7 +22,8 @@
         "placeholder": "Amsterdam is de hoofdstad van *Nederland*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>"
+          "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>",
+          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },

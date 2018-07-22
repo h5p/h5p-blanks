@@ -184,9 +184,9 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck && this.params.behaviour.enableCheckButton) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
+        self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
-        self.toggleButtonVisibility(STATE_CHECKING);
         self.triggerAnswered();
       }, true, {}, {
         confirmationDialog: {
