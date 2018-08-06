@@ -37,7 +37,7 @@
             }
           ],
           "label": "Defina feedback customizado para qualquer faixa de pontuação",
-          "description": "Clique no botão \"Adicionar faixa\" para adicionar quantas faixas de pontuação forem necessárias. Example: Exemplo: 0-20% Pontuação ruim, 21-91% Pontuação média, 91-100% Ótima pontuação!",
+          "description": "Clique no botão \"Adicionar faixa\" para adicionar quantas faixas de pontuação forem necessárias. Exemplo: 0-20% Pontuação ruim, 21-91% Pontuação média, 91-100% Ótima pontuação!",
           "entity": "range",
           "field": {
             "fields": [
