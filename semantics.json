@@ -250,7 +250,7 @@
         "optional": true
       },
       {
-        "label": "Enable \"Show solutions\" button",
+        "label": "Enable \"Show solution\" button",
         "importance": "low",
         "name": "enableSolutionsButton",
         "type": "boolean",
