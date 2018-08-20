@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.Blanks'] = (function ($) {
+H5PUpgrades['H5P.Blanks'] = (function () {
   return {
     1: {
       1: {
@@ -78,18 +78,24 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
 
         finished(null, parameters);
       },
-      9: function (parameters, finished, extras) {
+
+      /**
+       * Asynchronous content upgrade hook.
+       *
+       * @param {[type]} parameters
+       * @param {[type]} finished
+       * @param {[type]} extras
+       * @return {[type]}
+       */
+      11: function (parameters, finished, extras) {
         // Move value from getTitle() to metadata title
         if (parameters && parameters.text) {
-          var title = parameters.text || 'Fill In';
-          title = title = title.replace(/<[^>]*>?/g, '');
-
           extras = extras || {};
           extras.metadata = extras.metadata || {};
-          extras.metadata.title = title;
+          extras.metadata.title = parameters.text.replace(/<[^>]*>?/g, '');
         }
         finished(null, parameters, extras);
       }
     }
   };
-})(H5P.jQuery);
+})();
