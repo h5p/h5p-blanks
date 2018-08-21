@@ -10,11 +10,11 @@ var H5PPresave = H5PPresave || {};
 H5PPresave['H5P.Blanks'] = function (content, finished) {
   var presave = H5PEditor.Presave;
 
-  if (isContentInValid()) {
+  if (isContentInvalid()) {
     throw {
       name: 'Invalid Fill in the blanks Error',
       message: 'Could not find expected semantics in content.'
-    }
+    };
   }
 
   var score = content.questions
@@ -24,20 +24,18 @@ H5PPresave['H5P.Blanks'] = function (content, finished) {
       return Array.isArray(matches) ? matches.length : 0;
     })
     .reduce(function (previous, current) {
-      return previous + current
+      return previous + current;
     }, 0);
 
   presave.validateScore(score);
 
-  if (finished) {
-    finished({maxScore: score})
-  }
+  finished({maxScore: score});
 
   /**
    * Check if required parameters is present
    * @return {boolean}
    */
-  function isContentInValid() {
+  function isContentInvalid() {
     return !presave.checkNestedRequirements(content, 'content.questions') || !Array.isArray(content.questions);
   }
 };
