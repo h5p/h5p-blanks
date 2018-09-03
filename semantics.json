@@ -10,8 +10,8 @@
         "type": "library",
         "label": "Type",
         "options": [
-          "H5P.Image 1.0",
-          "H5P.Video 1.4"
+          "H5P.Image 1.1",
+          "H5P.Video 1.5"
         ],
         "optional": true,
         "description": "Optional media to display above the question."
@@ -250,7 +250,7 @@
         "optional": true
       },
       {
-        "label": "Enable \"Show solutions\" button",
+        "label": "Enable \"Show solution\" button",
         "importance": "low",
         "name": "enableSolutionsButton",
         "type": "boolean",

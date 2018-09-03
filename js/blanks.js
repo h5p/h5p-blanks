@@ -47,6 +47,7 @@ H5P.Blanks = (function ($, Question) {
 
     // IDs
     this.contentId = id;
+    this.contentData = contentData;
 
     this.params = $.extend(true, {}, {
       text: "Fill in",
@@ -787,7 +788,7 @@ H5P.Blanks = (function ($, Question) {
   };
 
   Blanks.prototype.getTitle = function() {
-    return H5P.createTitle(this.params.text);
+    return H5P.createTitle((this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Fill In');
   };
 
   /**
