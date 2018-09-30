@@ -141,7 +141,7 @@
         },
         {
           "label": "Salli pienet kirjoitusvirheet",
-          "description": "Tämän valinta sallii pienet kirjoitusvirheet käyttäjän syötteessä"
+          "description": "Tämän valinta sallii pienet kirjoitusvirheet käyttäjän syötteessä (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
         }
       ]
     },
