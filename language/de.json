@@ -141,7 +141,7 @@
         },
         {
           "label": "Kleine Rechtschreibfehler akzeptieren",
-          "description": "Wenn gewählt, wird eine Antwort bei kleinen Rechtschreibfehlern noch als richtig gewertet."
+          "description": "Wenn gewählt, wird eine Antwort bei kleinen Rechtschreibfehlern noch als richtig gewertet (3-9 Zeichen: 1 Fehler, mehr als 9 Zeichen: 2 Fehler)."
         }
       ]
     },
