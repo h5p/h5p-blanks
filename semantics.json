@@ -10,8 +10,8 @@
         "type": "library",
         "label": "Type",
         "options": [
-          "H5P.Image 1.0",
-          "H5P.Video 1.4"
+          "H5P.Image 1.1",
+          "H5P.Video 1.5"
         ],
         "optional": true,
         "description": "Optional media to display above the question."
@@ -250,7 +250,7 @@
         "optional": true
       },
       {
-        "label": "Enable \"Show solutions\" button",
+        "label": "Enable \"Show solution\" button",
         "importance": "low",
         "name": "enableSolutionsButton",
         "type": "boolean",
@@ -326,7 +326,7 @@
         "type": "boolean",
         "label": "Accept minor spelling errors",
         "importance": "low",
-        "description": "If activated, an answer will also count as correct with minor spelling errors",
+        "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)",
         "default": false,
         "optional": true
       }

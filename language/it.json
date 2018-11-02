@@ -141,7 +141,7 @@
         },
         {
           "label": "Accetta errori minori di ortografia",
-          "description": "Se attivo, una risposta sarà conteggiata come corretta nonostante errori minori di ortografia"
+          "description": "Se attivo, una risposta sarà conteggiata come corretta nonostante errori minori di ortografia (da 3 a 9 caratteri: 1 errore; più di 9 characters: 2 errori)"
         }
       ]
     },

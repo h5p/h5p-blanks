@@ -1,52 +1,52 @@
 {
   "semantics": [
     {
-      "label": "اعلام",
+      "label": "وسائط",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "النوع",
+          "description": "وسائط اختيارية لعرضها فوق السؤال."
         }
       ]
     },
     {
       "label": "وصف النشاط",
       "default": "Fill in the missing words",
-      "description": "دليل يشرح للمستخدم كيفية الإجابة على هذا السؤال"
+      "description": "دليل يخبر المستخدم عن كيفية الاجابة على هذا النشاط."
     },
     {
-      "label": "النشاط",
-      "entity": "النشاط",
+      "label": "كتل النص",
+      "entity": "text block",
       "field": {
         "label": "سطر من النص",
         "placeholder": "Oslo is the capital of *Norway*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>تتم إضافة الفراغات بالعلامة النجمية (*) امام وخلف الكلمة / العبارة الصحيحة.</li><li>يتم فصل الإجابات البديلة مع شرطة مائلة للأمام (/).</li><li>يمكنك إضافة تلميح نصي ، باستخدام نقطتين (:) أمام التلميح.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "الملاحظات الشاملة",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "افتراضي"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "تحديد الملاحظات المخصصة لأي مجال نتيجة",
+          "description": "انقر فوق الزر 'إضافة نطاق' لإضافة أكبر عدد ممكن من النطاقات. مثال: 0-20٪ نتيجة سيئة ، 21-91٪ نتيجة متوسطة ، 91-100٪ نتيجة رائعة!",
           "entity": "range",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "مجال النتيجة"
               },
               {},
               {
-                "label": "Feedback for defined score range",
+                "label": "الملاحظات لمجال نتيجة محددة",
                 "placeholder": "Fill in the feedback"
               }
             ]
@@ -55,140 +55,140 @@
       ]
     },
     {
-      "label": "النص ل \"مشاهدة الحل \" الزر",
+      "label": "نص زر \" اظهار الحلول \"",
       "default": "Show solution"
     },
     {
-      "label": "النص ل \"إعادة المحاولة \" الزر",
+      "label": "نص زر \" اعادة المحاولة \"",
       "default": "Retry"
     },
     {
-      "label": "النص ل \"تحقق \" الزر",
+      "label": "نص زر \" تحقق \"",
       "default": "Check"
     },
     {
-      "label": "النص ل \"لا جواب \" رسالة",
+      "label": "نص رسالة \" لم يتم ملؤها \"ئئئئ ",
       "default": "Please fill in all blanks to view solution"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
+      "label": "نص رسالة \" الاجابة صحيحة \"",
       "default": "':ans' is correct"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
+      "label": "نص رسالة \"ة الاجابة خاطئة \"",
       "default": "':ans' is wrong"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
+      "label": "نص رسالة \" اجاب بشكل صحيح \"",
       "default": "Answered correctly"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
+      "label": "نص رسالة \" اجاب بشكل خاطئ\"",
       "default": "Answered incorrectly"
     },
     {
-      "label": "Assistive technology label for solution",
+      "label": "لافتة التقنيات المساعدة للحل",
       "default": "Correct answer:"
     },
     {
-      "label": "Assistive technology label for input field",
+      "label": "لافتة التقنيات المساعدة لحقل الادخال",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
       "default": "Blank input @num of @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
+      "label": "لافتة التقنيات المساعدة للقول بأن ادخالا ما لديه تلميح مرتبط به ",
       "default": "Tip available"
     },
     {
-      "label": "Tip icon label",
+      "label": "لافتة ايقونة التلميح",
       "default": "Tip"
     },
     {
-      "label": "إعدادت النشاط",
-      "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label": "الاعدادات السلوكية.",
+      "description": "ستتيح لك هذه الخيارات التحكم في كيفية تصرف المهمة.",
       "fields": [
         {
-          "label": "تمكين \"إعادة المحاولة \""
+          "label": "تمكين \" اعادة المحاولة\""
         },
         {
-          "label": "تمكين \"مشاهدة الحل \" الزر"
+          "label": "زر تمكين \" اظهر الحلول \""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "زر تمكين \" تحقق \""
         },
         {
-          "label": "تحقق تلقائيا بعد إدخال الإجابات"
+          "label": "تحقق من الاجابات بعد الادخال بشكل اتوماتيكي"
         },
         {
-          "label": "حساسية الاجابة",
-          "description": "يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب"
+          "label": "حساسية الحالة",
+          "description": "تأكد من أن إدخال المستخدم يجب أن يكون بالضبط نفس الإجابة."
         },
         {
-          "label": "يتم طلب كل الاجابات والرد عليها، قبل أن يتم عرض الحل"
+          "label": "اطلب من جميع الحقول أن يتم الرد عليها قبل أن يتم عرض الحل"
         },
         {
-          "label": "وضع فراغات الكلمات على خطوط منفصلة"
+          "label": "ضع حقول الإدخال على أسطر منفصلة"
         },
         {
-          "label": "Disable image zooming for question image."
+          "label": "تعطيل تكبير الصورة لصورة السؤال"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "إظهار مربع حوار التأكيد على  \"تحقق \" ",
+          "description": "هذه الخيارات غير متوافقة مع الخيار 'التحقق التلقائي من الإجابات بعد الإدخال '."
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "اظهار مربع حوار التأكيد على \" اعادة المحاولة\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label": "اقبل أخطاء إملائية بسيطة",
+          "description": "إذا تم تفعيلها ، فستحسب إجابة صحيحة أيضًا مع أخطاء إملائية بسيطة"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "تحقق من مربع حوار التأكيد",
       "fields": [
         {
-          "label": "Header text",
+          "label": "نص الترويسة",
           "default": "Finish ?"
         },
         {
-          "label": "Body text",
+          "label": "النص الرئيسي",
           "default": "Are you sure you wish to finish ?"
         },
         {
-          "label": "Cancel button label",
+          "label": "لافتة زر الالغاء",
           "default": "Cancel"
         },
         {
-          "label": "Confirm button label",
+          "label": "لافتة زر التأكيد",
           "default": "Finish"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "مربع حوار تأكيد اعادة المحاولة",
       "fields": [
         {
-          "label": "Header text",
+          "label": "نص الترويسة",
           "default": "Retry ?"
         },
         {
-          "label": "Body text",
+          "label": "النص الاساسي",
           "default": "Are you sure you wish to retry ?"
         },
         {
-          "label": "Cancel button label",
+          "label": "لافتة زر الالغاء",
           "default": "Cancel"
         },
         {
-          "label": "Confirm button label",
+          "label": "لافتة زر التأكيد",
           "default": "Confirm"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
+      "label": "تمثيل نصي لشريط النتيجة لأولئك الذين يستخدمون تقنية تحويل النص الى كلام ",
       "default": "You got :num out of :total points"
     }
   ]

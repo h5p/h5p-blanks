@@ -141,7 +141,7 @@
         },
         {
           "label": "Prihvati male greške u pisanju",
-          "description": "Ako je odabrano, odgovori sa malim greškama u pisanju će biti prihvaćeni kao tačni."
+          "description": "Ako je odabrano, odgovori sa malim greškama u pisanju će biti prihvaćeni kao tačni (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)."
         }
       ]
     },

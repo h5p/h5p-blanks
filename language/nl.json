@@ -141,7 +141,7 @@
         },
         {
           "label": "Accepteer kleine spellingsfouten",
-          "description": "Indien geactiveerd, zal een antwoord met kleine spellingsfouten ook als juist worden meegeteld"
+          "description": "Indien geactiveerd, zal een antwoord met kleine spellingsfouten ook als juist worden meegeteld (3-9 tekens: 1 fout, meer dan 9 tekens: 2 fouten)"
         }
       ]
     },

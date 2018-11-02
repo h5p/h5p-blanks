@@ -111,7 +111,7 @@
           "label": "Enable \"Retry\""
         },
         {
-          "label": "Enable \"Show solutions\" button"
+          "label": "Enable \"Show solution\" button"
         },
         {
           "label": "Enable \"Check\" button"
@@ -141,7 +141,7 @@
         },
         {
           "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
         }
       ]
     },
