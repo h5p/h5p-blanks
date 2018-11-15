@@ -251,7 +251,7 @@ H5P.Blanks = (function ($, Question) {
         clozeStart += 1;
       }
       question = question.slice(0, clozeStart - 1) + replacer + question.slice(clozeEnd);
-      clozeEnd -= clozeEnd - clozeStart - replacer.length;
+      clozeEnd -= clozeEnd - clozeStart - replacer.length + 1;
 
       // Find the next cloze
       clozeStart = question.indexOf('*', clozeEnd);
