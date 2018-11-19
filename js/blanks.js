@@ -299,7 +299,8 @@ H5P.Blanks = (function ($, Question) {
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
-          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', this.getUserAnswer()));
+          var answer = $("<div>").text(this.getUserAnswer()).html();
+          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', answer));
           if (self.done || self.allBlanksFilledOut()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
