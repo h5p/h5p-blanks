@@ -384,7 +384,7 @@ H5P.Blanks = (function ($, Question) {
 
     setTimeout(function(){
       var tmp = $('<div>', {
-        'html': $input.val()
+        'text': $input.val()
       });
       tmp.css({
         'position': 'absolute',
