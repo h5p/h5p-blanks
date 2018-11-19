@@ -124,7 +124,12 @@
         return; // Only for the wrong ones
       }
 
-      $('<span aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+      $('<span>', {
+        'aria-hidden': true,
+        'class': 'h5p-correct-answer',
+        text: answer,
+        insertAfter: $wrapper
+      });
       $input.attr('disabled', true);
       var ariaLabel = inputLabel + '. ' +
         l10n.solutionLabel + ' ' + answer + '. ' +
