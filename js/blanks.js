@@ -241,11 +241,7 @@ H5P.Blanks = (function ($, Question) {
       if (clozeEnd === -1) {
         continue; // No end
       }
-      var clozeContent = question.substring(clozeStart, clozeEnd);
-      // Strip away Markup-Language Elements from clozeContent.
-      var temp = document.createElement('div');
-      temp.innerHTML = clozeContent;
-      clozeContent = temp.textContent || temp.innerText || '';
+      var clozeContent = question.substring(clozeStart, clozeEnd).replace(/<[^>]+>/ig,"");
       var replacer = '';
       if (clozeContent.length) {
         replacer = handler(self.parseSolution(clozeContent));
