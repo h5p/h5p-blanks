@@ -170,11 +170,11 @@ H5P.Blanks = (function ($, Question) {
 
     // select find container to attach dialogs to
     var $container;
-    if($containerParents.length !== 0) {
+    if ($containerParents.length !== 0) {
       // use parent highest up if any
       $container = $containerParents.last();
     }
-    else if($content.length !== 0){
+    else if ($content.length !== 0) {
       $container = $content;
     }
     else  {
@@ -382,7 +382,7 @@ H5P.Blanks = (function ($, Question) {
     var rightPadPx = fontSize * rightPadEm;
     var static_min_pad = 0.5 * fontSize;
 
-    setTimeout(function(){
+    setTimeout(function () {
       var tmp = $('<div>', {
         'text': $input.val()
       });
@@ -590,7 +590,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Trigger xAPI answered event
    */
-  Blanks.prototype.triggerAnswered = function() {
+  Blanks.prototype.triggerAnswered = function () {
     this.answered = true;
     var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
@@ -628,7 +628,7 @@ H5P.Blanks = (function ($, Question) {
     var firstCorrectResponse = true;
     // xAPI forces us to create solution patterns for all possible solution combinations
     for (var i = 0; i < this.params.questions.length; i++) {
-      var question = this.handleBlanks(this.params.questions[i], function(solution) {
+      var question = this.handleBlanks(this.params.questions[i], function (solution) {
         // Store new patterns for each extra alternative answer
         var newPatterns = [];
         for (var j = 0; j < definition.correctResponsesPattern.length; j++) {
@@ -663,7 +663,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
-  Blanks.prototype.addQuestionToXAPI = function(xAPIEvent) {
+  Blanks.prototype.addQuestionToXAPI = function (xAPIEvent) {
     var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
     $.extend(definition, this.getxAPIDefinition());
   };
@@ -787,7 +787,7 @@ H5P.Blanks = (function ($, Question) {
     return correct;
   };
 
-  Blanks.prototype.getTitle = function() {
+  Blanks.prototype.getTitle = function () {
     return H5P.createTitle((this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Fill In');
   };
 
@@ -865,7 +865,8 @@ H5P.Blanks = (function ($, Question) {
       if (self.params.behaviour.autoCheck) {
         if (cloze.filledOut()) {
           cloze.checkAnswer();
-        } else {
+        }
+        else {
           hasAllClozesFilled = false;
         }
       }
