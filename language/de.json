@@ -6,6 +6,9 @@
         {
           "label": "Typ",
           "description": "Optionale Medien, die über der Frage angezeigt werden können."
+        },
+        {
+          "label": "Bildzoom deaktivieren"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Setze die Lücken jeweils in eine eigene Zeile"
-        },
-        {
-          "label": "Bilderzoom für Bilder zu Fragen deaktivieren."
         },
         {
           "label": "Bestätigungsdialog beim Klicken auf \"Überprüfen\" anzeigen",

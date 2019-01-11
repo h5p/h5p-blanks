@@ -6,6 +6,9 @@
         {
           "label": "Type",
           "description": "Eit valfritt multimediaelement som sjåast over spørsmålet."
+        },
+        {
+          "label": "Slå av bilete zooming"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Sett inntastingsfelt på egne linjer"
-        },
-        {
-          "label": "Slå av bilete zooming."
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Fasit\"",

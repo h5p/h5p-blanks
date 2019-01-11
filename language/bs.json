@@ -6,6 +6,9 @@
         {
           "label": "Tip",
           "description": "Opcionalni mediji koji mogu biti prikazani iznad zadatka."
+        },
+        {
+          "label": "Deaktivirati zumiranje slike"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Setze die Lücken jeweils in eine eigene Zeile"
-        },
-        {
-          "label": "Deaktivirati zumiranje slike."
         },
         {
           "label": "Prikazati dijalog potvrde nakon klika na dugme \"Provjeri\"",

@@ -6,6 +6,9 @@
         {
           "label": "Type de média",
           "description": "Fichier média à afficher en option au-dessus de la question."
+        },
+        {
+          "label": "Désactiver l'agrandissement de l'image"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Afficher les blancs sur des lignes séparées."
-        },
-        {
-          "label": "Désactiver l'agrandissement de l'image de la question."
         },
         {
           "label": "Afficher la fenêtre de confirmation pour \"Vérifier\"",

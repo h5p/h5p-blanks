@@ -6,6 +6,9 @@
         {
           "label": "Tüüp",
           "description": "Pilt või video, mida kuvatakse küsimuse juures (mittekohustuslik element)."
+        },
+        {
+          "label": "Disable image zooming"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Put input fields on separate lines"
-        },
-        {
-          "label": "Disable image zooming for question image"
         },
         {
           "label": "Show confirmation dialog on \"Check\"",
