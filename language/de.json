@@ -19,7 +19,7 @@
     },
     {
       "label": "Textblöcke",
-      "entity": "textblock",
+      "entity": "Textblock",
       "field": {
         "label": "Textzeile",
         "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
@@ -107,7 +107,7 @@
       "default": "Tipp"
     },
     {
-      "label": "Verhaltenseinstellungen.",
+      "label": "Verhaltenseinstellungen",
       "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields": [
         {
@@ -117,7 +117,7 @@
           "label": "\"Lösung anzeigen\"-Button anzeigen"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "\"Überprüfen\"-Button anzeigen"
         },
         {
           "label": "Antworten nach Eingabe automatisch prüfen"
