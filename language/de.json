@@ -25,7 +25,7 @@
         "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Lücken werden mit einem Sternchen (*) vor und hinter dem richtigen Wort festgelegt.</li><li>Alternative Antworten können jeweils mit einem Schrägstrich (/) angefügt werden.</li><li>Du kannst einen Tipp mit einem Doppelpunkt (:) davor angeben.</li></ul>",
+          "description": "<ul><li>Lücken werden mit einem Sternchen (*) vor und hinter dem richtigen Wort festgelegt.</li><li>Alternative Antworten können jeweils mit einem Schrägstrich (/) angefügt werden.</li><li>Du kannst einen Tipp mit einem Doppelpunkt (:) davor hinzufüge .</li></ul>",
           "example": "H5P-Inhalte können mit einem *Browser/Web-Browser:Etwas, das du jeden Tag nutzt* betrachtet werden."
         }
       }
@@ -36,7 +36,7 @@
         {
           "widgets": [
             {
-              "label": "Vorgabe"
+              "label": "Voreinstellung"
             }
           ],
           "label": "Lege Rückmeldungen für einzelne Punktebereiche fest",
@@ -71,7 +71,7 @@
     },
     {
       "label": "Text für die \"Nicht ausgefüllt\"-Nachricht",
-      "default": "Bitte fülle alle Lücken aus, um die Lösung zu sehen"
+      "default": "Bitte fülle alle Lücken aus, um die Lösung ansehen zu können"
     },
     {
       "label": "Text für die \"':ans' ist korrekt\"-Nachricht",
@@ -90,20 +90,20 @@
       "default": "Falsch beantwortet"
     },
     {
-      "label": "Text für technische Hilfsmittel für die Lösung",
+      "label": "Beschriftung der Lösung für Vorlesewerkzeuge (Barrierefreiheit)",
       "default": "Korrekte Antwort:"
     },
     {
-      "label": "Text für technische Hilfsmittel für das Eingabefeld",
+      "label": "Beschriftung des Eingabefelds für Vorlesewerkzeuge (Barrierefreiheit)",
       "description": "Benutze @num und @total um die aktuelle Nummer der Lücke und die Gesamtzahl der Lücken einzufügen",
       "default": "Lücke @num von @total"
     },
     {
-      "label": "Text für technische Hilfsmittel, der darauf hinweist, dass ein Tipp verfügbar ist",
+      "label": "Text für Vorlesewerkzeuge (Barrierefreiheit), der darauf hinweist, dass ein Tipp verfügbar ist",
       "default": "Tipp verfügbar"
     },
     {
-      "label": "Beschriftung für das Tipp-Icon",
+      "label": "Beschriftung des Tipp-Icons",
       "default": "Tipp"
     },
     {
@@ -114,7 +114,7 @@
           "label": "\"Wiederholen\" zulassen"
         },
         {
-          "label": "\"Lösung anzeigen\"-Button anzeigen"
+          "label": "\"Lösung anzeigen\" ermöglichen"
         },
         {
           "label": "\"Überprüfen\"-Button anzeigen"
@@ -146,10 +146,10 @@
       ]
     },
     {
-      "label": "Bestätigungsdialog beim Prüfen",
+      "label": "Bestätigungsdialog beim Überprüfen",
       "fields": [
         {
-          "label": "Text der Titelzeile",
+          "label": "Text der Überschrift",
           "default": "Beenden?"
         },
         {
@@ -170,7 +170,7 @@
       "label": "Bestätigungsdialog beim Wiederholen",
       "fields": [
         {
-          "label": "Text der Titelzeile",
+          "label": "Text der Überschrift",
           "default": "Wiederholen?"
         },
         {
@@ -188,7 +188,7 @@
       ]
     },
     {
-      "label": "Textliche Repräsentation der Punkteleiste für diejenigen, die Readspeaker benutzen",
+      "label": "Anzeigetext der Punkteleiste für Vorlesewerkzeuge (Barrierefreiheit)",
       "default": "Du hast :num von :total Punkten erreicht."
     }
   ]
