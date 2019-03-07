@@ -15,7 +15,7 @@
     {
       "label": "Aufgabenbeschreibung",
       "default": "Trage die fehlenden Wörter ein.",
-      "description": "Eine Anleitung, die dem Nutzer sagt, wie die Aufgabe beantwortet werden kann."
+      "description": "Eine Anleitung, die dem Nutzer mitteilt, wie die Aufgabe beantwortet werden kann."
     },
     {
       "label": "Textblöcke",
@@ -25,7 +25,7 @@
         "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Lücken werden mit einem Sternchen (*) vor und hinter dem richtigen Wort festgelegt.</li><li>Alternative Antworten können jeweils mit einem Schrägstrich (/) angefügt werden.</li><li>Du kannst einen Tipp mit einem Doppelpunkt (:) davor hinzufüge .</li></ul>",
+          "description": "<ul><li>Lücken werden mit einem Sternchen (*) vor und hinter dem richtigen Wort markiert.</li><li>Alternative Antworten können jeweils mit einem Schrägstrich (/) angefügt werden.</li><li>Du kannst einen Tipp mit einem Doppelpunkt (:) davor hinzufügen.</li></ul>",
           "example": "H5P-Inhalte können mit einem *Browser/Web-Browser:Etwas, das du jeden Tag nutzt* betrachtet werden."
         }
       }
@@ -49,7 +49,7 @@
               },
               {},
               {
-                "label": "Rückmeldung für festgelegte Punktebereiche",
+                "label": "Rückmeldung für jeweiligen Punktebereich",
                 "placeholder": "Trage die Rückmeldung ein"
               }
             ]
@@ -58,35 +58,35 @@
       ]
     },
     {
-      "label": "Beschriftung für den \"Lösung anzeigen\"-Button",
+      "label": "Beschriftung des \"Lösung anzeigen\"-Buttons",
       "default": "Lösung anzeigen"
     },
     {
-      "label": "Beschriftung für den \"Wiederholen\"-Button",
+      "label": "Beschriftung des \"Wiederholen\"-Buttons",
       "default": "Wiederholen"
     },
     {
-      "label": "Beschriftung für den \"Überprüfen\"-Button",
+      "label": "Beschriftung des \"Überprüfen\"-Buttons",
       "default": "Überprüfen"
     },
     {
-      "label": "Text für die \"Nicht ausgefüllt\"-Nachricht",
+      "label": "Text der \"Nicht ausgefüllt\"-Nachricht",
       "default": "Bitte fülle alle Lücken aus, um die Lösung ansehen zu können"
     },
     {
-      "label": "Text für die \"':ans' ist korrekt\"-Nachricht",
+      "label": "Text der \"... ist korrekt\"-Nachricht (:ans als Platzhalter für die Antwort der Lernenden verwenden)",
       "default": "':ans' ist korrekt"
     },
     {
-      "label": "Text für die \"':ans' ist falsch\"-Nachricht",
+      "label": "Text der \"... ist falsch\"-Nachricht (:ans als Platzhalter für die Antwort der Lernenden verwenden)",
       "default": "':ans' ist falsch"
     },
     {
-      "label": "Text für die \"Korrekt beantwortet\"-Nachricht",
+      "label": "Text der \"Korrekt beantwortet\"-Nachricht",
       "default": "Korrekt beantwortet"
     },
     {
-      "label": "Text für \"Falsch beantwortet\"-Nachricht",
+      "label": "Text der \"Falsch beantwortet\"-Nachricht",
       "default": "Falsch beantwortet"
     },
     {
@@ -103,7 +103,7 @@
       "default": "Tipp verfügbar"
     },
     {
-      "label": "Beschriftung des Tipp-Icons",
+      "label": "Beschriftung des Tipp-Symbols",
       "default": "Tipp"
     },
     {
@@ -124,13 +124,13 @@
         },
         {
           "label": "Auf Groß-/Kleinschreibung achten",
-          "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entsprechen muss."
+          "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entspricht."
         },
         {
           "label": "Alle Lücken müssen ausgefüllt sein, bevor die Lösung angesehen werden kann."
         },
         {
-          "label": "Setze die Lücken jeweils in eine eigene Zeile"
+          "label": "Setzt die Lücken jeweils in eine eigene Zeile"
         },
         {
           "label": "Bestätigungsdialog beim Klicken auf \"Überprüfen\" anzeigen",
