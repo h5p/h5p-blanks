@@ -1,11 +1,11 @@
-{
+ï»¿{
   "semantics": [
     {
       "label": "Meedia",
       "fields": [
         {
-          "label": "Tüüp",
-          "description": "Pilt või video küsimuse juures kuvamiseks (ei ole kohustuslik)."
+          "label": "TÃ¼Ã¼p",
+          "description": "Pilt vÃµi video kÃ¼simuse juures kuvamiseks (ei ole kohustuslik)."
         },
         {
           "label": "Keela pildi suurendamine"
@@ -13,25 +13,25 @@
       ]
     },
     {
-      "label": "Ülesande kirjeldus",
-      "default": "Sisesta puuduvad sõnad",
-      "description": "Ülesande vastamist kirjeldav juhis kasutajale."
+      "label": "Ãœlesande kirjeldus",
+      "default": "Sisesta puuduvad sÃµnad",
+      "description": "Ãœlesande vastamist kirjeldav juhis kasutajale."
     },
     {
-      "label": "Tekstiväljad",
-      "entity": "tekstiväli",
+      "label": "TekstivÃ¤ljad",
+      "entity": "tekstivÃ¤li",
       "field": {
         "label": "Tekstirida",
         "placeholder": "Oslo on *Norway* pealinn.",
         "description": "",
         "important": {
-          "description": "<ul><li>Tühjad kohad märgitakse tärni (*) lisamisega korrektse sõna või fraasi ette ja taha.</li><li>Alternatiivsed vastused eraldatakse kaldkriipsuga (/).</li><li>Tekstivihje lisamiseks kasuta koolonit (:) vihje ees.</li></ul>",
-          "example": "H5P sisu töötlemiseks sobib *brauser/veebibrauser:Midagi, mida kasutad iga päev*."
+          "description": "<ul><li>TÃ¼hjad kohad mÃ¤rgitakse tÃ¤rni (*) lisamisega korrektse sÃµna vÃµi fraasi ette ja taha.</li><li>Alternatiivsed vastused eraldatakse kaldkriipsuga (/).</li><li>Tekstivihje lisamiseks kasuta koolonit (:) vihje ees.</li></ul>",
+          "example": "H5P sisu tÃ¶Ã¶tlemiseks sobib *brauser/veebibrauser:Midagi, mida kasutad iga pÃ¤ev*."
         }
       }
     },
     {
-      "label": "Üldine tagasiside",
+      "label": "Ãœldine tagasiside",
       "fields": [
         {
           "widgets": [
@@ -39,8 +39,8 @@
               "label": "Vaikimisi"
             }
           ],
-          "label": "Määratle kohandatud tagasiside igale punktisumma vahemikule",
-          "description": "Kliki \"Lisa vahemik\" nupule, et lisada vajalik arv vahemikke. Näiteks: 0-20% Halb tulemus, 21-91% Keskmine tulemus, 91-100% Suurepärane tulemus!",
+          "label": "MÃ¤Ã¤ratle kohandatud tagasiside igale punktisumma vahemikule",
+          "description": "Kliki \"Lisa vahemik\" nupule, et lisada vajalik arv vahemikke. NÃ¤iteks: 0-20% Halb tulemus, 21-91% Keskmine tulemus, 91-100% SuurepÃ¤rane tulemus!",
           "entity": "vahemik",
           "field": {
             "fields": [
@@ -49,7 +49,7 @@
               },
               {},
               {
-                "label": "Tagasiside määratletud punktisumma vahemikule",
+                "label": "Tagasiside mÃ¤Ã¤ratletud punktisumma vahemikule",
                 "placeholder": "Sisesta tagasiside"
               }
             ]
@@ -58,8 +58,8 @@
       ]
     },
     {
-      "label": "Nupu \"Näita lahendusi\" tekst",
-      "default": "Näita lahendusi"
+      "label": "Nupu \"NÃ¤ita lahendusi\" tekst",
+      "default": "NÃ¤ita lahendusi"
     },
     {
       "label": "Nupu \"Proovi uuesti\" tekst",
@@ -70,20 +70,20 @@
       "default": "Kontrolli"
     },
     {
-      "label": "Teate \"Ei ole täidetud\" tekst",
-      "default": "Lahenduse vaatamiseks täida palun kõik tühjad väljad"
+      "label": "Teate \"Ei ole tÃ¤idetud\" tekst",
+      "default": "Lahenduse vaatamiseks tÃ¤ida palun kÃµik tÃ¼hjad vÃ¤ljad"
     },
     {
-      "label": "Teate \"':ans' on õige\" tekst",
-      "default": "':ans' on õige"
+      "label": "Teate \"':ans' on Ãµige\" tekst",
+      "default": "':ans' on Ãµige"
     },
     {
-      "label": "Teate \"':ans' on õige\" tekst",
-      "default": "':ans' on õige"
+      "label": "Teate \"':ans' on Ãµige\" tekst",
+      "default": "':ans' on Ãµige"
     },
     {
-      "label": "Teate \"Õigesti vastatud\" tekst",
-      "default": "Õigesti vastatud"
+      "label": "Teate \"Ã•igesti vastatud\" tekst",
+      "default": "Ã•igesti vastatud"
     },
     {
       "label": "Text for \"Valesti vastatud\" message",
@@ -91,15 +91,15 @@
     },
     {
       "label": "Assisteeriva tehnoloogia silt lahendusele",
-      "default": "Õige vastus:"
+      "default": "Ã•ige vastus:"
     },
     {
-      "label": "Assisteeriva tehnoloogia silt sisestusväljale",
+      "label": "Assisteeriva tehnoloogia silt sisestusvÃ¤ljale",
       "description": "Kasuta @num ja @total, et asendada jooksev cloze arv ja cloze arvude summa",
-      "default": "Tühi sisend @num / @total"
+      "default": "TÃ¼hi sisend @num / @total"
     },
     {
-      "label": "Assisteeriva tehnoloogia silt, mis ütleb, et vastusele on vihje",
+      "label": "Assisteeriva tehnoloogia silt, mis Ã¼tleb, et vastusele on vihje",
       "default": "Saadaval on vihje"
     },
     {
@@ -107,14 +107,14 @@
       "default": "Vihje"
     },
     {
-      "label": "Ülesande seadistused.",
-      "description": "Nende seadistustega juhid ülesande toimimist.",
+      "label": "Ãœlesande seadistused.",
+      "description": "Nende seadistustega juhid Ã¼lesande toimimist.",
       "fields": [
         {
           "label": "Luba \"Proovi uuesti\" nupp"
         },
         {
-          "label": "Luba \"Näit lahendus\" nupp"
+          "label": "Luba \"NÃ¤it lahendus\" nupp"
         },
         {
           "label": "Luba \"Kontrolli\" nupp"
@@ -123,25 +123,25 @@
           "label": "Kontrolli vastused peale sisestamist automaatselt"
         },
         {
-          "label": "Tõstutundlik",
-          "description": "Nõuab kasutajalt täpselt sama väike-suurtähtede kasutust nagu on vastuses."
+          "label": "TÃµstutundlik",
+          "description": "NÃµuab kasutajalt tÃ¤pselt sama vÃ¤ike-suurtÃ¤htede kasutust nagu on vastuses."
         },
         {
-          "label": "Nõuab lahenduse nägemiseks eelnevat kõikide väljade vastamist."
+          "label": "NÃµuab lahenduse nÃ¤gemiseks eelnevat kÃµikide vÃ¤ljade vastamist."
         },
         {
-          "label": "Aseta sisendväljad eraldi ridadele"
+          "label": "Aseta sisendvÃ¤ljad eraldi ridadele"
         },
         {
-          "label": "Näita kinnitusdialoogi \"Kontrolli\" nupule vajutamisel",
+          "label": "NÃ¤ita kinnitusdialoogi \"Kontrolli\" nupule vajutamisel",
           "description": "Seda seadistust ei saa kasutada koos \"Kontrolli vastused peale sisestamist automaatselt\" valikuga"
         },
         {
-          "label": "Näita kinnitusdialoogi \"Proovi uuesti\" nupule vajutamisel"
+          "label": "NÃ¤ita kinnitusdialoogi \"Proovi uuesti\" nupule vajutamisel"
         },
         {
-          "label": "Luba vähesed kirjavead",
-          "description": "Seadistuse kasutamisel loetakse õigeks ka kirjavigu sisaldav vastus (3-9 tähemärki: 1 kirjaviga, rohkem, kui 9 tähemärki: 2 kirjaviga)"
+          "label": "Luba vÃ¤hesed kirjavead",
+          "description": "Seadistuse kasutamisel loetakse Ãµigeks ka kirjavigu sisaldav vastus (3-9 tÃ¤hemÃ¤rki: 1 kirjaviga, rohkem, kui 9 tÃ¤hemÃ¤rki: 2 kirjaviga)"
         }
       ]
     },
@@ -157,7 +157,7 @@
           "default": "Oled kindel, et soovid kontrollida?"
         },
         {
-          "label": "Tühista nupu silt",
+          "label": "TÃ¼hista nupu silt",
           "default": "Ei"
         },
         {
@@ -178,7 +178,7 @@
           "default": "Oled kindel, et soovid uuesti proovida?"
         },
         {
-          "label": "Tühista nupu silt",
+          "label": "TÃ¼hista nupu silt",
           "default": "Ei"
         },
         {
