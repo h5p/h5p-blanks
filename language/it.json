@@ -25,8 +25,8 @@
         "placeholder": "Oslo è la capitale della * Norvegia *.",
         "description": "",
         "important": {
-          "description": "<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della parola/frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>",
+          "Esempio": "I contenuti H5P possono essere editati usando un *browser/browser web:Qualcosa che usi ogni giorno*."
         }
       }
     },
@@ -40,7 +40,7 @@
             }
           ],
           "label": "Definisci un feedback personalizzato per ogni intervallo di punteggio",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per aggiungere quanti intervalli ti servono. Esempio: 0-20% Cattivo punteggio, 21-91% Punteggio medio, 91-100% Fantastico punteggio!",
           "entity": "Intervallo",
           "field": {
             "fields": [
@@ -83,7 +83,7 @@
     },
     {
       "label": "Testo del messaggio \"Hai risposto correttamente\"",
-      "default": "Ha risposto correttamente"
+      "default": "Hai risposto correttamente"
     },
     {
       "label": "Testo del messaggio \"Hai risposto in modo non corretto\"",
@@ -117,7 +117,7 @@
           "label": "Attiva il pulsante \"Mostra soluzioni\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Attiva il pulsante \"Verifica\""
         },
         {
           "label": "Controlla automaticamente le risposte dopo l'immissione"
@@ -188,8 +188,8 @@
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Rappresentazione testuale sulla barra del punteggio per chi usa un lettore vocale",
+      "default": "Il tuo punteggio è :num di :total"
     }
   ]
 }
