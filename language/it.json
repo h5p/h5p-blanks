@@ -40,12 +40,12 @@
             }
           ],
           "label": "Definisci un feedback personalizzato per ogni intervallo di punteggio",
-          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per aggiungere quanti intervalli ti servono. Esempio: 0-20% Cattivo punteggio, 21-91% Punteggio medio, 91-100% Fantastico punteggio!",
+          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per aggiungere quanti intervalli ti servono. Esempio: 0-20% Cattivo punteggio, 21-91% Punteggio medio, 91-100% Ottimo punteggio!",
           "entity": "Intervallo",
           "field": {
             "fields": [
               {
-                "label": "Intervallo di punteggio"
+                "label": "Intervallo"
               },
               {},
               {
