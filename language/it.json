@@ -26,7 +26,7 @@
         "description": "",
         "important": {
           "description": "<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>",
-          "Esempio": "I contenuti H5P possono essere editati usando un *browser/browser web:Qualcosa che usi ogni giorno*."
+          "example": "I contenuti H5P possono essere editati usando un *browser/browser web:Qualcosa che usi ogni giorno*."
         }
       }
     },
