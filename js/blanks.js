@@ -628,13 +628,17 @@ H5P.Blanks = (function ($, Question) {
     };
     definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
     definition.interactionType = 'fill-in';
-    const crpPrefix = '{case_matters=' + this.params.behaviour.caseSensitive + '}';
+
     const clozeSolutions = [];
+    let crp = '';
     // xAPI forces us to create solution patterns for all possible solution combinations
     for (var i = 0; i < this.params.questions.length; i++) {
       var question = this.handleBlanks(this.params.questions[i], function (solution) {
-        // Collect solutions
+        // Collect all solution combinations for the H5P Alternative extension
         clozeSolutions.push(solution.solutions);
+
+        // Create a basic response pattern out of the first alternative for each blanks field
+        crp += (!crp ? '' : '[,]') + solution.solutions[0];
 
         // We replace the solutions in the question with a "blank"
         return '__________';
@@ -642,33 +646,16 @@ H5P.Blanks = (function ($, Question) {
       definition.description['en-US'] += question;
     }
 
-    const hasAlternatives = clozeSolutions.some(function (cloze) {
-      return cloze.length > 1;
-    });
+    // Set the basic response pattern (not supporting multiple alternatives for blanks)
+    definition.correctResponsesPattern = [
+      '{case_matters=' + this.params.behaviour.caseSensitive + '}' + crp,
+    ];
 
-    /**
-     * Note:
-     * If alternatives are used we don't provide a correct responses pattern
-     * since the solution space grows exponentially. We instead provide an
-     * extension for allowing reports to be generated.
-     * This is the recommended approach ref:
-     * @see(https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#correct-responses-pattern)
-     */
-    if (hasAlternatives) {
-      // Use extension to avoid exponentially growing solution space
-      definition.extensions = definition.extensions || {};
-      definition.extensions[XAPI_CASE_SENSITIVITY] = this.params.behaviour.caseSensitive;
-      definition.extensions[XAPI_ALTERNATIVE_EXTENSION] = clozeSolutions;
-    }
-    else {
-      // Use correct responses pattern
-      const singleAnswer = clozeSolutions.join('[,]');
-
-      definition.correctResponsesPattern = [
-        crpPrefix + singleAnswer,
-      ];
-    }
-
+    // Add the H5P Alternative extension which provides all the combinations of different answers
+    // Reporting software will need to support this extension for alternatives to work.
+    definition.extensions = definition.extensions || {};
+    definition.extensions[XAPI_CASE_SENSITIVITY] = this.params.behaviour.caseSensitive;
+    definition.extensions[XAPI_ALTERNATIVE_EXTENSION] = clozeSolutions;
 
     return definition;
   };
