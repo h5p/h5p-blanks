@@ -120,7 +120,7 @@
           "label": "Enable \"Check\" button"
         },
         {
-          "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
+          "label": "Gi tilbakemelding med ein gong brukaren har svart"
         },
         {
           "label": "Skil mellom store og små bokstavar",
@@ -150,7 +150,7 @@
       "fields": [
         {
           "label": "Tittel",
-          "default": "Feridg ?"
+          "default": "Ferdig ?"
         },
         {
           "label": "Tekst",
