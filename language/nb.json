@@ -150,7 +150,7 @@
       "fields": [
         {
           "label": "Tittel",
-          "default": "Feridg ?"
+          "default": "Ferdig ?"
         },
         {
           "label": "Tekst",
