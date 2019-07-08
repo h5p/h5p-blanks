@@ -51,7 +51,8 @@
            */
           if ((answers[i].length > 9) && (levenshtein <= 2)) {
             return true;
-          } else if ((answers[i].length > 3) && (levenshtein <= 1)) {
+          }
+          else if ((answers[i].length > 3) && (levenshtein <= 1)) {
             return true;
           }
         }
@@ -161,7 +162,7 @@
         .replace('@total', totalCloze);
 
       // Add tip if tip is set
-      if(tip !== undefined && tip.trim().length > 0) {
+      if (tip !== undefined && tip.trim().length > 0) {
         $wrapper.addClass('has-tip')
           .append(H5P.JoubelUI.createTip(tip, {
             tipLabel: l10n.tipLabel
