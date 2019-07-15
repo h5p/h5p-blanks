@@ -320,6 +320,9 @@ H5P.Blanks = (function ($, Question) {
           self.hideEvaluation();
         }
       }, i, self.clozes.length);
+
+      // Used to measure required width
+      $(this).parent().append($('<div>').addClass('h5p-blanks-measure-field'));
     }).keydown(function (event) {
       var $this = $(this);
 
@@ -388,21 +391,18 @@ H5P.Blanks = (function ($, Question) {
     var static_min_pad = 0.5 * fontSize;
 
     setTimeout(function () {
-      var tmp = $('<div>', {
-        'text': $input.val()
-      });
-      tmp.css({
-        'position': 'absolute',
-        'white-space': 'nowrap',
-        'font-size': $input.css('font-size'),
-        'font-family': $input.css('font-family'),
-        'padding': $input.css('padding'),
-        'width': 'initial'
-      });
-      $input.parent().append(tmp);
-      var width = tmp.width();
+      var $tmp = $input.siblings('.h5p-blanks-measure-field')
+        .css({
+          'position': 'absolute',
+          'white-space': 'nowrap',
+          'font-size': $input.css('font-size'),
+          'font-family': $input.css('font-family'),
+          'padding': $input.css('padding'),
+          'width': 'initial'
+        })
+        .text($input.val());
+      var width = $tmp.width();
       var parentWidth = self.$questions.width();
-      tmp.remove();
       if (width <= minPx) {
         // Apply min width
         $input.width(minPx + static_min_pad);
