@@ -391,7 +391,14 @@ H5P.Blanks = (function ($, Question) {
     var static_min_pad = 0.5 * fontSize;
 
     setTimeout(function () {
-      var $tmp = $input.siblings('.h5p-blanks-measure-field')
+      var $tmp = $input.siblings('.h5p-blanks-measure-field');
+
+      // Only change width if content changed or width has not been initialized yet
+      if ($tmp.text() === $input.val() && $input.get(0).style.width !== '') {
+        return;
+      }
+
+      $tmp
         .css({
           'position': 'absolute',
           'white-space': 'nowrap',
@@ -401,6 +408,7 @@ H5P.Blanks = (function ($, Question) {
           'width': 'initial'
         })
         .text($input.val());
+
       var width = $tmp.width();
       var parentWidth = self.$questions.width();
       if (width <= minPx) {
