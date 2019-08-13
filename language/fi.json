@@ -6,6 +6,9 @@
         {
           "label": "Tyyppi",
           "description": "Valinnainen kuva tai video, joka näkyy kysymyksen yläpuolella."
+        },
+        {
+          "label": "Estä kysymykseen liitetyn kuvan suurentaminen"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Järjestä vastauskentät eri riveille"
-        },
-        {
-          "label": "Estä kysymykseen liitetyn kuvan suurentaminen"
         },
         {
           "label": "Näytä varmistusdialogi, kun käyttäjä klikkaa \"Tarkista\"",

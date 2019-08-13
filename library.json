@@ -3,8 +3,8 @@
   "description": "Test your users with fill in the blanks tasks(Cloze tests).",
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
-  "minorVersion": 11,
-  "patchVersion": 4,
+  "minorVersion": 12,
+  "patchVersion": 0,
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel",
@@ -53,6 +53,11 @@
   "editorDependencies": [
     {
       "machineName": "H5PEditor.RangeList",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "H5PEditor.ShowWhen",
       "majorVersion": 1,
       "minorVersion": 0
     }

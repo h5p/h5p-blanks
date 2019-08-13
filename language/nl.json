@@ -6,6 +6,9 @@
         {
           "label": "Type",
           "description": "Optionele media, die boven de vragen worden getoond"
+        },
+        {
+          "label": "Deactiveer het zoomen van de afbeelding tijdens het tonen van de opgave"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Zet de invoervelden op afzonderlijke regels"
-        },
-        {
-          "label": "Deactiveer het zoomen van de afbeelding tijdens het tonen van de opgave"
         },
         {
           "label": "Toon bevestigingsvenster bij \"Controleer\"",

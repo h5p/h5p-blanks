@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Pilt või video",
+      "label": "Meedia",
       "fields": [
         {
           "label": "Tüüp",
-          "description": "Pilt või video, mida kuvatakse küsimuse juures (mittekohustuslik element)."
+          "description": "Pilt või video küsimuse juures kuvamiseks (ei ole kohustuslik)."
+        },
+        {
+          "label": "Keela pildi suurendamine"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Ülesande kirjeldus",
+      "default": "Sisesta puuduvad sõnad",
+      "description": "Ülesande vastamist kirjeldav juhis kasutajale."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Tekstiväljad",
+      "entity": "tekstiväli",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Tekstirida",
+        "placeholder": "Oslo on *Norway* pealinn.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Tühjad kohad märgitakse tärni (*) lisamisega korrektse sõna või fraasi ette ja taha.</li><li>Alternatiivsed vastused eraldatakse kaldkriipsuga (/).</li><li>Tekstivihje lisamiseks kasuta koolonit (:) vihje ees.</li></ul>",
+          "example": "H5P sisu töötlemiseks sobib *brauser/veebibrauser:Midagi, mida kasutad iga päev*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Üldine tagasiside",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Vaikimisi"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Määratle kohandatud tagasiside igale punktisumma vahemikule",
+          "description": "Kliki \"Lisa vahemik\" nupule, et lisada vajalik arv vahemikke. Näiteks: 0-20% Halb tulemus, 21-91% Keskmine tulemus, 91-100% Suurepärane tulemus!",
+          "entity": "vahemik",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Punktisumma vahemik"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tagasiside määratletud punktisumma vahemikule",
+                "placeholder": "Sisesta tagasiside"
               }
             ]
           }
@@ -55,141 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Nupu \"Näita lahendusi\" tekst",
+      "default": "Näita lahendusi"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Nupu \"Proovi uuesti\" tekst",
+      "default": "Proovi uuesti"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Nupu \"Kontrolli\" tekst",
+      "default": "Kontrolli"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Teate \"Ei ole täidetud\" tekst",
+      "default": "Lahenduse vaatamiseks täida palun kõik tühjad väljad"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Teate \"':ans' on õige\" tekst",
+      "default": "':ans' on õige"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Teate \"':ans' on õige\" tekst",
+      "default": "':ans' on õige"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Teate \"Õigesti vastatud\" tekst",
+      "default": "Õigesti vastatud"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Text for \"Valesti vastatud\" message",
+      "default": "Valesti vastatud"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Assisteeriva tehnoloogia silt lahendusele",
+      "default": "Õige vastus:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Assisteeriva tehnoloogia silt sisestusväljale",
+      "description": "Kasuta @num ja @total, et asendada jooksev cloze arv ja cloze arvude summa",
+      "default": "Tühi sisend @num / @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Assisteeriva tehnoloogia silt, mis ütleb, et vastusele on vihje",
+      "default": "Saadaval on vihje"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Vihjeikooni silt",
+      "default": "Vihje"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Ülesande seadistused.",
+      "description": "Nende seadistustega juhid ülesande toimimist.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Luba \"Proovi uuesti\" nupp"
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Luba \"Näit lahendus\" nupp"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Luba \"Kontrolli\" nupp"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Kontrolli vastused peale sisestamist automaatselt"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Tõstutundlik",
+          "description": "Nõuab kasutajalt täpselt sama väike-suurtähtede kasutust nagu on vastuses."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Nõuab lahenduse nägemiseks eelnevat kõikide väljade vastamist."
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Aseta sisendväljad eraldi ridadele"
         },
         {
-          "label": "Disable image zooming for question image"
+          "label": "Näita kinnitusdialoogi \"Kontrolli\" nupule vajutamisel",
+          "description": "Seda seadistust ei saa kasutada koos \"Kontrolli vastused peale sisestamist automaatselt\" valikuga"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Näita kinnitusdialoogi \"Proovi uuesti\" nupule vajutamisel"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
-        },
-        {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Luba vähesed kirjavead",
+          "description": "Seadistuse kasutamisel loetakse õigeks ka kirjavigu sisaldav vastus (3-9 tähemärki: 1 kirjaviga, rohkem, kui 9 tähemärki: 2 kirjaviga)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Kontrolli nupu kinnitusdialoog",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Pealkiri",
+          "default": "Valmis?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Dialoogi tekst",
+          "default": "Oled kindel, et soovid kontrollida?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Tühista nupu silt",
+          "default": "Ei"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Kinnita nupu silt",
+          "default": "Jah"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Proovi uuesti nupu kinnitusdialoog",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Pealkiri",
+          "default": "Kas proovid uuesti?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Dialoogi tekst",
+          "default": "Oled kindel, et soovid uuesti proovida?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Tühista nupu silt",
+          "default": "Ei"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Kinnita nupu silt",
+          "default": "Jah"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Punktisumma esitamine tekstilisel kujul neile, kes kasutavad tekstilugerit",
+      "default": "Sa said :num punkti. Maksimaalne punktisumma oli :total punkti"
     }
   ]
 }

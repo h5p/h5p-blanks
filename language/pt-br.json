@@ -6,6 +6,9 @@
         {
           "label": "Tipo",
           "description": "Mídia opcional exibida acima da questão."
+        },
+        {
+          "label": "Desativar zoom para imagem da questão"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Colocar campos preenchíveis em linhas diferentes"
-        },
-        {
-          "label": "Desativar zoom para imagem da questão"
         },
         {
           "label": "Exibir diálogo de confirmação em \"Verificar resposta\"",

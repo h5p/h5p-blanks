@@ -4,50 +4,53 @@
       "label": "Media",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Typ",
+          "description": "Obraz do wyświetlenia nad pytaniem (opcjonalny)."
+        },
+        {
+          "label": "Zablokuj powiększanie obrazu"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Wstęp",
+      "default": "Uzupełnij brakujące wyrażenia",
+      "description": "Objaśnienie dla użytkownika, co należy zrobić w zadaniu."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Fragmenty zadania",
+      "entity": "fragment",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Fragment zadania",
+        "placeholder": "Stolicą Polski jest *Warszawa*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Pola do wypełnienia wstawia się wpisując gwiazdkę (*) na początku i na końcu poprawnej odpowiedzi.</li><li>Alternatywne poprawne odpowiedzi należy rozdzielić ukośnikiem (/).</li><li>Wewnątrz pola można również dodać podpowiedź, poprzedzoną dwukropkiem (:).</li></ul>",
+          "example": "Zasób H5P można edytować w *przeglądarce/przeglądarka:Aplikacja, której używasz codziennie*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Podsumowanie odpowiedzi",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Domyślne"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Określ własne kryteria oceny dla wybranych zakresów poprawnych odpowiedzi",
+          "description": "Klikając przycisk \"Dodaj zakres\" możesz dodać tyle zakresów, ile potrzebujesz. Przykład: 0-20% Słaby wynik, 21-91% Przeciętny wynik, 91-100% Bardzo dobry wynik!",
+          "entity": "zakres",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Zakres"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Komunikat dla danego zakresu",
+                "placeholder": "Wprowadź komunikat"
               }
             ]
           }
@@ -55,141 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Etykieta przycisku pokazywania poprawnej odpowiedzi",
+      "default": "Pokaż odpowiedź"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Etykieta przycisku ponowienia próby odpowiedzi",
+      "default": "Powtórz"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Etykieta przycisku sprawdzania odpowiedzi",
+      "default": "Sprawdź"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Komunikat o niewypełnionych polach",
+      "default": "Wypełnij wszystkie pola, zanim zobaczysz rozwiązanie."
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Komunikat o poprawnej odpowiedzi",
+      "default": "':ans' to poprawna odpowiedź"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Komunikat o błędnej odpowiedzi",
+      "default": "':ans' to błędna odpowiedź"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Komunikat o liczbie poprawnych odpowiedzi",
+      "default": "Poprawne odpowiedzi"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Komunikat o liczbie błędnych odpowiedzi",
+      "default": "Błędne odpowiedzi"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Opis pola poprawnej odpowiedzi dla czytników ekranu",
+      "default": "Poprawna odpowiedź:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Opis pola wprowadzania dla czytników ekranu",
+      "description": "Wstaw @num oraz @total jako numer aktualnego pola wprowadzania i liczbę wszystkich pól wprowadzania",
+      "default": "Pole wprowadzania @num z @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Informacja o dostępności podpowiedzi dla czytników ekranu",
+      "default": "Dostępna podpowiedź"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Etykieta ikony podpowiedzi",
+      "default": "Podpowiedź"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Ustawienia zachowania",
+      "description": "Te opcje pozwalają określić, jak ma przebiegać zadanie.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Wyświetl przycisk \"Powtórz\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Wyświetl przycisk \"Pokaż odpowiedź\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Wyświetl przycisk \"Sprawdź\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Automatycznie sprawdzaj wynik po wpisaniu"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Uwzględniaj wielkość liter",
+          "description": "Jeśli włączysz tę opcję, odpowiedź będzie musiała być wpisana identycznie ze wzorem."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Wymagaj wypełnienia wszystkich pól przed pokazaniem odpowiedzi"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Poszczególne pola wprowadzania w osobnych liniach"
         },
         {
-          "label": "Disable image zooming for question image"
+          "label": "Żądaj potwierdzenia akcji \"Sprawdź\"",
+          "description": "Ta opcja nie może być włączona razem z opcją \"Automatycznie sprawdzaj wynik po wpisaniu\""
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Żądaj potwierdzenia akcji \"Powtórz\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
-        },
-        {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Akceptuj literówki",
+          "description": "Włączenie tej opcji spowoduje zaliczanie odpowiedzi minimalnie różniących się od wzoru (3-9 znaków: 1 literówka, więcej niż 9 znaków: 2 literówki)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Żądanie sprawdzenia wyniku",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Nagłówek",
+          "default": "Sprawdzić?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Treść",
+          "default": "Czy na pewno sprawdzić swoje odpowiedzi i zakończyć to zadanie?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etykieta przycisku anulowania",
+          "default": "Anuluj"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Etykieta przycisku potwierdzenia",
+          "default": "Sprawdź"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Żądanie powtórzenia testu",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Nagłówek",
+          "default": "Powtórzyć?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Treść",
+          "default": "Czy na pewno chcesz powtórzyć to zadanie?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etykieta przycisku anulowania",
+          "default": "Anuluj"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Etykieta przycisku potwierdzenia",
+          "default": "Powtórz"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstowy odpowiednik paska wyniku dla czytników ekranu",
+      "default": "Masz :num z :total punktów"
     }
   ]
 }
