@@ -6,6 +6,9 @@
         {
           "label": "Mota",
           "description": "Galderaren azpiko aukerako multimedia."
+        },
+        {
+          "label": "Desgaitu irudiaren zooma"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Jarri eremuen sarrerak lerro bereizietan"
-        },
-        {
-          "label": "Desgaitu irudiaren zooma erantzunaren irudian"
         },
         {
           "label": "Erakutsi egiaztatze dialogoa \"Egiaztatu\"",

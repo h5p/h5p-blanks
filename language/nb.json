@@ -6,6 +6,9 @@
         {
           "label": "Type",
           "description": "Et valgfritt multimediaelement som skal vises over spørsmålet."
+        },
+        {
+          "label": "Slå av bilde zooming"
         }
       ]
     },
@@ -130,9 +133,6 @@
           "label": "Sett inntastingsfelt på egne linjer"
         },
         {
-          "label": "Slå av bilde zooming."
-        },
-        {
           "label": "Slå på bruker-bekreftelse for \"Fasit\"",
           "description": "Denne innstillingen er ikke forenbar med \"Gi tilbakemelding med en gang brukeren har avgitt svar\" alternativet."
         },
@@ -150,7 +150,7 @@
       "fields": [
         {
           "label": "Tittel",
-          "default": "Feridg ?"
+          "default": "Ferdig ?"
         },
         {
           "label": "Tekst",

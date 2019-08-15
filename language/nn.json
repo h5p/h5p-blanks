@@ -6,6 +6,9 @@
         {
           "label": "Type",
           "description": "Eit valfritt multimediaelement som sjåast over spørsmålet."
+        },
+        {
+          "label": "Slå av bilete zooming"
         }
       ]
     },
@@ -117,7 +120,7 @@
           "label": "Enable \"Check\" button"
         },
         {
-          "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
+          "label": "Gi tilbakemelding med ein gong brukaren har svart"
         },
         {
           "label": "Skil mellom store og små bokstavar",
@@ -128,9 +131,6 @@
         },
         {
           "label": "Sett inntastingsfelt på egne linjer"
-        },
-        {
-          "label": "Slå av bilete zooming."
         },
         {
           "label": "Slå på bruker-bekreftelse for \"Fasit\"",
@@ -150,7 +150,7 @@
       "fields": [
         {
           "label": "Tittel",
-          "default": "Feridg ?"
+          "default": "Ferdig ?"
         },
         {
           "label": "Tekst",

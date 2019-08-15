@@ -6,6 +6,9 @@
         {
           "label": "Tipo",
           "description": "Conteúdo multimédia opcional para mostrar acima da questão."
+        },
+        {
+          "label": "Desativar ampliação de imagem para a imagem associada à questão"
         }
       ]
     },
@@ -128,9 +131,6 @@
         },
         {
           "label": "Coloque os campos de texto em linhas separadas"
-        },
-        {
-          "label": "Desativar ampliação de imagem para a imagem associada à questão"
         },
         {
           "label": "Mostrar caixa de diálogo de confirmação quando clicar em \"Verificar\"",

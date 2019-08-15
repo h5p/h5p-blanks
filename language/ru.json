@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Медиа",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Тип",
+          "description": "Дополнительное медиа для отображения над вопросом."
+        },
+        {
+          "label": "Отключить изменение масштаба изображения"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Описание задачи",
+      "default": "Заполните пропущенные слова",
+      "description": "Руководство, рассказывающее пользователю, как ответить на это задание."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Текстовые блоки",
+      "entity": "текстовый блок",
       "field": {
-        "label": "Line of text",
+        "label": "Строка текста",
         "placeholder": "Oslo is the capital of *Norway*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>Пробелы добавляются со звездочкой (*) спереди и позади правильного слова/фразы.</li><li>Дополнительные варианты ответов отделяются косой чертой (/).</li><li>Вы можете добавить текстовую подсказку, используя двоеточие (:) перед подсказкой.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Общий отзыв",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "По умолчанию"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Определение пользовательских отзывов для любого диапазона оценок",
+          "description": "Нажмите на кнопку \"Добавить диапазон\" чтобы добавить столько диапазонов, сколько вам нужно. Например: 0-20% Плохая оценка, 21-91% Средняя оценка, 91-100% Отличная оценка!",
+          "entity": "диапазон",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Диапазон оценок"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Обратная связь для определенного диапазона оценок",
+                "placeholder": "Заполните отзыв"
               }
             ]
           }
@@ -55,141 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Текст для кнопки \"Показать решения\"",
+      "default": "Показать решения"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Текст для кнопки \"Повторить\"",
+      "default": "Повторить"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Текст для кнопки \"Проверить\"",
+      "default": "Проверить"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Текст для сообщения \"Не заполнено\"",
+      "default": "Пожалуйста, заполните все поля для просмотра решения"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Текст для сообщения \"':ans' правильный\"",
+      "default": "':ans' правильный"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Текст для сообщения \"':ans' неправильный\"",
+      "default": "':ans' неправильный"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Текст для сообщения \"Ответили правильно\" message",
+      "default": "Ответили правильно"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Текст для сообщения \"Ответили неправильно\" message",
+      "default": "Ответили неправильно"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Вспомогательная надпись для решения",
+      "default": "Правильный ответ:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Вспомогательная надпись для поля ввода",
+      "description": "Используйте @num и @total чтобы заменить текущий номер пропуска и общее количество пропусков",
+      "default": "Заполнено пропусков @num из @total"
     },
     {
       "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "default": "Доступна подсказка"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Надпись иконки подсказки",
+      "default": "Подсказка"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Настройки поведения.",
+      "description": "Эти параметры позволят вам контролировать поведение задания.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Включить кнопку \"Повторить\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Включить кнопку \"Показать решение\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Включить кнопку \"Проверить\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Автоматически проверять ответы после ввода"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "С учетом регистра",
+          "description": "Убедитесь, что пользовательский ввод должен быть точно таким же, как и ответ."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Требовать заполнить все поля, прежде чем можно будет посмотреть решение"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Помещать поля ввода в отдельные строки"
         },
         {
-          "label": "Disable image zooming for question image"
+          "label": "Показать диалог подтверждения на \"Проверить\"",
+          "description": "Эти параметры не совместимы с опцией \"Автоматически проверять ответы после ввода\""
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Показать диалог подтверждения на \"Повторить\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
-        },
-        {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Позволять незначительные орфографические ошибки",
+          "description": "Если активирован, ответ также будет считаться правильным с незначительными орфографическими ошибками (3-9 знаков: 1 орфографическая ошибка, более 9 знаков: 2 орфографические ошибки)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Диалог подтверждения проверки",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Текст заголовка",
+          "default": "Завершить ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Основной текст",
+          "default": "Вы уверены, что хотите завершить ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Надпись кнопки отмены",
+          "default": "Отменить"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Надпись кнопки подтверждения",
+          "default": "Завершить"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Диалог подтверждения повтора",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Текст заголовка",
+          "default": "Повторить ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Основной текст",
+          "default": "Вы уверены, что хотите повторить ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Надпись кнопки отмены",
+          "default": "Отменить"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Надпись кнопки подтверждения",
+          "default": "Подтвердить"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Текстовое представление шкалы очков для тех, кто использует озвучку текста",
+      "default": "Вы получили :num из :total баллов"
     }
   ]
 }
