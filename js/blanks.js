@@ -149,11 +149,14 @@ H5P.Blanks = (function ($, Question) {
       }
     }
 
+    // Using instructions as label for our text groups
+    const labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
+
     // Register task introduction text
-    self.setIntroduction(self.params.text);
+    self.setIntroduction('<div id="' + labelId + '">' + self.params.text + '</div>');
 
     // Register task content area
-    self.setContent(self.createQuestions(), {
+    self.setContent(self.createQuestions(labelId), {
       'class': self.params.behaviour.separateLines ? 'h5p-separate-lines' : ''
     });
 
@@ -266,7 +269,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Create questitons html for DOM
    */
-  Blanks.prototype.createQuestions = function () {
+  Blanks.prototype.createQuestions = function (labelId) {
     var self = this;
 
     var html = '';
@@ -292,7 +295,7 @@ H5P.Blanks = (function ($, Question) {
         return cloze;
       });
 
-      html += '<div>' + question + '</div>';
+      html += '<div role="group" aria-labelledby="' + labelId + '">' + question + '</div>';
     }
 
     self.hasClozes = clozeNumber > 0;
@@ -893,6 +896,8 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.disableInput = function () {
     this.$questions.find('input').attr('disabled', true);
   };
+
+  Blanks.idCounter = 0;
 
   return Blanks;
 })(H5P.jQuery, H5P.Question);
