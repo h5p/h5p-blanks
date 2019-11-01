@@ -1,56 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Στοιχεία πολυμέσων",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Τύπος",
+          "description": "Προσθήκη στοιχείου πολυμέσων προς εμφάνιση πάνω από την ερώτηση (προαιρετικό)."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Απενεργοποίηση της επιλογής zoom για την εικόνα της ερώτησης"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Περιγραφή άσκησης",
+      "default": "Συμπληρώστε τα κενά με τις λέξεις που λείπουν",
+      "description": "Οδηγίες προς τον χρήστη για τη συμπλήρωση της άσκησης."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Πλαίσιο κειμένου",
+      "entity": "πλαισιου κειμενου",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Γραμμή κειμένου",
+        "placeholder": "Το Όσλο είναι η πρωτεύουσα της *Νορβηγίας*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Προσθέστε κενά χρησιμοποιώντας κάθε φορά έναν αστερίσκο (*) πριν και μετά τη σωστή λέξη/φράση.</li><li>Διαχωρίστε τις εναλλακτικές απαντήσεις με πλάγια παύλα (/).</li><li>Μπορείτε να ορίσετε επεξηγηματικό κείμενο προσθέτοντας μία άνω και κάτω τελεία (:) πριν την επεξήγηση.</li></ul>",
+          "example": "Μπορεί να γίνει επεξεργασία των αντικειμένων του e-me content με τη χρήση ενός *φυλλομετρητή: Κάτι που χρησιμοποιείτε κάθε μέρα*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Συνολική ανατροφοδότηση",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Βασικό"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Χαρακτηρισμός κάθε κλίμακας βαθμολογίας",
+          "description": "Κάντε κλικ στο κουμπί \"Προσθήκη κλίμακας\" για να προσθέσετε όσες  κλίμακες ή διαβαθμίσεις επιθυμείτε. Παράδειγμα: 0-20% Χαμηλή βαθμολογία, 21-91% Μέτρια βαθμολογία, 91-100% Εξαιρετική βαθμολογία!",
+          "entity": "κλιμακας",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Βαθμολογία"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Χαρακτηρισμός",
+                "placeholder": "Συμπληρώστε τον χαρακτηρισμό"
               }
             ]
           }
@@ -58,138 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Ετικέτα κουμπιού εμφάνισης λύσης",
+      "default": "Λύση"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Ετικέτα κουμπιού νέας προσπάθειας",
+      "default": "Επανάληψη"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Ετικέτα κουμπιού ελέγχου απάντησης",
+      "default": "Έλεγχος"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Κείμενο μηνύματος μη συμπλήρωσης κενού",
+      "default": "Παρακαλώ συμπλήρωσε όλα τα κενά για να δεις τις σωστές απαντήσεις"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Κείμενο μηνύματος σωστής απάντησης",
+      "default": "Η απάντηση ':ans' είναι σωστή"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Κείμενο μηνύματος λάθος απάντησης",
+      "default": "Η απάντηση ':ans' είναι λάθος"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Κείμενο μηνύματος \"Απαντήθηκε σωστά\"",
+      "default": "Απαντήθηκε σωστά"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Κείμενο μηνύματος \"Απαντήθηκε λάθος\"",
+      "default": "Απαντήθηκε λάθος"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Ετικέτα σωστής απάντησης για υποστηρικτικές τεχνολογίες",
+      "default": "Σωστή απάντηση:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Ετικέτα πεδίου εισαγωγής κειμένου για υποστηρικτικές τεχνολογίες",
+      "description": "Χρησιμοποιήστε το @num και το @total για να αντικαταστήσετε τον τρέχοντα αριθμό κενών και τον συνολικό αριθμό κενών",
+      "default": "@num κενά από @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Ετικέτα για υποστηρικτικές τεχνολογίες που ενημερώνει για την ύπαρξη διαθέσιμου επεξηγηματικού κειμένου",
+      "default": "Επεξήγηση διαθέσιμη"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Ετικέτα εικονιδίου επεξήγησης",
+      "default": "Επεξήγηση"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Ρυθμίσεις άσκησης",
+      "description": "Αυτές οι ρυθμίσεις σας επιτρέπουν να καθορίσετε τον τρόπο λειτουργίας της άσκησης.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Ενεργοποίηση κουμπιού \"Επανάληψη\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Ενεργοποίηση κουμπιού \"Λύση\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Ενεργοποίηση κουμπιού \"Έλεγχος\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Αυτόματος έλεγχος απαντήσεων μετά τη συμπλήρωση"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Διάκριση πεζών - κεφαλαίων",
+          "description": "Το κείμενο που εισάγει ο χρήστης πρέπει να είναι ακριβώς το ίδιο (πεζά - κεφαλαία) με την απάντηση."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Απαιτείται η συμπλήρωση όλων των πεδίων πριν την εμφάνιση της σωστής απάντησης"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Τοποθέτηση πεδίων προς συμπλήρωση σε χωριστές γραμμές "
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Εμφάνιση παραθύρου επιβεβαίωσης κατά τον \"Έλεγχο\"",
+          "description": "Αυτή η επιλογή δεν είναι συμβατή με την επιλογή \"Αυτόματος έλεγχος απαντήσεων μετά τη συμπλήρωση\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Εμφάνιση παραθύρου επιβεβαίωσης κατά την \"Επανάληψη\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Παράβλεψη μικρής σημασίας ορθογραφικών λαθών",
+          "description": "Αν ενεργοποιηθεί, μια απάντηση θα ληφθεί ως σωστή ακόμη κι αν έχει μικρής σημασίας ορθογραφικά λάθη"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Παράθυρο επιβεβαίωσης",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Κείμενο επικεφαλίδας",
+          "default": "Ολοκλήρωση άσκησης"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Κυρίως κείμενο",
+          "default": "Είσαι σίγουρος ότι θέλεις να ολοκληρώσεις την άσκηση;"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ετικέτα κουμπιού ακύρωσης",
+          "default": "Όχι"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Ετικέτα κουμπιού επιβεβαίωσης",
+          "default": "Ναι"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Παράθυρο επιβεβαίωσης",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Κείμενο επικεφαλίδας",
+          "default": "Επανάληψη"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Κυρίως κείμενο",
+          "default": "Είσαι σίγουρος ότι θέλεις να προσπαθήσεις ξανά;"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ετικέτα κουμπιού ακύρωσης",
+          "default": "Όχι"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Ετικέτα κουμπιού επιβεβαίωσης",
+          "default": "Ναι"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Κειμενική απόδοση της μπάρας βαθμολογίας για όσους χρησιμοποιούν ακουστική υποβοήθηση",
+      "default": "Έχεις :num από :total βαθμούς"
     }
   ]
 }
