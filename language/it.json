@@ -22,7 +22,7 @@
       "entity": "Blocco di testo",
       "field": {
         "label": "Linea di testo",
-        "placeholder": "Oslo è la capitale della * Norvegia *.",
+        "placeholder": "Oslo è la capitale della *Norvegia*.",
         "description": "",
         "important": {
           "description": "<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>",
@@ -45,7 +45,7 @@
           "field": {
             "fields": [
               {
-                "label": "Intervallo"
+                "label": "Intervallo di punteggio"
               },
               {},
               {
