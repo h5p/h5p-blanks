@@ -39,9 +39,15 @@
   border: 1px solid #9dd8bb;
   color: #255c41;
 }
+/* Showing solution */
 .h5p-blanks .h5p-correct-answer {
   color: #255c41;
   font-weight: bold;
+  border: 1px #255c41 dashed;
+  background-color: #d4f6e6;
+  padding: 0.15em;
+  border-radius: 0.25em;
+  margin-left: .5em;
 }
 .h5p-blanks .h5p-correct:after {
   position: absolute;
@@ -79,9 +85,11 @@
 /* Header and footer blocks (title + evaluation, buttons) */
 .h5p-blanks .joubel-tip-container {
   position: absolute;
-  top: -0.1em;
   right: 0.4em;
   font-size: 1em;
+}
+.h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
+  line-height: 1em;
 }
 .h5p-blanks .has-tip .h5p-text-input {
   padding-right: 2.25em;

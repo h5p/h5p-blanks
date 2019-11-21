@@ -9,6 +9,10 @@ H5P.Blanks = (function ($, Question) {
   var STATE_SHOWING_SOLUTION = 'showing-solution';
   var STATE_FINISHED = 'finished';
 
+  const XAPI_ALTERNATIVE_EXTENSION = 'https://h5p.org/x-api/alternatives';
+  const XAPI_CASE_SENSITIVITY = 'https://h5p.org/x-api/case-sensitivity';
+  const XAPI_REPORTING_VERSION_EXTENSION = 'https://h5p.org/x-api/h5p-reporting-version';
+
   /**
    * @typedef {Object} Params
    *  Parameters/configuration object for Blanks
@@ -47,14 +51,15 @@ H5P.Blanks = (function ($, Question) {
 
     // IDs
     this.contentId = id;
+    this.contentData = contentData;
 
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
         "Oslo is the capital of *Norway*."
       ],
-      userAnswers: [],
-      score: "You got @score of @total points",
+      overallFeedback: [],
+      userAnswers: [], // TODO This isn't in semantics?
       showSolutions: "Show solution",
       tryAgain: "Try again",
       checkAnswer: "Check",
@@ -68,16 +73,16 @@ H5P.Blanks = (function ($, Question) {
       inputLabel: "Blank input @num of @total",
       inputHasTipLabel: "Tip available",
       tipLabel: "Tip",
+      scoreBarLabel: 'You got :num out of :total points',
       behaviour: {
         enableRetry: true,
         enableSolutionsButton: true,
+        enableCheckButton: true,
         caseSensitive: true,
         showSolutionsRequiresInput: true,
         autoCheck: false,
-        separateLines: false,
-        disableImageZooming: false
-      },
-      overrideSettings: {}
+        separateLines: false
+      }
     }, params);
 
     // Delete empty questions
@@ -123,14 +128,16 @@ H5P.Blanks = (function ($, Question) {
 
     // Check for task media
     var media = self.params.media;
-    if (media && media.library) {
+    if (media && media.type && media.type.library) {
+      media = media.type;
       var type = media.library.split(' ')[0];
       if (type === 'H5P.Image') {
         if (media.params.file) {
           // Register task image
           self.setImage(media.params.file.path, {
-            disableImageZooming: self.params.behaviour.disableImageZooming,
-            alt: media.params.alt
+            disableImageZooming: self.params.media.disableImageZooming || false,
+            alt: media.params.alt,
+            title: media.params.title
           });
         }
       }
@@ -142,11 +149,14 @@ H5P.Blanks = (function ($, Question) {
       }
     }
 
+    // Using instructions as label for our text groups
+    const labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
+
     // Register task introduction text
-    self.setIntroduction(self.params.text);
+    self.setIntroduction('<div id="' + labelId + '">' + self.params.text + '</div>');
 
     // Register task content area
-    self.setContent(self.createQuestions(), {
+    self.setContent(self.createQuestions(labelId), {
       'class': self.params.behaviour.separateLines ? 'h5p-separate-lines' : ''
     });
 
@@ -163,7 +173,23 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.registerButtons = function () {
     var self = this;
 
-    if (!self.params.behaviour.autoCheck) {
+    var $content = $('[data-content-id="' + self.contentId + '"].h5p-content');
+    var $containerParents = $content.parents('.h5p-container');
+
+    // select find container to attach dialogs to
+    var $container;
+    if ($containerParents.length !== 0) {
+      // use parent highest up if any
+      $container = $containerParents.last();
+    }
+    else if ($content.length !== 0) {
+      $container = $content;
+    }
+    else  {
+      $container = $(document.body);
+    }
+
+    if (!self.params.behaviour.autoCheck && this.params.behaviour.enableCheckButton) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
         self.toggleButtonVisibility(STATE_CHECKING);
@@ -174,8 +200,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
@@ -194,8 +220,8 @@ H5P.Blanks = (function ($, Question) {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
-          instance: self.params.overrideSettings.instance,
-          $parentElement: self.params.overrideSettings.$confirmationDialogParent
+          instance: self,
+          $parentElement: $container
         }
       });
     }
@@ -266,7 +292,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Create questitons html for DOM
    */
-  Blanks.prototype.createQuestions = function () {
+  Blanks.prototype.createQuestions = function (labelId) {
     var self = this;
 
     var html = '';
@@ -292,7 +318,7 @@ H5P.Blanks = (function ($, Question) {
         return cloze;
       });
 
-      html += '<div>' + question + '</div>';
+      html += '<div role="group" aria-labelledby="' + labelId + '">' + question + '</div>';
     }
 
     self.hasClozes = clozeNumber > 0;
@@ -303,7 +329,8 @@ H5P.Blanks = (function ($, Question) {
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
-          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', this.getUserAnswer()));
+          var answer = $("<div>").text(this.getUserAnswer()).html();
+          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', answer));
           if (self.done || self.allBlanksFilledOut()) {
             // All answers has been given. Show solutions button.
             self.toggleButtonVisibility(STATE_CHECKING);
@@ -320,21 +347,42 @@ H5P.Blanks = (function ($, Question) {
         }
       }, i, self.clozes.length);
     }).keydown(function (event) {
-      self.autoGrowTextField($(this));
+      var $this = $(this);
 
-      if (event.keyCode === 13) {
-        return false; // Prevent form submission on enter key
+      // Adjust width of text input field to match value
+      self.autoGrowTextField($this);
+
+      var $inputs, isLastInput;
+      var enterPressed = (event.keyCode === 13);
+      var tabPressedAutoCheck = (event.keyCode === 9 && self.params.behaviour.autoCheck);
+
+      if (enterPressed || tabPressedAutoCheck) {
+        // Figure out which inputs are left to answer
+        $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
+
+        // Figure out if this is the last input
+        isLastInput = $this.is($inputs[$inputs.length - 1]);
       }
 
-      // Refocus buttons after they have been toggled if last input
-      if (event.keyCode === 9 && self.params.behaviour.autoCheck) {
-        var $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
-        var $lastInput = $inputs[$inputs.length - 1];
-        if ($(this).is($lastInput) && !self.shiftPressed) {
-          setTimeout(function () {
-            self.focusButton();
-          }, 10);
+      if ((tabPressedAutoCheck && isLastInput && !self.shiftPressed) ||
+          (enterPressed && isLastInput)) {
+        // Focus first button on next tick
+        setTimeout(function () {
+          self.focusButton();
+        }, 10);
+      }
+
+      if (enterPressed) {
+        if (isLastInput) {
+          // Check answers
+          $this.trigger('blur');
         }
+        else {
+          // Find next input to focus
+          $inputs.eq($inputs.index($this) + 1).focus();
+        }
+
+        return false; // Prevent form submission on enter key
       }
     }).on('change', function () {
       self.answered = true;
@@ -365,9 +413,9 @@ H5P.Blanks = (function ($, Question) {
     var rightPadPx = fontSize * rightPadEm;
     var static_min_pad = 0.5 * fontSize;
 
-    setTimeout(function(){
+    setTimeout(function () {
       var tmp = $('<div>', {
-        'html': $input.val()
+        'text': $input.val()
       });
       tmp.css({
         'position': 'absolute',
@@ -573,7 +621,7 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Trigger xAPI answered event
    */
-  Blanks.prototype.triggerAnswered = function() {
+  Blanks.prototype.triggerAnswered = function () {
     this.answered = true;
     var xAPIEvent = this.createXAPIEventTemplate('answered');
     this.addQuestionToXAPI(xAPIEvent);
@@ -593,7 +641,7 @@ H5P.Blanks = (function ($, Question) {
     this.addResponseToXAPI(xAPIEvent);
     return {
       statement: xAPIEvent.data.statement
-    }
+    };
   };
 
   /**
@@ -607,48 +655,51 @@ H5P.Blanks = (function ($, Question) {
     };
     definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
     definition.interactionType = 'fill-in';
-    definition.correctResponsesPattern = ['{case_matters=' + this.params.behaviour.caseSensitive + '}'];
-    var firstCorrectResponse = true;
+
+    const clozeSolutions = [];
+    let crp = '';
     // xAPI forces us to create solution patterns for all possible solution combinations
     for (var i = 0; i < this.params.questions.length; i++) {
-      var question = this.handleBlanks(this.params.questions[i], function(solution) {
-        // Store new patterns for each extra alternative answer
-        var newPatterns = [];
-        for (var j = 0; j < definition.correctResponsesPattern.length; j++) {
-          if (!firstCorrectResponse) {
-            definition.correctResponsesPattern[j] += '[,]';
-          }
-          var prefix = definition.correctResponsesPattern[j];
-          for (var k = 0; k < solution.solutions.length; k++) {
-            if (k === 0) {
-              // This is the first possible answr, just add it to the pattern
-              definition.correctResponsesPattern[j] += solution.solutions[k];
-            }
-            else {
-              // This is an alternative possible answer, we need to create a new permutation
-              newPatterns.push(prefix + solution.solutions[k]);
-            }
-          }
-        }
-        // Add any new permutations to the list of response patterns
-        definition.correctResponsesPattern = definition.correctResponsesPattern.concat(newPatterns);
+      var question = this.handleBlanks(this.params.questions[i], function (solution) {
+        // Collect all solution combinations for the H5P Alternative extension
+        clozeSolutions.push(solution.solutions);
 
-        firstCorrectResponse = false;
+        // Create a basic response pattern out of the first alternative for each blanks field
+        crp += (!crp ? '' : '[,]') + solution.solutions[0];
 
         // We replace the solutions in the question with a "blank"
         return '__________';
       });
       definition.description['en-US'] += question;
     }
+
+    // Set the basic response pattern (not supporting multiple alternatives for blanks)
+    definition.correctResponsesPattern = [
+      '{case_matters=' + this.params.behaviour.caseSensitive + '}' + crp,
+    ];
+
+    // Add the H5P Alternative extension which provides all the combinations of different answers
+    // Reporting software will need to support this extension for alternatives to work.
+    definition.extensions = definition.extensions || {};
+    definition.extensions[XAPI_CASE_SENSITIVITY] = this.params.behaviour.caseSensitive;
+    definition.extensions[XAPI_ALTERNATIVE_EXTENSION] = clozeSolutions;
+
     return definition;
   };
 
   /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
-  Blanks.prototype.addQuestionToXAPI = function(xAPIEvent) {
+  Blanks.prototype.addQuestionToXAPI = function (xAPIEvent) {
     var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
-    $.extend(definition, this.getxAPIDefinition());
+    $.extend(true, definition, this.getxAPIDefinition());
+
+    // Set reporting module version if alternative extension is used
+    if (definition.extensions && definition.extensions[XAPI_ALTERNATIVE_EXTENSION]) {
+      const context = xAPIEvent.getVerifiedStatementValue(['context']);
+      context.extensions = context.extensions || {};
+      context.extensions[XAPI_REPORTING_VERSION_EXTENSION] = '1.1.0';
+    }
   };
 
   /**
@@ -774,8 +825,9 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.showEvaluation = function () {
     var maxScore = this.getMaxScore();
     var score = this.getScore();
-    var scoreText = this.params.score.replace('@score', score).replace('@total', maxScore);
-    this.setFeedback(scoreText, score, maxScore);
+    var scoreText = H5P.Question.determineOverallFeedback(this.params.overallFeedback, score / maxScore).replace('@score', score).replace('@total', maxScore);
+
+    this.setFeedback(scoreText, score, maxScore, this.params.scoreBarLabel);
 
     if (score === maxScore) {
       this.toggleButtonVisibility(STATE_FINISHED);
@@ -787,7 +839,7 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.hideEvaluation = function () {
     // Clear evaluation section.
-    this.setFeedback();
+    this.removeFeedback();
   };
 
   /**
@@ -826,8 +878,8 @@ H5P.Blanks = (function ($, Question) {
     return correct;
   };
 
-  Blanks.prototype.getTitle = function() {
-    return H5P.createTitle(this.params.text);
+  Blanks.prototype.getTitle = function () {
+    return H5P.createTitle((this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Fill In');
   };
 
   /**
@@ -904,7 +956,8 @@ H5P.Blanks = (function ($, Question) {
       if (self.params.behaviour.autoCheck) {
         if (cloze.filledOut()) {
           cloze.checkAnswer();
-        } else {
+        }
+        else {
           hasAllClozesFilled = false;
         }
       }
@@ -940,6 +993,8 @@ H5P.Blanks = (function ($, Question) {
   Blanks.RANGE_IDENTIFIER_END = '))';
   /** @constant {String} */
   Blanks.RANGE_DELIMITER = ',';
+  
+  Blanks.idCounter = 0;
 
   return Blanks;
 })(H5P.jQuery, H5P.Question);

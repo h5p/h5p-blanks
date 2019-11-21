@@ -6,6 +6,9 @@
         {
           "label": "Type de média",
           "description": "Fichier média à afficher en option au-dessus de la question."
+        },
+        {
+          "label": "Désactiver l'agrandissement de l'image"
         }
       ]
     },
@@ -20,13 +23,39 @@
       "field": {
         "label": "Ligne de texte",
         "placeholder": "Paris est la capitale de la *France*.",
-        "description": "Des trous sont insérés au moyen d'un astérisque (*) placé avant et après le mot / le groupe de mots. Les différentes réponses acceptées sont séparées par un slash (/). Vous pouvez ajouter un indice en utilisant les deux points (:) avant cet indice. (Exemple: Les exercices H5P peuvent être créés en utilisant *un navigateur/navigateur internet:Quelque chose que vous utilisez tous les jours*)."
+        "description": "",
+        "important": {
+          "description": "<ul><li>Ajoutez les blancs dans le texte entre deux astérisques (*).</li><li>Séparez des réponses alternatives correctes avec un slash (/).</li><li>Vous pouvez ajouter un indice en utilisant 2 points (:) avant cet élément.</li></ul>",
+          "example": "Un contenu H5P peut être édité en utilisant un *navigateur/navigateur web:Quelque chose que vous êtes en train d'utiliser*."
+        }
       }
     },
     {
-      "label": "Commentaire final",
-      "default": "Vous avez obtenu @score point(s) sur @total",
-      "description": "Texte du commentaire de fin, variables possibles: @score et @total. (Exemple: 'Vous avez @score sur un total possible de @total points.')"
+      "label": "Feedback général",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "label": "Par défaut"
+            }
+          ],
+          "label": "Définissez des feedbacks pour différents intervalles de scores",
+          "description": "Cliquez sur le bouton \"Ajouter Intervalle\" pour ajouter autant d'intervalles de score que vous souhaitez. Exemple: 0-20% Mauvais score, 21-91% Score moyen, 91-100% Score excellent !",
+          "entity": "intervalle",
+          "field": {
+            "fields": [
+              {
+                "label": "Intervalle de scores"
+              },
+              {},
+              {
+                "label": "Feedback pour cet intervalle de scores",
+                "placeholder": "Remplissez le feedback"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label": "Texte du bouton \"Voir la correction\"",
@@ -49,8 +78,8 @@
       "default": "':ans' est une réponse exacte"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse incorrecte\"",
-      "default": "':ans' est une réponse incorrecte"
+      "label": "Texte du message \"':ans' est une réponse inexacte\"",
+      "default": "':ans' est une réponse inexacte"
     },
     {
       "label": "Texte du message \"Réponse exacte\"",
@@ -88,6 +117,9 @@
           "label": "Activer le bouton \"Voir la correction\""
         },
         {
+          "label": "Activer le bouton \"Vérifier\""
+        },
+        {
           "label": "Vérifier les réponses instantanément dès la saisie."
         },
         {
@@ -101,9 +133,6 @@
           "label": "Afficher les blancs sur des lignes séparées."
         },
         {
-          "label": "Désactiver l'agrandissement de l'image de la question."
-        },
-        {
           "label": "Afficher la fenêtre de confirmation pour \"Vérifier\"",
           "description": "Cette option n'est pas compatible avec l'option \"Vérifier les réponses instantanément dès la saisie.\""
         },
@@ -111,8 +140,8 @@
           "label": "Afficher la fenêtre de confirmation pour \"Recommencer\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors"
+          "label": "Accepter de petites fautes d'orthopraphe",
+          "description": "Si cette option est activée, la réponse avec des fautes d'orthographe va également être considérée comme correcte (de 3 à 9 caractères : 1 faute acceptée, plus que 9 caractères : 2 fautes acceptées)."
         }
       ]
     },
@@ -157,6 +186,10 @@
           "default": "Confirmer"
         }
       ]
+    },
+    {
+      "label": "Représentation textuelle du panneau du score pour les utilisateurs d'outils de synthèse vocale (comme ReadSpeaker)",
+      "default": "Vous avez obtenu :num points sur un total de :points"
     }
   ]
 }

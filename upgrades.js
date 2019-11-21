@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.Blanks'] = (function ($) {
+H5PUpgrades['H5P.Blanks'] = (function () {
   return {
     1: {
       1: {
@@ -52,7 +52,73 @@ H5PUpgrades['H5P.Blanks'] = (function ($) {
 
         // Done
         finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Blanks 1.8
+       *
+       * Move old feedback message to the new overall feedback system.
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      8: function (parameters, finished) {
+        if (parameters && parameters.score) {
+          parameters.overallFeedback = [
+            {
+              'from': 0,
+              'to': 100,
+              'feedback': parameters.score
+            }
+          ];
+
+          delete parameters.score;
+        }
+
+        finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       *
+       * @param {[type]} parameters
+       * @param {[type]} finished
+       * @param {[type]} extras
+       * @return {[type]}
+       */
+      11: function (parameters, finished, extras) {
+        // Move value from getTitle() to metadata title
+        if (parameters && parameters.text) {
+          extras = extras || {};
+          extras.metadata = extras.metadata || {};
+          extras.metadata.title = parameters.text.replace(/<[^>]*>?/g, '');
+        }
+        finished(null, parameters, extras);
+      },
+      /*
+       * Upgrades content parameters to support Blanks 1.9
+       *
+       * Move disableImageZooming from behaviour to media
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      12: function (parameters, finished) {
+      // If image has been used, move it down in the hierarchy and add disableImageZooming
+        if (parameters && parameters.media) {
+          parameters.media = {
+            type: parameters.media,
+            disableImageZooming: (parameters.behaviour && parameters.behaviour.disableImageZooming) ? parameters.behaviour.disableImageZooming : false
+          };
+        }
+
+        // Delete old disableImageZooming
+        if (parameters && parameters.behaviour) {
+          delete parameters.behaviour.disableImageZooming;
+        }
+        finished(null, parameters);
       }
     }
   };
-})(H5P.jQuery);
+})();

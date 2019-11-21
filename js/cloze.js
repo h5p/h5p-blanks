@@ -158,7 +158,12 @@
         return; // Only for the wrong ones
       }
 
-      $('<span aria-hidden="true" class="h5p-correct-answer"> ' + answer + '</span>').insertAfter($wrapper);
+      $('<span>', {
+        'aria-hidden': true,
+        'class': 'h5p-correct-answer',
+        text: answer,
+        insertAfter: $wrapper
+      });
       $input.attr('disabled', true);
       var ariaLabel = inputLabel + '. ' +
         l10n.solutionLabel + ' ' + answer + '. ' +
@@ -230,7 +235,7 @@
      */
     this.toString = function () {
       var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
-      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocapitalize="off"' + extra + '></span>';
+      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocomplete="off" autocapitalize="off"' + extra + '></span>';
       self.length = result.length;
       return result;
     };
