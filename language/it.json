@@ -5,7 +5,7 @@
       "fields": [
         {
           "label": "Tipo",
-          "description": "Media opzionale da mostrare sopra la domanda."
+          "description": "Media facoltativo da mostrare sopra la domanda."
         },
         {
           "label": "Disabilita lo zoom dell'immagine"
@@ -14,7 +14,7 @@
     },
     {
       "label": "Descrizione attività",
-      "default": "Riempire con le parole mancanti",
+      "default": "Riempi con le parole mancanti",
       "description": "Una guida che dice all'utente come rispondere a questo compito."
     },
     {
@@ -40,7 +40,7 @@
             }
           ],
           "label": "Definisci un feedback personalizzato per ogni intervallo di punteggio",
-          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per aggiungere quanti intervalli ti servono. Esempio: 0-20% Cattivo punteggio, 21-91% Punteggio medio, 91-100% Ottimo punteggio!",
+          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per aggiungere gli intervalli che ti servono. Per esempio: 0-20%, Punteggio scarso; 21-90%, Punteggio medio; 91-100% Punteggio ottimo!",
           "entity": "Intervallo",
           "field": {
             "fields": [
@@ -74,11 +74,11 @@
       "default": "Per favore, riempi tutti gli spazi vuoti per vedere la soluzione"
     },
     {
-      "label": "Testo del messaggio \"': ans' è corretto\"",
+      "label": "Il testo del messaggio \"': ans' è corretto\"",
       "default": "': ans' è corretto"
     },
     {
-      "label": "Testo del messaggio \"': ans' è sbagliato\"",
+      "label": "Il testo del messaggio \"': ans' è sbagliato\"",
       "default": "': ans' è sbagliato"
     },
     {
@@ -107,8 +107,8 @@
       "default": "Suggerimento"
     },
     {
-      "label": "Impostazioni di esecuzione.",
-      "description": "Queste opzioni ti consentono di controllare l'andamento del compito.",
+      "label": "Impostazioni di esecuzione",
+      "description": "Queste opzioni ti consentono di controllare l'andamento del compito",
       "fields": [
         {
           "label": "Attiva \"Riprova\""
@@ -124,7 +124,7 @@
         },
         {
           "label": "Riconosce maiuscole e minuscole",
-          "description": "Assicurati che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta."
+          "description": "Assicurati che i caratteri inseriti dall'utente siano esattamente gli stessi della risposta"
         },
         {
           "label": "Richiedi che tutti i campi siano completati prima di mostrare la soluzione"
@@ -150,11 +150,11 @@
       "fields": [
         {
           "label": "Testo dell'intestazione",
-          "default": "Finito?"
+          "default": "Terminato?"
         },
         {
-          "label": "Testo del corpo",
-          "default": "Sei sicuro di voler finire?"
+          "label": "Corpo del testo",
+          "default": "Sei sicuro di voler terminare?"
         },
         {
           "label": "Etichetta del pulsante Annulla",
@@ -162,7 +162,7 @@
         },
         {
           "label": "Etichetta del pulsante di conferma",
-          "default": "Finito"
+          "default": "Terminato"
         }
       ]
     },
@@ -174,7 +174,7 @@
           "default": "Vuoi riprovare?"
         },
         {
-          "label": "Testo del corpo",
+          "label": "Corpo del testo",
           "default": "Sei sicuro di voler riprovare?"
         },
         {
