@@ -18,6 +18,9 @@
     var self = this;
     var $input, $wrapper;
     var answers = solution.solutions;
+    answers = answers.map(function (answer) {
+      return self.remapCharacters(answer, Blanks.Cloze.CHARACTER_MAPPINGS);
+    });
     var answer = answers.join('/');
     var tip = solution.tip;
     var checkedAnswer = null;
@@ -210,7 +213,7 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      return H5P.trim($input.val());
+      return self.remapCharacters(H5P.trim($input.val()), Blanks.Cloze.CHARACTER_MAPPINGS);
     };
 
     /**
@@ -233,6 +236,39 @@
     this.resetAriaLabel = function () {
       $input.attr('aria-label', inputLabel);
     };
+  };
+
+  /**
+   * Remap characters of a text to other characters.
+   *
+   * Expects mappings' keys to be UTF-16 code and mappings' values to be
+   * UTF-16 code or string.
+   *
+   * @param {string} text Text to remap characters in.
+   * @param {object} mappings Mappings from characters.
+   * @returns {string} Text with remapped characters
+   */
+  Blanks.Cloze.prototype.remapCharacters = function (text, mappings) {
+    for (let i = 0; i < text.length; i++) {
+      let replacement = mappings[text.charCodeAt(i)];
+      if (typeof replacement === 'undefined') {
+        continue; // Skip
+      }
+
+      if (typeof replacement === 'number') {
+        replacement = String.fromCharCode(replacement);
+      }
+
+      text = text.substr(0, i) + replacement + text.substr(i + 1);
+    }
+
+    return text;
+  };
+
+  /** @constant {object} CHARACTER_MAPPINGS */
+  Blanks.Cloze.CHARACTER_MAPPINGS = {
+    8216: 39, // Left Single Quotation Mark => Apostrophe, iOS uses the former
+    8217: 39  // Right Single Quotation Mark => Apostrophe, iOS uses the former
   };
 
 })(H5P.jQuery, H5P.Blanks);
