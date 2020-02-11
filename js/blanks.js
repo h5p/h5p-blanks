@@ -672,7 +672,7 @@ H5P.Blanks = (function ($, Question) {
     $.extend(true, definition, this.getxAPIDefinition());
 
     // Set reporting module version if alternative extension is used
-    if (definition.extensions && definition.extensions[XAPI_ALTERNATIVE_EXTENSION]) {
+    if (this.hasAlternatives) {
       const context = xAPIEvent.getVerifiedStatementValue(['context']);
       context.extensions = context.extensions || {};
       context.extensions[XAPI_REPORTING_VERSION_EXTENSION] = '1.1.0';
@@ -702,6 +702,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Split up alternatives
     var solutions = solution.split('/');
+    this.hasAlternatives = this.hasAlternatives || solutions.length > 1;
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
