@@ -1,56 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Média",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Typ",
+          "description": "Volitelná média k zobrazení nad otázkou."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Zakázat zvětšení obrázzu"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Popis úlohy",
+      "default": "Doplňte chybějící slova",
+      "description": "Průvodce, který uživateli řekne, jak na tuto úlohu odpovědět."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Textové bloky",
+      "entity": "textové bloky",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Řádek textu",
+        "placeholder": "Oslo je hlavním městem *Norska*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Mezery jsou přidány s hvězdičkou (*) před a za správným slovem/frází.</li><li>Alternativní odpovědi jsou odděleny lomítkem (/).</li><li>Můžete přidat textovou nápovědu pomocí dvojtečky (:) před nápovědou.</li></ul>",
+          "example": "Obsah H5P lze upravovat pomocí *prohlížeče/webového prohlížeče: Něco, co používáte každý den*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Celková zpětná vazba",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Výchozí"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definujte vlastní zpětnou vazbu pro jakýkoli rozsah skóre",
+          "description": "Klikněte na tlačítko \"Add range\" pro přidání tolika rozsahů, kolik potřebujete. Například: 0-20% špatný výsledek, 21-91% průměrný výsledek, 91-100% výborný výsledek!",
+          "entity": "rozsah",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Rozsah skóre"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Zpětná vazba pro definovaný rozsah skóre",
+                "placeholder": "Vyplňte ve zpětné vazbě"
               }
             ]
           }
@@ -58,138 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Popis tlačítka \"Zobrazit řešení\" ",
+      "default": "Zobrazit řešení"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Popis tlačítka \"Opakovat\" ",
+      "default": "Opakovat"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Popis tlačítka \"Zkontrolovat\" ",
+      "default": "Zkontrolovat"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Text pro zprávu  \"Nevyplněno\" ",
+      "default": "Pro zobrazení řešení vyplňte prosím všechny mezery"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Text pro zprávu \"':ans' je správně\" ",
+      "default": "':ans' je správně"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Text pro zprávu \"':ans' je chybně\" ",
+      "default": "':ans' je chybně"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Text pro zprávu \"Odpověď je správně\" ",
+      "default": "Odpověď je správně"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Text pro zprávu \"Odpověď je chybně\" ",
+      "default": "Odpověď je chybně"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Popisek pomocné technologie pro řešení",
+      "default": "Správná odpověď:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Popisek pomocné technologie pro vstupní pole",
+      "description": "Použijte @num a @total k nahrazení aktuálního počtu doplnění a celkového počtu doplnění v úloze",
+      "default": "Prázdný vstup @num ze @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Popisek pomocné technologie pro vyslovení vstupu, ke kterému je nápověda",
+      "default": "Nápověda k dispozici"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Popisek ikony nápovědy",
+      "default": "Nápověda"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Nastavení chování.",
+      "description": "Tyto možnosti vám umožní řídit, jak se bude úloha chovat.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Povolit tlačítko \"Opakovat\"""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Povolit tlačítko \"Zobrazit řešení\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "EPovolit tlačítko \"Zkontrolovat\" "
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Po zadání automaticky zkontrolovat odpovědi "
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Rozeznává velká a malá písmena",
+          "description": "Zajišťuje, že vstup uživatele musí být přesně stejný jako odpověď."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Před zobrazením řešení je třeba odpovědět na všechna pole"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Vložte vstupní pole na samostatné řádky"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Zobrazit potvrzovací dialog \"Zkontrolovat\"",
+          "description": "Tato volba není kompatibilní s volbou \"Po zadání automaticky zkontrolovat odpovědi\" "
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Zobrazit potvrzovací dialog \"Opakovat\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Přijmout malé pravopisné chyby",
+          "description": "Je-li aktivováno, odpověď se také počítá jako správná s drobnými pravopisnými chybami (3-9 znaků: 1 pravopisná chyba, více než 9 znaků: 2 pravopisné chyby)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Potvrzovací dialog kontroly",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Text záhlaví",
+          "default": "Ukončit ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Tělo textu",
+          "default": "Opravdu chcete ukončit ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Popis tlačítka zrušení",
+          "default": "Zrušit"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Popis potvrzovacího tlačítka",
+          "default": "Konec"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Dialog pro potvrzení opakování",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Text záhlaví",
+          "default": "Opakovat  ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "	Tělo textu",
+          "default": "Opravdu chcete akci opakovat ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Popis tlačítka zrušení",
+          "default": "Zrušit"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "opis potvrzovacího tlačítka",
+          "default": "Potvrdit"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Textové znázornění výsledkové lišty pro ty, kteří používají čtecí zařízení",
+      "default": "Získal jste :num z :total bodů"
     }
   ]
 }
