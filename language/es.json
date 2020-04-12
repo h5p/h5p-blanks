@@ -1,14 +1,14 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Medio",
       "fields": [
         {
           "label": "Tipo",
-          "description": "Optional media to display above the question."
+          "description": "Medio opcional a mostrar arriba de la pregunta."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Desabilitar Zoom de imagen"
         }
       ]
     },
@@ -26,31 +26,31 @@
         "description": "",
         "important": {
           "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "example": "El contenido H5P puede ser editado usando un *browser/web-browser:Algo que Usted usa todos los días*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Realimentación global",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Predeterminado"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definir realimentación personalizada para cualquier rango de puntaje",
+          "description": "CHacer cic en el botón de \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje promedio, 91-100% ¡Magnífico Puntaje!",
+          "entity": "rango",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Tango de Puntaje"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Realimentación para rango de puntaje definido",
+                "placeholder": "Complete la realimentación"
               }
             ]
           }
@@ -63,133 +63,133 @@
     },
     {
       "label": "Texto para el botón de \"Reintentar\"",
-      "default": "Retry"
+      "default": "Reintentar"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Texto para botón para \"Revisar\" ",
+      "default": "revisar"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Texto para mensaje de \"No contestado\" ",
+      "default": "Por favor llene todos los espacios para ver la solución"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Texto para mensaje de \"':ans' es correcto\" ",
+      "default": "':ans' es correcto"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Texto para mensaje de \"':ans' es incorrecto\" ",
+      "default": "':ans' es incorrecto"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Texto para mensaje de \"Contestado correctamente\" ",
+      "default": "Contestado correctamente"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Texto para mensaje de \"Contestado incorrectamente\" ",
+      "default": "Contestado incorrectamente"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Etiqueta para tecnología asistiva para Solución",
+      "default": "Respuesta correcta:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Etiqueta para tecnología asistiva para campo de ingreso",
+      "description": "Use @num y @total para remplazar número cloze actual y número cloze total",
+      "default": "Vacío ingreso @num de @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Etiqueta para tecnología sistiva para decir que una entrada tiene una pista asociada a ella",
+      "default": "Pista disponible"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "etiqueta de ícono de pista",
+      "default": "Pista"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Configuraciones de comportamiento.",
+      "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Habilitar \"Reintentar\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Habilitar botón para \"Mostrar solución\" "
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Habilitar botón \"Revisar\" "
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Automáticamente revisar respuestas después de ingresadas"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "MAYÚSCULAS/minúsculas si importan",
+          "description": "Asegurar que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Requerir qye todos los campos sean contestados antes que que pueda ser vista la solución"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Poner campos de entrada en líneas separadas"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Mostrar diálogo de confirmación en \"Revisar\"",
+          "description": "Esta opción no es compatible con la opción para \"Revisar respuestas automáticamente después de ingresadas\" "
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Mostrar diálogo de confirmación en \"Reintentar\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Aceptar errores tipográficos menores",
+          "description": "Si se activa, una respuesta también contará como correcta con errores tipográficos menores (3-9 caracteres: 1 error tipográfico, más de 9 caracteres: 2 errores tipográficos)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Diálogo de confirmación para Revisar",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Texto del encabezado",
+          "default": "¿ Terminar ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Texto del cuerpo",
+          "default": "¿Está seguro que desea terminar ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etiqueta botón Cancelar",
+          "default": "Cancelar"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Etiqueta botón Confirmar",
+          "default": "Terminar"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Diálogo de confirmación Reintentar",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Texto del encabezado",
+          "default": "¿ Reintentar ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Texto del cuerpo",
+          "default": "¿ Está seguro de querer Reintentar ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etiqueta botón Cancelar",
+          "default": "Cancelar"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Etiqueta botón Confirmar",
+          "default": "Confirmar"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Representación textual de la barra de puntaje para aquellos que usan un Lector de voz",
+      "default": "Usted obtuvo :num de un total de :total puntos"
     }
   ]
 }
