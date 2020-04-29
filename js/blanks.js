@@ -366,7 +366,11 @@ H5P.Blanks = (function ($, Question) {
       self.triggerXAPI('interacted');
     });
 
-    self.on('resize', function () {
+    self.on('resize', function (event) {
+      if (event.data && event.data.skip === true) {
+        return; // prevent resize loop if triggered by self
+      }
+
       self.resetGrowTextField();
     });
 
@@ -418,6 +422,8 @@ H5P.Blanks = (function ($, Question) {
         // Apply width that wraps input
         $input.width(width + static_min_pad);
       }
+      // Changing width can cause linebreak and require resize
+      self.trigger('resize', {skip: true});
     }, 1);
   };
 
