@@ -31,7 +31,7 @@
       }
     },
     {
-      "label": "Realimentación global",
+      "label": "Retroalimentación global",
       "fields": [
         {
           "widgets": [
@@ -39,7 +39,7 @@
               "label": "Predeterminado"
             }
           ],
-          "label": "Definir realimentación personalizada para cualquier rango de puntaje",
+          "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
           "description": "CHacer cic en el botón de \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
@@ -49,8 +49,8 @@
               },
               {},
               {
-                "label": "Realimentación para rango de puntaje definido",
-                "placeholder": "Complete la realimentación"
+                "label": "Retroalimentación para rango de puntaje definido",
+                "placeholder": "Complete la retroalimentación"
               }
             ]
           }
