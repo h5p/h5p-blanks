@@ -366,8 +366,8 @@ H5P.Blanks = (function ($, Question) {
       self.triggerXAPI('interacted');
     });
 
-    self.on('resize', function (event) {
-      if (event.data && event.data.skip === true) {
+    self.on('resize', function () {
+      if (self.autoGrowResizeDelay) {
         return; // prevent resize loop if triggered by self
       }
 
@@ -423,7 +423,10 @@ H5P.Blanks = (function ($, Question) {
         $input.width(width + static_min_pad);
       }
       // Changing width can cause linebreak and require resize
-      self.trigger('resize', {skip: true});
+      clearTimeout(self.autoGrowResizeDelay);
+      self.autoGrowResizeDelay = setTimeout(function () {
+        self.trigger('resize');
+      }, 1);
     }, 1);
   };
 
