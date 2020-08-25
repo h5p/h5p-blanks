@@ -190,6 +190,18 @@
     {
       "label": "Κειμενική απόδοση της μπάρας βαθμολογίας για όσους χρησιμοποιούν ακουστική υποβοήθηση",
       "default": "Έχεις :num από :total βαθμούς"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

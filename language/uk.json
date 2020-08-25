@@ -190,6 +190,18 @@
     {
       "label": "Текстове представлення шкали балів для тих, хто використовує озвучку тексту",
       "default": "Ви отримали :num із :total балів"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

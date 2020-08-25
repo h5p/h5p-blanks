@@ -190,6 +190,18 @@
     {
       "label": "Punktisumma esitamine tekstilisel kujul neile, kes kasutavad tekstilugerit",
       "default": "Sa said :num punkti. Maksimaalne punktisumma oli :total punkti"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

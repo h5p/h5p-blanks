@@ -190,6 +190,18 @@
     {
       "label": "Tekstuele weergave van de scorebalk voor diegenen die gebruik maken van een readspeaker",
       "default": "Je hebt :num van de :total punten"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

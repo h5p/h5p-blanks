@@ -190,6 +190,18 @@
     {
       "label": "使用讲读器的成绩栏文字",
       "default": "你得到了 :num 分，总分为 :total 分"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

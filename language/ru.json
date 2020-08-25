@@ -190,6 +190,18 @@
     {
       "label": "Текстовое представление шкалы очков для тех, кто использует озвучку текста",
       "default": "Вы получили :num из :total баллов"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show solution"
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

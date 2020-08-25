@@ -82,7 +82,10 @@ H5P.Blanks = (function ($, Question) {
         showSolutionsRequiresInput: true,
         autoCheck: false,
         separateLines: false
-      }
+      },
+      a11yCheck: 'Check',
+      a11yShowSolution: 'Show Solution',
+      a11yRetry: 'Retry',
     }, params);
 
     // Delete empty questions
@@ -196,7 +199,9 @@ H5P.Blanks = (function ($, Question) {
         self.markResults();
         self.showEvaluation();
         self.triggerAnswered();
-      }, true, {}, {
+      }, true, {
+        'aria-label': self.params.a11yCheck,
+      }, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
@@ -209,14 +214,18 @@ H5P.Blanks = (function ($, Question) {
     // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
       self.showCorrectAnswers(false);
-    }, self.params.behaviour.enableSolutionsButton);
+    }, self.params.behaviour.enableSolutionsButton, {
+      'aria-label': self.params.a11yShowSolution,
+    });
 
     // Try again button
     if (self.params.behaviour.enableRetry === true) {
       self.addButton('try-again', self.params.tryAgain, function () {
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
-      }, true, {}, {
+      }, true, {
+        'aria-label': self.params.a11yRetry,
+      }, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,
