@@ -467,5 +467,13 @@
     "default": "Retry",
     "importance": "low",
     "common": true
+  },
+  {
+    "name": "a11yCheckingModeHeader",
+    "type": "text",
+    "label": "Assistive technology description for starting task",
+    "default": "Checking mode",
+    "importance": "low",
+    "common": true
   }
 ]

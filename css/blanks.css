@@ -102,3 +102,9 @@
 .h5p-blanks .has-tip.h5p-wrong .h5p-text-input {
   padding-right: 3.5em;
 }
+.h5p-blanks .hidden-but-read {
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

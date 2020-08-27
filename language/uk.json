@@ -202,6 +202,10 @@
     {
       "label": "Assistive technology description for \"Retry\" button",
       "default": "Retry"
+    },
+    {
+      "label": "Assistive technology description for starting task",
+      "default": "Checking mode"
     }
   ]
 }

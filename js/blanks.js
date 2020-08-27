@@ -86,6 +86,7 @@ H5P.Blanks = (function ($, Question) {
       a11yCheck: 'Check',
       a11yShowSolution: 'Show Solution',
       a11yRetry: 'Retry',
+      a11yHeader: 'Checking mode',
     }, params);
 
     // Delete empty questions
@@ -195,6 +196,10 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck && this.params.behaviour.enableCheckButton) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
+        // Move focus to top of content
+        self.a11yHeader.innerHTML = self.params.a11yHeader;
+        self.a11yHeader.focus();
+
         self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
         self.showEvaluation();
@@ -221,6 +226,7 @@ H5P.Blanks = (function ($, Question) {
     // Try again button
     if (self.params.behaviour.enableRetry === true) {
       self.addButton('try-again', self.params.tryAgain, function () {
+        self.a11yHeader.innerHTML = '';
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
       }, true, {
@@ -309,6 +315,11 @@ H5P.Blanks = (function ($, Question) {
 
     self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
+
+    self.a11yHeader = document.createElement('div');
+    self.a11yHeader.classList.add('hidden-but-read');
+    self.a11yHeader.tabIndex = -1;
+    self.$questions[0].insertBefore(self.a11yHeader, this.$questions[0].childNodes[0] || null);
 
     // Set input fields.
     this.$questions.find('input').each(function (i) {
