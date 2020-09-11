@@ -922,3 +922,60 @@ H5P.Blanks = (function ($, Question) {
 
   return Blanks;
 })(H5P.jQuery, H5P.Question);
+
+/**
+ * Static utility method for parsing H5P.Blanks qestion into a format useful
+ * for creating reports.
+ * 
+ * Example question: 'H5P content may be edited using a *browser/web-browser:something you use every day*.'
+ * 
+ * Produces the following result:
+ * [
+ *   {
+ *     type: 'text',
+ *     content: 'H5P content may be edited using a '
+ *   },
+ *   {
+ *     type: 'answer',
+ *     correct: ['browser', 'web-browser']
+ *   },
+ *   {
+ *     type: 'text',
+ *     content: '.'
+ *   }
+ * ]
+ * 
+ * @param {string} question 
+ */
+H5P.Blanks.parseText = function (question) {
+  var blank = new H5P.Blanks({ question: question });
+
+  /**
+   * Parses a text into an array where words starting and ending
+   * with an asterisk are separated from other text.
+   * e.g ["this", "*is*", " an ", "*example*"]
+   *
+   * @param {string} text
+   *
+   * @return {string[]}
+   */
+  function tokenizeQuestionText(text) { 
+    return text.split(/(\*.*?\*)/).filter(str => str.length > 0);
+  }
+
+  function startsAndEndsWithAnAsterisk(str) {
+    return str.substr(0,1) === '*' && str.substr(-1) === '*';
+  }
+
+  return tokenizeQuestionText(question).map(function (part) {
+    return startsAndEndsWithAnAsterisk(part) ? 
+      ({
+        type: 'answer',
+        correct: blank.parseSolution(part.slice(1, -1)).solutions
+      }) :
+      ({
+        type: 'text',
+        content: part
+      });
+  });
+};
