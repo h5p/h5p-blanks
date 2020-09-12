@@ -127,7 +127,7 @@
           "description": "Asegurar que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
         },
         {
-          "label": "Requerir qye todos los campos sean contestados antes que que pueda ser vista la solución"
+          "label": "Requerir que todos los campos sean contestados antes que que pueda ser vista la solución"
         },
         {
           "label": "Poner campos de entrada en líneas separadas"
