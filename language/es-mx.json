@@ -40,12 +40,12 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
-          "description": "CHacer cic en el botón de \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje promedio, 91-100% ¡Magnífico Puntaje!",
+          "description": "Hacer cic en el botón de \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
               {
-                "label": "Tango de Puntaje"
+                "label": "Rango de Puntaje"
               },
               {},
               {
@@ -99,7 +99,7 @@
       "default": "Vacío ingreso @num de @total"
     },
     {
-      "label": "Etiqueta para tecnología sistiva para decir que una entrada tiene una pista asociada a ella",
+      "label": "Etiqueta para tecnología asistiva para decir que una entrada tiene una pista asociada a ella",
       "default": "Pista disponible"
     },
     {
