@@ -967,7 +967,9 @@ H5P.Blanks.parseText = function (question) {
     return str.substr(0,1) === '*' && str.substr(-1) === '*';
   }
 
-  return tokenizeQuestionText(question).map(function (part) {
+  const replaceHtmlTags = (str, value) => str.replace(/<[^>]*>/g, value);
+
+  return tokenizeQuestionText(replaceHtmlTags(question, '')).map(function (part) {
     return startsAndEndsWithAnAsterisk(part) ? 
       ({
         type: 'answer',
