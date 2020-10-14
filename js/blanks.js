@@ -960,14 +960,18 @@ H5P.Blanks.parseText = function (question) {
    * @return {string[]}
    */
   function tokenizeQuestionText(text) { 
-    return text.split(/(\*.*?\*)/).filter(str => str.length > 0);
+    return text.split(/(\*.*?\*)/).filter(function (str) { 
+      return str.length > 0; }
+    );
   }
 
   function startsAndEndsWithAnAsterisk(str) {
     return str.substr(0,1) === '*' && str.substr(-1) === '*';
   }
 
-  const replaceHtmlTags = (str, value) => str.replace(/<[^>]*>/g, value);
+  function replaceHtmlTags(str, value) {
+    return str.replace(/<[^>]*>/g, value);
+  }
 
   return tokenizeQuestionText(replaceHtmlTags(question, '')).map(function (part) {
     return startsAndEndsWithAnAsterisk(part) ? 
