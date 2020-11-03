@@ -83,9 +83,9 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false
       },
-      a11yCheck: 'Check',
-      a11yShowSolution: 'Show Solution',
-      a11yRetry: 'Retry',
+      a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
+      a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
+      a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
       a11yHeader: 'Checking mode',
     }, params);
 
