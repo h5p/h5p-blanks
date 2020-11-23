@@ -201,11 +201,11 @@
     },
     {
       "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "default": "Ponów zadanie. Zresetuj wszystkie odpowiedzi i rozpocznij zadanie od nowa."
     },
     {
       "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "default": "Tryb sprawdzania"
     }
   ]
 }
