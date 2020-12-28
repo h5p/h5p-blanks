@@ -4,53 +4,53 @@
       "label": "Media",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Tipe",
+          "description": "Verkieslike media om bo die vraag te vertoon."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Deaktiveer zoomfunksie by prente"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Taak beskrywing",
+      "default": "Vul die ontbrekende woorde in",
+      "description": "'n gids wat die gebruiker vertel hoe om hierdie taak te beantwoord."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Teksblokke",
+      "entity": "Teksblok",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Lyn van teks",
+        "placeholder": "Oslo is die hoofstad van *Noorweë*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Spasies word by gevoeg met 'n asterisk (*) voor en agter die regte woord/frase.</li><li>Alternatiewe antwoorde word geskei met 'n vorentoe-streep (/).</li><li>Jy kan 'n tekswenk byvoeg met 'n duppelpunt (:) voor die wenk.</li></ul>",
+          "example": "H5P kan geredigeer word deur 'n *webleser:Iets wat jy daagliks gebruik*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Algemene terugvoer",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Verstek"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Bepaal verstekterugvoer vir enige reeks tellings",
+          "description": "Kliek op die \"Voeg reeks by\" knoppie om so veel as moontlik reekse by te voeg. Byvoorbeeld: 0-20% Swak Punt, 21-91% Gemiddelde Punt, 91-100% Uitstekende Punt!",
+          "entity": "reeks",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Telling reeks"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Terugvoer vir gedefinieerde telling reeks",
+                "placeholder": "Vul die terugvoer in"
               }
             ]
           }
@@ -58,154 +58,154 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Teks vir \"Wys antwoord\" knoppie",
+      "default": "Wys antwoord"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Teks vir \"Probeer weer\" knoppie",
+      "default": "Probeer weer"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Teks vir \"Toets\" knoppie",
+      "default": "Toets"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Teks vir \"Nie ingevul\" boodskap",
+      "default": "Vul asb. al die oop spasies in om die antwoord te sien"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Teks vir \"':ans' is reg\" boodskap",
+      "default": "':ans' is reg"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Teks vir \"':ans' is verkeerd\" boodskap",
+      "default": "':ans' is verkeerd"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Teks vir \"Reg geantwoord\" boodskap",
+      "default": "Reg geantwoord"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Teks vir \"Verkeerd geantwoord\" boodskap",
+      "default": "Verkeerd geantwoord"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Hulptegnologie etiket vir antwoord",
+      "default": "Regte antwoord:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Hulptegnologie etiket vir invoerveld",
+      "description": "Gebruik @num en @total om huidige geslote en totale nommer te vervang",
+      "default": "Blanko invoer @num van @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Hulptegnologie-etiket wat stel dat invoer aan 'n wenk gekoppel is",
+      "default": "Wenk beskikbaar"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Wenk ikoon etiket",
+      "default": "Wenk"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Gedragsinstellings.",
+      "description": "Hierdie keuses laat jou beheer hoe die onderskeie take uitgevoer moet word.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Aktiveer \"Probeer weer\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Aktiveer \"Wys antwoord\" knoppie"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktiveer \"Toets\" knoppie"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Toets antwoorde outomaties na invoer"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Hooflettergevoelig",
+          "description": "Maak seker dat die gebruiker se antwoord presies dieselfde as die antwoord is."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Vereis dat alle velde beantwoord moet word voordat die antwoord besigtig kan word"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Plaas invoervelde op afsonderlike lyntjies"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Wys bevestigingdialoog op \"Toets\"",
+          "description": "Hierdie keuses is nie versoenbaar met die opsie \"Gaan antwoorde outomaties na invoer na\" nie"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Wys bevestigingdialoog op \"Probeer weer\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Aanvaar geringe spelfoute",
+          "description": "Indien geaktiveer, sal 'n antwoord met geringe spelfoute ook as reg tel (3-9 karakters: 1 spelfout, meer as 9 karakters: 2 spelfoute)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Toets bevestigingsdialoog",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Hoofopskrifteks",
+          "default": "Klaar ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Liggaamteks",
+          "default": "Is jy seker jy wil klaarmaak ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Kanseleerknoppie etiket",
+          "default": "Kanseleer"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Bevestig knoppie etiket",
+          "default": "Klaar"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Probeer weer bevestigingsdialoog",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Hoofopskrifteks",
+          "default": "Probeer weer ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Liggaamteks",
+          "default": "Is jy seker jy wil weer probeer ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Kanseleer knoppie etiket",
+          "default": "Kanseleer"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Bevestig knoppie etiket",
+          "default": "Bevestig"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstuele tentoonstelling van die telkaart vir diegene wat 'n spreekleser gebruik",
+      "default": "Jy het :num uit :total punte gekry"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Hulptegnologieë beskrywing vir \"Toets\" knoppie",
+      "default": "Toets die antwoorde. Die antwoorde sal as reg gemerk, verkeerd of onbeantwoord gemerk word."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Hulptegnologieë beskrywing vir \"Wys oplossing\" knoppie",
+      "default": "Wys die antwoord. Hierdie taak sal gemerk word met die regte antwoord."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Hulptegnologieë beskrywing vir \"Probeer weer\" knoppie",
+      "default": "Probeer die taak weer. Herstel al die antwoorde en probeer die taak weer van die begin af."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Hulptegnologie beskrywing om 'n taak te begin",
+      "default": "Toetsmodus"
     }
   ]
 }
