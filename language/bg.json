@@ -192,20 +192,20 @@
       "default": "Вие получихте :num от общо :total точки"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Описание с помощна технология на бутона \"Проверка\" ",
+      "default": "Проверяване на отговорите. Те ще бъдат маркирани като верни, неправилни или без отговор."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Описание с помощна технология на бутона \"Показване на решението\" ",
+      "default": "Показване на решението. Задачата ще бъде показана с правилното ѝ решение."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Описание с помощна технология на бутона \"Опитайте отново\" ",
+      "default": "Опитайте отново задачата. Нулирайте всички отговори и стартирайте задачата отначало."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Описание с помощна технология на стартираща задача",
+      "default": "Режим на проверка"
     }
   ]
 }
