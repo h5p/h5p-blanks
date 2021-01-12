@@ -862,7 +862,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Get user input for every cloze
     this.clozes.forEach(function (cloze) {
-      clozesContent.push(cloze.getUserInput());
+      clozesContent.push(cloze.getUserAnswer());
     });
     return clozesContent;
   };
