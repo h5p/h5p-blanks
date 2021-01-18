@@ -1,56 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "មេឌា",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "ប្រភេទ",
+          "description": "មេឌាដែលត្រូវបង្ហាញនៅលើសំណួរ (មិនមានក៏បាន)"
         },
         {
-          "label": "Disable image zooming"
+          "label": "បិទមុខងារពង្រីកបង្រួមរូបភាព"
         }
       ]
     },
     {
-      "label": "Task description",
+      "label": "សេចក្តីពណ៌នាពីកិច្ចការ",
       "default": "បញ្ចូលពាក្យត្រឹមត្រូវក្នុងចន្លោះ",
-      "description": "A guide telling the user how to answer this task."
+      "description": "ជាការពន្យល់ពីអ្វីដែលគេត្រូវធ្វើដើម្បីបំពេញកិច្ចការនេះ។"
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "ប្លុកអត្ថបទ",
+      "entity": "ប្លុកអត្ថបទ",
       "field": {
-        "label": "Line of text",
+        "label": "ជួរអត្ថបទ",
         "placeholder": "Oslo is the capital of *Norway*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>ចន្លោះបំពេញនឹងត្រូវបានដាក់ជំនួសពាក្យ/ឃ្លាដែលនៅចន្លោះសញ្ញាផ្កាយពីរ (*)។</li><li>អ្នកអាចប្រើសញ្ញាចែក(/) សម្រាប់កំណត់នូវចម្លើយដែលអាចត្រឹមត្រូវផ្សេងទៀត។</li><li>អ្នកក៏អាចប្រាប់គន្លឺះសម្រាប់ចន្លោះបំពេញនីមួយៗដោយប្រើសញ្ញាចុចពីរ (:) ខាងក្រោយចម្លើយត្រឹមត្រូវ</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "មូលវិចារណ៍ទូទៅ",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "លំនាំដើម"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "កំណត់មូលវិចារណ៍តាមបំណងសម្រាប់ចន្លោះពិន្ទុ",
+          "description": "ចុចប៊ូតុង \"បន្ថែមចន្លោះ\" ដើម្បីបន្ថែមចន្លោះពិន្ទុតាមដែលអ្នកចង់បាន។ ឧទា: 0-20% ពិន្ទុខ្សោយ, 21-91% ពិន្ទុមធ្យម, 91-100% ពិន្ទុល្អប្រសើរ!",
+          "entity": "ចន្លោះ",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "ចន្លោះពិន្ទុ"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "មូលវិចារណ៍សម្រាប់ចន្លោះពិន្ទុដែលបានកំណត់",
+                "placeholder": "បញ្ចូលមូលវិចារណ៍"
               }
             ]
           }
@@ -107,46 +107,46 @@
       "default": "គន្លឹះ"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "ការកំណត់មុខងារ",
+      "description": "ជម្រើសទាំងនេះនឹងឲ្យអ្នកអាចកំណត់មុខងារផ្សេងៗរបស់កិច្ចការអ្នក។",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "អនុញ្ញាត \"សាកម្តងទៀត\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "បង្ហាញប៊ូតុង \"បង្ហាញចម្លើយត្រឹមត្រូវ\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "បង្ហាញប៊ូតុង \"ពិនិត្យចម្លើយ\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "ពិនិត្យចម្លើយដោយស្វ័យប្រវត្តិបន្ទាប់ពីបញ្ចូលអត្ថបទ"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "ប្រកាន់អក្សរធំ/តូច (A/a)",
+          "description": "គេត្រូវសរសេរឲ្យដូចបេះបិតនឹងចម្លើយដើម។"
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "ទាមទារឲ្យបំពេញចន្លោះទាំងអស់សិនមុននឹងអាចមើលចម្លើយត្រឹមត្រូវបាន"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "ដាក់ចន្លោះនៅក្នុងជួរដោយឡែកពីអត្ថបទ"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "បង្ហាញផ្ទាំងអះអាងនៅពេលចុច \"ពិនិត្យចម្លើយ\"",
+          "description": "ជម្រើសនេះមិនអាចប្រើជាមួយនឹងមុខងារ \"ពិនិត្យចម្លើយដោយស្វ័យប្រវត្តិបន្ទាប់ពីបញ្ចូលអត្ថបទ\" ទេ"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "បង្ហាញផ្ទាំងអះអាងនៅពេលចុច \"សាកម្តងទៀត\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "លើកលែងកំហុសអក្ខរាវិរុទ្ធតិចតួច",
+          "description": "ប្រសិនបើបើក ចម្លើយនឹងចាត់ទុកថាត្រឹមត្រូវប្រសិនបើមានកំហុសអក្ខរាវិរុទ្ធតិចតួច (3-9 តួអក្សរ: 1 កំហុសអក្ខរាវិរុទ្ធ, ច្រើនជាង 9 តួអក្សរ: 2 កំហុសអក្ខរាវិរុទ្ធ)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "ផ្ទាំងអះអាងសម្រាប់ការពិនិត្យចម្លើយ",
       "fields": [
         {
           "label": "Header text",
@@ -167,7 +167,7 @@
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "ផ្ទាំងអះអាងសម្រាប់ការសាកម្តងទៀត",
       "fields": [
         {
           "label": "Header text",
@@ -193,19 +193,19 @@
     },
     {
       "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "default": "ពិនិត្យចម្លើយ។ ចម្លើយនឹងត្រូវបានដាក់សម្គាល់ថាត្រឹមត្រូវ មិនត្រឹមត្រូវ ឬមិនបានឆ្លើយ។"
     },
     {
       "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "default": "បង្ហាញចម្លើយត្រឹមត្រូវ។ កិច្ចការនឹងត្រូវបានដាក់សម្គាល់ដោយចម្លើយត្រឹមត្រូវរបស់វា។"
     },
     {
       "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "default": "សាកធ្វើកិច្ចការម្តងទៀត។ លុបចម្លើយទាំងអស់ ហើយចាប់ផ្តើមកិច្ចការជាថ្មី។"
     },
     {
       "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "default": "ម៉ូតពិនិត្យចម្លើយ"
     }
   ]
 }
