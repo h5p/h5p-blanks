@@ -722,7 +722,7 @@ H5P.Blanks = (function ($, Question) {
     }
 
     // Split up alternatives
-    var solutions = solution.split(self.params.answerSeparator);
+    var solutions = solution.split(this.params.answerSeparator);
     this.hasAlternatives = this.hasAlternatives || solutions.length > 1;
 
     // Trim solutions
