@@ -8,14 +8,14 @@
           "description": "Medio opcional a mostrar arriba de la pregunta."
         },
         {
-          "label": "Desabilitar Zoom de imagen"
+          "label": "Deshabilitar zoom de imagen"
         }
       ]
     },
     {
-      "label": "Descripción de la tarea",
-      "default": "Rellenar las palabras que faltan",
-      "description": "Una guía que dice al usuario cómo responder a esta tarea."
+      "label": "Descripción del trabajo",
+      "default": "Rellenar con las palabras que faltan",
+      "description": "Una guía que le dice al usuario como contestar este trabajo."
     },
     {
       "label": "Bloques de texto",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "label": "Realimentación global",
+      "label": "Retroalimentación Global",
       "fields": [
         {
           "widgets": [
@@ -39,8 +39,8 @@
               "label": "Predeterminado"
             }
           ],
-          "label": "Definir realimentación personalizada para cualquier rango de puntaje",
-          "description": "Hacer cic en el botón de \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje promedio, 91-100% ¡Magnífico Puntaje!",
+          "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
+          "description": "Hacer clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
@@ -49,8 +49,8 @@
               },
               {},
               {
-                "label": "Realimentación para rango de puntaje definido",
-                "placeholder": "Complete la realimentación"
+                "label": "Retroalimentación para rango de puntaje definido",
+                "placeholder": "Complete la retroalimentación"
               }
             ]
           }
@@ -62,31 +62,31 @@
       "default": "Mostrar solución"
     },
     {
-      "label": "Texto para el botón de \"Reintentar\"",
+      "label": "Texto para botón de \"Reintentar\"",
       "default": "Reintentar"
     },
     {
-      "label": "Texto para botón para \"Revisar\" ",
-      "default": "revisar"
+      "label": "Texto para botón \"Comprobar\"",
+      "default": "Comprobar"
     },
     {
-      "label": "Texto para mensaje de \"No contestado\" ",
-      "default": "Por favor llene todos los espacios para ver la solución"
+      "label": "Texto para mensaje \"No completado\"",
+      "default": "Por favor llene todos los huecos para ver la solución"
     },
     {
-      "label": "Texto para mensaje de \"':ans' es correcto\" ",
+      "label": "Texto para mensaje de \"':ans' es correcto\"",
       "default": "':ans' es correcto"
     },
     {
-      "label": "Texto para mensaje de \"':ans' es incorrecto\" ",
+      "label": "Texto para mensaje de \"':ans' es incorrecto\"",
       "default": "':ans' es incorrecto"
     },
     {
-      "label": "Texto para mensaje de \"Contestado correctamente\" ",
+      "label": "Texto para mensaje de \"Contestado correctamente\"",
       "default": "Contestado correctamente"
     },
     {
-      "label": "Texto para mensaje de \"Contestado incorrectamente\" ",
+      "label": "Texto para mensaje de \"Contestado incorrectamente\"",
       "default": "Contestado incorrectamente"
     },
     {
@@ -107,34 +107,34 @@
       "default": "Pista"
     },
     {
-      "label": "Configuraciones de comportamiento.",
+      "label": "Configuraciones del comportamiento.",
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
           "label": "Habilitar \"Reintentar\""
         },
         {
-          "label": "Habilitar botón para \"Mostrar solución\" "
+          "label": "Habilitar botón para \"Mostrar solución\""
         },
         {
-          "label": "Habilitar botón \"Revisar\" "
+          "label": "Habilitar botón \"Comprobar\""
         },
         {
           "label": "Automáticamente revisar respuestas después de ingresadas"
         },
         {
           "label": "MAYÚSCULAS/minúsculas si importan",
-          "description": "Asegurar que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
+          "description": "Asegurarse que la entrada del usuario tenga que ser exactamente la misma que la respuesta."
         },
         {
-          "label": "Requerir que todos los campos sean contestados antes que que pueda ser vista la solución"
+          "label": "Requerir que todos los campos sean contestados antes de que la solución pueda ser vista"
         },
         {
           "label": "Poner campos de entrada en líneas separadas"
         },
         {
-          "label": "Mostrar diálogo de confirmación en \"Revisar\"",
-          "description": "Esta opción no es compatible con la opción para \"Revisar respuestas automáticamente después de ingresadas\" "
+          "label": "Mostrar diálogo de confirmación en \"Comprobar\"",
+          "description": "Esta opción no es compatible con la opción para \"Revisar respuestas automáticamente después de ingresadas\""
         },
         {
           "label": "Mostrar diálogo de confirmación en \"Reintentar\""
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "label": "Diálogo de confirmación para Revisar",
+      "label": "Diálogo de confirmación para Comprobar",
       "fields": [
         {
           "label": "Texto del encabezado",
@@ -188,24 +188,24 @@
       ]
     },
     {
-      "label": "Representación textual de la barra de puntaje para aquellos que usan un Lector de voz",
+      "label": "Representación textual de la barra de puntaje para aquellos que usan un lector de texto en voz alta",
       "default": "Usted obtuvo :num de un total de :total puntos"
     },
     {
-      "label": "Descripción de tecnología asistiva para botón \"Revisar\" ",
-      "default": "Revisar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
+      "label": "Descripción de tecnología asistiva para botón \"Comprobar\"",
+      "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
     },
     {
-      "label": "Descripción de tecnología asistiva para botón \"Mostrar solución\" ",
-      "default": "Mostrar la solución. El trabajo será marcado con su solución correcta."
+      "label": "Descripción de tecnología asistiva para botón \"Mostrar solución\"",
+      "default": "Mostrar la solución. El trabajo será calificado con su solución correcta."
     },
     {
-      "label": "Descripción de tecnología asistiva para botón \"Reintentar\" ",
+      "label": "Descripción de tecnología asistiva para botón \"Reintentar\"",
       "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
     },
     {
       "label": "Descripción de tecnología asistiva para comenzando el trabajo",
-      "default": "Modo de revisión"
+      "default": "Modo de Comprobación"
     }
   ]
 }
