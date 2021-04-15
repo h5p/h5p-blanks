@@ -107,7 +107,7 @@
       "default": "רמז"
     },
     {
-      "label": "Behavioural settings.",
+      "label": "הגדרות התנהגות הרכיב.",
       "description": "אפשרויות אלה יאפשרו לך לשלוט בהתנהגות המשימה.",
       "fields": [
         {
@@ -123,7 +123,7 @@
           "label": "בדיקה אוטומטית של תשובות אחרי הזנה"
         },
         {
-          "label": "Case sensitive",
+          "label": "תלוי רישיות",
           "description": "מוודא שקלט המשתמש זהה לתשובה."
         },
         {
@@ -133,11 +133,11 @@
           "label": "מיקום שדות ההזנה בשורות נפרדות"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
+          "label": "הציגו תיבת דו-שיח  בסימון \"נבחר\"",
           "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "הצגת חלונית \"אישור\" בעת בחירת הכפתור \"ניסיון חוזר\""
         },
         {
           "label": "קבלת שגיאות כתיב משניות",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "חלונית אישור עבור כפתור בדיקה",
       "fields": [
         {
           "label": "תוכן כותרת",
@@ -167,14 +167,14 @@
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "חלונית אישור עבור כפתור ניסיון־חוזר",
       "fields": [
         {
           "label": "תוכן כותרת",
           "default": "ניסיון חוזר ?"
         },
         {
-          "label": "Body text",
+          "label": "תוכן",
           "default": "בטוחים שרוצים לנסות שוב?"
         },
         {
