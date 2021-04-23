@@ -26,7 +26,7 @@
         "description": "",
         "important": {
           "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>",
-          "example": "El contenido H5P puede ser editado usando un *browser/web-browser:Algo que Usted usa todos los días*."
+          "example": "El contenido H5P puede ser editado usando un *navegador/navegador-web:Algo que Usted usa todos los días*."
         }
       }
     },
@@ -40,7 +40,7 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
-          "description": "Hagar clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
+          "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
@@ -62,7 +62,7 @@
       "default": "Mostrar solución"
     },
     {
-      "label": "Texto para botón de \"Reintentar\"",
+      "label": "Texto para botón \"Reintentar\"",
       "default": "Reintentar"
     },
     {
@@ -103,7 +103,7 @@
       "default": "Pista disponible"
     },
     {
-      "label": "etiqueta de ícono de pista",
+      "label": "Etiqueta de ícono de Pista",
       "default": "Pista"
     },
     {
@@ -120,7 +120,7 @@
           "label": "Habilitar botón \"Comprobar\""
         },
         {
-          "label": "Automáticamente revisar respuestas después de ingresadas"
+          "label": "Automáticamente comprobar respuestas después de ingresadas"
         },
         {
           "label": "MAYÚSCULAS/minúsculas si importan",
