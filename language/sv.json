@@ -193,18 +193,18 @@
     },
     {
       "label": "Beskrivning av knappen \"Rätta\" för tillgänglighetshjälpmedel",
-      "default": "Rätta svaren. Svaren kommer att markeras som korrekta, felaktiga eller obesvarade."
+      "default": "Rätta svaren. Svaren kommer att bli markerade som korrekta, felaktiga eller obesvarade."
     },
     {
       "label": "Beskrivning av knappen \"Visa lösning\" för tillgänglighetshjälpmedel",
-      "default": "Visa lösningen. Uppgiften kommer att markeras med dess korrekta lösning."
+      "default": "Visar lösningen. Uppgiften kommer att markeras med dess rätta lösning."
     },
     {
       "label": "Beskrivning av knappen \"Försök igen\" för tillgänglighetshjälpmedel",
       "default": "Försök igen med uppgiften. Nollställer alla svar och startar om uppgiften."
     },
     {
-      "label": "Beskrivning av inledande uppgift för tillgänglighetshjälpmedel",
+      "label": "Beskrivning av startuppgiften för tillgänglighetshjälpmedel",
       "default": "Rättningsläge"
     }
   ]
