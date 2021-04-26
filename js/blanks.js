@@ -387,6 +387,10 @@ H5P.Blanks = (function ($, Question) {
     });
 
     self.on('resize', function () {
+      if (self.autoGrowResizeDelay) {
+        return; // prevent resize loop if triggered by self
+      }
+
       self.resetGrowTextField();
     });
 
@@ -438,6 +442,11 @@ H5P.Blanks = (function ($, Question) {
         // Apply width that wraps input
         $input.width(width + static_min_pad);
       }
+      // Changing width can cause linebreak and require resize
+      clearTimeout(self.autoGrowResizeDelay);
+      self.autoGrowResizeDelay = setTimeout(function () {
+        self.trigger('resize');
+      }, 1);
     }, 1);
   };
 
