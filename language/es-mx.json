@@ -26,7 +26,7 @@
         "description": "",
         "important": {
           "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>",
-          "example": "El contenido H5P puede ser editado usando un *browser/web-browser:Algo que Usted usa todos los días*."
+          "example": "El contenido H5P puede ser editado usando un *navegador/navegador-web:Algo que Usted usa todos los días*."
         }
       }
     },
@@ -58,11 +58,11 @@
       ]
     },
     {
-      "label": "Texto para botón de \"Mostrar soluciones\"",
+      "label": "Texto para el botón de \"Mostrar soluciones\"",
       "default": "Mostrar solución"
     },
     {
-      "label": "Texto para botón de \"Reintentar\"",
+      "label": "Texto para botón \"Reintentar\"",
       "default": "Reintentar"
     },
     {
@@ -74,11 +74,11 @@
       "default": "Por favor llene todos los huecos para ver la solución"
     },
     {
-      "label": "Texto para mensaje \"':ans' es correcto\"",
+      "label": "Texto para mensaje de \"':ans' es correcto\"",
       "default": "':ans' es correcto"
     },
     {
-      "label": "Texto para mensaje \"':ans' es incorrecto\"",
+      "label": "Texto para mensaje de \"':ans' es incorrecto\"",
       "default": "':ans' es incorrecto"
     },
     {
@@ -120,7 +120,7 @@
           "label": "Habilitar botón \"Comprobar\""
         },
         {
-          "label": "Automáticamente revisar respuestas después de ingresadas"
+          "label": "Automáticamente comprobar respuestas después de ingresadas"
         },
         {
           "label": "MAYÚSCULAS/minúsculas si importan",
@@ -189,14 +189,14 @@
     },
     {
       "label": "Representación textual de la barra de puntaje para aquellos que usan un lector de texto en voz alta",
-      "default": "Usted obtuvo :num de un total de :total puntos"
+      "default": "Obtuvo :num de un total de :total puntos"
     },
     {
       "label": "Descripción de tecnología asistiva para botón \"Comprobar\"",
       "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
     },
     {
-      "label": "Descripción de tecnología asistiva para botón \"Mostrar Solución\"",
+      "label": "Descripción de tecnología asistiva para botón \"Mostrar solución\"",
       "default": "Mostrar la solución. El trabajo será calificado con su solución correcta."
     },
     {
@@ -204,7 +204,7 @@
       "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
     },
     {
-      "label": "Descripción de tecnología asistiva para comenzar el trabajo",
+      "label": "Descripción de tecnología asistiva para comenzando el trabajo",
       "default": "Modo de Comprobación"
     }
   ]
