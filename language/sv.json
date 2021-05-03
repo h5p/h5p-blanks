@@ -25,7 +25,7 @@
         "placeholder": "Oslo är huvudstaden i *Norge*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Tomma fält läggs till med en  asterisk (*) före och bakom det korrekta ordet/frasen.</li><li>Alternativ anges med ett snedstreck (/).</li><li>Du kan lägga till ett tips genom att använda kolon (:) före tipset.</li></ul>",
+          "description": "<ul><li>Tomma fält läggs till med en asterisk (*) före och bakom det korrekta ordet/frasen.</li><li>Alternativ anges med ett snedstreck (/).</li><li>Du kan lägga till ett tips genom att använda kolon (:) före tipset.</li></ul>",
           "example": "H5P-innehåll kan redigeras direkt i din *webbläsare/browser:Något som du använder varje dag*."
         }
       }
@@ -58,138 +58,138 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Text för knappen \"Visa lösning\"",
+      "default": "Visa lösning"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Text för knappen \"Försök igen\"",
+      "default": "Försök igen"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Text för knappen \"Rätta\"",
+      "default": "Rätta"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Text för meddelandet \"Inte ifyllt\"",
+      "default": "Fyll i alla tomma fält för att se lösningen"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Text för \"':ans' är rätt\" meddelande",
+      "default": "':ans' är rätt"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Text för \"':ans' är fel\" meddelande",
+      "default": "':ans' är fel"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Text för \"Rätt svar\"-meddelande",
+      "default": "Rätt svar"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Text för \"Felaktigt svar\"-meddelande",
+      "default": "Felaktigt svar"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Etikett för lösning för tillgänglighetsverktyg",
+      "default": "Rätt svar:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Etikett för inmatningsfält för tillgänglighetsverktyg",
+      "description": "Använd @num och @total för att ersätta fältnummer och totalt antal fält",
+      "default": "Tom inmatning i @num av @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Etikett för att informera om att ett inmatningsfält har ett tips kopplat till sig. Används av tillgänglighetsverktyg.",
+      "default": "Tips tillgängligt"
     },
     {
       "label": "Tip icon label",
       "default": "Tip"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Beteende-inställningar.",
+      "description": "Dessa inställningar styr hur uppgiften ska bete sig.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Aktivera \"Försök igen\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Aktivera knappen \"Visa lösning\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktivera knappen \"Rätta\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Rättar svaren automatiskt efter inmatning"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Skiftlägeskänslighet",
+          "description": "Säkerställer att användarens inmatning måste vara exakt samma som svaret."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Kräv att alla fält är besvarade innan lösningen kan visas"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Sätt inmatningsfält på separata rader"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Visa bekräftelsedialog vid \"Rätta\"",
+          "description": "Denna inställning är inte kompatibel med inställningen \"Rätta svar automatiskt efter inmatning\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Visa bekräftelsedialog vid \"Försök igen\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Acceptera mindre stavfel",
+          "description": "Om aktiverat, så kommer ett svar räknas som korrekt med mindre stavfel (3-9 tecken: 1 stavfel, mer än 9 tecken: 2 stavfel)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Bekräftelse-dialog för Rätta",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Titel",
+          "default": "Avsluta?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Text",
+          "default": "Är du säker på att du vill avsluta?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etikett för avbryt-knapp",
+          "default": "Avbryt"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Etikett för bekräfta-knapp",
+          "default": "Avsluta"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Bekräftelse-dialog för Försök igen",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Titel",
+          "default": "Försök igen?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Text",
+          "default": "Är du säker på att du vill försöka igen?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etikett för avbryt-knapp",
+          "default": "Avbryt"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Etikett för knappen Bekräfta",
+          "default": "Bekräfta"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Textuell visning av poäng för de som använder sig av skärmläsare",
+      "default": "Du fick :num av :total poäng"
     },
     {
       "label": "Beskrivning av knappen \"Rätta\" för tillgänglighetshjälpmedel",
