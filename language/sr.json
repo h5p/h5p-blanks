@@ -1,56 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Медији",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Тип",
+          "description": "Необвезни медији за приказ изнад питања."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Онемогући зумирање слике"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Опис задатка",
+      "default": "Упиши речи које недостају",
+      "description": "Водич који говори кориснику како да одговори на овај задатак."
     },
     {
-      "label": "Text blocks",
+      "label": "Текстуални блокови",
       "entity": "text block",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Ред текста",
+        "placeholder": "Осло је главни град *Норвешке*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>Празнине се додају звездицом (*) испред и иза тачне речи / фразе.</li><li>Алтернативни одговори су одвојени косом цртом (/).</li><li>Можете додати текстуални савет користећи двотачку (:) испред типа.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Укупне повратне информације",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Уобичајено"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "Дефинишите прилагођене повратне информације за било који опсег резултата",
+          "description": "Кликните на \"Додај опсег\" дугме за додавање онолико опсега колико вам је потребно. Пример: 0-20% Лош резултат, 21-91% Просечан резултат, 91-100% Одличан резултат!",
           "entity": "range",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Распон резултата"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Повратне информације за дефинисани опсег резултата",
+                "placeholder": "Попуните повратне информације"
               }
             ]
           }
@@ -58,154 +58,154 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Текст за \"Прикажите решења\" дугме",
+      "default": "Прикажите решења"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Текст за \"Врати\" дугме",
+      "default": "Врати"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Текст за \"Провери\" дугме",
+      "default": "Провери"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Текст за \"Није попуњено\" поруку",
+      "default": "Молимо вас попуните све празнине да бисте видели решење"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Текст за \"':ans' је тачан\" поруку",
+      "default": "':ans' је тачан"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Текст за \"':ans' је погрешан\" поруку",
+      "default": "':ans' је погрешан"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Текст за \"Одговорио тачно\" поруку",
+      "default": "Одговорио тачно"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Текст за \"Одговорио погрешно\" поруку",
+      "default": "Одговорио погрешно"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Ознака помоћне технологије за решење",
+      "default": "Тачан одговор:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Ознака помоћне технологије за поље уноса",
+      "description": "Користи @num и @total to replace да замени тренутни број затварања и укупни број затварања",
+      "default": "Празних уноса @num од @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Ознака помоћне технологије која каже да је на улазу повезан врх",
+      "default": "Савет доступан"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Ознака иконе савета",
+      "default": "Савет"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Поставке понашања.",
+      "description": "Ове опције ће вам омогућити да контролишете понашање задатка.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Омогући \"Врати\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Омогући \"Прикажи решење\" дугме"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Омогући \"Провери\" дугме"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Аутоматски провери одговоре након уноса"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Велика и мала слова",
+          "description": "Уверава се да унос корисника мора бити потпуно исти као и одговор."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Захтевајте одговоре на сва поља пре него што се решење може погледати"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Ставите поља за унос у посебне редове"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Прикажи дијалог за потврду на \"Провери\"",
+          "description": "Ова опција није компатибилна са \"Аутоматски провери одговоре након уноса\" опцијом"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Прикажи дијалог за потврду на \"Врати\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Прихватите мање правописне грешке",
+          "description": "Ако се активира, одговор ће се такође сматрати тачним са мањим правописним грешкама (3-9 карактера: 1 правописна грешка, више од 9 карактера: 2 правописне грешке)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Проверите дијалог за потврду",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Текст заглавља",
+          "default": "Заврши ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Тело текста",
+          "default": "Да ли сте сигурни да желите да завршите ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ознака дугмета Откажи",
+          "default": "Откажи"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Дугме за ознаку потврди",
+          "default": "Заврши"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Покушајте поново дијалог за потврду",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Текст заглавља",
+          "default": "Врати ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Тело текст",
+          "default": "Да ли сте сигурни да желите да покушате поново ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ознака дугмета Откажи",
+          "default": "Откажи"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Ознака дугмета Потврди",
+          "default": "Потврди"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Текстуални приказ бодовне траке за оне који користе читач звука",
+      "default": "Освојили сте :num од :total поена"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Опис помоћне технологије за \"Провери\" дугме",
+      "default": "Проверите одговоре. Одговори ће бити означени као тачни, нетачни или без одговора."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Опис помоћне технологије за \"Прикажи решења\" дугме",
+      "default": "Покажите решење. Задатак ће бити означен својим тачним решењем."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Опис помоћне технологије за \"Врати\" дугме",
+      "default": "Покушајте поново са задатком. Ресетујте све одговоре и покрените задатак поново."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Опис помоћне технологије за проверу",
+      "default": "Режим провере"
     }
   ]
 }
