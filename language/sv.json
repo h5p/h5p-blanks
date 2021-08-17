@@ -31,12 +31,12 @@
       }
     },
     {
-      "label": "Övergripande feedback",
+      "label": "Allmän feedback",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Förvalt"
+              "label": "Standard"
             }
           ],
           "label": "Ange specifik feedback för valfritt poängintervall",
@@ -74,11 +74,11 @@
       "default": "Fyll i alla tomma fält för att se lösningen"
     },
     {
-      "label": "Text för \"':ans' är rätt\" meddelande",
+      "label": "Text för \"':ans' är rätt\"-meddelande",
       "default": "':ans' är rätt"
     },
     {
-      "label": "Text för \"':ans' är fel\" meddelande",
+      "label": "Text för \"':ans' är fel\"-meddelande",
       "default": "':ans' är fel"
     },
     {
@@ -103,8 +103,8 @@
       "default": "Tips tillgängligt"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Etikett för tips-ikon",
+      "default": "Tips"
     },
     {
       "label": "Beteende-inställningar.",
@@ -123,7 +123,7 @@
           "label": "Rättar svaren automatiskt efter inmatning"
         },
         {
-          "label": "Skiftlägeskänslighet",
+          "label": "Skilj mellan små och stora bokstäver",
           "description": "Säkerställer att användarens inmatning måste vara exakt samma som svaret."
         },
         {
@@ -182,7 +182,7 @@
           "default": "Avbryt"
         },
         {
-          "label": "Etikett för knappen Bekräfta",
+          "label": "Etikett för bekräfta-knapp",
           "default": "Bekräfta"
         }
       ]
@@ -197,7 +197,7 @@
     },
     {
       "label": "Beskrivning av knappen \"Visa lösning\" för tillgänglighetshjälpmedel",
-      "default": "Visar lösningen. Uppgiften kommer att markeras med dess rätta lösning."
+      "default": "Visa lösningen. Uppgiften kommer att markeras med dess rätta lösning."
     },
     {
       "label": "Beskrivning av knappen \"Försök igen\" för tillgänglighetshjälpmedel",
