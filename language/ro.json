@@ -4,11 +4,11 @@
       "label": "Media",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Tip",
+          "description": "Suport opțional de afișat deasupra întrebării."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Dezactivați mărirea imaginii"
         }
       ]
     },
