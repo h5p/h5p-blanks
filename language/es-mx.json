@@ -8,7 +8,7 @@
           "description": "Medio opcional para mostrar arriba de la pregunta."
         },
         {
-          "label": "Deshabilitar zoom de imagen"
+          "label": "Deshabilitar agrandado de imagen"
         }
       ]
     },
@@ -96,7 +96,7 @@
     {
       "label": "Etiqueta para tecnología asistiva para campo de ingreso",
       "description": "Use @num y @total para remplazar número cloze actual y número cloze total",
-      "default": "Vacío ingreso @num de @total"
+      "default": "Entrada vacía @num de @total"
     },
     {
       "label": "Etiqueta para tecnología asistiva para decir que una entrada tiene una pista asociada a ella",
@@ -161,7 +161,7 @@
           "default": "Cancelar"
         },
         {
-          "label": "Etiqueta botón Confirmar",
+          "label": "Etiqueta del botón Confirmar",
           "default": "Terminar"
         }
       ]
@@ -182,7 +182,7 @@
           "default": "Cancelar"
         },
         {
-          "label": "Etiqueta botón Confirmar",
+          "label": "Etiqueta del botón Confirmar",
           "default": "Confirmar"
         }
       ]
