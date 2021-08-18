@@ -40,7 +40,7 @@
             }
           ],
           "label": "Definujte vlastní zpětnou vazbu pro jakýkoli rozsah skóre",
-          "description": "Klikněte na tlačítko \"Add range\" pro přidání tolika rozsahů, kolik potřebujete. Například: 0-20% špatný výsledek, 21-91% průměrný výsledek, 91-100% výborný výsledek!",
+          "description": "Klikněte na tlačítko \"Přidat rozsah\" pro přidání tolika rozsahů, kolik potřebujete. Například: 0-20% špatný výsledek, 21-91% průměrný výsledek, 91-100% výborný výsledek!",
           "entity": "rozsah",
           "field": {
             "fields": [
@@ -58,35 +58,35 @@
       ]
     },
     {
-      "label": "Popis tlačítka \"Zobrazit řešení\" ",
+      "label": "Popis tlačítka \"Zobrazit řešení\"",
       "default": "Zobrazit řešení"
     },
     {
-      "label": "Popis tlačítka \"Opakovat\" ",
+      "label": "Popis tlačítka \"Opakovat\"",
       "default": "Opakovat"
     },
     {
-      "label": "Popis tlačítka \"Zkontrolovat\" ",
+      "label": "Popis tlačítka \"Zkontrolovat\"",
       "default": "Zkontrolovat"
     },
     {
-      "label": "Text pro zprávu  \"Nevyplněno\" ",
+      "label": "Text pro zprávu \"Nevyplněno\"",
       "default": "Pro zobrazení řešení vyplňte prosím všechny mezery"
     },
     {
-      "label": "Text pro zprávu \"':ans' je správně\" ",
-      "default": "':ans' je správně"
+      "label": "Text pro zprávu \"':ans' je správně\"",
+      "default": "\":ans\" je správně"
     },
     {
-      "label": "Text pro zprávu \"':ans' je chybně\" ",
-      "default": "':ans' je chybně"
+      "label": "Text pro zprávu \"':ans' je chybně\"",
+      "default": "\":ans\" je chybně"
     },
     {
-      "label": "Text pro zprávu \"Odpověď je správně\" ",
+      "label": "Text pro zprávu \"Odpověď je správně\"",
       "default": "Odpověď je správně"
     },
     {
-      "label": "Text pro zprávu \"Odpověď je chybně\" ",
+      "label": "Text pro zprávu \"Odpověď je chybně\"",
       "default": "Odpověď je chybně"
     },
     {
@@ -117,10 +117,10 @@
           "label": "Povolit tlačítko \"Zobrazit řešení\""
         },
         {
-          "label": "EPovolit tlačítko \"Zkontrolovat\" "
+          "label": "Povolit tlačítko \"Zkontrolovat\""
         },
         {
-          "label": "Po zadání automaticky zkontrolovat odpovědi "
+          "label": "Po zadání automaticky zkontrolovat odpovědi"
         },
         {
           "label": "Rozeznává velká a malá písmena",
@@ -134,7 +134,7 @@
         },
         {
           "label": "Zobrazit potvrzovací dialog \"Zkontrolovat\"",
-          "description": "Tato volba není kompatibilní s volbou \"Po zadání automaticky zkontrolovat odpovědi\" "
+          "description": "Tato volba není kompatibilní s volbou \"Po zadání automaticky zkontrolovat odpovědi\""
         },
         {
           "label": "Zobrazit potvrzovací dialog \"Opakovat\""
@@ -182,7 +182,7 @@
           "default": "Zrušit"
         },
         {
-          "label": "opis potvrzovacího tlačítka",
+          "label": "Popis potvrzovacího tlačítka",
           "default": "Potvrdit"
         }
       ]
