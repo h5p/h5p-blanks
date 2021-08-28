@@ -36,21 +36,21 @@
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Varsayılan"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Herhangi bir puan aralığı için özel geri bildirim tanımlayın",
+          "description": "İstediğiniz kadar aralık eklemek için \"Aralık ekle\" düğmesini tıklayın. Örnek: %0-20 Kötü puan, %21-91 Ortalama Puan, %91-100 Büyük Puan!",
+          "entity": "Aralık",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Puan Aralığı"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tanımlanmış puan aralığı için geri bildirim",
+                "placeholder": "Geri bildirimi doldurun"
               }
             ]
           }
@@ -59,19 +59,19 @@
     },
     {
       "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "default": "Çözümü göster"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "\"Yeniden Dene\" düğmesi için metin",
+      "default": "yeniden dene"
     },
     {
       "label": "Text for \"Check\" button",
-      "default": "Check"
+      "default": "Kontrol et"
     },
     {
       "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "default": "Çözümü görmek için lütfen tüm boşlukları doldurun"
     },
     {
       "label": "Text for \"':ans' is correct\" message",
@@ -82,16 +82,16 @@
       "default": "':ans' is wrong"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "\"Doğru cevaplandı\" mesajı için metin",
+      "default": "doğru cevaplandı"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "\"Yanlış cevaplandı\" mesajı için metin",
+      "default": "yanlış cevaplandı"
     },
     {
       "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "default": "Doğru cevap:"
     },
     {
       "label": "Assistive technology label for input field",
@@ -103,41 +103,41 @@
       "default": "Tip available"
     },
     {
-      "label": "Tip icon label",
+      "label": "İpucu simgesi etiketi",
       "default": "Tip"
     },
     {
       "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "description": "Bu seçenekler, görevin nasıl davranacağını kontrol etmenizi sağlar.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "\"Yeniden dene\"yi etkinleştir"
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "\"Çözüm göster\" düğmesini etkinleştirin"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "\"Kontrol Et\" düğmesini etkinleştirin"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Girişten sonra cevapları otomatik olarak kontrol et"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Harfe duyarlı",
+          "description": "Kullanıcı girişinin cevapla tam olarak aynı olmasını sağlar."
         },
         {
           "label": "Require all fields to be answered before the solution can be viewed"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Giriş alanlarını ayrı satırlara koyun"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "\"Kontrol Et\"te onay iletişim kutusunu göster",
+          "description": "Bu seçenek, \"Girişten sonra yanıtları otomatik olarak kontrol et\" seçeneğiyle uyumlu değildir."
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "\"Yeniden Dene\"de onay iletişim kutusunu göster"
         },
         {
           "label": "Accept minor spelling errors",
@@ -170,20 +170,20 @@
       "label": "Retry confirmation dialog",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Başlık metni",
+          "default": "tekrar dene?"
         },
         {
           "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "default": "Yeniden denemek istediğinizden emin misiniz?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "İptal düğmesi etiketi",
+          "default": "İptal"
         },
         {
           "label": "Confirm button label",
-          "default": "Confirm"
+          "default": "Onaylama"
         }
       ]
     },
