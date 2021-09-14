@@ -8,30 +8,30 @@
           "description": "Soru üzerinde görüntülenecek isteğe bağlı ortam."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Resim yakınlaştırmasını iptal et."
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Görev tanımlaması",
+      "default": "Boşlukları uygun kelimeler ile doldurunuz.",
+      "description": "Bu görevin nasıl yapılacağını kullanıcıya anlatın."
     },
     {
-      "label": "Text blocks",
+      "label": "Metin blokları",
       "entity": "text block",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Metin gir",
+        "placeholder": "Türkiye'nin başkenti *Ankara*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Boşlukları oluşturmak için doğru kelimenin/ifadenin önüne ve arkasına yıldız (*) koyunuz.</li><li>Alternatif cevapları birbirinden ayırmak için bölü işaretini (/) kullanınız.</li><li>İpucu eklemek için cevabın sonuna iki nokta üst üste işaretini (:) kullanınız.</li></ul>",
+          "example": "Bir ay *30/31:bazı ayların gün sayısı farklıdır*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Toplam Geri bildirim",
       "fields": [
         {
           "widgets": [
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
+      "label": "\"Çözümü göster\" düğmesi için metin",
       "default": "Çözümü göster"
     },
     {
@@ -66,20 +66,20 @@
       "default": "yeniden dene"
     },
     {
-      "label": "Text for \"Check\" button",
+      "label": "\"Kontrol et\" düğmesi için metin",
       "default": "Kontrol et"
     },
     {
-      "label": "Text for \"Not filled out\" message",
+      "label": "\"Doldurulmadı\" mesajı için metin",
       "default": "Çözümü görmek için lütfen tüm boşlukları doldurun"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "\"':ans' cevabın doğru\" mesajı için metin",
+      "default": "':ans' cevabın doğru"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "\"':ans' cevabın yanlış\" mesajı için metin",
+      "default": "':ans' cevabın yanlış"
     },
     {
       "label": "\"Doğru cevaplandı\" mesajı için metin",
@@ -90,11 +90,11 @@
       "default": "yanlış cevaplandı"
     },
     {
-      "label": "Assistive technology label for solution",
+      "label": "Çözüm için yardımcı teknoloji etiketi",
       "default": "Doğru cevap:"
     },
     {
-      "label": "Assistive technology label for input field",
+      "label": "Metin giriş alanı için yardımcı teknoloji etiketi",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
       "default": "Blank input @num of @total"
     },
@@ -107,7 +107,7 @@
       "default": "Tip"
     },
     {
-      "label": "Behavioural settings.",
+      "label": "Davranış ayarları",
       "description": "Bu seçenekler, görevin nasıl davranacağını kontrol etmenizi sağlar.",
       "fields": [
         {
@@ -127,7 +127,7 @@
           "description": "Kullanıcı girişinin cevapla tam olarak aynı olmasını sağlar."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Çözüm gösterilmeden önce tüm boşlukların doldurulması zorunlu"
         },
         {
           "label": "Giriş alanlarını ayrı satırlara koyun"
@@ -140,50 +140,50 @@
           "label": "\"Yeniden Dene\"de onay iletişim kutusunu göster"
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Küçük yazım hatalarına izin ver",
+          "description": "Eğer etkinleştirilirse, küçük yazım hatalarıyla birlikte yanıt doğru sayılır (3-9 karakter arasında: 1 yazım hatası, 9 karakterden fazlaysa: 2 yazım hatası)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
-      "fields": [
-        {
-          "label": "Header text",
-          "default": "Finish ?"
-        },
-        {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
-        },
-        {
-          "label": "Cancel button label",
-          "default": "Cancel"
-        },
-        {
-          "label": "Confirm button label",
-          "default": "Finish"
-        }
-      ]
-    },
-    {
-      "label": "Retry confirmation dialog",
+      "label": "Onay iletişim kutusunun kontrolü",
       "fields": [
         {
           "label": "Başlık metni",
-          "default": "tekrar dene?"
+          "default": "Bitir"
         },
         {
-          "label": "Body text",
+          "label": "Gövde",
+          "default": "Bitirmek istediğinize emin misiniz?"
+        },
+        {
+          "label": "İptal düğmesi etiketi",
+          "default": "Hayır"
+        },
+        {
+          "label": "Onaylama düğmesi etiketi",
+          "default": "Evet"
+        }
+      ]
+    },
+    {
+      "label": "Tekrar dene iletişim kutusunun kontrolü",
+      "fields": [
+        {
+          "label": "Başlık metni",
+          "default": "Yeniden Dene"
+        },
+        {
+          "label": "Gövde metni",
           "default": "Yeniden denemek istediğinizden emin misiniz?"
         },
         {
           "label": "İptal düğmesi etiketi",
-          "default": "İptal"
+          "default": "Hayır"
         },
         {
           "label": "Confirm button label",
-          "default": "Onaylama"
+          "default": "Evet"
         }
       ]
     },
