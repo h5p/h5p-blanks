@@ -66,8 +66,8 @@
       "default": "Försök igen"
     },
     {
-      "label": "Text för knappen \"Rätta\"",
-      "default": "Rätta"
+      "label": "Text för knappen \"Svara\"",
+      "default": "Svara"
     },
     {
       "label": "Text för meddelandet \"Inte ifyllt\"",
@@ -117,7 +117,7 @@
           "label": "Aktivera knappen \"Visa lösning\""
         },
         {
-          "label": "Aktivera knappen \"Rätta\""
+          "label": "Aktivera knappen \"Svara\""
         },
         {
           "label": "Rättar svaren automatiskt efter inmatning"
@@ -133,7 +133,7 @@
           "label": "Sätt inmatningsfält på separata rader"
         },
         {
-          "label": "Visa bekräftelsedialog vid \"Rätta\"",
+          "label": "Visa bekräftelsedialog vid \"Svara\"",
           "description": "Denna inställning är inte kompatibel med inställningen \"Rätta svar automatiskt efter inmatning\""
         },
         {
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "label": "Bekräftelse-dialog för Rätta",
+      "label": "Bekräftelse-dialog för Svara",
       "fields": [
         {
           "label": "Titel",
@@ -192,7 +192,7 @@
       "default": "Du fick :num av :total poäng"
     },
     {
-      "label": "Beskrivning av knappen \"Rätta\" för tillgänglighetshjälpmedel",
+      "label": "Beskrivning av knappen \"Svara\" för tillgänglighetshjälpmedel",
       "default": "Rätta svaren. Svaren kommer att bli markerade som korrekta, felaktiga eller obesvarade."
     },
     {
