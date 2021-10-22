@@ -3,8 +3,8 @@
   "description": "Test your users with fill in the blanks tasks(Cloze tests).",
   "machineName": "H5P.Blanks",
   "majorVersion": 1,
-  "minorVersion": 12,
-  "patchVersion": 11,
+  "minorVersion": 13,
+  "patchVersion": 0,
   "runnable": 1,
   "license": "MIT",
   "author": "Joubel",
@@ -37,7 +37,7 @@
     {
       "machineName": "H5P.Question",
       "majorVersion": 1,
-      "minorVersion": 4
+      "minorVersion": 5
     },
     {
       "machineName": "H5P.JoubelUI",

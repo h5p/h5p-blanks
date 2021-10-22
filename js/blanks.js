@@ -155,6 +155,12 @@ H5P.Blanks = (function ($, Question) {
           self.setVideo(media);
         }
       }
+      else if (type === 'H5P.Audio') {
+        if (media.params.files) {
+          // Register task audio
+          self.setAudio(media);
+        }
+      }
     }
 
     // Register task introduction text
@@ -927,9 +933,9 @@ H5P.Blanks = (function ($, Question) {
 /**
  * Static utility method for parsing H5P.Blanks qestion into a format useful
  * for creating reports.
- * 
+ *
  * Example question: 'H5P content may be edited using a *browser/web-browser:something you use every day*.'
- * 
+ *
  * Produces the following result:
  * [
  *   {
@@ -945,8 +951,8 @@ H5P.Blanks = (function ($, Question) {
  *     content: '.'
  *   }
  * ]
- * 
- * @param {string} question 
+ *
+ * @param {string} question
  */
 H5P.Blanks.parseText = function (question) {
   var blank = new H5P.Blanks({ question: question });
@@ -960,8 +966,8 @@ H5P.Blanks.parseText = function (question) {
    *
    * @return {string[]}
    */
-  function tokenizeQuestionText(text) { 
-    return text.split(/(\*.*?\*)/).filter(function (str) { 
+  function tokenizeQuestionText(text) {
+    return text.split(/(\*.*?\*)/).filter(function (str) {
       return str.length > 0; }
     );
   }
@@ -975,7 +981,7 @@ H5P.Blanks.parseText = function (question) {
   }
 
   return tokenizeQuestionText(replaceHtmlTags(question, '')).map(function (part) {
-    return startsAndEndsWithAnAsterisk(part) ? 
+    return startsAndEndsWithAnAsterisk(part) ?
       ({
         type: 'answer',
         correct: blank.parseSolution(part.slice(1, -1)).solutions
