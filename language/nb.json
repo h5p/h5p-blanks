@@ -70,6 +70,10 @@
       "default": "Sjekk"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Tekst for \"Ikke utfyllt\"-melding",
       "default": "Fyll ut alle felt for å se fasit"
     },

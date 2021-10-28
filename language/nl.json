@@ -70,6 +70,10 @@
       "default": "Controleer"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Tekst voor bericht \"Niet ingevuld\"",
       "default": "Om de oplossing te zien, dien je alle lege velden in te vullen"
     },

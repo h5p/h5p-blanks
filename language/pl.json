@@ -70,6 +70,10 @@
       "default": "Sprawdź"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Komunikat o niewypełnionych polach",
       "default": "Wypełnij wszystkie pola, zanim zobaczysz rozwiązanie."
     },

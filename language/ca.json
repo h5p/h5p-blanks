@@ -70,6 +70,10 @@
       "default": "Verifica"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Text for \"Not filled out\" message",
       "default": "Empleneu tots els espais en blanc per veure la solució"
     },

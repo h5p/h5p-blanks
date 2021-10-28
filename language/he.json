@@ -70,6 +70,10 @@
       "default": "בדיקה"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "טקסט עבור הודעת \"לא התמלא\"",
       "default": "אנא השלימו את המילים החסרות כדי לצפות בפתרון"
     },
