@@ -70,6 +70,10 @@
       "default": "Preveri"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Besedilo za manjkajoč odgovor",
       "default": "Pred ogledom rešitve je potrebno izpolniti vsa prazna polja"
     },

@@ -70,6 +70,10 @@
       "default": "核对答案"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "\"未填空\" 消息文字",
       "default": "请完成所有填空后查看答案"
     },

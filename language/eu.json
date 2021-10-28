@@ -70,6 +70,10 @@
       "default": "Egiaztatu"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Testua \"Bete gabea\" mezua",
       "default": "Bete hutsune guztiak emaitzak ikusi ahal izateko"
     },

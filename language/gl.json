@@ -70,6 +70,10 @@
       "default": "Comprobar"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Texto para a mensaxe \"Incompleto\"",
       "default": "Por favor, completa todos os ocos para ver a solución"
     },

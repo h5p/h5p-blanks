@@ -70,6 +70,10 @@
       "default": "Zkontrolovat"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Text pro zprávu  \"Nevyplněno\" ",
       "default": "Pro zobrazení řešení vyplňte prosím všechny mezery"
     },

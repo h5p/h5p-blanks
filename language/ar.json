@@ -70,6 +70,10 @@
       "default": "Check"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "نص رسالة \" لم يتم ملؤها \"ئئئئ ",
       "default": "Please fill in all blanks to view solution"
     },

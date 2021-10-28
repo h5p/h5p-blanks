@@ -70,6 +70,10 @@
       "default": "Verificar"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Texto para \"Espaço não preenchido\"",
       "default": "Por favor preencha todos os espaços em branco"
     },

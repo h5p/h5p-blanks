@@ -70,6 +70,10 @@
       "default": "체크"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "\"Not filled out\" (빈 칸 완성 안됨) 메시지에 대한 텍스트",
       "default": "해답을 보려면 빈칸을 모두 입력하십시오"
     },

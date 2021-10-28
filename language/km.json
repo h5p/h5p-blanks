@@ -70,6 +70,10 @@
       "default": "ពិនិត្យចម្លើយ"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Text for \"Not filled out\" message",
       "default": "សូមបំពេញចន្លោះទាំងអស់ដើម្បីមើលចម្លើយត្រឹមត្រូវ"
     },

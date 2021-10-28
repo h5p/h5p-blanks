@@ -70,6 +70,10 @@
       "default": "Tarkista"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Viestin \"Ei täytetty\" teksti",
       "default": "Ole hyvä ja täytä kaikki tyhjät kohdat nähdäksesi ratkaisun"
     },
