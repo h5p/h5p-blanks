@@ -14,7 +14,7 @@
     },
     {
       "label": "Aufgabenbeschreibung",
-      "default": "Trage die fehlenden Wörter ein.",
+      "default": "Trage die fehlenden Wörter ein!",
       "description": "Eine Anleitung, die dem Nutzer mitteilt, wie die Aufgabe beantwortet werden kann."
     },
     {
