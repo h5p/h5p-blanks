@@ -105,3 +105,9 @@
 .h5p-blanks .h5p-blanks-measure-field {
   display: none;
 }
+.h5p-blanks .hidden-but-read {
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

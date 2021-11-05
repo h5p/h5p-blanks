@@ -202,7 +202,7 @@
      */
     this.toString = function () {
       var extra = defaultUserAnswer ? ' value="' + defaultUserAnswer + '"' : '';
-      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocomplete="off" autocapitalize="off"' + extra + '></span>';
+      var result = '<span class="h5p-input-wrapper"><input type="text" class="h5p-text-input" autocomplete="off" autocapitalize="off" spellcheck="false"' + extra + '></span>';
       self.length = result.length;
       return result;
     };
@@ -212,13 +212,6 @@
      */
     this.getUserAnswer = function () {
       return H5P.trim($input.val());
-    };
-
-    /**
-     * @returns {string} Answer
-     */
-    this.getUserInput = function () {
-      return $input.val();
     };
 
     /**

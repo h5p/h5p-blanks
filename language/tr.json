@@ -8,49 +8,49 @@
           "description": "Soru üzerinde görüntülenecek isteğe bağlı ortam."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Resim yakınlaştırmasını iptal et."
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Görev tanımlaması",
+      "default": "Boşlukları uygun kelimeler ile doldurunuz.",
+      "description": "Bu görevin nasıl yapılacağını kullanıcıya anlatın."
     },
     {
-      "label": "Text blocks",
+      "label": "Metin blokları",
       "entity": "text block",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Metin gir",
+        "placeholder": "Türkiye'nin başkenti *Ankara*.",
         "description": "",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Boşlukları oluşturmak için doğru kelimenin/ifadenin önüne ve arkasına yıldız (*) koyunuz.</li><li>Alternatif cevapları birbirinden ayırmak için bölü işaretini (/) kullanınız.</li><li>İpucu eklemek için cevabın sonuna iki nokta üst üste işaretini (:) kullanınız.</li></ul>",
+          "example": "Bir ay *30/31:bazı ayların gün sayısı farklıdır*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Toplam Geri bildirim",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Varsayılan"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Herhangi bir puan aralığı için özel geri bildirim tanımlayın",
+          "description": "İstediğiniz kadar aralık eklemek için \"Aralık ekle\" düğmesini tıklayın. Örnek: %0-20 Kötü puan, %21-91 Ortalama Puan, %91-100 Büyük Puan!",
+          "entity": "Aralık",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Puan Aralığı"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tanımlanmış puan aralığı için geri bildirim",
+                "placeholder": "Geri bildirimi doldurun"
               }
             ]
           }
@@ -58,43 +58,43 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "\"Çözümü göster\" düğmesi için metin",
+      "default": "Çözümü göster"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "\"Yeniden Dene\" düğmesi için metin",
+      "default": "yeniden dene"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "\"Kontrol et\" düğmesi için metin",
+      "default": "Kontrol et"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "\"Doldurulmadı\" mesajı için metin",
+      "default": "Çözümü görmek için lütfen tüm boşlukları doldurun"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "\"':ans' cevabın doğru\" mesajı için metin",
+      "default": "':ans' cevabın doğru"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "\"':ans' cevabın yanlış\" mesajı için metin",
+      "default": "':ans' cevabın yanlış"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "\"Doğru cevaplandı\" mesajı için metin",
+      "default": "doğru cevaplandı"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "\"Yanlış cevaplandı\" mesajı için metin",
+      "default": "yanlış cevaplandı"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Çözüm için yardımcı teknoloji etiketi",
+      "default": "Doğru cevap:"
     },
     {
-      "label": "Assistive technology label for input field",
+      "label": "Metin giriş alanı için yardımcı teknoloji etiketi",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
       "default": "Blank input @num of @total"
     },
@@ -103,93 +103,109 @@
       "default": "Tip available"
     },
     {
-      "label": "Tip icon label",
+      "label": "İpucu simgesi etiketi",
       "default": "Tip"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Davranış ayarları",
+      "description": "Bu seçenekler, görevin nasıl davranacağını kontrol etmenizi sağlar.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "\"Yeniden dene\"yi etkinleştir"
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "\"Çözüm göster\" düğmesini etkinleştirin"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "\"Kontrol Et\" düğmesini etkinleştirin"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Girişten sonra cevapları otomatik olarak kontrol et"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Harfe duyarlı",
+          "description": "Kullanıcı girişinin cevapla tam olarak aynı olmasını sağlar."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Çözüm gösterilmeden önce tüm boşlukların doldurulması zorunlu"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Giriş alanlarını ayrı satırlara koyun"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "\"Kontrol Et\"te onay iletişim kutusunu göster",
+          "description": "Bu seçenek, \"Girişten sonra yanıtları otomatik olarak kontrol et\" seçeneğiyle uyumlu değildir."
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "\"Yeniden Dene\"de onay iletişim kutusunu göster"
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Küçük yazım hatalarına izin ver",
+          "description": "Eğer etkinleştirilirse, küçük yazım hatalarıyla birlikte yanıt doğru sayılır (3-9 karakter arasında: 1 yazım hatası, 9 karakterden fazlaysa: 2 yazım hatası)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Onay iletişim kutusunun kontrolü",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Başlık metni",
+          "default": "Bitir"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Gövde",
+          "default": "Bitirmek istediğinize emin misiniz?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "İptal düğmesi etiketi",
+          "default": "Hayır"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Onaylama düğmesi etiketi",
+          "default": "Evet"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Tekrar dene iletişim kutusunun kontrolü",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Başlık metni",
+          "default": "Yeniden Dene"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Gövde metni",
+          "default": "Yeniden denemek istediğinizden emin misiniz?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "İptal düğmesi etiketi",
+          "default": "Hayır"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Onaylama düğmesi etiketi",
+          "default": "Evet"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Okuyucu kullananlar için puan çubuğunun metinsel gösterimi",
+      "default": ":total puandan :num puan aldınız"
+    },
+    {
+      "label": "\"Kontrol Et\" düğmesi için yardımcı teknoloji açıklaması",
+      "default": "Cevapları kontrol edin. Cevaplar doğru, yanlış veya cevapsız olarak işaretlenecektir."
+    },
+    {
+      "label": "\"Çözüm Göster\" düğmesi için yardımcı teknoloji açıklaması",
+      "default": "Çözümü göster. Görev, doğru çözümü ile işaretlenecektir."
+    },
+    {
+      "label": "\"Yeniden Dene\" düğmesi için yardımcı teknoloji açıklaması",
+      "default": "Görevi yeniden deneyin. Tüm yanıtları sıfırlayın ve görevi yeniden başlatın."
+    },
+    {
+      "label": "Görevi başlatmak için yardımcı teknoloji açıklaması",
+      "default": "Kontrol modu"
     }
   ]
 }

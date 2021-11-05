@@ -100,7 +100,7 @@
     },
     {
       "label": "Merkelapp for å fortelle at et inntastingsfelt har et tips knyttet til seg",
-      "default": "Tips tilgjengelig"
+      "default": "Tips tilgjengeleg"
     },
     {
       "label": "Merkelapp for tips ikon",
@@ -190,6 +190,22 @@
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
       "default": "You got :num out of :total points"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show the solution. The task will be marked with its correct solution."
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
+    },
+    {
+      "label": "Assistive technology description for starting task",
+      "default": "Checking mode"
     }
   ]
 }

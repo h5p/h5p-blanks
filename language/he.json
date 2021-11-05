@@ -1,56 +1,56 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "מדיה",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "סוג",
+          "description": "ניתן להוסיף תמונה אשר תוצג מעל השאלה."
         },
         {
-          "label": "Disable image zooming"
+          "label": "ביטול האפשרות להגדלת תמונה"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "תיאור תוכן",
+      "default": "מילוי המילים החסרות",
+      "description": "מדריך המסביר למשתמש כיצד לענות על המשימה."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "משבצות תוכן",
+      "entity": "משבצת תוכן",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "שורה של טקסט",
+        "placeholder": "אוסלו היא בירת *נורווגיה*.",
         "description": "",
         "important": {
           "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "example": "ניתן לערוך תוכן H5P בעזרת *דפדפן/דפדפן אינטרנט:משהו שמשתמשים בו כל יום*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "משוב כללי",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "בררת מחדל"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "הגדרת משוב מותאם אישית לכל טווח נקודות שהוא",
+          "description": "לחצו על כפתור \"הוספת טווח\" להוספת טווחים לפי הצורך. לדוגמה: 0-20% ניקוד גרוע, 21-91% ניקוד ממוצע, 91-100% ניקוד מצוין!",
+          "entity": "תחום",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "תחום ציונים"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "משוב לטווח ניקוד מוגדר",
+                "placeholder": "מלאו את המשוב"
               }
             ]
           }
@@ -58,138 +58,154 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "טקסט עבור כפתור \"הצגת פתרונות\"",
+      "default": "הצגת פתרונות"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "טקסט עבור כפתור \"ניסיון חוזר\"",
+      "default": "ניסיון חוזר"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "טקסט עבור כפתור \"בדיקה\"",
+      "default": "בדיקה"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "טקסט עבור הודעת \"לא התמלא\"",
+      "default": "אנא השלימו את המילים החסרות כדי לצפות בפתרון"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "תוכן עבור הודעת \":ans נכון/ה\"",
+      "default": "':ans' נכון/ה"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "תוכן עבור הודעת \":ans לא נכון/ה\"",
+      "default": "':ans' לא נכון/ה"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "טקסט עבור הודעת \"תשובה נכונה\"",
+      "default": "תשובה נכונה"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "תוכן עבור הודעת \"מענה לא נכון\"",
+      "default": "תשובה לא נכונה"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "תווית טכנולוגיה מסייעת עבור פתרון",
+      "default": "תשובה נכונה:"
     },
     {
-      "label": "Assistive technology label for input field",
+      "label": "תווית טכנולוגיה מסייעת עבור שדה הזנה",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "default": "קלט ריק @num מתוך @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "תווית טכנולוגיה מסייעת כדי להגיד שצמוד לקלט רמז",
+      "default": "רמז זמין"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "תווית צלמית רמז",
+      "default": "רמז"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "הגדרות התנהגות הרכיב.",
+      "description": "אפשרויות אלה יאפשרו לך לשלוט בהתנהגות המשימה.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "הפעלת \"ניסיון חוזר\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "הפעלת כפתור \"הצגת פתרון\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "הפעלת כפתור \"בדיקה\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "בדיקה אוטומטית של תשובות אחרי הזנה"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "תלוי רישיות",
+          "description": "מוודא שקלט המשתמש זהה לתשובה."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "מחייב שכל השדות יהיו עם מענה לפני שניתן לצפות בפתרון"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "מיקום שדות ההזנה בשורות נפרדות"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
+          "label": "הציגו תיבת דו-שיח  בסימון \"נבחר\"",
           "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "הצגת חלונית \"אישור\" בעת בחירת הכפתור \"ניסיון חוזר\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "קבלת שגיאות כתיב משניות",
+          "description": "אם מופעל, התשובה תיחשב כנכונה גם עם שגיאות כתיב משניות (3-9 אותיות: שגיאת כתיב אחת, יותר מ-9 אותיות: 2 שגיאות כתיב)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "חלונית אישור עבור כפתור בדיקה",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "תוכן כותרת",
+          "default": "סיימתם?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "גוף תוכן",
+          "default": "בטוחים שאתם רוצים לסיים?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "תווית כפתור ביטול",
+          "default": "ביטול"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "תווית כפתור אישור",
+          "default": "סיום"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "חלונית אישור עבור כפתור ניסיון־חוזר",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "תוכן כותרת",
+          "default": "ניסיון חוזר ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "תוכן",
+          "default": "בטוחים שרוצים לנסות שוב?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "תווית כפתור ביטול",
+          "default": "ביטול"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "תווית כפתור אישור",
+          "default": "אישור"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "ייצוג מילולי של סרגל הניקוד למי שמשתמש בקורא-מסך",
+      "default": "קיבלת :num מתוך :total נקודות"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "בדקו את התשובות. המענים יסומנו כנכון, לא נכון, או ריק."
+    },
+    {
+      "label": "תיאור טכנולוגיה מסייעת עבור כפתור \"הצגת פתרון\"",
+      "default": "הצגת הפתרון. המשימה תסומן עם פתרונה הנכון."
+    },
+    {
+      "label": "תיאור טכנולוגיה מסייעת עבור כפתור \"ניסיון חוזר\"",
+      "default": "ניסיון חוזר. איפוס כל התשובות והתחלת המשימה מחדש."
+    },
+    {
+      "label": "תיאור טכנולוגיה מסייעת עבור משימה התחלתית",
+      "default": "מצב בדיקה"
     }
   ]
 }

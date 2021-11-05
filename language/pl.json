@@ -190,6 +190,22 @@
     {
       "label": "Tekstowy odpowiednik paska wyniku dla czytników ekranu",
       "default": "Masz :num z :total punktów"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show the solution. The task will be marked with its correct solution."
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Ponów zadanie. Zresetuj wszystkie odpowiedzi i rozpocznij zadanie od nowa."
+    },
+    {
+      "label": "Assistive technology description for starting task",
+      "default": "Tryb sprawdzania"
     }
   ]
 }

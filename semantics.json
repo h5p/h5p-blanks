@@ -11,7 +11,8 @@
         "label": "Type",
         "options": [
           "H5P.Image 1.1",
-          "H5P.Video 1.5"
+          "H5P.Video 1.5",
+          "H5P.Audio 1.5"
         ],
         "optional": true,
         "description": "Optional media to display above the question."
@@ -28,7 +29,7 @@
           "rules": [
             {
               "field": "type",
-              "equals": "H5P.Image 1.0"
+              "equals": "H5P.Image 1.1"
             }
           ]
         }
@@ -53,7 +54,9 @@
       "ol",
       "h2",
       "h3",
-      "hr"
+      "hr",
+      "pre",
+      "code"
     ]
   },
   {
@@ -81,7 +84,8 @@
         "strong",
         "em",
         "del",
-        "u"
+        "u",
+        "code"
       ]
     }
   },
@@ -367,7 +371,8 @@
           "strong",
           "em",
           "del",
-          "u"
+          "u",
+          "code"
         ]
       },
       {
@@ -412,7 +417,8 @@
           "strong",
           "em",
           "del",
-          "u"
+          "u",
+          "code"
         ]
       },
       {
@@ -436,6 +442,38 @@
     "type": "text",
     "label": "Textual representation of the score bar for those using a readspeaker",
     "default": "You got :num out of :total points",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "name": "a11yCheck",
+    "type": "text",
+    "label": "Assistive technology description for \"Check\" button",
+    "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "name": "a11yShowSolution",
+    "type": "text",
+    "label": "Assistive technology description for \"Show Solution\" button",
+    "default": "Show the solution. The task will be marked with its correct solution.",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "name": "a11yRetry",
+    "type": "text",
+    "label": "Assistive technology description for \"Retry\" button",
+    "default": "Retry the task. Reset all responses and start the task over again.",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "name": "a11yCheckingModeHeader",
+    "type": "text",
+    "label": "Assistive technology description for starting task",
+    "default": "Checking mode",
     "importance": "low",
     "common": true
   }

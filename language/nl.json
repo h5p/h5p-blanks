@@ -26,7 +26,7 @@
         "description": "",
         "important": {
           "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "example": "H5P inhoud kan bewerkt worden via een *browser/web-browser:Iets dat je dagelijks gebruikt*."
         }
       }
     },
@@ -190,6 +190,22 @@
     {
       "label": "Tekstuele weergave van de scorebalk voor diegenen die gebruik maken van een readspeaker",
       "default": "Je hebt :num van de :total punten"
+    },
+    {
+      "label": "Ondersteunende technologie beschrijving voor \"Controleer\" knop",
+      "default": "Controleer de antwoorden. De antwoorden worden gemarkeerd als juist, onjuist, of niet-beantwoord."
+    },
+    {
+      "label": "Ondersteunende technologie beschrijving voor \"Toon oplossing\" knop",
+      "default": "Toon de oplossing. De taak wordt gemarkeerd met de juiste oplossing."
+    },
+    {
+      "label": "Ondersteunende technologie beschrijving voor \"Opnieuw proberen\" knop",
+      "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
+    },
+    {
+      "label": "Ondersteunende technologie beschrijving voor het starten van de taak",
+      "default": "Modus aan het controleren"
     }
   ]
 }

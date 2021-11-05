@@ -1,11 +1,11 @@
 {
   "semantics": [
     {
-      "label": "Fichier média",
+      "label": "Média",
       "fields": [
         {
-          "label": "Type de média",
-          "description": "Fichier média à afficher en option au-dessus de la question."
+          "label": "Type",
+          "description": "Média à afficher au-dessus de la question (facultatif)."
         },
         {
           "label": "Désactiver l'agrandissement de l'image"
@@ -190,6 +190,22 @@
     {
       "label": "Représentation textuelle du panneau du score pour les utilisateurs d'outils de synthèse vocale (comme ReadSpeaker)",
       "default": "Vous avez obtenu :num points sur un total de :points"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show the solution. The task will be marked with its correct solution."
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
+    },
+    {
+      "label": "Assistive technology description for starting task",
+      "default": "Checking mode"
     }
   ]
 }

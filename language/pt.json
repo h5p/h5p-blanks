@@ -190,6 +190,22 @@
     {
       "label": "Representação textual da barra de resultados para utilizadores de leitor de ecrã",
       "default": "Conseguiu :num pontos de um total de :total"
+    },
+    {
+      "label": "Descrição para tecnologia assistida para o botão \"Verificar\"",
+      "default": "Verifique as respostas. Estas serão marcadas como corretas, incorretas, ou não respondidas."
+    },
+    {
+      "label": "Descrição para tecnologia assistida para o botão \"Mostrar Solução\"",
+      "default": "Mostrar a solução. A tarefa será marcada com a sua solução correta."
+    },
+    {
+      "label": "Descrição para tecnologia assistida para o botão \"Tentar de novo\"",
+      "default": "Tente de novo. Apagar todas as respostas e iniciar de novo."
+    },
+    {
+      "label": "Descrição para tecnologia assistida para iniciar tarefa",
+      "default": "Modo de verificação"
     }
   ]
 }
