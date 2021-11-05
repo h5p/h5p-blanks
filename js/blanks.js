@@ -56,7 +56,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
-        "Oslo is the capital of *Norway*."
+        "<p>Oslo is the capital of *Norway*.</p>"
       ],
       overallFeedback: [],
       userAnswers: [], // TODO This isn't in semantics?
