@@ -23,7 +23,6 @@
       "field": {
         "label": "Lyn van teks",
         "placeholder": "Oslo is die hoofstad van *Noorweë*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Spasies word by gevoeg met 'n asterisk (*) voor en agter die regte woord/frase.</li><li>Alternatiewe antwoorde word geskei met 'n vorentoe-streep (/).</li><li>Jy kan 'n tekswenk byvoeg met 'n duppelpunt (:) voor die wenk.</li></ul>",
           "example": "H5P kan geredigeer word deur 'n *webleser:Iets wat jy daagliks gebruik*."

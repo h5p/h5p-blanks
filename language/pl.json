@@ -23,7 +23,6 @@
       "field": {
         "label": "Fragment zadania",
         "placeholder": "Stolicą Polski jest *Warszawa*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Pola do wypełnienia wstawia się wpisując gwiazdkę (*) na początku i na końcu poprawnej odpowiedzi.</li><li>Alternatywne poprawne odpowiedzi należy rozdzielić ukośnikiem (/).</li><li>Wewnątrz pola można również dodać podpowiedź, poprzedzoną dwukropkiem (:).</li></ul>",
           "example": "Zasób H5P można edytować w *przeglądarce/przeglądarka:Aplikacja, której używasz codziennie*."

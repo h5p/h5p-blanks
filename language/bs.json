@@ -23,7 +23,6 @@
       "field": {
         "label": "Tekstualno polje",
         "placeholder": "Sarajevo je glavni grad *Bosna i Hercegovina*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."

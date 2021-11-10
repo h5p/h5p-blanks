@@ -23,7 +23,6 @@
       "field": {
         "label": "Řádek textu",
         "placeholder": "Oslo je hlavním městem *Norska*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Mezery jsou přidány s hvězdičkou (*) před a za správným slovem/frází.</li><li>Alternativní odpovědi jsou odděleny lomítkem (/).</li><li>Můžete přidat textovou nápovědu pomocí dvojtečky (:) před nápovědou.</li></ul>",
           "example": "Obsah H5P lze upravovat pomocí *prohlížeče/webového prohlížeče: Něco, co používáte každý den*."

@@ -23,7 +23,6 @@
       "field": {
         "label": "Строка текста",
         "placeholder": "Oslo is the capital of *Norway*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Поля заполняются со звездочкой (*) спереди и позади правильного слова/фразы.</li><li>Дополнительные варианты ответов отделяются косой чертой (/).</li><li>Вы можете добавить текстовую подсказку, используя двоеточие (:) перед подсказкой.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."

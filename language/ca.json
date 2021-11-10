@@ -23,7 +23,6 @@
       "field": {
         "label": "Línia de text",
         "placeholder": "Oslo és la capital de *Noruega*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Els espais en blanc s’afegeixen amb un asterisc (*) al davant i un al darrere de la paraula o frase correcta.</li><li>Les respostes possibles se separen amb una barra inclinada (/).</li><li>Podeu afegir una pista textual introduint dos punts (:) davant de la pista.</li></ul>",
           "example": "El contingut d’H5P es pot editar utilitzant un *navegador/navegador web:Una cosa que feu servir cada dia*."

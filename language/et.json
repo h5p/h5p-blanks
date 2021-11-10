@@ -23,7 +23,6 @@
       "field": {
         "label": "Tekstirida",
         "placeholder": "Oslo on *Norway* pealinn.",
-        "description": "",
         "important": {
           "description": "<ul><li>Tühjad kohad märgitakse tärni (*) lisamisega korrektse sõna või fraasi ette ja taha.</li><li>Alternatiivsed vastused eraldatakse kaldkriipsuga (/).</li><li>Tekstivihje lisamiseks kasuta koolonit (:) vihje ees.</li></ul>",
           "example": "H5P sisu töötlemiseks sobib *brauser/veebibrauser:Midagi, mida kasutad iga päev*."

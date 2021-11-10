@@ -23,7 +23,6 @@
       "field": {
         "label": "Besedilo naloge",
         "placeholder": "Oslo je glavno mesto *Norveške*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Prazno polje se označi z zvezdico (*) pred in za besedo/besedno zvezo.</li><li>Nadomestni odgovor se loči s poševnico (/).</li><li>Namig za udeležence se od odgovora loči z dvopičjem (:).</li></ul>",
           "example": "Za brskanje po spletu lahko uporabimo *brskalnik/spletni brskalnik:Takšen program je na primer Chrome*."
