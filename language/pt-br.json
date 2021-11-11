@@ -142,6 +142,10 @@
         {
           "label": "Aceitar pequenos erros de digitação",
           "description": "Se habilitado, uma resposta também será considerada correta se tiver pequenos erros de digitação (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

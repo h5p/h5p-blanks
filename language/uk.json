@@ -142,6 +142,10 @@
         {
           "label": "Дозволяди незначні орфографічні помилки",
           "description": "Якщо активовано, відповідь також буде рахуватися правильною з незначними орфографічними помилками (3-9 знаків: 1 орфографічна помилка, білльше 9 знаків: 2 орфографічні помилки)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

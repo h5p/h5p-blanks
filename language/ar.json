@@ -142,6 +142,10 @@
         {
           "label": "اقبل أخطاء إملائية بسيطة",
           "description": "إذا تم تفعيلها ، فستحسب إجابة صحيحة أيضًا مع أخطاء إملائية بسيطة"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

@@ -142,6 +142,10 @@
         {
           "label": "Acceptera mindre stavfel",
           "description": "Om aktiverat, så kommer ett svar räknas som korrekt med mindre stavfel (3-9 tecken: 1 stavfel, mer än 9 tecken: 2 stavfel)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

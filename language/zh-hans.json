@@ -142,6 +142,10 @@
         {
           "label": "允许细微的拼写错误",
           "description": "如本选项激活, 如果有细微的拼写错误也认为是正确答案 (3-9 字母: 1 个拼写错误, 超过9个字母: 2个拼写错误)，估计中文不行"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

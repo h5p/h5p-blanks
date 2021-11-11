@@ -142,6 +142,10 @@
         {
           "label": "사소한 철자 오류 허용",
           "description": "활성화된 경우, 대답은 사소한 철자 오류(3-9자: 철자 오류 1자, 9자 이상: 철자 오류 2자)와 함께 올바른 것으로 간주된다."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

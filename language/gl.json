@@ -142,6 +142,10 @@
         {
           "label": "Aceptar erros ortográficos menores",
           "description": "Se está activada, unha resposta contará como válida se contén erros ortográficos menores (3-9 caracteres: 1 erro ortogáfico, máis de 9 caracteres: 2 erros ortográficos)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

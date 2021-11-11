@@ -342,6 +342,15 @@
         "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)",
         "default": false,
         "optional": true
+      },
+      {
+        "name": "keepCorrectOnRetry",
+        "type": "boolean",
+        "label": "Keep correct answers when retrying",
+        "importance": "low",
+        "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button.",
+        "default": false,
+        "optional": true
       }
     ]
   },

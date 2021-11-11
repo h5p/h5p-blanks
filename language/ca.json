@@ -142,6 +142,10 @@
         {
           "label": "Accepta errors ortogràfics menors",
           "description": "Si s’activa aquesta opció, la resposta també s’admetrà com a correcta encara que contingui errors ortogràfics menors (3-9 caràcters: 1 error ortogràfic; més de 9 caràcters: 2 errors ortogràfics)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

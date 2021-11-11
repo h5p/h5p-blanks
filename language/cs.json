@@ -142,6 +142,10 @@
         {
           "label": "Přijmout malé pravopisné chyby",
           "description": "Je-li aktivováno, odpověď se také počítá jako správná s drobnými pravopisnými chybami (3-9 znaků: 1 pravopisná chyba, více než 9 znaků: 2 pravopisné chyby)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

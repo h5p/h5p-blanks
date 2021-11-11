@@ -142,6 +142,10 @@
         {
           "label": "Приемане на малки правописни грешки",
           "description": "Ако е активирано, отговорът ще бъде приеман за верен и с малко правописни грешки ( от 3-9 знака: 1 правописна грешка, за повече от 9 знака: 2 правописни грешки)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

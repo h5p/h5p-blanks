@@ -142,6 +142,10 @@
         {
           "label": "Prihvati male greške u pisanju",
           "description": "Ako je odabrano, odgovori sa malim greškama u pisanju će biti prihvaćeni kao tačni (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },
