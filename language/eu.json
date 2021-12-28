@@ -23,7 +23,6 @@
       "field": {
         "label": "Testu lerroa",
         "placeholder": "Oslo *Norvegia*ko hiriburua da.",
-        "description": "",
         "important": {
           "description": "<ul><li>Falta diren hitzak gehitzen dira asterisko batekin (*) hitz/esaldi zuzenaren aurretik eta atzetik.</li><li>Beste erantzunak banatzen dira barren bidez (/).</li><li>Laguntza erantzi dezakezu haren aurretik bi puntu jarrita (:).</li></ul>",
           "example": "H5P edukia editatzeko erabili *nabigatzailea/web-nagigatzailea:Egunero erabiltzen duzun zerbait*."
@@ -68,6 +67,10 @@
     {
       "label": "Testua \"Egiaztatu\" botoirako",
       "default": "Egiaztatu"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Testua \"Bete gabea\" mezua",

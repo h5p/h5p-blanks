@@ -56,7 +56,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
-        "Oslo is the capital of *Norway*."
+        "<p>Oslo is the capital of *Norway*.</p>"
       ],
       overallFeedback: [],
       userAnswers: [], // TODO This isn't in semantics?
@@ -87,6 +87,7 @@ H5P.Blanks = (function ($, Question) {
       a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
       a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
       a11yHeader: 'Checking mode',
+      submitAnswer: 'Submit',
     }, params);
 
     // Delete empty questions
@@ -212,7 +213,9 @@ H5P.Blanks = (function ($, Question) {
           l10n: self.params.confirmCheck,
           instance: self,
           $parentElement: $container
-        }
+        },
+        textIfSubmitting: self.params.submitAnswer,
+        contentData: self.contentData,
       });
     }
 

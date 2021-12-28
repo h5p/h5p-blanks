@@ -23,7 +23,6 @@
       "field": {
         "label": "Ligne de texte",
         "placeholder": "Paris est la capitale de la *France*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Ajoutez les blancs dans le texte entre deux astérisques (*).</li><li>Séparez des réponses alternatives correctes avec un slash (/).</li><li>Vous pouvez ajouter un indice en utilisant 2 points (:) avant cet élément.</li></ul>",
           "example": "Un contenu H5P peut être édité en utilisant un *navigateur/navigateur web:Quelque chose que vous êtes en train d'utiliser*."
@@ -68,6 +67,10 @@
     {
       "label": "Texte du bouton \"Vérifier\"",
       "default": "Vérifier"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Texte pour le message \"Tout n'est pas complété\"",

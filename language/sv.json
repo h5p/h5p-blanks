@@ -23,7 +23,6 @@
       "field": {
         "label": "Textrad",
         "placeholder": "Oslo är huvudstaden i *Norge*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Tomma fält läggs till med en  asterisk (*) före och bakom det korrekta ordet/frasen.</li><li>Alternativ anges med ett snedstreck (/).</li><li>Du kan lägga till ett tips genom att använda kolon (:) före tipset.</li></ul>",
           "example": "H5P-innehåll kan redigeras direkt i din *webbläsare/browser:Något som du använder varje dag*."
@@ -68,6 +67,10 @@
     {
       "label": "Text for \"Check\" button",
       "default": "Check"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Text for \"Not filled out\" message",

@@ -23,7 +23,6 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "",
         "important": {
           "description": "<ul><li>Opne felt merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativ angis med ein skråstrek (/)</li><li>Tips angis med eit kolon (:) før tipset</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -68,6 +67,10 @@
     {
       "label": "Tekst for \"Sjekk\"-knapp",
       "default": "Sjekk"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Tekst for \"Ikkje utfyllt\"-melding",
