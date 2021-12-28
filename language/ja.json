@@ -23,7 +23,6 @@
       "field": {
         "label": "テキスト行",
         "placeholder": "オスロは*ノルウェー*の首都です。",
-        "description": "説明",
         "important": {
           "description": "<ul><li>空白は、正しい単語/フレーズの前後にアスタリスク（*）を付けて追加されます。</li><li>代替回答はスラッシュ（/）で区切ります。</li><li>ヒントの前にコロン（:)を使用して、テキストのヒントを追加できます。</li></ul>",
           "example": "H5Pコンテンツは、*browser/web-browser:Something you use every day*を使用して編集できます。"
@@ -70,8 +69,12 @@
       "default": "チェック"
     },
     {
-      "label": "「記入されていません」メッセージのテキスト",
-      "default": "ソリューションを表示するには、すべての空欄に記入してください"
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "Text for \"Not filled out\" message",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "「 ':ans'は正しい」メッセージのテキスト",

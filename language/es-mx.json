@@ -23,7 +23,6 @@
       "field": {
         "label": "Línea de texto",
         "placeholder": "Oslo es la capital de *Noruega*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Se añaden espacios en blanco con un asterisco (*) delante y detrás de la palabra/frase correcta.</li> <li>Respuestas alternativas se separan con una barra diagonal (/).</li> <li>Puede agregar un texto de consejo, mediante dos puntos (:) delante del texto consejo.</li></ul>",
           "example": "El contenido H5P puede ser editado usando un *navegador/navegador-web:Algo que Usted usa todos los días*."
@@ -70,8 +69,12 @@
       "default": "Comprobar"
     },
     {
-      "label": "Texto para mensaje \"No completado\"",
-      "default": "Por favor llene todos los huecos para ver la solución"
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "Texto para mensaje de \"No contestado\" ",
+      "default": "Por favor llene todos los espacios para ver la solución"
     },
     {
       "label": "Texto para mensaje de \"':ans' es correcto\"",

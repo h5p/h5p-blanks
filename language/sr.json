@@ -23,7 +23,6 @@
       "field": {
         "label": "Ред текста",
         "placeholder": "Осло је главни град *Норвешке*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Празнине се додају звездицом (*) испред и иза тачне речи / фразе.</li><li>Алтернативни одговори су одвојени косом цртом (/).</li><li>Можете додати текстуални савет користећи двотачку (:) испред типа.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -70,8 +69,12 @@
       "default": "Провери"
     },
     {
-      "label": "Текст за \"Није попуњено\" поруку",
-      "default": "Молимо вас попуните све празнине да бисте видели решење"
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "Text for \"Not filled out\" message",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "Текст за \"':ans' је тачан\" поруку",

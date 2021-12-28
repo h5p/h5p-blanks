@@ -22,8 +22,7 @@
       "entity": "كتلة النص",
       "field": {
         "label": "سطر من النص",
-        "placeholder": "أوسلو هي عاصمة *النرويج*.",
-        "description": "",
+        "placeholder": "Oslo is the capital of *Norway*.",
         "important": {
           "description": "<ul><li>تتم إضافة الفراغات بالعلامة النجمية (*) امام وخلف الكلمة / العبارة الصحيحة.</li><li>يتم فصل الإجابات البديلة مع شرطة مائلة للأمام (/).</li><li>يمكنك إضافة تلميح نصي ، باستخدام نقطتين (:) أمام التلميح.</li></ul>",
           "example": "يمكن تحرير محتوى H5P باستعمال *مستعرض الويب: وهو شيء تستعمله كل يوم*."
@@ -70,8 +69,12 @@
       "default": "Check"
     },
     {
-      "label": "نص رسالة \"لم يتم ملؤها\"",
-      "default": "يرجى إملاء كل الفراغات لمشاهدة الحل"
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "نص رسالة \" لم يتم ملؤها \"ئئئئ ",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "نص رسالة \"':ans' صحيحة\"",

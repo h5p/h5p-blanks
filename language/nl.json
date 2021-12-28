@@ -23,7 +23,6 @@
       "field": {
         "label": "Tekstregels",
         "placeholder": "Amsterdam is de hoofdstad van *Nederland*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>",
           "example": "H5P inhoud kan bewerkt worden via een *browser/web-browser:Iets dat je dagelijks gebruikt*."
@@ -68,6 +67,10 @@
     {
       "label": "Tekst voor de \"Controleer\"-knop",
       "default": "Controleer"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Tekst voor bericht \"Niet ingevuld\"",
