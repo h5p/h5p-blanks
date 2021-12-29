@@ -69,8 +69,8 @@
       "default": "Έλεγχος"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Ετικέτα κουμπιού υποβολής απάντησης",
+      "default": "Υποβολή"
     },
     {
       "label": "Κείμενο μηνύματος μη συμπλήρωσης κενού",
