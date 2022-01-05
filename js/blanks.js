@@ -122,6 +122,9 @@ H5P.Blanks = (function ($, Question) {
     // Using instructions as label for our text groups
     this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
     this.content = self.createQuestions();
+
+    // Restore previous state
+    self.setH5PUserState();
   }
 
   // Inheritance
@@ -168,9 +171,6 @@ H5P.Blanks = (function ($, Question) {
 
     // ... and buttons
     self.registerButtons();
-
-    // Restore previous state
-    self.setH5PUserState();
   };
 
   /**
