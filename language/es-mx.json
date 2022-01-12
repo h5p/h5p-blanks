@@ -5,10 +5,10 @@
       "fields": [
         {
           "label": "Tipo",
-          "description": "Medio opcional para mostrar arriba de la pregunta."
+          "description": "Medio opcional a mostrar arriba de la pregunta."
         },
         {
-          "label": "Deshabilitar agrandado de imagen"
+          "label": "Deshabilitar acercamiento de imagen"
         }
       ]
     },
@@ -30,7 +30,7 @@
       }
     },
     {
-      "label": "Retroalimentación global",
+      "label": "Retroalimentación Global",
       "fields": [
         {
           "widgets": [
@@ -44,7 +44,7 @@
           "field": {
             "fields": [
               {
-                "label": "Rango de Puntaje"
+                "label": "Rango del Puntaje"
               },
               {},
               {
@@ -69,11 +69,11 @@
       "default": "Comprobar"
     },
     {
-      "label": "Text for \"Submit\" button",
+      "label": "Texto para botón \"Enviar\"",
       "default": "Submit"
     },
     {
-      "label": "Texto para mensaje de \"No contestado\" ",
+      "label": "Texto para mensaje de \"No contestado\"",
       "default": "Por favor llene todos los espacios para ver la solución"
     },
     {
