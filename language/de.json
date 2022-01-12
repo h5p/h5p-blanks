@@ -35,7 +35,7 @@
         {
           "widgets": [
             {
-              "label": "Eingabemaske"
+              "label": "Voreinstellung"
             }
           ],
           "label": "Lege Rückmeldungen für einzelne Punktebereiche fest",
@@ -69,7 +69,7 @@
       "default": "Überprüfen"
     },
     {
-      "label": "Text for \"Submit\" button",
+      "label": "Beschriftung des \"Absenden\"-Buttons",
       "default": "Submit"
     },
     {
