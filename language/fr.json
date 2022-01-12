@@ -44,7 +44,7 @@
           "field": {
             "fields": [
               {
-                "label": "Intervalle de scores"
+                "label": "Fourchette de score"
               },
               {},
               {
