@@ -70,7 +70,7 @@
     },
     {
       "label": "Tekst voor \"Verzend\"-knop",
-      "default": "Submit"
+      "default": "Verzend"
     },
     {
       "label": "Tekst voor \"Niet ingevuld\"-bericht",

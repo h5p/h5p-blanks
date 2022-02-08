@@ -70,7 +70,7 @@
     },
     {
       "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "default": "Vérifier"
     },
     {
       "label": "Texte pour le message \"Tout n'est pas complété\"",
