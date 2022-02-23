@@ -74,7 +74,7 @@
     },
     {
       "label": "Texto para mensaje de \"No contestado\"",
-      "default": "Por favor llene todos los espacios para ver la solución"
+      "default": "Por favor llene todos los huecos para ver la solución"
     },
     {
       "label": "Texto para mensaje de \"':ans' es correcto\"",
