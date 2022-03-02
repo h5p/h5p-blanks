@@ -69,12 +69,12 @@
       "default": "Sprawdź"
     },
     {
-      "label": "Text for \"Submit\" button",
+      "label": "Opis przycisku \"Wyślij\"",
       "default": "Submit"
     },
     {
       "label": "Komunikat o niewypełnionych polach",
-      "default": "Wypełnij wszystkie pola, zanim zobaczysz rozwiązanie."
+      "default": "Wypełnij wszystkie pola, zanim zobaczysz rozwiązanie"
     },
     {
       "label": "Komunikat o poprawnej odpowiedzi",
@@ -110,7 +110,7 @@
       "default": "Podpowiedź"
     },
     {
-      "label": "Ustawienia zachowania",
+      "label": "Ustawienia zachowania.",
       "description": "Te opcje pozwalają określić, jak ma przebiegać zadanie.",
       "fields": [
         {
@@ -195,19 +195,19 @@
       "default": "Masz :num z :total punktów"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Opis przycisku\"Sprawdź\" dla czytników ekranu",
+      "default": "Sprawdź zadanie. Odpowiedzi zostaną oznaczone jako poprawne, błędne lub brakujące."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Opis przycisku \"Pokaż odpowiedź\" dla czytników ekranu",
+      "default": "Pokaż rozwiązanie. W treści zadania pojawią się poprawne odpowiedzi."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
+      "label": "Opis przycisku \"Powtórz\" dla czytników ekranu",
       "default": "Ponów zadanie. Zresetuj wszystkie odpowiedzi i rozpocznij zadanie od nowa."
     },
     {
-      "label": "Assistive technology description for starting task",
+      "label": "Opis czynności rozpoczęcia zadania dla czytników ekranu",
       "default": "Tryb sprawdzania"
     }
   ]

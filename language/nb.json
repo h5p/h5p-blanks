@@ -1,19 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Multimedia",
+      "label": "Medieelement",
       "fields": [
         {
           "label": "Type",
-          "description": "Et valgfritt multimediaelement som skal vises over spørsmålet."
+          "description": "Valgfritt medieelement. Elementet vil bli plassert over spørsmålet."
         },
         {
-          "label": "Slå av bilde zooming"
+          "label": "Deaktiver zoomingfunksjon."
         }
       ]
     },
     {
-      "label": "Oppgavetekst",
+      "label": "Oppgavebeskrivelse",
       "default": "Fyll inn teksten som mangler",
       "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
     },
@@ -30,26 +30,26 @@
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Tilbakemelding på hele oppgava",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Forhandsinnstilling"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Opprett poengområder og legg inn tilbakemeldinger.",
+          "description": "Klikk på knappen \"Legg til poengområde\" og legg til så mange poengområder du trenger. Eksempel: 0–40 % Svakt resultat, 41–80 % Gjennomsnittlig resultat, 81–100 % Flott resultat!",
+          "entity": "Område",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Poengområde"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tilbakemelding for definert poengområde",
+                "placeholder": "Skriv inn tilbakemelding."
               }
             ]
           }
@@ -73,8 +73,8 @@
       "default": "Submit"
     },
     {
-      "label": "Tekst for \"Ikke utfyllt\"-melding",
-      "default": "Fyll ut alle felt for å se fasit"
+      "label": "Text for \"Not filled out\" message",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "Tekst for \"':ans' er korrekt\"-melding",
