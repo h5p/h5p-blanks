@@ -123,21 +123,6 @@ H5P.Blanks = (function ($, Question) {
     this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
     this.content = self.createQuestions();
 
-    // Init blanks state
-    this.registerDomElements();
-  }
-
-  // Inheritance
-  Blanks.prototype = Object.create(Question.prototype);
-  Blanks.prototype.constructor = Blanks;
-
-  /**
-   * Registers this question type's DOM elements before they are attached.
-   * Called from H5P.Question.
-   */
-  Blanks.prototype.registerDomElements = function () {
-    var self = this;
-
     // Check for task media
     var media = self.params.media;
     if (media && media.type && media.type.library) {
@@ -180,7 +165,11 @@ H5P.Blanks = (function ($, Question) {
 
     // Restore previous state
     self.setH5PUserState();
-  };
+  }
+
+  // Inheritance
+  Blanks.prototype = Object.create(Question.prototype);
+  Blanks.prototype.constructor = Blanks;
 
   /**
    * Create all the buttons for the task
