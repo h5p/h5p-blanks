@@ -69,6 +69,10 @@
       "default": "Pārbaudīt"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "Ziņas \"Nav aizpildīts\" teksts",
       "default": "Lūdzu aizpildiet visus tukšos laukus, lai skatītu risinājumu"
     },
