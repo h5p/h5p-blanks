@@ -69,8 +69,8 @@
       "default": "Pārbaudīt"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Pogas \"Iesniegt\" teksts",
+      "default": "Iesniegt"
     },
     {
       "label": "Ziņas \"Nav aizpildīts\" teksts",
@@ -111,10 +111,10 @@
     },
     {
       "label": "Uzvedības iestatījumi.",
-      "description": "Šie iestatījumi ļaus jums kontrolēt to uzdevuma uzvedību.",
+      "description": "Šie parametri ļaus jums kontrolēt uzdevuma uzvedību.",
       "fields": [
         {
-          "label": "Atļaut pogu \"Mēģināt vēlreiz\""
+          "label": "Atļaut \"Mēģināt vēlreiz\""
         },
         {
           "label": "Atļaut pogu \"Rādīt risinājumu\""
@@ -192,7 +192,7 @@
     },
     {
       "label": "Rezultātu skalas tekstuālais atspoguļojums tiem, kas izmanto asistīvās tehnoloģijas",
-      "default": "Jūs saņēmāt :num no :total punktiem"
+      "default": "Tu saņēmi :num no :total punktiem"
     },
     {
       "label": "Pogas \"Pārbaudīt\" apraksts asistīvajām tehnoloģijām",
