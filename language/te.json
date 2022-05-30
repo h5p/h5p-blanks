@@ -3,28 +3,28 @@
     {
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "రకం",
+          "description": "ప్రశ్న పైన ప్రదర్శించడానికి ఐచ్ఛిక మీడియా."
         },
         {
-          "label": "Disable image zooming"
+          "label": "చిత్రం జూమ్ చేయడాన్ని డిసేబుల్ చేయండి"
         }
       ],
-      "label": "Media"
+      "label": "మీడియా"
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "టాస్క్ వివరణ",
+      "default": "ఖాళీలో పదాలను పూరించండి",
+      "description": "ఈ టాస్క్‌కు ఎలా సమాధానం ఇవ్వాలో యూజర్ కు చెప్పే గైడ్."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "టెక్స్ట్ బ్లాక్స్",
+      "entity": "టెక్స్ట్ బ్లాక్",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "టెక్స్ట్ లైన్",
+        "placeholder": "*నార్వే* రాజధాని ఓస్లో .",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>సరైన పదం/పదబంధం ముందు మరియు వెనుక నక్షత్రం గుర్తు (*)తో ఖాళీలు జోడించబడతాయి.</li><li>ప్రత్యామ్నాయ సమాధానాలు ఫార్వర్డ్ స్లాష్‌తో (/) వేరు చేయబడతాయి.</li><li>మీరు టిప్ కు ముందు కోలన్ (:)ని ఉపయోగించి టెక్స్ట్ టిప్ ను జోడించవచ్చు.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
@@ -32,29 +32,29 @@
     {
       "fields": [
         {
-          "entity": "range",
+          "entity": "పరిధి",
           "widgets": [
             {
-              "label": "Default"
+              "label": "డిఫాల్ట్"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "ఏ స్కోర్ పరిధి కైనా ఇచ్చే కస్టమ్ ఫీడ్ బ్యాక్ ను ఇక్కడ నిర్వచించండి",
+          "description": "మీకు అవసరమైనన్ని పరిధులను జోడించడానికి \"పరిధిని జోడించు\" బటన్‌ను క్లిక్ చేయండి. ఉదాహరణ: 0-20% బ్యాడ్ స్కోర్, 21-91% సగటు స్కోర్, 91-100% గొప్ప స్కోర్!",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "స్కోర్ పరిధి"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "నిర్వచింపబడిన స్కోర్ పరిధి కై ఫీడ్ బ్యాక్",
+                "placeholder": "ఫీడ్ బ్యాక్ పూరించండి"
               }
             ]
           }
         }
       ],
-      "label": "Overall Feedback"
+      "label": "ఓవర్ ఆల్ ఫీడ్ బ్యాక్"
     },
     {
       "label": "Text for \"Show solutions\" button",
@@ -73,8 +73,8 @@
       "default": "Submit"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "\"Not filled out\" మెసేజ్ కొరకై టెక్స్ట్",
+      "default": "జవాబు చూడటానికి అన్ని ఖాళీలను పూరించండి"
     },
     {
       "label": "Text for \"':ans' is correct\" message",
@@ -138,7 +138,7 @@
           "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "\"Retry\" చేసినపుడు చేసినపుడు కన్ఫర్మేషన్ డైలాగ్ చూపించు"
         },
         {
           "label": "Accept minor spelling errors",
