@@ -195,20 +195,20 @@
       "default": "Ви отримали :num із :total балів"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Опис допоміжної технології для кнопки «Перевірити».",
+      "default": "Перевірте відповіді. Відповіді будуть позначені як правильні, неправильні або без відповіді."
     },
     {
       "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "default": "Покажіть рішення. Завдання буде позначено його правильним рішенням."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Опис допоміжної технології для кнопки «Повторити».",
+      "default": "Повторіть завдання. Скиньте всі відповіді та почніть завдання знову."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Опис допоміжної технології для стартового завдання",
+      "default": "Режим перевірки"
     }
   ]
 }
