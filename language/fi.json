@@ -23,7 +23,6 @@
       "field": {
         "label": "Teksti",
         "placeholder": "Oslo on *Norjan* pääkaupunki.",
-        "description": "",
         "important": {
           "description": "<ul><li>Tyhjät kohdat lisätään käyttämällä merkkiä (*) ennen ja jälkeen oikeaa sanaa tai lausetta.</li><li>Vaihtoehtoiset vastaukset erotetaan kauttaviivalla (/).</li><li>Voit lisätä sanallisen vihjeen käyttämällä kaksoispistettä (:) ennen vihjettä.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -68,6 +67,10 @@
     {
       "label": "Painikkeen \"Tarkista\" nimi",
       "default": "Tarkista"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Viestin \"Ei täytetty\" teksti",

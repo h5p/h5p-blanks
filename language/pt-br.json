@@ -5,33 +5,32 @@
       "fields": [
         {
           "label": "Tipo",
-          "description": "Mídia opcional exibida acima da questão."
+          "description": "Mídia opcional para exibir acima da pergunta."
         },
         {
-          "label": "Desativar zoom para imagem da questão"
+          "label": "Desativar o zoom da imagem"
         }
       ]
     },
     {
       "label": "Descrição da tarefa",
       "default": "Preencha as palavras que faltam",
-      "description": "Um guia que diz ao usuário como completar a tarefa."
+      "description": "Um guia que ensina ao usuário como completar a tarefa."
     },
     {
       "label": "Blocos de texto",
-      "entity": "text block",
+      "entity": "bloco de texto",
       "field": {
         "label": "Linha de texto",
         "placeholder": "Oslo é a capital da *Noruega*.",
-        "description": "",
         "important": {
-          "description": "<ul><li>Espaços em branco são adicionados com asteriscos (*) na frente e atrás da palavra/frase correta.</li><li>Respostas alternativas são separadas por uma barra(/).</li><li>Você pode adicionar uma dica textual, usando dois pontos (:) na frente da dica.</li></ul>",
+          "description": "<ul><li>Espaços em branco são adicionados com asteriscos (*) no início e no final da palavra/frase correta.</li><li>Respostas alternativas são separadas por uma barra(/).</li><li>Você pode adicionar uma dica textual, usando dois pontos (:) na frente da dica.</li></ul>",
           "example": "Conteúdo H5P pode ser editado usando um *navegador/browser:Algo que você usa todos os dias*."
         }
       }
     },
     {
-      "label": "Feedback geral",
+      "label": "Feedback Geral",
       "fields": [
         {
           "widgets": [
@@ -39,17 +38,17 @@
               "label": "Padrão"
             }
           ],
-          "label": "Defina feedback customizado para qualquer faixa de pontuação",
-          "description": "Clique no botão \"Adicionar faixa\" para adicionar quantas faixas de pontuação forem necessárias. Exemplo: 0-20% Pontuação ruim, 21-91% Pontuação média, 91-100% Ótima pontuação!",
-          "entity": "range",
+          "label": "Definir feedback personalizado para qualquer faixa de pontuação",
+          "description": "Clique no botão \"Adicionar faixa\" para adicionar quantos intervalos você precisar. Exemplo: 0-20% Pontuação Ruim, 21-91% Pontuação Média, 91-100% Pontuação Ótima!",
+          "entity": "faixa",
           "field": {
             "fields": [
               {
-                "label": "Faixa de pontuação"
+                "label": "Faixa de Pontuação"
               },
               {},
               {
-                "label": "Feedback para uma faixa de pontuação determinada",
+                "label": "Feedback para a faixa de pontuação definida",
                 "placeholder": "Preencha o feedback"
               }
             ]
@@ -58,48 +57,52 @@
       ]
     },
     {
-      "label": "Texto para botão \"Mostrar solução\"",
+      "label": "Texto para botão \"Mostrar soluções\"",
       "default": "Mostrar solução"
     },
     {
-      "label": "Texto para botão \"Tentar novamente\"",
-      "default": "Tentar novamente"
+      "label": "Texto para o botão \"Tentar Novamente\"",
+      "default": "Tentar Novamente"
     },
     {
-      "label": "Texto para botão \"Verificar resposta\"",
-      "default": "Verificar resposta"
+      "label": "Texto para o botão \"Verificar\"",
+      "default": "Verificar"
     },
     {
-      "label": "Texto para mensagem \"Não preenchido\"",
-      "default": "Por favor, preencha todos os espaços em branco para visualizar a solução"
+      "label": "Texto do botão \"Enviar\"",
+      "default": "Enviar"
     },
     {
-      "label": "Texto para mensagem \"':ans' está correto\"",
+      "label": "Texto para a mensagem \"Não preenchido\"",
+      "default": "Favor preencher todos os espaços em branco para ver a solução"
+    },
+    {
+      "label": "Texto para a mensagem \"':ans' está correto\"",
       "default": "':ans' está correto"
     },
     {
-      "label": "Texto para mensagem \"':ans' está incorreto\"",
+      "label": "Texto para a mensagem \"':ans' está incorreto\"",
       "default": "':ans' está incorreto"
     },
     {
-      "label": "Texto para mensagem\"Respondido corretamente\" ",
+      "label": "Texto para a mensagem\"Respondido corretamente\"",
       "default": "Respondido corretamente"
     },
     {
-      "label": "Texto para mensagem \"Respondido incorretamente\"",
+      "label": "Texto para a mensagem \"Respondido incorretamente\"",
       "default": "Respondido incorretamente"
     },
     {
-      "label": "Rótulo de tecnologia assistiva para solução",
+      "label": "Rótulo da tecnologia assistência para \"Solução\"",
       "default": "Resposta correta:"
     },
     {
-      "label": "Rótulo de tecnologia assistiva para campo preenchível",
+      "label": "Rótulo da tecnologia de assistência para campo de entrada",
       "description": "Use @num e @total para substituir o número atual do espaço em branco e o número total de espaços em branco",
       "default": "Espaço em branco @num de @total"
     },
     {
-      "label": "Rótul ode tecnologia assistiva para dizer que há uma dica disponível",
+      "label": "Rótulo da tecnologia de assistência para indicar que existe uma dica disponível",
       "default": "Dica disponível"
     },
     {
@@ -111,37 +114,37 @@
       "description": "Estas opções permitirão que você controle como a tarefa se comporta.",
       "fields": [
         {
-          "label": "Habilitar \"Tentar novamente\""
+          "label": "Ativar \"Tentar Novamente\""
         },
         {
-          "label": "Habilitar botão \"Mostrar solução\""
+          "label": "Ativar o botão \"Mostrar solução\""
         },
         {
-          "label": "Habilitar botão \"Verificar resposta\""
+          "label": "Ativar o botão \"Verificar\""
         },
         {
-          "label": "Verificar resposta automaticamente após o preenchimento"
+          "label": "Verificar a resposta automaticamente após o preenchimento"
         },
         {
-          "label": "Diferenciar maiúsculas/minúsculas",
-          "description": "Assegura que o usuário digite a palavra/frase exatamente igual à resposta."
+          "label": "Diferenciar maiúsculas e minúsculas",
+          "description": "Assegura que o usuário digite a palavra ou frase exatamente da mesma forma que a resposta."
         },
         {
-          "label": "Exigir que todos os campos sejam preenchidos antes da solução ser visualizada"
+          "label": "Exigir que todos os campos sejam preenchidos antes que a solução possa ser visualizada"
         },
         {
           "label": "Colocar campos preenchíveis em linhas diferentes"
         },
         {
-          "label": "Exibir diálogo de confirmação em \"Verificar resposta\"",
+          "label": "Exibir o diálogo de confirmação em \"Verificar\"",
           "description": "Estas opções não são compatíveis com a opção \"Verificar resposta automaticamente após o preenchimento\""
         },
         {
-          "label": "Exibir diálogo de confirmação ao \"Tentar novamente\""
+          "label": "Exibir o diálogo de confirmação em \"Tentar Novamente\""
         },
         {
           "label": "Aceitar pequenos erros de digitação",
-          "description": "Se habilitado, uma resposta também será considerada correta se tiver pequenos erros de digitação (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "description": "Se habilitado, uma resposta também será considerada correta se tiver pequenos erros de digitação (3-9 caracteres: 1 erro de ortografia, mais que 9 caracteres: 2 erros de ortografia)"
         },
         {
           "label": "Keep correct answers when retrying",
@@ -150,22 +153,22 @@
       ]
     },
     {
-      "label": "Diálogo de confirmação de resposta",
+      "label": "Diálogo de confirmação de verificação de resposta",
       "fields": [
         {
-          "label": "Texto de cabeçalho",
+          "label": "Texto do cabeçalho",
           "default": "Finalizar ?"
         },
         {
-          "label": "Texto de corpo",
-          "default": "Tem certeza de que deseja finalizar ?"
+          "label": "Corpo do texto",
+          "default": "Você tem certeza que deseja finalizar ?"
         },
         {
-          "label": "Rótulo do botão de cancelamento",
+          "label": "Rótulo do botão Cancelar",
           "default": "Cancelar"
         },
         {
-          "label": "Rótulo do botão de confirmação",
+          "label": "Rótulo do botão Confirmar",
           "default": "Finalizar"
         }
       ]
@@ -174,42 +177,42 @@
       "label": "Diálogo de confirmação de nova tentativa",
       "fields": [
         {
-          "label": "Texto de cabeçalho",
-          "default": "Tentar novamente ?"
+          "label": "Texto do cabeçalho",
+          "default": "Tentar Novamente ?"
         },
         {
-          "label": "Texto de corpo",
-          "default": "Você tem certeza de que deseja tentar novamente ?"
+          "label": "Corpo do texto",
+          "default": "Você tem certeza que deseja tentar novamente ?"
         },
         {
-          "label": "Rótulo de botão de cancelamento",
+          "label": "Rótulo do botão Cancelar",
           "default": "Cancelar"
         },
         {
-          "label": "Rótulo de botão de confirmação",
+          "label": "Rótulo do botão Confirmar",
           "default": "Confirmar"
         }
       ]
     },
     {
       "label": "Representação textual da barra de pontuação para aqueles que usam leitores de tela",
-      "default": "Você marcou :num de :total pontos"
+      "default": "Você conseguiu :num de :total pontos possíveis"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Descrição da tecnologia de assistência para o botão \"Verificar\"",
+      "default": "Verifique as respostas. As respostas serão marcadas como corretas, incorretas, ou sem resposta."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Descrição da tecnologia de assistência para o botão \"Mostrar Solução\"",
+      "default": "Mostrar a solução. A tarefa será marcada com sua solução correta."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Descrição da tecnologia de assistência para o botão \"Tentar Novamente\"",
+      "default": "Tente realizar a tarefa novamente. Reinicialize todas as respostas e recomece."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Descrição da tecnologia de assistência para a tarefa inicial",
+      "default": "Modo de verificação"
     }
   ]
 }

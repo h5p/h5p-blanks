@@ -1,14 +1,14 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Медиа",
       "fields": [
         {
-          "label": "Tip",
-          "description": "Suport opțional de afișat deasupra întrebării."
+          "label": "Навъи",
+          "description": "Объектҳои медиавӣ ихтиёрӣ барои намоиш дар болои савол."
         },
         {
-          "label": "Dezactivați mărirea imaginii"
+          "label": "Disable image zooming"
         }
       ]
     },
@@ -40,7 +40,7 @@
           ],
           "label": "Define custom feedback for any score range",
           "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "entity": "диапазон",
           "field": {
             "fields": [
               {
@@ -145,10 +145,6 @@
         {
           "label": "Accept minor spelling errors",
           "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
-        },
-        {
-          "label": "Keep correct answers when retrying",
-          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

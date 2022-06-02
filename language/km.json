@@ -23,7 +23,6 @@
       "field": {
         "label": "ជួរអត្ថបទ",
         "placeholder": "Oslo is the capital of *Norway*.",
-        "description": "",
         "important": {
           "description": "<ul><li>ចន្លោះបំពេញនឹងត្រូវបានដាក់ជំនួសពាក្យ/ឃ្លាដែលនៅចន្លោះសញ្ញាផ្កាយពីរ (*)។</li><li>អ្នកអាចប្រើសញ្ញាចែក(/) សម្រាប់កំណត់នូវចម្លើយដែលអាចត្រឹមត្រូវផ្សេងទៀត។</li><li>អ្នកក៏អាចប្រាប់គន្លឺះសម្រាប់ចន្លោះបំពេញនីមួយៗដោយប្រើសញ្ញាចុចពីរ (:) ខាងក្រោយចម្លើយត្រឹមត្រូវ</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -68,6 +67,10 @@
     {
       "label": "Text for \"Check\" button",
       "default": "ពិនិត្យចម្លើយ"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Text for \"Not filled out\" message",

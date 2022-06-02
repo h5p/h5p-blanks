@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Ortam",
+      "label": "Medya",
       "fields": [
         {
           "label": "Yazınız",
@@ -23,7 +23,6 @@
       "field": {
         "label": "Metin gir",
         "placeholder": "Türkiye'nin başkenti *Ankara*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Boşlukları oluşturmak için doğru kelimenin/ifadenin önüne ve arkasına yıldız (*) koyunuz.</li><li>Alternatif cevapları birbirinden ayırmak için bölü işaretini (/) kullanınız.</li><li>İpucu eklemek için cevabın sonuna iki nokta üst üste işaretini (:) kullanınız.</li></ul>",
           "example": "Bir ay *30/31:bazı ayların gün sayısı farklıdır*."
@@ -70,6 +69,10 @@
       "default": "Kontrol et"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "\"Doldurulmadı\" mesajı için metin",
       "default": "Çözümü görmek için lütfen tüm boşlukları doldurun"
     },
@@ -104,7 +107,7 @@
     },
     {
       "label": "İpucu simgesi etiketi",
-      "default": "Tip"
+      "default": "İpucu"
     },
     {
       "label": "Davranış ayarları",

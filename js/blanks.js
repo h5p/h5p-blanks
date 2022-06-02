@@ -56,7 +56,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
-        "Oslo is the capital of *Norway*."
+        "<p>Oslo is the capital of *Norway*.</p>"
       ],
       overallFeedback: [],
       userAnswers: [], // TODO This isn't in semantics?
@@ -88,6 +88,7 @@ H5P.Blanks = (function ($, Question) {
       a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
       a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
       a11yHeader: 'Checking mode',
+      submitAnswer: 'Submit',
     }, params);
 
     // Delete empty questions
@@ -122,18 +123,6 @@ H5P.Blanks = (function ($, Question) {
     // Using instructions as label for our text groups
     this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
     this.content = self.createQuestions();
-  }
-
-  // Inheritance
-  Blanks.prototype = Object.create(Question.prototype);
-  Blanks.prototype.constructor = Blanks;
-
-  /**
-   * Registers this question type's DOM elements before they are attached.
-   * Called from H5P.Question.
-   */
-  Blanks.prototype.registerDomElements = function () {
-    var self = this;
 
     // Check for task media
     var media = self.params.media;
@@ -177,7 +166,11 @@ H5P.Blanks = (function ($, Question) {
 
     // Restore previous state
     self.setH5PUserState();
-  };
+  }
+
+  // Inheritance
+  Blanks.prototype = Object.create(Question.prototype);
+  Blanks.prototype.constructor = Blanks;
 
   /**
    * Create all the buttons for the task
@@ -220,7 +213,9 @@ H5P.Blanks = (function ($, Question) {
           l10n: self.params.confirmCheck,
           instance: self,
           $parentElement: $container
-        }
+        },
+        textIfSubmitting: self.params.submitAnswer,
+        contentData: self.contentData,
       });
     }
 

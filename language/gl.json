@@ -8,7 +8,7 @@
           "description": "Medios opcionais amosados enriba da pregunta."
         },
         {
-          "label": "Desactivar zoom das imaxes"
+          "label": "Desactivar zoom de imaxes"
         }
       ]
     },
@@ -23,7 +23,6 @@
       "field": {
         "label": "Liña de texto",
         "placeholder": "Oslo é a capital de *Noruega*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Os ocos engádense cun asterísco (*) diante e detrás da palabra/frase correcta.</li><li>As respostas alternativas sepáranse cunha barra (/).</li><li>Podes engadir un texto de axuda usando dous puntos (:) diante del.</li></ul>",
           "example": "O contido H5P pódese editar usando un *navegador/navegador web:Algo que usas todos os días*."
@@ -40,17 +39,17 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para calquera rango de puntuación",
-          "description": "Preme o botón \"Engadir rango\" para engadir os rangos que precises. Exemplo: 0-20% Puntuación mala, 21-91% Puntuación media, 91-100% Puntuación xenial!",
+          "description": "Preme o botón \"Engadir rango\" para engadir tantos rangos como precises. Exemplo: 0-20% Mala Puntuación, 21-91% Puntuación Media, 91-100% Puntuación Xenial!",
           "entity": "rango",
           "field": {
             "fields": [
               {
-                "label": "Rango de Puntuación"
+                "label": "Rango de puntuación"
               },
               {},
               {
                 "label": "Retroalimentación para o rango de puntuación definido",
-                "placeholder": "Escribe a retroalimentación"
+                "placeholder": "Escribe a túa retroalimentación"
               }
             ]
           }
@@ -70,7 +69,11 @@
       "default": "Comprobar"
     },
     {
-      "label": "Texto para a mensaxe \"Incompleto\"",
+      "label": "Texto para o botón \"Enviar\"",
+      "default": "Submit"
+    },
+    {
+      "label": "Texto para a mensaxe \"Non completado\"",
       "default": "Por favor, completa todos os ocos para ver a solución"
     },
     {

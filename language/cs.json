@@ -5,7 +5,7 @@
       "fields": [
         {
           "label": "Typ",
-          "description": "Volitelná média k zobrazení nad otázkou."
+          "description": "Volitelná média zobrazená nad otázkou."
         },
         {
           "label": "Zakázat zvětšení obrazu"
@@ -23,7 +23,6 @@
       "field": {
         "label": "Řádek textu",
         "placeholder": "Oslo je hlavním městem *Norska*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Mezery jsou přidány s hvězdičkou (*) před a za správným slovem/frází.</li><li>Alternativní odpovědi jsou odděleny lomítkem (/).</li><li>Můžete přidat textovou nápovědu pomocí dvojtečky (:) před nápovědou.</li></ul>",
           "example": "Obsah H5P lze upravovat pomocí *prohlížeče/webového prohlížeče: Něco, co používáte každý den*."
@@ -49,8 +48,8 @@
               },
               {},
               {
-                "label": "Zpětná vazba pro definovaný rozsah skóre",
-                "placeholder": "Vyplňte ve zpětné vazbě"
+                "label": "Feedback for defined score range",
+                "placeholder": "Fill in the feedback"
               }
             ]
           }
@@ -70,7 +69,11 @@
       "default": "Zkontrolovat"
     },
     {
-      "label": "Text pro zprávu \"Nevyplněno\"",
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "Text pro zprávu  \"Nevyplněno\" ",
       "default": "Pro zobrazení řešení vyplňte prosím všechny mezery"
     },
     {

@@ -23,7 +23,6 @@
       "field": {
         "label": "Textzeile",
         "placeholder": "Berlin ist die Hauptstadt von *Deutschland*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Lücken werden mit einem Sternchen (*) vor und hinter dem richtigen Wort markiert.</li><li>Alternative Antworten können jeweils mit einem Schrägstrich (/) angefügt werden.</li><li>Du kannst einen Tipp mit einem Doppelpunkt (:) davor hinzufügen.</li></ul>",
           "example": "H5P-Inhalte können mit einem *Browser/Web-Browser:Etwas, das du jeden Tag nutzt* betrachtet werden."
@@ -36,7 +35,7 @@
         {
           "widgets": [
             {
-              "label": "Eingabemaske"
+              "label": "Voreinstellung"
             }
           ],
           "label": "Lege Rückmeldungen für einzelne Punktebereiche fest",
@@ -68,6 +67,10 @@
     {
       "label": "Beschriftung des \"Überprüfen\"-Buttons",
       "default": "Überprüfen"
+    },
+    {
+      "label": "Beschriftung des \"Absenden\"-Buttons",
+      "default": "Submit"
     },
     {
       "label": "Text der \"Nicht ausgefüllt\"-Nachricht",

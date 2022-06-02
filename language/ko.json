@@ -23,7 +23,6 @@
       "field": {
         "label": "텍스트 줄",
         "placeholder": "*노르웨이*의 수도는 오슬로이다.",
-        "description": "",
         "important": {
           "description": "<ul><li>빈 칸은 정확한 단어/구문 앞뒤에 별표(*)로 추가된다. </li><li>가능한 다른 답변은 슬래시(/)로 구분한다.</li><li>팁 앞에 콜론(:)을 사용하여 텍스트 팁을 추가할 수 있다.</li></ul>",
           "example": "H5P 컨텐츠는 *브라우저/웹브라우저:매일 사용하는 것*을 사용하여 편집할 수 있음."
@@ -70,6 +69,10 @@
       "default": "정답 확인"
     },
     {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
       "label": "\"Not filled out\" (빈 칸 완성 안됨) 메시지에 대한 텍스트",
       "default": "해답을 보려면 빈칸을 모두 입력하십시오"
     },
@@ -107,7 +110,7 @@
       "default": "팁"
     },
     {
-      "label": "학습 행동 관련 설정",
+      "label": "동작 설정",
       "description": "이 옵션을 사용하면 학습 과정을 제어할 수 있다.",
       "fields": [
         {

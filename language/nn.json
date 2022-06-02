@@ -1,19 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Multimedia",
+      "label": "Medieelement",
       "fields": [
         {
           "label": "Type",
-          "description": "Eit valfritt multimediaelement som sjåast over spørsmålet."
+          "description": "Valfritt medieelement. Elementet vil bli plassert over spørsmålet."
         },
         {
-          "label": "Slå av bilete zooming"
+          "label": "Deaktiver zoomingfunksjon."
         }
       ]
     },
     {
-      "label": "Oppgåvetekst",
+      "label": "Oppgåvebeskriving",
       "default": "Fyll inn teksten som manglar",
       "description": "Ein tekst som fortel brukaren korleis oppgåva skal løysast"
     },
@@ -23,7 +23,6 @@
       "field": {
         "label": "Tekstline",
         "placeholder": "Oslo er hovudstaden i *Noreg*",
-        "description": "",
         "important": {
           "description": "<ul><li>Opne felt merkast med ei stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativ angis med ein skråstrek (/)</li><li>Tips angis med eit kolon (:) før tipset</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -31,26 +30,26 @@
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Tilbakemelding på heile oppgåva",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Førehandsinnstilling"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Opprett poengområde og legg inn tilbakemeldingar.",
+          "description": "Klikk på knappen \"Legg til poengområde\" og legg til så mange poengområde du treng. Døme: 0–40 % Svakt resultat, 41–80 % Gjennomsnittleg resultat, 81–100 % Flott resultat!",
+          "entity": "Område",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Poengområde"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tilbakemelding for definert poengområde",
+                "placeholder": "Skriv inn tilbakemelding."
               }
             ]
           }
@@ -70,8 +69,12 @@
       "default": "Sjekk"
     },
     {
-      "label": "Tekst for \"Ikkje utfyllt\"-melding",
-      "default": "Fyll ut alle felt for å se fasit"
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
+    },
+    {
+      "label": "Text for \"Not filled out\" message",
+      "default": "Please fill in all blanks to view solution"
     },
     {
       "label": "Tekst for \"':ans' er korrekt\"-melding",

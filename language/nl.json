@@ -5,28 +5,27 @@
       "fields": [
         {
           "label": "Type",
-          "description": "Optionele media, die boven de vragen worden getoond"
+          "description": "Optionele media, die boven de vraag wordt getoond."
         },
         {
-          "label": "Deactiveer het zoomen van de afbeelding tijdens het tonen van de opgave"
+          "label": "Beeld zoomen uitschakelen"
         }
       ]
     },
     {
-      "label": "Beschrijving opgave",
+      "label": "Taakomschrijving",
       "default": "Vul de ontbrekende woorden in",
       "description": "Een gids die de gebruiker vertelt hoe deze opgave moet worden beantwoord."
     },
     {
-      "label": "Tekst blokken",
-      "entity": "tekst blok",
+      "label": "Tekstblokken",
+      "entity": "tekstblok",
       "field": {
-        "label": "Tekstregels",
+        "label": "Tekstregel",
         "placeholder": "Amsterdam is de hoofdstad van *Nederland*.",
-        "description": "",
         "important": {
-          "description": "<ul><li>Lege velden met het juiste woord of de zin worden tussen asterisken (*) geplaatst.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>",
-          "example": "H5P inhoud kan bewerkt worden via een *browser/web-browser:Iets dat je dagelijks gebruikt*."
+          "description": "<ul><li>Lege plekken markeer je door het juiste woord tussen asterisken (*) te plaatsen.</li><li>Alternatieve antwoorden worden gescheiden door een schuine streep (/).</li><li>Je kunt een tip toevoegen door een (:) voor de tiptekst te plaatsen.</li></ul>",
+          "example": "H5P-inhoud kan bewerkt worden via een *browser/web-browser:Iets dat je dagelijks gebruikt*."
         }
       }
     },
@@ -39,18 +38,18 @@
               "label": "Standaard"
             }
           ],
-          "label": "Definieer aangepaste feedback voor elke score reeks",
-          "description": "Druk op de \"Voeg scorereeks\" knop om zoveel reeksen toe te voegen als nodig. Voorbeeld: 0-20% Onvoldoende, 21-91% Gemiddelde score, 91-100% Uitstekende score!",
+          "label": "Definieer aangepaste feedback voor elke scorereeks",
+          "description": "Druk op de \"Voeg scorereeks\"-knop om zoveel reeksen toe te voegen als nodig. Voorbeeld: 0-20% Onvoldoende, 21-91% Gemiddelde score, 91-100% Uitstekende score!",
           "entity": "reeks",
           "field": {
             "fields": [
               {
-                "label": "Score reeks"
+                "label": "Scorereeks"
               },
               {},
               {
                 "label": "Feedback voor de gedefinieerde scorereeks",
-                "placeholder": "Vul de aangepaste feedback in"
+                "placeholder": "Vul de feedback in"
               }
             ]
           }
@@ -58,48 +57,52 @@
       ]
     },
     {
-      "label": "Tekst voor de \"Toon oplossing\"-knop",
+      "label": "Tekst voor \"Toon oplossing\"-knop",
       "default": "Toon oplossing"
     },
     {
-      "label": "Tekst voor de \"Opnieuw proberen\"-knop",
-      "default": "Opnieuw proberen"
+      "label": "Tekst voor \"Opnieuw\"-knop",
+      "default": "Opnieuw"
     },
     {
-      "label": "Tekst voor de \"Controleer\"-knop",
+      "label": "Tekst voor \"Controleer\"-knop",
       "default": "Controleer"
     },
     {
-      "label": "Tekst voor bericht \"Niet ingevuld\"",
-      "default": "Om de oplossing te zien, dien je alle lege velden in te vullen"
+      "label": "Tekst voor \"Verzend\"-knop",
+      "default": "Verzend"
     },
     {
-      "label": "Tekst voor bericht \"':antwoord' is juist\"",
-      "default": "':antwoord' is juist"
+      "label": "Tekst voor \"Niet ingevuld\"-bericht",
+      "default": "Vul alle lege plekken in om de oplossing te bekijken"
     },
     {
-      "label": "Tekst voor bericht \"':antwoord' is onjuist\"",
-      "default": "':antwoord' is onjuist"
+      "label": "Tekst voor \"':ans' is juist\"-bericht",
+      "default": "':ans' is juist"
     },
     {
-      "label": "Tekst voor bericht \"Juist geantwoord\"",
+      "label": "Tekst voor \"':ans' is onjuist\"-bericht",
+      "default": "':ans' is onjuist"
+    },
+    {
+      "label": "Tekst voor \"Juist geantwoord\"-bericht",
       "default": "Juist geantwoord"
     },
     {
-      "label": "Tekst voor bericht \"Onjuist geantwoord\"",
+      "label": "Tekst voor \"Onjuist geantwoord\"-bericht",
       "default": "Onjuist geantwoord"
     },
     {
-      "label": "Technologisch hulplabel voor de oplossing",
+      "label": "Label van de oplossing voor ondersteunende technologie",
       "default": "Juist antwoord:"
     },
     {
-      "label": "Technologisch hulplabel voor het invoerveld",
-      "description": "Gebruik @num en @total om het huidige cloze-aantal en het totale cloze-aantal te vervangen",
+      "label": "Label voor invoerveld voor ondersteunende technologie",
+      "description": "Gebruik @num en @total om het huidige aantal en het totale aantal lege plekken te vervangen",
       "default": "Lege invoer @num van @total"
     },
     {
-      "label": "Technologisch hulplabel om aan te geven dat er voor de invoer een tip beschikbaar is",
+      "label": "Label voor ondersteunende technologie om aan te geven dat er voor de invoer een tip beschikbaar is",
       "default": "Tip beschikbaar"
     },
     {
@@ -107,17 +110,17 @@
       "default": "Tip"
     },
     {
-      "label": "Gedragsinstellingen",
-      "description": "Met deze opties kun je instellen hoe de opgave zich gedraagt.",
+      "label": "Gedragsinstellingen.",
+      "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
       "fields": [
         {
-          "label": "Activeer de knop \"Opnieuw\""
+          "label": "Schakel \"Opnieuw\" in"
         },
         {
-          "label": "Activeer de knop \"Toon oplossingen\""
+          "label": "Schakel \"Toon oplossing\"-knop in"
         },
         {
-          "label": "Activeer de knop \"Controleer\""
+          "label": "Schakel \"Controleer\"-knop in"
         },
         {
           "label": "Controleer automatisch de antwoorden na invoer"
@@ -127,17 +130,17 @@
           "description": "Zorg ervoor dat de invoer van de gebruiker exact gelijk is aan het antwoord."
         },
         {
-          "label": "Alle velden moeten worden ingevuld voordat de oplossing kan worden getoond"
+          "label": "Alle velden moeten worden ingevuld voordat de oplossing kan worden bekeken"
         },
         {
           "label": "Zet de invoervelden op afzonderlijke regels"
         },
         {
-          "label": "Toon bevestigingsvenster bij \"Controleer\"",
+          "label": "Toon bevestigingsdialoog bij \"Controleer\"",
           "description": "Deze optie is niet verenigbaar met de \"Controleer automatisch de antwoorden na invoer\" optie"
         },
         {
-          "label": "Toon bevestigingsvenster bij \"Opnieuw\""
+          "label": "Toon bevestigingsdialoog bij \"Opnieuw\""
         },
         {
           "label": "Accepteer kleine spellingsfouten",
@@ -150,7 +153,7 @@
       ]
     },
     {
-      "label": "Controleer bevestigingsvenster",
+      "label": "Bevestigingsdialoog voor Controleer",
       "fields": [
         {
           "label": "Koptekst",
@@ -158,20 +161,20 @@
         },
         {
           "label": "Hoofdtekst",
-          "default": "Ben je er zeker van dat je wilt stoppen?"
+          "default": "Weet je zeker dat je wilt stoppen?"
         },
         {
-          "label": "Label annuleer knop",
+          "label": "Label van \"Annuleer\"-knop",
           "default": "Annuleer"
         },
         {
-          "label": "Label bevestigingsknop",
+          "label": "Label van \"Bevestig\"-knop",
           "default": "Stoppen"
         }
       ]
     },
     {
-      "label": "Bevestigingsvenster opnieuw",
+      "label": "Bevestigingsdialoog voor \"Opnieuw\"",
       "fields": [
         {
           "label": "Koptekst",
@@ -179,32 +182,32 @@
         },
         {
           "label": "Hoofdtekst",
-          "default": "Ben je er zeker van dat je het opnieuw wil proberen?"
+          "default": "Weet je zeker dat je het opnieuw wilt proberen?"
         },
         {
-          "label": "Label annuleer knop",
+          "label": "Label van \"Annuleer\"-knop",
           "default": "Annuleer"
         },
         {
-          "label": "Label bevestigings knop",
+          "label": "Label van \"Bevestig\"-knop",
           "default": "Bevestig"
         }
       ]
     },
     {
-      "label": "Tekstuele weergave van de scorebalk voor diegenen die gebruik maken van een readspeaker",
+      "label": "Tekstuele weergave van de scorebalk voor diegenen die gebruik maken van een schermlezer",
       "default": "Je hebt :num van de :total punten"
     },
     {
-      "label": "Ondersteunende technologie beschrijving voor \"Controleer\" knop",
+      "label": "Ondersteunende technologie beschrijving voor \"Controleer\"-knop",
       "default": "Controleer de antwoorden. De antwoorden worden gemarkeerd als juist, onjuist, of niet-beantwoord."
     },
     {
-      "label": "Ondersteunende technologie beschrijving voor \"Toon oplossing\" knop",
+      "label": "Ondersteunende technologie beschrijving voor \"Toon oplossing\"-knop",
       "default": "Toon de oplossing. De taak wordt gemarkeerd met de juiste oplossing."
     },
     {
-      "label": "Ondersteunende technologie beschrijving voor \"Opnieuw proberen\" knop",
+      "label": "Ondersteunende technologie beschrijving voor \"Opnieuw\"-knop",
       "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
     },
     {

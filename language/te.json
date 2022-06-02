@@ -1,60 +1,60 @@
 {
   "semantics": [
     {
-      "label": "Media",
       "fields": [
         {
-          "label": "Tip",
-          "description": "Suport opțional de afișat deasupra întrebării."
+          "label": "రకం",
+          "description": "ప్రశ్న పైన ప్రదర్శించడానికి ఐచ్ఛిక మీడియా."
         },
         {
-          "label": "Dezactivați mărirea imaginii"
+          "label": "చిత్రం జూమ్ చేయడాన్ని డిసేబుల్ చేయండి"
         }
-      ]
+      ],
+      "label": "మీడియా"
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "టాస్క్ వివరణ",
+      "default": "ఖాళీలో పదాలను పూరించండి",
+      "description": "ఈ టాస్క్‌కు ఎలా సమాధానం ఇవ్వాలో యూజర్ కు చెప్పే గైడ్."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "టెక్స్ట్ బ్లాక్స్",
+      "entity": "టెక్స్ట్ బ్లాక్",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "టెక్స్ట్ లైన్",
+        "placeholder": "*నార్వే* రాజధాని ఓస్లో .",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "description": "<ul><li>సరైన పదం/పదబంధం ముందు మరియు వెనుక నక్షత్రం గుర్తు (*)తో ఖాళీలు జోడించబడతాయి.</li><li>ప్రత్యామ్నాయ సమాధానాలు ఫార్వర్డ్ స్లాష్‌తో (/) వేరు చేయబడతాయి.</li><li>మీరు టిప్ కు ముందు కోలన్ (:)ని ఉపయోగించి టెక్స్ట్ టిప్ ను జోడించవచ్చు.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
       "fields": [
         {
+          "entity": "పరిధి",
           "widgets": [
             {
-              "label": "Default"
+              "label": "డిఫాల్ట్"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "ఏ స్కోర్ పరిధి కైనా ఇచ్చే కస్టమ్ ఫీడ్ బ్యాక్ ను ఇక్కడ నిర్వచించండి",
+          "description": "మీకు అవసరమైనన్ని పరిధులను జోడించడానికి \"పరిధిని జోడించు\" బటన్‌ను క్లిక్ చేయండి. ఉదాహరణ: 0-20% బ్యాడ్ స్కోర్, 21-91% సగటు స్కోర్, 91-100% గొప్ప స్కోర్!",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "స్కోర్ పరిధి"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "నిర్వచింపబడిన స్కోర్ పరిధి కై ఫీడ్ బ్యాక్",
+                "placeholder": "ఫీడ్ బ్యాక్ పూరించండి"
               }
             ]
           }
         }
-      ]
+      ],
+      "label": "ఓవర్ ఆల్ ఫీడ్ బ్యాక్"
     },
     {
       "label": "Text for \"Show solutions\" button",
@@ -73,8 +73,8 @@
       "default": "Submit"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "\"Not filled out\" మెసేజ్ కొరకై టెక్స్ట్",
+      "default": "జవాబు చూడటానికి అన్ని ఖాళీలను పూరించండి"
     },
     {
       "label": "Text for \"':ans' is correct\" message",
@@ -85,16 +85,16 @@
       "default": "':ans' is wrong"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "default": "Answered correctly",
+      "label": "Text for \"Answered correctly\" message"
     },
     {
       "label": "Text for \"Answered incorrectly\" message",
       "default": "Answered incorrectly"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "default": "Correct answer:",
+      "label": "Assistive technology label for solution"
     },
     {
       "label": "Assistive technology label for input field",
@@ -110,8 +110,6 @@
       "default": "Tip"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
       "fields": [
         {
           "label": "Enable \"Retry\""
@@ -140,17 +138,15 @@
           "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "\"Retry\" చేసినపుడు చేసినపుడు కన్ఫర్మేషన్ డైలాగ్ చూపించు"
         },
         {
           "label": "Accept minor spelling errors",
           "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
-        },
-        {
-          "label": "Keep correct answers when retrying",
-          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
-      ]
+      ],
+      "label": "Behavioural settings.",
+      "description": "These options will let you control how the task behaves."
     },
     {
       "label": "Check confirmation dialog",
@@ -174,7 +170,6 @@
       ]
     },
     {
-      "label": "Retry confirmation dialog",
       "fields": [
         {
           "label": "Header text",
@@ -185,14 +180,15 @@
           "default": "Are you sure you wish to retry ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "default": "Cancel",
+          "label": "Cancel button label"
         },
         {
           "label": "Confirm button label",
           "default": "Confirm"
         }
-      ]
+      ],
+      "label": "Retry confirmation dialog"
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",

@@ -11,7 +11,7 @@
         "label": "Type",
         "options": [
           "H5P.Image 1.1",
-          "H5P.Video 1.5",
+          "H5P.Video 1.6",
           "H5P.Audio 1.5"
         ],
         "optional": true,
@@ -169,6 +169,15 @@
     "name": "checkAnswer",
     "type": "text",
     "default": "Check",
+    "common": true,
+    "optional": true
+  },
+  {
+    "label": "Text for \"Submit\" button",
+    "importance": "low",
+    "name": "submitAnswer",
+    "type": "text",
+    "default": "Submit",
     "common": true,
     "optional": true
   },

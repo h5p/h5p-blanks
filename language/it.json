@@ -23,7 +23,6 @@
       "field": {
         "label": "Linea di testo",
         "placeholder": "Oslo è la capitale della *Norvegia*.",
-        "description": "",
         "important": {
           "description": "<ul><li>Gli spazi vuoti sono aggiunti con un asterisco (*) all'inizio e alla fine della frase corretta.</li> <li>Le risposte alternative sono separate da una barra (/).</li> <li>Si può aggiungere un testo di suggerimento facendolo precedere da due punti (:).</li></ul>",
           "example": "I contenuti H5P possono essere editati usando un *browser/browser web:Qualcosa che usi ogni giorno*."
@@ -49,8 +48,8 @@
               },
               {},
               {
-                "label": "Feedback per un intervallo di punteggio definito",
-                "placeholder": "Compila il feedback"
+                "label": "Feedback for defined score range",
+                "placeholder": "Fill in the feedback"
               }
             ]
           }
@@ -68,6 +67,10 @@
     {
       "label": "Testo per il pulsante \"Verifica\"",
       "default": "Verifica"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Submit"
     },
     {
       "label": "Testo per il messaggio \"Non compilato\"",
