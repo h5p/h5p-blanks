@@ -21,6 +21,9 @@
   box-shadow: 0 0 0.5em 0 #7fb8ff;
   border-color: #7fb8ff;
 }
+.h5p-blanks .h5p-text-input:disabled {
+  opacity: 1;
+}
 .h5p-blanks .h5p-text-input.h5p-not-filled-out {
   background: #fff0f0;
 }
