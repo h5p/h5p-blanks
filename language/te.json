@@ -25,7 +25,7 @@
         "placeholder": "*నార్వే* రాజధాని ఓస్లో .",
         "important": {
           "description": "<ul><li>సరైన పదం/పదబంధం ముందు మరియు వెనుక నక్షత్రం గుర్తు (*)తో ఖాళీలు జోడించబడతాయి.</li><li>ప్రత్యామ్నాయ సమాధానాలు ఫార్వర్డ్ స్లాష్‌తో (/) వేరు చేయబడతాయి.</li><li>మీరు టిప్ కు ముందు కోలన్ (:)ని ఉపయోగించి టెక్స్ట్ టిప్ ను జోడించవచ్చు.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "example": "*browser/web-browser:Something you use every day*ను ఉపయోగించి H5P కంటెంట్ ను ఎడిట్ చేయవచ్చు."
         }
       }
     },
@@ -57,47 +57,47 @@
       "label": "ఓవర్ ఆల్ ఫీడ్ బ్యాక్"
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "\"Show solutions\" బటన్ కొరకై టెక్స్ట్",
+      "default": "జవాబు చూపించు"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "\"Retry\" బటన్ కొరకై టెక్స్ట్",
+      "default": "తిరిగి ప్రయత్నించు /రి ట్రై"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "\"Check\" బటన్ కొరకై టెక్స్ట్",
+      "default": "చెక్/తనిఖీ"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "\"Submit\" బటన్ కొరకై టెక్స్ట్",
+      "default": "సమర్పించు"
     },
     {
       "label": "\"Not filled out\" మెసేజ్ కొరకై టెక్స్ట్",
       "default": "జవాబు చూడటానికి అన్ని ఖాళీలను పూరించండి"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "\"':ans' is correct\" అనే మెసేజ్ కై టెక్స్ట్",
+      "default": "':ans' సరైనది"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "\"':ans' is wrong\" అనే మెసేజ్ కై టెక్స్ట్",
+      "default": "':ans' తప్పు"
     },
     {
-      "default": "Answered correctly",
-      "label": "Text for \"Answered correctly\" message"
+      "default": "సరిగ్గా సమాధానం ఇచ్చారు",
+      "label": "\"Answered correctly\"అనే మెసేజ్ కై టెక్స్ట్"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "\"Answered incorrectly\" మెసేజ్ కై టెక్స్ట్",
+      "default": "తప్పుగా సమాధానం ఇచ్చారు"
     },
     {
-      "default": "Correct answer:",
-      "label": "Assistive technology label for solution"
+      "default": "సరైన సమాధానం:",
+      "label": "సొల్యూషన్ కై  అసిస్టివ్ టెక్నాలజీ  లేబుల్"
     },
     {
-      "label": "Assistive technology label for input field",
+      "label": "ఇన్‌పుట్ ఫీల్డ్ కై అసిస్టివ్ టెక్నాలజీ లేబుల్",
       "description": "Use @num and @total to replace current cloze number and total cloze number",
       "default": "Blank input @num of @total"
     },
