@@ -13,7 +13,7 @@
       ]
     },
     {
-      "label": "Consigne",
+      "label": "Task description",
       "default": "Complétez les blancs.",
       "description": "La consigne indique à l'utilisateur comment faire l'exercice."
     },

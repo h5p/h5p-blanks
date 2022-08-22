@@ -39,7 +39,7 @@
             }
           ],
           "label": "Definujte vlastní zpětnou vazbu pro jakýkoli rozsah skóre",
-          "description": "Klikněte na tlačítko \"Přidat rozsah\" pro přidání tolika rozsahů, kolik potřebujete. Například: 0-20% špatný výsledek, 21-91% průměrný výsledek, 91-100% výborný výsledek!",
+          "description": "Klepnutím na tlačítko \"Přidat rozsah\" přidáte libovolný počet rozsahů. Příklad: 0-20% špatné skóre, 21-91% průměrné skóre, 91-100% výborné skóre!",
           "entity": "rozsah",
           "field": {
             "fields": [
@@ -48,8 +48,8 @@
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Zpětná vazba pro definovaný rozsah skóre",
+                "placeholder": "Vyplňte zpětnou vazbu"
               }
             ]
           }
@@ -69,11 +69,11 @@
       "default": "Zkontrolovat"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Text pro tlačítko \"Odevzdat\"",
+      "default": "Odevzdat"
     },
     {
-      "label": "Text pro zprávu  \"Nevyplněno\" ",
+      "label": "Text pro zprávu \"Nevyplněno\"",
       "default": "Pro zobrazení řešení vyplňte prosím všechny mezery"
     },
     {
