@@ -13,9 +13,9 @@
       ]
     },
     {
-      "label": "Task description",
-      "default": "Complétez les blancs.",
-      "description": "La consigne indique à l'utilisateur comment faire l'exercice."
+      "label": "Description de la tâche",
+      "default": "Complétez les mots manquants",
+      "description": "Un guide expliquant à l'utilisateur comment répondre à cette tâche."
     },
     {
       "label": "Blocs de texte",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "label": "Feedback général",
+      "label": "Retour général",
       "fields": [
         {
           "widgets": [
@@ -48,8 +48,8 @@
               },
               {},
               {
-                "label": "Feedback pour cet intervalle de scores",
-                "placeholder": "Remplissez le feedback"
+                "label": "Retour pour cet intervalle de score",
+                "placeholder": "Entrez le texte de retour"
               }
             ]
           }
@@ -195,20 +195,20 @@
       "default": "Vous avez obtenu :num points sur un total de :points"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Description de la technologie d’assistance pour le bouton \"Vérifier\"",
+      "default": "Vérifiez les réponses. Les réponses seront marquées comme correctes, incorrectes ou sans réponse."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Description de la technologie d’assistance pour le bouton \"Afficher la solution\"",
+      "default": "Montrez la solution. La tâche sera marquée avec sa solution correcte."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Description de la technologie d’assistance pour le bouton \"Recommencer\"",
+      "default": "Réessayez la tâche. Réinitialisez toutes les réponses et recommencez la tâche."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Description de la technologie d’assistance pour commencer la tâche",
+      "default": "Mode de contrôle"
     }
   ]
 }
