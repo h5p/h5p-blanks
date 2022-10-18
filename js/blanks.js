@@ -325,6 +325,21 @@ H5P.Blanks = (function ($, Question) {
 
     // Set input fields.
     this.$questions.find('input').each(function (i) {
+
+      /**
+       * Observe resizing of input field, so that we can resize
+       * the H5P to fit all content when the input field grows in size
+       */
+      let resizeTimer;
+      new ResizeObserver(function () {
+        // To avoid triggering resize too often, we wait a second after the last 
+        // resize event has been received
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          self.trigger('resize');
+        }, 1000);
+      }).observe(this);
+
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {
