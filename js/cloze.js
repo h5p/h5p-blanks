@@ -43,7 +43,7 @@
       for (var i = 0; i < answers.length; i++) {
         // Damerau-Levenshtein comparison
         if (behaviour.acceptSpellingErrors === true) {
-          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i], true);
+          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, H5P.trim(answers[i]), true);
           /*
            * The correctness is temporarily computed by word length and number of number of operations
            * required to change one word into the other (Damerau-Levenshtein). It's subject to
@@ -56,7 +56,7 @@
           }
         }
         // regular comparison
-        if (answered === answers[i]) {
+        if (answered === H5P.trim(answers[i])) {
           return true;
         }
       }
@@ -210,7 +210,7 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      return H5P.trim($input.val());
+      return H5P.trim($input.val().replace(/\&nbsp;/g, ' '));
     };
 
     /**
