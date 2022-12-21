@@ -127,7 +127,7 @@
       $('<span>', {
         'aria-hidden': true,
         'class': 'h5p-correct-answer',
-        text: answer,
+        text: H5P.trim(answer.replace(/\s*\/\s*/g, '/')),
         insertAfter: $wrapper
       });
       $input.attr('disabled', true);
@@ -210,7 +210,14 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      return H5P.trim($input.val().replace(/\&nbsp;/g, ' '));
+      const trimmedAnswer = H5P.trim($input.val().replace(/\&nbsp;/g, ' '));
+      // Set trimmed answer
+      $input.val(trimmedAnswer);
+      if (behaviour.formulaEditor) {
+        // If fomula editor is enabled set trimmed text 
+        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
+      }
+      return trimmedAnswer;
     };
 
     /**
