@@ -14,18 +14,18 @@
     },
     {
       "label": "Užduoties aprašymas",
-      "default": "Fill in the missing words",
+      "default": "Įrašykite praleistus žodžius",
       "description": "Vadovas, nurodantis naudotojui, kaip atsakyti į šią užduotį."
     },
     {
       "label": "Teksto blokai",
       "entity": "teksto blokas",
       "field": {
-        "label": "Line of text",
+        "label": "Tketo eilutė",
         "placeholder": "Oslas yra *Norvegijos* sostinė.",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Tuščios vietos pridedamos su žvaigždute (*) prieš ir už teisingo žodžio / frazės.</li><li>Alternatyvūs atsakymai atskiriami pasviruoju brūkšniu (/).</li><li>Galite pridėti tekstinį patarimą naudodami dvitaškį (:) prieš galiuką.</li></ul>",
+          "example": "H5P turinį galima redaguoti naudojant  *browser/web-browser:Something you use every day*."
         }
       }
     },
@@ -39,7 +39,7 @@
             }
           ],
           "label": "Nustatykite tinkintus atsiliepimus bet kokiam balų intervalui",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "description": "Spustelėkite mygtuką „Pridėti diapazoną“, kad pridėtumėte tiek diapazonų, kiek jums reikia. Pavyzdys: 0–20 % blogas balas, 21–91 % vidutinis balas, 91–100 % puikus rezultatas!",
           "entity": "intervalas",
           "field": {
             "fields": [
@@ -49,7 +49,7 @@
               {},
               {
                 "label": "Atsiliepimai apie apibrėžtą balų intervalą",
-                "placeholder": "Fill in the feedback"
+                "placeholder": "Parašykite atsiliepimą"
               }
             ]
           }
@@ -69,146 +69,146 @@
       "default": "Tikrinti"
     },
     {
-      "label": "Text for \"Submit\" button",
+      "label": "\"Pateikti\" mygtukos tekstas",
       "default": "Pateikti"
     },
     {
-      "label": "Text for \"Not filled out\" message",
+      "label": "Pranešimo \"Neužpildyta\" tekstas",
       "default": "Norėdami pamatyti sprendimą, užpildykite visus tuščius laukus"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
+      "label": "Tekstas pranešimui\"':ans' Teisingai\"",
       "default": "':ans' yra teisinga"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' yra klaidinga"
+      "label": "Tekstas pranešimui \"':ans' Neteisingai\"",
+      "default": "':ans' yra klaidingas"
     },
     {
       "label": "Tekstas pranešimui „Atsakyta teisingai“.",
       "default": "Atsakyta teisingai"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Tekstas pranešimui \"Atsakyta neteisingai\"",
+      "default": "Atsakyta neteisingai"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Pagalbinio patarimo sprendimui pavadinimas",
+      "default": "Teisingas atsakymas:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Pagalbinio patarimo pavadinimo įvedimo laukas",
+      "description": "Naudokite @num ir @total kad pakeisti dabartinį ir bendrą blokavimų skaičių",
+      "default": "Tuščių įvesčių @num iš @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Patarimo pavadinimas, sakantis, kad įvestis turi priedą",
+      "default": "Patarimas galimas"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Patarimo paveikslo pavadinimas",
+      "default": "Patarimas"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Veikimo nustatymai.",
+      "description": "Šios parinktys leis jums valdyti, kaip veikia užduotis.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Įgalinti \"Kartoti\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Įjungti mygtuką \"Rodyti sprendimą\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Įjungti mygtuką \"Įvesti\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Automatiškai tikrinti atsakymus po įvedimo"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Svarbu dydžiosios ir mažosios raidės",
+          "description": "Įsitikina, kad vartotojo įvestis yra lygiai tokia pati kaip atsakymas."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Kad būtų galima peržiūrėti sprendimą, reikalaujama užpildyti visus laukus"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Įvesties laukus sudėkite į atskiras eilutes"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Rodyti dialogą ant \"Tikrinti\"",
+          "description": "Šios parinktys nesuderinamos su parinktimi „Automatiškai tikrinti atsakymus po įvesties“."
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Rodyti patvirtinimo dialogą  \"Kartoti\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Priimkite nedideles rašybos klaidas",
+          "description": "Jei suaktyvinta, atsakymas taip pat bus laikomas teisingu su nedidelėmis rašybos klaidomis (3–9 simboliai: 1 rašybos klaida, daugiau nei 9 simboliai: 2 rašybos klaidos)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Patikrinkite patvirtinimo dialogo langą",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Pavadinimo tekstas",
+          "default": "Baigti ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Pagrindinis tekstas",
+          "default": "Ar tikrai norite užbaigti ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Atšaukti mygtuko pavadinimas",
+          "default": "Atšaukti"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Patvirtinti mygtuko pvadinimas",
+          "default": "Baigti"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Kartojimo patvirtinimo dialogas",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Pavadinimo tekstas",
+          "default": "Kartoti ?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Pagrindinis tekstas",
+          "default": "Ar tikrai norite kartoti ?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Atšaukti mygtuko pavadinimas",
+          "default": "Atšaukti"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Patvirtinti mygtuko pavadinimas",
+          "default": "Patvirtinti"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstinis taškų juostos vaizdavimas tiems, kurie naudoja skaitymo garsiakalbį",
+      "default": "Jūs surinkote :num iš :total balų"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Mygtuko „Patikrinti“ patarimo aprašymas",
+      "default": "Patikrinkite atsakymus. Atsakymai bus pažymėti kaip teisingi, neteisingi arba neatsakyti."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Mygtuko „Rodyti sprendimą“ patarimo aprašymas",
+      "default": "Parodykite sprendimą. Užduotis bus pažymėta teisingu jos sprendimu."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Patarimo aprašymas mygtukui „Pakartoti“.",
+      "default": "Pabandykite atlikti užduotį dar kartą. Iš naujo nustatykite visus atsakymus ir pradėkite užduotį iš naujo."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Patarimo aprašymas pradedant užduotį",
+      "default": "Patikrinimo  režimas"
     }
   ]
 }
