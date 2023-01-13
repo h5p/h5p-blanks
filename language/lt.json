@@ -1,0 +1,214 @@
+{
+  "semantics": [
+    {
+      "label": "Medija",
+      "fields": [
+        {
+          "label": "Tipas",
+          "description": "Pasirenkama medija, rodoma virš klausimo."
+        },
+        {
+          "label": "Išjungti paveikslėlio mastelio keitimą"
+        }
+      ]
+    },
+    {
+      "label": "Užduoties aprašymas",
+      "default": "Fill in the missing words",
+      "description": "Vadovas, nurodantis naudotojui, kaip atsakyti į šią užduotį."
+    },
+    {
+      "label": "Teksto blokai",
+      "entity": "teksto blokas",
+      "field": {
+        "label": "Line of text",
+        "placeholder": "Oslas yra *Norvegijos* sostinė.",
+        "important": {
+          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+        }
+      }
+    },
+    {
+      "label": "Bendras atsiliepimas",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "label": "Numatytasis"
+            }
+          ],
+          "label": "Nustatykite tinkintus atsiliepimus bet kokiam balų intervalui",
+          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity": "intervalas",
+          "field": {
+            "fields": [
+              {
+                "label": "Balų intervalas"
+              },
+              {},
+              {
+                "label": "Atsiliepimai apie apibrėžtą balų intervalą",
+                "placeholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Mygtuko „Rodyti sprendimą“ tekstas",
+      "default": "Rodyti sprendimą"
+    },
+    {
+      "label": "Tekstas mygtukui „Bandyti dar kartą“",
+      "default": "Bandyti dar kartą"
+    },
+    {
+      "label": "Tekstas „Tikrinti“ mygtukui",
+      "default": "Tikrinti"
+    },
+    {
+      "label": "Text for \"Submit\" button",
+      "default": "Pateikti"
+    },
+    {
+      "label": "Text for \"Not filled out\" message",
+      "default": "Norėdami pamatyti sprendimą, užpildykite visus tuščius laukus"
+    },
+    {
+      "label": "Text for \"':ans' is correct\" message",
+      "default": "':ans' yra teisinga"
+    },
+    {
+      "label": "Text for \"':ans' is wrong\" message",
+      "default": "':ans' yra klaidinga"
+    },
+    {
+      "label": "Tekstas pranešimui „Atsakyta teisingai“.",
+      "default": "Atsakyta teisingai"
+    },
+    {
+      "label": "Text for \"Answered incorrectly\" message",
+      "default": "Answered incorrectly"
+    },
+    {
+      "label": "Assistive technology label for solution",
+      "default": "Correct answer:"
+    },
+    {
+      "label": "Assistive technology label for input field",
+      "description": "Use @num and @total to replace current cloze number and total cloze number",
+      "default": "Blank input @num of @total"
+    },
+    {
+      "label": "Assistive technology label for saying an input has a tip tied to it",
+      "default": "Tip available"
+    },
+    {
+      "label": "Tip icon label",
+      "default": "Tip"
+    },
+    {
+      "label": "Behavioural settings.",
+      "description": "These options will let you control how the task behaves.",
+      "fields": [
+        {
+          "label": "Enable \"Retry\""
+        },
+        {
+          "label": "Enable \"Show solution\" button"
+        },
+        {
+          "label": "Enable \"Check\" button"
+        },
+        {
+          "label": "Automatically check answers after input"
+        },
+        {
+          "label": "Case sensitive",
+          "description": "Makes sure the user input has to be exactly the same as the answer."
+        },
+        {
+          "label": "Require all fields to be answered before the solution can be viewed"
+        },
+        {
+          "label": "Put input fields on separate lines"
+        },
+        {
+          "label": "Show confirmation dialog on \"Check\"",
+          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+        },
+        {
+          "label": "Show confirmation dialog on \"Retry\""
+        },
+        {
+          "label": "Accept minor spelling errors",
+          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+        }
+      ]
+    },
+    {
+      "label": "Check confirmation dialog",
+      "fields": [
+        {
+          "label": "Header text",
+          "default": "Finish ?"
+        },
+        {
+          "label": "Body text",
+          "default": "Are you sure you wish to finish ?"
+        },
+        {
+          "label": "Cancel button label",
+          "default": "Cancel"
+        },
+        {
+          "label": "Confirm button label",
+          "default": "Finish"
+        }
+      ]
+    },
+    {
+      "label": "Retry confirmation dialog",
+      "fields": [
+        {
+          "label": "Header text",
+          "default": "Retry ?"
+        },
+        {
+          "label": "Body text",
+          "default": "Are you sure you wish to retry ?"
+        },
+        {
+          "label": "Cancel button label",
+          "default": "Cancel"
+        },
+        {
+          "label": "Confirm button label",
+          "default": "Confirm"
+        }
+      ]
+    },
+    {
+      "label": "Textual representation of the score bar for those using a readspeaker",
+      "default": "You got :num out of :total points"
+    },
+    {
+      "label": "Assistive technology description for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology description for \"Show Solution\" button",
+      "default": "Show the solution. The task will be marked with its correct solution."
+    },
+    {
+      "label": "Assistive technology description for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
+    },
+    {
+      "label": "Assistive technology description for starting task",
+      "default": "Checking mode"
+    }
+  ]
+}
