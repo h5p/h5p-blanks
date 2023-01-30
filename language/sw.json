@@ -1,55 +1,55 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Vyombo vya habari",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Aina",
+          "description": "Vyombo vya habari vya hiari vya kuonyesha juu ya swali."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Zima ukuzaji wa picha"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Maelezo ya kazi",
+      "default": "Jaza maneno yanayokosekana",
+      "description": "Mwongozo unaomwambia mtumiaji jinsi ya kujibu kazi hii."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Vizuizi vya maandishi",
+      "entity": "kizuizi cha maandishi",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Mstari wa maandishi",
+        "placeholder": "Oslo ni mji mkuu wa *Norway*.",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Nafasi tupu zimeongezwa kwa kinyota (*) mbele na nyuma ya neno/kifungu cha maneno sahihi.</li><li>Majibu mbadala yanatenganishwa kwa mkwaju mbele (/).</li><li>Unaweza kuongeza kidokezo cha maandishi, kwa kutumia koloni (:) mbele ya kidokezo.</li></ul>",
+          "example": "Maudhui ya H5P yanaweza kuhaririwa kwa kutumia *kivinjari/kivinjari-wavuti: Kitu unachotumia kila siku*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Maoni ya Jumla",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Chaguo-msingi"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Bainisha maoni maalum kwa masafa yoyote ya alama",
+          "description": "Bofya kitufe cha \"Ongeza masafa\" ili kuongeza masafa mengi unavyohitaji. Mfano: 0-20% Alama mbaya, 21-91% Alama ya Wastani, 91-100% Alama Nzuri!",
+          "entity": "masafa",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Masafa ya Alama"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Maoni kwa masafa ya alama yaliyofafanuliwa",
+                "placeholder": "Jaza maoni"
               }
             ]
           }
@@ -57,158 +57,158 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Maandishi ya kitufe cha \"Onyesha suluhisho\"",
+      "default": "Onyesha suluhisho"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Maandishi kwa kitufe cha \"Jaribu tena\"",
+      "default": "Jaribu tena"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Maandishi ya kitufe cha \"Weka alama\"",
+      "default": "Weka alama"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Maandishi ya kitufe cha \"Wasilisha\"",
+      "default": "Wasilisha"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Maandishi ya ujumbe \"Haujajazwa\"",
+      "default": "Tafadhali jaza sehemu zote zilizoachwa wazi ili kuona suluhisho"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Maandishi ya ujumbe wa ‘jibu' ni sahihi",
+      "default": "'jibu' ni sahihi"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Maandishi ya ujumbe wa ‘jibu' ni sahihi",
+      "default": "': jibu (ans)' siyo sahihi"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Maandishi ya ujumbe \"Imejibiwa kwa usahihi\"",
+      "default": "Imejibiwa kwa usahihi"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Maandishi ya ujumbe \"Imejibiwa kwa usahihi\"",
+      "default": "Imejibiwa isivyo sahihi"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Lebo ya teknolojia ya usaidizi kwa kitufe cha suluhisho",
+      "default": "Jibu ni sahihi:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Lebo ya teknolojia ya usaidizi kwa kitufe cha sehemu ya ingizo",
+      "description": "Tumia@num na@total kubadilisha nambari ya sasa ya kufungwa na nambari ya jumla ya kufungwa",
+      "default": "Ingizo tupu@numkati ya@total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Lebo ya teknolojia ya usaidizi kwa kusema ingizo lina kidokezo kilichounganishwa nalo",
+      "default": "Kidokezo kinapatikana"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Lebo ya ikoni ya kidokezo",
+      "default": "Kidokezo"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Mipangilio ya tabia.",
+      "description": "Chaguzi hizi zitakuwezesha kudhibiti jinsi kazi inavyofanya.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Wezesha \"Jaribu tena\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Wezesha kitufe cha \"Onyesha suluhisho\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Wezesha kitufe cha \"Weka alama\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Angalia majibu kiotomatiki baada ya kuingiza"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Kesi nyeti",
+          "description": "Huhakikisha kuwa ingizo la mtumiaji lazima lifanane kabisa na jibu."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Inahitaji sehemu zote kujibiwa kabla ya njia kutazamwa"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Weka sehemu za ingizo kwenye mistari tofauti"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Onyesha mazungumzo ya uthibitisho kwenye \"Weka alama\"",
+          "description": "Chaguo hili halioani na chaguo la \"Weka alama majibu kiotomatiki baada ya chaguo la kuingiza\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Onyesha mazungumzo ya uthibitisho kwenye \"Jaribu tena\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Kubali makosa madogo ya tahajia",
+          "description": "Ikiwashwa, jibu pia litahesabiwa kuwa sahihi pamoja na makosa madogo ya tahajia (herufi 3-9: Kosa 1, zaidi ya herufi 9: Makosa 2 ya tahajia)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Weka alama mazungumzo ya uthibitisho",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Maandishi ya kichwa",
+          "default": "Maliza?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Maandishi ya kiini",
+          "default": "Una uhakika unataka kumaliza?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ghairi lebo ya kitufe",
+          "default": "Ghairi"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Lebo ya kitufe cha kuthibitisha",
+          "default": "Maliza"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Jaribu tena mazungumzo ya uthibitisho",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Maandishi ya kichwa",
+          "default": "Jaribu tena?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Maandishi ya kiini",
+          "default": "Una uhakika unataka kujaribu tena?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Ghairi lebo ya kitufe",
+          "default": "Ghairi"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Lebo ya kitufe cha kuthibitisha",
+          "default": "Thibitisha"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Uwakilishi wa maandishi wa upau wa alama kwa wale wanaotumia kisoma maandishi",
+      "default": "Umepata :num kati ya alama:total"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Weka alama\"",
+      "default": "Weka alama majibu. Majibu yatatiwa alama kuwa sahihi, siyo sahihi au haijajibiwa."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Onyesha Suluhisho\"",
+      "default": "Onyesha suluhisho hilo. Kazi hiyo itawekwa alama na suluhisho lake sahihi."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Jaribu tena\"",
+      "default": "Jaribu tena kazi hiyo. Weka upya majibu yote na uanze kazi tena."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Maelezo ya teknolojia saidizi kwa kitufe cha ‘Kuanza kazi",
+      "default": "Njia ya kuweka alama"
     }
   ]
 }

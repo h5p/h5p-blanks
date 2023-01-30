@@ -1,19 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Mídia",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Tipo",
+          "description": "Mídia opcional para exibir acima da pergunta."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Desactivar o zoom da imagem"
         }
       ]
     },
     {
-      "label": "Task description",
+      "label": "Descrição da tarefa",
       "default": "Preencha as palavras em falta",
       "description": "Um guia que informa o utilizador como completar a atividade."
     },
