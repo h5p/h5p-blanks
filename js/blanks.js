@@ -214,7 +214,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
-      self.showCorrectAnswers(false);
+      self.showCorrectAnswers(false, true);
     }, self.params.behaviour.enableSolutionsButton, {
       'aria-label': self.params.a11yShowSolution,
     });
@@ -566,17 +566,22 @@ H5P.Blanks = (function ($, Question) {
 
 
   /**
-   * Displays the correct answers
-   * @param {boolean} [alwaysShowSolution]
-   *  Will always show solution if true
+   * Displays the correct answers.
+   *
+   * @param {boolean} [alwaysShowSolution] Will always show solution if true.
+   * @param {boolean} [focusFirstAnswer] If true, focus first answer.
    */
-  Blanks.prototype.showCorrectAnswers = function (alwaysShowSolution) {
+  Blanks.prototype.showCorrectAnswers = function (alwaysShowSolution, focusFirstAnswer) {
     if (!alwaysShowSolution && !this.allowSolution()) {
       return;
     }
 
     this.toggleButtonVisibility(STATE_SHOWING_SOLUTION);
     this.hideSolutions();
+
+    if (focusFirstAnswer) {
+      this.$questions.filter(':first').find('input:first').focus();
+    }
 
     for (var i = 0; i < this.clozes.length; i++) {
       this.clozes[i].showSolution();
@@ -935,9 +940,13 @@ H5P.Blanks = (function ($, Question) {
   /**
    * Disables any active input. Useful for freezing the task and dis-allowing
    * modification of wrong answers.
+   *
+   * Not used here, but may be used by other content types, currently IV only.
    */
   Blanks.prototype.disableInput = function () {
-    this.$questions.find('input').attr('disabled', true);
+    this.clozes.forEach((cloze) => {
+      cloze.disableInput();
+    });
   };
 
   Blanks.idCounter = 0;
