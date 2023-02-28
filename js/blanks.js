@@ -196,14 +196,8 @@ H5P.Blanks = (function ($, Question) {
     if (!self.params.behaviour.autoCheck && this.params.behaviour.enableCheckButton) {
       // Check answer button
       self.addButton('check-answer', self.params.checkAnswer, function () {
-        // Move focus to top of content
-        self.a11yHeader.innerHTML = self.params.a11yHeader;
-        self.a11yHeader.focus();
-
-        self.toggleButtonVisibility(STATE_CHECKING);
         self.markResults();
-        self.showEvaluation();
-        self.triggerAnswered();
+        self.handleCheckAnswer({ focusFirstAnswer: true });
       }, true, {
         'aria-label': self.params.a11yCheck,
       }, {
@@ -228,7 +222,6 @@ H5P.Blanks = (function ($, Question) {
     // Try again button
     if (self.params.behaviour.enableRetry === true) {
       self.addButton('try-again', self.params.tryAgain, function () {
-        self.a11yHeader.innerHTML = '';
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
       }, true, {
@@ -244,6 +237,26 @@ H5P.Blanks = (function ($, Question) {
     }
     self.toggleButtonVisibility(STATE_ONGOING);
   };
+
+  /**
+   * Handle checking answer.
+   *
+   * @param {object} [params={}] Parameters.
+   * @param {boolean} [params.focusFirstAnswer] If true, focus first answer.
+   */
+  Blanks.prototype.handleCheckAnswer = function(params={}) {
+    this.toggleButtonVisibility(STATE_CHECKING);
+    this.showEvaluation();
+    this.triggerAnswered();
+
+    if (params.focusFirstAnswer) {
+      this.read(this.params.a11yHeader); // Announce 'checking mode'
+
+      window.setTimeout(() => {
+        this.$questions.filter(':first').find('input:first').focus();
+      }, 1); // Read 'checking mode' before announcing focus of first answer
+    }
+  }
 
   /**
    * Find blanks in a string and run a handler on those blanks
@@ -318,11 +331,6 @@ H5P.Blanks = (function ($, Question) {
     self.hasClozes = clozeNumber > 0;
     this.$questions = $(html);
 
-    self.a11yHeader = document.createElement('div');
-    self.a11yHeader.classList.add('hidden-but-read');
-    self.a11yHeader.tabIndex = -1;
-    self.$questions[0].insertBefore(self.a11yHeader, this.$questions[0].childNodes[0] || null);
-
     // Set input fields.
     this.$questions.find('input').each(function (i) {
 
@@ -346,10 +354,7 @@ H5P.Blanks = (function ($, Question) {
           var answer = $("<div>").text(this.getUserAnswer()).html();
           self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', answer));
           if (self.done || self.allBlanksFilledOut()) {
-            // All answers has been given. Show solutions button.
-            self.toggleButtonVisibility(STATE_CHECKING);
-            self.showEvaluation();
-            self.triggerAnswered();
+            self.handleCheckAnswer();
             self.done = true;
           }
         };
