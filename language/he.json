@@ -69,8 +69,8 @@
       "default": "בדיקה"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "מלל לכפתור \"הגשה\"",
+      "default": "הגשה"
     },
     {
       "label": "טקסט עבור הודעת \"לא התמלא\"",
@@ -102,7 +102,7 @@
       "default": "קלט ריק @num מתוך @total"
     },
     {
-      "label": "תווית טכנולוגיה מסייעת כדי להגיד שצמוד לקלט רמז",
+      "label": "תווית טכנולוגיה מסייעת כדי להגיד שצמוד רמז לקלט",
       "default": "רמז זמין"
     },
     {
@@ -136,7 +136,7 @@
           "label": "מיקום שדות ההזנה בשורות נפרדות"
         },
         {
-          "label": "הציגו תיבת דו-שיח  בסימון \"נבחר\"",
+          "label": "הציגו תיבת דו-שיח בסימון \"נבחר\"",
           "description": "This options is not compatible with the \"Automatically check answers after input\" option"
         },
         {
