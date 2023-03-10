@@ -94,121 +94,121 @@
     },
     {
       "default": "సరైన సమాధానం:",
-      "label": "సొల్యూషన్ కై  అసిస్టివ్ టెక్నాలజీ  లేబుల్"
+      "label": "సొల్యూషన్ కై అసిస్టివ్ టెక్నాలజీ లేబుల్"
     },
     {
       "label": "ఇన్‌పుట్ ఫీల్డ్ కై అసిస్టివ్ టెక్నాలజీ లేబుల్",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "description": "ప్రస్తుత క్లోజ్ నంబర్ మరియు మొత్తం క్లోజ్ నంబర్‌ను భర్తీ చేయడానికి @num మరియు @total ఉపయోగించండి",
+      "default": "@మొత్తం యొక్క @num ఖాళీ ఇన్‌పుట్"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "ఇన్‌పుట్‌కి చిట్కా ముడిపడి ఉందని చెప్పడానికి అసిస్టివ్ టెక్నాలజీ లేబుల్",
+      "default": "చిట్కా ఉంది"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "టిప్ ఐకాన్ లేబుల్",
+      "default": "టిక్ / చిట్కా"
     },
     {
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "\"Retry\" ను ఎనేబుల్ చెయ్యి"
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "\"సమాధానాలు చూపించు\" బటన్ ఎనేబుల్ చెయ్యి"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "\"Check\" బటన్ ను ఎనేబుల్ చెయ్యి"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "ఇన్‌పుట్ తర్వాత సమాధానాలను ఆటోమేటిక్ గా తనిఖీ చేయండి"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "కేస్ సెన్సిటివ్",
+          "description": "యూజర్ ఇన్‌పుట్ సరిగ్గా సమాధానం తో సరిపోలేలా చూస్తుంది."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "జవాబును వీక్షించే ముందు అన్ని ఫీల్డ్‌లకు సమాధానం ఇవ్వాలి"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "ఇన్‌పుట్ ఫీల్డ్‌లను ప్రత్యేక పంక్తులలో ఉంచండి"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "\"Check\"  చేసినపుడు కన్ఫర్మేషన్ డైలాగ్  చూపించు",
+          "description": "\"Automatically check answers after input\" ఆప్షన్ ఈ ఎంపికకు అనుకూలంగా లేదు"
         },
         {
-          "label": "\"Retry\" చేసినపుడు చేసినపుడు కన్ఫర్మేషన్ డైలాగ్ చూపించు"
+          "label": "\"Retry\" చేసినపుడు కన్ఫర్మేషన్ డైలాగ్ చూపించు"
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "చిన్న స్పెల్లింగ్ లోపాలను అంగీకరించండి",
+          "description": "యాక్టివేట్ చేయబడితే, చిన్న స్పెల్లింగ్ లోపాలతో కూడా సమాధానం సరైనదిగా పరిగణించబడుతుంది (3-9 అక్షరాలు: 1 స్పెల్లింగ్ లోపం, 9 కంటే ఎక్కువ అక్షరాలు: 2 స్పెల్లింగ్ లోపాలు)"
         }
       ],
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves."
+      "label": "బిహేవియరల్ సెట్టింగ్ లు",
+      "description": "ఇవి టాస్క్ ఎలా ప్రవర్తించాలో నియంత్రించడానికి పనికొచ్చే ఆప్షన్లు ."
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "కన్ఫర్మేషన్  డైలాగ్‌ని చెక్  చేయండి",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "హెడర్ టెక్స్ట్",
+          "default": "పూర్తి అయ్యిందా?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "బాడీ టెక్స్ట్",
+          "default": "మీరు ఖచ్చితంగా పూర్తి చేయాలనుకుంటున్నారా?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "కేన్సిల్ బటన్ లేబుల్",
+          "default": "కేన్సిల్"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "కన్ఫర్మ్ బటన్ లేబుల్",
+          "default": "ముగించు / పూర్తిచేయు"
         }
       ]
     },
     {
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "హెడర్ టెక్స్ట్",
+          "default": "మళ్లీ ప్రయత్నించాలా?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "బాడీ టెక్స్ట్",
+          "default": "ఖచ్చితంగా  మీరు  మళ్లీ ప్రయత్నించాలనుకుంటున్నారా?"
         },
         {
-          "default": "Cancel",
-          "label": "Cancel button label"
+          "default": "కేన్సిల్",
+          "label": "కేన్సిల్ బటన్ లేబుల్"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "కన్ఫర్మ్ బటన్ లేబుల్",
+          "default": "నిర్ధారించండి  / కన్ఫర్మ్ చెయ్యండి"
         }
       ],
-      "label": "Retry confirmation dialog"
+      "label": "కన్ఫర్మేషన్ డైలాగ్ కై తిరిగి  ప్రయత్నించు"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "రీడ్‌స్పీకర్‌ని ఉపయోగించే వారి కోసం స్కోర్ బార్ యొక్క టెక్స్టువల్ రిప్రెజెంటేషన్",
+      "default": "మీరు మొత్తం పాయింట్లలో :total points పొందారు"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "\"Check\" బటన్ కై అసిస్టివ్ టెక్నాలజీ వివరణ",
+      "default": "సమాధానాలను తనిఖీ చేయండి. సమాధానాలు సరైనవి, తప్పు లేదా సమాధానం ఇవ్వనివిగా గుర్తించబడతాయి."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "\"Show Solution\" బటన్ కై అసిస్టివ్ టెక్నాలజీ వివరణ",
+      "default": "సమాధానం చూపండి. టాస్క్ సరైన సమాధానం తో చూపడుతుంది."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "\"Retry\" బటన్ కై అసిస్టివ్ టెక్నాలజీ వివరణ",
+      "default": "టాస్క్ ను మళ్లీ ప్రయత్నించండి. అన్ని సమాధానాలను రీసెట్ చేసి, టాస్క్ మళ్లీ ప్రారంభించు."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "టాస్క్ ప్రారంభించడానికై అసిస్టివ్ టెక్నాలజీ వివరణ",
+      "default": "తనిఖీ మోడ్"
     }
   ]
 }
