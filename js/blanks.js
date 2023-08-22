@@ -120,7 +120,7 @@ H5P.Blanks = (function ($, Question) {
     });
 
     // Using instructions as label for our text groups
-    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
+    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter + '-' + H5P.createUUID();
     this.content = self.createQuestions();
 
     // Check for task media
