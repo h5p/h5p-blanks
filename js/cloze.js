@@ -78,6 +78,8 @@
      * Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
+      this.trimUserInputField();
+
       checkedAnswer = this.getUserAnswer();
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
@@ -123,6 +125,8 @@
       if (correct(this.getUserAnswer())) {
         return; // Only for the wrong ones
       }
+
+      this.trimUserInputField();
 
       $('<span>', {
         'aria-hidden': true,
@@ -210,14 +214,14 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      const trimmedAnswer = $input.val().replace(/\&nbsp;/g, ' ').trim();
-      // Set trimmed answer
-      $input.val(trimmedAnswer);
-      if (behaviour.formulaEditor) {
-        // If fomula editor is enabled set trimmed text
-        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
-      }
-      return trimmedAnswer;
+      return $input.val().replace(/\&nbsp;/g, ' ').trim();
+    };
+
+    /**
+     * Trim text in user input field.
+     */
+    this.trimUserInputField = function () {
+      this.setUserInput(this.getUserAnswer());
     };
 
     /**
@@ -225,6 +229,11 @@
      */
     this.setUserInput = function (text) {
       $input.val(text);
+
+      if (behaviour.formulaEditor) {
+        // If fomula editor is enabled set trimmed text
+        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
+      }
     };
 
     /**
