@@ -745,7 +745,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
-      solutions[i] = H5P.trim(solutions[i]);
+      solutions[i] = solutions[i].trim();
 
       //decodes html entities
       var elem = document.createElement('textarea');
