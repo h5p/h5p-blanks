@@ -214,7 +214,7 @@
       // Set trimmed answer
       $input.val(trimmedAnswer);
       if (behaviour.formulaEditor) {
-        // If fomula editor is enabled set trimmed text 
+        // If fomula editor is enabled set trimmed text
         $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
       }
       return trimmedAnswer;

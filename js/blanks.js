@@ -334,7 +334,7 @@ H5P.Blanks = (function ($, Question) {
        */
       let resizeTimer;
       new ResizeObserver(function () {
-        // To avoid triggering resize too often, we wait a second after the last 
+        // To avoid triggering resize too often, we wait a second after the last
         // resize event has been received
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
