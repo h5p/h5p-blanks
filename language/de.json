@@ -111,7 +111,7 @@
     },
     {
       "label": "Verhaltenseinstellungen",
-      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
+      "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
           "label": "\"Wiederholen\" zulassen"
@@ -127,7 +127,7 @@
         },
         {
           "label": "Auf Groß-/Kleinschreibung achten",
-          "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entspricht."
+          "description": "Stellt sicher, dass die Lösung exakt der Vorgabe entsprechen muss."
         },
         {
           "label": "Alle Lücken müssen ausgefüllt sein, bevor die Lösung angesehen werden kann."
