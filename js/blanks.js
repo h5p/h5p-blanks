@@ -121,7 +121,7 @@ H5P.Blanks = (function ($, Question) {
     });
 
     // Using instructions as label for our text groups
-    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
+    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter + '-' + H5P.createUUID();
     this.content = self.createQuestions();
 
     // Check for task media
@@ -135,7 +135,9 @@ H5P.Blanks = (function ($, Question) {
           self.setImage(media.params.file.path, {
             disableImageZooming: self.params.media.disableImageZooming || false,
             alt: media.params.alt,
-            title: media.params.title
+            title: media.params.title,
+            expandImage: media.params.expandImage,
+            minimizeImage: media.params.minimizeImage
           });
         }
       }
@@ -326,6 +328,21 @@ H5P.Blanks = (function ($, Question) {
 
     // Set input fields.
     this.$questions.find('input').each(function (i) {
+
+      /**
+       * Observe resizing of input field, so that we can resize
+       * the H5P to fit all content when the input field grows in size
+       */
+      let resizeTimer;
+      new ResizeObserver(function () {
+        // To avoid triggering resize too often, we wait a second after the last 
+        // resize event has been received
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          self.trigger('resize');
+        }, 1000);
+      }).observe(this);
+
       var afterCheck;
       if (self.params.behaviour.autoCheck) {
         afterCheck = function () {

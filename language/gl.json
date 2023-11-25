@@ -15,7 +15,7 @@
     {
       "label": "Descrición da tarefa",
       "default": "Completa as palabras que faltan",
-      "description": "Unha guía que lle di ao ususario como contestar a tarefa."
+      "description": "Unha guía que lle di ao usuario como contestar a tarefa."
     },
     {
       "label": "Bloques de texto",
@@ -24,7 +24,7 @@
         "label": "Liña de texto",
         "placeholder": "Oslo é a capital de *Noruega*.",
         "important": {
-          "description": "<ul><li>Os ocos engádense cun asterísco (*) diante e detrás da palabra/frase correcta.</li><li>As respostas alternativas sepáranse cunha barra (/).</li><li>Podes engadir un texto de axuda usando dous puntos (:) diante del.</li></ul>",
+          "description": "<ul><li>Os ocos engádense cun asterisco (*) diante e detrás da palabra/frase correcta.</li><li>As respostas alternativas sepáranse cunha barra (/).</li><li>Podes engadir un texto de axuda usando dous puntos (:) diante del.</li></ul>",
           "example": "O contido H5P pódese editar usando un *navegador/navegador web:Algo que usas todos os días*."
         }
       }
@@ -61,8 +61,8 @@
       "default": "Amosar solución"
     },
     {
-      "label": "Texto para o botón \"Reintentar\"",
-      "default": "Reintentar"
+      "label": "Texto para o botón \"Tentar de novo\"",
+      "default": "Tentar de novo"
     },
     {
       "label": "Texto para o botón \"Comprobar\"",
@@ -70,7 +70,7 @@
     },
     {
       "label": "Texto para o botón \"Enviar\"",
-      "default": "Submit"
+      "default": "Enviar"
     },
     {
       "label": "Texto para a mensaxe \"Non completado\"",
@@ -90,7 +90,7 @@
     },
     {
       "label": "Texto para a mensaxe \"Contestado incorrectamente\"",
-      "default": "Contestado incorretamente"
+      "default": "Contestado incorrectamente"
     },
     {
       "label": "Etiqueta das tecnoloxías de asistencia para a solución",
@@ -98,7 +98,7 @@
     },
     {
       "label": "Etiqueta das tecnoloxías de asistencia para o campo de entrada",
-      "description": "Usa @num e @total para substituir o número de oco actual e o número total de ocos",
+      "description": "Usa @num e @total para substituír o número de oco actual e o número total de ocos",
       "default": "Oco @num de @total"
     },
     {
@@ -114,7 +114,7 @@
       "description": "Estas opcións permitiranche controlar o comportamento da tarefa.",
       "fields": [
         {
-          "label": "Activar \"Reintentar\""
+          "label": "Activar \"Tentar de novo\""
         },
         {
           "label": "Activar botón \"Amosar solución\""
@@ -137,14 +137,14 @@
         },
         {
           "label": "Amosar diálogo de confirmación para \"Comprobar\"",
-          "description": "Esta opción non é compatible coa opción \"Comprobar as respostas automáticamente despois da entrada de texto\""
+          "description": "Esta opción non é compatible coa opción \"Comprobar as respostas automaticamente despois da entrada de texto\""
         },
         {
-          "label": "Amosar diálogo de confirmación para \"Reintentar\""
+          "label": "Amosar diálogo de confirmación para \"Tentar de novo\""
         },
         {
           "label": "Aceptar erros ortográficos menores",
-          "description": "Se está activada, unha resposta contará como válida se contén erros ortográficos menores (3-9 caracteres: 1 erro ortogáfico, máis de 9 caracteres: 2 erros ortográficos)"
+          "description": "Se está activada, unha resposta contará como válida se contén erros ortográficos menores (3-9 caracteres: 1 erro ortográfico, máis de 9 caracteres: 2 erros ortográficos)"
         },
         {
           "label": "Keep correct answers when retrying",
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "label": "Diáologo de confirmación para a comprobación",
+      "label": "Diálogo de confirmación para a comprobación",
       "fields": [
         {
           "label": "Texto da cabeceira",
@@ -174,15 +174,15 @@
       ]
     },
     {
-      "label": "Diálogo de confirmación para o reintento",
+      "label": "Diálogo de confirmación para tentar de novo",
       "fields": [
         {
           "label": "Texto da cabeceira",
-          "default": "Reintentar ?"
+          "default": "Tentar de novo?"
         },
         {
           "label": "Texto do corpo",
-          "default": "Estás seguro de que queres reintentar ?"
+          "default": "Estás seguro de que queres tentalo de novo?"
         },
         {
           "label": "Etiqueta do botón Cancelar",
@@ -204,11 +204,11 @@
     },
     {
       "label": "Descrición para as tecnoloxías de asistencia do botón \"Amosar solución\"",
-      "default": "Amosar a solución. Marcarese a tarefa coa resposta correcta."
+      "default": "Amosar a solución. Marcarase a tarefa coa resposta correcta."
     },
     {
-      "label": "Descrición para as tecnoloxías de asistencia do botón \"Reintentar\"",
-      "default": "Reintentar a tarefa. Borrar todas as respostas e empezar a tarefa de novo."
+      "label": "Descrición para as tecnoloxías de asistencia do botón \"Tentar de novo\"",
+      "default": "Tenta de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
     },
     {
       "label": "Descrición para as tecnoloxías de asistencia para empezar a tarefa",

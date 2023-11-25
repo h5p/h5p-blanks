@@ -5,24 +5,24 @@
       "fields": [
         {
           "label": "Type",
-          "description": "Optional media to display above the question."
+          "description": "Valgfrit medie der vises over spørgsmålet."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Slå zoom på billeder fra."
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Beskrive af opgaven",
+      "default": "Indsæt de manglende ord",
+      "description": "En guide der fortæller brugeren hvordan han svarer på opgaven."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Tekst blokke",
+      "entity": "tekst blokke",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "En linje tekst",
+        "placeholder": "Osla er hovedstaden i *Norge*.",
         "important": {
           "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
           "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
@@ -57,44 +57,44 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Text for \"Vis løsningen\" button",
+      "default": "Vis løsningen"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Teksten til \"Prøv igen\" knappen",
+      "default": "Prøv igen"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Teksten til \"Tjek\" knappen",
+      "default": "Tjek"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Teksten til \"Aflever\" knappen",
+      "default": "Aflever"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Teksten til \"Ikke udfyldt\" beskeden",
+      "default": "Udfyld venligs alle de tomme felter for at se svaret."
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Teksten til  \"':ans' er rigtig(e)\" beskeden",
+      "default": "':ans' er rigtig(e)"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Teksten til \"':ans' er forkert(e)\" beskeden",
+      "default": "':ans' er forkert(e)"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Teksten til \"Svaret er rigtigt\" beskeden",
+      "default": "Svaret er rigtigt"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
+      "label": "Teksten til \"Svaret er forkert\" message",
       "default": "Answered incorrectly"
     },
     {
       "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "default": "Rigtigt svar:"
     },
     {
       "label": "Assistive technology label for input field",
@@ -114,16 +114,16 @@
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Enable \"Prøv igen\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Enable \"Vis løsningen\" button"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Enable \"Tjek\" button"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Tjek automatisk svaret efter input"
         },
         {
           "label": "Case sensitive",
@@ -157,19 +157,19 @@
       "fields": [
         {
           "label": "Header text",
-          "default": "Finish ?"
+          "default": "Færdig ?"
         },
         {
           "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "default": "Er du sikker på at du vil afslutte?"
         },
         {
           "label": "Cancel button label",
-          "default": "Cancel"
+          "default": "Fortryd"
         },
         {
           "label": "Confirm button label",
-          "default": "Finish"
+          "default": "Færdig"
         }
       ]
     },
@@ -178,19 +178,19 @@
       "fields": [
         {
           "label": "Header text",
-          "default": "Retry ?"
+          "default": "Prøv igen?"
         },
         {
           "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "default": "Er du sikker på at du vil prøve igen?"
         },
         {
           "label": "Cancel button label",
-          "default": "Cancel"
+          "default": "Fortryd"
         },
         {
           "label": "Confirm button label",
-          "default": "Confirm"
+          "default": "Bekræft"
         }
       ]
     },
