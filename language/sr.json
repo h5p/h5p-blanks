@@ -145,6 +145,10 @@
         {
           "label": "Прихватите мање правописне грешке",
           "description": "Ако се активира, одговор ће се такође сматрати тачним са мањим правописним грешкама (3-9 карактера: 1 правописна грешка, више од 9 карактера: 2 правописне грешке)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

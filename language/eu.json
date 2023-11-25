@@ -145,6 +145,10 @@
         {
           "label": "Onartu ortografia akats txikiak",
           "description": "Gaitua badago erantzuna zuzentzat hartuko da baldin badu ortografia akats txikiak (3-9 karaktere bitartean: akats 1 , 9 karaktere baino gehiago: 2 akats)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

@@ -145,6 +145,10 @@
         {
           "label": "Позволять незначительные орфографические ошибки",
           "description": "Если активирован, ответ также будет считаться правильным с незначительными орфографическими ошибками (3-9 знаков: 1 орфографическая ошибка, более 9 знаков: 2 орфографические ошибки)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

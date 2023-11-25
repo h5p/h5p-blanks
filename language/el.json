@@ -145,6 +145,10 @@
         {
           "label": "Παράβλεψη μικρής σημασίας ορθογραφικών λαθών",
           "description": "Αν ενεργοποιηθεί, μια απάντηση θα ληφθεί ως σωστή ακόμη κι αν έχει μικρής σημασίας ορθογραφικά λάθη"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

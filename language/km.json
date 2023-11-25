@@ -145,6 +145,10 @@
         {
           "label": "លើកលែងកំហុសអក្ខរាវិរុទ្ធតិចតួច",
           "description": "ប្រសិនបើបើក ចម្លើយនឹងចាត់ទុកថាត្រឹមត្រូវប្រសិនបើមានកំហុសអក្ខរាវិរុទ្ធតិចតួច (3-9 តួអក្សរ: 1 កំហុសអក្ខរាវិរុទ្ធ, ច្រើនជាង 9 តួអក្សរ: 2 កំហុសអក្ខរាវិរុទ្ធ)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

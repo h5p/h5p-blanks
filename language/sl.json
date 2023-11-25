@@ -145,6 +145,10 @@
         {
           "label": "Toleriraj manjše napake",
           "description": "Nastavitev tolerance in upoštevanje pravilnosti odgovora kljub manjšim napakam (npr. 1 napačen znak v besedah med 3 do 9 znaki, 2 napačna znaka v besedah dolgih nad 9 znakov)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

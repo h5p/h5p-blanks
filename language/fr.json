@@ -145,6 +145,10 @@
         {
           "label": "Accepter de petites fautes d'orthopraphe",
           "description": "Si cette option est activée, la réponse avec des fautes d'orthographe va également être considérée comme correcte (de 3 à 9 caractères : 1 faute acceptée, plus que 9 caractères : 2 fautes acceptées)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

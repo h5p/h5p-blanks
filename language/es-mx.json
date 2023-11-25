@@ -145,6 +145,10 @@
         {
           "label": "Aceptar errores ortográficos menores",
           "description": "Si se activa, una respuesta también contará como correcta con errores tipográficos menores (3-9 caracteres: 1 error tipográfico, más de 9 caracteres: 2 errores tipográficos)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

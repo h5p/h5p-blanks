@@ -145,6 +145,10 @@
         {
           "label": "Accetta piccoli errori di ortografia",
           "description": "Se attivo, una risposta sarà conteggiata come corretta nonostante piccoli errori di ortografia (da 3 a 9 caratteri: 1 errore; più di 9 caratteri: 2 errori)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

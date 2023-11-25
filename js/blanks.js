@@ -81,7 +81,8 @@ H5P.Blanks = (function ($, Question) {
         caseSensitive: true,
         showSolutionsRequiresInput: true,
         autoCheck: false,
-        separateLines: false
+        separateLines: false,
+        keepCorrectOnRetry: false
       },
       a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
       a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
@@ -232,7 +233,7 @@ H5P.Blanks = (function ($, Question) {
       self.addButton('try-again', self.params.tryAgain, function () {
         self.a11yHeader.innerHTML = '';
         self.resetTask();
-        self.$questions.filter(':first').find('input:first').focus();
+        self.$questions.filter(':first').find('input:not([disabled]):first').focus();
       }, true, {
         'aria-label': self.params.a11yRetry,
       }, {
@@ -556,8 +557,15 @@ H5P.Blanks = (function ($, Question) {
    * Removed marked results
    */
   Blanks.prototype.removeMarkedResults = function () {
-    this.$questions.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
-    this.$questions.find('.h5p-input-wrapper > input').attr('disabled', false);
+    if (this.params.behaviour.keepCorrectOnRetry) {
+      this.$questions.find('.h5p-input-wrapper.h5p-wrong > input').attr('disabled', false);
+      this.$questions.find('.h5p-input-wrapper').removeClass('h5p-wrong');
+    }
+    else {
+      this.$questions.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
+      this.$questions.find('.h5p-input-wrapper > input').attr('disabled', false);
+    }
+
     this.trigger('resize');
   };
 
@@ -586,10 +594,13 @@ H5P.Blanks = (function ($, Question) {
    *
    * @method function
    * @param  {boolean} enabled True if fields should allow input, otherwise false
+   * @param {string} status Toggle inputs with a certain status only.
    */
-  Blanks.prototype.toggleAllInputs = function (enabled) {
+  Blanks.prototype.toggleAllInputs = function (enabled, status) {
     for (var i = 0; i < this.clozes.length; i++) {
-      this.clozes[i].toggleInput(enabled);
+      if (status !== 'wrong' || !this.clozes[i].correct()) {
+        this.clozes[i].toggleInput(enabled);
+      }
     }
   };
 
@@ -615,14 +626,21 @@ H5P.Blanks = (function ($, Question) {
    * @public
    */
   Blanks.prototype.resetTask = function () {
-    this.answered = false;
+    const resetCorrect =
+      !this.params.behaviour.keepCorrectOnRetry ||
+      this.getScore() === this.getMaxScore(); // Future option
+
+    if (resetCorrect) {
+      this.answered = false;
+    }
+
     this.hideEvaluation();
     this.hideSolutions();
     this.clearAnswers();
     this.removeMarkedResults();
     this.toggleButtonVisibility(STATE_ONGOING);
     this.resetGrowTextField();
-    this.toggleAllInputs(true);
+    this.toggleAllInputs(true, resetCorrect ? null : 'wrong');
     this.done = false;
   };
 
@@ -846,9 +864,13 @@ H5P.Blanks = (function ($, Question) {
    * Clear the user's answers
    */
   Blanks.prototype.clearAnswers = function () {
+    const that = this;
+
     this.clozes.forEach(function (cloze) {
-      cloze.setUserInput('');
-      cloze.resetAriaLabel();
+      if (!that.params.behaviour.keepCorrectOnRetry || !cloze.correct()) {
+        cloze.setUserInput('');
+        cloze.resetAriaLabel();
+      }
     });
   };
 

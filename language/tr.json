@@ -145,6 +145,10 @@
         {
           "label": "Küçük yazım hatalarına izin ver",
           "description": "Eğer etkinleştirilirse, küçük yazım hatalarıyla birlikte yanıt doğru sayılır (3-9 karakter arasında: 1 yazım hatası, 9 karakterden fazlaysa: 2 yazım hatası)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

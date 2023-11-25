@@ -145,6 +145,10 @@
         {
           "label": "Luba vähesed kirjavead",
           "description": "Seadistuse kasutamisel loetakse õigeks ka kirjavigu sisaldav vastus (3-9 tähemärki: 1 kirjaviga, rohkem, kui 9 tähemärki: 2 kirjaviga)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },
