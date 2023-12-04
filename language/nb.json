@@ -5,7 +5,7 @@
       "fields": [
         {
           "label": "Type",
-          "description": "Valgfritt medieelement. Elementet vil bli plassert over spørsmålet."
+          "description": "Valgfritt medieelement. Elementet blir plassert over spørsmålet."
         },
         {
           "label": "Deaktiver zoomingfunksjon."
@@ -14,41 +14,41 @@
     },
     {
       "label": "Oppgavebeskrivelse",
-      "default": "Fyll inn teksten som mangler",
+      "default": "Fyll inn orda som mangler.",
       "description": "En tekst som forteller brukeren hvordan oppgaven skal løses"
     },
     {
       "label": "Tekstlinjer",
-      "entity": "tekstlinje",
+      "entity": "Tekstlinje",
       "field": {
         "label": "Tekstlinje",
-        "placeholder": "Oslo er hovedstaden i *Norge*",
+        "placeholder": "Oslo er hovedstaden i *Norge*.",
         "important": {
-          "description": "<ul><li>Åpne felter merkes med en stjerne * foran og bak det korrekte ordet/uttrykket.</li><li>Alternativer angis med en skråstrek (/)</li><li>Tips angis med et kolon (:) før tipset</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Åpne felter merkes med en stjerne (*) foran og bak det korrekte ordet/uttrykket.</li><li>Alternativer angis med en skråstrek (/).</li><li>Hint angis med et kolon (:) før hintet.</li></ul>",
+          "example": "H5P-innhold kan redigeres ved å bruke en *nettleser/browser:applikasjon for å navigere på nettet*."
         }
       }
     },
     {
-      "label": "Tilbakemelding på hele oppgava",
+      "label": "Tilbakemelding på hele oppgaven",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Forhandsinnstilling"
+              "label": "Forhåndsinnstilling"
             }
           ],
-          "label": "Opprett poengområder og legg inn tilbakemeldinger.",
-          "description": "Klikk på knappen \"Legg til poengområde\" og legg til så mange poengområder du trenger. Eksempel: 0–40 % Svakt resultat, 41–80 % Gjennomsnittlig resultat, 81–100 % Flott resultat!",
-          "entity": "Område",
+          "label": "Opprett poengintervaller og legg inn tilbakemeldinger.",
+          "description": "Klikk på knappen \"Legg til poengintervall\" og legg til så mange poengintervaller du trenger. Eksempel: 0–40 % Svakt resultat, 41–80 % Gjennomsnittlig resultat, 81–100 % Flott resultat!",
+          "entity": "Intervall",
           "field": {
             "fields": [
               {
-                "label": "Poengområde"
+                "label": "Poengintervall"
               },
               {},
               {
-                "label": "Tilbakemelding for definert poengområde",
+                "label": "Tilbakemelding for definert poengintervall",
                 "placeholder": "Skriv inn tilbakemelding."
               }
             ]
@@ -57,27 +57,27 @@
       ]
     },
     {
-      "label": "Tekst for \"Vis svar\" knapp",
+      "label": "Navn på \"Vis svar\"-knapp",
       "default": "Vis svar"
     },
     {
-      "label": "Tekst for \"Prøv igjen\" knapp",
+      "label": "Navn på \"Prøv igjen\"-knapp",
       "default": "Prøv igjen"
     },
     {
-      "label": "Tekst for \"Sjekk\" knapp",
+      "label": "Navn på \"Sjekk\"-knapp",
       "default": "Sjekk"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Navn på \"Send inn\"-knapp",
+      "default": "Send inn"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Tekst for \"Ikke fylt ut\"-melding",
+      "default": "Fyll ut alle felt for å se svar."
     },
     {
-      "label": "Tekst for \"':ans' er korrekt\"-melding",
+      "label": "Tekst for \":ans er korrekt\"-melding (:ans er plassholderen for svaret fra bruker)",
       "default": "':ans' er korrekt"
     },
     {
@@ -85,130 +85,130 @@
       "default": "':ans' er feil"
     },
     {
-      "label": "Tekst for \"Svar rett\"-melding",
-      "default": "Svar rett"
+      "label": "Tekst for \"Riktig svar\"-melding",
+      "default": "Riktig svar"
     },
     {
-      "label": "Tekst for \"Svar feil\"-melding",
-      "default": "Svar feil"
+      "label": "Tekst for \"Feil svar\"-melding",
+      "default": "Feil svar"
     },
     {
-      "label": "Merkelapp for løsning brukt av tekniske hjelpemidler",
-      "default": "Svar:"
+      "label": "Merkelapp for svar (for tekniske hjelpemidler)",
+      "default": "Riktig svar:"
     },
     {
-      "label": "Merkelapp for inntastingsfelt brukt av tekniske hjelpemidler",
-      "description": "Bruk @num og @total for å bytte ut feltnummer og totalt antall felter",
+      "label": "Merkelapp for inntastingsfelt (for tekniske hjelpemidler)",
+      "description": "Bruk @num og @total for å bytte ut feltnummer og totalt antall felt.",
       "default": "Felt @num av @total"
     },
     {
-      "label": "Merkelapp for å fortelle at et inntastingsfelt har et tips knyttet til seg",
+      "label": "Merkelapp brukt av assisterende teknologi for å si at det fins et tips",
       "default": "Tips tilgjengelig"
     },
     {
-      "label": "Merkelapp for tips ikon",
+      "label": "Navn på tipsknapp",
       "default": "Tips"
     },
     {
-      "label": "Innstillinger for oppgave-oppførsel",
-      "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
+      "label": "Oppgaveinnstillinger",
+      "description": "Disse innstillingene lar deg bestemme hvordan oppgaven oppfører seg.",
       "fields": [
         {
           "label": "Aktiver \"Prøv igjen\"-knapp"
         },
         {
-          "label": "Aktiver \"Fasit\"-knapp"
+          "label": "Aktiver \"Vis svar\"-knapp"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktiver \"Sjekk\"-knapp"
         },
         {
-          "label": "Gi tilbakemelding med en gang brukeren har avgitt svar"
+          "label": "Gi tilbakemelding straks brukeren har svart"
         },
         {
           "label": "Skill mellom store og små bokstaver",
-          "description": "Sørger for at svaret til brukeren må være nøyaktig det samme som i oppgaven."
+          "description": "Denne innstillingen sørger for at svaret må være nøyaktig likt fasit."
         },
         {
-          "label": "Krev at alle felter er besvart før fasit gis"
+          "label": "Krev at alle felt må være fylt ut før bruker får se svar"
         },
         {
           "label": "Sett inntastingsfelt på egne linjer"
         },
         {
-          "label": "Slå på bruker-bekreftelse for \"Fasit\"",
-          "description": "Denne innstillingen er ikke forenbar med \"Gi tilbakemelding med en gang brukeren har avgitt svar\" alternativet."
+          "label": "Slå på brukerbekreftelse for \"Sjekk\"",
+          "description": "Denne innstillinga er ikke forenlig med alternativet \"Gi tilbakemelding straks bruker har svart\"."
         },
         {
-          "label": "Slå på bruker-bekreftelse for \"Prøv igjen\""
+          "label": "Slå på brukerbekreftelse for \"Prøv igjen\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Godta mindre skrivefeil",
+          "description": "Hvis denne er aktivert, vil et svar telle som riktig også med mindre skrivefeil (ord på 3–9 tegn: 1 skrivefeil godtas; ord på flere enn 9 tegn: 2 skrivefeil godtas)."
         }
       ]
     },
     {
-      "label": "Bruker-bekreftelse før fasit-visning",
+      "label": "Brukerbekreftelse ved sjekk av svar",
       "fields": [
         {
           "label": "Tittel",
-          "default": "Ferdig ?"
+          "default": "Ferdig?"
         },
         {
           "label": "Tekst",
           "default": "Er du sikker på at du er ferdig?"
         },
         {
-          "label": "Avbryt etikett",
+          "label": "Navn på \"Avbryt\"-knapp",
           "default": "Avbryt"
         },
         {
-          "label": "Bekreftelse etikett",
-          "default": "Bekreft"
+          "label": "Navn på \"Bekreft\"-knapp",
+          "default": "Ferdig (bekreft?)"
         }
       ]
     },
     {
-      "label": "Prøv igjen bruker-bekreftelse",
+      "label": "Brukerbekreftelse for \"Prøv igjen\"",
       "fields": [
         {
           "label": "Tittel",
-          "default": "Prøv igjen ?"
+          "default": "Prøve igjen?"
         },
         {
           "label": "Tekst",
           "default": "Er du sikker på at du vil prøve igjen?"
         },
         {
-          "label": "Avbryt etikett",
+          "label": "Navn på \"Avbryt\"-knapp",
           "default": "Avbryt"
         },
         {
-          "label": "Bekreft etikett",
+          "label": "Navn på \"Bekreft\"-knapp",
           "default": "Bekreft"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstalternativ til resultatlinja (for skjermleserbrukere)",
+      "default": "Du fikk :num av :total poeng."
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Beskrivelse av \"Sjekk\"-knapp for assisterende teknologi",
+      "default": "Sjekk svar. Svara blir merket som riktig, feil eller ubesvart."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Beskrivelse av \"Vis svar\"-knapp for assisterende teknologi",
+      "default": "Vis svar. Oppgaven blir merket med riktige svar."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Beskrivelse av \"Prøv igjen\"-knapp for assisterende teknologi",
+      "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Beskrivelse som leses opp av assisterende teknologi etter at \"Sjekk\"-knapp er valgt",
+      "default": "\"Sjekk\"-modus aktivert"
     }
   ]
 }

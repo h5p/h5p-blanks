@@ -25,7 +25,7 @@
         "placeholder": "Oslas yra *Norvegijos* sostinė.",
         "important": {
           "description": "<ul><li>Tuščios vietos pridedamos su žvaigždute (*) prieš ir už teisingo žodžio / frazės.</li><li>Alternatyvūs atsakymai atskiriami pasviruoju brūkšniu (/).</li><li>Galite pridėti tekstinį patarimą naudodami dvitaškį (:) prieš galiuką.</li></ul>",
-          "example": "H5P turinį galima redaguoti naudojant  *browser/web-browser:Something you use every day*."
+          "example": "H5P turinį galima redaguoti naudojant *naršyklė/žiniatinklio naršyklė: Kažkas, ką naudojate kiekvieną dieną*."
         }
       }
     },
@@ -40,7 +40,7 @@
           ],
           "label": "Nustatykite tinkintus atsiliepimus bet kokiam balų intervalui",
           "description": "Spustelėkite mygtuką „Pridėti diapazoną“, kad pridėtumėte tiek diapazonų, kiek jums reikia. Pavyzdys: 0–20 % blogas balas, 21–91 % vidutinis balas, 91–100 % puikus rezultatas!",
-          "entity": "intervalas",
+          "entity": "diapazonas",
           "field": {
             "fields": [
               {
@@ -48,7 +48,7 @@
               },
               {},
               {
-                "label": "Atsiliepimai apie apibrėžtą balų intervalą",
+                "label": "Atsiliepimai apibrėžtam balų diapazonui",
                 "placeholder": "Parašykite atsiliepimą"
               }
             ]
@@ -65,7 +65,7 @@
       "default": "Bandyti dar kartą"
     },
     {
-      "label": "Tekstas „Tikrinti“ mygtukui",
+      "label": "Tekstas mygtukui „Tikrinti“",
       "default": "Tikrinti"
     },
     {
@@ -85,7 +85,7 @@
       "default": "':ans' yra klaidingas"
     },
     {
-      "label": "Tekstas pranešimui „Atsakyta teisingai“.",
+      "label": "Tekstas pranešimui „Atsakyta teisingai“",
       "default": "Atsakyta teisingai"
     },
     {
@@ -137,10 +137,10 @@
         },
         {
           "label": "Rodyti dialogą ant \"Tikrinti\"",
-          "description": "Šios parinktys nesuderinamos su parinktimi „Automatiškai tikrinti atsakymus po įvesties“."
+          "description": "Šios parinktys nesuderinamos su parinktimi „Automatiškai tikrinti atsakymus po įvesties“"
         },
         {
-          "label": "Rodyti patvirtinimo dialogą  \"Kartoti\""
+          "label": "Rodyti patvirtinimo dialogą \"Bandyti dar kartą\""
         },
         {
           "label": "Priimkite nedideles rašybos klaidas",
@@ -199,16 +199,16 @@
       "default": "Patikrinkite atsakymus. Atsakymai bus pažymėti kaip teisingi, neteisingi arba neatsakyti."
     },
     {
-      "label": "Mygtuko „Rodyti sprendimą“ patarimo aprašymas",
+      "label": "Mygtuko „Rodyti sprendimą“ pagalbinės technologijos aprašymas",
       "default": "Parodykite sprendimą. Užduotis bus pažymėta teisingu jos sprendimu."
     },
     {
-      "label": "Patarimo aprašymas mygtukui „Pakartoti“.",
+      "label": "Patarimo aprašymas mygtukui „Bandyti dar kartą“",
       "default": "Pabandykite atlikti užduotį dar kartą. Iš naujo nustatykite visus atsakymus ir pradėkite užduotį iš naujo."
     },
     {
       "label": "Patarimo aprašymas pradedant užduotį",
-      "default": "Patikrinimo  režimas"
+      "default": "Patikrinimo režimas"
     }
   ]
 }

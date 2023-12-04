@@ -120,7 +120,7 @@ H5P.Blanks = (function ($, Question) {
     });
 
     // Using instructions as label for our text groups
-    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter;
+    this.labelId = 'h5p-blanks-instructions-' + Blanks.idCounter + '-' + H5P.createUUID();
     this.content = self.createQuestions();
 
     // Check for task media
@@ -134,7 +134,9 @@ H5P.Blanks = (function ($, Question) {
           self.setImage(media.params.file.path, {
             disableImageZooming: self.params.media.disableImageZooming || false,
             alt: media.params.alt,
-            title: media.params.title
+            title: media.params.title,
+            expandImage: media.params.expandImage,
+            minimizeImage: media.params.minimizeImage
           });
         }
       }
