@@ -127,7 +127,7 @@
       $('<span>', {
         'aria-hidden': true,
         'class': 'h5p-correct-answer',
-        text: H5P.trim(answer.replace(/\s*\/\s*/g, '/').replaceAll(/<\/?[a-z][^>]*>/ig, '')),
+        text: H5P.trim(answer.replace(/\s*\/\s*/g, '/')),
         insertAfter: $wrapper
       });
       $input.attr('disabled', true);
