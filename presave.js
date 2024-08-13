@@ -29,7 +29,13 @@ H5PPresave['H5P.Blanks'] = function (content, finished) {
 
   presave.validateScore(score);
 
-  finished({maxScore: score});
+  // Clean HTML tags from all questions
+  content.questions = content.questions.map((question) => cleanQuestionItems(question));
+
+  finished({
+    maxScore: score,
+    filteredParams: content
+  });
 
   /**
    * Check if required parameters is present
@@ -37,5 +43,28 @@ H5PPresave['H5P.Blanks'] = function (content, finished) {
    */
   function isContentInvalid() {
     return !presave.checkNestedRequirements(content, 'content.questions') || !Array.isArray(content.questions);
+  }
+
+  /**
+   * Strip HTML tags from a text.
+   * Would be more robust with DOMParser, but this is faster.
+   * @param {string} text Text to be cleaned.
+   * @return {string} Cleaned text.
+   */
+  function cleanHtmlTags(text = '') {
+    return text.replace(/<\/?[^>]+(>|$)/g, '');
+  }
+
+  /**
+   * Clean HTML tags from question items
+   * @param {string} question Question to be cleaned.
+   * @return {string} Cleaned question.
+   */
+  function cleanQuestionItems(question = '') {
+    return question.replace(/\*(.*?)\*/ig, (match) => {
+      const chunk = match.split(':')[0];
+      const cleanedChunk = cleanHtmlTags(chunk);
+      return match.replace(chunk, cleanedChunk);
+    });
   }
 };
