@@ -47,7 +47,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     // Inheritance
-    Question.call(self, 'blanks');
+    Question.call(self, 'blanks', true);
 
     // IDs
     this.contentId = id;
@@ -217,6 +217,7 @@ H5P.Blanks = (function ($, Question) {
         },
         textIfSubmitting: self.params.submitAnswer,
         contentData: self.contentData,
+        classes: 'h5p-theme-primary-cta h5p-theme-check',
       });
     }
 
@@ -225,6 +226,8 @@ H5P.Blanks = (function ($, Question) {
       self.showCorrectAnswers(false);
     }, self.params.behaviour.enableSolutionsButton, {
       'aria-label': self.params.a11yShowSolution,
+    }, {
+      classes: 'h5p-theme-secondary-cta h5p-theme-show-results',
     });
 
     // Try again button
@@ -241,7 +244,8 @@ H5P.Blanks = (function ($, Question) {
           l10n: self.params.confirmRetry,
           instance: self,
           $parentElement: $container
-        }
+        },
+        classes: 'h5p-theme-secondary-cta h5p-theme-retry',
       });
     }
     self.toggleButtonVisibility(STATE_ONGOING);
