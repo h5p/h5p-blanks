@@ -7,14 +7,15 @@
 }
 .h5p-blanks .h5p-text-input {
   font-family: var(--font-name);
-  font-size: 1em;
+  font-size: var(--font-size-m);
   border-radius: var(--border-radius-medium);
   background-color: var(--ui-base);
   border: 2px solid var(--alternative-darker);
-  padding: var(--spacing-xxs) 1em var(--spacing-xxs) 0.5em;
+  padding: calc(var(--spacing-xs) / 2) 0 calc(var(--spacing-xs) / 2) 0.5em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: var(--text-primary);
   width: 6em;
 }
 .h5p-blanks .h5p-text-input:focus {
@@ -42,15 +43,17 @@
  background: var(--feedback-correct-secondary);
   border: 2px solid var(--feedback-correct-third);
   color: var(--feedback-correct-main);
+  font-weight: bold;
+  padding-right: var(--spacing-m);
 }
 /* Showing solution */
 .h5p-blanks .h5p-correct-answer {
-  color: #255c41;
+  color: var(--feedback-correct-main);
   font-weight: bold;
-  border: 1px #255c41 dashed;
-  background-color: #d4f6e6;
-  padding: 0.15em;
-  border-radius: 0.25em;
+  border: 2px var(--feedback-correct-main) dashed;
+  background-color: var(--feedback-correct-secondary);
+  padding: calc(var(--spacing-xs) / 2);
+  border-radius: var(--border-radius-medium);
   margin-left: .5em;
 }
 .h5p-blanks .h5p-correct:after {
@@ -68,6 +71,8 @@
   color: var(--feedback-incorrect-main);
   background-color: var(--feedback-incorrect-secondary);
   border: solid 2px var(--feedback-incorrect-third);
+  font-weight: bold;
+  padding-right: var(--spacing-m);
 }   
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
@@ -105,7 +110,7 @@ line-height: var(--spacing-xl);
     color: var(--text-secondary);
   border: solid 1px var(--alternative-base);
   border-radius: var(--border-radius-medium);
-  padding: var(--spacing-s);
+  padding: 0 var(--spacing-s) 0  var(--spacing-s);
   font-weight: 500;
   margin: 0 var(--spacing-m);
   }
@@ -114,7 +119,7 @@ line-height: var(--spacing-xl);
 .h5p-blanks .joubel-tip-container {
   position: absolute;
   right: 0.4em;
-  font-size: 1em;
+  font-size: var(--font-size-m);
 }
 .h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
   line-height: 1em;
