@@ -88,16 +88,16 @@
 
 
 .h5p-blanks .h5p-question-content p {
-  line-height: 1.75rem;
-    display: inline-block;
-line-height: var(--spacing-xl);
-  /*background-color: var(--alternative-light);*/
+  display: inline-block;
+  line-height: var(--spacing-xl);
   -webkit-background-size: 100% 20px;
   color: var(--text-secondary);
   background-size: 100% var(--spacing-xl);
   background-image: -moz-linear-gradient(transparent calc(var(--spacing-xl) - 1px), var(--alternative-base) 0px);
   background-image: -webkit-linear-gradient(transparent calc(var(--spacing-xl) - 1px), var(--alternative-base) 0);
+  margin: 0;
 }
+
 .h5p-blanks .h5p-question-content p:after{
   display: block;
   content: "";
