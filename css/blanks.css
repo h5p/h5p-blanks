@@ -2,8 +2,10 @@
   position: relative;
 }
 .h5p-blanks .h5p-input-wrapper {
-  display: inline-block;
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  height: calc(var(--spacing-xl) - 1px);
 }
 .h5p-blanks .h5p-text-input {
   font-family: var(--font-name);
