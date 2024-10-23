@@ -21,8 +21,8 @@
 }
 .h5p-blanks .h5p-text-input:focus {
   outline: none;
-  box-shadow: 0 0 0.5em 0 #6391CA;
-  border-color: #6391CA;
+  box-shadow: 0 0 0.5em 0 var(--main-cta-base);
+  border-color: var(--main-cta-base);
 }
 .h5p-blanks .h5p-text-input:disabled {
   opacity: 1;
