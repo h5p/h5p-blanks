@@ -3,6 +3,7 @@
 }
 .h5p-blanks .h5p-input-wrapper {
   display: inline-flex;
+  position: relative;
   align-items: center;
   vertical-align: top;
   height: calc(var(--spacing-xl) - 1px);
@@ -43,7 +44,7 @@
 
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
- background: var(--feedback-correct-secondary);
+  background: var(--feedback-correct-secondary);
   border: 2px solid var(--feedback-correct-third);
   color: var(--feedback-correct-main);
   font-weight: bold;
@@ -59,10 +60,10 @@
   border-radius: var(--border-radius-medium);
   margin-left: .5em;
 }
+
 .h5p-blanks .h5p-correct:after {
   position: absolute;
-  right: 0.5em;
-  top: 0;
+  right: var(--spacing-xxs);
   text-decoration: none;
   font-family: 'h5p-theme';
   content: "\e903";
@@ -76,11 +77,10 @@
   border: solid 2px var(--feedback-incorrect-third);
   font-weight: bold;
   padding-right: var(--spacing-m);
-}   
+}
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
-  right: 0.5em;
-  top: 0;
+  right: var(--spacing-xxs);
   font-family: 'h5p-theme';
   content: "\e902";
   text-decoration: none;
