@@ -23,9 +23,10 @@
   font-weight: 600;
 }
 .h5p-blanks .h5p-text-input:focus {
-  outline: none;
-  box-shadow: 0 0 0.5em 0 var(--h5p-theme-main-cta-base);
-  border-color: var(--h5p-theme-main-cta-base);
+  box-shadow: 0 0 0.5em 0 var(--h5p-theme-main-cta-base) !important;
+  border-color: var(--h5p-theme-main-cta-base) !important;
+  z-index: 3000 !important;
+  outline: 1px ridge var(--h5p-theme-main-cta-base) !important;
 }
 .h5p-blanks .h5p-text-input:disabled {
   opacity: 1;
