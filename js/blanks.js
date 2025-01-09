@@ -322,7 +322,6 @@ H5P.Blanks = (function ($, Question) {
 
     self.a11yHeader = document.createElement('div');
     self.a11yHeader.classList.add('hidden-but-read');
-    self.a11yHeader.tabIndex = -1;
     self.$questions[0].insertBefore(self.a11yHeader, this.$questions[0].childNodes[0] || null);
 
     // Set input fields.
