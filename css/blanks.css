@@ -14,7 +14,7 @@
   border-radius: var(--h5p-theme-border-radius-medium);
   background-color: var(--h5p-theme-ui-base);
   border: 2px solid var(--h5p-theme-alternative-darker);
-  padding: calc(var(--h5p-theme-spacing-xs) / 2) 0 calc(var(--h5p-theme-spacing-xs) / 2) 0.5em;
+  padding: calc(var(--h5p-theme-spacing-xs) / 2) 0 calc(var(--h5p-theme-spacing-xs) / 2) var(--h5p-theme-spacing-xxs);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
