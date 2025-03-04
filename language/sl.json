@@ -1,11 +1,11 @@
 {
   "semantics": [
     {
-      "label": "Mediji",
+      "label": "Medijska vsebina",
       "fields": [
         {
           "label": "Tip",
-          "description": "Neobvezna nastavitev dodatnega medija za prikaz nad vprašanjem."
+          "description": "Neobvezna nastavitev dodatne medijske vsebine za prikaz nad vprašanjem."
         },
         {
           "label": "Onemogoči povečavo slike"
@@ -69,8 +69,8 @@
       "default": "Preveri"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Besedilo za gumb \"Oddaj\"",
+      "default": "Oddaj"
     },
     {
       "label": "Besedilo za manjkajoč odgovor",
@@ -78,18 +78,18 @@
     },
     {
       "label": "Besedilo za sporočilo \"... je pravilen\" (:ans je spremenljivka)",
-      "default": "':ans' je pravilen"
+      "default": "':ans' je pravilen odgovor"
     },
     {
       "label": "Besedilo za sporočilo \"... ni pravilen\" (:ans je spremenljivka)",
-      "default": "':ans' ni pravilen"
+      "default": "':ans' ni pravilen odgovor"
     },
     {
-      "label": "Besedilo za pravilni odgovor",
+      "label": "Besedilo za pravilen odgovor",
       "default": "Pravilno!"
     },
     {
-      "label": "Besedilo za nepravilni odgovor",
+      "label": "Besedilo za nepravilen odgovor",
       "default": "Nepravilno!"
     },
     {
@@ -102,7 +102,7 @@
       "default": "Vnosno polje @num od @total"
     },
     {
-      "label": "Besedilo, ki ga bralnik zaslona uporabi za izražanje dosegljivosti namiga",
+      "label": "Besedilo, ki ga bralnik zaslona uporabi za izražanje možnosti namiga",
       "default": "Namig je na voljo"
     },
     {
@@ -195,20 +195,20 @@
       "default": "Napredek :num od :total"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Opis gumba \"Preveri\" za bralnike zaslona",
+      "default": "Preveri pravilnost vnesenih znakov. Odgovori bodo označeni kot pravilni, nepravilni ali brez odgovora."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Opis gumba \"Prikaži rešitev\" za bralnike zaslona",
+      "default": "Prikaže rešitev in besedilo napolni s pravilnimi odgovori."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Opis gumba \"Poskusi ponovno\" za bralnike zaslona",
+      "default": "Omogoči ponoven poskus. Ponastavi vse odzive in znova zažene nalogo."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Naslov za začetek reševanja naloge za bralnike zaslona",
+      "default": "Reševanje naloge"
     }
   ]
 }
