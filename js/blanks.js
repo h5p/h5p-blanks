@@ -9,6 +9,10 @@ H5P.Blanks = (function ($, Question) {
   var STATE_SHOWING_SOLUTION = 'showing-solution';
   var STATE_FINISHED = 'finished';
 
+  const PATTERN_ANSWER = '~';
+  const PATTERN_TIPPS = '^';
+  const PATTERN_ALTERNATIVES = '|';
+
   const XAPI_ALTERNATIVE_EXTENSION = 'https://h5p.org/x-api/alternatives';
   const XAPI_CASE_SENSITIVITY = 'https://h5p.org/x-api/case-sensitivity';
   const XAPI_REPORTING_VERSION_EXTENSION = 'https://h5p.org/x-api/h5p-reporting-version';
@@ -56,7 +60,7 @@ H5P.Blanks = (function ($, Question) {
     this.params = $.extend(true, {}, {
       text: "Fill in",
       questions: [
-        "<p>Oslo is the capital of *Norway*.</p>"
+        `<p>Oslo is the capital of ${PATTERN_ANSWER}Norway${PATTERN_ANSWER}.</p>`
       ],
       overallFeedback: [],
       userAnswers: [], // TODO This isn't in semantics?
@@ -259,11 +263,11 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.handleBlanks = function (question, handler) {
     // Go through the text and run handler on all asterisk
-    var clozeEnd, clozeStart = question.indexOf('*');
+    var clozeEnd, clozeStart = question.indexOf(PATTERN_ANSWER);
     var self = this;
     while (clozeStart !== -1 && clozeEnd !== -1) {
       clozeStart++;
-      clozeEnd = question.indexOf('*', clozeStart);
+      clozeEnd = question.indexOf(PATTERN_ANSWER, clozeStart);
       if (clozeEnd === -1) {
         continue; // No end
       }
@@ -280,7 +284,7 @@ H5P.Blanks = (function ($, Question) {
       clozeEnd -= clozeEnd - clozeStart - replacer.length;
 
       // Find the next cloze
-      clozeStart = question.indexOf('*', clozeEnd);
+      clozeStart = question.indexOf(PATTERN_ANSWER, clozeEnd);
     }
     return question;
   };
@@ -733,7 +737,7 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.parseSolution = function (solutionText) {
     var tip, solution;
 
-    var tipStart = solutionText.indexOf(':');
+    var tipStart = solutionText.indexOf(PATTERN_TIPPS);
     if (tipStart !== -1) {
       // Found tip, now extract
       tip = solutionText.slice(tipStart + 1);
@@ -744,7 +748,7 @@ H5P.Blanks = (function ($, Question) {
     }
 
     // Split up alternatives
-    var solutions = solution.split('/');
+    var solutions = solution.split(PATTERN_ALTERNATIVES);
     this.hasAlternatives = this.hasAlternatives || solutions.length > 1;
 
     // Trim solutions
@@ -976,20 +980,21 @@ H5P.Blanks.parseText = function (question) {
   /**
    * Parses a text into an array where words starting and ending
    * with an asterisk are separated from other text.
-   * e.g ["this", "*is*", " an ", "*example*"]
+   * e.g ["this", `${PATTERN_ANSWER}is${PATTERN_ANSWER}`, " an ", `${PATTERN_ANSWER}example${PATTERN_ANSWER}`]
    *
    * @param {string} text
    *
    * @return {string[]}
    */
   function tokenizeQuestionText(text) {
-    return text.split(/(\*.*?\*)/).filter(function (str) {
+    const rePattern = new RegExp(`(${PATTERN_ANSWER}.*?${PATTERN_ANSWER})`);
+    return text.split(rePattern).filter(function (str) {
       return str.length > 0; }
     );
   }
 
   function startsAndEndsWithAnAsterisk(str) {
-    return str.substr(0,1) === '*' && str.substr(-1) === '*';
+    return str.substr(0,1) === PATTERN_ANSWER && str.substr(-1) === PATTERN_ANSWER;
   }
 
   function replaceHtmlTags(str, value) {
