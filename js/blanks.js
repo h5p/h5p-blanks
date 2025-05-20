@@ -47,7 +47,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     // Inheritance
-    Question.call(self, 'blanks', true);
+    Question.call(self, 'blanks', { theme: true });
 
     // IDs
     this.contentId = id;
