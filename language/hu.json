@@ -24,7 +24,7 @@
         "label": "Szöveg",
         "placeholder": "Oslo *Norvégia* fővárosa.",
         "important": {
-          "description": "<ul><li> A hiányzó szavak megadása csillag karakterrel (*) történik, a helyes szó/kifejezés elején és végén elhelyezve azt.</li><li>Több jó válaszlehetőség megadására az előre perjel (/) használható.</li><li>Szöveges segítség adható a kettőspont segítségével (:), amint a segítség elé kell elhelyezni.</li></ul>",
+          "description": "<ul><li> A hiányzó szavak megadása csillag karakterekkel (*) történik, a helyes szó/kifejezés elején és végén elhelyezve azokat.</li><li>Több jó válaszlehetőség megadására az előre perjel (/) használható.</li><li>Szöveges segítség adható a kettőspont segítségével (:), amit a segítség elé kell elhelyezni.</li></ul>",
           "example": "A H5P tartalom szerkesztéséhez szükséges egy *böngésző/web-böngésző:Valami, amit minden nap használunk*."
         }
       }
