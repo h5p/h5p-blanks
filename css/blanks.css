@@ -2,24 +2,30 @@
   position: relative;
 }
 .h5p-blanks .h5p-input-wrapper {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
+  align-items: center;
+  vertical-align: top;
+  height: calc(var(--h5p-theme-spacing-xl) - 1px);
 }
 .h5p-blanks .h5p-text-input {
-  font-family: H5PDroidSans, sans-serif;
-  font-size: 1em;
-  border-radius: 0.25em;
-  border: 1px solid #a0a0a0;
-  padding: 0.1875em 1em 0.1875em 0.5em;
+  font-family: var(--h5p-theme-font-name);
+  font-size: var(--h5p-theme-font-size-m);
+  border-radius: var(--h5p-theme-border-radius-medium);
+  background-color: var(--h5p-theme-ui-base);
+  border: 2px solid var(--h5p-theme-alternative-darker);
+  padding: calc(var(--h5p-theme-spacing-xs) / 2) 0 calc(var(--h5p-theme-spacing-xs) / 2) var(--h5p-theme-spacing-xxs);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: var(--h5p-theme-text-primary);
   width: 6em;
+  font-weight: 600;
 }
 .h5p-blanks .h5p-text-input:focus {
-  outline: none;
-  box-shadow: 0 0 0.5em 0 #6391CA;
-  border-color: #6391CA;
+  box-shadow: 0 0 0.5em 0 var(--h5p-theme-main-cta-base) !important;
+  border-color: var(--h5p-theme-main-cta-base) !important;
+  outline: 1px ridge var(--h5p-theme-main-cta-base) !important;
 }
 .h5p-blanks .h5p-text-input:disabled {
   opacity: 1;
@@ -38,58 +44,73 @@
 
 /* Correctly answered input */
 .h5p-blanks .h5p-correct .h5p-text-input {
-  background: #9dd8bb;
-  border: 1px solid #9dd8bb;
-  color: #255c41;
+  background: var(--h5p-theme-feedback-correct-secondary);
+  border: 2px solid var(--h5p-theme-feedback-correct-third);
+  color: var(--h5p-theme-feedback-correct-main);
+  font-weight: bold;
+  padding-right: var(--h5p-theme-spacing-m);
 }
 /* Showing solution */
 .h5p-blanks .h5p-correct-answer {
-  color: #255c41;
+  color: var(--h5p-theme-feedback-correct-main);
   font-weight: bold;
-  border: 1px #255c41 dashed;
-  background-color: #d4f6e6;
-  padding: 0.15em;
-  border-radius: 0.25em;
+  border: 2px var(--h5p-theme-feedback-correct-main) dashed;
+  background-color: var(--h5p-theme-feedback-correct-secondary);
+  padding: calc(var(--h5p-theme-spacing-xs) / 2);
+  border-radius: var(--h5p-theme-border-radius-medium);
   margin-left: .5em;
 }
+
 .h5p-blanks .h5p-correct:after {
   position: absolute;
-  right: 0.5em;
-  top: 0;
+  right: var(--h5p-theme-spacing-xxs);
   text-decoration: none;
-  content: "\f00c";
-  font-family: 'H5PFontAwesome4';
-  color: #255c41;
+  font-family: 'h5p-theme';
+  content: "\e903";
+  color: var(--h5p-theme-feedback-correct-main);
 }
 
 /* Wrongly answered input */
 .h5p-blanks .h5p-wrong .h5p-text-input {
-  background-color: #f7d0d0;
-  border: 1px solid #f7d0d0;
-  color: #b71c1c;
-  text-decoration: line-through;
+  color: var(--h5p-theme-feedback-incorrect-main);
+  background-color: var(--h5p-theme-feedback-incorrect-secondary);
+  border: solid 2px var(--h5p-theme-feedback-incorrect-third);
+  font-weight: bold;
+  padding-right: var(--h5p-theme-spacing-m);
 }
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
-  right: 0.5em;
-  top: 0;
-  font-family: 'H5PFontAwesome4';
+  right: var(--h5p-theme-spacing-xxs);
+  font-family: 'h5p-theme';
+  content: "\e902";
   text-decoration: none;
-  content: "\f00d";
-  color: #b71c1c;
+  color: var(--h5p-theme-feedback-incorrect-main);
 }
 
 /* Actual text paragraphs */
+
 .h5p-blanks .h5p-question-content p {
-  line-height: 1.75em;
-  margin: 0 0 1em;
+  display: inline-block;
+  color: var(--h5p-theme-text-secondary);
+  margin: 0;
+  font-size: var(--h5p-theme-font-size-m);
+}
+
+.h5p-blanks .h5p-question-content { 
+  background-color: var(--h5p-theme-alternative-light);
+  color: var(--h5p-theme-text-secondary);
+  border: solid 1px var(--h5p-theme-alternative-base);
+  border-radius: var(--h5p-theme-border-radius-medium);
+  padding: 0 var(--h5p-theme-spacing-s);
+  font-weight: 500;
+  margin: 0 var(--h5p-theme-spacing-m);
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
 .h5p-blanks .joubel-tip-container {
   position: absolute;
   right: 0.4em;
-  font-size: 1em;
+  font-size: var(--h5p-theme-font-size-m);
 }
 .h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
   line-height: 1em;

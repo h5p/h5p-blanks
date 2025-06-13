@@ -47,7 +47,7 @@ H5P.Blanks = (function ($, Question) {
     var self = this;
 
     // Inheritance
-    Question.call(self, 'blanks');
+    Question.call(self, 'blanks', { theme: true });
 
     // IDs
     this.contentId = id;
@@ -217,6 +217,7 @@ H5P.Blanks = (function ($, Question) {
         },
         textIfSubmitting: self.params.submitAnswer,
         contentData: self.contentData,
+        icon: 'check',
       });
     }
 
@@ -225,6 +226,9 @@ H5P.Blanks = (function ($, Question) {
       self.showCorrectAnswers(false);
     }, self.params.behaviour.enableSolutionsButton, {
       'aria-label': self.params.a11yShowSolution,
+    }, {
+      styleType: 'secondary',
+      icon: 'show-results',
     });
 
     // Try again button
@@ -241,7 +245,9 @@ H5P.Blanks = (function ($, Question) {
           l10n: self.params.confirmRetry,
           instance: self,
           $parentElement: $container
-        }
+        },
+        styleType: 'secondary',
+        icon: 'retry',
       });
     }
     self.toggleButtonVisibility(STATE_ONGOING);
@@ -314,7 +320,7 @@ H5P.Blanks = (function ($, Question) {
         return cloze;
       });
 
-      html += '<div role="group" aria-labelledby="' + self.labelId + '">' + question + '</div>';
+      html += '<div class="h5p-theme-lines" role="group" aria-labelledby="' + self.labelId + '">' + question + '</div>';
     }
 
     self.hasClozes = clozeNumber > 0;
