@@ -23,9 +23,9 @@
   font-weight: 600;
 }
 .h5p-blanks .h5p-text-input:focus {
-  box-shadow: 0 0 0.5em 0 var(--h5p-theme-main-cta-base) !important;
-  border-color: var(--h5p-theme-main-cta-base) !important;
-  outline: 1px ridge var(--h5p-theme-main-cta-base) !important;
+  box-shadow: 0 0 0.5em 0 var(--h5p-theme-contrast-cta-white) !important;
+  border-color: var(--h5p-theme-contrast-cta-white) !important;
+  outline: 1px ridge var(--h5p-theme-contrast-cta-white) !important;
 }
 .h5p-blanks .h5p-text-input:disabled {
   opacity: 1;
