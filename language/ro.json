@@ -5,51 +5,51 @@
       "fields": [
         {
           "label": "Tip",
-          "description": "Suport opțional de afișat deasupra întrebării."
+          "description": "Conținut media opțional de afișat deasupra întrebării."
         },
         {
-          "label": "Dezactivați mărirea imaginii"
+          "label": "Dezactivează zoom-ul pentru imagine"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Descrierea sarcinii",
+      "default": "Completați cuvintele lipsă",
+      "description": "Un ghid care îi spune utilizatorului cum să rezolve această sarcină."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Blocuri de text",
+      "entity": "bloc de text",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Linie de text",
+        "placeholder": "Oslo este capitala *Norvegiei*.",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>Spațiile goale se adaugă cu un asterisc (*) înaintea și în urma cuvântului/expresiei corecte.</li><li>Răspunsurile alternative se separă cu o bară oblică (/).</li><li>Puteți adăuga un indiciu textual, folosind două puncte (:) înaintea indiciului.</li></ul>",
+          "example": "Conținutul H5P poate fi editat folosind un *browser/navigator web:Ceva ce folosești zilnic*."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Feedback general",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Implicit"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definiți feedback personalizat pentru orice interval de scor",
+          "description": "Faceți clic pe butonul \"Adaugă interval\" pentru a adăuga oricâte intervale aveți nevoie. Exemplu: 0-20% Scor slab, 21-91% Scor mediu, 91-100% Scor excelent!",
+          "entity": "interval",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Interval de scor"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback pentru intervalul de scor definit",
+                "placeholder": "Completați feedback-ul"
               }
             ]
           }
@@ -57,158 +57,158 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Text pentru butonul \"Arată soluțiile\"",
+      "default": "Arată soluția"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Text pentru butonul \"Reîncearcă\"",
+      "default": "Reîncearcă"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Text pentru butonul \"Verifică\"",
+      "default": "Verifică"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Text pentru butonul \"Trimite\"",
+      "default": "Trimite"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Text pentru mesajul \"Necompletat\"",
+      "default": "Vă rugăm să completați toate spațiile goale pentru a vizualiza soluția"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Text pentru mesajul \"':ans' este corect\"",
+      "default": "':ans' este corect"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Text pentru mesajul \"':ans' este greșit\"",
+      "default": "':ans' este greșit"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Text pentru mesajul \"Răspuns corect\"",
+      "default": "Răspuns corect"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Text pentru mesajul \"Răspuns incorect\"",
+      "default": "Răspuns incorect"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Etichetă pentru tehnologia asistivă a soluției",
+      "default": "Răspuns corect:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Etichetă pentru tehnologia asistivă a câmpului de intrare",
+      "description": "Folosiți @num și @total pentru a înlocui numărul curent și numărul total de spații goale",
+      "default": "Spațiu gol de completat @num din @total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Etichetă pentru tehnologia asistivă care anunță că un câmp are un indiciu",
+      "default": "Indiciu disponibil"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Etichetă pictogramă indiciu",
+      "default": "Indiciu"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Setări de comportament",
+      "description": "Aceste opțiuni vă vor permite să controlați cum se comportă sarcina.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Activează \"Reîncearcă\""
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "Activează butonul \"Arată soluția\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activează butonul \"Verifică\""
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Verifică automat răspunsurile după introducere"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Sensibil la majuscule",
+          "description": "Asigură că răspunsul utilizatorului trebuie să fie identic cu soluția."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Solicită completarea tuturor câmpurilor înainte ca soluția să poată fi vizualizată"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Pune câmpurile de intrare pe linii separate"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Afișează dialog de confirmare la \"Verifică\"",
+          "description": "Această opțiune nu este compatibilă cu opțiunea \"Verifică automat răspunsurile după introducere\""
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Afișează dialog de confirmare la \"Reîncearcă\""
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Acceptă greșeli minore de ortografie",
+          "description": "Dacă este activată, un răspuns va fi considerat corect și cu greșeli minore de ortografie (3-9 caractere: 1 greșeală; peste 9 caractere: 2 greșeli)"
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Dialog de confirmare la verificare",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Text antet",
+          "default": "Finalizezi?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Text corp",
+          "default": "Sunteți sigur că doriți să finalizați?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etichetă buton Anulare",
+          "default": "Anulează"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Etichetă buton Confirmare",
+          "default": "Finalizează"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Dialog de confirmare la reîncercare",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Text antet",
+          "default": "Reîncerci?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Text corp",
+          "default": "Sunteți sigur că doriți să reîncercați?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Etichetă buton Anulare",
+          "default": "Anulează"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Etichetă buton Confirmare",
+          "default": "Confirmă"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Reprezentarea textuală a barei de scor pentru cei care folosesc un cititor de ecran",
+      "default": "Ați obținut :num din :total puncte"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Descriere pentru tehnologia asistivă a butonului \"Verifică\"",
+      "default": "Verifică răspunsurile. Răspunsurile vor fi marcate ca fiind corecte, incorecte sau fără răspuns."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Descriere pentru tehnologia asistivă a butonului \"Arată Soluția\"",
+      "default": "Arată soluția. Sarcina va fi marcată cu soluția sa corectă."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Descriere pentru tehnologia asistivă a butonului \"Reîncearcă\"",
+      "default": "Reîncearcă sarcina. Resetează toate răspunsurile și începe sarcina din nou."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Descriere pentru tehnologia asistivă la pornirea sarcinii",
+      "default": "Mod de verificare"
     }
   ]
 }
