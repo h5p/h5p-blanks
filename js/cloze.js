@@ -43,7 +43,7 @@
       for (var i = 0; i < answers.length; i++) {
         // Damerau-Levenshtein comparison
         if (behaviour.acceptSpellingErrors === true) {
-          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, H5P.trim(answers[i]), true);
+          var levenshtein = H5P.TextUtilities.computeLevenshteinDistance(answered, answers[i].trim(), true);
           /*
            * The correctness is temporarily computed by word length and number of number of operations
            * required to change one word into the other (Damerau-Levenshtein). It's subject to
@@ -56,7 +56,7 @@
           }
         }
         // regular comparison
-        if (answered === H5P.trim(answers[i])) {
+        if (answered === answers[i].trim()) {
           return true;
         }
       }
@@ -78,6 +78,8 @@
      * Check the cloze and mark it as wrong or correct.
      */
     this.checkAnswer = function () {
+      this.trimUserInputField();
+
       checkedAnswer = this.getUserAnswer();
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
@@ -124,10 +126,12 @@
         return; // Only for the wrong ones
       }
 
+      this.trimUserInputField();
+
       $('<span>', {
         'aria-hidden': true,
         'class': 'h5p-correct-answer',
-        text: H5P.trim(answer.replace(/\s*\/\s*/g, '/')),
+        text: (answer.replace(/\s*\/\s*/g, '/')).trim(),
         insertAfter: $wrapper
       });
       $input.attr('disabled', true);
@@ -210,14 +214,14 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      const trimmedAnswer = H5P.trim($input.val().replace(/\&nbsp;/g, ' '));
-      // Set trimmed answer
-      $input.val(trimmedAnswer);
-      if (behaviour.formulaEditor) {
-        // If fomula editor is enabled set trimmed text 
-        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
-      }
-      return trimmedAnswer;
+      return $input.val().replace(/\&nbsp;/g, ' ').trim();
+    };
+
+    /**
+     * Trim text in user input field.
+     */
+    this.trimUserInputField = function () {
+      this.setUserInput(this.getUserAnswer());
     };
 
     /**
@@ -225,6 +229,11 @@
      */
     this.setUserInput = function (text) {
       $input.val(text);
+
+      if (behaviour.formulaEditor) {
+        // If fomula editor is enabled set trimmed text
+        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
+      }
     };
 
     /**

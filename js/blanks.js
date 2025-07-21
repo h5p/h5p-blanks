@@ -340,7 +340,7 @@ H5P.Blanks = (function ($, Question) {
        */
       let resizeTimer;
       new ResizeObserver(function () {
-        // To avoid triggering resize too often, we wait a second after the last 
+        // To avoid triggering resize too often, we wait a second after the last
         // resize event has been received
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
@@ -755,7 +755,7 @@ H5P.Blanks = (function ($, Question) {
 
     // Trim solutions
     for (var i = 0; i < solutions.length; i++) {
-      solutions[i] = H5P.trim(solutions[i]);
+      solutions[i] = solutions[i].trim();
 
       //decodes html entities
       var elem = document.createElement('textarea');
