@@ -101,9 +101,12 @@
   color: var(--h5p-theme-text-secondary);
   border: solid 1px var(--h5p-theme-alternative-base);
   border-radius: var(--h5p-theme-border-radius-medium);
-  padding: 0 var(--h5p-theme-spacing-s);
   font-weight: 500;
   margin: 0 var(--h5p-theme-spacing-m);
+}
+
+.h5p-blanks .h5p-theme-lines {
+  padding: 0 var(--h5p-theme-spacing-s);
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
@@ -131,4 +134,9 @@
   height: 0;
   width: 0;
   overflow: hidden;
+}
+
+/* Overwrite some default styling for question */
+.h5p-theme.h5p-blanks .h5p-question-content {
+  padding: 0;
 }
