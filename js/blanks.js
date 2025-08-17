@@ -83,6 +83,7 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false
       },
+      answerSeparator: "/",
       a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
       a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
       a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
@@ -750,7 +751,7 @@ H5P.Blanks = (function ($, Question) {
     }
 
     // Split up alternatives
-    var solutions = solution.split('/');
+    var solutions = solution.split(this.params.answerSeparator);
     this.hasAlternatives = this.hasAlternatives || solutions.length > 1;
 
     // Trim solutions
