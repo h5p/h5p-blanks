@@ -90,7 +90,6 @@
 /* Actual text paragraphs */
 
 .h5p-blanks .h5p-question-content p {
-  display: inline-block;
   color: var(--h5p-theme-text-secondary);
   margin: 0;
   font-size: var(--h5p-theme-font-size-m);
