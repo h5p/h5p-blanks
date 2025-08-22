@@ -776,7 +776,13 @@ H5P.Blanks = (function ($, Question) {
    *  The xAPI event we will add a response to
    */
   Blanks.prototype.addResponseToXAPI = function (xAPIEvent) {
-    xAPIEvent.setScoredResult(this.getScore(), this.getMaxScore(), this);
+    xAPIEvent.setScoredResult(
+      this.getScore(),
+      this.getMaxScore(),
+      this,
+      true, // completion
+      this.getScore() === this.getMaxScore() // success
+    );
     xAPIEvent.data.statement.result.response = this.getxAPIResponse();
   };
 
