@@ -104,8 +104,9 @@
   margin: 0 var(--h5p-theme-spacing-m);
 }
 
-.h5p-blanks .h5p-theme-lines {
+.h5p-blanks .h5p-question-content {
   padding: 0 var(--h5p-theme-spacing-s);
+  line-height: var(--h5p-theme-spacing-xl);
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
@@ -133,9 +134,4 @@
   height: 0;
   width: 0;
   overflow: hidden;
-}
-
-/* Overwrite some default styling for question */
-.h5p-theme.h5p-blanks .h5p-question-content {
-  padding: 0;
 }

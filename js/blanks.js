@@ -320,7 +320,7 @@ H5P.Blanks = (function ($, Question) {
         return cloze;
       });
 
-      html += '<div class="h5p-theme-lines" role="group" aria-labelledby="' + self.labelId + '">' + question + '</div>';
+      html += '<div role="group" aria-labelledby="' + self.labelId + '">' + question + '</div>';
     }
 
     self.hasClozes = clozeNumber > 0;
