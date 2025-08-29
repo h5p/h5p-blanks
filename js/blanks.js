@@ -341,7 +341,7 @@ H5P.Blanks = (function ($, Question) {
        */
       let resizeTimer;
       new ResizeObserver(function () {
-        // To avoid triggering resize too often, we wait a second after the last
+        // To avoid triggering resize too often, we wait a second after the last 
         // resize event has been received
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
@@ -501,10 +501,10 @@ H5P.Blanks = (function ($, Question) {
     }
 
     if (this.params.behaviour.enableRetry) {
-      const hideBecauseCorrect = allCorrect && !this.params.behaviour.allowRetryIfCorrect;
-      const showWhenChecking = (state === STATE_CHECKING && !hideBecauseCorrect);
-      const showWhenFinished = (state === STATE_FINISHED && !hideBecauseCorrect);
-      if (showWhenChecking || showWhenFinished || state === STATE_SHOWING_SOLUTION) {
+      const shouldHide = allCorrect && !this.params.behaviour.allowRetryIfCorrect;
+      const shouldShow = !shouldHide && (state !== STATE_ONGOING);
+
+      if (shouldShow) {
         this.showButton('try-again');
       }
       else {

@@ -8,7 +8,6 @@ H5PUpgrades['H5P.Blanks'] = (function () {
           // Moved all behavioural settings into "behaviour" group.
           parameters.behaviour = {
             enableRetry: parameters.enableTryAgain === undefined ? true : parameters.enableRetry,
-            allowRetryIfCorrect: parameters.allowRetryIfCorrect === undefined ? false : parameters.allowRetryIfCorrect,
             enableSolutionsButton: true,
             autoCheck: parameters.autoCheck === undefined ? false : parameters.autoCheck,
             caseSensitive: parameters.caseSensitive === undefined ? true : parameters.caseSensitive,
