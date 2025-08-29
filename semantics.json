@@ -280,6 +280,23 @@
         "optional": true
       },
       {
+        "label": "Allow \"Retry\" even if all answers were correct",
+        "importance": "low",
+        "name": "allowRetryIfCorrect",
+        "type": "boolean",
+        "default": false,
+        "optional": true,
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "enableRetry",
+              "equals": true
+            }
+          ]
+        }
+      },
+      {
         "label": "Enable \"Show solution\" button",
         "importance": "low",
         "name": "enableSolutionsButton",

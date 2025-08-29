@@ -117,6 +117,9 @@
           "label": "Gaitu \"Saiatu berriro\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Gaitu \"Erakutsi emaitza\" botoia"
         },
         {

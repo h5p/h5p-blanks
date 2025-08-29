@@ -117,6 +117,9 @@
           "label": "\"Wiederholen\" zulassen"
         },
         {
+          "label": "\"Wiederholen\" auch erlauben, wenn alle Antworten korrekt sind"
+        },
+        {
           "label": "\"Lösung anzeigen\" ermöglichen"
         },
         {

@@ -117,6 +117,9 @@
           "label": "启用 \"重试\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "启用 \"显示答案\" 按钮"
         },
         {

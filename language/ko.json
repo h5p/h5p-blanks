@@ -117,6 +117,9 @@
           "label": "\"Retry\" (재시도) 버튼 활성화"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "\"Show solution\" (해답 보이기) 버튼 활성화"
         },
         {

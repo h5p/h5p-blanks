@@ -117,6 +117,9 @@
           "label": "Aktiver \"Prøv igjen\"-knapp"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Aktiver \"Vis svar\"-knapp"
         },
         {
@@ -165,7 +168,7 @@
         },
         {
           "label": "Navn på \"Bekreft\"-knapp",
-          "default": "Avslutt"
+          "default": "Ferdig (bekreft?)"
         }
       ]
     },

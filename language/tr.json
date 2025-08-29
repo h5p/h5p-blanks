@@ -117,6 +117,9 @@
           "label": "\"Yeniden dene\"yi etkinleştir"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "\"Çözüm göster\" düğmesini etkinleştirin"
         },
         {

@@ -117,6 +117,9 @@
           "label": "Ενεργοποίηση κουμπιού \"Επανάληψη\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Ενεργοποίηση κουμπιού \"Λύση\""
         },
         {

@@ -117,6 +117,9 @@
           "label": "Atļaut \"Mēģināt vēlreiz\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Atļaut pogu \"Rādīt risinājumu\""
         },
         {

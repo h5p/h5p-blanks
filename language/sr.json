@@ -117,6 +117,9 @@
           "label": "Омогући \"Врати\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Омогући \"Прикажи решење\" дугме"
         },
         {

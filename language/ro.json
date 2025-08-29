@@ -117,6 +117,9 @@
           "label": "Activează \"Reîncearcă\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Activează butonul \"Arată soluția\""
         },
         {

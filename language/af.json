@@ -117,6 +117,9 @@
           "label": "Aktiveer \"Probeer weer\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Aktiveer \"Wys antwoord\" knoppie"
         },
         {

@@ -117,6 +117,9 @@
           "label": "Разрешаване на бутон \"Опитай пак\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Разрешаване на бутон \"Покажи решението\""
         },
         {

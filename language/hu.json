@@ -117,6 +117,9 @@
           "label": "„Próbáld újra” engedélyezése"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "„Megoldás megjelenítése” gomb engedélyezése"
         },
         {
