@@ -228,7 +228,7 @@ H5P.Blanks = (function ($, Question) {
       'aria-label': self.params.a11yShowSolution,
     }, {
       styleType: 'secondary',
-      icon: 'show-results',
+      icon: 'show-solutions',
     });
 
     // Try again button
