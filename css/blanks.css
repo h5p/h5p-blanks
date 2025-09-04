@@ -5,8 +5,7 @@
   display: inline-flex;
   position: relative;
   align-items: center;
-  vertical-align: top;
-  height: calc(var(--h5p-theme-spacing-xl) - 1px);
+  vertical-align: middle;
 }
 .h5p-blanks .h5p-text-input {
   font-family: var(--h5p-theme-font-name);
@@ -20,6 +19,9 @@
   white-space: nowrap;
   color: var(--h5p-theme-text-primary);
   width: 6em;
+  /* Incase we have empty input we want the height to be equal
+    to the font-size multipled with the line-height. */
+  min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
   font-weight: 600;
 }
 .h5p-blanks .h5p-text-input:focus {
@@ -59,6 +61,8 @@
   padding: calc(var(--h5p-theme-spacing-xs) / 2);
   border-radius: var(--h5p-theme-border-radius-medium);
   margin-left: .5em;
+  display: inline-flex;
+  line-height: normal;
 }
 
 .h5p-blanks .h5p-correct:after {
