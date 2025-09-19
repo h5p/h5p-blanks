@@ -24,7 +24,7 @@
   min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
   font-weight: 600;
 }
-.h5p-blanks .h5p-text-input:focus {
+.h5p-blanks .h5p-text-input:focus-visible {
   box-shadow: 0 0 0.5em 0 var(--h5p-theme-contrast-cta-white) !important;
   border-color: var(--h5p-theme-contrast-cta-white) !important;
   outline: 1px ridge var(--h5p-theme-contrast-cta-white) !important;
