@@ -82,8 +82,8 @@
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true)
-          .attr('aria-label', inputLabel + '. ' + l10n.answeredCorrectly);
+        self.disableInput();
+        $input.attr('aria-label', inputLabel + '. ' + l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
@@ -96,7 +96,7 @@
      * @method disableInput
      */
     this.disableInput = function () {
-      this.toggleInput(false);
+      $input.attr('disabled', true).attr('contenteditable', false);
     };
 
     /**
@@ -104,7 +104,7 @@
      * @method enableInput
      */
     this.enableInput = function () {
-      this.toggleInput(true);
+      $input.attr('disabled', false).attr('contenteditable', true);
     };
 
     /**
@@ -113,7 +113,7 @@
      * @param  {boolean}   enabled True if input should be enabled, otherwise false
      */
     this.toggleInput = function (enabled) {
-      $input.attr('disabled', !enabled);
+      $input.attr('disabled', !enabled).attr('contenteditable', !enabled);;
     };
 
     /**
@@ -130,7 +130,7 @@
         text: H5P.trim(answer.replace(/\s*\/\s*/g, '/')),
         insertAfter: $wrapper
       });
-      $input.attr('disabled', true);
+      self.disableInput();
       var ariaLabel = inputLabel + '. ' +
         l10n.solutionLabel + ' ' + answer + '. ' +
         l10n.answeredIncorrectly;
@@ -161,7 +161,7 @@
         .replace('@total', totalCloze);
 
       // Add tip if tip is set
-      if(tip !== undefined && tip.trim().length > 0) {
+      if (tip !== undefined && tip.trim().length > 0) {
         $wrapper.addClass('has-tip')
           .append(H5P.JoubelUI.createTip(tip, {
             tipLabel: l10n.tipLabel
@@ -210,13 +210,16 @@
      * @returns {string} Trimmed answer
      */
     this.getUserAnswer = function () {
-      const trimmedAnswer = H5P.trim($input.val().replace(/\&nbsp;/g, ' '));
-      // Set trimmed answer
-      $input.val(trimmedAnswer);
-      if (behaviour.formulaEditor) {
-        // If fomula editor is enabled set trimmed text 
-        $input.parent().find('.wiris-h5p-input').html(trimmedAnswer);
+
+      // Determine the content based on element type
+      // If formulaEditor is enabled, $input is a WIRIS contenteditable div, otherwise it is a normal input
+      const content = $input.is('input') ? $input.val() : $input.html();
+      const trimmedAnswer = H5P.trim(content.replace(/\&nbsp;/g, ' '));
+
+      if ($input.is('input')) {
+        $input.val(trimmedAnswer);
       }
+
       return trimmedAnswer;
     };
 
@@ -224,7 +227,11 @@
      * @param {string} text New input text
      */
     this.setUserInput = function (text) {
-      $input.val(text);
+      if ($input.is('input')) {
+        $input.val(text);
+      } else {
+        $input.html(text);
+      }
     };
 
     /**

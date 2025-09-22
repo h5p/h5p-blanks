@@ -1,12 +1,15 @@
 .h5p-blanks {
   position: relative;
 }
+
 .h5p-blanks .h5p-input-wrapper {
   display: inline-flex;
   position: relative;
   align-items: center;
   vertical-align: middle;
+  line-height: normal;
 }
+
 .h5p-blanks .h5p-text-input {
   font-family: var(--h5p-theme-font-name);
   font-size: var(--h5p-theme-font-size-m);
@@ -18,26 +21,31 @@
   overflow: hidden;
   white-space: nowrap;
   color: var(--h5p-theme-text-primary);
-  width: 6em;
+  min-width: 6em;
   /* Incase we have empty input we want the height to be equal
     to the font-size multipled with the line-height. */
   min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
   font-weight: 600;
 }
+
 .h5p-blanks .h5p-text-input:focus-visible {
   box-shadow: 0 0 0.5em 0 var(--h5p-theme-contrast-cta-white) !important;
   border-color: var(--h5p-theme-contrast-cta-white) !important;
   outline: 1px ridge var(--h5p-theme-contrast-cta-white) !important;
 }
+
 .h5p-blanks .h5p-text-input:disabled {
   opacity: 1;
 }
+
 .h5p-blanks .h5p-text-input.h5p-not-filled-out {
   background: #fff0f0;
 }
+
 .h5p-blanks .h5p-separate-lines .h5p-input-wrapper {
   display: block;
 }
+
 .h5p-blanks .h5p-separate-lines .h5p-text-input {
   width: 100%;
   box-sizing: border-box;
@@ -52,6 +60,11 @@
   font-weight: bold;
   padding-right: var(--h5p-theme-spacing-m);
 }
+
+.h5p-blanks .h5p-text-input.wiris-h5p-input {
+  padding-right: var(--h5p-theme-spacing-m);
+}
+
 /* Showing solution */
 .h5p-blanks .h5p-correct-answer {
   color: var(--h5p-theme-feedback-correct-main);
@@ -82,6 +95,7 @@
   font-weight: bold;
   padding-right: var(--h5p-theme-spacing-m);
 }
+
 .h5p-blanks .h5p-wrong:after {
   position: absolute;
   right: var(--h5p-theme-spacing-xxs);
@@ -99,7 +113,7 @@
   font-size: var(--h5p-theme-font-size-m);
 }
 
-.h5p-blanks .h5p-question-content { 
+.h5p-blanks .h5p-question-content {
   background-color: var(--h5p-theme-alternative-light);
   color: var(--h5p-theme-text-secondary);
   border: solid 1px var(--h5p-theme-alternative-base);
@@ -117,22 +131,29 @@
 .h5p-blanks .joubel-tip-container {
   position: absolute;
   right: 0.4em;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: var(--h5p-theme-font-size-m);
 }
+
 .h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
   line-height: 1em;
 }
+
 .h5p-blanks .has-tip .h5p-text-input {
   padding-right: 2.25em;
 }
+
 .h5p-blanks .has-tip.h5p-correct:after,
 .h5p-blanks .has-tip.h5p-wrong:after {
   right: 2.25em;
 }
+
 .h5p-blanks .has-tip.h5p-correct .h5p-text-input,
 .h5p-blanks .has-tip.h5p-wrong .h5p-text-input {
   padding-right: 3.5em;
 }
+
 .h5p-blanks .hidden-but-read {
   position: absolute;
   height: 0;
