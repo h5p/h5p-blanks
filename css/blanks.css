@@ -20,6 +20,7 @@
   white-space: nowrap;
   color: var(--h5p-theme-text-primary);
   min-width: 6em;
+  max-width: fit-content;
   /* Incase we have empty input we want the height to be equal
     to the font-size multipled with the line-height. */
   min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
@@ -128,8 +129,14 @@
 .h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
   line-height: 1em;
 }
+.h5p-blanks .h5p-text-input.wiris-h5p-input {
+  padding-right: var(--h5p-theme-spacing-m);
+}
 .h5p-blanks .has-tip .h5p-text-input {
-  padding-right: 2.25em;
+  padding-right: var(--h5p-theme-spacing-m);
+}
+.h5p-blanks .has-tip .wiris-h5p-input {
+  padding-right: calc(var(--h5p-theme-spacing-m) * 2);
 }
 .h5p-blanks .has-tip.h5p-correct:after,
 .h5p-blanks .has-tip.h5p-wrong:after {

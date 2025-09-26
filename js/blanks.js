@@ -493,7 +493,6 @@ H5P.Blanks = (function ($, Question) {
   };
 
   Blanks.prototype.inputKeydown = function (event, element) {
-    debugger;
     var self = this;
     var $this = $(element);
 
