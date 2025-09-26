@@ -493,6 +493,7 @@ H5P.Blanks = (function ($, Question) {
   };
 
   Blanks.prototype.inputKeydown = function (event, element) {
+    debugger;
     var self = this;
     var $this = $(element);
 
@@ -500,12 +501,19 @@ H5P.Blanks = (function ($, Question) {
     self.autoGrowTextField($this);
 
     var $inputs, isLastInput;
-    var enterPressed = (event.keyCode === 13);
-    var tabPressedAutoCheck = (event.keyCode === 9 && self.params.behaviour.autoCheck);
+    var enterPressed = (event.key === "Enter");
+    var tabPressedAutoCheck = (event.key === "Tab" && self.params.behaviour.autoCheck);
 
     if (enterPressed || tabPressedAutoCheck) {
       // Figure out which inputs are left to answer
-      $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
+      let selector = '.h5p-input-wrapper:not(.h5p-correct)';
+
+      if ($this.is('input')) {
+        selector += ' .h5p-text-input';
+      } else {
+        selector += ' .wiris-h5p-input';
+      }
+      $inputs = self.$questions.find(selector);
 
       // Figure out if this is the last input
       isLastInput = $this.is($inputs[$inputs.length - 1]);
@@ -520,16 +528,19 @@ H5P.Blanks = (function ($, Question) {
     }
 
     if (enterPressed) {
-      if (isLastInput) {
-        // Check answers
-        $this.trigger('blur');
-      }
-      else {
-        // Find next input to focus
-        $inputs.eq($inputs.index($this) + 1).focus();
-      }
+      if (!event.shiftKey) {
+        event.preventDefault();
+        if (isLastInput) {
+          // Check answers
+          $this.trigger('blur');
+        }
+        else {
+          // Find next input to focus
+          $inputs.eq($inputs.index($this) + 1).focus();
+        }
 
-      return false; // Prevent form submission on enter key
+        return false; // Prevent form submission on enter key
+      }
     }
   }
 
