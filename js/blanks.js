@@ -191,7 +191,7 @@ H5P.Blanks = (function ($, Question) {
     else if ($content.length !== 0) {
       $container = $content;
     }
-    else  {
+    else {
       $container = $(document.body);
     }
 
@@ -236,7 +236,7 @@ H5P.Blanks = (function ($, Question) {
       self.addButton('try-again', self.params.tryAgain, function () {
         self.a11yHeader.innerHTML = '';
         self.resetTask();
-        self.$questions.filter(':first').find('input:first').focus();
+        self.$questions.filter(':first').find('.h5p-text-input:first').focus();
       }, true, {
         'aria-label': self.params.a11yRetry,
       }, {
@@ -332,81 +332,15 @@ H5P.Blanks = (function ($, Question) {
     self.$questions[0].insertBefore(self.a11yHeader, this.$questions[0].childNodes[0] || null);
 
     // Set input fields.
-    this.$questions.find('input').each(function (i) {
+    this.$questions.find('.h5p-text-input').each(function (i) {
+      self.setupInput(this, i);
+    });
 
-      /**
-       * Observe resizing of input field, so that we can resize
-       * the H5P to fit all content when the input field grows in size
-       */
-      let resizeTimer;
-      new ResizeObserver(function () {
-        // To avoid triggering resize too often, we wait a second after the last 
-        // resize event has been received
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-          self.trigger('resize');
-        }, 1000);
-      }).observe(this);
+    this.$questions.on('keydown', '.h5p-text-input', function (event) {
+      self.inputKeydown(event, this);
+    });
 
-      var afterCheck;
-      if (self.params.behaviour.autoCheck) {
-        afterCheck = function () {
-          var answer = $("<div>").text(this.getUserAnswer()).html();
-          self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', answer));
-          if (self.done || self.allBlanksFilledOut()) {
-            // All answers has been given. Show solutions button.
-            self.toggleButtonVisibility(STATE_CHECKING);
-            self.showEvaluation();
-            self.triggerAnswered();
-            self.done = true;
-          }
-        };
-      }
-      self.clozes[i].setInput($(this), afterCheck, function () {
-        self.toggleButtonVisibility(STATE_ONGOING);
-        if (!self.params.behaviour.autoCheck) {
-          self.hideEvaluation();
-        }
-      }, i, self.clozes.length);
-    }).keydown(function (event) {
-      var $this = $(this);
-
-      // Adjust width of text input field to match value
-      self.autoGrowTextField($this);
-
-      var $inputs, isLastInput;
-      var enterPressed = (event.keyCode === 13);
-      var tabPressedAutoCheck = (event.keyCode === 9 && self.params.behaviour.autoCheck);
-
-      if (enterPressed || tabPressedAutoCheck) {
-        // Figure out which inputs are left to answer
-        $inputs = self.$questions.find('.h5p-input-wrapper:not(.h5p-correct) .h5p-text-input');
-
-        // Figure out if this is the last input
-        isLastInput = $this.is($inputs[$inputs.length - 1]);
-      }
-
-      if ((tabPressedAutoCheck && isLastInput && !self.shiftPressed) ||
-          (enterPressed && isLastInput)) {
-        // Focus first button on next tick
-        setTimeout(function () {
-          self.focusButton();
-        }, 10);
-      }
-
-      if (enterPressed) {
-        if (isLastInput) {
-          // Check answers
-          $this.trigger('blur');
-        }
-        else {
-          // Find next input to focus
-          $inputs.eq($inputs.index($this) + 1).focus();
-        }
-
-        return false; // Prevent form submission on enter key
-      }
-    }).on('change', function () {
+    this.$questions.on('change', '.h5p-text-input', function () {
       self.answered = true;
       self.triggerXAPI('interacted');
     });
@@ -418,6 +352,46 @@ H5P.Blanks = (function ($, Question) {
     return this.$questions;
   };
 
+  Blanks.prototype.setupInput = function (input, index) {
+    var self = this;
+    /**
+     * Observe resizing of input field, so that we can resize
+     * the H5P to fit all content when the input field grows in size
+     */
+    let resizeTimer;
+    new ResizeObserver(function () {
+      // To avoid triggering resize too often, we wait a second after the last
+      // resize event has been received
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        self.trigger('resize');
+      }, 1000);
+    }).observe(input);
+
+    // Setup autoCheck callback if enabled
+    var afterCheck;
+    if (self.params.behaviour.autoCheck) {
+      afterCheck = function () {
+        var answer = $("<div>").text(this.getUserAnswer()).html();
+        self.read((this.correct() ? self.params.answerIsCorrect : self.params.answerIsWrong).replace(':ans', answer));
+        if (self.done || self.allBlanksFilledOut()) {
+          // All answers has been given. Show solutions button.
+          self.toggleButtonVisibility(STATE_CHECKING);
+          self.showEvaluation();
+          self.triggerAnswered();
+          self.done = true;
+        }
+      };
+    }
+
+    self.clozes[index].setInput($(input), afterCheck, function () {
+      self.toggleButtonVisibility(STATE_ONGOING);
+      if (!self.params.behaviour.autoCheck) {
+        self.hideEvaluation();
+      }
+    }, index, self.clozes.length);
+  };
+
   /**
    *
    */
@@ -426,7 +400,6 @@ H5P.Blanks = (function ($, Question) {
     if (this.params.behaviour.separateLines) {
       return;
     }
-
     var self = this;
     var fontSize = parseInt($input.css('font-size'), 10);
     var minEm = 3;
@@ -437,10 +410,11 @@ H5P.Blanks = (function ($, Question) {
 
     setTimeout(function () {
       var tmp = $('<div>', {
-        'text': $input.val()
+        'text': $input.is('input') ? $input.val() : $input.html()
       });
       tmp.css({
         'position': 'absolute',
+        'visibility': 'hidden',
         'white-space': 'nowrap',
         'font-size': $input.css('font-size'),
         'font-family': $input.css('font-family'),
@@ -472,7 +446,7 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.resetGrowTextField = function () {
     var self = this;
 
-    this.$questions.find('input').each(function () {
+    this.$questions.find('.h5p-text-input').each(function () {
       self.autoGrowTextField($(this));
     });
   };
@@ -517,6 +491,57 @@ H5P.Blanks = (function ($, Question) {
 
     this.trigger('resize');
   };
+
+  Blanks.prototype.inputKeydown = function (event, element) {
+    var self = this;
+    var $this = $(element);
+
+    // Adjust width of text input field to match value
+    self.autoGrowTextField($this);
+
+    var $inputs, isLastInput;
+    var enterPressed = (event.key === "Enter");
+    var tabPressedAutoCheck = (event.key === "Tab" && self.params.behaviour.autoCheck);
+
+    if (enterPressed || tabPressedAutoCheck) {
+      // Figure out which inputs are left to answer
+      let selector = '.h5p-input-wrapper:not(.h5p-correct)';
+
+      if ($this.is('input')) {
+        selector += ' .h5p-text-input';
+      } else {
+        selector += ' .wiris-h5p-input';
+      }
+      $inputs = self.$questions.find(selector);
+
+      // Figure out if this is the last input
+      isLastInput = $this.is($inputs[$inputs.length - 1]);
+    }
+
+    if ((tabPressedAutoCheck && isLastInput && !self.shiftPressed) ||
+      (enterPressed && isLastInput)) {
+      // Focus first button on next tick
+      setTimeout(function () {
+        self.focusButton();
+      }, 10);
+    }
+
+    if (enterPressed) {
+      if (!event.shiftKey) {
+        event.preventDefault();
+        if (isLastInput) {
+          // Check answers
+          $this.trigger('blur');
+        }
+        else {
+          // Find next input to focus
+          $inputs.eq($inputs.index($this) + 1).focus();
+        }
+
+        return false; // Prevent form submission on enter key
+      }
+    }
+  }
 
   /**
    * Check if solution is allowed. Warn user if not
@@ -563,7 +588,7 @@ H5P.Blanks = (function ($, Question) {
    */
   Blanks.prototype.removeMarkedResults = function () {
     this.$questions.find('.h5p-input-wrapper').removeClass('h5p-correct h5p-wrong');
-    this.$questions.find('.h5p-input-wrapper > input').attr('disabled', false);
+    this.$questions.find('.h5p-input-wrapper >  .h5p-text-input').attr('disabled', false).attr('contenteditable', true);
     this.trigger('resize');
   };
 
@@ -902,8 +927,8 @@ H5P.Blanks = (function ($, Question) {
   Blanks.prototype.setH5PUserState = function () {
     var self = this;
     var isValidState = (this.previousState !== undefined &&
-                        this.previousState.length &&
-                        this.previousState.length === this.clozes.length);
+      this.previousState.length &&
+      this.previousState.length === this.clozes.length);
 
     // Check that stored user state is valid
     if (!isValidState) {
@@ -937,14 +962,6 @@ H5P.Blanks = (function ($, Question) {
       self.showEvaluation();
       self.toggleButtonVisibility(STATE_CHECKING);
     }
-  };
-
-  /**
-   * Disables any active input. Useful for freezing the task and dis-allowing
-   * modification of wrong answers.
-   */
-  Blanks.prototype.disableInput = function () {
-    this.$questions.find('input').attr('disabled', true);
   };
 
   Blanks.idCounter = 0;
@@ -990,12 +1007,13 @@ H5P.Blanks.parseText = function (question) {
    */
   function tokenizeQuestionText(text) {
     return text.split(/(\*.*?\*)/).filter(function (str) {
-      return str.length > 0; }
+      return str.length > 0;
+    }
     );
   }
 
   function startsAndEndsWithAnAsterisk(str) {
-    return str.substr(0,1) === '*' && str.substr(-1) === '*';
+    return str.substr(0, 1) === '*' && str.substr(-1) === '*';
   }
 
   function replaceHtmlTags(str, value) {

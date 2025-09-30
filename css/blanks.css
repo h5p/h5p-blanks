@@ -6,6 +6,7 @@
   position: relative;
   align-items: center;
   vertical-align: middle;
+  line-height: inherit;
 }
 .h5p-blanks .h5p-text-input {
   font-family: var(--h5p-theme-font-name);
@@ -18,7 +19,8 @@
   overflow: hidden;
   white-space: nowrap;
   color: var(--h5p-theme-text-primary);
-  width: 6em;
+  min-width: 6em;
+  max-width: fit-content;
   /* Incase we have empty input we want the height to be equal
     to the font-size multipled with the line-height. */
   min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
@@ -42,6 +44,9 @@
   width: 100%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+.h5p-blanks .h5p-text-input.wiris-h5p-input {
+  padding-right: var(--h5p-theme-spacing-m);
 }
 
 /* Correctly answered input */
@@ -117,13 +122,21 @@
 .h5p-blanks .joubel-tip-container {
   position: absolute;
   right: 0.4em;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: var(--h5p-theme-font-size-m);
 }
 .h5p-blanks .joubel-tip-container .joubel-icon-tip-normal {
   line-height: 1em;
 }
+.h5p-blanks .h5p-text-input.wiris-h5p-input {
+  padding-right: var(--h5p-theme-spacing-m);
+}
 .h5p-blanks .has-tip .h5p-text-input {
-  padding-right: 2.25em;
+  padding-right: var(--h5p-theme-spacing-m);
+}
+.h5p-blanks .has-tip .wiris-h5p-input {
+  padding-right: calc(var(--h5p-theme-spacing-m) * 2);
 }
 .h5p-blanks .has-tip.h5p-correct:after,
 .h5p-blanks .has-tip.h5p-wrong:after {
