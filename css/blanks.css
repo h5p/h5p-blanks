@@ -139,3 +139,8 @@
   width: 0;
   overflow: hidden;
 }
+
+.h5p-no-frame > .h5p-theme.h5p-blanks > .h5p-question-main-content > .h5p-question-content {
+  padding-left: var(--h5p-theme-spacing-s);
+  padding-right: var(--h5p-theme-spacing-s);
+}
