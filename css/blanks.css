@@ -18,7 +18,7 @@
   overflow: hidden;
   white-space: nowrap;
   color: var(--h5p-theme-text-primary);
-  width: 6em;
+  min-width: 6em;
   /* Incase we have empty input we want the height to be equal
     to the font-size multipled with the line-height. */
   min-height: calc(var(--h5p-theme-font-size-m) * 1.2);
