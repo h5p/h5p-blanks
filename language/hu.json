@@ -1,55 +1,55 @@
 {
   "semantics": [
     {
-      "label": "Media",
+      "label": "Média",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "label": "Típus",
+          "description": "Opcionális média megjelenítése a kérdés felett."
         },
         {
-          "label": "Disable image zooming"
+          "label": "Kép nagyításának letiltása"
         }
       ]
     },
     {
-      "label": "Task description",
-      "default": "Fill in the missing words",
-      "description": "A guide telling the user how to answer this task."
+      "label": "Feladatleírás",
+      "default": "Egészítsd ki a hiányzó szavakat",
+      "description": "Útmutató a feladat megválaszolásához."
     },
     {
-      "label": "Text blocks",
-      "entity": "text block",
+      "label": "Szövegtömbök",
+      "entity": "szövegtömb",
       "field": {
-        "label": "Line of text",
-        "placeholder": "Oslo is the capital of *Norway*.",
+        "label": "Szövegsor",
+        "placeholder": "Oslo a *Norvégia* fővárosa.",
         "important": {
-          "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
-          "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+          "description": "<ul><li>A kihagyott részeket csillaggal (*) jelöljük a helyes szó/kifejezés előtt és után.</li><li>Alternatív válaszokat perjellel (/) válassz el.</li><li>Szöveges tippet is adhatsz, ehhez kettőspontot (:) használj a tipp előtt.</li></ul>",
+          "example": "A H5P tartalmat szerkesztheted *böngésző/web-böngésző:Valamivel, amit naponta használsz* segítségével."
         }
       }
     },
     {
-      "label": "Overall Feedback",
+      "label": "Átfogó visszajelzés",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Alapértelmezett"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Egyéni visszajelzés definiálása tetszőleges ponttartományra",
+          "description": "Kattints a „Tartomány hozzáadása” gombra a kívánt számú tartomány felvételéhez. Példa: 0–20% Rossz eredmény, 21–91% Átlagos eredmény, 91–100% Kiváló eredmény!",
+          "entity": "tartomány",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Ponttartomány"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Visszajelzés a megadott ponttartományhoz",
+                "placeholder": "Írd be a visszajelzést"
               }
             ]
           }
@@ -57,158 +57,158 @@
       ]
     },
     {
-      "label": "Text for \"Show solutions\" button",
-      "default": "Show solution"
+      "label": "Szöveg a „Megoldások mutatása” gombhoz",
+      "default": "Megoldás megjelenítése"
     },
     {
-      "label": "Text for \"Retry\" button",
-      "default": "Retry"
+      "label": "Szöveg a „Próbáld újra” gombhoz",
+      "default": "Próbáld újra"
     },
     {
-      "label": "Text for \"Check\" button",
-      "default": "Check"
+      "label": "Szöveg az „Ellenőrzés” gombhoz",
+      "default": "Ellenőrzés"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Szöveg a „Beküldés” gombhoz",
+      "default": "Beküldés"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Szöveg az „Üres kitöltetlen” üzenethez",
+      "default": "A megoldás megtekintéséhez töltsd ki az összes mezőt"
     },
     {
-      "label": "Text for \"':ans' is correct\" message",
-      "default": "':ans' is correct"
+      "label": "Szöveg a „':ans' helyes” üzenethez",
+      "default": "':ans' helyes"
     },
     {
-      "label": "Text for \"':ans' is wrong\" message",
-      "default": "':ans' is wrong"
+      "label": "Szöveg a „':ans' helytelen” üzenethez",
+      "default": "':ans' helytelen"
     },
     {
-      "label": "Text for \"Answered correctly\" message",
-      "default": "Answered correctly"
+      "label": "Szöveg az „Helyesen válaszolt” üzenethez",
+      "default": "Helyesen válaszoltál"
     },
     {
-      "label": "Text for \"Answered incorrectly\" message",
-      "default": "Answered incorrectly"
+      "label": "Szöveg az „Helytelenül válaszolt” üzenethez",
+      "default": "Helytelenül válaszoltál"
     },
     {
-      "label": "Assistive technology label for solution",
-      "default": "Correct answer:"
+      "label": "Kisegítő technológia címke a megoldáshoz",
+      "default": "Helyes válasz:"
     },
     {
-      "label": "Assistive technology label for input field",
-      "description": "Use @num and @total to replace current cloze number and total cloze number",
-      "default": "Blank input @num of @total"
+      "label": "Kisegítő technológia címke a beviteli mezőhöz",
+      "description": "Használd @num és @total helyettesítőket az aktuális és az összes mező számának behelyettesítéséhez",
+      "default": "Beviteli mező @num/@total"
     },
     {
-      "label": "Assistive technology label for saying an input has a tip tied to it",
-      "default": "Tip available"
+      "label": "Kisegítő technológia címke, ha egy mezőhöz tipp tartozik",
+      "default": "Tipp elérhető"
     },
     {
-      "label": "Tip icon label",
-      "default": "Tip"
+      "label": "Tipp ikon címke",
+      "default": "Tipp"
     },
     {
-      "label": "Behavioural settings.",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Viselkedési beállítások",
+      "description": "Ezek az opciók lehetővé teszik, hogy szabályozd a feladat viselkedését.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "„Próbáld újra” engedélyezése"
         },
         {
-          "label": "Enable \"Show solution\" button"
+          "label": "„Megoldás megjelenítése” gomb engedélyezése"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "„Ellenőrzés” gomb engedélyezése"
         },
         {
-          "label": "Automatically check answers after input"
+          "label": "Válaszok automatikus ellenőrzése a megadás után"
         },
         {
-          "label": "Case sensitive",
-          "description": "Makes sure the user input has to be exactly the same as the answer."
+          "label": "Nagybetűérzékeny",
+          "description": "A felhasználói válasznak pontosan meg kell egyeznie a helyes válasszal."
         },
         {
-          "label": "Require all fields to be answered before the solution can be viewed"
+          "label": "Minden mező kitöltése kötelező a megoldás megtekintéséhez"
         },
         {
-          "label": "Put input fields on separate lines"
+          "label": "Beviteli mezők külön sorokba helyezése"
         },
         {
-          "label": "Show confirmation dialog on \"Check\"",
-          "description": "This options is not compatible with the \"Automatically check answers after input\" option"
+          "label": "Megerősítő párbeszéd megjelenítése az „Ellenőrzés” gombnál",
+          "description": "Ez az opció nem kompatibilis azzal, hogy a válaszok automatikusan ellenőrződjenek a megadás után."
         },
         {
-          "label": "Show confirmation dialog on \"Retry\""
+          "label": "Megerősítő párbeszéd megjelenítése az „Újrapróbálkozás” gombnál"
         },
         {
-          "label": "Accept minor spelling errors",
-          "description": "If activated, an answer will also count as correct with minor spelling errors (3-9 characters: 1 spelling error, more than 9 characters: 2 spelling errors)"
+          "label": "Kisebb helyesírási hibák elfogadása",
+          "description": "Ha aktiválva van, a válasz akkor is helyesnek számít kisebb helyesírási hibákkal (3–9 karakteres válaszoknál 1 hiba, több mint 9 karakter esetén 2 hiba engedélyezett)."
         }
       ]
     },
     {
-      "label": "Check confirmation dialog",
+      "label": "Megerősítő párbeszéd az „Ellenőrzés” gombhoz",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Finish ?"
+          "label": "Fejléc szöveg",
+          "default": "Befejezés?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to finish ?"
+          "label": "Főszöveg",
+          "default": "Biztosan be szeretnéd fejezni?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Mégse gomb felirata",
+          "default": "Mégse"
         },
         {
-          "label": "Confirm button label",
-          "default": "Finish"
+          "label": "Megerősítés gomb felirata",
+          "default": "Befejezés"
         }
       ]
     },
     {
-      "label": "Retry confirmation dialog",
+      "label": "Megerősítő párbeszéd az „Újrapróbálkozás” gombhoz",
       "fields": [
         {
-          "label": "Header text",
-          "default": "Retry ?"
+          "label": "Fejléc szöveg",
+          "default": "Újrapróbálkozás?"
         },
         {
-          "label": "Body text",
-          "default": "Are you sure you wish to retry ?"
+          "label": "Főszöveg",
+          "default": "Biztosan újrapróbálkozol?"
         },
         {
-          "label": "Cancel button label",
-          "default": "Cancel"
+          "label": "Mégse gomb felirata",
+          "default": "Mégse"
         },
         {
-          "label": "Confirm button label",
-          "default": "Confirm"
+          "label": "Megerősítés gomb felirata",
+          "default": "Megerősítés"
         }
       ]
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Pontsáv szöveges kifejezése képernyőolvasó használóknak",
+      "default": ":num pontot szereztél a :total-ból"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Kisegítő technológia leírás az „Ellenőrzés” gombhoz",
+      "default": "Ellenőrizd a válaszokat. A válaszok helyesnek, helytelennek vagy megválaszolatlannak lesznek jelölve."
     },
     {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "Show the solution. The task will be marked with its correct solution."
+      "label": "Kisegítő technológia leírás a „Megoldás megjelenítése” gombhoz",
+      "default": "Mutasd a megoldást. A feladat a helyes megoldással jelenik meg."
     },
     {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Kisegítő technológia leírás az „Újrapróbálkozás” gombhoz",
+      "default": "Próbáld újra a feladatot. Töröld az összes választ és kezdd újra."
     },
     {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
+      "label": "Kisegítő technológia leírás a feladat indításához",
+      "default": "Ellenőrzési mód"
     }
   ]
 }

@@ -165,7 +165,7 @@
         },
         {
           "label": "Navn på \"Bekreft\"-knapp",
-          "default": "Ferdig (bekreft?)"
+          "default": "Avslutt"
         }
       ]
     },
