@@ -69,7 +69,7 @@
       "default": "Vérifier"
     },
     {
-      "label": "Texte du bouton \"Vérifier\"",
+      "label": "Texte pour le bouton \"Soumettre\"",
       "default": "Vérifier"
     },
     {
@@ -77,11 +77,11 @@
       "default": "Vous devez avoir rempli tous les blancs avant de voir la correction"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse exacte\"",
+      "label": "Texte du message \":ans' est une réponse exacte'",
       "default": "':ans' est une réponse exacte"
     },
     {
-      "label": "Texte du message \"':ans' est une réponse inexacte\"",
+      "label": "Texte du message \":ans' est une réponse inexacte'",
       "default": "':ans' est une réponse inexacte"
     },
     {
@@ -110,7 +110,7 @@
       "default": "Indice"
     },
     {
-      "label": "Options générales",
+      "label": "Options générales.",
       "description": "Ces options vous permettent de paramétrer le déroulement de l'exercice.",
       "fields": [
         {
@@ -123,7 +123,7 @@
           "label": "Activer le bouton \"Vérifier\""
         },
         {
-          "label": "Vérifier les réponses instantanément dès la saisie"
+          "label": "Vérifier les réponses instantanément dès la saisie."
         },
         {
           "label": "Sensible à la casse",
