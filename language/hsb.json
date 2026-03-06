@@ -117,6 +117,9 @@
           "label": "Zapni \"hišće raz\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "zapni tłóčatko \"pokaž mi rozrisanje\""
         },
         {

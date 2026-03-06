@@ -117,6 +117,9 @@
           "label": "Activar \"Tentar de novo\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Activar botón \"Amosar solución\""
         },
         {

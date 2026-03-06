@@ -117,6 +117,9 @@
           "label": "Omogoči gumb \"Poskusi ponovno\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Omogoči gumb \"Prikaži rešitev\""
         },
         {

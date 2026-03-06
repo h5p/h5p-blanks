@@ -115,6 +115,9 @@
           "label": "\"Retry\" ను ఎనేబుల్ చెయ్యి"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "\"సమాధానాలు చూపించు\" బటన్ ఎనేబుల్ చెయ్యి"
         },
         {

@@ -76,6 +76,7 @@ H5P.Blanks = (function ($, Question) {
       scoreBarLabel: 'You got :num out of :total points',
       behaviour: {
         enableRetry: true,
+        allowRetryIfCorrect: false,
         enableSolutionsButton: true,
         enableCheckButton: true,
         caseSensitive: true,
@@ -500,7 +501,10 @@ H5P.Blanks = (function ($, Question) {
     }
 
     if (this.params.behaviour.enableRetry) {
-      if ((state === STATE_CHECKING && !allCorrect) || state === STATE_SHOWING_SOLUTION) {
+      const shouldHide = allCorrect && !this.params.behaviour.allowRetryIfCorrect;
+      const shouldShow = !shouldHide && (state !== STATE_ONGOING);
+
+      if (shouldShow) {
         this.showButton('try-again');
       }
       else {

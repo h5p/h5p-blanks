@@ -117,6 +117,9 @@
           "label": "Activer le bouton \"Recommencer\""
         },
         {
+          "label": "Permettre de \"Recommencer\" même si toutes les réponses sont bonnes"
+        },
+        {
           "label": "Activer le bouton \"Voir la correction\""
         },
         {

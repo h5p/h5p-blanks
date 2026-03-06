@@ -117,6 +117,9 @@
           "label": "Salli \"Yritä uudelleen\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Salli painike \"Katso vastaus\""
         },
         {

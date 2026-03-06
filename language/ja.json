@@ -117,6 +117,9 @@
           "label": "「リトライ」を有効化"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Enable \"Show solution\" button"
         },
         {

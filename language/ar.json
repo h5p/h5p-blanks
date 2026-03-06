@@ -117,6 +117,9 @@
           "label": "تمكين \" إعادة المحاولة\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "زر تمكين \" إظهار الحل\""
         },
         {

@@ -117,6 +117,9 @@
           "label": "Увімкнути кнопку \"Повторити\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Увімкнути кнопку \"Показати відповідь\""
         },
         {

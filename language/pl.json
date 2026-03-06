@@ -117,6 +117,9 @@
           "label": "Wyświetl przycisk \"Powtórz\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Wyświetl przycisk \"Pokaż odpowiedź\""
         },
         {

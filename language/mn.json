@@ -116,6 +116,9 @@
           "label": "\"Дахин оролдох\"-ыг идэвхжүүлэх"
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "\"Шийдлийг харуулах\" товчийг идэвхжүүлнэ үү"
         },
         {

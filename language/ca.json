@@ -117,6 +117,9 @@
           "label": "Enable \"Torna-ho a provar\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Enable \"Mostra la solució\" button"
         },
         {

@@ -117,6 +117,9 @@
           "label": "Įgalinti \"Kartoti\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Įjungti mygtuką \"Rodyti sprendimą\""
         },
         {

@@ -117,6 +117,9 @@
           "label": "Povolit tlačítko \"Opakovat\""
         },
         {
+          "label": "Allow \"Retry\" even if all answers were correct"
+        },
+        {
           "label": "Povolit tlačítko \"Zobrazit řešení\""
         },
         {
