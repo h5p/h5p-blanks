@@ -277,7 +277,12 @@
         "name": "enableRetry",
         "type": "boolean",
         "default": true,
-        "optional": true
+        "optional": true,
+        "accessibility": {
+          "importance": "Recommended",
+          "relatedCriteria": "SC 3.3.6 Error Prevention (All) (Level AAA)",
+          "accessibleWhen": "Checked"
+        }
       },
       {
         "label": "Allow \"Retry\" even if all answers were correct",
@@ -319,7 +324,12 @@
         "name": "autoCheck",
         "type": "boolean",
         "default": false,
-        "optional": true
+        "optional": true,
+        "accessibility": {
+          "importance": "Recommended",
+          "relatedCriteria": "SC 3.3.6 Error Prevention (All) (Level AAA)",
+          "accessibleWhen": "NotChecked"
+        }
       },
       {
         "name": "caseSensitive",
@@ -351,7 +361,16 @@
         "name": "confirmCheckDialog",
         "type": "boolean",
         "description": "This options is not compatible with the \"Automatically check answers after input\" option",
-        "default": false
+        "default": false,
+        "accessibility": {
+          "importance": "Recommended",
+          "relatedCriteria": "SC 3.3.6 Error Prevention (All) (Level AAA)",
+          "accessibleWhen": "Checked",
+          "dependsOn": {
+            "source": "enableRetry",
+            "condition": "NotChecked"
+          }
+        }
       },
       {
         "label": "Show confirmation dialog on \"Retry\"",
