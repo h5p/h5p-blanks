@@ -5,32 +5,32 @@
       "fields": [
         {
           "label": "Típus",
-          "description": "Opcionális média megjelenítése a kérdés felett."
+          "description": "A kérdés felett megjelenítendő média tartalom (opcionális)."
         },
         {
-          "label": "Kép nagyításának letiltása"
+          "label": "Képnagyítás tiltása"
         }
       ]
     },
     {
-      "label": "Feladatleírás",
-      "default": "Egészítsd ki a hiányzó szavakat",
-      "description": "Útmutató a feladat megválaszolásához."
+      "label": "Feladat leírása",
+      "default": "Írja be a hiányzó szavakat",
+      "description": "Útmutató a felhasználónak, miként oldja meg ezt a feladatot."
     },
     {
-      "label": "Szövegtömbök",
-      "entity": "szövegtömb",
+      "label": "Szövegblokkok",
+      "entity": "szövegblokk",
       "field": {
-        "label": "Szövegsor",
-        "placeholder": "Oslo a *Norvégia* fővárosa.",
+        "label": "Szöveg",
+        "placeholder": "Oslo *Norvégia* fővárosa.",
         "important": {
-          "description": "<ul><li>A kihagyott részeket csillaggal (*) jelöljük a helyes szó/kifejezés előtt és után.</li><li>Alternatív válaszokat perjellel (/) válassz el.</li><li>Szöveges tippet is adhatsz, ehhez kettőspontot (:) használj a tipp előtt.</li></ul>",
-          "example": "A H5P tartalmat szerkesztheted *böngésző/web-böngésző:Valamivel, amit naponta használsz* segítségével."
+          "description": "<ul><li>A hiányzó szavak megadása csillag karakterekkel (*) történik, a helyes szó/kifejezés elején és végén elhelyezve azokat.</li><li>Több jó válaszlehetőség megadására az előre perjel (/) használható.</li><li>Szöveges segítség adható a kettőspont segítségével (:), amit a segítség elé kell elhelyezni.</li></ul>",
+          "example": "A H5P tartalom szerkesztéséhez szükséges egy *böngésző/web-böngésző:Valami, amit minden nap használunk*."
         }
       }
     },
     {
-      "label": "Átfogó visszajelzés",
+      "label": "Globális visszajelzés",
       "fields": [
         {
           "widgets": [
@@ -38,18 +38,18 @@
               "label": "Alapértelmezett"
             }
           ],
-          "label": "Egyéni visszajelzés definiálása tetszőleges ponttartományra",
-          "description": "Kattints a „Tartomány hozzáadása” gombra a kívánt számú tartomány felvételéhez. Példa: 0–20% Rossz eredmény, 21–91% Átlagos eredmény, 91–100% Kiváló eredmény!",
-          "entity": "tartomány",
+          "label": "Egyéni visszajelzés megadása tetszőleges eredmény intervallumokra",
+          "description": "Kattintson az „Új intervallum” gombra további intervallumok hozzáadásához. Például: 0-20% Rossz eredmény, 21-91% Átlagos eredmény, 91-100% Kimagasló eredmény!",
+          "entity": "intervallum",
           "field": {
             "fields": [
               {
-                "label": "Ponttartomány"
+                "label": "Eredmény intervallum"
               },
               {},
               {
-                "label": "Visszajelzés a megadott ponttartományhoz",
-                "placeholder": "Írd be a visszajelzést"
+                "label": "Visszajelzés az adott eredmény intervallumnál",
+                "placeholder": "Adja meg a visszajelzést"
               }
             ]
           }
@@ -57,110 +57,110 @@
       ]
     },
     {
-      "label": "Szöveg a „Megoldások mutatása” gombhoz",
-      "default": "Megoldás megjelenítése"
+      "label": "„Megoldások mutatása” gomb felirata",
+      "default": "Megoldás mutatása"
     },
     {
-      "label": "Szöveg a „Próbáld újra” gombhoz",
-      "default": "Próbáld újra"
+      "label": "„Újra” gomb felirata",
+      "default": "Újra"
     },
     {
-      "label": "Szöveg az „Ellenőrzés” gombhoz",
+      "label": "„Ellenőrzés” gomb felirata",
       "default": "Ellenőrzés"
     },
     {
-      "label": "Szöveg a „Beküldés” gombhoz",
-      "default": "Beküldés"
+      "label": "„Leadás” gomb felirata",
+      "default": "Leadás"
     },
     {
-      "label": "Szöveg az „Üres kitöltetlen” üzenethez",
-      "default": "A megoldás megtekintéséhez töltsd ki az összes mezőt"
+      "label": "„Nincs kitöltve” üzenet szövege",
+      "default": "A megoldás megtekintéséhez írjon minden hiányzó részhez"
     },
     {
-      "label": "Szöveg a „':ans' helyes” üzenethez",
-      "default": "':ans' helyes"
+      "label": "„A(z) ':ans' válasz helyes” üzenet szövege",
+      "default": "A(z) ':ans' válasz helyes"
     },
     {
-      "label": "Szöveg a „':ans' helytelen” üzenethez",
-      "default": "':ans' helytelen"
+      "label": "„A(z) ':ans' válasz helytelen” üzenet szövege",
+      "default": "A(z) ':ans' válasz helytelen"
     },
     {
-      "label": "Szöveg az „Helyesen válaszolt” üzenethez",
-      "default": "Helyesen válaszoltál"
+      "label": "„Helyes megoldás” üzenet szövege",
+      "default": "Helyes megoldás"
     },
     {
-      "label": "Szöveg az „Helytelenül válaszolt” üzenethez",
-      "default": "Helytelenül válaszoltál"
+      "label": "„Helytelen megoldás” üzenet szövege",
+      "default": "Helytelen megoldás"
     },
     {
-      "label": "Kisegítő technológia címke a megoldáshoz",
+      "label": "Megoldás címkéje támogató-segítő eszközöknek",
       "default": "Helyes válasz:"
     },
     {
-      "label": "Kisegítő technológia címke a beviteli mezőhöz",
-      "description": "Használd @num és @total helyettesítőket az aktuális és az összes mező számának behelyettesítéséhez",
-      "default": "Beviteli mező @num/@total"
+      "label": "Válaszmező címkéje támogató-segítő eszközöknek",
+      "description": "Hasznája a @num és @total kifejezéseket az adott válaszmező és az összes válaszmező számának megadásához",
+      "default": "Válaszmező @num a @total mezőből"
     },
     {
-      "label": "Kisegítő technológia címke, ha egy mezőhöz tipp tartozik",
-      "default": "Tipp elérhető"
+      "label": "A támogató-segítő eszközöknek szóló címke, mely jelzi, hogy az adott mezőhöz segítség tartozik",
+      "default": "Segítség elérhető"
     },
     {
-      "label": "Tipp ikon címke",
-      "default": "Tipp"
+      "label": "Segítség ikon felirata",
+      "default": "Segítség"
     },
     {
-      "label": "Viselkedési beállítások",
-      "description": "Ezek az opciók lehetővé teszik, hogy szabályozd a feladat viselkedését.",
+      "label": "Viselkedési beállítások.",
+      "description": "Ezekkel a beállításokkal felülírhatók a viselkedési beállítások.",
       "fields": [
         {
-          "label": "„Próbáld újra” engedélyezése"
+          "label": "„Újra” engedélyezve"
         },
         {
-          "label": "Allow \"Retry\" even if all answers were correct"
+          "label": "„Újra” engedélyezése akkor is, ha minden válasz helyes volt"
         },
         {
-          "label": "„Megoldás megjelenítése” gomb engedélyezése"
+          "label": "„Megoldás mutatása” gomb engedélyezve"
         },
         {
-          "label": "„Ellenőrzés” gomb engedélyezése"
+          "label": "„Ellenőrzés” gomb engedélyezve"
         },
         {
-          "label": "Válaszok automatikus ellenőrzése a megadás után"
+          "label": "Automatikusan ellenőrizze az beírt válaszokat"
         },
         {
-          "label": "Nagybetűérzékeny",
-          "description": "A felhasználói válasznak pontosan meg kell egyeznie a helyes válasszal."
+          "label": "Kis/nagybetű érzékeny",
+          "description": "Elvárja, hogy a felhasználó válasza teljesen megegyezzen a helyes válasszal."
         },
         {
-          "label": "Minden mező kitöltése kötelező a megoldás megtekintéséhez"
+          "label": "Minden mező kitöltése kötelező, mielőtt a megoldást megtekinthető"
         },
         {
-          "label": "Beviteli mezők külön sorokba helyezése"
+          "label": "Válaszmezők elhelyezése külön sorokban"
         },
         {
-          "label": "Megerősítő párbeszéd megjelenítése az „Ellenőrzés” gombnál",
-          "description": "Ez az opció nem kompatibilis azzal, hogy a válaszok automatikusan ellenőrződjenek a megadás után."
+          "label": "Megerősítő felület megjelenítése az „Ellenőrzés” gombnál",
+          "description": "Ez a beállítás nem használható az „Automatikusan ellenőrizze az beírt válaszokat” opcióval együtt"
         },
         {
-          "label": "Megerősítő párbeszéd megjelenítése az „Újrapróbálkozás” gombnál"
+          "label": "Megerősítő felület megjelenítése az „Újra” gombnál"
         },
         {
           "label": "Kisebb helyesírási hibák elfogadása",
-          "description": "Ha aktiválva van, a válasz akkor is helyesnek számít kisebb helyesírási hibákkal (3–9 karakteres válaszoknál 1 hiba, több mint 9 karakter esetén 2 hiba engedélyezett)."
+          "description": "Bekapcsolása esetén az apróbb elírásokat tartalmazó válaszok is helyesnek minősülnek (3-9 karakternél: 1 elírás, 9-nél több karakternél: 2 elírás)"
         }
       ]
     },
     {
-      "label": "Megerősítő párbeszéd az „Ellenőrzés” gombhoz",
+      "label": "Ellenőrzés megerősítő felület",
       "fields": [
         {
-          "label": "Fejléc szöveg",
-          "default": "Befejezés?"
+          "label": "Fejléc szövege",
+          "default": "Kész?"
         },
         {
-          "label": "Főszöveg",
-          "default": "Biztosan be szeretnéd fejezni?"
+          "label": "Üzenet szövege",
+          "default": "Biztosan be akarja fejezni?"
         },
         {
           "label": "Mégse gomb felirata",
@@ -173,15 +173,15 @@
       ]
     },
     {
-      "label": "Megerősítő párbeszéd az „Újrapróbálkozás” gombhoz",
+      "label": "Újrapróbálkozás megerősítő felület",
       "fields": [
         {
-          "label": "Fejléc szöveg",
-          "default": "Újrapróbálkozás?"
+          "label": "Fejléc szövege",
+          "default": "Újrakezdi?"
         },
         {
-          "label": "Főszöveg",
-          "default": "Biztosan újrapróbálkozol?"
+          "label": "Üzenet szövege",
+          "default": "Biztosan újra akarja kezdeni?"
         },
         {
           "label": "Mégse gomb felirata",
@@ -189,29 +189,29 @@
         },
         {
           "label": "Megerősítés gomb felirata",
-          "default": "Megerősítés"
+          "default": "Újrakezdés"
         }
       ]
     },
     {
-      "label": "Pontsáv szöveges kifejezése képernyőolvasó használóknak",
-      "default": ":num pontot szereztél a :total-ból"
+      "label": "A pontszámjelző sáv szöveges megjelenítése a szövegfelolvasót használók számára",
+      "default": "Elért pontszám: :num / :total"
     },
     {
-      "label": "Kisegítő technológia leírás az „Ellenőrzés” gombhoz",
-      "default": "Ellenőrizd a válaszokat. A válaszok helyesnek, helytelennek vagy megválaszolatlannak lesznek jelölve."
+      "label": "Az „Ellenőrzés” gomb leírása támogató-segítő eszközöknek",
+      "default": "Válaszok ellenőzése. A válaszokat helyes, helytelen vagy nem megválaszolt formában jelöli meg."
     },
     {
-      "label": "Kisegítő technológia leírás a „Megoldás megjelenítése” gombhoz",
-      "default": "Mutasd a megoldást. A feladat a helyes megoldással jelenik meg."
+      "label": "A „Megoldás mutatása” gomb leírása támogató-segítő eszközöknek",
+      "default": "Megoldás mutatása. Megmutatja a feldat helyes megoldását."
     },
     {
-      "label": "Kisegítő technológia leírás az „Újrapróbálkozás” gombhoz",
-      "default": "Próbáld újra a feladatot. Töröld az összes választ és kezdd újra."
+      "label": "Az „Újra” gomb leírása támogató-segítő eszközöknek",
+      "default": "Feladat újrapróbálása. Minden válasz visszaállítása és a feladat újbóli megoldása."
     },
     {
-      "label": "Kisegítő technológia leírás a feladat indításához",
-      "default": "Ellenőrzési mód"
+      "label": "A feladat elkézdésének leírása támogató-segítő eszközöknek",
+      "default": "Ellenőrző mód"
     }
   ]
 }
