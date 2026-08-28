@@ -83,8 +83,7 @@
       var isCorrect = correct(checkedAnswer);
       if (isCorrect) {
         $wrapper.addClass('h5p-correct');
-        $input.attr('disabled', true)
-          .attr('aria-label', inputLabel + '. ' + l10n.answeredCorrectly);
+        this.toggleInput(false, inputLabel + '. ' + l10n.answeredCorrectly);
       }
       else {
         $wrapper.addClass('h5p-wrong');
@@ -109,12 +108,19 @@
     };
 
     /**
-     * Toggles input enable/disable
+     * Toggles input enable/disable. Leaves input field tabable.
+     *
      * @method toggleInput
-     * @param  {boolean}   enabled True if input should be enabled, otherwise false
+     * @param {boolean} enabled True if input should be enabled, otherwise false.
+     * @param {string} [ariaLabel] Optional change for aria label.
      */
-    this.toggleInput = function (enabled) {
-      $input.attr('disabled', !enabled);
+    this.toggleInput = function (enabled, ariaLabel) {
+      $input.attr('aria-disabled', !enabled);
+      $input.attr('readonly', !enabled ? true : null);
+
+      if (typeof ariaLabel === 'string') {
+        $input.attr('aria-label', ariaLabel);
+      }
     };
 
     /**
@@ -131,12 +137,12 @@
         text: H5P.trim(answer.replace(/\s*\/\s*/g, '/')),
         insertAfter: $wrapper
       });
-      $input.attr('disabled', true);
-      var ariaLabel = inputLabel + '. ' +
+
+      const ariaLabel = inputLabel + '. ' +
         l10n.solutionLabel + ' ' + answer + '. ' +
         l10n.answeredIncorrectly;
 
-      $input.attr('aria-label', ariaLabel);
+      this.toggleInput(false, ariaLabel);
     };
 
     /**
