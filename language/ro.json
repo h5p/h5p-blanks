@@ -139,15 +139,16 @@
           "label": "Pune câmpurile de intrare pe linii separate"
         },
         {
-          "label": "Afișează dialog de confirmare la \"Verifică\"",
+          "label": "Afișează dialog de confirmare la \"Reîncearcă\"",
           "description": "Această opțiune nu este compatibilă cu opțiunea \"Verifică automat răspunsurile după introducere\""
-        },
-        {
-          "label": "Afișează dialog de confirmare la \"Reîncearcă\""
         },
         {
           "label": "Acceptă greșeli minore de ortografie",
           "description": "Dacă este activată, un răspuns va fi considerat corect și cu greșeli minore de ortografie (3-9 caractere: 1 greșeală; peste 9 caractere: 2 greșeli)"
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

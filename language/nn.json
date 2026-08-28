@@ -148,6 +148,10 @@
         {
           "label": "Godta mindre skrivefeil",
           "description": "Viss denne er aktivert, vil eit svar telje som rett sjølv om det inneheld mindre skrivefeil (ord på 3–9 teikn: 1 skrivefeil er godteken; ord på fleire enn 9 teikn: 2 skrivefeil er godtekne)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },

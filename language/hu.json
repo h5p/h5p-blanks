@@ -139,15 +139,16 @@
           "label": "Beviteli mezők külön sorokba helyezése"
         },
         {
-          "label": "Megerősítő párbeszéd megjelenítése az „Ellenőrzés” gombnál",
-          "description": "Ez az opció nem kompatibilis azzal, hogy a válaszok automatikusan ellenőrződjenek a megadás után."
-        },
-        {
           "label": "Megerősítő párbeszéd megjelenítése az „Újrapróbálkozás” gombnál"
+          "description": "Ez az opció nem kompatibilis azzal, hogy a válaszok automatikusan ellenőrződjenek a megadás után."
         },
         {
           "label": "Kisebb helyesírási hibák elfogadása",
           "description": "Ha aktiválva van, a válasz akkor is helyesnek számít kisebb helyesírási hibákkal (3–9 karakteres válaszoknál 1 hiba, több mint 9 karakter esetén 2 hiba engedélyezett)."
+        },
+        {
+          "label": "Keep correct answers when retrying",
+          "description": "If activated, answers that were correct will not be reset when clicking the \"Retry\" button."
         }
       ]
     },
