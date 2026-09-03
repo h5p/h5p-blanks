@@ -69,12 +69,12 @@
       "default": "Svara"
     },
     {
-      "label": "Text for \"Submit\" button",
-      "default": "Submit"
+      "label": "Text for \"Bekräfta\" button",
+      "default": "Bekräfta"
     },
     {
-      "label": "Text for \"Not filled out\" message",
-      "default": "Please fill in all blanks to view solution"
+      "label": "Text för \"Inte ifyllt\" meddelande",
+      "default": "Fyll i saknade ord för att se lösningen"
     },
     {
       "label": "Text för \"':ans' är rätt\"-meddelande",
