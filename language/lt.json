@@ -110,7 +110,7 @@
       "default": "Patarimas"
     },
     {
-      "label": "Veikimo nustatymai.",
+      "label": "Veikimo nustatymai",
       "description": "Šios parinktys leis jums valdyti, kaip veikia užduotis.",
       "fields": [
         {
