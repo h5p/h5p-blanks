@@ -99,6 +99,10 @@
   font-size: var(--h5p-theme-font-size-m);
 }
 
+.h5p-blanks .h5p-question-content p + p {
+  margin-top: var(--h5p-theme-spacing-s);
+}
+
 .h5p-blanks .h5p-question-content { 
   background-color: var(--h5p-theme-alternative-light);
   color: var(--h5p-theme-text-secondary);
@@ -110,7 +114,7 @@
 
 .h5p-blanks .h5p-question-content {
   padding: 0 var(--h5p-theme-spacing-s);
-  line-height: var(--h5p-theme-spacing-xl);
+  line-height: 2.5;
 }
 
 /* Header and footer blocks (title + evaluation, buttons) */
