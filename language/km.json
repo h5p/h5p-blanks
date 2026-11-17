@@ -198,18 +198,6 @@
       "default": "អ្នកទទួលបានពិន្ទុ :num លើ :total"
     },
     {
-      "label": "Assistive technology description for \"Check\" button",
-      "default": "ពិនិត្យចម្លើយ។ ចម្លើយនឹងត្រូវបានដាក់សម្គាល់ថាត្រឹមត្រូវ មិនត្រឹមត្រូវ ឬមិនបានឆ្លើយ។"
-    },
-    {
-      "label": "Assistive technology description for \"Show Solution\" button",
-      "default": "បង្ហាញចម្លើយត្រឹមត្រូវ។ កិច្ចការនឹងត្រូវបានដាក់សម្គាល់ដោយចម្លើយត្រឹមត្រូវរបស់វា។"
-    },
-    {
-      "label": "Assistive technology description for \"Retry\" button",
-      "default": "សាកធ្វើកិច្ចការម្តងទៀត។ លុបចម្លើយទាំងអស់ ហើយចាប់ផ្តើមកិច្ចការជាថ្មី។"
-    },
-    {
       "label": "Assistive technology description for starting task",
       "default": "ម៉ូតពិនិត្យចម្លើយ"
     }

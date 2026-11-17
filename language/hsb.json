@@ -198,18 +198,6 @@
       "default": "Twoje dypki su :num wot :total"
     },
     {
-      "label": "wopisanje podpěraceje technologije za tłóčatko \"přepruwuj\"",
-      "default": "Přepruwuj wotmołwy. Zapodate słowa hódnoća so jako prawe, wopak abo njewotmołwjene."
-    },
-    {
-      "label": "wopisanje podpěraceje technologije za tłóčatko \"pokaž mi rozrisanje\"",
-      "default": "Pokaž mi rozrisanje. Nadawk markěruje so ze swojim prawym rozrisanjom."
-    },
-    {
-      "label": "wopisanje podpěraceje technologije za tłóčatko \"hišće raz\"",
-      "default": "Spytaj hišće raz. Wšitke wotmołwy so wušmórnu a nadawk so hišće raz wotnowa započina."
-    },
-    {
       "label": "wopisanje podpěraceje technologije za započinanje nadawka",
       "default": "kontrolny modus"
     }

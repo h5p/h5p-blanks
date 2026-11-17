@@ -198,18 +198,6 @@
       "default": "Heu fet :num de :total punts"
     },
     {
-      "label": "Descripció de la tecnologia d’assistència per al botó “Comprova”",
-      "default": "Comproveu les respostes. Les respostes es marcaran com a correctes, incorrectes o sense resposta."
-    },
-    {
-      "label": "Descripció de la tecnologia d’assistència per al botó “Mostra la solució”",
-      "default": "Mostreu la solució. La tasca es marcarà amb la solució correcta."
-    },
-    {
-      "label": "Descripció de la tecnologia d’assistència per al botó “Torna-ho a provar”",
-      "default": "Torneu a provar de fer la tasca. Restabliu totes les respostes i torneu a iniciar la tasca."
-    },
-    {
       "label": "Descripció de la tecnologia d’assistència per a l’inici d’una tasca",
       "default": "S’està comprovant el mode"
     }

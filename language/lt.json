@@ -198,18 +198,6 @@
       "default": "Jūs surinkote :num iš :total balų"
     },
     {
-      "label": "Mygtuko „Patikrinti“ patarimo aprašymas",
-      "default": "Patikrinkite atsakymus. Atsakymai bus pažymėti kaip teisingi, neteisingi arba neatsakyti."
-    },
-    {
-      "label": "Mygtuko „Rodyti sprendimą“ pagalbinės technologijos aprašymas",
-      "default": "Parodykite sprendimą. Užduotis bus pažymėta teisingu jos sprendimu."
-    },
-    {
-      "label": "Patarimo aprašymas mygtukui „Bandyti dar kartą“",
-      "default": "Pabandykite atlikti užduotį dar kartą. Iš naujo nustatykite visus atsakymus ir pradėkite užduotį iš naujo."
-    },
-    {
       "label": "Patarimo aprašymas pradedant užduotį",
       "default": "Patikrinimo režimas"
     }

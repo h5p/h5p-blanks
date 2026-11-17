@@ -198,18 +198,6 @@
       "default": "Ați obținut :num din :total puncte"
     },
     {
-      "label": "Descriere pentru tehnologia asistivă a butonului \"Verifică\"",
-      "default": "Verifică răspunsurile. Răspunsurile vor fi marcate ca fiind corecte, incorecte sau fără răspuns."
-    },
-    {
-      "label": "Descriere pentru tehnologia asistivă a butonului \"Arată Soluția\"",
-      "default": "Arată soluția. Sarcina va fi marcată cu soluția sa corectă."
-    },
-    {
-      "label": "Descriere pentru tehnologia asistivă a butonului \"Reîncearcă\"",
-      "default": "Reîncearcă sarcina. Resetează toate răspunsurile și începe sarcina din nou."
-    },
-    {
       "label": "Descriere pentru tehnologia asistivă la pornirea sarcinii",
       "default": "Mod de verificare"
     }

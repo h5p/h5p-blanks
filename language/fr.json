@@ -198,18 +198,6 @@
       "default": "Vous avez obtenu :num points sur un total de :points"
     },
     {
-      "label": "Description de la technologie d’assistance pour le bouton \"Vérifier\"",
-      "default": "Vérifiez les réponses. Les réponses seront marquées comme correctes, incorrectes ou sans réponse."
-    },
-    {
-      "label": "Description de la technologie d’assistance pour le bouton \"Afficher la solution\"",
-      "default": "Montrez la solution. La tâche sera marquée avec sa solution correcte."
-    },
-    {
-      "label": "Description de la technologie d’assistance pour le bouton \"Recommencer\"",
-      "default": "Réessayez la tâche. Réinitialisez toutes les réponses et recommencez la tâche."
-    },
-    {
       "label": "Description de la technologie d’assistance pour commencer la tâche",
       "default": "Mode de contrôle"
     }
