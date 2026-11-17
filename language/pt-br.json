@@ -198,18 +198,6 @@
       "default": "Você conseguiu :num de :total pontos possíveis"
     },
     {
-      "label": "Descrição da tecnologia de assistência para o botão \"Verificar\"",
-      "default": "Verifique as respostas. As respostas serão marcadas como corretas, incorretas, ou sem resposta."
-    },
-    {
-      "label": "Descrição da tecnologia de assistência para o botão \"Mostrar Solução\"",
-      "default": "Mostrar a solução. A tarefa será marcada com sua solução correta."
-    },
-    {
-      "label": "Descrição da tecnologia de assistência para o botão \"Tentar Novamente\"",
-      "default": "Tente realizar a tarefa novamente. Reinicialize todas as respostas e recomece."
-    },
-    {
       "label": "Descrição da tecnologia de assistência para a tarefa inicial",
       "default": "Modo de verificação"
     }

@@ -84,9 +84,6 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false
       },
-      a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
-      a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
-      a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
       a11yHeader: 'Checking mode',
       submitAnswer: 'Submit',
     }, params);
@@ -207,9 +204,7 @@ H5P.Blanks = (function ($, Question) {
         self.markResults();
         self.showEvaluation();
         self.triggerAnswered();
-      }, true, {
-        'aria-label': self.params.a11yCheck,
-      }, {
+      }, true, undefined, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
           l10n: self.params.confirmCheck,
@@ -225,9 +220,7 @@ H5P.Blanks = (function ($, Question) {
     // Show solution button
     self.addButton('show-solution', self.params.showSolutions, function () {
       self.showCorrectAnswers(false);
-    }, self.params.behaviour.enableSolutionsButton, {
-      'aria-label': self.params.a11yShowSolution,
-    }, {
+    }, self.params.behaviour.enableSolutionsButton, undefined, {
       styleType: 'secondary',
       icon: 'show-solutions',
     });
@@ -238,9 +231,7 @@ H5P.Blanks = (function ($, Question) {
         self.a11yHeader.innerHTML = '';
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
-      }, true, {
-        'aria-label': self.params.a11yRetry,
-      }, {
+      }, true, undefined, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,
           l10n: self.params.confirmRetry,

@@ -198,18 +198,6 @@
       "default": "Conseguiches :num puntos de :total"
     },
     {
-      "label": "Descrición para as tecnoloxías de asistencia do botón \"Comprobar\"",
-      "default": "Comprobar as respostas. As respostas marcaranse como correctas, incorrectas ou non contestadas."
-    },
-    {
-      "label": "Descrición para as tecnoloxías de asistencia do botón \"Amosar solución\"",
-      "default": "Amosar a solución. Marcarase a tarefa coa resposta correcta."
-    },
-    {
-      "label": "Descrición para as tecnoloxías de asistencia do botón \"Tentar de novo\"",
-      "default": "Tenta de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
-    },
-    {
       "label": "Descrición para as tecnoloxías de asistencia para empezar a tarefa",
       "default": "Modo de comprobación"
     }

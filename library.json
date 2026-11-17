@@ -18,6 +18,9 @@
   "preloadedCss": [
     {
       "path": "css/blanks.css"
+    },
+    {
+      "path": "@legacy/css/blanks.css"
     }
   ],
   "preloadedJs": [
@@ -26,6 +29,12 @@
     },
     {
       "path": "js/cloze.js"
+    },
+    {
+      "path": "@legacy/js/blanks.js"
+    },
+    {
+      "path": "@legacy/js/cloze.js"
     }
   ],
   "preloadedDependencies": [

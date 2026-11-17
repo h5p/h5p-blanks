@@ -198,18 +198,6 @@
       "default": "Tu saņēmi :num no :total punktiem"
     },
     {
-      "label": "Pogas \"Pārbaudīt\" apraksts asistīvajām tehnoloģijām",
-      "default": "Pārbaudīt atbildes. Atbildes tiks atzīmētas kā pareizas, nepareizas, vai neatbildētas."
-    },
-    {
-      "label": "Pogas \"Rādīt risinājumu\" apraksts asistīvajām tehnoloģijām",
-      "default": "Rādīt risinājumu. Uzdevums tiks atzīmēts ar tā pareizo risinājumu."
-    },
-    {
-      "label": "Pogas \"Mēģināt vēlreiz\" apraksts asistīvajām tehnoloģijām",
-      "default": "Mēģināt uzdevumu vēlreiz. Dzēst visas sniegtās atbildes un sākt uzdevumu vēlreiz."
-    },
-    {
       "label": "Uzdevuma sākšanas apraksts asistīvajām tehnoloģijām",
       "default": "Pārbaudīšanas režīms"
     }

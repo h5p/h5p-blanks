@@ -198,18 +198,6 @@
       "default": "Du fikk :num av :total poeng."
     },
     {
-      "label": "Beskrivelse av \"Sjekk\"-knapp for assisterende teknologi",
-      "default": "Sjekk svar. Svara blir merket som riktig, feil eller ubesvart."
-    },
-    {
-      "label": "Beskrivelse av \"Vis svar\"-knapp for assisterende teknologi",
-      "default": "Vis svar. Oppgaven blir merket med riktige svar."
-    },
-    {
-      "label": "Beskrivelse av \"Prøv igjen\"-knapp for assisterende teknologi",
-      "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
-    },
-    {
       "label": "Beskrivelse som leses opp av assisterende teknologi etter at \"Sjekk\"-knapp er valgt",
       "default": "\"Sjekk\"-modus aktivert"
     }

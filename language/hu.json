@@ -198,18 +198,6 @@
       "default": ":num pontot szereztél a :total-ból"
     },
     {
-      "label": "Kisegítő technológia leírás az „Ellenőrzés” gombhoz",
-      "default": "Ellenőrizd a válaszokat. A válaszok helyesnek, helytelennek vagy megválaszolatlannak lesznek jelölve."
-    },
-    {
-      "label": "Kisegítő technológia leírás a „Megoldás megjelenítése” gombhoz",
-      "default": "Mutasd a megoldást. A feladat a helyes megoldással jelenik meg."
-    },
-    {
-      "label": "Kisegítő technológia leírás az „Újrapróbálkozás” gombhoz",
-      "default": "Próbáld újra a feladatot. Töröld az összes választ és kezdd újra."
-    },
-    {
       "label": "Kisegítő technológia leírás a feladat indításához",
       "default": "Ellenőrzési mód"
     }
