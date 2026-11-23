@@ -197,18 +197,6 @@
     {
       "label": "Opis przycisku\"Sprawdź\" dla czytników ekranu",
       "default": "Sprawdź zadanie. Odpowiedzi zostaną oznaczone jako poprawne, błędne lub brakujące."
-    },
-    {
-      "label": "Opis przycisku \"Pokaż odpowiedź\" dla czytników ekranu",
-      "default": "Pokaż rozwiązanie. W treści zadania pojawią się poprawne odpowiedzi."
-    },
-    {
-      "label": "Opis przycisku \"Powtórz\" dla czytników ekranu",
-      "default": "Ponów zadanie. Zresetuj wszystkie odpowiedzi i rozpocznij zadanie od nowa."
-    },
-    {
-      "label": "Opis czynności rozpoczęcia zadania dla czytników ekranu",
-      "default": "Tryb sprawdzania"
     }
   ]
 }

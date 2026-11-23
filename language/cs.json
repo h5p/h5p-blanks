@@ -197,18 +197,6 @@
     {
       "label": "Popisek podpůrné technologie pro tlačítko „Zkontrolovat“",
       "default": "Zkontrolovat odpovědi. Odpovědi budou označeny jako správné, nesprávné nebo nezodpovězené."
-    },
-    {
-      "label": "Popisek podpůrné technologie pro tlačítko „Zobrazit řešení“",
-      "default": "Zobrazit řešení. Úkol bude zobrazen se správným řešením."
-    },
-    {
-      "label": "Popisek podpůrné technologie pro tlačítko „Opakovat“",
-      "default": "Zopakovat úkol. Resetovat všechny odpovědi a spustit úlohu znovu."
-    },
-    {
-      "label": "Popis podpůrné technologie pro zahájení úkolu",
-      "default": "Kontrolní režim"
     }
   ]
 }

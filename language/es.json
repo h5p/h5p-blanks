@@ -197,18 +197,6 @@
     {
       "label": "Descripción para las tecnologías de asistencia del botón \"Comprobar\"",
       "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrectas o sin contestar."
-    },
-    {
-      "label": "Descripción para las tecnologías de asistencia del botón \"Mostrar solución\"",
-      "default": "Mostrar la solución. La tarea se marcará con su solución correcta."
-    },
-    {
-      "label": "Descripción para las tecnologías de asistencia del botón \"Intentar de nuevo\"",
-      "default": "Vuelve a intentar la tarea. Borra todas tus respuestas y empieza de nuevo."
-    },
-    {
-      "label": "Descripción para las tecnologías de asistencia para indicar que se inicia la tarea",
-      "default": "Modo de Comprobación"
     }
   ]
 }

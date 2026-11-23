@@ -197,18 +197,6 @@
     {
       "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Weka alama\"",
       "default": "Weka alama majibu. Majibu yatatiwa alama kuwa sahihi, siyo sahihi au haijajibiwa."
-    },
-    {
-      "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Onyesha Suluhisho\"",
-      "default": "Onyesha suluhisho hilo. Kazi hiyo itawekwa alama na suluhisho lake sahihi."
-    },
-    {
-      "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Jaribu tena\"",
-      "default": "Jaribu tena kazi hiyo. Weka upya majibu yote na uanze kazi tena."
-    },
-    {
-      "label": "Maelezo ya teknolojia saidizi kwa kitufe cha ‘Kuanza kazi",
-      "default": "Njia ya kuweka alama"
     }
   ]
 }
