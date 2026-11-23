@@ -197,18 +197,6 @@
     {
       "label": "Beskriving av \"Sjekk\"-knapp for assisterande teknologi",
       "default": "Sjekk svar. Svara blir merkte som rette, feil eller utan svar."
-    },
-    {
-      "label": "Beskriving av \"Vis svar\"-knapp for assisterande teknologi",
-      "default": "Vis svar. Oppgåva blir merkt med rette svar."
-    },
-    {
-      "label": "Beskriving av \"Prøv igjen\"-knapp for assisterande teknologi",
-      "default": "Prøv igjen. Alle svara blir nullstilte, og oppgåva startar på nytt."
-    },
-    {
-      "label": "Beskriving som blir lesen opp av assisterande teknologi etter at \"Sjekk\"-knapp er vald",
-      "default": "\"Sjekk\"-modus aktivert"
     }
   ]
 }

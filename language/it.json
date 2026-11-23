@@ -197,18 +197,6 @@
     {
       "label": "Descrizione delle tecnologie assistive per il pulsante \"Verifica\"",
       "default": "Verifica"
-    },
-    {
-      "label": "Descrizione delle tecnologie assistive per il pulsante \"Mostra soluzione\"",
-      "default": "Mostra soluzione"
-    },
-    {
-      "label": "Descrizione delle tecnologie assistive per il pulsante \"Riprova\"",
-      "default": "Riprova"
-    },
-    {
-      "label": "Assistive technology description for starting task",
-      "default": "Checking mode"
     }
   ]
 }

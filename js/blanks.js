@@ -83,9 +83,6 @@ H5P.Blanks = (function ($, Question) {
         autoCheck: false,
         separateLines: false
       },
-      a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
-      a11yShowSolution: 'Show the solution. The task will be marked with its correct solution.',
-      a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
       a11yHeader: 'Checking mode',
       submitAnswer: 'Submit',
     }, params);
@@ -207,7 +204,7 @@ H5P.Blanks = (function ($, Question) {
         self.showEvaluation();
         self.triggerAnswered();
       }, true, {
-        'aria-label': self.params.a11yCheck,
+        'aria-label': self.params.checkAnswer,
       }, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmCheckDialog,
@@ -224,7 +221,7 @@ H5P.Blanks = (function ($, Question) {
     self.addButton('show-solution', self.params.showSolutions, function () {
       self.showCorrectAnswers(false);
     }, self.params.behaviour.enableSolutionsButton, {
-      'aria-label': self.params.a11yShowSolution,
+      'aria-label': self.params.showSolutions,
     });
 
     // Try again button
@@ -234,7 +231,7 @@ H5P.Blanks = (function ($, Question) {
         self.resetTask();
         self.$questions.filter(':first').find('input:first').focus();
       }, true, {
-        'aria-label': self.params.a11yRetry,
+        'aria-label': self.params.tryAgain,
       }, {
         confirmationDialog: {
           enable: self.params.behaviour.confirmRetryDialog,

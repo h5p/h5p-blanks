@@ -197,18 +197,6 @@
     {
       "label": "\"Kontrol Et\" düğmesi için yardımcı teknoloji açıklaması",
       "default": "Cevapları kontrol edin. Cevaplar doğru, yanlış veya cevapsız olarak işaretlenecektir."
-    },
-    {
-      "label": "\"Çözüm Göster\" düğmesi için yardımcı teknoloji açıklaması",
-      "default": "Çözümü göster. Görev, doğru çözümü ile işaretlenecektir."
-    },
-    {
-      "label": "\"Yeniden Dene\" düğmesi için yardımcı teknoloji açıklaması",
-      "default": "Görevi yeniden deneyin. Tüm yanıtları sıfırlayın ve görevi yeniden başlatın."
-    },
-    {
-      "label": "Görevi başlatmak için yardımcı teknoloji açıklaması",
-      "default": "Kontrol modu"
     }
   ]
 }

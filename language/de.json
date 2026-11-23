@@ -197,18 +197,6 @@
     {
       "label": "Beschreibung des \"Überprüfen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
       "default": "Die Antworten überprüfen. Die Eingaben werden als richtig, falsch oder unbeantwortet markiert."
-    },
-    {
-      "label": "Beschreibung des \"Lösung anzeigen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
-      "default": "Die Lösung anzeigen. Die richtigen Lösungen werden in der Aufgabe angezeigt."
-    },
-    {
-      "label": "Beschreibung des \"Wiederholen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
-      "default": "Die Aufgabe wiederholen. Alle Eingaben werden zurückgesetzt und die Aufgabe wird erneut gestartet."
-    },
-    {
-      "label": "Beschreibung zu Beginn der Aufgabe, nachdem der \"Überprüfen\"-Button geklickt wurde (für Hilfsmittel zur Barrierefreiheit)",
-      "default": "Überprüfen-Modus aktiv"
     }
   ]
 }

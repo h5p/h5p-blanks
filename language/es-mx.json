@@ -197,18 +197,6 @@
     {
       "label": "Descripción de tecnología asistiva para botón \"Comprobar\"",
       "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
-    },
-    {
-      "label": "Descripción de tecnología asistiva para botón \"Mostrar solución\"",
-      "default": "Mostrar la solución. El trabajo será calificado con su solución correcta."
-    },
-    {
-      "label": "Descripción de tecnología asistiva para botón \"Reintentar\"",
-      "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
-    },
-    {
-      "label": "Descripción de tecnología asistiva para comenzando el trabajo",
-      "default": "Modo de Comprobación"
     }
   ]
 }

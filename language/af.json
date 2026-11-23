@@ -197,18 +197,6 @@
     {
       "label": "Hulptegnologieë beskrywing vir \"Toets\" knoppie",
       "default": "Toets die antwoorde. Die antwoorde sal as reg gemerk, verkeerd of onbeantwoord gemerk word."
-    },
-    {
-      "label": "Hulptegnologieë beskrywing vir \"Wys oplossing\" knoppie",
-      "default": "Wys die antwoord. Hierdie taak sal gemerk word met die regte antwoord."
-    },
-    {
-      "label": "Hulptegnologieë beskrywing vir \"Probeer weer\" knoppie",
-      "default": "Probeer die taak weer. Herstel al die antwoorde en probeer die taak weer van die begin af."
-    },
-    {
-      "label": "Hulptegnologie beskrywing om 'n taak te begin",
-      "default": "Toetsmodus"
     }
   ]
 }
